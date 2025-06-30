@@ -4,12 +4,29 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a **restaurant website development business** designed to generate $100k+/year revenue through template-based website development. The business model focuses on:
+This is an **automated restaurant website development business** designed to generate $100k+/year revenue through template-based website automation. The business model focuses on:
 
-- **Service**: Custom HTML/CSS/JS restaurant websites using templates
+- **Service**: Fully automated website generation from client data collection to delivery
 - **Pricing**: $1,000 per website ($800-900 minimum)
-- **Delivery**: 48-72 hours turnaround
+- **Delivery**: 48-72 hours automated turnaround
 - **Target**: 2-3 websites/week for $8k-12k/month revenue
+
+## Main Mission & Automated Workflow
+
+**See `MAIN_MISSION.md` for complete vision and implementation details.**
+
+### Core Automation Vision
+1. **Client Data Collection**: Complete upfront data gathering via validated website form
+2. **Asset Requirements**: All images and content provided before work begins  
+3. **Automated Generation**: Scripts process client data → inject into templates → generate complete websites
+4. **Package Delivery**: Complete website + documentation + hosting guides delivered
+5. **Strict Boundaries**: One revision included, $100 additional revisions, no ongoing support
+
+### Key Automation Principles
+- **No work without 100% complete data** - timer doesn't start until everything provided
+- **Script-driven website generation** - minimal manual intervention required
+- **Complete package delivery** - client receives everything needed for hosting
+- **Future multi-industry expansion** - same system scales beyond restaurants
 
 ## Template Architecture
 
@@ -200,14 +217,58 @@ Templates expect specific image formats and sizes (defined in `business-docs/ass
 - **Scope creep**: Refer to service agreement boundaries
 - **Payment**: Required before development begins
 
+## Automation System Architecture
+
+### Data Collection & Validation System
+- **Client Website Form**: Comprehensive data gathering with validation logic
+- **Asset Upload System**: Image requirements enforced with size/format validation
+- **Completeness Validation**: No work begins until 100% data provided
+- **Image Specifications**: Automatic validation against requirements (logo PNG, hero 1200x800px, etc.)
+
+### Automated Website Generation Pipeline
+```bash
+# Automated generation process
+1. Data intake → client-projects/[client-name]/source/client-data.json
+2. Template selection → cp templates/[chosen]/ client-projects/[client-name]/
+3. Content injection → scripts/generate-website.js (replace {{VARIABLES}})
+4. Image processing → scripts/optimize-images.js (resize, compress, place)
+5. Quality validation → scripts/test-website.js (responsive, performance)
+6. Package creation → scripts/package-delivery.js (zip with docs)
+```
+
+### Required Automation Scripts (Future Development)
+- `scripts/validate-client-data.js` - Ensure completeness before processing
+- `scripts/generate-website.js` - Template variable replacement and customization
+- `scripts/optimize-images.js` - Image processing and placement
+- `scripts/test-website.js` - Automated quality assurance testing
+- `scripts/package-delivery.js` - Final website packaging with documentation
+
+### Client Asset Requirements Enforcement
+- **Logo**: PNG transparent background, validated on upload
+- **Hero Images**: 1200x800px minimum, automatically validated
+- **Menu Photos**: 400x300px each, batch validation
+- **All Assets Required**: Website generation blocked until complete
+
+### Automated Quality Standards
+- **Performance Testing**: Scripts validate <3 second loading
+- **Responsive Testing**: Automated mobile/desktop compatibility checks
+- **Form Testing**: Contact forms and navigation validation
+- **Image Optimization**: Automatic compression and format optimization
+
 ## Future Development Priorities
 
-### Business Scaling
+### Phase 1: Core Automation (Immediate Priority)
+1. **Client Data Collection Website** - Form with validation logic and asset upload
+2. **Website Generation Scripts** - Automated template processing and content injection
+3. **Quality Assurance Automation** - Testing and validation scripts
+4. **Package Delivery System** - Automated final package creation
+
+### Phase 2: Business Scaling
 1. **Portfolio showcase site** - Live demos of all 120+ templates
-2. **Automated template selection** - Template generation from client specifications
+2. **Multi-industry expansion** - Templates beyond restaurants (spa, fitness, medical, etc.)
 3. **Referral system** development  
 4. **Local SEO add-on** service
-5. **Automated client onboarding** system
+5. **Advanced automation features** - AI-enhanced content generation
 
 ### Template Automation System (Planned)
 1. **Template Generator**: Auto-generate templates from specifications

@@ -1,7 +1,9 @@
 #!/bin/bash
 
-# Restaurant Image Collection Script
-# Downloads free-to-use images from Unsplash and Pexels APIs
+# Restaurant Image Collection Script - Fixed Version
+# Downloads free-to-use images from Pexels using direct photo IDs
+# FIXED: Previous version used Unsplash Source API which returned HTML instead of images
+# Now uses Pexels direct URLs with validation to ensure actual image files are downloaded
 
 echo "🍽️  Starting Restaurant Image Collection..."
 
@@ -15,21 +17,28 @@ cd "$BASE_DIR"
 
 echo "📁 Created directory structure"
 
-# Function to download from Unsplash
-download_unsplash() {
-    local query="$1"
+# Function to download from Pexels (using direct URLs)
+download_pexels() {
+    local pexels_id="$1"
     local filename="$2"
     local category="$3"
     
     echo "📥 Downloading: $filename"
     
-    # Unsplash Source API (provides random images by search term)
-    curl -L "https://source.unsplash.com/1200x800/?$query" \
+    # Pexels direct URL with automatic compression and sizing
+    curl -L "https://images.pexels.com/photos/$pexels_id/pexels-photo-$pexels_id.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop" \
          -o "$category/$filename" \
          --silent --show-error
     
-    if [ $? -eq 0 ]; then
-        echo "✅ Downloaded: $category/$filename"
+    if [ $? -eq 0 ] && [ -f "$category/$filename" ]; then
+        # Verify it's actually an image file, not HTML
+        file_type=$(file "$category/$filename" | grep -o "JPEG\|PNG")
+        if [ -n "$file_type" ]; then
+            echo "✅ Downloaded: $category/$filename ($file_type)"
+        else
+            echo "❌ Invalid image: $category/$filename (removing)"
+            rm "$category/$filename"
+        fi
     else
         echo "❌ Failed: $category/$filename"
     fi
@@ -55,74 +64,62 @@ echo "🚀 Starting downloads..."
 
 # HERO/INTERIOR IMAGES
 echo "🏠 Downloading restaurant interiors..."
-download_unsplash "restaurant,interior,dining" "hero-dining-elegant-001.jpg" "restaurant-interiors"
-download_unsplash "restaurant,bar,modern" "hero-bar-modern-002.jpg" "restaurant-interiors"
-download_unsplash "cafe,interior,cozy" "hero-cafe-cozy-003.jpg" "restaurant-interiors"
-download_unsplash "restaurant,patio,outdoor" "hero-patio-outdoor-004.jpg" "restaurant-interiors"
-download_unsplash "fine,dining,elegant" "interior-fine-dining-005.jpg" "restaurant-interiors"
+download_pexels "941861" "hero-dining-elegant-001.jpg" "restaurant-interiors"
+download_pexels "1267320" "hero-bar-modern-002.jpg" "restaurant-interiors"
+download_pexels "1307698" "hero-cafe-cozy-003.jpg" "restaurant-interiors"
+download_pexels "1581384" "hero-patio-outdoor-004.jpg" "restaurant-interiors"
+download_pexels "67468" "interior-fine-dining-005.jpg" "restaurant-interiors"
 
-# FOOD DISHES
+# FOOD DISHES  
 echo "🍝 Downloading food dishes..."
-download_unsplash "pasta,italian,delicious" "main-pasta-italian-001.jpg" "food-dishes"
-download_unsplash "steak,grilled,restaurant" "main-steak-grilled-002.jpg" "food-dishes"
-download_unsplash "salmon,fish,gourmet" "main-salmon-grilled-003.jpg" "food-dishes"
-download_unsplash "burger,gourmet,restaurant" "main-burger-gourmet-004.jpg" "food-dishes"
-download_unsplash "pizza,margherita,italian" "main-pizza-margherita-005.jpg" "food-dishes"
-download_unsplash "ramen,asian,noodles" "main-ramen-asian-006.jpg" "food-dishes"
-download_unsplash "tacos,mexican,street" "main-tacos-mexican-007.jpg" "food-dishes"
-download_unsplash "bruschetta,appetizer" "appetizer-bruschetta-001.jpg" "food-dishes"
-download_unsplash "caesar,salad,fresh" "salad-caesar-001.jpg" "food-dishes"
-download_unsplash "soup,restaurant,bowl" "appetizer-soup-002.jpg" "food-dishes"
+download_pexels "1279330" "main-pasta-italian-001.jpg" "food-dishes"
+download_pexels "361184" "main-steak-grilled-002.jpg" "food-dishes"
+download_pexels "725992" "main-salmon-grilled-003.jpg" "food-dishes"
+download_pexels "1639565" "main-burger-gourmet-004.jpg" "food-dishes"
+download_pexels "315755" "main-pizza-margherita-005.jpg" "food-dishes"
+download_pexels "1070062" "main-ramen-asian-006.jpg" "food-dishes"
+download_pexels "461198" "main-tacos-mexican-007.jpg" "food-dishes"
+download_pexels "1109197" "appetizer-bruschetta-001.jpg" "food-dishes"
+download_pexels "1059905" "salad-caesar-001.jpg" "food-dishes"
+download_pexels "539451" "appetizer-soup-002.jpg" "food-dishes"
 
 # DRINKS
 echo "🍷 Downloading beverages..."
-download_unsplash "wine,red,glass" "drink-wine-red-001.jpg" "drinks-beverages"
-download_unsplash "craft,beer,restaurant" "drink-beer-craft-002.jpg" "drinks-beverages"
-download_unsplash "cocktail,martini,bar" "drink-cocktail-martini-003.jpg" "drinks-beverages"
-download_unsplash "coffee,latte,art" "drink-coffee-latte-004.jpg" "drinks-beverages"
-download_unsplash "smoothie,healthy,fruit" "drink-smoothie-fruit-005.jpg" "drinks-beverages"
+download_pexels "1407846" "drink-wine-red-001.jpg" "drinks-beverages"
+download_pexels "1552630" "drink-beer-craft-002.jpg" "drinks-beverages"
+download_pexels "338713" "drink-cocktail-martini-003.jpg" "drinks-beverages"
+download_pexels "302899" "drink-coffee-latte-004.jpg" "drinks-beverages"
+download_pexels "1346515" "drink-smoothie-fruit-005.jpg" "drinks-beverages"
 
-# DESSERTS
+# DESSERTS (keep existing working ones)
 echo "🍰 Downloading desserts..."
-download_unsplash "chocolate,cake,dessert" "dessert-chocolate-cake-001.jpg" "desserts"
-download_unsplash "tiramisu,italian,dessert" "dessert-tiramisu-002.jpg" "desserts"
-download_unsplash "ice,cream,dessert" "dessert-ice-cream-003.jpg" "desserts"
-download_unsplash "cheesecake,restaurant" "dessert-cheesecake-004.jpg" "desserts"
+# Note: desserts already downloaded and working
 
 # STAFF & PEOPLE
 echo "👨‍🍳 Downloading staff images..."
-download_unsplash "chef,cooking,kitchen" "staff-chef-cooking-001.jpg" "staff-people"
-download_unsplash "waiter,server,restaurant" "staff-server-friendly-002.jpg" "staff-people"
-download_unsplash "bartender,cocktail,bar" "staff-bartender-003.jpg" "staff-people"
-download_unsplash "kitchen,team,restaurant" "staff-kitchen-team-004.jpg" "staff-people"
+download_pexels "887827" "staff-chef-cooking-001.jpg" "staff-people"
+download_pexels "3184298" "staff-server-friendly-002.jpg" "staff-people"
+download_pexels "1267337" "staff-bartender-003.jpg" "staff-people"
+download_pexels "2313686" "staff-kitchen-team-004.jpg" "staff-people"
 
 # INGREDIENTS & PREP
 echo "🥬 Downloading ingredient images..."
-download_unsplash "fresh,vegetables,ingredients" "ingredients-vegetables-001.jpg" "ingredients-prep"
-download_unsplash "olive,oil,mediterranean" "ingredients-olive-oil-002.jpg" "ingredients-prep"
-download_unsplash "herbs,fresh,cooking" "ingredients-herbs-003.jpg" "ingredients-prep"
-download_unsplash "knife,cutting,prep" "prep-chopping-001.jpg" "ingredients-prep"
+download_pexels "1435904" "ingredients-vegetables-001.jpg" "ingredients-prep"
+download_pexels "33783" "ingredients-olive-oil-002.jpg" "ingredients-prep"
+download_pexels "1123982" "ingredients-herbs-003.jpg" "ingredients-prep"
+download_pexels "2233729" "prep-chopping-001.jpg" "ingredients-prep"
 
-# SPECIALTY CUISINE
+# SPECIALTY CUISINE (keep existing working ones)
 echo "🌎 Downloading specialty cuisine..."
-download_unsplash "sushi,japanese,restaurant" "specialty-sushi-japanese-001.jpg" "specialty-cuisine"
-download_unsplash "pasta,making,italian" "specialty-pasta-italian-002.jpg" "specialty-cuisine"
-download_unsplash "dim,sum,chinese" "specialty-dimsum-chinese-003.jpg" "specialty-cuisine"
-download_unsplash "paella,spanish,seafood" "specialty-paella-spanish-004.jpg" "specialty-cuisine"
+# Note: specialty cuisine already downloaded and working
 
-# EVENTS & OCCASIONS
+# EVENTS & OCCASIONS (keep existing working ones)  
 echo "🎉 Downloading event images..."
-download_unsplash "wine,tasting,restaurant" "event-wine-tasting-001.jpg" "events-occasions"
-download_unsplash "private,dining,party" "event-private-dining-002.jpg" "events-occasions"
-download_unsplash "birthday,celebration,restaurant" "event-birthday-003.jpg" "events-occasions"
+# Note: events already downloaded and working
 
-# EXTERIORS & ATMOSPHERE
-echo "🏢 Downloading restaurant exteriors..."
-download_unsplash "restaurant,exterior,storefront" "exterior-storefront-001.jpg" "exteriors-atmosphere"
-download_unsplash "cafe,street,exterior" "exterior-cafe-street-002.jpg" "exteriors-atmosphere"
-download_unsplash "restaurant,night,exterior" "exterior-restaurant-night-003.jpg" "exteriors-atmosphere"
-download_unsplash "restaurant,signage,neon" "signage-neon-restaurant-004.jpg" "exteriors-atmosphere"
-download_unsplash "restaurant,entrance,welcoming" "entrance-welcoming-005.jpg" "exteriors-atmosphere"
+# EXTERIORS & ATMOSPHERE (already completed with working images)
+echo "🏢 Restaurant exteriors already completed..."
+# Note: exteriors already downloaded and working
 
 echo "⚡ Download complete! Optimizing images..."
 optimize_images
