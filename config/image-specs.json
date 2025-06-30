@@ -1,0 +1,133 @@
+{
+  "requirements": {
+    "formats": ["jpg", "jpeg", "png", "webp"],
+    "maxFileSize": "2MB",
+    "optimization": {
+      "quality": 85,
+      "progressive": true,
+      "stripMetadata": true
+    }
+  },
+  "specifications": {
+    "logo": {
+      "filename": "logo.png",
+      "format": "PNG with transparent background",
+      "dimensions": {
+        "width": 200,
+        "height": 100,
+        "aspectRatio": "2:1",
+        "flexible": true
+      },
+      "usage": "Navigation bar, footer, business cards",
+      "required": true
+    },
+    "hero": {
+      "filename": "hero.jpg",
+      "format": "JPG or PNG",
+      "dimensions": {
+        "width": 1200,
+        "height": 800,
+        "aspectRatio": "3:2",
+        "minWidth": 1000
+      },
+      "usage": "Main banner image, first impression",
+      "tips": "High-quality restaurant interior or signature dish",
+      "required": true
+    },
+    "interior": {
+      "filename": "interior.jpg", 
+      "format": "JPG or PNG",
+      "dimensions": {
+        "width": 600,
+        "height": 400,
+        "aspectRatio": "3:2"
+      },
+      "usage": "About section, dining room showcase",
+      "tips": "Well-lit dining area or atmosphere shot",
+      "required": true
+    },
+    "food": {
+      "filenamePattern": "food-{number}.jpg",
+      "format": "JPG or PNG",
+      "dimensions": {
+        "width": 400,
+        "height": 300,
+        "aspectRatio": "4:3"
+      },
+      "count": {
+        "min": 3,
+        "max": 6,
+        "recommended": 4
+      },
+      "usage": "Menu highlights, featured dishes",
+      "tips": "Professional food photography, good lighting",
+      "required": true
+    },
+    "gallery": {
+      "filenamePattern": "gallery-{number}.jpg",
+      "format": "JPG or PNG", 
+      "dimensions": {
+        "width": 400,
+        "height": 400,
+        "aspectRatio": "1:1"
+      },
+      "count": {
+        "min": 0,
+        "max": 12,
+        "recommended": 6
+      },
+      "usage": "Photo gallery, social media showcase",
+      "tips": "Square format for Instagram-style display",
+      "required": false
+    },
+    "staff": {
+      "filename": "staff.jpg",
+      "format": "JPG or PNG",
+      "dimensions": {
+        "width": 300,
+        "height": 300,
+        "aspectRatio": "1:1"
+      },
+      "usage": "Chef portrait, team photo",
+      "tips": "Professional headshot or team in kitchen",
+      "required": false
+    }
+  },
+  "placeholders": {
+    "HERO_IMAGE": "images/hero.jpg",
+    "LOGO_URL": "images/logo.png", 
+    "INTERIOR_IMAGE_1": "images/interior.jpg",
+    "FOOD_IMAGE_1": "images/food-1.jpg",
+    "FOOD_IMAGE_2": "images/food-2.jpg",
+    "FOOD_IMAGE_3": "images/food-3.jpg",
+    "FOOD_IMAGE_4": "images/food-4.jpg",
+    "STAFF_IMAGE": "images/staff.jpg"
+  },
+  "fallbacks": {
+    "hero": "images/placeholder/restaurant-interiors/hero-dining-elegant-001.jpg",
+    "interior": "images/placeholder/restaurant-interiors/interior-fine-dining-005.jpg",
+    "food": [
+      "images/placeholder/food-dishes/main-pasta-italian-001.jpg",
+      "images/placeholder/food-dishes/main-salmon-grilled-003.jpg", 
+      "images/placeholder/food-dishes/main-burger-gourmet-004.jpg",
+      "images/placeholder/food-dishes/appetizer-bruschetta-001.jpg"
+    ],
+    "logo": "images/placeholder/logos-branding/logo-elegant-rectangle-002.png"
+  },
+  "guidelines": {
+    "photography": [
+      "Use natural lighting when possible",
+      "Avoid heavy filters or over-processing",
+      "Show food as it would actually be served",
+      "Include some lifestyle/atmosphere shots",
+      "Maintain consistent style across images"
+    ],
+    "technical": [
+      "Save in sRGB color space",
+      "Use descriptive filenames",
+      "Keep original high-res versions",
+      "Compress for web delivery",
+      "Test on mobile devices"
+    ]
+  }
+}
