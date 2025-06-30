@@ -116,16 +116,64 @@ download_unsplash "wine,tasting,restaurant" "event-wine-tasting-001.jpg" "events
 download_unsplash "private,dining,party" "event-private-dining-002.jpg" "events-occasions"
 download_unsplash "birthday,celebration,restaurant" "event-birthday-003.jpg" "events-occasions"
 
+# EXTERIORS & ATMOSPHERE
+echo "🏢 Downloading restaurant exteriors..."
+download_unsplash "restaurant,exterior,storefront" "exterior-storefront-001.jpg" "exteriors-atmosphere"
+download_unsplash "cafe,street,exterior" "exterior-cafe-street-002.jpg" "exteriors-atmosphere"
+download_unsplash "restaurant,night,exterior" "exterior-restaurant-night-003.jpg" "exteriors-atmosphere"
+download_unsplash "restaurant,signage,neon" "signage-neon-restaurant-004.jpg" "exteriors-atmosphere"
+download_unsplash "restaurant,entrance,welcoming" "entrance-welcoming-005.jpg" "exteriors-atmosphere"
+
 echo "⚡ Download complete! Optimizing images..."
 optimize_images
 
+echo "🎨 Creating logo concepts and branding assets..."
+python3 -c "
+from PIL import Image, ImageDraw, ImageFont
+import os
+
+os.chdir('logos-branding')
+
+# Logo Concept 1: Circle badge
+logo1 = Image.new('RGBA', (300, 300), color=(0, 0, 0, 0))
+draw1 = ImageDraw.Draw(logo1)
+draw1.ellipse([20, 20, 280, 280], outline='#2c3e50', width=6, fill='white')
+try:
+    font = ImageFont.truetype('/System/Library/Fonts/Times.ttc', 24)
+except:
+    font = ImageFont.load_default()
+draw1.text((150, 150), 'RESTAURANT', fill='#2c3e50', anchor='mm', font=font)
+logo1.save('logo-circle-001.png')
+
+# Simple icons
+icon = Image.new('RGBA', (100, 100), color=(0, 0, 0, 0))
+draw = ImageDraw.Draw(icon)
+draw.line([30, 20, 30, 80], fill='#2c3e50', width=3)
+draw.line([70, 20, 70, 80], fill='#2c3e50', width=3)
+icon.save('icon-fork-knife-001.png')
+
+print('Generated logos and icons')
+"
+
 echo "📊 Summary:"
-echo "Total files downloaded: $(find . -name "*.jpg" | wc -l)"
+echo "Total files downloaded: $(find . -name "*.jpg" -o -name "*.png" | wc -l)"
 echo "Total size: $(du -sh . | cut -f1)"
 
 echo ""
 echo "✅ Restaurant image collection complete!"
 echo "📁 Images saved to: $BASE_DIR"
+echo ""
+echo "📷 Categories completed:"
+echo "  ✅ Restaurant interiors (5 images)"
+echo "  ✅ Food dishes (10 images)"
+echo "  ✅ Drinks & beverages (5 images)"
+echo "  ✅ Desserts (4 images)"
+echo "  ✅ Staff & people (4 images)"
+echo "  ✅ Exteriors & atmosphere (5 images)"
+echo "  ✅ Logos & branding (7 assets)"
+echo "  ✅ Events & occasions (3 images)"
+echo "  ✅ Ingredients & prep (4 images)"
+echo "  ✅ Specialty cuisine (4 images)"
 echo ""
 echo "Next steps:"
 echo "1. Review downloaded images"
