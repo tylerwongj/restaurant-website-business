@@ -23,6 +23,24 @@
             </div>
         </header>
 
+        <!-- Load Previous Data Section -->
+        <section class="load-data-section">
+            <div class="load-data-card">
+                <h3>💾 Edit Previous Submission</h3>
+                <p>Upload your previously downloaded JSON file to edit your restaurant information</p>
+                <div class="load-data-controls">
+                    <input type="file" id="jsonUpload" accept=".json" style="display: none;" onchange="loadFromJSON(event)">
+                    <button type="button" class="btn-load-json" onclick="document.getElementById('jsonUpload').click()">
+                        📂 Upload JSON File
+                    </button>
+                    <span class="load-status" id="loadStatus"></span>
+                </div>
+                <div class="help-text">
+                    <small>Select the JSON file you downloaded from a previous submission to continue editing</small>
+                </div>
+            </div>
+        </section>
+
         <!-- Form Container -->
         <main class="form-container">
             <!-- Step 1: Restaurant Basics -->

@@ -661,6 +661,212 @@ class RestaurantFormManager {
             }, 300);
         }, 3000);
     }
+
+    // Load data from uploaded JSON file
+    loadFromJSON(event) {
+        const file = event.target.files[0];
+        if (!file) return;
+
+        const loadStatus = document.getElementById('loadStatus');
+        loadStatus.textContent = 'Loading...';
+        
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            try {
+                const jsonData = JSON.parse(e.target.result);
+                
+                // Validate JSON structure
+                if (!this.validateJSONStructure(jsonData)) {
+                    throw new Error('Invalid JSON structure');
+                }
+                
+                // Populate form with JSON data
+                this.populateFromJSON(jsonData);
+                
+                loadStatus.textContent = '✅ Data loaded successfully!';
+                loadStatus.style.color = '#28a745';
+                
+                // Hide the load section after successful load
+                setTimeout(() => {
+                    const loadSection = document.querySelector('.load-data-section');
+                    if (loadSection) {
+                        loadSection.style.display = 'none';
+                    }
+                }, 2000);
+                
+            } catch (error) {
+                console.error('Error loading JSON:', error);
+                loadStatus.textContent = '❌ Invalid JSON file';
+                loadStatus.style.color = '#dc3545';
+            }
+        };
+        
+        reader.onerror = () => {
+            loadStatus.textContent = '❌ Error reading file';
+            loadStatus.style.color = '#dc3545';
+        };
+        
+        reader.readAsText(file);
+    }
+
+    validateJSONStructure(data) {
+        // Check for required fields
+        const requiredFields = ['RESTAURANT_NAME', 'PHONE', 'EMAIL'];
+        for (const field of requiredFields) {
+            if (!data[field]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    populateFromJSON(jsonData) {
+        // Clear existing form data
+        this.formData = {};
+        this.menuItems = [];
+        
+        // Map JSON fields to form fields
+        const fieldMapping = {
+            'RESTAURANT_NAME': 'restaurantName',
+            'CUISINE_TYPE': 'cuisineType',
+            'TAGLINE': 'tagline',
+            'DESCRIPTION': 'description',
+            'PHONE': 'phone',
+            'EMAIL': 'email',
+            'FULL_ADDRESS': 'address',
+            'GOOGLE_MAPS_URL': 'googleMapsUrl',
+            'FACEBOOK_URL': 'facebook',
+            'INSTAGRAM_URL': 'instagram',
+            'YELP_URL': 'yelp'
+        };
+        
+        // Populate basic form data
+        Object.entries(fieldMapping).forEach(([jsonKey, formKey]) => {
+            if (jsonData[jsonKey]) {
+                this.formData[formKey] = jsonData[jsonKey];
+            }
+        });
+        
+        // Populate hours data
+        this.populateHoursFromJSON(jsonData);
+        
+        // Populate menu items
+        this.populateMenuFromJSON(jsonData);
+        
+        // Populate form fields in DOM
+        this.populateFormFields();
+        
+        // Rebuild menu items in DOM
+        this.rebuildMenuItems();
+        
+        // Go to first step
+        this.showStep(1);
+        
+        this.showNotification('Restaurant data loaded successfully!', 'success');
+    }
+
+    populateHoursFromJSON(jsonData) {
+        const dayMapping = {
+            'HOURS_MON': 'monday',
+            'HOURS_TUE': 'tuesday', 
+            'HOURS_WED': 'wednesday',
+            'HOURS_THU': 'thursday',
+            'HOURS_FRI': 'friday',
+            'HOURS_SAT': 'saturday',
+            'HOURS_SUN': 'sunday'
+        };
+        
+        Object.entries(dayMapping).forEach(([jsonKey, day]) => {
+            if (jsonData[jsonKey]) {
+                const timeRange = jsonData[jsonKey];
+                if (timeRange === 'Closed') {
+                    this.formData[`${day}Open`] = 'closed';
+                    this.formData[`${day}Close`] = 'closed';
+                } else {
+                    // Parse time range like "11:00 AM - 9:00 PM"
+                    const times = this.parseTimeRange(timeRange);
+                    if (times) {
+                        this.formData[`${day}Open`] = times.open;
+                        this.formData[`${day}Close`] = times.close;
+                    }
+                }
+            }
+        });
+    }
+
+    parseTimeRange(timeRange) {
+        if (!timeRange || timeRange === 'Closed') return null;
+        
+        const match = timeRange.match(/(\d{1,2}):(\d{2})\s*(AM|PM)\s*-\s*(\d{1,2}):(\d{2})\s*(AM|PM)/i);
+        if (!match) return null;
+        
+        const [, openHour, openMin, openPeriod, closeHour, closeMin, closePeriod] = match;
+        
+        const convertTo24Hour = (hour, minute, period) => {
+            let h = parseInt(hour);
+            if (period.toUpperCase() === 'PM' && h !== 12) h += 12;
+            if (period.toUpperCase() === 'AM' && h === 12) h = 0;
+            return `${h.toString().padStart(2, '0')}:${minute}`;
+        };
+        
+        return {
+            open: convertTo24Hour(openHour, openMin, openPeriod),
+            close: convertTo24Hour(closeHour, closeMin, closePeriod)
+        };
+    }
+
+    populateMenuFromJSON(jsonData) {
+        this.menuItems = [];
+        
+        // Find all menu items in JSON
+        let itemIndex = 1;
+        while (jsonData[`MENU_ITEM_${itemIndex}`]) {
+            this.menuItems.push({
+                name: jsonData[`MENU_ITEM_${itemIndex}`] || '',
+                description: jsonData[`MENU_DESCRIPTION_${itemIndex}`] || '',
+                price: jsonData[`PRICE_${itemIndex}`] || '',
+                index: itemIndex
+            });
+            itemIndex++;
+        }
+        
+        // Ensure minimum 6 items
+        while (this.menuItems.length < 6) {
+            this.menuItems.push({
+                name: '',
+                description: '',
+                price: '',
+                index: this.menuItems.length + 1
+            });
+        }
+    }
+
+    rebuildMenuItems() {
+        const menuContainer = document.getElementById('menuItems');
+        if (!menuContainer) return;
+        
+        // Clear existing items
+        menuContainer.innerHTML = '';
+        
+        // Add items from loaded data
+        this.menuItems.forEach((item, index) => {
+            this.addMenuItem();
+            
+            // Populate the item after it's created
+            setTimeout(() => {
+                const itemElement = menuContainer.children[index];
+                if (itemElement) {
+                    const nameField = itemElement.querySelector(`[name$="Name"]`);
+                    const descField = itemElement.querySelector(`[name$="Description"]`);
+                    const priceField = itemElement.querySelector(`[name$="Price"]`);
+                    
+                    if (nameField) nameField.value = item.name;
+                    if (descField) descField.value = item.description;
+                    if (priceField) priceField.value = item.price;
+                }
+            }, 100);
+        });
+    }
 }
 
 // Global functions for HTML onclick handlers
@@ -697,6 +903,12 @@ function saveProgress() {
 function loadProgress() {
     if (window.formManager) {
         window.formManager.loadProgress();
+    }
+}
+
+function loadFromJSON(event) {
+    if (window.formManager) {
+        window.formManager.loadFromJSON(event);
     }
 }
 
