@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Quick, Fresh, Delicious</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="color-bold">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}}">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#order">Order</a></li>
+                <li><a href="#locations">Locations</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="#order" class="btn btn-order">Order Now</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>{{RESTAURANT_NAME}}</h1>
+                <p class="hero-tagline">{{TAGLINE}}</p>
+                <p class="hero-description">{{ABOUT_DESCRIPTION}}</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">⚡</span>
+                        <span class="stat-text">Fast Service</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">🌱</span>
+                        <span class="stat-text">Fresh Ingredients</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">📱</span>
+                        <span class="stat-text">Mobile Ordering</span>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#order" class="btn btn-primary btn-large">Order Now</a>
+                    <a href="#menu" class="btn btn-secondary btn-large">View Menu</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="{{HERO_IMAGE}}" alt="{{RESTAURANT_NAME}} Food">
+                <div class="hero-badge">
+                    <span>Ready in</span>
+                    <strong>5-10 min</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Items -->
+    <section class="featured-items">
+        <div class="container">
+            <h2>Popular Items</h2>
+            <div class="items-grid">
+                <div class="item-card">
+                    <div class="item-image">
+                        <img src="{{FOOD_IMAGE_1}}" alt="{{MENU_ITEM_1}}">
+                        <div class="item-badge">Bestseller</div>
+                    </div>
+                    <div class="item-content">
+                        <h3>{{MENU_ITEM_1}}</h3>
+                        <p>{{MENU_DESCRIPTION_1}}</p>
+                        <div class="item-footer">
+                            <span class="price">${{PRICE_1}}</span>
+                            <button class="btn btn-sm btn-primary">Add to Order</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-card">
+                    <div class="item-image">
+                        <img src="{{FOOD_IMAGE_2}}" alt="{{MENU_ITEM_2}}">
+                        <div class="item-badge new">New</div>
+                    </div>
+                    <div class="item-content">
+                        <h3>{{MENU_ITEM_2}}</h3>
+                        <p>{{MENU_DESCRIPTION_2}}</p>
+                        <div class="item-footer">
+                            <span class="price">${{PRICE_2}}</span>
+                            <button class="btn btn-sm btn-primary">Add to Order</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-card">
+                    <div class="item-image">
+                        <img src="{{FOOD_IMAGE_3}}" alt="{{MENU_ITEM_3}}">
+                        <div class="item-badge healthy">Healthy</div>
+                    </div>
+                    <div class="item-content">
+                        <h3>{{MENU_ITEM_3}}</h3>
+                        <p>{{MENU_DESCRIPTION_3}}</p>
+                        <div class="item-footer">
+                            <span class="price">${{PRICE_3}}</span>
+                            <button class="btn btn-sm btn-primary">Add to Order</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-card">
+                    <div class="item-image">
+                        <img src="{{FOOD_IMAGE_4}}" alt="{{MENU_ITEM_4}}">
+                        <div class="item-badge spicy">Spicy</div>
+                    </div>
+                    <div class="item-content">
+                        <h3>{{MENU_ITEM_4}}</h3>
+                        <p>{{MENU_DESCRIPTION_4}}</p>
+                        <div class="item-footer">
+                            <span class="price">${{PRICE_4}}</span>
+                            <button class="btn btn-sm btn-primary">Add to Order</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="featured-cta">
+                <a href="menu.html" class="btn btn-outline">See Full Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Methods -->
+    <section id="order" class="order-methods">
+        <div class="container">
+            <h2>How to Order</h2>
+            <div class="methods-grid">
+                <div class="method-card">
+                    <div class="method-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 7h-3V6a4 4 0 0 0-8 0v1H5a1 1 0 0 0-1 1v11a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V8a1 1 0 0 0-1-1zM10 6a2 2 0 0 1 4 0v1h-4V6zm8 13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V9h2v1a1 1 0 0 0 2 0V9h4v1a1 1 0 0 0 2 0V9h2v10z"/>
+                        </svg>
+                    </div>
+                    <h3>In-Store Pickup</h3>
+                    <p>Order ahead and skip the line. Ready in 5-10 minutes.</p>
+                    <a href="#" class="method-link">Order for Pickup</a>
+                </div>
+                <div class="method-card">
+                    <div class="method-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.22.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/>
+                        </svg>
+                    </div>
+                    <h3>Delivery</h3>
+                    <p>Fresh food delivered to your door. Available through third-party apps.</p>
+                    <div class="delivery-apps">
+                        <a href="#" class="app-link">DoorDash</a>
+                        <a href="#" class="app-link">Uber Eats</a>
+                        <a href="#" class="app-link">Grubhub</a>
+                    </div>
+                </div>
+                <div class="method-card">
+                    <div class="method-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                    </div>
+                    <h3>Dine In</h3>
+                    <p>Visit our location for the full experience. Fast, friendly service.</p>
+                    <a href="#locations" class="method-link">Find Locations</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose">
+        <div class="container">
+            <div class="why-content">
+                <div class="why-text">
+                    <h2>Why Choose {{RESTAURANT_NAME}}?</h2>
+                    <div class="benefits">
+                        <div class="benefit">
+                            <div class="benefit-icon">⚡</div>
+                            <div class="benefit-content">
+                                <h3>Lightning Fast</h3>
+                                <p>Your order ready in 5-10 minutes, guaranteed</p>
+                            </div>
+                        </div>
+                        <div class="benefit">
+                            <div class="benefit-icon">🌱</div>
+                            <div class="benefit-content">
+                                <h3>Fresh Daily</h3>
+                                <p>Ingredients sourced fresh every morning</p>
+                            </div>
+                        </div>
+                        <div class="benefit">
+                            <div class="benefit-icon">💯</div>
+                            <div class="benefit-content">
+                                <h3>Quality Guaranteed</h3>
+                                <p>Not satisfied? We'll make it right</p>
+                            </div>
+                        </div>
+                        <div class="benefit">
+                            <div class="benefit-icon">💰</div>
+                            <div class="benefit-content">
+                                <h3>Great Value</h3>
+                                <p>Premium quality at affordable prices</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="why-image">
+                    <img src="{{INTERIOR_IMAGE_1}}" alt="{{RESTAURANT_NAME}} Interior">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations -->
+    <section id="locations" class="locations">
+        <div class="container">
+            <h2>Find Us</h2>
+            <div class="location-card">
+                <div class="location-info">
+                    <h3>{{RESTAURANT_NAME}}</h3>
+                    <div class="info-item">
+                        <span class="info-icon">📍</span>
+                        <span>{{FULL_ADDRESS}}</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">📞</span>
+                        <a href="tel:{{PHONE}}">{{PHONE}}</a>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">🕒</span>
+                        <div class="hours-quick">
+                            <div>Mon-Thu: {{WEEKDAY_HOURS}}</div>
+                            <div>Fri-Sat: {{WEEKEND_HOURS}}</div>
+                            <div>Sunday: {{SUNDAY_HOURS}}</div>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <a href="{{GOOGLE_MAPS_URL}}" target="_blank" class="btn btn-primary">Get Directions</a>
+                        <a href="tel:{{PHONE}}" class="btn btn-secondary">Call Now</a>
+                    </div>
+                </div>
+                <div class="location-map">
+                    <iframe 
+                        src="{{GOOGLE_MAPS_EMBED}}" 
+                        width="100%" 
+                        height="300" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact/Feedback -->
+    <section class="contact-feedback">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Questions or Feedback?</h2>
+                    <p>We'd love to hear from you! Reach out with any questions, feedback, or special requests.</p>
+                    <div class="contact-methods">
+                        <a href="tel:{{PHONE}}" class="contact-method">
+                            <span class="method-icon">📞</span>
+                            <div>
+                                <strong>Call Us</strong>
+                                <span>{{PHONE}}</span>
+                            </div>
+                        </a>
+                        <a href="mailto:{{EMAIL}}" class="contact-method">
+                            <span class="method-icon">✉️</span>
+                            <div>
+                                <strong>Email Us</strong>
+                                <span>{{EMAIL}}</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="feedback-form">
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <select name="subject" required>
+                                <option value="">What's this about?</option>
+                                <option value="feedback">General Feedback</option>
+                                <option value="complaint">Complaint</option>
+                                <option value="compliment">Compliment</option>
+                                <option value="suggestion">Suggestion</option>
+                                <option value="catering">Catering Inquiry</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Your message..." rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}}" class="footer-logo">
+                    <p>{{RESTAURANT_NAME}} - {{TAGLINE}}</p>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}" target="_blank" aria-label="Facebook">📘</a>
+                        <a href="{{INSTAGRAM_URL}}" target="_blank" aria-label="Instagram">📷</a>
+                        <a href="{{TWITTER_URL}}" target="_blank" aria-label="Twitter">🐦</a>
+                    </div>
+                </div>
+                <div class="footer-info">
+                    <div class="footer-section">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="menu.html">Full Menu</a></li>
+                            <li><a href="#order">Order Online</a></li>
+                            <li><a href="#locations">Locations</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Contact</h4>
+                        <p>{{FULL_ADDRESS}}</p>
+                        <p><a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+                        <p><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Hours</h4>
+                        <div class="footer-hours">
+                            <div>Mon-Thu: {{WEEKDAY_HOURS}}</div>
+                            <div>Fri-Sat: {{WEEKEND_HOURS}}</div>
+                            <div>Sunday: {{SUNDAY_HOURS}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

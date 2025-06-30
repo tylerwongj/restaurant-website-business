@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Menu - {{RESTAURANT_NAME}}</title>
+    <meta name="description" content="View our full pizza menu at {{RESTAURANT_NAME}} - Authentic Italian pizza and more">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="pizza-theme">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="index.html#specials">Specials</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="cta-order">
+                <a href="tel:{{PHONE}}" class="btn btn-order">Order Now</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu Header -->
+    <section class="menu-header">
+        <div class="container">
+            <h1>Our Pizza Menu</h1>
+            <p>Hand-tossed, wood-fired pizzas made with the finest ingredients</p>
+            <div class="menu-nav-buttons">
+                <a href="#pizzas" class="btn btn-outline">Pizzas</a>
+                <a href="#appetizers" class="btn btn-outline">Appetizers</a>
+                <a href="#salads" class="btn btn-outline">Salads</a>
+                <a href="#pasta" class="btn btn-outline">Pasta</a>
+                <a href="#subs" class="btn btn-outline">Subs</a>
+                <a href="#desserts" class="btn btn-outline">Desserts</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Content -->
+    <section class="menu-content">
+        <div class="container">
+            
+            <!-- Signature Pizzas -->
+            <div id="pizzas" class="menu-section">
+                <h2>🍕 Signature Pizzas</h2>
+                <p class="section-description">Our signature wood-fired pizzas made with fresh dough daily</p>
+                
+                <div class="pizza-size-legend">
+                    <span>Small (10")</span> • <span>Medium (12")</span> • <span>Large (16")</span> • <span>Family (20")</span>
+                </div>
+                
+                <div class="menu-items">
+                    <div class="menu-row">
+                        <div class="item-info">
+                            <h3>{{PIZZA_1_NAME}} <span class="popular-badge">🔥 Popular</span></h3>
+                            <p>{{PIZZA_1_DESCRIPTION}}</p>
+                        </div>
+                        <div class="item-prices">
+                            <span class="price">${{PIZZA_1_SMALL}} / ${{PIZZA_1_MEDIUM}} / ${{PIZZA_1_LARGE}} / ${{PIZZA_1_FAMILY}}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-row">
+                        <div class="item-info">
+                            <h3>{{PIZZA_2_NAME}}</h3>
+                            <p>{{PIZZA_2_DESCRIPTION}}</p>
+                        </div>
+                        <div class="item-prices">
+                            <span class="price">${{PIZZA_2_SMALL}} / ${{PIZZA_2_MEDIUM}} / ${{PIZZA_2_LARGE}} / ${{PIZZA_2_FAMILY}}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-row">
+                        <div class="item-info">
+                            <h3>{{PIZZA_3_NAME}} <span class="chef-special">👨‍🍳 Chef's Special</span></h3>
+                            <p>{{PIZZA_3_DESCRIPTION}}</p>
+                        </div>
+                        <div class="item-prices">
+                            <span class="price">${{PIZZA_3_SMALL}} / ${{PIZZA_3_MEDIUM}} / ${{PIZZA_3_LARGE}} / ${{PIZZA_3_FAMILY}}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-row">
+                        <div class="item-info">
+                            <h3>{{PIZZA_4_NAME}}</h3>
+                            <p>{{PIZZA_4_DESCRIPTION}}</p>
+                        </div>
+                        <div class="item-prices">
+                            <span class="price">${{PIZZA_4_SMALL}} / ${{PIZZA_4_MEDIUM}} / ${{PIZZA_4_LARGE}} / ${{PIZZA_4_FAMILY}}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-row">
+                        <div class="item-info">
+                            <h3>{{PIZZA_5_NAME}}</h3>
+                            <p>{{PIZZA_5_DESCRIPTION}}</p>
+                        </div>
+                        <div class="item-prices">
+                            <span class="price">${{PIZZA_5_SMALL}} / ${{PIZZA_5_MEDIUM}} / ${{PIZZA_5_LARGE}} / ${{PIZZA_5_FAMILY}}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-row">
+                        <div class="item-info">
+                            <h3>{{PIZZA_6_NAME}}</h3>
+                            <p>{{PIZZA_6_DESCRIPTION}}</p>
+                        </div>
+                        <div class="item-prices">
+                            <span class="price">${{PIZZA_6_SMALL}} / ${{PIZZA_6_MEDIUM}} / ${{PIZZA_6_LARGE}} / ${{PIZZA_6_FAMILY}}</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="build-your-own">
+                    <h3>🔧 Build Your Own Pizza</h3>
+                    <div class="byo-pricing">
+                        <div class="base-prices">
+                            <h4>Base Pizza Prices:</h4>
+                            <p>Small ${{BYO_SMALL}} • Medium ${{BYO_MEDIUM}} • Large ${{BYO_LARGE}} • Family ${{BYO_FAMILY}}</p>
+                        </div>
+                        <div class="toppings-section">
+                            <div class="topping-category">
+                                <h4>Premium Toppings (+${{PREMIUM_TOPPING_PRICE}} each):</h4>
+                                <p>{{PREMIUM_TOPPINGS_LIST}}</p>
+                            </div>
+                            <div class="topping-category">
+                                <h4>Regular Toppings (+${{REGULAR_TOPPING_PRICE}} each):</h4>
+                                <p>{{REGULAR_TOPPINGS_LIST}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Appetizers -->
+            <div id="appetizers" class="menu-section">
+                <h2>🥖 Appetizers</h2>
+                <div class="menu-items">
+                    <div class="menu-row">
+                        <div class="item-info">
+                            <h3>{{APPETIZER_1_NAME}}</h3>
+                            <p>{{APPETIZER_1_DESCRIPTION}}</p>
+                        </div>
+                        <div class="item-prices">
+                            <span class="price">${{APPETIZER_1_PRICE}}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-row">
+                        <div class="item-info">
+                            <h3>{{APPETIZER_2_NAME}} <span class="popular-badge">🔥 Popular</span></h3>
+                            <p>{{APPETIZER_2_DESCRIPTION}}</p>
+                        </div>
+                        <div class="item-prices">
+                            <span class="price">${{APPETIZER_2_PRICE}}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-row">
+                        <div class="item-info">
+                            <h3>{{APPETIZER_3_NAME}}</h3>
+                            <p>{{APPETIZER_3_DESCRIPTION}}</p>
+                        </div>
+                        <div class="item-prices">
+                            <span class="price">${{APPETIZER_3_PRICE}}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-row">
+                        <div class="item-info">
+                            <h3>{{APPETIZER_4_NAME}}</h3>
+                            <p>{{APPETIZER_4_DESCRIPTION}}</p>
+                        </div>
+                        <div class="item-prices">
+                            <span class="price">${{APPETIZER_4_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Salads -->
+            <div id="salads" class="menu-section">
+                <h2>🥗 Fresh Salads</h2>
+                <div class="menu-items">
+                    <div class="menu-row">
+                        <div class="item-info">
+                            <h3>{{SALAD_1_NAME}}</h3>
+                            <p>{{SALAD_1_DESCRIPTION}}</p>
+                        </div>
+                        <div class="item-prices">
+                            <span class="price">${{SALAD_1_PRICE}}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-row">
+                        <div class="item-info">
+                            <h3>{{SALAD_2_NAME}}</h3>
+                            <p>{{SALAD_2_DESCRIPTION}}</p>
+                        </div>
+                        <div class="item-prices">
+                            <span class="price">${{SALAD_2_PRICE}}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-row">
+                        <div class="item-info">
+                            <h3>{{SALAD_3_NAME}}</h3>
+                            <p>{{SALAD_3_DESCRIPTION}}</p>
+                        </div>
+                        <div class="item-prices">
+                            <span class="price">${{SALAD_3_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pasta -->
+            <div id="pasta" class="menu-section">
+                <h2>🍝 Traditional Pasta</h2>
+                <div class="menu-items">
+                    <div class="menu-row">
+                        <div class="item-info">
+                            <h3>{{PASTA_1_NAME}}</h3>
+                            <p>{{PASTA_1_DESCRIPTION}}</p>
+                        </div>
+                        <div class="item-prices">
+                            <span class="price">${{PASTA_1_PRICE}}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-row">
+                        <div class="item-info">
+                            <h3>{{PASTA_2_NAME}} <span class="chef-special">👨‍🍳 Chef's Special</span></h3>
+                            <p>{{PASTA_2_DESCRIPTION}}</p>
+                        </div>
+                        <div class="item-prices">
+                            <span class="price">${{PASTA_2_PRICE}}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-row">
+                        <div class="item-info">
+                            <h3>{{PASTA_3_NAME}}</h3>
+                            <p>{{PASTA_3_DESCRIPTION}}</p>
+                        </div>
+                        <div class="item-prices">
+                            <span class="price">${{PASTA_3_PRICE}}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-row">
+                        <div class="item-info">
+                            <h3>{{PASTA_4_NAME}}</h3>
+                            <p>{{PASTA_4_DESCRIPTION}}</p>
+                        </div>
+                        <div class="item-prices">
+                            <span class="price">${{PASTA_4_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subs & Sandwiches -->
+            <div id="subs" class="menu-section">
+                <h2>🥪 Italian Subs & Sandwiches</h2>
+                <p class="section-description">All subs served on fresh Italian bread with your choice of hot or cold</p>
+                <div class="menu-items">
+                    <div class="menu-row">
+                        <div class="item-info">
+                            <h3>{{SUB_1_NAME}}</h3>
+                            <p>{{SUB_1_DESCRIPTION}}</p>
+                        </div>
+                        <div class="item-prices">
+                            <span class="price">${{SUB_1_PRICE}}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-row">
+                        <div class="item-info">
+                            <h3>{{SUB_2_NAME}} <span class="popular-badge">🔥 Popular</span></h3>
+                            <p>{{SUB_2_DESCRIPTION}}</p>
+                        </div>
+                        <div class="item-prices">
+                            <span class="price">${{SUB_2_PRICE}}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-row">
+                        <div class="item-info">
+                            <h3>{{SUB_3_NAME}}</h3>
+                            <p>{{SUB_3_DESCRIPTION}}</p>
+                        </div>
+                        <div class="item-prices">
+                            <span class="price">${{SUB_3_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desserts -->
+            <div id="desserts" class="menu-section">
+                <h2>🍰 Sweet Endings</h2>
+                <div class="menu-items">
+                    <div class="menu-row">
+                        <div class="item-info">
+                            <h3>{{DESSERT_1_NAME}}</h3>
+                            <p>{{DESSERT_1_DESCRIPTION}}</p>
+                        </div>
+                        <div class="item-prices">
+                            <span class="price">${{DESSERT_1_PRICE}}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-row">
+                        <div class="item-info">
+                            <h3>{{DESSERT_2_NAME}}</h3>
+                            <p>{{DESSERT_2_DESCRIPTION}}</p>
+                        </div>
+                        <div class="item-prices">
+                            <span class="price">${{DESSERT_2_PRICE}}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-row">
+                        <div class="item-info">
+                            <h3>{{DESSERT_3_NAME}}</h3>
+                            <p>{{DESSERT_3_DESCRIPTION}}</p>
+                        </div>
+                        <div class="item-prices">
+                            <span class="price">${{DESSERT_3_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Beverages -->
+            <div class="menu-section">
+                <h2>🥤 Beverages</h2>
+                <div class="menu-items">
+                    <div class="beverage-categories">
+                        <div class="beverage-category">
+                            <h4>Soft Drinks</h4>
+                            <p>{{SOFT_DRINKS_LIST}} - ${{SOFT_DRINK_PRICE}}</p>
+                        </div>
+                        <div class="beverage-category">
+                            <h4>Italian Sodas</h4>
+                            <p>{{ITALIAN_SODAS_LIST}} - ${{ITALIAN_SODA_PRICE}}</p>
+                        </div>
+                        <div class="beverage-category">
+                            <h4>Coffee & Tea</h4>
+                            <p>{{COFFEE_TEA_LIST}} - ${{COFFEE_TEA_PRICE}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Order CTA Section -->
+    <section class="order-cta-section">
+        <div class="container">
+            <h2>Ready to Order?</h2>
+            <p>Call us or order online for pickup and delivery</p>
+            <div class="order-buttons">
+                <a href="tel:{{PHONE}}" class="btn btn-primary">Call to Order</a>
+                <a href="{{DELIVERY_URL}}" class="btn btn-secondary">Order Online</a>
+            </div>
+            <div class="order-info">
+                <span>🕐 Pickup ready in {{PICKUP_TIME}} minutes</span>
+                <span>🚗 Free delivery over $25</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo" class="footer-logo">
+                    <p>{{RESTAURANT_NAME}} - Authentic Italian Pizza</p>
+                    <p>{{FULL_ADDRESS}}</p>
+                    <p>Phone: {{PHONE}}</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}" target="_blank">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}" target="_blank">Instagram</a>
+                        <a href="{{YELP_URL}}" target="_blank">Yelp</a>
+                    </div>
+                </div>
+                <div class="footer-hours">
+                    <h4>Quick Hours</h4>
+                    <p>Mon-Thu: {{WEEKDAY_HOURS}}</p>
+                    <p>Fri-Sat: {{WEEKEND_HOURS}}</p>
+                    <p>Sunday: {{SUNDAY_HOURS}}</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

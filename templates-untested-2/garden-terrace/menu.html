@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - {{RESTAURANT_NAME}}</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body class="warm-scheme">
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="../../images/test/logo/logo.png" alt="{{RESTAURANT_NAME}} Logo" onerror="this.style.display='none'">
+                <h1>{{RESTAURANT_NAME}}</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="index.html#gallery">Gallery</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="menu-hero">
+        <div class="menu-hero-content">
+            <h1>Our Garden Menu</h1>
+            <p>Fresh, seasonal ingredients harvested from our own garden</p>
+        </div>
+    </section>
+
+    <section id="menu" class="menu-section">
+        <div class="container">
+            <div class="menu-categories">
+                <button class="menu-tab active" data-category="appetizers">Garden Starters</button>
+                <button class="menu-tab" data-category="salads">Fresh Salads</button>
+                <button class="menu-tab" data-category="mains">Main Courses</button>
+                <button class="menu-tab" data-category="desserts">Sweet Endings</button>
+                <button class="menu-tab" data-category="beverages">Garden Beverages</button>
+            </div>
+
+            <div class="menu-content">
+                <div class="menu-category active" id="appetizers">
+                    <h2>Garden Starters</h2>
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <img src="../../images/test/appetizers/appetizer-1.jpg" alt="Herb Bruschetta" onerror="this.src='https://images.unsplash.com/photo-1572441623580-4e7e5e2b48dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80'">
+                            <div class="menu-item-content">
+                                <h3>Garden Herb Bruschetta</h3>
+                                <p>Fresh basil, tomatoes, and herbs from our garden on artisan bread</p>
+                                <span class="price">${{APPETIZER_PRICE_1}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="../../images/test/appetizers/appetizer-2.jpg" alt="Seasonal Soup" onerror="this.src='https://images.unsplash.com/photo-1547592166-23ac45744acd?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80'">
+                            <div class="menu-item-content">
+                                <h3>Seasonal Garden Soup</h3>
+                                <p>Daily rotating soup made with fresh seasonal vegetables</p>
+                                <span class="price">${{APPETIZER_PRICE_2}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="../../images/test/appetizers/appetizer-3.jpg" alt="Stuffed Mushrooms" onerror="this.src='https://images.unsplash.com/photo-1506084868230-bb9d95c24759?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80'">
+                            <div class="menu-item-content">
+                                <h3>Herb-Stuffed Mushrooms</h3>
+                                <p>Wild mushrooms stuffed with garden herbs and local cheese</p>
+                                <span class="price">${{APPETIZER_PRICE_3}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-category" id="salads">
+                    <h2>Fresh Garden Salads</h2>
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <img src="../../images/test/food/food-image-1.jpg" alt="Garden Greens" onerror="this.src='https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80'">
+                            <div class="menu-item-content">
+                                <h3>Harvest Garden Salad</h3>
+                                <p>Mixed greens, cherry tomatoes, cucumbers with herb vinaigrette</p>
+                                <span class="price">${{SALAD_PRICE_1}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="../../images/test/food/food-image-2.jpg" alt="Seasonal Salad" onerror="this.src='https://images.unsplash.com/photo-1540420773420-3366772f4999?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80'">
+                            <div class="menu-item-content">
+                                <h3>Seasonal Vegetable Salad</h3>
+                                <p>Roasted seasonal vegetables with quinoa and garden herbs</p>
+                                <span class="price">${{SALAD_PRICE_2}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="../../images/test/food/food-image-3.jpg" alt="Fruit Salad" onerror="this.src='https://images.unsplash.com/photo-1490818387583-1baba5e638af?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80'">
+                            <div class="menu-item-content">
+                                <h3>Garden Fruit & Greens</h3>
+                                <p>Fresh fruits with baby spinach, nuts, and honey dressing</p>
+                                <span class="price">${{SALAD_PRICE_3}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-category" id="mains">
+                    <h2>Garden-to-Table Main Courses</h2>
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <img src="../../images/test/food/food-image-4.jpg" alt="Herb Chicken" onerror="this.src='https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80'">
+                            <div class="menu-item-content">
+                                <h3>Garden Herb Chicken</h3>
+                                <p>Free-range chicken with fresh herbs and seasonal vegetables</p>
+                                <span class="price">${{MAIN_PRICE_1}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="../../images/test/food/food-image-5.jpg" alt="Pasta Primavera" onerror="this.src='https://images.unsplash.com/photo-1621996346565-e3dbc353d2e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80'">
+                            <div class="menu-item-content">
+                                <h3>Garden Pasta Primavera</h3>
+                                <p>Handmade pasta with fresh garden vegetables and basil pesto</p>
+                                <span class="price">${{MAIN_PRICE_2}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="../../images/test/food/food-image-6.jpg" alt="Grilled Fish" onerror="this.src='https://images.unsplash.com/photo-1559847844-d987b0496360?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80'">
+                            <div class="menu-item-content">
+                                <h3>Herb-Crusted Salmon</h3>
+                                <p>Fresh salmon with herb crust and roasted garden vegetables</p>
+                                <span class="price">${{MAIN_PRICE_3}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="../../images/test/specialty/specialty-1.jpg" alt="Vegetarian Special" onerror="this.src='https://images.unsplash.com/photo-1482049016688-2d3e1b311543?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80'">
+                            <div class="menu-item-content">
+                                <h3>Garden Harvest Bowl</h3>
+                                <p>Quinoa bowl with roasted vegetables, fresh greens, and tahini dressing</p>
+                                <span class="price">${{MAIN_PRICE_4}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-category" id="desserts">
+                    <h2>Sweet Garden Endings</h2>
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <img src="../../images/test/desserts/dessert-1.jpg" alt="Fruit Tart" onerror="this.src='https://images.unsplash.com/photo-1551024506-0bccd828d307?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80'">
+                            <div class="menu-item-content">
+                                <h3>Seasonal Fruit Tart</h3>
+                                <p>Fresh seasonal fruits on vanilla custard with mint from our garden</p>
+                                <span class="price">${{DESSERT_PRICE_1}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="../../images/test/desserts/dessert-2.jpg" alt="Herb Ice Cream" onerror="this.src='https://images.unsplash.com/photo-1488477181946-6428a0291777?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80'">
+                            <div class="menu-item-content">
+                                <h3>Garden Herb Ice Cream</h3>
+                                <p>House-made ice cream infused with fresh garden herbs</p>
+                                <span class="price">${{DESSERT_PRICE_2}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="../../images/test/desserts/dessert-3.jpg" alt="Berry Crumble" onerror="this.src='https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80'">
+                            <div class="menu-item-content">
+                                <h3>Berry Garden Crumble</h3>
+                                <p>Warm berry crumble with vanilla bean ice cream</p>
+                                <span class="price">${{DESSERT_PRICE_3}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-category" id="beverages">
+                    <h2>Garden Fresh Beverages</h2>
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <img src="../../images/test/drinks/drink-1.jpg" alt="Herb Tea" onerror="this.src='https://images.unsplash.com/photo-1544787219-7f47ccb76574?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80'">
+                            <div class="menu-item-content">
+                                <h3>Fresh Garden Herbal Tea</h3>
+                                <p>Blend of mint, chamomile, and seasonal herbs from our garden</p>
+                                <span class="price">${{BEVERAGE_PRICE_1}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="../../images/test/drinks/drink-2.jpg" alt="Fresh Juice" onerror="this.src='https://images.unsplash.com/photo-1622597467836-f3285f2131b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80'">
+                            <div class="menu-item-content">
+                                <h3>Garden Fresh Juice</h3>
+                                <p>Daily pressed juice from seasonal fruits and vegetables</p>
+                                <span class="price">${{BEVERAGE_PRICE_2}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="../../images/test/drinks/drink-3.jpg" alt="Infused Water" onerror="this.src='https://images.unsplash.com/photo-1506629905312-d38bf6d290b4?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80'">
+                            <div class="menu-item-content">
+                                <h3>Herb-Infused Water</h3>
+                                <p>Refreshing water infused with cucumber, mint, and garden herbs</p>
+                                <span class="price">${{BEVERAGE_PRICE_3}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>{{RESTAURANT_NAME}}</h3>
+                    <p>Garden-to-table dining experience where fresh meets flavor.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}" target="_blank">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}" target="_blank">Instagram</a>
+                        <a href="{{TWITTER_URL}}" target="_blank">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Menu category switching
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.menu-tab');
+            const categories = document.querySelectorAll('.menu-category');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const categoryId = this.getAttribute('data-category');
+                    
+                    // Remove active class from all tabs and categories
+                    tabs.forEach(t => t.classList.remove('active'));
+                    categories.forEach(c => c.classList.remove('active'));
+                    
+                    // Add active class to clicked tab and corresponding category
+                    this.classList.add('active');
+                    document.getElementById(categoryId).classList.add('active');
+                });
+            });
+        });
+    </script>
+
+    <style>
+        .menu-hero {
+            background: linear-gradient(rgba(46, 125, 50, 0.8), rgba(76, 175, 80, 0.6)), url('../../images/test/hero/hero-image.jpg') center/cover;
+            height: 40vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-top: 70px;
+        }
+        
+        .menu-hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .menu-hero-content p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .menu-section {
+            padding: 80px 0;
+        }
+        
+        .menu-categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+        
+        .menu-tab {
+            padding: 12px 24px;
+            border: 2px solid var(--primary-color);
+            background: transparent;
+            color: var(--primary-color);
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+        }
+        
+        .menu-tab.active,
+        .menu-tab:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .menu-category {
+            display: none;
+        }
+        
+        .menu-category.active {
+            display: block;
+        }
+        
+        .menu-category h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+        }
+        
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .menu-item {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .menu-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .menu-item-content {
+            padding: 1.5rem;
+        }
+        
+        .menu-item-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        .menu-item-content p {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+        
+        @media (max-width: 768px) {
+            .menu-hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - {{CUISINE_TYPE}} Restaurant</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar-nav" id="sidebar">
+        <div class="sidebar-header">
+            <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo" class="sidebar-logo">
+            <button class="sidebar-close" id="sidebarClose">&times;</button>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="#home" class="sidebar-link">Home</a></li>
+            <li><a href="#story" class="sidebar-link">Our Story</a></li>
+            <li><a href="#menu" class="sidebar-link">Menu</a></li>
+            <li><a href="#gallery" class="sidebar-link">Gallery</a></li>
+            <li><a href="#contact" class="sidebar-link">Contact</a></li>
+        </ul>
+        <div class="sidebar-contact">
+            <p>Call us now</p>
+            <a href="tel:{{PHONE}}" class="sidebar-phone">{{PHONE}}</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Navigation Bar -->
+        <nav class="top-nav">
+            <button class="menu-toggle" id="menuToggle">
+                <span class="menu-line"></span>
+                <span class="menu-line"></span>
+                <span class="menu-line"></span>
+            </button>
+            <div class="nav-logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}}">
+            </div>
+            <a href="tel:{{PHONE}}" class="nav-phone">{{PHONE}}</a>
+        </nav>
+
+        <!-- Hero Section with Parallax -->
+        <section id="home" class="hero-parallax">
+            <div class="hero-image" style="background-image: url('{{HERO_IMAGE}}');"></div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <div class="hero-badge">Est. 1995</div>
+                <h1 class="hero-title">{{RESTAURANT_NAME}}</h1>
+                <p class="hero-tagline">{{TAGLINE}}</p>
+                <div class="hero-actions">
+                    <a href="#menu" class="hero-btn primary">View Menu</a>
+                    <a href="#contact" class="hero-btn secondary">Book Table</a>
+                </div>
+            </div>
+            <div class="hero-scroll">
+                <span>Scroll Down</span>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
+
+        <!-- Story Section with Timeline -->
+        <section id="story" class="story-timeline">
+            <div class="container">
+                <div class="section-intro">
+                    <span class="section-tag">Our Journey</span>
+                    <h2>A Family Tradition</h2>
+                </div>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-year">1995</div>
+                        <div class="timeline-content">
+                            <h3>The Beginning</h3>
+                            <p>Started as a small family kitchen with a dream to share authentic flavors with our community.</p>
+                        </div>
+                        <div class="timeline-image">
+                            <img src="{{HISTORY_IMAGE_1}}" alt="Restaurant History">
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">2010</div>
+                        <div class="timeline-content">
+                            <h3>Growing Together</h3>
+                            <p>Expanded to serve more families, always keeping our commitment to quality and warmth.</p>
+                        </div>
+                        <div class="timeline-image">
+                            <img src="{{HISTORY_IMAGE_2}}" alt="Restaurant Growth">
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">Today</div>
+                        <div class="timeline-content">
+                            <h3>Your Home Away From Home</h3>
+                            <p>{{ABOUT_DESCRIPTION}}</p>
+                        </div>
+                        <div class="timeline-image">
+                            <img src="{{INTERIOR_IMAGE_1}}" alt="Current Restaurant">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu Section with Tabs -->
+        <section id="menu" class="menu-tabs">
+            <div class="container">
+                <div class="section-intro">
+                    <span class="section-tag">Our Kitchen</span>
+                    <h2>Flavors That Tell Stories</h2>
+                </div>
+                
+                <div class="menu-navigation">
+                    <button class="menu-tab active" data-menu="starters">Starters</button>
+                    <button class="menu-tab" data-menu="mains">Main Dishes</button>
+                    <button class="menu-tab" data-menu="desserts">Sweet Endings</button>
+                    <button class="menu-tab" data-menu="drinks">Beverages</button>
+                </div>
+                
+                <div class="menu-content" id="menu-content">
+                    <div class="menu-section active" data-menu="starters">
+                        <div class="menu-items">
+                            <div class="menu-item-large">
+                                <div class="item-image">
+                                    <img src="{{FOOD_IMAGE_1}}" alt="{{MENU_ITEM_1}}">
+                                    <div class="item-overlay">
+                                        <span class="chef-special">Chef's Special</span>
+                                    </div>
+                                </div>
+                                <div class="item-details">
+                                    <h3>{{MENU_ITEM_1}}</h3>
+                                    <p>{{MENU_DESCRIPTION_1}}</p>
+                                    <div class="item-footer">
+                                        <span class="price">${{PRICE_1}}</span>
+                                        <div class="item-tags">
+                                            <span class="tag">Popular</span>
+                                            <span class="tag">Gluten-Free</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-section" data-menu="mains">
+                        <div class="menu-items">
+                            <div class="menu-item-large">
+                                <div class="item-image">
+                                    <img src="{{FOOD_IMAGE_2}}" alt="{{MENU_ITEM_2}}">
+                                </div>
+                                <div class="item-details">
+                                    <h3>{{MENU_ITEM_2}}</h3>
+                                    <p>{{MENU_DESCRIPTION_2}}</p>
+                                    <div class="item-footer">
+                                        <span class="price">${{PRICE_2}}</span>
+                                        <div class="item-tags">
+                                            <span class="tag">Family Favorite</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-section" data-menu="desserts">
+                        <div class="menu-items">
+                            <div class="menu-item-large">
+                                <div class="item-image">
+                                    <img src="{{FOOD_IMAGE_3}}" alt="{{MENU_ITEM_3}}">
+                                </div>
+                                <div class="item-details">
+                                    <h3>{{MENU_ITEM_3}}</h3>
+                                    <p>{{MENU_DESCRIPTION_3}}</p>
+                                    <div class="item-footer">
+                                        <span class="price">${{PRICE_3}}</span>
+                                        <div class="item-tags">
+                                            <span class="tag">House Made</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-section" data-menu="drinks">
+                        <div class="menu-items">
+                            <div class="menu-item-large">
+                                <div class="item-image">
+                                    <img src="{{DRINK_IMAGE_1}}" alt="Signature Drinks">
+                                </div>
+                                <div class="item-details">
+                                    <h3>Signature Beverages</h3>
+                                    <p>Handcrafted drinks made with premium ingredients and family recipes.</p>
+                                    <div class="item-footer">
+                                        <span class="price">$5-12</span>
+                                        <div class="item-tags">
+                                            <span class="tag">Fresh Made</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-footer">
+                    <a href="menu.html" class="full-menu-btn">View Full Menu</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="photo-gallery">
+            <div class="container">
+                <div class="section-intro">
+                    <span class="section-tag">Moments</span>
+                    <h2>Life at {{RESTAURANT_NAME}}</h2>
+                </div>
+                
+                <div class="gallery-grid">
+                    <div class="gallery-item tall">
+                        <img src="{{GALLERY_IMAGE_1}}" alt="Restaurant Interior">
+                        <div class="gallery-overlay">
+                            <span class="gallery-caption">Warm & Welcoming</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="{{GALLERY_IMAGE_2}}" alt="Happy Customers">
+                        <div class="gallery-overlay">
+                            <span class="gallery-caption">Happy Families</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="{{GALLERY_IMAGE_3}}" alt="Fresh Ingredients">
+                        <div class="gallery-overlay">
+                            <span class="gallery-caption">Fresh Daily</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item wide">
+                        <img src="{{GALLERY_IMAGE_4}}" alt="Kitchen">
+                        <div class="gallery-overlay">
+                            <span class="gallery-caption">Where Magic Happens</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="{{GALLERY_IMAGE_5}}" alt="Special Events">
+                        <div class="gallery-overlay">
+                            <span class="gallery-caption">Special Occasions</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact & Hours -->
+        <section id="contact" class="contact-hours">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h2>Visit Us Soon</h2>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon">📍</div>
+                                <div>
+                                    <h4>Address</h4>
+                                    <p>{{FULL_ADDRESS}}</p>
+                                    <a href="{{GOOGLE_MAPS_URL}}" class="contact-link">Get Directions</a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">📞</div>
+                                <div>
+                                    <h4>Phone</h4>
+                                    <p><a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">✉️</div>
+                                <div>
+                                    <h4>Email</h4>
+                                    <p><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="hours-card">
+                        <h3>Hours of Operation</h3>
+                        <div class="hours-list">
+                            <div class="hours-day">
+                                <span>Monday</span>
+                                <span>{{HOURS_MON}}</span>
+                            </div>
+                            <div class="hours-day">
+                                <span>Tuesday</span>
+                                <span>{{HOURS_TUE}}</span>
+                            </div>
+                            <div class="hours-day">
+                                <span>Wednesday</span>
+                                <span>{{HOURS_WED}}</span>
+                            </div>
+                            <div class="hours-day">
+                                <span>Thursday</span>
+                                <span>{{HOURS_THU}}</span>
+                            </div>
+                            <div class="hours-day">
+                                <span>Friday</span>
+                                <span>{{HOURS_FRI}}</span>
+                            </div>
+                            <div class="hours-day">
+                                <span>Saturday</span>
+                                <span>{{HOURS_SAT}}</span>
+                            </div>
+                            <div class="hours-day">
+                                <span>Sunday</span>
+                                <span>{{HOURS_SUN}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="message-form">
+                    <h3>Send us a Message</h3>
+                    <form class="contact-form" action="#" method="POST">
+                        <div class="form-grid">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                            <input type="email" name="email" placeholder="Email Address" required>
+                            <input type="tel" name="phone" placeholder="Phone Number">
+                            <select name="reason" required>
+                                <option value="">Reason for Contact</option>
+                                <option value="reservation">Make a Reservation</option>
+                                <option value="catering">Catering Inquiry</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="main-footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}}" class="footer-logo">
+                        <p>{{TAGLINE}}</p>
+                        <div class="social-links">
+                            <a href="{{FACEBOOK_URL}}" class="social-link">Facebook</a>
+                            <a href="{{INSTAGRAM_URL}}" class="social-link">Instagram</a>
+                            <a href="{{YELP_URL}}" class="social-link">Yelp</a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-contact">
+                        <h4>Contact Info</h4>
+                        <p>{{FULL_ADDRESS}}</p>
+                        <p>Phone: {{PHONE}}</p>
+                        <p>Email: {{EMAIL}}</p>
+                    </div>
+                    
+                    <div class="footer-hours">
+                        <h4>Quick Hours</h4>
+                        <p>Mon-Thu: {{WEEKDAY_HOURS}}</p>
+                        <p>Fri-Sat: {{WEEKEND_HOURS}}</p>
+                        <p>Sunday: {{SUNDAY_HOURS}}</p>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

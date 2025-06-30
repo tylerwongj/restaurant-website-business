@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Full Menu</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} complete menu - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="color-scheme-clean">
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}}">
+                    <span class="logo-text">{{RESTAURANT_NAME}}</span>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#menu" class="active">Menu</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <a href="#order" class="btn-order">Order Now</a>
+                    <div class="mobile-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menu Header -->
+    <section class="menu-header">
+        <div class="container">
+            <div class="menu-header-content">
+                <h1>Our Complete Menu</h1>
+                <p>Fresh, simple, delicious - made exactly how you like it</p>
+                <div class="menu-highlights">
+                    <span class="highlight">🌱 Fresh Daily</span>
+                    <span class="highlight">⚡ Quick Service</span>
+                    <span class="highlight">🎯 Customizable</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Categories -->
+    <section class="menu-section">
+        <div class="container">
+            <!-- Category Navigation -->
+            <div class="category-nav">
+                <button class="category-btn active" data-category="bowls">Bowls</button>
+                <button class="category-btn" data-category="wraps">Wraps</button>
+                <button class="category-btn" data-category="salads">Salads</button>
+                <button class="category-btn" data-category="sandwiches">Sandwiches</button>
+                <button class="category-btn" data-category="sides">Sides</button>
+                <button class="category-btn" data-category="drinks">Drinks</button>
+            </div>
+
+            <!-- Bowls -->
+            <div class="menu-category active" id="bowls">
+                <div class="category-header">
+                    <h2>Fresh Bowls</h2>
+                    <p>Build your perfect bowl with fresh ingredients</p>
+                </div>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="{{BOWL_1_IMAGE}}" alt="{{BOWL_1_NAME}}">
+                            <div class="item-badge popular">Popular</div>
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>{{BOWL_1_NAME}}</h3>
+                            <p>{{BOWL_1_DESCRIPTION}}</p>
+                            <div class="item-details">
+                                <span class="calories">{{BOWL_1_CALORIES}} cal</span>
+                                <span class="prep-time">{{BOWL_1_PREP_TIME}} min</span>
+                            </div>
+                            <div class="menu-item-footer">
+                                <span class="price">${{BOWL_1_PRICE}}</span>
+                                <button class="btn-add">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="{{BOWL_2_IMAGE}}" alt="{{BOWL_2_NAME}}">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>{{BOWL_2_NAME}}</h3>
+                            <p>{{BOWL_2_DESCRIPTION}}</p>
+                            <div class="item-details">
+                                <span class="calories">{{BOWL_2_CALORIES}} cal</span>
+                                <span class="prep-time">{{BOWL_2_PREP_TIME}} min</span>
+                            </div>
+                            <div class="menu-item-footer">
+                                <span class="price">${{BOWL_2_PRICE}}</span>
+                                <button class="btn-add">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="{{BOWL_3_IMAGE}}" alt="{{BOWL_3_NAME}}">
+                            <div class="item-badge new">New</div>
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>{{BOWL_3_NAME}}</h3>
+                            <p>{{BOWL_3_DESCRIPTION}}</p>
+                            <div class="item-details">
+                                <span class="calories">{{BOWL_3_CALORIES}} cal</span>
+                                <span class="prep-time">{{BOWL_3_PREP_TIME}} min</span>
+                            </div>
+                            <div class="menu-item-footer">
+                                <span class="price">${{BOWL_3_PRICE}}</span>
+                                <button class="btn-add">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wraps -->
+            <div class="menu-category" id="wraps">
+                <div class="category-header">
+                    <h2>Fresh Wraps</h2>
+                    <p>Handheld goodness wrapped just right</p>
+                </div>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="{{WRAP_1_IMAGE}}" alt="{{WRAP_1_NAME}}">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>{{WRAP_1_NAME}}</h3>
+                            <p>{{WRAP_1_DESCRIPTION}}</p>
+                            <div class="item-details">
+                                <span class="calories">{{WRAP_1_CALORIES}} cal</span>
+                                <span class="prep-time">{{WRAP_1_PREP_TIME}} min</span>
+                            </div>
+                            <div class="menu-item-footer">
+                                <span class="price">${{WRAP_1_PRICE}}</span>
+                                <button class="btn-add">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="{{WRAP_2_IMAGE}}" alt="{{WRAP_2_NAME}}">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>{{WRAP_2_NAME}}</h3>
+                            <p>{{WRAP_2_DESCRIPTION}}</p>
+                            <div class="item-details">
+                                <span class="calories">{{WRAP_2_CALORIES}} cal</span>
+                                <span class="prep-time">{{WRAP_2_PREP_TIME}} min</span>
+                            </div>
+                            <div class="menu-item-footer">
+                                <span class="price">${{WRAP_2_PRICE}}</span>
+                                <button class="btn-add">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Salads -->
+            <div class="menu-category" id="salads">
+                <div class="category-header">
+                    <h2>Fresh Salads</h2>
+                    <p>Crisp, fresh, and full of flavor</p>
+                </div>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="{{SALAD_1_IMAGE}}" alt="{{SALAD_1_NAME}}">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>{{SALAD_1_NAME}}</h3>
+                            <p>{{SALAD_1_DESCRIPTION}}</p>
+                            <div class="item-details">
+                                <span class="calories">{{SALAD_1_CALORIES}} cal</span>
+                                <span class="prep-time">{{SALAD_1_PREP_TIME}} min</span>
+                            </div>
+                            <div class="menu-item-footer">
+                                <span class="price">${{SALAD_1_PRICE}}</span>
+                                <button class="btn-add">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sandwiches -->
+            <div class="menu-category" id="sandwiches">
+                <div class="category-header">
+                    <h2>Artisan Sandwiches</h2>
+                    <p>Made fresh on quality bread</p>
+                </div>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="{{SANDWICH_1_IMAGE}}" alt="{{SANDWICH_1_NAME}}">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>{{SANDWICH_1_NAME}}</h3>
+                            <p>{{SANDWICH_1_DESCRIPTION}}</p>
+                            <div class="item-details">
+                                <span class="calories">{{SANDWICH_1_CALORIES}} cal</span>
+                                <span class="prep-time">{{SANDWICH_1_PREP_TIME}} min</span>
+                            </div>
+                            <div class="menu-item-footer">
+                                <span class="price">${{SANDWICH_1_PRICE}}</span>
+                                <button class="btn-add">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sides -->
+            <div class="menu-category" id="sides">
+                <div class="category-header">
+                    <h2>Sides & Extras</h2>
+                    <p>Perfect complements to your meal</p>
+                </div>
+                <div class="menu-grid sides-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <h3>{{SIDE_1_NAME}}</h3>
+                            <p>{{SIDE_1_DESCRIPTION}}</p>
+                            <div class="menu-item-footer">
+                                <span class="price">${{SIDE_1_PRICE}}</span>
+                                <button class="btn-add">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <h3>{{SIDE_2_NAME}}</h3>
+                            <p>{{SIDE_2_DESCRIPTION}}</p>
+                            <div class="menu-item-footer">
+                                <span class="price">${{SIDE_2_PRICE}}</span>
+                                <button class="btn-add">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Drinks -->
+            <div class="menu-category" id="drinks">
+                <div class="category-header">
+                    <h2>Fresh Drinks</h2>
+                    <p>Stay refreshed with our selection</p>
+                </div>
+                <div class="menu-grid sides-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <h3>{{DRINK_1_NAME}}</h3>
+                            <p>{{DRINK_1_DESCRIPTION}}</p>
+                            <div class="menu-item-footer">
+                                <span class="price">${{DRINK_1_PRICE}}</span>
+                                <button class="btn-add">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <h3>{{DRINK_2_NAME}}</h3>
+                            <p>{{DRINK_2_DESCRIPTION}}</p>
+                            <div class="menu-item-footer">
+                                <span class="price">${{DRINK_2_PRICE}}</span>
+                                <button class="btn-add">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order CTA -->
+    <section class="order-cta">
+        <div class="container">
+            <div class="order-cta-content">
+                <h2>Ready to Order?</h2>
+                <p>Get your fresh {{RESTAURANT_NAME}} meal delivered or ready for pickup</p>
+                <div class="order-options">
+                    <a href="{{ONLINE_ORDER_URL}}" class="btn-primary large">Start Your Order</a>
+                    <div class="delivery-apps">
+                        <span>Or order through:</span>
+                        <a href="{{UBER_EATS_URL}}" target="_blank">Uber Eats</a>
+                        <a href="{{DOORDASH_URL}}" target="_blank">DoorDash</a>
+                        <a href="{{GRUBHUB_URL}}" target="_blank">Grubhub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}}">
+                    <h3>{{RESTAURANT_NAME}}</h3>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="#menu">Menu</a></li>
+                            <li><a href="index.html#about">About</a></li>
+                            <li><a href="index.html#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Order</h4>
+                        <ul>
+                            <li><a href="{{ONLINE_ORDER_URL}}">Online Ordering</a></li>
+                            <li><a href="{{UBER_EATS_URL}}">Uber Eats</a></li>
+                            <li><a href="{{DOORDASH_URL}}">DoorDash</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Connect</h4>
+                        <div class="social-links">
+                            <a href="{{FACEBOOK_URL}}">Facebook</a>
+                            <a href="{{INSTAGRAM_URL}}">Instagram</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="menu-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Premium Steakhouse</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - {{DESCRIPTION}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="vibrant-steakhouse">
+    <!-- Dynamic Header -->
+    <header class="vibrant-header">
+        <nav class="bold-nav">
+            <div class="nav-container">
+                <div class="brand-bold">
+                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}}" class="bold-logo">
+                    <div class="brand-text">
+                        <h1 class="restaurant-name">{{RESTAURANT_NAME}}</h1>
+                        <span class="brand-subtitle">Premium Steakhouse</span>
+                    </div>
+                </div>
+                
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#steaks" class="nav-link">Steaks</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#reservations" class="nav-link">Reservations</a></li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <a href="tel:{{PHONE}}" class="phone-cta">{{PHONE}}</a>
+                    <a href="#reservations" class="reserve-cta">Reserve Table</a>
+                    <button class="mobile-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-vibrant">
+        <div class="hero-background">
+            <img src="{{STEAKHOUSE_HERO_IMAGE}}" alt="Premium Steaks" class="hero-bg-image">
+            <div class="hero-overlay"></div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-wrapper">
+                <div class="hero-text">
+                    <span class="hero-badge">Prime Cuts • Bold Flavors • Exceptional Service</span>
+                    <h1 class="hero-title">{{RESTAURANT_NAME}}</h1>
+                    <p class="hero-subtitle">{{TAGLINE}}</p>
+                    <p class="hero-description">Experience the finest steaks, perfectly aged and grilled to perfection in our vibrant atmosphere where culinary excellence meets bold flavors.</p>
+                    
+                    <div class="hero-actions">
+                        <a href="#steaks" class="cta-primary">View Steaks</a>
+                        <a href="#reservations" class="cta-secondary">Book Now</a>
+                    </div>
+                </div>
+                
+                <div class="hero-highlights">
+                    <div class="highlight-card">
+                        <div class="highlight-icon">🥩</div>
+                        <h3>Prime Cuts</h3>
+                        <p>USDA Prime beef, dry-aged to perfection</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-icon">🔥</div>
+                        <h3>Wood-Fired Grill</h3>
+                        <p>High-temperature grilling for perfect sears</p>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-icon">🍷</div>
+                        <h3>Wine Selection</h3>
+                        <p>Curated wines to complement every steak</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Steaks Section -->
+    <section id="steaks" class="steaks-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Our Specialty</span>
+                <h2 class="section-title">Premium Steaks</h2>
+                <p class="section-description">Each steak is hand-selected, perfectly aged, and grilled to your exact preference</p>
+            </div>
+            
+            <div class="steaks-showcase">
+                <div class="steak-categories">
+                    <button class="category-btn active" data-category="prime">Prime Cuts</button>
+                    <button class="category-btn" data-category="wagyu">Wagyu Selection</button>
+                    <button class="category-btn" data-category="signatures">Signature Steaks</button>
+                    <button class="category-btn" data-category="sides">Sides & Apps</button>
+                </div>
+                
+                <div class="steaks-grid">
+                    <div class="steak-category-content active" id="prime">
+                        <div class="steak-items">
+                            <div class="steak-card featured">
+                                <div class="steak-image">
+                                    <img src="{{RIBEYE_IMAGE}}" alt="Ribeye Steak">
+                                    <div class="steak-badge">Most Popular</div>
+                                </div>
+                                <div class="steak-info">
+                                    <h4 class="steak-name">Prime Ribeye</h4>
+                                    <p class="steak-description">24oz bone-in ribeye, dry-aged 28 days</p>
+                                    <div class="steak-details">
+                                        <span class="steak-size">24oz</span>
+                                        <span class="steak-price">$68</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="steak-card">
+                                <div class="steak-image">
+                                    <img src="{{FILET_IMAGE}}" alt="Filet Mignon">
+                                </div>
+                                <div class="steak-info">
+                                    <h4 class="steak-name">Filet Mignon</h4>
+                                    <p class="steak-description">8oz center-cut tenderloin, butter-basted</p>
+                                    <div class="steak-details">
+                                        <span class="steak-size">8oz</span>
+                                        <span class="steak-price">$52</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="steak-card">
+                                <div class="steak-image">
+                                    <img src="{{NY_STRIP_IMAGE}}" alt="NY Strip">
+                                </div>
+                                <div class="steak-info">
+                                    <h4 class="steak-name">New York Strip</h4>
+                                    <p class="steak-description">16oz prime strip, perfectly marbled</p>
+                                    <div class="steak-details">
+                                        <span class="steak-size">16oz</span>
+                                        <span class="steak-price">$48</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="steak-card">
+                                <div class="steak-image">
+                                    <img src="{{PORTERHOUSE_IMAGE}}" alt="Porterhouse">
+                                </div>
+                                <div class="steak-info">
+                                    <h4 class="steak-name">Porterhouse</h4>
+                                    <p class="steak-description">32oz for two, best of both worlds</p>
+                                    <div class="steak-details">
+                                        <span class="steak-size">32oz</span>
+                                        <span class="steak-price">$95</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="steak-category-content" id="wagyu">
+                        <div class="steak-items">
+                            <div class="steak-card premium">
+                                <div class="steak-image">
+                                    <img src="{{WAGYU_RIBEYE_IMAGE}}" alt="Wagyu Ribeye">
+                                    <div class="steak-badge premium">Premium</div>
+                                </div>
+                                <div class="steak-info">
+                                    <h4 class="steak-name">A5 Wagyu Ribeye</h4>
+                                    <p class="steak-description">Japanese A5 wagyu, 6oz portion</p>
+                                    <div class="steak-details">
+                                        <span class="steak-size">6oz</span>
+                                        <span class="steak-price">$180</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="steak-card premium">
+                                <div class="steak-image">
+                                    <img src="{{WAGYU_STRIP_IMAGE}}" alt="Wagyu Strip">
+                                </div>
+                                <div class="steak-info">
+                                    <h4 class="steak-name">American Wagyu Strip</h4>
+                                    <p class="steak-description">12oz American wagyu, exceptional marbling</p>
+                                    <div class="steak-details">
+                                        <span class="steak-size">12oz</span>
+                                        <span class="steak-price">$85</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="steak-category-content" id="signatures">
+                        <div class="steak-items">
+                            <div class="steak-card signature">
+                                <div class="steak-image">
+                                    <img src="{{SIGNATURE_STEAK_IMAGE}}" alt="Signature Steak">
+                                    <div class="steak-badge signature">Chef's Special</div>
+                                </div>
+                                <div class="steak-info">
+                                    <h4 class="steak-name">{{RESTAURANT_NAME}} Special</h4>
+                                    <p class="steak-description">{{SIGNATURE_STEAK_DESCRIPTION}}</p>
+                                    <div class="steak-details">
+                                        <span class="steak-size">20oz</span>
+                                        <span class="steak-price">$75</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="steak-category-content" id="sides">
+                        <div class="sides-grid">
+                            <div class="side-item">
+                                <h4>Truffle Mac & Cheese</h4>
+                                <p>Four cheese blend with truffle oil</p>
+                                <span class="side-price">$18</span>
+                            </div>
+                            <div class="side-item">
+                                <h4>Lobster Tail</h4>
+                                <p>8oz cold water lobster tail</p>
+                                <span class="side-price">$32</span>
+                            </div>
+                            <div class="side-item">
+                                <h4>Roasted Bone Marrow</h4>
+                                <p>Herb-crusted with garlic toast</p>
+                                <span class="side-price">$16</span>
+                            </div>
+                            <div class="side-item">
+                                <h4>Grilled Asparagus</h4>
+                                <p>Seasonal vegetables, olive oil</p>
+                                <span class="side-price">$14</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="menu-cta">
+                <a href="menu.html" class="cta-primary">View Full Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience-section">
+        <div class="container">
+            <div class="experience-content">
+                <div class="experience-text">
+                    <span class="section-badge">The Experience</span>
+                    <h2 class="section-title">More Than Just Steaks</h2>
+                    <p class="experience-description">At {{RESTAURANT_NAME}}, we create an atmosphere where exceptional food meets vibrant energy. Our open kitchen, dynamic lighting, and carefully curated music create an unforgettable dining experience.</p>
+                    
+                    <div class="experience-features">
+                        <div class="feature-row">
+                            <div class="feature-item">
+                                <div class="feature-icon">👨‍🍳</div>
+                                <div class="feature-content">
+                                    <h4>Open Kitchen</h4>
+                                    <p>Watch our chefs work their magic on premium cuts</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">🎵</div>
+                                <div class="feature-content">
+                                    <h4>Live Music</h4>
+                                    <p>Jazz and acoustic performances weekend evenings</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-row">
+                            <div class="feature-item">
+                                <div class="feature-icon">🍸</div>
+                                <div class="feature-content">
+                                    <h4>Craft Cocktails</h4>
+                                    <p>Signature cocktails and premium spirits selection</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">🌟</div>
+                                <div class="feature-content">
+                                    <h4>Private Events</h4>
+                                    <p>Exclusive dining rooms for special occasions</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="experience-visual">
+                    <div class="visual-gallery">
+                        <img src="{{RESTAURANT_INTERIOR_IMAGE}}" alt="Restaurant Interior" class="gallery-main">
+                        <div class="gallery-grid">
+                            <img src="{{OPEN_KITCHEN_IMAGE}}" alt="Open Kitchen" class="gallery-item">
+                            <img src="{{BAR_AREA_IMAGE}}" alt="Bar Area" class="gallery-item">
+                            <img src="{{PRIVATE_DINING_IMAGE}}" alt="Private Dining" class="gallery-item">
+                            <img src="{{WINE_CELLAR_IMAGE}}" alt="Wine Cellar" class="gallery-item">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="{{CHEF_PORTRAIT_IMAGE}}" alt="Head Chef" class="chef-image">
+                    <div class="chef-credentials">
+                        <span class="credential">James Beard Nominee</span>
+                        <span class="credential">{{YEARS_EXPERIENCE}} Years</span>
+                    </div>
+                </div>
+                
+                <div class="about-content">
+                    <span class="section-badge">Our Story</span>
+                    <h2 class="section-title">Passion for Perfect Steaks</h2>
+                    <p class="about-text">{{RESTAURANT_DESCRIPTION}}</p>
+                    <p class="about-text">Our commitment to excellence extends from our carefully sourced ingredients to our expertly trained staff, ensuring every visit exceeds expectations.</p>
+                    
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">{{YEARS_OPEN}}+</span>
+                            <span class="stat-label">Years Serving</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">{{STEAKS_SERVED}}</span>
+                            <span class="stat-label">Steaks Served</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">{{WINE_LABELS}}</span>
+                            <span class="stat-label">Wine Labels</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservations Section -->
+    <section id="reservations" class="reservations-section">
+        <div class="container">
+            <div class="reservations-content">
+                <div class="reservation-info">
+                    <span class="section-badge">Join Us</span>
+                    <h2 class="section-title">Make a Reservation</h2>
+                    <p class="reservation-description">Experience the finest steaks and vibrant atmosphere. Reservations recommended for the best seating and service.</p>
+                    
+                    <div class="contact-grid">
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div class="contact-details">
+                                <h4>Location</h4>
+                                <p>{{FULL_ADDRESS}}</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div class="contact-details">
+                                <h4>Phone</h4>
+                                <p><a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">🕐</div>
+                            <div class="contact-details">
+                                <h4>Hours</h4>
+                                <p>{{DINNER_HOURS}}</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">✉️</div>
+                            <div class="contact-details">
+                                <h4>Email</h4>
+                                <p><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="reservation-form" action="#" method="POST">
+                    <h3>Reserve Your Table</h3>
+                    
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="date">Date</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="time">Time</label>
+                            <select id="time" name="time" required>
+                                <option value="">Select Time</option>
+                                <option value="17:00">5:00 PM</option>
+                                <option value="17:30">5:30 PM</option>
+                                <option value="18:00">6:00 PM</option>
+                                <option value="18:30">6:30 PM</option>
+                                <option value="19:00">7:00 PM</option>
+                                <option value="19:30">7:30 PM</option>
+                                <option value="20:00">8:00 PM</option>
+                                <option value="20:30">8:30 PM</option>
+                                <option value="21:00">9:00 PM</option>
+                                <option value="21:30">9:30 PM</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="guests">Party Size</label>
+                            <select id="guests" name="guests" required>
+                                <option value="">Select Size</option>
+                                <option value="1">1 Guest</option>
+                                <option value="2">2 Guests</option>
+                                <option value="3">3 Guests</option>
+                                <option value="4">4 Guests</option>
+                                <option value="5">5 Guests</option>
+                                <option value="6">6 Guests</option>
+                                <option value="7">7 Guests</option>
+                                <option value="8">8+ Guests</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="occasion">Occasion (Optional)</label>
+                            <select id="occasion" name="occasion">
+                                <option value="">Select Occasion</option>
+                                <option value="birthday">Birthday</option>
+                                <option value="anniversary">Anniversary</option>
+                                <option value="business">Business Dinner</option>
+                                <option value="celebration">Celebration</option>
+                                <option value="date">Date Night</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="requests">Special Requests</label>
+                        <textarea id="requests" name="requests" rows="4" placeholder="Dietary restrictions, seating preferences, special celebrations..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="form-submit">Reserve Table</button>
+                    
+                    <p class="form-note">Reservations will be confirmed within 2 hours. For same-day reservations, please call directly.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="vibrant-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}}" class="footer-logo">
+                    <div class="footer-text">
+                        <h3>{{RESTAURANT_NAME}}</h3>
+                        <p class="footer-tagline">Premium Steakhouse Experience</p>
+                        <p class="footer-description">Where exceptional steaks meet vibrant atmosphere.</p>
+                    </div>
+                </div>
+                
+                <div class="footer-info">
+                    <div class="footer-section">
+                        <h4>Contact</h4>
+                        <p>{{PHONE}}</p>
+                        <p>{{EMAIL}}</p>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h4>Location</h4>
+                        <p>{{FULL_ADDRESS}}</p>
+                        <p>{{DINNER_HOURS}}</p>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h4>Specialties</h4>
+                        <p>Prime & Wagyu Steaks</p>
+                        <p>Craft Cocktails</p>
+                        <p>Private Events</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. Premium steakhouse dining.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

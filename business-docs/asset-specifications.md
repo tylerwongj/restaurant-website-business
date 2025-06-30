@@ -15,20 +15,44 @@
 - **Content:** Restaurant exterior, signature dish, or dining area
 - **Quality:** Professional lighting, high resolution
 
-### Food Photos (4-6 required)
+### Food Photos (6 required)
 - **Format:** JPG
 - **Size:** 800px x 600px exactly
 - **File size:** Under 300KB each
 - **Quality:** Professional lighting, well-plated dishes
 - **Note:** No phone camera shots accepted
 
-### Interior Photos (2-3 required)
+### Appetizer Photos (4 required)
+- **Format:** JPG
+- **Size:** 800px x 600px exactly
+- **File size:** Under 300KB each
+- **Content:** Starter dishes, small plates, shared appetizers
+
+### Dessert Photos (2 required)
+- **Format:** JPG
+- **Size:** 800px x 600px exactly
+- **File size:** Under 300KB each
+- **Content:** Desserts, sweets, after-dinner options
+
+### Drink Photos (2 required)
+- **Format:** JPG
+- **Size:** 800px x 600px exactly
+- **File size:** Under 300KB each
+- **Content:** Signature cocktails, beverages, wine selections
+
+### Interior Photos (3 required)
 - **Format:** JPG
 - **Size:** 1200px x 800px exactly
 - **File size:** Under 400KB each
 - **Content:** Dining area, bar, ambiance shots
 
-### Staff/About Photo (optional)
+### Kitchen/Chef Photo (1 required)
+- **Format:** JPG
+- **Size:** 1200px x 800px exactly
+- **File size:** Under 400KB
+- **Content:** Kitchen in action, chef at work, food preparation
+
+### Staff/About Photo (1 required)
 - **Format:** JPG
 - **Size:** 600px x 400px exactly
 - **File size:** Under 200KB

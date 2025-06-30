@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - {{CUISINE_TYPE}} Pizza</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="pizza-theme">
+    <!-- Header with Order Action -->
+    <header class="pizza-header">
+        <nav class="top-nav">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}}" class="pizza-logo">
+                    <div class="brand-text">
+                        <h1 class="brand-name">{{RESTAURANT_NAME}}</h1>
+                        <span class="brand-subtitle">Authentic Pizza Since {{ESTABLISHED_YEAR}}</span>
+                    </div>
+                </div>
+                
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#specials">Specials</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <div class="delivery-info">
+                        <span class="delivery-icon">🚚</span>
+                        <span class="delivery-text">Free delivery over $25</span>
+                    </div>
+                    <a href="#order" class="order-btn">Order Online</a>
+                    <button class="mobile-toggle">☰</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="pizza-hero">
+        <div class="hero-content">
+            <div class="hero-main">
+                <div class="hero-text">
+                    <span class="hero-badge">🍕 Wood-Fired Excellence</span>
+                    <h1 class="hero-title">{{RESTAURANT_NAME}}</h1>
+                    <p class="hero-subtitle">{{TAGLINE}}</p>
+                    
+                    <div class="hero-features">
+                        <div class="feature">
+                            <span class="feature-icon">🔥</span>
+                            <span>Wood-Fired Oven</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">🧀</span>
+                            <span>Fresh Mozzarella</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">🌿</span>
+                            <span>House-Made Sauce</span>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-actions">
+                        <a href="#order" class="cta-primary">Order Delivery</a>
+                        <a href="tel:{{PHONE}}" class="cta-secondary">📞 {{PHONE}}</a>
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <img src="{{HERO_PIZZA_IMAGE}}" alt="Fresh Pizza" class="hero-pizza">
+                    <div class="pizza-steam">
+                        <div class="steam-line"></div>
+                        <div class="steam-line"></div>
+                        <div class="steam-line"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-bottom">
+                <div class="delivery-options">
+                    <div class="delivery-option">
+                        <span class="option-icon">🚚</span>
+                        <div class="option-text">
+                            <span class="option-title">Delivery</span>
+                            <span class="option-time">25-35 min</span>
+                        </div>
+                    </div>
+                    <div class="delivery-option">
+                        <span class="option-icon">🏃</span>
+                        <div class="option-text">
+                            <span class="option-title">Pickup</span>
+                            <span class="option-time">15-20 min</span>
+                        </div>
+                    </div>
+                    <div class="delivery-option">
+                        <span class="option-icon">🍽️</span>
+                        <div class="option-text">
+                            <span class="option-title">Dine-In</span>
+                            <span class="option-time">No wait</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Pizzas -->
+    <section class="featured-pizzas">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Our Signatures</span>
+                <h2>Famous Pizzas</h2>
+                <p>Hand-tossed dough, premium ingredients, wood-fired perfection</p>
+            </div>
+            
+            <div class="pizza-grid">
+                <div class="pizza-card featured">
+                    <div class="pizza-image">
+                        <img src="{{PIZZA_IMAGE_1}}" alt="{{PIZZA_NAME_1}}">
+                        <div class="pizza-badge">🏆 Most Popular</div>
+                        <div class="pizza-overlay">
+                            <button class="quick-order">Quick Order</button>
+                        </div>
+                    </div>
+                    <div class="pizza-info">
+                        <h3 class="pizza-name">{{PIZZA_NAME_1}}</h3>
+                        <p class="pizza-description">{{PIZZA_DESCRIPTION_1}}</p>
+                        <div class="pizza-pricing">
+                            <div class="size-price">
+                                <span class="size">Small (12")</span>
+                                <span class="price">${{PIZZA_PRICE_1_S}}</span>
+                            </div>
+                            <div class="size-price">
+                                <span class="size">Large (16")</span>
+                                <span class="price">${{PIZZA_PRICE_1_L}}</span>
+                            </div>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <div class="pizza-card">
+                    <div class="pizza-image">
+                        <img src="{{PIZZA_IMAGE_2}}" alt="{{PIZZA_NAME_2}}">
+                        <div class="pizza-badge">🌶️ Spicy</div>
+                    </div>
+                    <div class="pizza-info">
+                        <h3 class="pizza-name">{{PIZZA_NAME_2}}</h3>
+                        <p class="pizza-description">{{PIZZA_DESCRIPTION_2}}</p>
+                        <div class="pizza-pricing">
+                            <div class="size-price">
+                                <span class="size">Small (12")</span>
+                                <span class="price">${{PIZZA_PRICE_2_S}}</span>
+                            </div>
+                            <div class="size-price">
+                                <span class="size">Large (16")</span>
+                                <span class="price">${{PIZZA_PRICE_2_L}}</span>
+                            </div>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <div class="pizza-card">
+                    <div class="pizza-image">
+                        <img src="{{PIZZA_IMAGE_3}}" alt="{{PIZZA_NAME_3}}">
+                        <div class="pizza-badge">🥬 Veggie</div>
+                    </div>
+                    <div class="pizza-info">
+                        <h3 class="pizza-name">{{PIZZA_NAME_3}}</h3>
+                        <p class="pizza-description">{{PIZZA_DESCRIPTION_3}}</p>
+                        <div class="pizza-pricing">
+                            <div class="size-price">
+                                <span class="size">Small (12")</span>
+                                <span class="price">${{PIZZA_PRICE_3_S}}</span>
+                            </div>
+                            <div class="size-price">
+                                <span class="size">Large (16")</span>
+                                <span class="price">${{PIZZA_PRICE_3_L}}</span>
+                            </div>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="menu-action">
+                <a href="menu.html" class="view-menu-btn">View Full Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Daily Specials -->
+    <section id="specials" class="daily-specials">
+        <div class="container">
+            <div class="specials-header">
+                <span class="section-badge">Today's Deals</span>
+                <h2>Daily Specials</h2>
+            </div>
+            
+            <div class="specials-grid">
+                <div class="special-card">
+                    <div class="special-day">Monday</div>
+                    <div class="special-offer">
+                        <h3>Pizza Monday</h3>
+                        <p>Buy any large pizza, get a small cheese pizza FREE</p>
+                        <div class="special-time">All Day</div>
+                    </div>
+                </div>
+                
+                <div class="special-card">
+                    <div class="special-day">Tuesday</div>
+                    <div class="special-offer">
+                        <h3>2-for-Tuesday</h3>
+                        <p>Two medium pizzas for $24.99</p>
+                        <div class="special-time">5:00 PM - 9:00 PM</div>
+                    </div>
+                </div>
+                
+                <div class="special-card">
+                    <div class="special-day">Wednesday</div>
+                    <div class="special-offer">
+                        <h3>Wing Wednesday</h3>
+                        <p>50¢ wings with any pizza purchase</p>
+                        <div class="special-time">All Day</div>
+                    </div>
+                </div>
+                
+                <div class="special-card active">
+                    <div class="special-day">Today</div>
+                    <div class="special-offer">
+                        <h3>Family Thursday</h3>
+                        <p>Large pizza + garlic bread + 2-liter soda = $19.99</p>
+                        <div class="special-time">Available Now!</div>
+                    </div>
+                    <button class="order-special">Order This Deal</button>
+                </div>
+                
+                <div class="special-card">
+                    <div class="special-day">Weekend</div>
+                    <div class="special-offer">
+                        <h3>Weekend Feast</h3>
+                        <p>Free delivery on orders over $30</p>
+                        <div class="special-time">Fri-Sun</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="pizza-about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <span class="section-badge">Our Story</span>
+                    <h2>Authentic Pizza Tradition</h2>
+                    <p class="about-description">{{ABOUT_DESCRIPTION}}</p>
+                    
+                    <div class="pizza-process">
+                        <div class="process-step">
+                            <div class="step-icon">🌾</div>
+                            <div class="step-content">
+                                <h4>Fresh Dough Daily</h4>
+                                <p>Hand-mixed and proofed for 24 hours</p>
+                            </div>
+                        </div>
+                        
+                        <div class="process-step">
+                            <div class="step-icon">🍅</div>
+                            <div class="step-content">
+                                <h4>House-Made Sauce</h4>
+                                <p>San Marzano tomatoes with secret spices</p>
+                            </div>
+                        </div>
+                        
+                        <div class="process-step">
+                            <div class="step-icon">🧀</div>
+                            <div class="step-content">
+                                <h4>Premium Cheese</h4>
+                                <p>Fresh mozzarella delivered daily</p>
+                            </div>
+                        </div>
+                        
+                        <div class="process-step">
+                            <div class="step-icon">🔥</div>
+                            <div class="step-content">
+                                <h4>Wood-Fired Oven</h4>
+                                <p>800°F for the perfect crispy crust</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-visual">
+                    <div class="visual-container">
+                        <img src="{{OVEN_IMAGE}}" alt="Wood-fired oven" class="oven-image">
+                        <div class="visual-stats">
+                            <div class="stat">
+                                <span class="stat-number">{{YEARS_ESTABLISHED}}+</span>
+                                <span class="stat-label">Years in Business</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">500+</span>
+                                <span class="stat-label">Pizzas Daily</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact -->
+    <section id="contact" class="pizza-contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="location-card">
+                        <h2>Visit Our Pizzeria</h2>
+                        
+                        <div class="location-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">📍</span>
+                                <div class="detail-content">
+                                    <span class="detail-label">Address</span>
+                                    <span class="detail-value">{{FULL_ADDRESS}}</span>
+                                </div>
+                            </div>
+                            
+                            <div class="detail-item">
+                                <span class="detail-icon">📞</span>
+                                <div class="detail-content">
+                                    <span class="detail-label">Phone</span>
+                                    <a href="tel:{{PHONE}}" class="detail-value">{{PHONE}}</a>
+                                </div>
+                            </div>
+                            
+                            <div class="detail-item">
+                                <span class="detail-icon">🕒</span>
+                                <div class="detail-content">
+                                    <span class="detail-label">Hours</span>
+                                    <div class="hours-list">
+                                        <div class="hours-day">
+                                            <span>Mon-Thu:</span>
+                                            <span>{{WEEKDAY_HOURS}}</span>
+                                        </div>
+                                        <div class="hours-day">
+                                            <span>Fri-Sat:</span>
+                                            <span>{{WEEKEND_HOURS}}</span>
+                                        </div>
+                                        <div class="hours-day">
+                                            <span>Sunday:</span>
+                                            <span>{{SUNDAY_HOURS}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="location-actions">
+                            <a href="{{GOOGLE_MAPS_URL}}" class="location-btn primary">Get Directions</a>
+                            <a href="tel:{{PHONE}}" class="location-btn secondary">Call Now</a>
+                        </div>
+                    </div>
+                    
+                    <div class="delivery-zone">
+                        <h3>Delivery Area</h3>
+                        <p>Free delivery within 3 miles • $2.99 delivery fee beyond</p>
+                        <div class="delivery-zip">
+                            <input type="text" placeholder="Enter ZIP code" class="zip-input">
+                            <button class="check-delivery">Check</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-section">
+                    <form class="pizza-contact-form" action="#" method="POST">
+                        <h3>Questions or Feedback?</h3>
+                        
+                        <div class="form-row">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                            <input type="email" name="email" placeholder="Email" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <input type="tel" name="phone" placeholder="Phone Number">
+                            <select name="subject" required>
+                                <option value="">Select Topic</option>
+                                <option value="order">Order Issue</option>
+                                <option value="delivery">Delivery Question</option>
+                                <option value="catering">Catering Inquiry</option>
+                                <option value="feedback">General Feedback</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+                        
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="map-section">
+                <iframe 
+                    src="{{GOOGLE_MAPS_EMBED}}" 
+                    width="100%" 
+                    height="350" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="pizza-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}}" class="footer-logo">
+                    <div class="footer-text">
+                        <h3>{{RESTAURANT_NAME}}</h3>
+                        <p>{{TAGLINE}}</p>
+                        <div class="footer-social">
+                            <a href="{{FACEBOOK_URL}}">Facebook</a>
+                            <a href="{{INSTAGRAM_URL}}">Instagram</a>
+                            <a href="{{YELP_URL}}">Yelp</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-info">
+                    <div class="footer-section">
+                        <h4>Order Now</h4>
+                        <p>Phone: {{PHONE}}</p>
+                        <p>Online ordering available</p>
+                        <p>Free delivery over $25</p>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h4>Location</h4>
+                        <p>{{FULL_ADDRESS}}</p>
+                        <p>Mon-Thu: {{WEEKDAY_HOURS}}</p>
+                        <p>Fri-Sun: {{WEEKEND_HOURS}}</p>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h4>Catering</h4>
+                        <p>Perfect for parties & events</p>
+                        <p>24-hour advance notice</p>
+                        <a href="mailto:{{EMAIL}}">Request Quote</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. Serving fresh pizza with love!</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky Order Bar -->
+    <div class="sticky-order-bar">
+        <div class="order-bar-content">
+            <div class="bar-info">
+                <span class="bar-text">Hungry? Order now!</span>
+                <span class="bar-offer">Free delivery over $25</span>
+            </div>
+            <a href="#order" class="bar-order-btn">Order Online</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

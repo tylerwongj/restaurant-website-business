@@ -13,11 +13,53 @@ This is a **restaurant website development business** designed to generate $100k
 
 ## Template Architecture
 
-### Current Template System
-- **Primary Template**: `templates/casual-family/` (production-ready)
-- **Template Structure**: Each template contains:
+### Complete Template Library (120+ Templates)
+
+**Production-Ready Templates (`templates/`):**
+- `templates/casual-family/` - Base family restaurant template
+- `templates/casual-family-grid/` - Grid-based layout with info cards
+- `templates/casual-family-modern/` - Contemporary design with hero sliders
+- `templates/casual-family-minimalist/` - Clean minimal white space design
+- `templates/casual-family-rustic/` - Warm rustic theme with wood textures
+- `templates/casual-family-vibrant/` - Colorful family-friendly design
+- `templates/fine-dining/` - Elegant upscale restaurant template
+- `templates/fine-dining-elegant/` - Sophisticated course presentations
+- `templates/fine-dining/v1-v5/` - 5 additional elegant variations
+- `templates/fast-casual/` - Modern quick-service template
+- `templates/fast-casual/v1-v5/` - 5 modern quick-service variations
+- `templates/cafe-bistro/` - Coffee shop & bistro template
+- `templates/cafe-cozy/` - Cozy coffee shop atmosphere
+
+**Extended Template Library (`templates-untested/`):**
+- **Asian Cuisine**: `asian-fusion-v1/` through `asian-fusion-v5/`
+- **Bakery & Dessert**: `bakery-dessert-v1/` through `bakery-dessert-v5/`
+- **Cafe Variations**: `cafe-bistro-v1/` through `cafe-bistro-v5/`
+- **Casual Family**: `casual-family-v1/` through `casual-family-v5/`
+- **Fast Casual**: `fast-casual-v1/` through `fast-casual-v5/`
+- **Fine Dining**: `fine-dining-v1/` through `fine-dining-v5/`
+- **Mexican**: `mexican-v1/` through `mexican-v5/`
+- **Pizza**: `pizza-italian-v1/` through `pizza-italian-v5/`
+- **Seafood**: `seafood-v1/` through `seafood-v5/`
+- **Steakhouse**: `steakhouse-v1/` through `steakhouse-v5/`
+- **Sports Bar**: `sports-bar-v1/` and `sports-bar-v2/`
+- **Specialty**: `artisan-bakery/`, `mediterranean-coastal/`, `modern-steakhouse/`, `wine-bar-elegant/`
+
+**Multi-Niche Business Templates (`templates-business-multi-niche/`):**
+- `beauty-spa/` - Spa and wellness services
+- `fitness-wellness/` - Gym and wellness centers
+- `medical-healthcare/` - Healthcare clinics
+- `photography-portfolio/` - Photography services
+- `real-estate-modern/` - Real estate agencies
+
+**Experimental Templates (`templates-untested-2/`, `templates-untested-3/`, `templates-untested-new/`):**
+- Advanced layout experiments
+- Modern design patterns
+- Specialty cuisine variations
+- Business service templates
+
+**Template Structure**: Each template contains:
   - `index.html` - Main homepage with placeholder variables ({{RESTAURANT_NAME}}, {{PHONE}}, etc.)
-  - `menu.html` - Dedicated menu page
+  - `menu.html` - Dedicated menu page (restaurant templates)
   - `styles.css` - CSS with 5 color scheme variations using CSS variables
   - `script.js` - Interactive functionality (mobile nav, smooth scrolling, forms)
 
@@ -105,6 +147,37 @@ zip -r [client-name]-website.zip client-projects/[client-name]/
 - Mobile optimization
 - Cross-browser compatibility
 
+## Image Asset Management
+
+### Image Library Structure (`images/`)
+
+**Placeholder Images (`images/placeholder/`):**
+- `restaurant-interiors/` - Hero sections, dining rooms, bar areas, patios
+- `food-dishes/` - Appetizers, main courses, salads, pizza, international cuisine
+- `drinks-beverages/` - Coffee, wine, cocktails, beer, non-alcoholic
+- `desserts/` - Cakes, pastries, ice cream, seasonal desserts
+- `staff-people/` - Chefs, servers, kitchen teams, customer photos
+- `exteriors-atmosphere/` - Storefronts, street views, signage, entrances
+- `logos-branding/` - Logo concepts, food icons, badge designs
+- `events-occasions/` - Private parties, wine tastings, cooking classes
+- `ingredients-prep/` - Fresh ingredients, cooking processes, plating
+- `specialty-cuisine/` - Italian, Asian, Mexican, Mediterranean specialties
+
+**Client-Ready Images (`images/real/`):**
+- Production-quality images organized by category
+- Optimized for web use (<500KB each)
+- Professional food photography and restaurant interiors
+
+**Test Images (`images/test/`):**
+- Template testing and development images
+- Quick integration for template validation
+
+### Image Integration System
+- **Template Variables**: {{HERO_IMAGE}}, {{FOOD_IMAGE_1}}, etc.
+- **Automated Scripts**: `images/placeholder/download-images.sh`
+- **Integration Guide**: `images/placeholder/TEMPLATE_INTEGRATION.md`
+- **Specifications**: Technical requirements and optimization guidelines
+
 ### Client Asset Requirements
 Templates expect specific image formats and sizes (defined in `business-docs/asset-specifications.md`):
 - Logo: PNG with transparent background
@@ -129,15 +202,24 @@ Templates expect specific image formats and sizes (defined in `business-docs/ass
 
 ## Future Development Priorities
 
-### Template Expansion
-1. **Fine-dining template** - Elegant, dark theme for upscale restaurants  
-2. **Fast-casual template** - Bold, mobile-first for quick-service
-3. **Portfolio showcase site** - Live demos for sales
-
 ### Business Scaling
-1. **Referral system** development  
-2. **Local SEO add-on** service
-3. **Automated client onboarding** system
+1. **Portfolio showcase site** - Live demos of all 120+ templates
+2. **Automated template selection** - Template generation from client specifications
+3. **Referral system** development  
+4. **Local SEO add-on** service
+5. **Automated client onboarding** system
+
+### Template Automation System (Planned)
+1. **Template Generator**: Auto-generate templates from specifications
+2. **Client Selection Interface**: Dropdown-based template customization
+3. **Configuration Management**: Centralized template specifications
+4. **Bulk Operations**: Mass template updates and maintenance
+
+### Template Expansion (Future)
+1. **Additional cuisine specialties** - Already have 100+ variations built
+2. **Multi-language variations** 
+3. **Industry-specific features** - Online ordering, reservations, etc.
+4. **Advanced customization options** - Dynamic color schemes, layout variations
 
 ## Quality Standards
 
@@ -147,3 +229,37 @@ Templates expect specific image formats and sizes (defined in `business-docs/ass
 - Professional appearance matching template category
 - Working contact forms and navigation
 - Optimized images and clean code structure
+
+## Template Automation & Generation (Future Feature)
+
+### Automated Template Generation System
+Future enhancement to create templates from specifications:
+
+**Configuration-Driven Templates:**
+```yaml
+# template-config.yml (example)
+template_type: "casual-family"
+color_scheme: "warm"
+layout_style: "grid"
+sections:
+  - hero: true
+  - menu: true
+  - about: true
+  - contact: true
+features:
+  - mobile_responsive: true
+  - color_variations: 5
+  - image_placeholders: true
+```
+
+**Client Selection Interface:**
+- Dropdown menus for template type, color scheme, layout
+- Real-time preview generation
+- Automatic image assignment from library
+- One-click template generation
+
+**Benefits:**
+- Reduce development time from 2-3 hours to 15-30 minutes
+- Ensure consistency across all templates
+- Enable client self-service template selection
+- Streamline bulk template updates and maintenance

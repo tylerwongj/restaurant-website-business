@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Coffee & Café</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}}">
+                    <span class="logo-text">{{RESTAURANT_NAME}}</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#coffee">Coffee</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="#order" class="btn-order">Order Ahead</a>
+                    <div class="mobile-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="container">
+                <div class="hero-text">
+                    <h1>{{RESTAURANT_NAME}}</h1>
+                    <p class="hero-tagline">{{TAGLINE}}</p>
+                    <p class="hero-description">{{HERO_DESCRIPTION}}</p>
+                    <div class="hero-highlights">
+                        <div class="highlight">
+                            <span class="highlight-icon">☕</span>
+                            <span>Freshly Roasted Daily</span>
+                        </div>
+                        <div class="highlight">
+                            <span class="highlight-icon">🥐</span>
+                            <span>Fresh Pastries</span>
+                        </div>
+                        <div class="highlight">
+                            <span class="highlight-icon">📚</span>
+                            <span>Cozy Study Space</span>
+                        </div>
+                    </div>
+                    <div class="hero-actions">
+                        <a href="#coffee" class="btn-primary">Our Coffee</a>
+                        <a href="#menu" class="btn-secondary">View Menu</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="{{HERO_IMAGE}}" alt="{{RESTAURANT_NAME}} Coffee">
+                    <div class="hero-badge">
+                        <span>Est. {{FOUNDED_YEAR}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coffee Section -->
+    <section id="coffee" class="coffee-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Coffee</h2>
+                <p>Carefully sourced, expertly roasted, perfectly brewed</p>
+            </div>
+            <div class="coffee-grid">
+                <div class="coffee-card featured">
+                    <div class="coffee-image">
+                        <img src="{{SIGNATURE_BLEND_IMAGE}}" alt="{{SIGNATURE_BLEND_NAME}}">
+                        <div class="coffee-badge">Signature</div>
+                    </div>
+                    <div class="coffee-content">
+                        <h3>{{SIGNATURE_BLEND_NAME}}</h3>
+                        <p class="coffee-origin">{{SIGNATURE_BLEND_ORIGIN}}</p>
+                        <p class="coffee-description">{{SIGNATURE_BLEND_DESCRIPTION}}</p>
+                        <div class="coffee-notes">
+                            <span class="note">{{SIGNATURE_NOTE_1}}</span>
+                            <span class="note">{{SIGNATURE_NOTE_2}}</span>
+                            <span class="note">{{SIGNATURE_NOTE_3}}</span>
+                        </div>
+                        <div class="coffee-price">${{SIGNATURE_BLEND_PRICE}}</div>
+                    </div>
+                </div>
+                <div class="coffee-card">
+                    <div class="coffee-image">
+                        <img src="{{ESPRESSO_IMAGE}}" alt="{{ESPRESSO_NAME}}">
+                        <div class="coffee-badge">Popular</div>
+                    </div>
+                    <div class="coffee-content">
+                        <h3>{{ESPRESSO_NAME}}</h3>
+                        <p class="coffee-origin">{{ESPRESSO_ORIGIN}}</p>
+                        <p class="coffee-description">{{ESPRESSO_DESCRIPTION}}</p>
+                        <div class="coffee-notes">
+                            <span class="note">{{ESPRESSO_NOTE_1}}</span>
+                            <span class="note">{{ESPRESSO_NOTE_2}}</span>
+                        </div>
+                        <div class="coffee-price">${{ESPRESSO_PRICE}}</div>
+                    </div>
+                </div>
+                <div class="coffee-card">
+                    <div class="coffee-image">
+                        <img src="{{LIGHT_ROAST_IMAGE}}" alt="{{LIGHT_ROAST_NAME}}">
+                        <div class="coffee-badge">Light</div>
+                    </div>
+                    <div class="coffee-content">
+                        <h3>{{LIGHT_ROAST_NAME}}</h3>
+                        <p class="coffee-origin">{{LIGHT_ROAST_ORIGIN}}</p>
+                        <p class="coffee-description">{{LIGHT_ROAST_DESCRIPTION}}</p>
+                        <div class="coffee-notes">
+                            <span class="note">{{LIGHT_NOTE_1}}</span>
+                            <span class="note">{{LIGHT_NOTE_2}}</span>
+                        </div>
+                        <div class="coffee-price">${{LIGHT_ROAST_PRICE}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <div class="section-header">
+                <h2>Café Menu</h2>
+                <p>Coffee, pastries, and light bites</p>
+            </div>
+            <div class="menu-tabs">
+                <button class="tab-btn active" data-tab="drinks">Hot Drinks</button>
+                <button class="tab-btn" data-tab="cold">Cold Drinks</button>
+                <button class="tab-btn" data-tab="food">Food</button>
+                <button class="tab-btn" data-tab="pastries">Pastries</button>
+            </div>
+            <div class="menu-content">
+                <!-- Hot Drinks -->
+                <div class="tab-content active" id="drinks">
+                    <div class="menu-category">
+                        <h3>Espresso Drinks</h3>
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="item-header">
+                                    <h4>Espresso</h4>
+                                    <span class="price">${{ESPRESSO_SINGLE}} / ${{ESPRESSO_DOUBLE}}</span>
+                                </div>
+                                <p>Single or double shot of our signature espresso</p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-header">
+                                    <h4>Cappuccino</h4>
+                                    <span class="price">${{CAPPUCCINO_PRICE}}</span>
+                                </div>
+                                <p>Espresso with steamed milk and foam</p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-header">
+                                    <h4>Latte</h4>
+                                    <span class="price">${{LATTE_PRICE}}</span>
+                                </div>
+                                <p>Espresso with steamed milk and light foam</p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-header">
+                                    <h4>Flat White</h4>
+                                    <span class="price">${{FLAT_WHITE_PRICE}}</span>
+                                </div>
+                                <p>Double shot espresso with microfoam milk</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-category">
+                        <h3>Specialty Drinks</h3>
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="item-header">
+                                    <h4>{{SPECIALTY_DRINK_1_NAME}}</h4>
+                                    <span class="price">${{SPECIALTY_DRINK_1_PRICE}}</span>
+                                </div>
+                                <p>{{SPECIALTY_DRINK_1_DESCRIPTION}}</p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-header">
+                                    <h4>{{SPECIALTY_DRINK_2_NAME}}</h4>
+                                    <span class="price">${{SPECIALTY_DRINK_2_PRICE}}</span>
+                                </div>
+                                <p>{{SPECIALTY_DRINK_2_DESCRIPTION}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cold Drinks -->
+                <div class="tab-content" id="cold">
+                    <div class="menu-category">
+                        <h3>Cold Coffee</h3>
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="item-header">
+                                    <h4>Iced Coffee</h4>
+                                    <span class="price">${{ICED_COFFEE_PRICE}}</span>
+                                </div>
+                                <p>Fresh brewed coffee served over ice</p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-header">
+                                    <h4>Cold Brew</h4>
+                                    <span class="price">${{COLD_BREW_PRICE}}</span>
+                                </div>
+                                <p>Smooth, slow-steeped cold brew concentrate</p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-header">
+                                    <h4>Iced Latte</h4>
+                                    <span class="price">${{ICED_LATTE_PRICE}}</span>
+                                </div>
+                                <p>Espresso with cold milk over ice</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Food -->
+                <div class="tab-content" id="food">
+                    <div class="menu-category">
+                        <h3>Light Bites</h3>
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="item-header">
+                                    <h4>{{SANDWICH_1_NAME}}</h4>
+                                    <span class="price">${{SANDWICH_1_PRICE}}</span>
+                                </div>
+                                <p>{{SANDWICH_1_DESCRIPTION}}</p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-header">
+                                    <h4>{{SALAD_1_NAME}}</h4>
+                                    <span class="price">${{SALAD_1_PRICE}}</span>
+                                </div>
+                                <p>{{SALAD_1_DESCRIPTION}}</p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-header">
+                                    <h4>{{SOUP_1_NAME}}</h4>
+                                    <span class="price">${{SOUP_1_PRICE}}</span>
+                                </div>
+                                <p>{{SOUP_1_DESCRIPTION}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pastries -->
+                <div class="tab-content" id="pastries">
+                    <div class="menu-category">
+                        <h3>Fresh Baked Daily</h3>
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="item-header">
+                                    <h4>{{PASTRY_1_NAME}}</h4>
+                                    <span class="price">${{PASTRY_1_PRICE}}</span>
+                                </div>
+                                <p>{{PASTRY_1_DESCRIPTION}}</p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-header">
+                                    <h4>{{PASTRY_2_NAME}}</h4>
+                                    <span class="price">${{PASTRY_2_PRICE}}</span>
+                                </div>
+                                <p>{{PASTRY_2_DESCRIPTION}}</p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-header">
+                                    <h4>{{PASTRY_3_NAME}}</h4>
+                                    <span class="price">${{PASTRY_3_PRICE}}</span>
+                                </div>
+                                <p>{{PASTRY_3_DESCRIPTION}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Our Story</h2>
+                    <p class="about-lead">{{ABOUT_LEAD}}</p>
+                    <p>{{ABOUT_DESCRIPTION}}</p>
+                    <div class="about-values">
+                        <div class="value">
+                            <div class="value-icon">🌱</div>
+                            <div class="value-text">
+                                <h4>Sustainable Sourcing</h4>
+                                <p>Direct trade relationships with coffee farmers</p>
+                            </div>
+                        </div>
+                        <div class="value">
+                            <div class="value-icon">🎨</div>
+                            <div class="value-text">
+                                <h4>Artisan Roasting</h4>
+                                <p>Small batch roasting for maximum flavor</p>
+                            </div>
+                        </div>
+                        <div class="value">
+                            <div class="value-icon">🏠</div>
+                            <div class="value-text">
+                                <h4>Community Space</h4>
+                                <p>A welcoming place for work, study, and connection</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="{{ROASTING_IMAGE}}" alt="Coffee roasting">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Atmosphere Section -->
+    <section class="atmosphere">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Perfect Atmosphere</h2>
+                <p>Whether you're catching up with friends or getting work done</p>
+            </div>
+            <div class="atmosphere-grid">
+                <div class="atmosphere-card">
+                    <div class="atmosphere-image">
+                        <img src="{{SEATING_AREA_1}}" alt="Cozy seating area">
+                    </div>
+                    <div class="atmosphere-content">
+                        <h3>Cozy Corners</h3>
+                        <p>Perfect spots for intimate conversations and quiet reading</p>
+                    </div>
+                </div>
+                <div class="atmosphere-card">
+                    <div class="atmosphere-image">
+                        <img src="{{WORK_SPACE_IMAGE}}" alt="Work space">
+                    </div>
+                    <div class="atmosphere-content">
+                        <h3>Work-Friendly</h3>
+                        <p>Free WiFi, power outlets, and comfortable seating for productivity</p>
+                    </div>
+                </div>
+                <div class="atmosphere-card">
+                    <div class="atmosphere-image">
+                        <img src="{{COMMUNITY_TABLE}}" alt="Community table">
+                    </div>
+                    <div class="atmosphere-content">
+                        <h3>Community Table</h3>
+                        <p>Large shared table for meetings and making new connections</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Section -->
+    <section id="order" class="order">
+        <div class="container">
+            <div class="order-content">
+                <div class="order-text">
+                    <h2>Order Ahead</h2>
+                    <p>Skip the line and have your order ready when you arrive</p>
+                    <div class="order-benefits">
+                        <div class="benefit">
+                            <span class="benefit-icon">⏰</span>
+                            <span>Save time with mobile ordering</span>
+                        </div>
+                        <div class="benefit">
+                            <span class="benefit-icon">☕</span>
+                            <span>Your drink made fresh when you arrive</span>
+                        </div>
+                        <div class="benefit">
+                            <span class="benefit-icon">🎁</span>
+                            <span>Earn rewards with every purchase</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-actions">
+                    <a href="{{MOBILE_ORDER_URL}}" class="btn-primary large">Order Now</a>
+                    <div class="order-apps">
+                        <p>Download our app:</p>
+                        <div class="app-buttons">
+                            <a href="{{APP_STORE_URL}}" target="_blank" class="app-btn">
+                                <img src="{{APP_STORE_BADGE}}" alt="Download on App Store">
+                            </a>
+                            <a href="{{GOOGLE_PLAY_URL}}" target="_blank" class="app-btn">
+                                <img src="{{GOOGLE_PLAY_BADGE}}" alt="Get it on Google Play">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Visit Us</h2>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <h4>Location</h4>
+                                <p>{{FULL_ADDRESS}}</p>
+                                <a href="{{GOOGLE_MAPS_URL}}" target="_blank" class="directions-link">Get Directions →</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div>
+                                <h4>Phone</h4>
+                                <p><a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">🕒</div>
+                            <div>
+                                <h4>Hours</h4>
+                                <div class="hours-simple">
+                                    <p>Monday-Friday: {{WEEKDAY_HOURS}}</p>
+                                    <p>Saturday: {{SATURDAY_HOURS}}</p>
+                                    <p>Sunday: {{SUNDAY_HOURS}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wifi-info">
+                        <h3>Free WiFi</h3>
+                        <p>Network: {{WIFI_NAME}}</p>
+                        <p>Password: {{WIFI_PASSWORD}}</p>
+                    </div>
+                </div>
+                <div class="location-image">
+                    <img src="{{CAFE_EXTERIOR}}" alt="{{RESTAURANT_NAME}} exterior">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}}">
+                    <h3>{{RESTAURANT_NAME}}</h3>
+                    <p>{{TAGLINE}}</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#coffee">Our Coffee</a></li>
+                            <li><a href="#menu">Menu</a></li>
+                            <li><a href="{{MOBILE_ORDER_URL}}">Order Online</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Contact</h4>
+                        <p>{{FULL_ADDRESS}}</p>
+                        <p><a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+                        <p><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Follow Us</h4>
+                        <div class="social-links">
+                            <a href="{{FACEBOOK_URL}}" target="_blank">Facebook</a>
+                            <a href="{{INSTAGRAM_URL}}" target="_blank">Instagram</a>
+                            <a href="{{TWITTER_URL}}" target="_blank">Twitter</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+                <p>Fresh roasted daily • Free WiFi • Mobile ordering available</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

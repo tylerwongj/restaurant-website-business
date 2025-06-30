@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - {{CUISINE_TYPE}} Restaurant</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="cool-scheme">
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#visual-menu">Visual Menu</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-slider">
+            <div class="slide active">
+                <img src="../../images/test/hero/hero-image.jpg" alt="{{RESTAURANT_NAME}}" class="slide-bg">
+                <div class="slide-overlay">
+                    <div class="slide-content">
+                        <h1>{{RESTAURANT_NAME}}</h1>
+                        <p>{{TAGLINE}}</p>
+                        <a href="#visual-menu" class="btn btn-primary">Experience Our Menu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <span>Scroll to explore</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <section id="visual-menu" class="visual-menu">
+        <div class="container">
+            <div class="section-header">
+                <h2>Visual Menu Experience</h2>
+                <p class="section-subtitle">Every dish is a work of art</p>
+            </div>
+            
+            <div class="menu-masonry">
+                <div class="menu-card large">
+                    <div class="card-image-wrapper">
+                        <img src="../../images/test/food/food-image-1.jpg" alt="Signature Dish" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <span class="category">Signature</span>
+                                <h3>{{SIGNATURE_DISH}}</h3>
+                                <p>{{SIGNATURE_DESCRIPTION}}</p>
+                                <span class="price">${{SIGNATURE_PRICE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <div class="card-image-wrapper">
+                        <img src="../../images/test/food/food-image-2.jpg" alt="Appetizer" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <span class="category">Appetizer</span>
+                                <h3>{{APPETIZER_NAME}}</h3>
+                                <p>{{APPETIZER_DESCRIPTION}}</p>
+                                <span class="price">${{APPETIZER_PRICE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <div class="card-image-wrapper">
+                        <img src="../../images/test/food/food-image-3.jpg" alt="Main Course" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <span class="category">Main Course</span>
+                                <h3>{{MAIN_DISH}}</h3>
+                                <p>{{MAIN_DESCRIPTION}}</p>
+                                <span class="price">${{MAIN_PRICE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card tall">
+                    <div class="card-image-wrapper">
+                        <img src="../../images/test/food/food-image-4.jpg" alt="Dessert" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <span class="category">Dessert</span>
+                                <h3>{{DESSERT_NAME}}</h3>
+                                <p>{{DESSERT_DESCRIPTION}}</p>
+                                <span class="price">${{DESSERT_PRICE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <div class="card-image-wrapper">
+                        <img src="../../images/test/food/food-image-5.jpg" alt="Specialty" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <span class="category">Specialty</span>
+                                <h3>{{SPECIALTY_DISH}}</h3>
+                                <p>{{SPECIALTY_DESCRIPTION}}</p>
+                                <span class="price">${{SPECIALTY_PRICE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-card">
+                    <div class="card-image-wrapper">
+                        <img src="../../images/test/food/food-image-6.jpg" alt="Featured" loading="lazy">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <span class="category">Featured</span>
+                                <h3>{{FEATURED_DISH}}</h3>
+                                <p>{{FEATURED_DESCRIPTION}}</p>
+                                <span class="price">${{FEATURED_PRICE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="menu-cta">
+                <a href="menu.html" class="btn btn-outline">View Complete Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Culinary Gallery</h2>
+                <p class="section-subtitle">Behind the scenes of exceptional dining</p>
+            </div>
+            
+            <div class="gallery-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="dishes">Dishes</button>
+                <button class="filter-btn" data-filter="ambiance">Ambiance</button>
+                <button class="filter-btn" data-filter="process">Process</button>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item" data-category="dishes">
+                    <img src="../../images/test/food/food-image-1.jpg" alt="Signature Dish" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h4>Signature Creation</h4>
+                        <p>Our masterpiece dish</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="dishes">
+                    <img src="../../images/test/food/food-image-2.jpg" alt="Appetizer" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h4>Artisan Appetizer</h4>
+                        <p>Perfect start</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="dishes">
+                    <img src="../../images/test/food/food-image-3.jpg" alt="Main Course" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h4>Gourmet Main</h4>
+                        <p>Exceptional flavors</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="dishes">
+                    <img src="../../images/test/food/food-image-4.jpg" alt="Dessert" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h4>Sweet Finale</h4>
+                        <p>Perfect ending</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="dishes">
+                    <img src="../../images/test/food/food-image-5.jpg" alt="Specialty" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h4>House Special</h4>
+                        <p>Unique creation</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-category="dishes">
+                    <img src="../../images/test/food/food-image-6.jpg" alt="Featured" loading="lazy">
+                    <div class="gallery-overlay">
+                        <h4>Featured Dish</h4>
+                        <p>Chef's recommendation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2>Our Culinary Journey</h2>
+                    <p class="lead">{{RESTAURANT_STORY}}</p>
+                    <p>{{ADDITIONAL_INFO}}</p>
+                    
+                    <div class="chef-signature">
+                        <div class="signature-line"></div>
+                        <p class="chef-name">Chef {{CHEF_NAME}}</p>
+                        <p class="chef-title">Executive Chef & Owner</p>
+                    </div>
+                </div>
+                
+                <div class="about-visual">
+                    <div class="visual-stack">
+                        <div class="visual-card">
+                            <span class="visual-icon">🍽️</span>
+                            <h4>Artisan Crafted</h4>
+                            <p>Every dish made with passion</p>
+                        </div>
+                        <div class="visual-card">
+                            <span class="visual-icon">🌿</span>
+                            <h4>Fresh Ingredients</h4>
+                            <p>Locally sourced daily</p>
+                        </div>
+                        <div class="visual-card">
+                            <span class="visual-icon">⭐</span>
+                            <h4>Award Winning</h4>
+                            <p>Recognized excellence</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Reserve Your Experience</h2>
+                    <p>Join us for an unforgettable culinary journey</p>
+                    
+                    <div class="contact-details">
+                        <div class="detail-item">
+                            <span class="detail-icon">📍</span>
+                            <div>
+                                <h4>Location</h4>
+                                <p>{{ADDRESS}}<br>{{CITY}}, {{STATE}} {{ZIP}}</p>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <span class="detail-icon">🕒</span>
+                            <div>
+                                <h4>Operating Hours</h4>
+                                <p>{{HOURS}}</p>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <span class="detail-icon">📞</span>
+                            <div>
+                                <h4>Contact</h4>
+                                <p>{{PHONE}}<br>{{EMAIL}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reservation-card">
+                    <h3>Make a Reservation</h3>
+                    <form class="reservation-form">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="date">Date</label>
+                                <input type="date" id="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="time">Time</label>
+                                <select id="time" required>
+                                    <option value="">Select time</option>
+                                    <option value="17:00">5:00 PM</option>
+                                    <option value="17:30">5:30 PM</option>
+                                    <option value="18:00">6:00 PM</option>
+                                    <option value="18:30">6:30 PM</option>
+                                    <option value="19:00">7:00 PM</option>
+                                    <option value="19:30">7:30 PM</option>
+                                    <option value="20:00">8:00 PM</option>
+                                    <option value="20:30">8:30 PM</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="guests">Number of Guests</label>
+                            <select id="guests" required>
+                                <option value="">Select party size</option>
+                                <option value="1">1 Guest</option>
+                                <option value="2">2 Guests</option>
+                                <option value="3">3 Guests</option>
+                                <option value="4">4 Guests</option>
+                                <option value="5">5 Guests</option>
+                                <option value="6">6+ Guests</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="notes">Special Requests</label>
+                            <textarea id="notes" placeholder="Dietary restrictions, special occasions, etc."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-full">Confirm Reservation</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>{{RESTAURANT_NAME}}</h3>
+                    <p>Where every meal is a visual feast</p>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}" aria-label="Facebook">📘</a>
+                        <a href="{{INSTAGRAM_URL}}" aria-label="Instagram">📷</a>
+                        <a href="{{TWITTER_URL}}" aria-label="Twitter">🐦</a>
+                        <a href="{{YELP_URL}}" aria-label="Yelp">⭐</a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#visual-menu">Visual Menu</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Visit Us</h4>
+                    <p>{{ADDRESS}}<br>{{CITY}}, {{STATE}} {{ZIP}}</p>
+                    <p>{{PHONE}}</p>
+                    <p>{{EMAIL}}</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved. | Designed for visual excellence</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
