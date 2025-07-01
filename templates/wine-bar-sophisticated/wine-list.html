@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wine List - {{RESTAURANT_NAME}}</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;700&family=Crimson+Text:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body class="warm-theme">
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h1>{{RESTAURANT_NAME}}</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="#" class="active">Wine List</a></li>
+                <li><a href="index.html#events">Events</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="wine-list-hero">
+        <div class="container">
+            <h1>Our Wine Collection</h1>
+            <p>Carefully curated selections from renowned vineyards worldwide</p>
+        </div>
+    </section>
+
+    <section class="wine-list-main">
+        <div class="container">
+            <div class="wine-filters">
+                <button class="filter-btn active" data-filter="all">All Wines</button>
+                <button class="filter-btn" data-filter="red">Reds</button>
+                <button class="filter-btn" data-filter="white">Whites</button>
+                <button class="filter-btn" data-filter="sparkling">Sparkling</button>
+                <button class="filter-btn" data-filter="dessert">Dessert</button>
+            </div>
+
+            <div class="wine-categories">
+                <div class="wine-section" data-category="red">
+                    <h2>Red Wines</h2>
+                    <div class="wine-grid">
+                        <div class="wine-card">
+                            <h3>{{RED_WINE_1_NAME}}</h3>
+                            <p class="wine-origin">{{RED_WINE_1_ORIGIN}}</p>
+                            <p class="wine-description">{{RED_WINE_1_DESCRIPTION}}</p>
+                            <div class="wine-pricing">
+                                <span class="glass-price">Glass: {{RED_WINE_1_GLASS_PRICE}}</span>
+                                <span class="bottle-price">Bottle: {{RED_WINE_1_BOTTLE_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="wine-card">
+                            <h3>{{RED_WINE_2_NAME}}</h3>
+                            <p class="wine-origin">{{RED_WINE_2_ORIGIN}}</p>
+                            <p class="wine-description">{{RED_WINE_2_DESCRIPTION}}</p>
+                            <div class="wine-pricing">
+                                <span class="glass-price">Glass: {{RED_WINE_2_GLASS_PRICE}}</span>
+                                <span class="bottle-price">Bottle: {{RED_WINE_2_BOTTLE_PRICE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wine-section" data-category="white">
+                    <h2>White Wines</h2>
+                    <div class="wine-grid">
+                        <div class="wine-card">
+                            <h3>{{WHITE_WINE_1_NAME}}</h3>
+                            <p class="wine-origin">{{WHITE_WINE_1_ORIGIN}}</p>
+                            <p class="wine-description">{{WHITE_WINE_1_DESCRIPTION}}</p>
+                            <div class="wine-pricing">
+                                <span class="glass-price">Glass: {{WHITE_WINE_1_GLASS_PRICE}}</span>
+                                <span class="bottle-price">Bottle: {{WHITE_WINE_1_BOTTLE_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="wine-card">
+                            <h3>{{WHITE_WINE_2_NAME}}</h3>
+                            <p class="wine-origin">{{WHITE_WINE_2_ORIGIN}}</p>
+                            <p class="wine-description">{{WHITE_WINE_2_DESCRIPTION}}</p>
+                            <div class="wine-pricing">
+                                <span class="glass-price">Glass: {{WHITE_WINE_2_GLASS_PRICE}}</span>
+                                <span class="bottle-price">Bottle: {{WHITE_WINE_2_BOTTLE_PRICE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wine-section" data-category="sparkling">
+                    <h2>Sparkling & Champagne</h2>
+                    <div class="wine-grid">
+                        <div class="wine-card">
+                            <h3>{{SPARKLING_1_NAME}}</h3>
+                            <p class="wine-origin">{{SPARKLING_1_ORIGIN}}</p>
+                            <p class="wine-description">{{SPARKLING_1_DESCRIPTION}}</p>
+                            <div class="wine-pricing">
+                                <span class="glass-price">Glass: {{SPARKLING_1_GLASS_PRICE}}</span>
+                                <span class="bottle-price">Bottle: {{SPARKLING_1_BOTTLE_PRICE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wine-section" data-category="dessert">
+                    <h2>Dessert Wines</h2>
+                    <div class="wine-grid">
+                        <div class="wine-card">
+                            <h3>{{DESSERT_WINE_1_NAME}}</h3>
+                            <p class="wine-origin">{{DESSERT_WINE_1_ORIGIN}}</p>
+                            <p class="wine-description">{{DESSERT_WINE_1_DESCRIPTION}}</p>
+                            <div class="wine-pricing">
+                                <span class="glass-price">Glass: {{DESSERT_WINE_1_GLASS_PRICE}}</span>
+                                <span class="bottle-price">Bottle: {{DESSERT_WINE_1_BOTTLE_PRICE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>{{RESTAURANT_NAME}}</h3>
+                    <p>{{ADDRESS}}</p>
+                    <p><a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+                </div>
+                <div class="footer-social">
+                    <a href="{{FACEBOOK_URL}}" target="_blank">Facebook</a>
+                    <a href="{{INSTAGRAM_URL}}" target="_blank">Instagram</a>
+                    <a href="{{TWITTER_URL}}" target="_blank">Twitter</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

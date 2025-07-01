@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - {{RESTAURANT_NAME}}</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        .menu-hero {
+            background: linear-gradient(var(--overlay), var(--overlay)), url('{{HERO_IMAGE}}');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+        
+        .menu-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .menu-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .menu-section {
+            padding: 80px 0;
+        }
+        
+        .menu-section:nth-child(even) {
+            background: var(--background-light);
+        }
+        
+        .menu-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 3rem;
+        }
+        
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .menu-item-detailed {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(46, 83, 57, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .menu-item-detailed:hover {
+            transform: translateY(-5px);
+        }
+        
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        
+        .item-header h3 {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            flex: 1;
+        }
+        
+        .item-price {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-left: 1rem;
+        }
+        
+        .item-description {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .item-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .tag {
+            background: var(--accent-color);
+            color: var(--white);
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .wine-pairing {
+            background: var(--background-light);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+            border-left: 4px solid var(--secondary-color);
+        }
+        
+        .wine-pairing h4 {
+            font-size: 1rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .wine-pairing p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body class="warm-scheme">
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo" class="logo">
+                <span class="logo-text">{{RESTAURANT_NAME}}</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="menu-hero">
+        <div class="container">
+            <h1>Mediterranean Menu</h1>
+            <p>Fresh flavors from the Mediterranean Sea</p>
+        </div>
+    </section>
+
+    <section class="menu-section">
+        <div class="container">
+            <h2>Mezze & Appetizers</h2>
+            <div class="menu-grid">
+                <div class="menu-item-detailed">
+                    <div class="item-header">
+                        <h3>Traditional Hummus</h3>
+                        <span class="item-price">$12</span>
+                    </div>
+                    <p class="item-description">Creamy chickpea spread with tahini, extra virgin olive oil, and fresh herbs. Served with warm pita bread and vegetable crudité.</p>
+                    <div class="item-tags">
+                        <span class="tag">Vegan</span>
+                        <span class="tag">Gluten-Free</span>
+                    </div>
+                </div>
+                
+                <div class="menu-item-detailed">
+                    <div class="item-header">
+                        <h3>Grilled Octopus</h3>
+                        <span class="item-price">$18</span>
+                    </div>
+                    <p class="item-description">Tender Mediterranean octopus grilled with lemon, capers, and oregano. Served over warm chickpea salad.</p>
+                    <div class="item-tags">
+                        <span class="tag">Gluten-Free</span>
+                        <span class="tag">Seafood</span>
+                    </div>
+                    <div class="wine-pairing">
+                        <h4>Wine Pairing</h4>
+                        <p>Assyrtiko - Crisp Greek white wine</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item-detailed">
+                    <div class="item-header">
+                        <h3>Mezze Platter</h3>
+                        <span class="item-price">$24</span>
+                    </div>
+                    <p class="item-description">Selection of hummus, baba ganoush, olives, feta, dolmades, and fresh vegetables with warm pita.</p>
+                    <div class="item-tags">
+                        <span class="tag">Vegetarian</span>
+                        <span class="tag">Sharing</span>
+                    </div>
+                </div>
+                
+                <div class="menu-item-detailed">
+                    <div class="item-header">
+                        <h3>Spanakopita</h3>
+                        <span class="item-price">$14</span>
+                    </div>
+                    <p class="item-description">Flaky phyllo pastry filled with spinach, feta cheese, and fresh herbs. Served with lemon yogurt sauce.</p>
+                    <div class="item-tags">
+                        <span class="tag">Vegetarian</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="menu-section">
+        <div class="container">
+            <h2>Fresh Seafood</h2>
+            <div class="menu-grid">
+                <div class="menu-item-detailed">
+                    <div class="item-header">
+                        <h3>Whole Branzino</h3>
+                        <span class="item-price">$28</span>
+                    </div>
+                    <p class="item-description">Mediterranean sea bass grilled whole with lemon, herbs, and olive oil. Served with roasted vegetables and rice pilaf.</p>
+                    <div class="item-tags">
+                        <span class="tag">Gluten-Free</span>
+                        <span class="tag">Daily Catch</span>
+                    </div>
+                    <div class="wine-pairing">
+                        <h4>Wine Pairing</h4>
+                        <p>Vermentino - Light Italian white wine</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item-detailed">
+                    <div class="item-header">
+                        <h3>Linguine alle Vongole</h3>
+                        <span class="item-price">$24</span>
+                    </div>
+                    <p class="item-description">Fresh clams sautéed with white wine, garlic, parsley, and chili flakes over linguine pasta.</p>
+                    <div class="item-tags">
+                        <span class="tag">Seafood</span>
+                        <span class="tag">Pasta</span>
+                    </div>
+                </div>
+                
+                <div class="menu-item-detailed">
+                    <div class="item-header">
+                        <h3>Seafood Risotto</h3>
+                        <span class="item-price">$26</span>
+                    </div>
+                    <p class="item-description">Creamy Arborio rice with mixed seafood, saffron, and Mediterranean herbs. Finished with lemon and parsley.</p>
+                    <div class="item-tags">
+                        <span class="tag">Gluten-Free</span>
+                        <span class="tag">Seafood</span>
+                    </div>
+                </div>
+                
+                <div class="menu-item-detailed">
+                    <div class="item-header">
+                        <h3>Grilled Salmon</h3>
+                        <span class="item-price">$25</span>
+                    </div>
+                    <p class="item-description">Atlantic salmon grilled with Mediterranean herbs, served with quinoa tabbouleh and cucumber yogurt.</p>
+                    <div class="item-tags">
+                        <span class="tag">Gluten-Free</span>
+                        <span class="tag">Healthy</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="menu-section">
+        <div class="container">
+            <h2>Meat & Poultry</h2>
+            <div class="menu-grid">
+                <div class="menu-item-detailed">
+                    <div class="item-header">
+                        <h3>Lamb Souvlaki</h3>
+                        <span class="item-price">$26</span>
+                    </div>
+                    <p class="item-description">Tender lamb skewers marinated in olive oil, lemon, and oregano. Served with Greek salad and tzatziki.</p>
+                    <div class="item-tags">
+                        <span class="tag">Gluten-Free</span>
+                        <span class="tag">Traditional</span>
+                    </div>
+                    <div class="wine-pairing">
+                        <h4>Wine Pairing</h4>
+                        <p>Agiorgitiko - Greek red wine</p>
+                    </div>
+                </div>
+                
+                <div class="menu-item-detailed">
+                    <div class="item-header">
+                        <h3>Chicken Gyros</h3>
+                        <span class="item-price">$18</span>
+                    </div>
+                    <p class="item-description">Marinated chicken with tomatoes, onions, and tzatziki wrapped in warm pita bread. Served with Greek fries.</p>
+                    <div class="item-tags">
+                        <span class="tag">Popular</span>
+                    </div>
+                </div>
+                
+                <div class="menu-item-detailed">
+                    <div class="item-header">
+                        <h3>Moussaka</h3>
+                        <span class="item-price">$22</span>
+                    </div>
+                    <p class="item-description">Traditional Greek casserole with layers of eggplant, ground lamb, and béchamel sauce. Baked until golden.</p>
+                    <div class="item-tags">
+                        <span class="tag">Traditional</span>
+                        <span class="tag">Comfort Food</span>
+                    </div>
+                </div>
+                
+                <div class="menu-item-detailed">
+                    <div class="item-header">
+                        <h3>Mediterranean Steak</h3>
+                        <span class="item-price">$32</span>
+                    </div>
+                    <p class="item-description">Grilled ribeye with Mediterranean herb crust, served with roasted potatoes and seasonal vegetables.</p>
+                    <div class="item-tags">
+                        <span class="tag">Premium</span>
+                        <span class="tag">Gluten-Free</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="menu-section">
+        <div class="container">
+            <h2>Vegetarian Delights</h2>
+            <div class="menu-grid">
+                <div class="menu-item-detailed">
+                    <div class="item-header">
+                        <h3>Stuffed Peppers</h3>
+                        <span class="item-price">$19</span>
+                    </div>
+                    <p class="item-description">Bell peppers stuffed with rice, herbs, pine nuts, and vegetables. Served with lemon tahini sauce.</p>
+                    <div class="item-tags">
+                        <span class="tag">Vegan</span>
+                        <span class="tag">Gluten-Free</span>
+                    </div>
+                </div>
+                
+                <div class="menu-item-detailed">
+                    <div class="item-header">
+                        <h3>Falafel Plate</h3>
+                        <span class="item-price">$16</span>
+                    </div>
+                    <p class="item-description">House-made falafel with hummus, tabbouleh, pickled vegetables, and warm pita bread.</p>
+                    <div class="item-tags">
+                        <span class="tag">Vegan</span>
+                        <span class="tag">Traditional</span>
+                    </div>
+                </div>
+                
+                <div class="menu-item-detailed">
+                    <div class="item-header">
+                        <h3>Eggplant Parmigiana</h3>
+                        <span class="item-price">$20</span>
+                    </div>
+                    <p class="item-description">Layers of grilled eggplant with marinara sauce, mozzarella, and fresh basil. Served with pasta.</p>
+                    <div class="item-tags">
+                        <span class="tag">Vegetarian</span>
+                        <span class="tag">Italian</span>
+                    </div>
+                </div>
+                
+                <div class="menu-item-detailed">
+                    <div class="item-header">
+                        <h3>Mediterranean Quinoa Bowl</h3>
+                        <span class="item-price">$17</span>
+                    </div>
+                    <p class="item-description">Quinoa with roasted vegetables, chickpeas, olives, feta, and lemon herb dressing.</p>
+                    <div class="item-tags">
+                        <span class="tag">Healthy</span>
+                        <span class="tag">Gluten-Free</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="menu-section">
+        <div class="container">
+            <h2>Desserts & Sweets</h2>
+            <div class="menu-grid">
+                <div class="menu-item-detailed">
+                    <div class="item-header">
+                        <h3>Baklava</h3>
+                        <span class="item-price">$8</span>
+                    </div>
+                    <p class="item-description">Layers of phyllo pastry with nuts and honey syrup. Served with vanilla ice cream.</p>
+                    <div class="item-tags">
+                        <span class="tag">Traditional</span>
+                        <span class="tag">Vegetarian</span>
+                    </div>
+                </div>
+                
+                <div class="menu-item-detailed">
+                    <div class="item-header">
+                        <h3>Greek Yogurt with Honey</h3>
+                        <span class="item-price">$9</span>
+                    </div>
+                    <p class="item-description">Thick Greek yogurt drizzled with wild honey, topped with walnuts and fresh berries.</p>
+                    <div class="item-tags">
+                        <span class="tag">Healthy</span>
+                        <span class="tag">Gluten-Free</span>
+                    </div>
+                </div>
+                
+                <div class="menu-item-detailed">
+                    <div class="item-header">
+                        <h3>Galaktoboureko</h3>
+                        <span class="item-price">$10</span>
+                    </div>
+                    <p class="item-description">Custard-filled phyllo pastry with cinnamon and syrup. A classic Greek dessert.</p>
+                    <div class="item-tags">
+                        <span class="tag">Traditional</span>
+                        <span class="tag">Vegetarian</span>
+                    </div>
+                </div>
+                
+                <div class="menu-item-detailed">
+                    <div class="item-header">
+                        <h3>Lemon Panna Cotta</h3>
+                        <span class="item-price">$9</span>
+                    </div>
+                    <p class="item-description">Silky smooth lemon panna cotta with fresh berries and mint.</p>
+                    <div class="item-tags">
+                        <span class="tag">Light</span>
+                        <span class="tag">Gluten-Free</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+                    <span>{{RESTAURANT_NAME}}</span>
+                </div>
+                <div class="footer-info">
+                    <p>{{ADDRESS}}</p>
+                    <p><a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+                </div>
+                <div class="footer-social">
+                    <a href="{{FACEBOOK_URL}}" target="_blank">Facebook</a>
+                    <a href="{{INSTAGRAM_URL}}" target="_blank">Instagram</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
