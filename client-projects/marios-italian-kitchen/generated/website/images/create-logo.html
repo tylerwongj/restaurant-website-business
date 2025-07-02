@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mario's Italian Kitchen Logo Generator</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        #canvas { border: 1px solid #ddd; background: white; }
+        .controls { margin: 20px 0; }
+        button { padding: 10px 20px; margin: 5px; background: #007cba; color: white; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h2>Mario's Italian Kitchen Logo Creator</h2>
+    <canvas id="canvas" width="400" height="200"></canvas>
+    
+    <div class="controls">
+        <button onclick="generateLogo()">Generate Logo</button>
+        <button onclick="downloadLogo()">Download PNG</button>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        function generateLogo() {
+            // Clear canvas
+            ctx.fillStyle = 'white';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // Italian flag colors background
+            ctx.fillStyle = '#009246';
+            ctx.fillRect(0, 0, 133, 200);
+            ctx.fillStyle = '#CE2B37';
+            ctx.fillRect(267, 0, 133, 200);
+            
+            // White background for text
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+            ctx.fillRect(50, 40, 300, 120);
+            
+            // Restaurant name
+            ctx.fillStyle = '#8B0000';
+            ctx.font = 'bold 36px serif';
+            ctx.textAlign = 'center';
+            ctx.fillText("Mario's", 200, 85);
+            
+            ctx.fillStyle = '#006400';
+            ctx.font = 'bold 28px serif';
+            ctx.fillText("Italian Kitchen", 200, 115);
+            
+            // Decorative elements
+            ctx.fillStyle = '#FFD700';
+            ctx.font = '20px serif';
+            ctx.fillText("★ Authentic Cuisine ★", 200, 140);
+            
+            // Border
+            ctx.strokeStyle = '#8B0000';
+            ctx.lineWidth = 3;
+            ctx.strokeRect(45, 35, 310, 130);
+        }
+
+        function downloadLogo() {
+            const link = document.createElement('a');
+            link.download = 'marios-logo.png';
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+
+        // Generate logo on page load
+        generateLogo();
+    </script>
+</body>
+</html>
