@@ -13,7 +13,6 @@ class ImageUploadManager {
     initializeUploads() {
         document.addEventListener('DOMContentLoaded', () => {
             this.setupMainUploads();
-            this.addInitialFoodUploads();
         });
     }
 
@@ -31,12 +30,6 @@ class ImageUploadManager {
         });
     }
 
-    addInitialFoodUploads() {
-        // Add 4 initial food upload slots
-        for (let i = 0; i < 4; i++) {
-            this.addFoodUpload();
-        }
-    }
 
     triggerUpload(type) {
         const uploadInput = document.getElementById(`${type}Upload`);
@@ -49,10 +42,13 @@ class ImageUploadManager {
         const file = event.target.files[0];
         if (!file) return;
 
+        // Clear any previous error
+        this.clearUploadError(type);
+
         // Validate file
         const validation = this.validateFile(file, type);
         if (!validation.isValid) {
-            alert(validation.message);
+            this.showUploadError(type, validation.message);
             event.target.value = '';
             return;
         }
@@ -167,6 +163,9 @@ class ImageUploadManager {
             thumbnailContainer.innerHTML = '';
         }
         
+        // Clear any error messages
+        this.clearUploadError(type);
+        
         // Update upload box state
         const uploadBox = document.querySelector(`#${type}Upload`).closest('.upload-box');
         if (uploadBox) {
@@ -175,72 +174,6 @@ class ImageUploadManager {
     }
 
 
-    addFoodUpload() {
-        this.foodUploadCount++;
-        const foodContainer = document.getElementById('foodUploads');
-        
-        if (!foodContainer) return;
-        
-        const foodUploadDiv = document.createElement('div');
-        foodUploadDiv.className = 'upload-item food-upload';
-        foodUploadDiv.innerHTML = `
-            <label>Food Photo ${this.foodUploadCount}</label>
-            <div class="upload-box" onclick="imageManager.triggerFoodUpload(${this.foodUploadCount})">
-                <input type="file" id="food${this.foodUploadCount}Upload" accept=".png,.jpg,.jpeg" style="display: none;">
-                <div class="upload-content">
-                    <span class="upload-icon">🍽️</span>
-                    <p>Click to upload food photo</p>
-                    <small>Recommended: 500x400px</small>
-                </div>
-                <div class="image-preview" id="food${this.foodUploadCount}Preview" style="display: none;"></div>
-            </div>
-            <button type="button" class="remove-upload" onclick="imageManager.removeFoodUpload(${this.foodUploadCount})">Remove</button>
-        `;
-        
-        foodContainer.appendChild(foodUploadDiv);
-        
-        // Setup event listener
-        const uploadInput = document.getElementById(`food${this.foodUploadCount}Upload`);
-        uploadInput.addEventListener('change', (e) => {
-            this.handleFileUpload(e, `food${this.foodUploadCount}`);
-        });
-        
-        // Update button visibility
-        this.updateAddFoodButton();
-    }
-
-    triggerFoodUpload(index) {
-        const uploadInput = document.getElementById(`food${index}Upload`);
-        if (uploadInput) {
-            uploadInput.click();
-        }
-    }
-
-    removeFoodUpload(index) {
-        const uploadDiv = document.querySelector(`#food${index}Upload`).closest('.food-upload');
-        if (uploadDiv) {
-            uploadDiv.remove();
-        }
-        
-        // Remove from stored images
-        delete this.uploadedImages[`food${index}`];
-        
-        // Update button visibility
-        this.updateAddFoodButton();
-    }
-
-    updateAddFoodButton() {
-        const foodUploads = document.querySelectorAll('.food-upload');
-        const addButton = document.querySelector('.btn-add-food');
-        
-        if (addButton) {
-            if (foodUploads.length >= 12) {
-                addButton.style.display = 'none';
-            } else {
-                addButton.style.display = 'block';
-            }
-        }
-    }
 
     formatFileSize(bytes) {
         if (bytes === 0) return '0 Bytes';
@@ -300,6 +233,54 @@ class ImageUploadManager {
             reader.onerror = error => reject(error);
         });
     }
+
+    showUploadError(type, message) {
+        const uploadItem = document.querySelector(`#${type}Upload`).closest('.upload-item');
+        if (uploadItem) {
+            // Remove existing error if any
+            const existingError = uploadItem.querySelector('.upload-error');
+            if (existingError) {
+                existingError.remove();
+            }
+            
+            // Add error message
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'upload-error';
+            errorDiv.innerHTML = `
+                <span class="error-icon">⚠️</span>
+                <span class="error-text">${message}</span>
+            `;
+            
+            // Insert after the upload-row
+            const uploadRow = uploadItem.querySelector('.upload-row');
+            if (uploadRow) {
+                uploadRow.insertAdjacentElement('afterend', errorDiv);
+            }
+            
+            // Add error styling to upload box
+            const uploadBox = uploadItem.querySelector('.upload-box');
+            if (uploadBox) {
+                uploadBox.classList.add('upload-error-state');
+            }
+        }
+    }
+
+    clearUploadError(type) {
+        const uploadItem = document.querySelector(`#${type}Upload`).closest('.upload-item');
+        if (uploadItem) {
+            // Remove error message
+            const errorDiv = uploadItem.querySelector('.upload-error');
+            if (errorDiv) {
+                errorDiv.remove();
+            }
+            
+            // Remove error styling
+            const uploadBox = uploadItem.querySelector('.upload-box');
+            if (uploadBox) {
+                uploadBox.classList.remove('upload-error-state');
+            }
+        }
+    }
 }
 
 // Global functions for HTML onclick handlers
@@ -309,11 +290,6 @@ function triggerUpload(type) {
     }
 }
 
-function addFoodUpload() {
-    if (window.imageManager) {
-        window.imageManager.addFoodUpload();
-    }
-}
 
 // Initialize image manager
 const imageManager = new ImageUploadManager();

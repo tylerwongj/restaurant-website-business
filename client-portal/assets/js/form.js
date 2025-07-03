@@ -3,16 +3,27 @@
 class RestaurantFormManager {
     constructor() {
         this.formData = {};
-        this.menuItems = [];
+        this.menuCategories = {
+            appetizers: [],
+            soups: [],
+            salads: [],
+            mains: [],
+            desserts: [],
+            wines: [],
+            cocktails: []
+        };
+        this.activeCategory = 'appetizers';
         
         this.initializeForm();
     }
 
     initializeForm() {
         document.addEventListener('DOMContentLoaded', () => {
+            this.setupMenuTabs();
             this.addInitialMenuItems();
             this.setupAutoSave();
             this.setupFormValidation();
+            this.updateMenuStats();
         });
     }
 
@@ -84,22 +95,32 @@ class RestaurantFormManager {
     }
 
     saveMenuData() {
-        this.menuItems = [];
-        const menuItemElements = document.querySelectorAll('.menu-item');
+        // Clear existing data
+        Object.keys(this.menuCategories).forEach(category => {
+            this.menuCategories[category] = [];
+        });
         
-        menuItemElements.forEach((item, index) => {
-            const nameField = item.querySelector('[name$="Name"]');
-            const descField = item.querySelector('[name$="Description"]');
-            const priceField = item.querySelector('[name$="Price"]');
+        // Collect data from all categories
+        Object.keys(this.menuCategories).forEach(category => {
+            const categoryItems = document.querySelectorAll(`[data-category="${category}"]`);
             
-            if (nameField && descField && priceField) {
-                this.menuItems.push({
-                    name: nameField.value,
-                    description: descField.value,
-                    price: priceField.value,
-                    index: index + 1
-                });
-            }
+            categoryItems.forEach((item) => {
+                const itemId = item.dataset.id;
+                const nameField = item.querySelector(`[name="${itemId}_name"]`);
+                const descField = item.querySelector(`[name="${itemId}_description"]`);
+                const priceField = item.querySelector(`[name="${itemId}_price"]`);
+                const imageField = item.querySelector(`[name="${itemId}_image"]`);
+                
+                if (nameField && descField && priceField) {
+                    this.menuCategories[category].push({
+                        id: itemId,
+                        name: nameField.value,
+                        description: descField.value,
+                        price: priceField.value,
+                        image: imageField?.files[0] || null
+                    });
+                }
+            });
         });
     }
 
@@ -117,81 +138,136 @@ class RestaurantFormManager {
         });
     }
 
-    addInitialMenuItems() {
-        // Add 6 initial menu items
-        for (let i = 0; i < 6; i++) {
-            this.addMenuItem();
-        }
+    setupMenuTabs() {
+        const tabs = document.querySelectorAll('.category-tab');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const category = tab.dataset.category;
+                this.switchCategory(category);
+            });
+        });
     }
 
-    addMenuItem() {
-        const menuContainer = document.getElementById('menuItems');
-        if (!menuContainer) return;
+    switchCategory(category) {
+        // Update active tab
+        document.querySelectorAll('.category-tab').forEach(tab => {
+            tab.classList.remove('active');
+        });
+        document.querySelector(`[data-category="${category}"]`).classList.add('active');
+        
+        // Update active section
+        document.querySelectorAll('.category-section').forEach(section => {
+            section.classList.remove('active');
+        });
+        document.getElementById(`${category}-section`).classList.add('active');
+        
+        this.activeCategory = category;
+    }
 
-        const itemCount = menuContainer.children.length + 1;
+    addInitialMenuItems() {
+        // Add 2 sample items to appetizers and mains to show how it works
+        this.addCategoryItem('appetizers');
+        this.addCategoryItem('appetizers');
+        this.addCategoryItem('mains');
+        this.addCategoryItem('mains');
+        this.addCategoryItem('desserts');
+    }
+
+    addCategoryItem(category) {
+        const itemsList = document.getElementById(`${category}-items`);
+        if (!itemsList) return;
+
+        const categoryItems = this.menuCategories[category];
+        const itemIndex = categoryItems.length + 1;
+        const uniqueId = `${category}_${itemIndex}_${Date.now()}`;
+        
         const menuItemDiv = document.createElement('div');
         menuItemDiv.className = 'menu-item';
+        menuItemDiv.dataset.category = category;
+        menuItemDiv.dataset.id = uniqueId;
+        
+        const categoryLabel = this.getCategoryLabel(category);
+        
         menuItemDiv.innerHTML = `
             <div class="menu-item-header">
-                <h4>Menu Item ${itemCount}</h4>
-                <button type="button" class="remove-menu-item" onclick="formManager.removeMenuItem(this)">×</button>
+                <h4>${categoryLabel} ${itemIndex}</h4>
+                <button type="button" class="remove-menu-item" onclick="formManager.removeCategoryItem('${category}', '${uniqueId}')">×</button>
             </div>
             <div class="menu-item-content">
                 <div class="menu-item-fields">
                     <div class="form-group">
                         <label>Item Name *</label>
-                        <input type="text" name="menuItem${itemCount}Name" maxlength="40" required>
+                        <input type="text" name="${uniqueId}_name" maxlength="40" required>
                         <div class="char-counter">0/40 characters</div>
                         <div class="error-message"></div>
                     </div>
                     <div class="form-group">
                         <label>Description *</label>
-                        <textarea name="menuItem${itemCount}Description" maxlength="120" rows="2" required></textarea>
+                        <textarea name="${uniqueId}_description" maxlength="120" rows="2" required></textarea>
                         <div class="char-counter">0/120 characters</div>
                         <div class="error-message"></div>
                     </div>
                     <div class="form-group">
                         <label>Price *</label>
-                        <input type="text" name="menuItem${itemCount}Price" placeholder="12.95" required>
+                        <input type="text" name="${uniqueId}_price" placeholder="12.95" required>
                         <div class="error-message"></div>
                     </div>
                 </div>
                 <div class="menu-item-image">
                     <label>Food Photo (Optional)</label>
                     <div class="menu-upload-row">
-                        <div class="menu-upload-box" onclick="formManager.triggerMenuImageUpload(${itemCount})">
-                            <input type="file" id="menuItem${itemCount}Image" accept=".png,.jpg,.jpeg" style="display: none;">
+                        <div class="menu-upload-box" onclick="formManager.triggerMenuImageUpload('${uniqueId}')">
+                            <input type="file" id="${uniqueId}_image" accept=".png,.jpg,.jpeg" style="display: none;">
                             <div class="menu-upload-content">
                                 <span class="upload-icon">🍽️</span>
-                                <p>Add food photo</p>
+                                <p>Add photo</p>
                                 <small>Optional: 400x300px</small>
                             </div>
                         </div>
-                        <div class="menu-image-thumbnail" id="menuItem${itemCount}Thumbnail" style="display: none;"></div>
+                        <div class="menu-image-thumbnail" id="${uniqueId}_thumbnail" style="display: none;"></div>
                     </div>
                 </div>
             </div>
         `;
 
-        menuContainer.appendChild(menuItemDiv);
+        itemsList.appendChild(menuItemDiv);
+
+        // Add to category data
+        this.menuCategories[category].push({
+            id: uniqueId,
+            name: '',
+            description: '',
+            price: '',
+            image: null
+        });
 
         // Setup validation for new fields
-        this.setupMenuItemValidation(menuItemDiv, itemCount);
+        this.setupMenuItemValidation(menuItemDiv, uniqueId);
         
         // Setup image upload for this menu item
-        this.setupMenuImageUpload(itemCount);
+        this.setupMenuImageUpload(uniqueId);
         
-        // Update counter
-        this.updateMenuCounter();
-
-        // Update remove button visibility
-        this.updateMenuRemoveButtons();
+        // Update stats
+        this.updateMenuStats();
     }
 
-    setupMenuItemValidation(menuItem, itemCount) {
-        const nameField = menuItem.querySelector(`[name="menuItem${itemCount}Name"]`);
-        const descField = menuItem.querySelector(`[name="menuItem${itemCount}Description"]`);
-        const priceField = menuItem.querySelector(`[name="menuItem${itemCount}Price"]`);
+    getCategoryLabel(category) {
+        const labels = {
+            appetizers: 'Appetizer',
+            soups: 'Soup',
+            salads: 'Salad', 
+            mains: 'Main Course',
+            desserts: 'Dessert',
+            wines: 'Wine',
+            cocktails: 'Cocktail'
+        };
+        return labels[category] || 'Item';
+    }
+
+    setupMenuItemValidation(menuItem, itemId) {
+        const nameField = menuItem.querySelector(`[name="${itemId}_name"]`);
+        const descField = menuItem.querySelector(`[name="${itemId}_description"]`);
+        const priceField = menuItem.querySelector(`[name="${itemId}_price"]`);
 
         if (nameField) {
             nameField.addEventListener('input', (e) => {
@@ -212,54 +288,57 @@ class RestaurantFormManager {
         }
     }
 
-    setupMenuImageUpload(itemCount) {
-        const uploadInput = document.getElementById(`menuItem${itemCount}Image`);
+    setupMenuImageUpload(itemId) {
+        const uploadInput = document.getElementById(`${itemId}_image`);
         if (uploadInput) {
             uploadInput.addEventListener('change', (e) => {
-                this.handleMenuImageUpload(e, itemCount);
+                this.handleMenuImageUpload(e, itemId);
             });
         }
     }
 
-    triggerMenuImageUpload(itemCount) {
-        const uploadInput = document.getElementById(`menuItem${itemCount}Image`);
+    triggerMenuImageUpload(itemId) {
+        const uploadInput = document.getElementById(`${itemId}_image`);
         if (uploadInput) {
             uploadInput.click();
         }
     }
 
-    handleMenuImageUpload(event, itemCount) {
+    handleMenuImageUpload(event, itemId) {
         const file = event.target.files[0];
         if (!file) return;
 
+        // Clear any previous error
+        this.clearMenuImageError(itemId);
+
         // Basic validation
         if (!file.type.startsWith('image/')) {
-            alert('Please upload an image file');
+            this.showMenuImageError(itemId, 'Please upload an image file (JPEG, PNG, or WebP)');
             event.target.value = '';
             return;
         }
 
         if (file.size > 5 * 1024 * 1024) { // 5MB limit
-            alert('Image must be less than 5MB');
+            this.showMenuImageError(itemId, 'Image must be less than 5MB');
             event.target.value = '';
             return;
         }
 
         // Show thumbnail
-        this.showMenuImageThumbnail(file, itemCount);
+        this.showMenuImageThumbnail(file, itemId);
     }
 
-    showMenuImageThumbnail(file, itemCount) {
+    showMenuImageThumbnail(file, itemId) {
         const reader = new FileReader();
         
         reader.onload = (e) => {
-            const thumbnailContainer = document.getElementById(`menuItem${itemCount}Thumbnail`);
+            const thumbnailContainer = document.getElementById(`${itemId}_thumbnail`);
             if (thumbnailContainer) {
                 thumbnailContainer.innerHTML = `
                     <img src="${e.target.result}" alt="Menu item photo" class="menu-thumbnail-img">
                     <div class="menu-thumbnail-info">
                         <span class="menu-file-name">${file.name}</span>
-                        <button type="button" class="remove-menu-image" onclick="formManager.removeMenuImage(${itemCount})">×</button>
+                        <button type="button" class="remove-menu-image" onclick="formManager.removeMenuImage('${itemId}')">×</button>
                     </div>
                 `;
                 thumbnailContainer.style.display = 'block';
@@ -275,15 +354,15 @@ class RestaurantFormManager {
         reader.readAsDataURL(file);
     }
 
-    removeMenuImage(itemCount) {
+    removeMenuImage(itemId) {
         // Clear file input
-        const uploadInput = document.getElementById(`menuItem${itemCount}Image`);
+        const uploadInput = document.getElementById(`${itemId}_image`);
         if (uploadInput) {
             uploadInput.value = '';
         }
         
         // Hide thumbnail
-        const thumbnailContainer = document.getElementById(`menuItem${itemCount}Thumbnail`);
+        const thumbnailContainer = document.getElementById(`${itemId}_thumbnail`);
         if (thumbnailContainer) {
             thumbnailContainer.style.display = 'none';
             thumbnailContainer.innerHTML = '';
@@ -294,6 +373,9 @@ class RestaurantFormManager {
                 uploadContent.style.display = 'block';
             }
         }
+        
+        // Clear any error messages
+        this.clearMenuImageError(itemId);
     }
 
     updateCharCount(field, maxLength) {
@@ -327,57 +409,97 @@ class RestaurantFormManager {
         field.value = value;
     }
 
-    removeMenuItem(button) {
-        const menuItem = button.closest('.menu-item');
+    showMenuImageError(itemId, message) {
+        const menuItem = document.querySelector(`[data-id="${itemId}"]`);
+        if (menuItem) {
+            const imageSection = menuItem.querySelector('.menu-item-image');
+            if (imageSection) {
+                // Remove existing error if any
+                const existingError = imageSection.querySelector('.menu-upload-error');
+                if (existingError) {
+                    existingError.remove();
+                }
+                
+                // Add error message
+                const errorDiv = document.createElement('div');
+                errorDiv.className = 'menu-upload-error';
+                errorDiv.innerHTML = `
+                    <span class="error-icon">⚠️</span>
+                    <span class="error-text">${message}</span>
+                `;
+                
+                // Insert after the upload row
+                const uploadRow = imageSection.querySelector('.menu-upload-row');
+                if (uploadRow) {
+                    uploadRow.insertAdjacentElement('afterend', errorDiv);
+                }
+                
+                // Add error styling to upload box
+                const uploadBox = imageSection.querySelector('.menu-upload-box');
+                if (uploadBox) {
+                    uploadBox.classList.add('upload-error-state');
+                }
+            }
+        }
+    }
+
+    clearMenuImageError(itemId) {
+        const menuItem = document.querySelector(`[data-id="${itemId}"]`);
+        if (menuItem) {
+            const imageSection = menuItem.querySelector('.menu-item-image');
+            if (imageSection) {
+                // Remove error message
+                const errorDiv = imageSection.querySelector('.menu-upload-error');
+                if (errorDiv) {
+                    errorDiv.remove();
+                }
+                
+                // Remove error styling
+                const uploadBox = imageSection.querySelector('.menu-upload-box');
+                if (uploadBox) {
+                    uploadBox.classList.remove('upload-error-state');
+                }
+            }
+        }
+    }
+
+    removeCategoryItem(category, itemId) {
+        const menuItem = document.querySelector(`[data-id="${itemId}"]`);
         if (menuItem) {
             menuItem.remove();
-            this.updateMenuCounter();
-            this.updateMenuRemoveButtons();
-            this.renumberMenuItems();
         }
+        
+        // Remove from category data
+        this.menuCategories[category] = this.menuCategories[category].filter(item => item.id !== itemId);
+        
+        // Renumber items in this category
+        this.renumberCategoryItems(category);
+        
+        // Update stats
+        this.updateMenuStats();
     }
 
-    renumberMenuItems() {
-        const menuItems = document.querySelectorAll('.menu-item');
-        menuItems.forEach((item, index) => {
+    renumberCategoryItems(category) {
+        const categoryItems = document.querySelectorAll(`[data-category="${category}"]`);
+        const categoryLabel = this.getCategoryLabel(category);
+        
+        categoryItems.forEach((item, index) => {
             const header = item.querySelector('.menu-item-header h4');
             if (header) {
-                header.textContent = `Menu Item ${index + 1}`;
+                header.textContent = `${categoryLabel} ${index + 1}`;
             }
         });
     }
 
-    updateMenuCounter() {
-        const menuItems = document.querySelectorAll('.menu-item');
-        const counter = document.getElementById('menuCount');
+    updateMenuStats() {
+        const totalItems = Object.values(this.menuCategories).reduce((sum, category) => sum + category.length, 0);
+        const activeCategoriesCount = Object.values(this.menuCategories).filter(category => category.length > 0).length;
         
-        if (counter) {
-            counter.textContent = menuItems.length;
-        }
-
-        // Update add button visibility
-        const addButton = document.querySelector('.btn-add-menu');
-        if (addButton) {
-            if (menuItems.length >= 12) {
-                addButton.style.display = 'none';
-            } else {
-                addButton.style.display = 'block';
-            }
-        }
-    }
-
-    updateMenuRemoveButtons() {
-        const menuItems = document.querySelectorAll('.menu-item');
-        const removeButtons = document.querySelectorAll('.remove-menu-item');
+        const totalItemsEl = document.getElementById('totalItems');
+        const totalCategoriesEl = document.getElementById('totalCategories');
         
-        // Hide remove buttons if only 6 items remain
-        removeButtons.forEach(button => {
-            if (menuItems.length <= 6) {
-                button.style.display = 'none';
-            } else {
-                button.style.display = 'block';
-            }
-        });
+        if (totalItemsEl) totalItemsEl.textContent = totalItems;
+        if (totalCategoriesEl) totalCategoriesEl.textContent = `${activeCategoriesCount}/7`;
     }
 
     populateReview() {
@@ -490,8 +612,8 @@ class RestaurantFormManager {
         // Collect all data
         this.saveAllFormData();
 
-        // Generate and download JSON
-        await this.generateAndDownloadJSON();
+        // Generate and download ZIP
+        await this.generateAndDownloadZIP();
     }
 
     validateAllFields() {
@@ -521,8 +643,9 @@ class RestaurantFormManager {
         }
 
         // Check menu items
-        if (this.menuItems.length < 6) {
-            alert('Please add at least 6 menu items');
+        const totalMenuItems = Object.values(this.menuCategories).reduce((sum, category) => sum + category.length, 0);
+        if (totalMenuItems < 6) {
+            alert('Please add at least 6 menu items across all categories');
             return false;
         }
 
@@ -535,7 +658,7 @@ class RestaurantFormManager {
         return true;
     }
 
-    async generateAndDownloadJSON() {
+    async generateAndDownloadZIP() {
         try {
             // Show loading
             const submitButton = document.querySelector('.btn-submit');
@@ -546,14 +669,14 @@ class RestaurantFormManager {
             // Format data for restaurant system
             const clientData = await this.formatForRestaurantSystem();
             
-            // Create downloadable file
-            this.downloadJSON(clientData);
+            // Create downloadable ZIP file
+            await this.downloadZIP(clientData);
 
             // Show success message
             this.showSuccessMessage();
 
         } catch (error) {
-            console.error('Error generating JSON:', error);
+            console.error('Error generating ZIP:', error);
             alert('Error processing your submission. Please try again.');
         }
     }
@@ -565,14 +688,56 @@ class RestaurantFormManager {
         // Get images
         const images = await imageManager.processImagesForExport();
 
-        // Format menu items
+        // Format menu items by category
         const formattedMenu = {};
-        this.menuItems.forEach((item, index) => {
-            const num = index + 1;
-            formattedMenu[`MENU_ITEM_${num}`] = item.name;
-            formattedMenu[`MENU_DESCRIPTION_${num}`] = item.description;
-            formattedMenu[`PRICE_${num}`] = item.price;
-            formattedMenu[`FOOD_IMAGE_${num}`] = `images/food-${num}.jpg`;
+        let globalItemIndex = 1;
+        
+        // Add general menu items (for backward compatibility)
+        Object.values(this.menuCategories).forEach(categoryItems => {
+            categoryItems.forEach(item => {
+                formattedMenu[`MENU_ITEM_${globalItemIndex}`] = item.name;
+                formattedMenu[`MENU_DESCRIPTION_${globalItemIndex}`] = item.description;
+                formattedMenu[`PRICE_${globalItemIndex}`] = item.price;
+                formattedMenu[`FOOD_IMAGE_${globalItemIndex}`] = `images/food-${globalItemIndex}.jpg`;
+                globalItemIndex++;
+            });
+        });
+        
+        // Add category-specific menu items
+        Object.entries(this.menuCategories).forEach(([category, items]) => {
+            items.forEach((item, index) => {
+                const categoryIndex = index + 1;
+                const categoryUpper = category.toUpperCase();
+                
+                // Special handling for different categories
+                if (category === 'mains') {
+                    formattedMenu[`MAIN_${categoryIndex}_NAME`] = item.name;
+                    formattedMenu[`MAIN_${categoryIndex}_DESCRIPTION`] = item.description;
+                    formattedMenu[`MAIN_${categoryIndex}_PRICE`] = item.price;
+                } else if (category === 'appetizers') {
+                    formattedMenu[`APPETIZER_${categoryIndex}_NAME`] = item.name;
+                    formattedMenu[`APPETIZER_${categoryIndex}_DESCRIPTION`] = item.description;
+                    formattedMenu[`APPETIZER_${categoryIndex}_PRICE`] = item.price;
+                } else if (category === 'desserts') {
+                    formattedMenu[`DESSERT_${categoryIndex}_NAME`] = item.name;
+                    formattedMenu[`DESSERT_${categoryIndex}_DESCRIPTION`] = item.description;
+                    formattedMenu[`DESSERT_${categoryIndex}_PRICE`] = item.price;
+                } else if (category === 'wines') {
+                    formattedMenu[`WINE_${categoryIndex}_NAME`] = item.name;
+                    formattedMenu[`WINE_${categoryIndex}_DESCRIPTION`] = item.description;
+                    formattedMenu[`WINE_${categoryIndex}_PRICE`] = item.price;
+                } else if (category === 'cocktails') {
+                    formattedMenu[`COCKTAIL_${categoryIndex}_NAME`] = item.name;
+                    formattedMenu[`COCKTAIL_${categoryIndex}_DESCRIPTION`] = item.description;
+                    formattedMenu[`COCKTAIL_${categoryIndex}_PRICE`] = item.price;
+                } else {
+                    // Generic format for soups, salads, etc.
+                    const singularCategory = category.slice(0, -1).toUpperCase(); // Remove 's'
+                    formattedMenu[`${singularCategory}_${categoryIndex}_NAME`] = item.name;
+                    formattedMenu[`${singularCategory}_${categoryIndex}_DESCRIPTION`] = item.description;
+                    formattedMenu[`${singularCategory}_${categoryIndex}_PRICE`] = item.price;
+                }
+            });
         });
 
         // Main client data object
@@ -611,8 +776,11 @@ class RestaurantFormManager {
             // Metadata
             _GENERATED: {
                 timestamp: new Date().toISOString(),
-                portal_version: '1.0',
-                total_menu_items: this.menuItems.length,
+                portal_version: '2.0',
+                total_menu_items: Object.values(this.menuCategories).reduce((sum, cat) => sum + cat.length, 0),
+                menu_categories: Object.fromEntries(
+                    Object.entries(this.menuCategories).map(([cat, items]) => [cat, items.length])
+                ),
                 images_provided: Object.keys(images).length
             },
 
@@ -698,19 +866,69 @@ class RestaurantFormManager {
         URL.revokeObjectURL(url);
     }
 
+    async downloadZIP(data, filename = null) {
+        if (!filename) {
+            const restaurantName = this.formData.restaurantName || 'restaurant';
+            filename = `${restaurantName.replace(/[^a-zA-Z0-9]/g, '-')}-client-data.zip`;
+        }
+        
+        const zip = new JSZip();
+        
+        // Add JSON data file
+        zip.file('restaurant-data.json', JSON.stringify(data, null, 2));
+        
+        // Add main restaurant images
+        const mainImages = imageManager.getUploadedImages();
+        for (const [type, file] of Object.entries(mainImages)) {
+            if (file) {
+                const extension = file.name.split('.').pop();
+                zip.file(`images/${type}.${extension}`, file);
+            }
+        }
+        
+        // Add menu item images
+        for (const [category, items] of Object.entries(this.menuCategories)) {
+            for (let i = 0; i < items.length; i++) {
+                const item = items[i];
+                const imageInput = document.querySelector(`[name="${item.id}_image"]`);
+                if (imageInput && imageInput.files && imageInput.files[0]) {
+                    const file = imageInput.files[0];
+                    const extension = file.name.split('.').pop();
+                    zip.file(`images/menu/${category}/${item.id}.${extension}`, file);
+                }
+            }
+        }
+        
+        // Generate ZIP file and download
+        try {
+            const zipBlob = await zip.generateAsync({ type: 'blob' });
+            
+            const url = URL.createObjectURL(zipBlob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            a.click();
+            
+            URL.revokeObjectURL(url);
+        } catch (error) {
+            console.error('Error creating ZIP file:', error);
+            this.showNotification('Error creating ZIP file', 'error');
+        }
+    }
+
     showSuccessMessage() {
         const container = document.querySelector('.form-container');
         container.innerHTML = `
             <div class="success-message">
                 <div class="success-icon">✅</div>
                 <h2>Information Submitted Successfully!</h2>
-                <p>Your restaurant information has been compiled and downloaded as a JSON file.</p>
+                <p>Your restaurant information and images have been compiled and downloaded as a ZIP file.</p>
                 
                 <div class="next-steps">
                     <h3>Next Steps:</h3>
                     <ol>
-                        <li>Check your downloads folder for the JSON file</li>
-                        <li>Send the JSON file and any additional images to your developer</li>
+                        <li>Check your downloads folder for the ZIP file</li>
+                        <li>Send the ZIP file to your developer (it contains everything needed)</li>
                         <li>Your website will be ready in 48-72 hours</li>
                         <li>You'll receive a complete package with hosting instructions</li>
                     </ol>
@@ -726,10 +944,10 @@ class RestaurantFormManager {
     }
 
     setupAutoSave() {
-        // Auto-save every 30 seconds
+        // Auto-save every 2 minutes (silently)
         setInterval(() => {
-            this.saveProgress();
-        }, 30000);
+            this.saveProgressSilently();
+        }, 120000);
     }
 
     saveProgress() {
@@ -737,7 +955,7 @@ class RestaurantFormManager {
         
         const progressData = {
             formData: this.formData,
-            menuItems: this.menuItems,
+            menuCategories: this.menuCategories,
             timestamp: new Date().toISOString()
         };
 
@@ -747,20 +965,34 @@ class RestaurantFormManager {
         this.showNotification('Progress saved', 'success');
     }
 
-    saveToFile() {
+    saveProgressSilently() {
         this.saveAllFormData();
         
         const progressData = {
             formData: this.formData,
-            menuItems: this.menuItems,
+            menuCategories: this.menuCategories,
+            timestamp: new Date().toISOString()
+        };
+
+        localStorage.setItem('restaurantFormProgress', JSON.stringify(progressData));
+        
+        // No notification for auto-save
+    }
+
+    async saveToFile() {
+        this.saveAllFormData();
+        
+        const progressData = {
+            formData: this.formData,
+            menuCategories: this.menuCategories,
             timestamp: new Date().toISOString(),
-            note: 'Partial restaurant form data - continue editing by uploading this file'
+            note: 'Restaurant form data with images - continue editing by uploading this ZIP file'
         };
         
-        const filename = `restaurant-progress-${new Date().toISOString().split('T')[0]}.json`;
-        this.downloadJSON(progressData, filename);
+        const filename = `restaurant-progress-${new Date().toISOString().split('T')[0]}.zip`;
+        await this.downloadZIP(progressData, filename);
         
-        this.showNotification('Progress saved to file', 'success');
+        this.showNotification('Progress saved to ZIP file', 'success');
     }
 
     populateFormFields() {
@@ -791,51 +1023,95 @@ class RestaurantFormManager {
         }, 3000);
     }
 
-    // Load data from uploaded JSON file
-    loadFromJSON(event) {
+    // Load data from uploaded ZIP file
+    async loadFromZIP(event) {
         const file = event.target.files[0];
         if (!file) return;
 
         const loadStatus = document.getElementById('loadStatus');
-        loadStatus.textContent = 'Loading...';
+        loadStatus.textContent = 'Loading ZIP file...';
         
-        const reader = new FileReader();
-        reader.onload = (e) => {
-            try {
-                const jsonData = JSON.parse(e.target.result);
-                
-                // Validate JSON structure
-                if (!this.validateJSONStructure(jsonData)) {
-                    throw new Error('Invalid JSON structure');
-                }
-                
-                // Populate form with JSON data
-                this.populateFromJSON(jsonData);
-                
-                loadStatus.textContent = '✅ Data loaded successfully!';
-                loadStatus.style.color = '#28a745';
-                
-                // Hide the load section after successful load
-                setTimeout(() => {
-                    const loadSection = document.querySelector('.load-data-section');
-                    if (loadSection) {
-                        loadSection.style.display = 'none';
-                    }
-                }, 2000);
-                
-            } catch (error) {
-                console.error('Error loading JSON:', error);
-                loadStatus.textContent = '❌ Invalid JSON file';
-                loadStatus.style.color = '#dc3545';
+        try {
+            const zip = await JSZip.loadAsync(file);
+            
+            // Extract JSON data
+            const jsonFile = zip.file('restaurant-data.json');
+            if (!jsonFile) {
+                throw new Error('restaurant-data.json not found in ZIP file');
             }
-        };
-        
-        reader.onerror = () => {
-            loadStatus.textContent = '❌ Error reading file';
+            
+            const jsonText = await jsonFile.async('text');
+            const jsonData = JSON.parse(jsonText);
+            
+            // Validate JSON structure
+            if (!this.validateJSONStructure(jsonData)) {
+                throw new Error('Invalid JSON structure');
+            }
+            
+            // Extract and restore images
+            await this.extractImagesFromZIP(zip);
+            
+            // Populate form with JSON data
+            this.populateFromJSON(jsonData);
+            
+            loadStatus.textContent = '✅ Data and images loaded successfully!';
+            loadStatus.style.color = '#28a745';
+            
+            // Hide the load section after successful load
+            setTimeout(() => {
+                const loadSection = document.querySelector('.load-data-section');
+                if (loadSection) {
+                    loadSection.style.display = 'none';
+                }
+            }, 2000);
+            
+        } catch (error) {
+            console.error('Error loading ZIP:', error);
+            loadStatus.textContent = '❌ Invalid ZIP file or missing data';
             loadStatus.style.color = '#dc3545';
-        };
+        }
+    }
+
+    async extractImagesFromZIP(zip) {
+        // Extract main images (logo, hero, interior)
+        for (const type of ['logo', 'hero', 'interior']) {
+            const imageFiles = zip.file(new RegExp(`images/${type}\\.(jpg|jpeg|png|webp)$`));
+            if (imageFiles.length > 0) {
+                const imageFile = imageFiles[0];
+                const blob = await imageFile.async('blob');
+                const file = new File([blob], imageFile.name, { type: blob.type });
+                
+                // Create a mock event to trigger the existing image upload handling
+                const mockEvent = { target: { files: [file] } };
+                imageManager.handleFileUpload(mockEvent, type);
+            }
+        }
         
-        reader.readAsText(file);
+        // Extract menu item images
+        const menuImageFiles = zip.file(/images\/menu\//);
+        for (const imageFile of menuImageFiles) {
+            const pathParts = imageFile.name.split('/');
+            if (pathParts.length >= 4) {
+                const category = pathParts[2];
+                const filename = pathParts[3];
+                const itemId = filename.split('.')[0];
+                
+                const blob = await imageFile.async('blob');
+                const file = new File([blob], filename, { type: blob.type });
+                
+                // Set the file to the appropriate input
+                const input = document.getElementById(`${itemId}_image`);
+                if (input) {
+                    const dataTransfer = new DataTransfer();
+                    dataTransfer.items.add(file);
+                    input.files = dataTransfer.files;
+                    
+                    // Trigger the image preview
+                    const mockEvent = { target: { files: [file] } };
+                    this.handleMenuImageUpload(mockEvent, itemId);
+                }
+            }
+        }
     }
 
     validateJSONStructure(data) {
@@ -1004,15 +1280,15 @@ function saveToFile() {
     }
 }
 
-function triggerMenuImageUpload(itemCount) {
+function triggerMenuImageUpload(itemId) {
     if (window.formManager) {
-        window.formManager.triggerMenuImageUpload(itemCount);
+        window.formManager.triggerMenuImageUpload(itemId);
     }
 }
 
-function addMenuItem() {
+function addCategoryItem(category) {
     if (window.formManager) {
-        window.formManager.addMenuItem();
+        window.formManager.addCategoryItem(category);
     }
 }
 
@@ -1029,9 +1305,9 @@ function saveProgress() {
 }
 
 
-function loadFromJSON(event) {
+function loadFromZIP(event) {
     if (window.formManager) {
-        window.formManager.loadFromJSON(event);
+        window.formManager.loadFromZIP(event);
     }
 }
 

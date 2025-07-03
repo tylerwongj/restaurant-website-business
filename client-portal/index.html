@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurant Website - Client Information Portal</title>
+    <title>Restaurant Profile Portal - Share Your Information</title>
     <link rel="stylesheet" href="assets/css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -12,11 +12,11 @@
     <nav class="top-nav">
         <div class="nav-content">
             <div class="nav-logo">
-                <h1>🍽️ Restaurant Website Builder</h1>
+                <h1>🍽️ Restaurant Profile Portal</h1>
             </div>
             <div class="nav-actions">
-                <input type="file" id="navJsonUpload" accept=".json" style="display: none;" onchange="loadFromJSON(event)">
-                <button type="button" class="btn-load-top" onclick="document.getElementById('navJsonUpload').click()">📂 Load Data</button>
+                <input type="file" id="navZipUpload" accept=".zip" style="display: none;" onchange="loadFromZIP(event)">
+                <button type="button" class="btn-load-top" onclick="document.getElementById('navZipUpload').click()">📂 Load Data</button>
                 <button type="button" class="btn-save-top" onclick="saveToFile()">💾 Save Progress</button>
             </div>
         </div>
@@ -26,8 +26,8 @@
         <!-- Header -->
         <header class="portal-header">
             <div class="welcome-message">
-                <h2>Tell us about your restaurant</h2>
-                <p>Complete the form below to get your professional website in 48-72 hours. You can save your progress at any time using the "Save Progress" button above.</p>
+                <h2>Welcome to Your Profile Portal</h2>
+                <p>Please provide your restaurant's information, menu, and images below. We'll use these details to create your professional website in 48-72 hours.</p>
             </div>
         </header>
 
@@ -35,11 +35,11 @@
         <section class="load-data-section">
             <div class="load-data-card">
                 <h3>💾 Edit Previous Submission</h3>
-                <p>Upload your previously downloaded JSON file to edit your restaurant information</p>
+                <p>Upload your previously downloaded ZIP file to edit your restaurant information and images</p>
                 <div class="load-data-controls">
-                    <input type="file" id="jsonUpload" accept=".json" style="display: none;" onchange="loadFromJSON(event)">
-                    <button type="button" class="btn-load-json" onclick="document.getElementById('jsonUpload').click()">
-                        📂 Upload JSON File
+                    <input type="file" id="zipUpload" accept=".zip" style="display: none;" onchange="loadFromZIP(event)">
+                    <button type="button" class="btn-load-json" onclick="document.getElementById('zipUpload').click()">
+                        📂 Upload ZIP File
                     </button>
                     <span class="load-status" id="loadStatus"></span>
                 </div>
@@ -339,35 +339,117 @@
                 <!-- Menu Items -->
                 <section class="form-section" id="menu">
                     <div class="section-header">
-                        <h2>Menu Items</h2>
-                        <p>Add 6-12 of your most popular dishes</p>
+                        <h2>Complete Menu</h2>
+                        <p>Add your full menu organized by categories (appetizers, mains, desserts, drinks, etc.)</p>
                     </div>
 
-                <div class="menu-container">
-                    <div id="menuItems">
-                        <!-- Menu items will be added dynamically -->
-                    </div>
-                    
-                    <div class="menu-actions">
-                        <button type="button" class="btn-add-menu" onclick="addMenuItem()">+ Add Menu Item</button>
-                        <div class="menu-counter">
-                            <span id="menuCount">0</span> items (6-12 recommended)
+                    <div class="menu-categories-container">
+                        <!-- Menu Categories -->
+                        <div class="menu-category-tabs">
+                            <button type="button" class="category-tab active" data-category="appetizers">Appetizers</button>
+                            <button type="button" class="category-tab" data-category="soups">Soups</button>
+                            <button type="button" class="category-tab" data-category="salads">Salads</button>
+                            <button type="button" class="category-tab" data-category="mains">Main Courses</button>
+                            <button type="button" class="category-tab" data-category="desserts">Desserts</button>
+                            <button type="button" class="category-tab" data-category="wines">Wines</button>
+                            <button type="button" class="category-tab" data-category="cocktails">Cocktails</button>
+                        </div>
+
+                        <!-- Category Content -->
+                        <div class="menu-category-content">
+                            <!-- Appetizers -->
+                            <div class="category-section active" id="appetizers-section">
+                                <div class="category-header">
+                                    <h3>Appetizers</h3>
+                                    <p>Small plates and starters</p>
+                                </div>
+                                <div class="menu-items-list" id="appetizers-items"></div>
+                                <button type="button" class="btn-add-item" onclick="addCategoryItem('appetizers')">+ Add Appetizer</button>
+                            </div>
+
+                            <!-- Soups -->
+                            <div class="category-section" id="soups-section">
+                                <div class="category-header">
+                                    <h3>Soups</h3>
+                                    <p>Warm and hearty soups</p>
+                                </div>
+                                <div class="menu-items-list" id="soups-items"></div>
+                                <button type="button" class="btn-add-item" onclick="addCategoryItem('soups')">+ Add Soup</button>
+                            </div>
+
+                            <!-- Salads -->
+                            <div class="category-section" id="salads-section">
+                                <div class="category-header">
+                                    <h3>Salads</h3>
+                                    <p>Fresh salads and bowls</p>
+                                </div>
+                                <div class="menu-items-list" id="salads-items"></div>
+                                <button type="button" class="btn-add-item" onclick="addCategoryItem('salads')">+ Add Salad</button>
+                            </div>
+
+                            <!-- Main Courses -->
+                            <div class="category-section" id="mains-section">
+                                <div class="category-header">
+                                    <h3>Main Courses</h3>
+                                    <p>Entrees and main dishes</p>
+                                </div>
+                                <div class="menu-items-list" id="mains-items"></div>
+                                <button type="button" class="btn-add-item" onclick="addCategoryItem('mains')">+ Add Main Course</button>
+                            </div>
+
+                            <!-- Desserts -->
+                            <div class="category-section" id="desserts-section">
+                                <div class="category-header">
+                                    <h3>Desserts</h3>
+                                    <p>Sweet endings to your meal</p>
+                                </div>
+                                <div class="menu-items-list" id="desserts-items"></div>
+                                <button type="button" class="btn-add-item" onclick="addCategoryItem('desserts')">+ Add Dessert</button>
+                            </div>
+
+                            <!-- Wines -->
+                            <div class="category-section" id="wines-section">
+                                <div class="category-header">
+                                    <h3>Wines</h3>
+                                    <p>Wine selection by the glass or bottle</p>
+                                </div>
+                                <div class="menu-items-list" id="wines-items"></div>
+                                <button type="button" class="btn-add-item" onclick="addCategoryItem('wines')">+ Add Wine</button>
+                            </div>
+
+                            <!-- Cocktails -->
+                            <div class="category-section" id="cocktails-section">
+                                <div class="category-header">
+                                    <h3>Cocktails</h3>
+                                    <p>Signature cocktails and spirits</p>
+                                </div>
+                                <div class="menu-items-list" id="cocktails-items"></div>
+                                <button type="button" class="btn-add-item" onclick="addCategoryItem('cocktails')">+ Add Cocktail</button>
+                            </div>
+                        </div>
+
+                        <div class="menu-summary">
+                            <h4>Menu Summary</h4>
+                            <div class="menu-stats" id="menuStats">
+                                <span class="stat">Total Items: <strong id="totalItems">0</strong></span>
+                                <span class="stat">Categories: <strong id="totalCategories">7</strong></span>
+                            </div>
                         </div>
                     </div>
-                </div>
 
                 </section>
 
                 <!-- Upload Images -->
                 <section class="form-section" id="images">
                     <div class="section-header">
-                        <h2>Upload Images</h2>
-                        <p>High-quality photos of your restaurant and food</p>
+                        <h2>Restaurant Images</h2>
+                        <p>Upload your logo, hero banner, and interior photos</p>
                     </div>
 
                 <div class="image-upload-container">
                     <div class="upload-section">
-                        <h3>Required Images</h3>
+                        <h3>Restaurant Images</h3>
+                        <p class="section-note">Upload your main restaurant images below. Food photos can be added individually to each menu item above.</p>
                         
                         <div class="upload-item">
                             <label>Logo (PNG with transparent background)</label>
@@ -415,13 +497,6 @@
                         </div>
                     </div>
 
-                    <div class="upload-section">
-                        <h3>Food Photos (4-6 recommended)</h3>
-                        <div id="foodUploads">
-                            <!-- Food upload boxes will be added dynamically -->
-                        </div>
-                        <button type="button" class="btn-add-food" onclick="addFoodUpload()">+ Add Food Photo</button>
-                    </div>
                 </div>
 
                 </section>
@@ -435,7 +510,7 @@
                     
                     <div class="submit-actions">
                         <button type="button" class="btn-submit" onclick="submitForm()">Submit & Download</button>
-                        <p class="submit-note">This will download a JSON file with all your restaurant information.</p>
+                        <p class="submit-note">This will download a ZIP file with all your restaurant information and images.</p>
                     </div>
                 </section>
             </div>
@@ -443,6 +518,8 @@
 
     </div>
 
+    <!-- JSZip Library for ZIP file creation and extraction -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
     <script src="assets/js/validation.js"></script>
     <script src="assets/js/form.js"></script>
     <script src="assets/js/imageUpload.js"></script>
