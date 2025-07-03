@@ -11,20 +11,20 @@ This folder contains scripts to automatically capture screenshots of 30 restaura
 
 2. **Capture Screenshots:**
    ```bash
-   # For references-1 collection (original 30 sites)
-   node scripts/screenshot-capture/capture-reference-screenshots.js references-1
+   # For collection-1 (original 30 sites)
+   node scripts/screenshot-capture/capture-reference-screenshots.js collection-1
    
-   # For references-2 collection (new 30 sites)
-   node scripts/screenshot-capture/capture-reference-screenshots.js references-2
+   # For collection-2 (new 30 sites)
+   node scripts/screenshot-capture/capture-reference-screenshots.js collection-2
    ```
 
 3. **View Results:**
    ```bash
-   # View references-1 screenshots
-   open references-1/images/
+   # View collection-1 screenshots
+   open references/collection-1/images/
    
-   # View references-2 screenshots  
-   open references-2/images/
+   # View collection-2 screenshots  
+   open references/collection-2/images/
    ```
 
 ## What This Does
@@ -45,13 +45,13 @@ Screenshots are saved with descriptive names:
 
 ## Collections Available
 
-### References-1 (Original Collection)
+### Collection-1 (Original Collection)
 **Luxury/Fine Dining**: Eleven Madison Park, The French Laundry, Le Bernardin, Alinea, Daniel NYC, The Modern, Blue Hill, Gramercy Tavern  
 **Casual Dining**: Cheesecake Factory, Olive Garden, Applebee's, TGI Friday's, Red Lobster, Outback Steakhouse, P.F. Chang's, California Pizza Kitchen, BJ's Restaurant, Cracker Barrel  
 **Fast Food**: McDonald's, Popeyes, Burger King, KFC, Taco Bell, Subway, Domino's, Pizza Hut, Chipotle, In-N-Out  
 **Success Rate**: 28/30 (93%)
 
-### References-2 (New Collection)
+### Collection-2 (New Collection)
 **Luxury/Fine Dining**: Nobu, Joel Robuchon, Gordon Ramsay, Masa, Osteria Francescana, Noma, Chez Panisse, Canlis, Inn at Little Washington, Atelier Crenn  
 **Casual Dining**: Denny's, IHOP, Texas Roadhouse, Chili's, Ruby Tuesday, LongHorn Steakhouse, Bahama Breeze, Yard House, Seasons 52, Maggiano's  
 **Fast Food**: Wendy's, Arby's, Five Guys, Shake Shack, Whataburger, Carl's Jr., Jack in the Box, White Castle, Sonic, Culver's  

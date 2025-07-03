@@ -4,12 +4,12 @@
  * Restaurant Website Screenshot Capture Script
  * 
  * This script automatically captures screenshots of restaurant websites
- * from a specified data file and saves them with proper naming.
+ * from a specified collection and saves them with proper naming.
  * 
  * Requirements: npm install puppeteer
  * Usage: 
- *   node scripts/screenshot-capture/capture-reference-screenshots.js references
- *   node scripts/screenshot-capture/capture-reference-screenshots.js references-2
+ *   node scripts/screenshot-capture/capture-reference-screenshots.js collection-1
+ *   node scripts/screenshot-capture/capture-reference-screenshots.js collection-2
  */
 
 const puppeteer = require('puppeteer');
@@ -25,11 +25,11 @@ const screenshotConfig = {
 };
 
 class ScreenshotCapture {
-  constructor(collectionName = 'references') {
+  constructor(collectionName = 'collection-1') {
     this.browser = null;
     this.collectionName = collectionName;
-    this.outputDir = path.join(__dirname, `../../${collectionName}/images`);
-    this.dataFile = path.join(__dirname, `../../${collectionName}/restaurant-data.json`);
+    this.outputDir = path.join(__dirname, `../../references/${collectionName}/images`);
+    this.dataFile = path.join(__dirname, `../../references/${collectionName}/restaurant-data.json`);
     this.successCount = 0;
     this.failCount = 0;
     this.results = [];
@@ -224,7 +224,7 @@ class ScreenshotCapture {
 // Main execution
 async function main() {
   // Get collection name from command line argument
-  const collectionName = process.argv[2] || 'references';
+  const collectionName = process.argv[2] || 'collection-1';
   
   console.log(`📋 Using collection: ${collectionName}`);
   
