@@ -2,8 +2,6 @@
 
 class RestaurantFormManager {
     constructor() {
-        this.currentStep = 1;
-        this.totalSteps = 6;
         this.formData = {};
         this.menuItems = [];
         
@@ -12,67 +10,61 @@ class RestaurantFormManager {
 
     initializeForm() {
         document.addEventListener('DOMContentLoaded', () => {
-            this.updateProgress();
             this.addInitialMenuItems();
             this.setupAutoSave();
+            this.setupFormValidation();
         });
     }
 
-    nextStep() {
-        // Validate current step
-        if (!validator.validateStep(this.currentStep)) {
-            return;
-        }
-
-        // Save current step data
-        this.saveStepData(this.currentStep);
-
-        if (this.currentStep < this.totalSteps) {
-            this.showStep(this.currentStep + 1);
-        }
+    setupFormValidation() {
+        // Setup real-time validation for all form fields
+        const inputs = document.querySelectorAll('input, select, textarea');
+        inputs.forEach(input => {
+            input.addEventListener('blur', () => this.validateField(input));
+            input.addEventListener('input', () => this.clearFieldError(input));
+        });
     }
 
-    prevStep() {
-        if (this.currentStep > 1) {
-            this.showStep(this.currentStep - 1);
+    validateField(field) {
+        // Basic validation - can be expanded
+        const isRequired = field.hasAttribute('required');
+        const isEmpty = !field.value.trim();
+        
+        if (isRequired && isEmpty) {
+            this.showFieldError(field, 'This field is required');
+            return false;
         }
+        
+        this.clearFieldError(field);
+        return true;
     }
 
-    showStep(stepNumber) {
-        // Hide current step
-        const currentStepElement = document.getElementById(`step${this.currentStep}`);
-        if (currentStepElement) {
-            currentStepElement.classList.remove('active');
-        }
-
-        // Show new step
-        const newStepElement = document.getElementById(`step${stepNumber}`);
-        if (newStepElement) {
-            newStepElement.classList.add('active');
-            this.currentStep = stepNumber;
-            this.updateProgress();
-
-            // Special handling for review step
-            if (stepNumber === 6) {
-                this.populateReview();
+    showFieldError(field, message) {
+        const formGroup = field.closest('.form-group');
+        if (formGroup) {
+            formGroup.classList.add('has-error');
+            const errorDiv = formGroup.querySelector('.error-message');
+            if (errorDiv) {
+                errorDiv.textContent = message;
+                errorDiv.style.display = 'block';
             }
         }
     }
 
-    updateProgress() {
-        const progressFill = document.getElementById('progressFill');
-        const progressText = document.getElementById('progressText');
-        
-        if (progressFill && progressText) {
-            const percentage = (this.currentStep / this.totalSteps) * 100;
-            progressFill.style.width = `${percentage}%`;
-            progressText.textContent = `Step ${this.currentStep} of ${this.totalSteps}`;
+    clearFieldError(field) {
+        const formGroup = field.closest('.form-group');
+        if (formGroup) {
+            formGroup.classList.remove('has-error');
+            const errorDiv = formGroup.querySelector('.error-message');
+            if (errorDiv) {
+                errorDiv.style.display = 'none';
+            }
         }
     }
 
-    saveStepData(stepNumber) {
-        const stepElement = document.getElementById(`step${stepNumber}`);
-        const inputs = stepElement.querySelectorAll('input, select, textarea');
+    saveAllFormData() {
+        // Save all form data from the single page
+        const inputs = document.querySelectorAll('input, select, textarea');
         
         inputs.forEach(input => {
             if (input.type === 'file') {
@@ -81,18 +73,14 @@ class RestaurantFormManager {
             }
             
             const key = input.name || input.id;
-            this.formData[key] = input.value;
+            if (key && input.value) {
+                this.formData[key] = input.value;
+            }
         });
 
-        // Save menu items separately
-        if (stepNumber === 4) {
-            this.saveMenuData();
-        }
-
-        // Save hours data
-        if (stepNumber === 3) {
-            this.saveHoursData();
-        }
+        // Save menu items and hours data
+        this.saveMenuData();
+        this.saveHoursData();
     }
 
     saveMenuData() {
@@ -148,23 +136,39 @@ class RestaurantFormManager {
                 <h4>Menu Item ${itemCount}</h4>
                 <button type="button" class="remove-menu-item" onclick="formManager.removeMenuItem(this)">×</button>
             </div>
-            <div class="menu-item-fields">
-                <div class="form-group">
-                    <label>Item Name *</label>
-                    <input type="text" name="menuItem${itemCount}Name" maxlength="40" required>
-                    <div class="char-counter">0/40 characters</div>
-                    <div class="error-message"></div>
+            <div class="menu-item-content">
+                <div class="menu-item-fields">
+                    <div class="form-group">
+                        <label>Item Name *</label>
+                        <input type="text" name="menuItem${itemCount}Name" maxlength="40" required>
+                        <div class="char-counter">0/40 characters</div>
+                        <div class="error-message"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>Description *</label>
+                        <textarea name="menuItem${itemCount}Description" maxlength="120" rows="2" required></textarea>
+                        <div class="char-counter">0/120 characters</div>
+                        <div class="error-message"></div>
+                    </div>
+                    <div class="form-group">
+                        <label>Price *</label>
+                        <input type="text" name="menuItem${itemCount}Price" placeholder="12.95" required>
+                        <div class="error-message"></div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>Description *</label>
-                    <textarea name="menuItem${itemCount}Description" maxlength="120" rows="2" required></textarea>
-                    <div class="char-counter">0/120 characters</div>
-                    <div class="error-message"></div>
-                </div>
-                <div class="form-group">
-                    <label>Price *</label>
-                    <input type="text" name="menuItem${itemCount}Price" placeholder="12.95" required>
-                    <div class="error-message"></div>
+                <div class="menu-item-image">
+                    <label>Food Photo (Optional)</label>
+                    <div class="menu-upload-row">
+                        <div class="menu-upload-box" onclick="formManager.triggerMenuImageUpload(${itemCount})">
+                            <input type="file" id="menuItem${itemCount}Image" accept=".png,.jpg,.jpeg" style="display: none;">
+                            <div class="menu-upload-content">
+                                <span class="upload-icon">🍽️</span>
+                                <p>Add food photo</p>
+                                <small>Optional: 400x300px</small>
+                            </div>
+                        </div>
+                        <div class="menu-image-thumbnail" id="menuItem${itemCount}Thumbnail" style="display: none;"></div>
+                    </div>
                 </div>
             </div>
         `;
@@ -173,6 +177,9 @@ class RestaurantFormManager {
 
         // Setup validation for new fields
         this.setupMenuItemValidation(menuItemDiv, itemCount);
+        
+        // Setup image upload for this menu item
+        this.setupMenuImageUpload(itemCount);
         
         // Update counter
         this.updateMenuCounter();
@@ -188,24 +195,136 @@ class RestaurantFormManager {
 
         if (nameField) {
             nameField.addEventListener('input', (e) => {
-                validator.validateField('MENU_ITEM_NAME', e.target.value, e.target);
-                validator.updateCharCount(e.target, 40);
+                this.updateCharCount(e.target, 40);
             });
         }
 
         if (descField) {
             descField.addEventListener('input', (e) => {
-                validator.validateField('MENU_DESCRIPTION', e.target.value, e.target);
-                validator.updateCharCount(e.target, 120);
+                this.updateCharCount(e.target, 120);
             });
         }
 
         if (priceField) {
             priceField.addEventListener('input', (e) => {
-                validator.formatPrice(e.target);
-                validator.validateField('PRICE', e.target.value, e.target);
+                this.formatPrice(e.target);
             });
         }
+    }
+
+    setupMenuImageUpload(itemCount) {
+        const uploadInput = document.getElementById(`menuItem${itemCount}Image`);
+        if (uploadInput) {
+            uploadInput.addEventListener('change', (e) => {
+                this.handleMenuImageUpload(e, itemCount);
+            });
+        }
+    }
+
+    triggerMenuImageUpload(itemCount) {
+        const uploadInput = document.getElementById(`menuItem${itemCount}Image`);
+        if (uploadInput) {
+            uploadInput.click();
+        }
+    }
+
+    handleMenuImageUpload(event, itemCount) {
+        const file = event.target.files[0];
+        if (!file) return;
+
+        // Basic validation
+        if (!file.type.startsWith('image/')) {
+            alert('Please upload an image file');
+            event.target.value = '';
+            return;
+        }
+
+        if (file.size > 5 * 1024 * 1024) { // 5MB limit
+            alert('Image must be less than 5MB');
+            event.target.value = '';
+            return;
+        }
+
+        // Show thumbnail
+        this.showMenuImageThumbnail(file, itemCount);
+    }
+
+    showMenuImageThumbnail(file, itemCount) {
+        const reader = new FileReader();
+        
+        reader.onload = (e) => {
+            const thumbnailContainer = document.getElementById(`menuItem${itemCount}Thumbnail`);
+            if (thumbnailContainer) {
+                thumbnailContainer.innerHTML = `
+                    <img src="${e.target.result}" alt="Menu item photo" class="menu-thumbnail-img">
+                    <div class="menu-thumbnail-info">
+                        <span class="menu-file-name">${file.name}</span>
+                        <button type="button" class="remove-menu-image" onclick="formManager.removeMenuImage(${itemCount})">×</button>
+                    </div>
+                `;
+                thumbnailContainer.style.display = 'block';
+                
+                // Hide upload content
+                const uploadContent = thumbnailContainer.parentElement.querySelector('.menu-upload-content');
+                if (uploadContent) {
+                    uploadContent.style.display = 'none';
+                }
+            }
+        };
+        
+        reader.readAsDataURL(file);
+    }
+
+    removeMenuImage(itemCount) {
+        // Clear file input
+        const uploadInput = document.getElementById(`menuItem${itemCount}Image`);
+        if (uploadInput) {
+            uploadInput.value = '';
+        }
+        
+        // Hide thumbnail
+        const thumbnailContainer = document.getElementById(`menuItem${itemCount}Thumbnail`);
+        if (thumbnailContainer) {
+            thumbnailContainer.style.display = 'none';
+            thumbnailContainer.innerHTML = '';
+            
+            // Show upload content
+            const uploadContent = thumbnailContainer.parentElement.querySelector('.menu-upload-content');
+            if (uploadContent) {
+                uploadContent.style.display = 'block';
+            }
+        }
+    }
+
+    updateCharCount(field, maxLength) {
+        const counter = field.parentElement.querySelector('.char-counter');
+        if (counter) {
+            const length = field.value.length;
+            counter.textContent = `${length}/${maxLength} characters`;
+            
+            if (length > maxLength * 0.9) {
+                counter.classList.add('warning');
+            } else {
+                counter.classList.remove('warning');
+            }
+        }
+    }
+
+    formatPrice(field) {
+        let value = field.value.replace(/[^\d.]/g, '');
+        
+        // Ensure only one decimal point
+        const parts = value.split('.');
+        if (parts.length > 2) {
+            value = parts[0] + '.' + parts.slice(1).join('');
+        }
+        
+        // Limit to 2 decimal places
+        if (parts[1] && parts[1].length > 2) {
+            value = parts[0] + '.' + parts[1].substring(0, 2);
+        }
+        
+        field.value = value;
     }
 
     removeMenuItem(button) {
@@ -364,21 +483,40 @@ class RestaurantFormManager {
 
     async submitForm() {
         // Final validation
-        if (!this.validateAllSteps()) {
+        if (!this.validateAllFields()) {
             return;
         }
 
         // Collect all data
-        this.saveStepData(this.currentStep);
+        this.saveAllFormData();
 
         // Generate and download JSON
         await this.generateAndDownloadJSON();
     }
 
-    validateAllSteps() {
+    validateAllFields() {
+        // Collect current form data
+        this.saveAllFormData();
+        
         // Check required fields
-        if (!this.formData.restaurantName || !this.formData.email || !this.formData.phone) {
-            alert('Please fill in all required information');
+        const requiredFields = {
+            restaurantName: 'Restaurant Name',
+            email: 'Email Address', 
+            phone: 'Phone Number',
+            address: 'Address',
+            tagline: 'Tagline',
+            description: 'Description'
+        };
+        
+        const missingFields = [];
+        Object.entries(requiredFields).forEach(([key, label]) => {
+            if (!this.formData[key]) {
+                missingFields.push(label);
+            }
+        });
+        
+        if (missingFields.length > 0) {
+            alert(`Please fill in the following required fields:\n${missingFields.join('\n')}`);
             return false;
         }
 
@@ -389,7 +527,7 @@ class RestaurantFormManager {
         }
 
         // Check required images
-        if (!imageManager.hasRequiredImages()) {
+        if (typeof imageManager !== 'undefined' && !imageManager.hasRequiredImages()) {
             alert('Please upload required images (logo, hero, interior)');
             return false;
         }
@@ -543,8 +681,12 @@ class RestaurantFormManager {
         return `https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=${encodedAddress}`;
     }
 
-    downloadJSON(data) {
-        const filename = `${this.formData.restaurantName.replace(/[^a-zA-Z0-9]/g, '-')}-client-data.json`;
+    downloadJSON(data, filename = null) {
+        if (!filename) {
+            const restaurantName = this.formData.restaurantName || 'restaurant';
+            filename = `${restaurantName.replace(/[^a-zA-Z0-9]/g, '-')}-client-data.json`;
+        }
+        
         const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
         
         const url = URL.createObjectURL(blob);
@@ -591,10 +733,9 @@ class RestaurantFormManager {
     }
 
     saveProgress() {
-        this.saveStepData(this.currentStep);
+        this.saveAllFormData();
         
         const progressData = {
-            currentStep: this.currentStep,
             formData: this.formData,
             menuItems: this.menuItems,
             timestamp: new Date().toISOString()
@@ -606,32 +747,20 @@ class RestaurantFormManager {
         this.showNotification('Progress saved', 'success');
     }
 
-    loadProgress() {
-        const saved = localStorage.getItem('restaurantFormProgress');
-        if (!saved) {
-            this.showNotification('No saved progress found', 'info');
-            return;
-        }
-
-        try {
-            const progressData = JSON.parse(saved);
-            
-            // Restore form data
-            this.formData = progressData.formData || {};
-            this.menuItems = progressData.menuItems || [];
-            
-            // Populate form fields
-            this.populateFormFields();
-            
-            // Go to saved step
-            this.showStep(progressData.currentStep || 1);
-            
-            this.showNotification('Progress loaded successfully', 'success');
-            
-        } catch (error) {
-            console.error('Error loading progress:', error);
-            this.showNotification('Error loading saved progress', 'error');
-        }
+    saveToFile() {
+        this.saveAllFormData();
+        
+        const progressData = {
+            formData: this.formData,
+            menuItems: this.menuItems,
+            timestamp: new Date().toISOString(),
+            note: 'Partial restaurant form data - continue editing by uploading this file'
+        };
+        
+        const filename = `restaurant-progress-${new Date().toISOString().split('T')[0]}.json`;
+        this.downloadJSON(progressData, filename);
+        
+        this.showNotification('Progress saved to file', 'success');
     }
 
     populateFormFields() {
@@ -759,8 +888,7 @@ class RestaurantFormManager {
         // Rebuild menu items in DOM
         this.rebuildMenuItems();
         
-        // Go to first step
-        this.showStep(1);
+        // Form is now single page - just show notification
         
         this.showNotification('Restaurant data loaded successfully!', 'success');
     }
@@ -870,15 +998,15 @@ class RestaurantFormManager {
 }
 
 // Global functions for HTML onclick handlers
-function nextStep() {
+function saveToFile() {
     if (window.formManager) {
-        window.formManager.nextStep();
+        window.formManager.saveToFile();
     }
 }
 
-function prevStep() {
+function triggerMenuImageUpload(itemCount) {
     if (window.formManager) {
-        window.formManager.prevStep();
+        window.formManager.triggerMenuImageUpload(itemCount);
     }
 }
 
@@ -900,11 +1028,6 @@ function saveProgress() {
     }
 }
 
-function loadProgress() {
-    if (window.formManager) {
-        window.formManager.loadProgress();
-    }
-}
 
 function loadFromJSON(event) {
     if (window.formManager) {

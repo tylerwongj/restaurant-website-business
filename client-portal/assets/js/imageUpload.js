@@ -127,22 +127,22 @@ class ImageUploadManager {
         const reader = new FileReader();
         
         reader.onload = (e) => {
-            const previewContainer = document.getElementById(`${type}Preview`);
-            if (previewContainer) {
-                previewContainer.innerHTML = `
-                    <img src="${e.target.result}" alt="${type} preview" style="max-width: 100%; max-height: 200px; object-fit: cover;">
-                    <div class="preview-info">
+            const thumbnailContainer = document.getElementById(`${type}Thumbnail`);
+            if (thumbnailContainer) {
+                thumbnailContainer.innerHTML = `
+                    <img src="${e.target.result}" alt="${type} preview" class="thumbnail-img">
+                    <div class="thumbnail-info">
                         <span class="file-name">${file.name}</span>
                         <span class="file-size">${this.formatFileSize(file.size)}</span>
                         <button type="button" class="remove-image" onclick="imageManager.removeImage('${type}')">×</button>
                     </div>
                 `;
-                previewContainer.style.display = 'block';
+                thumbnailContainer.style.display = 'block';
                 
-                // Hide upload content
-                const uploadContent = previewContainer.parentElement.querySelector('.upload-content');
-                if (uploadContent) {
-                    uploadContent.style.display = 'none';
+                // Update upload box state
+                const uploadBox = thumbnailContainer.parentElement.querySelector('.upload-box');
+                if (uploadBox) {
+                    uploadBox.classList.add('has-image');
                 }
             }
         };
@@ -160,33 +160,20 @@ class ImageUploadManager {
             uploadInput.value = '';
         }
         
-        // Hide preview
-        const previewContainer = document.getElementById(`${type}Preview`);
-        if (previewContainer) {
-            previewContainer.style.display = 'none';
-            previewContainer.innerHTML = '';
-            
-            // Show upload content
-            const uploadContent = previewContainer.parentElement.querySelector('.upload-content');
-            if (uploadContent) {
-                uploadContent.style.display = 'block';
-            }
+        // Hide thumbnail
+        const thumbnailContainer = document.getElementById(`${type}Thumbnail`);
+        if (thumbnailContainer) {
+            thumbnailContainer.style.display = 'none';
+            thumbnailContainer.innerHTML = '';
         }
         
-        // Update UI
-        this.updateUploadStatus(type, false);
-    }
-
-    updateUploadStatus(type, hasImage) {
+        // Update upload box state
         const uploadBox = document.querySelector(`#${type}Upload`).closest('.upload-box');
         if (uploadBox) {
-            if (hasImage) {
-                uploadBox.classList.add('has-image');
-            } else {
-                uploadBox.classList.remove('has-image');
-            }
+            uploadBox.classList.remove('has-image');
         }
     }
+
 
     addFoodUpload() {
         this.foodUploadCount++;

@@ -1,91 +1,102 @@
-# Template Customization System
+# Restaurant Website Scripts
 
-Automated system for replacing placeholder variables in restaurant templates with real client data.
+This folder contains utility scripts for managing restaurant website projects.
 
-## Quick Start
+## Available Scripts
 
-1. **Scan a template** to see all placeholders:
+### 🌐 Website Management
+- **`quick-open.sh`** - Opens all client project websites in browser tabs
+- **`open-all-websites.sh`** - Detailed version with status output
+
+### 🔧 Fix & Repair Scripts  
+- **`fix-logo-link.sh`** - Fixes logo links and paths across all projects
+- **`fix-navigation-clickability.py`** - Fixes navigation and clickability issues
+- **`fix-demo.js`** - Original demo site variable replacement (legacy)
+- **`fix-demo-improved.js`** - Enhanced demo site processor with better error handling
+
+## Usage Examples
+
 ```bash
-node scripts/customize-template.js scan templates/casual-family
+# Open all client websites for review
+./scripts/quick-open.sh
+
+# Fix logo issues across all projects  
+./scripts/fix-logo-link.sh
+
+# Fix navigation clickability issues
+python3 ./scripts/fix-navigation-clickability.py
+
+# Process demo site with custom data
+node ./scripts/fix-demo-improved.js demo-templates/ output/
 ```
 
-2. **Create client data file** (copy from `client-data-example.json`):
-```bash
-cp client-data-example.json client-projects/marios-kitchen-data.json
-```
+## Script Descriptions
 
-3. **Customize template** with client data:
-```bash
-node scripts/customize-template.js customize templates/casual-family client-projects/marios-kitchen-data.json client-projects/marios-kitchen
-```
+### quick-open.sh & open-all-websites.sh
+These scripts automatically find and open all client project websites in your default browser. Useful for:
+- Quick visual review of all projects
+- Testing after making global changes
+- Client presentations
 
-## Workflow
+**Locations searched:**
+- `client-projects/*/generated/website/index.html`
+- `client-projects/*/generated/website-fixed/index.html`
 
-### Step 1: Client Data Collection
-- Copy `client-data-example.json` for each new client
-- Fill in all required placeholder values
-- Choose color scheme: `classic`, `business`, `warm`, `cool`, or `bold`
+### fix-logo-link.sh
+Bash script that fixes common logo issues:
+- ✅ Corrects logo image src paths to `images/logo.png`
+- ✅ Updates alt text with proper restaurant names  
+- ✅ Reports logos that need clickable link wrappers
+- ⚠️ Manual review needed for logo positioning/styling
 
-### Step 2: Template Customization
-```bash
-# Create client project folder
-mkdir client-projects/[client-name]
+### fix-navigation-clickability.py
+Python script that fixes navigation and interaction issues:
+- ✅ Adds missing href attributes to nav links
+- ✅ Wraps logos in home page links
+- ✅ Makes phone numbers clickable with tel: links
+- ✅ Adds proper accessibility attributes (role, tabindex)
+- ✅ Checks for missing anchor link targets
+- ⚠️ Notes where JavaScript handlers are needed
 
-# Customize template
-node scripts/customize-template.js customize \
-  templates/casual-family \
-  [client-name]-data.json \
-  client-projects/[client-name]
-```
+### fix-demo.js / fix-demo-improved.js
+Node.js scripts for processing demo templates:
+- **Original**: Basic placeholder replacement for demo-site/
+- **Improved**: Enhanced with error handling, flexible I/O, better reporting
 
-### Step 3: Manual Finishing
-- Replace placeholder images with client-provided images
-- Test responsiveness and functionality
-- Apply color scheme if different from default
-- Package for delivery
-
-## Color Scheme Application
-
-Templates use CSS variables for easy color switching. Change the `<body>` class:
-
-```html
-<!-- Default warm scheme -->
-<body class="theme-warm">
-
-<!-- Other schemes -->
-<body class="theme-classic">
-<body class="theme-business"> 
-<body class="theme-cool">
-<body class="theme-bold">
-```
-
-## File Structure
+## Project Structure Expected
 
 ```
 client-projects/
-├── marios-kitchen/
-│   ├── index.html          # Customized homepage
-│   ├── menu.html           # Customized menu page
-│   ├── styles.css          # CSS with color variables
-│   └── script.js           # Interactive functionality
-└── marios-kitchen-data.json # Client data file
+├── restaurant-name/
+│   ├── generated/
+│   │   ├── website/
+│   │   │   ├── index.html
+│   │   │   ├── menu.html
+│   │   │   └── images/logo.png
+│   │   └── website-fixed/ (alternative location)
+│   └── source/
+│       └── client-data.json
 ```
 
-## Common Placeholders
+## Requirements
 
-| Placeholder | Example | Required |
-|-------------|---------|----------|
-| `{{RESTAURANT_NAME}}` | "Mario's Italian Kitchen" | ✅ |
-| `{{PHONE}}` | "(555) 123-4567" | ✅ |
-| `{{EMAIL}}` | "info@restaurant.com" | ✅ |
-| `{{FULL_ADDRESS}}` | "123 Main St, City, State" | ✅ |
-| `{{TAGLINE}}` | "Authentic Italian cuisine" | ✅ |
-| `{{HERO_IMAGE}}` | "images/hero.jpg" | ✅ |
-| `{{GOOGLE_MAPS_EMBED}}` | Google Maps iframe src | ✅ |
-| `{{FACEBOOK_URL}}` | Social media links | ❌ |
+- **Bash**: For shell scripts (.sh files)
+- **Python 3**: For Python scripts (.py files)  
+- **Node.js**: For JavaScript scripts (.js files)
+- **macOS**: Scripts use `open` command (can modify for Linux/Windows)
 
-## Time Savings
+## Old Scripts
 
-- **Before**: 2-3 hours manual find/replace
-- **After**: 5-10 minutes automated + image replacement
-- **Result**: 80%+ time reduction on template customization
+Previous scripts have been moved to `scripts--old/` for reference. The new scripts in this folder provide:
+- Better error handling
+- Cleaner output formatting  
+- More flexible usage patterns
+- Improved documentation
+
+## Contributing
+
+When adding new scripts:
+1. Make them executable: `chmod +x script-name`
+2. Add usage documentation to this README
+3. Include error handling and helpful output messages
+4. Test with all current client projects

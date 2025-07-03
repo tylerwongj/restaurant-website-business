@@ -8,18 +8,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav">
+        <div class="nav-content">
+            <div class="nav-logo">
+                <h1>🍽️ Restaurant Website Builder</h1>
+            </div>
+            <div class="nav-actions">
+                <input type="file" id="navJsonUpload" accept=".json" style="display: none;" onchange="loadFromJSON(event)">
+                <button type="button" class="btn-load-top" onclick="document.getElementById('navJsonUpload').click()">📂 Load Data</button>
+                <button type="button" class="btn-save-top" onclick="saveToFile()">💾 Save Progress</button>
+            </div>
+        </div>
+    </nav>
+
     <div class="container">
         <!-- Header -->
         <header class="portal-header">
-            <div class="logo">
-                <h1>🍽️ Restaurant Website Builder</h1>
-                <p>Professional website development in 48-72 hours</p>
-            </div>
-            <div class="progress-container">
-                <div class="progress-bar">
-                    <div class="progress-fill" id="progressFill"></div>
-                </div>
-                <span class="progress-text" id="progressText">Step 1 of 5</span>
+            <div class="welcome-message">
+                <h2>Tell us about your restaurant</h2>
+                <p>Complete the form below to get your professional website in 48-72 hours. You can save your progress at any time using the "Save Progress" button above.</p>
             </div>
         </header>
 
@@ -36,19 +44,21 @@
                     <span class="load-status" id="loadStatus"></span>
                 </div>
                 <div class="help-text">
-                    <small>Select the JSON file you downloaded from a previous submission to continue editing</small>
+                    <small>You can also use the "Load Data" button in the top navigation bar</small>
                 </div>
             </div>
         </section>
 
         <!-- Form Container -->
         <main class="form-container">
-            <!-- Step 1: Restaurant Basics -->
-            <section class="form-step active" id="step1">
-                <div class="step-header">
-                    <h2>Restaurant Information</h2>
-                    <p>Tell us about your restaurant</p>
-                </div>
+            <!-- Single Page Form -->
+            <div class="single-page-form">
+                <!-- Restaurant Information -->
+                <section class="form-section" id="restaurant-info">
+                    <div class="section-header">
+                        <h2>Restaurant Information</h2>
+                        <p>Tell us about your restaurant</p>
+                    </div>
                 
                 <div class="form-grid">
                     <div class="form-group">
@@ -93,17 +103,14 @@
                     </div>
                 </div>
 
-                <div class="step-actions">
-                    <button type="button" class="btn-next" onclick="nextStep()">Next Step</button>
-                </div>
-            </section>
+                </section>
 
-            <!-- Step 2: Contact & Location -->
-            <section class="form-step" id="step2">
-                <div class="step-header">
-                    <h2>Contact Information</h2>
-                    <p>How customers can reach you</p>
-                </div>
+                <!-- Contact Information -->
+                <section class="form-section" id="contact-info">
+                    <div class="section-header">
+                        <h2>Contact Information</h2>
+                        <p>How customers can reach you</p>
+                    </div>
 
                 <div class="form-grid">
                     <div class="form-group">
@@ -153,18 +160,14 @@
                     </div>
                 </div>
 
-                <div class="step-actions">
-                    <button type="button" class="btn-prev" onclick="prevStep()">Previous</button>
-                    <button type="button" class="btn-next" onclick="nextStep()">Next Step</button>
-                </div>
-            </section>
+                </section>
 
-            <!-- Step 3: Hours -->
-            <section class="form-step" id="step3">
-                <div class="step-header">
-                    <h2>Operating Hours</h2>
-                    <p>When are you open?</p>
-                </div>
+                <!-- Operating Hours -->
+                <section class="form-section" id="hours">
+                    <div class="section-header">
+                        <h2>Operating Hours</h2>
+                        <p>When are you open?</p>
+                    </div>
 
                 <div class="hours-container">
                     <div class="hours-grid">
@@ -331,18 +334,14 @@
                     </div>
                 </div>
 
-                <div class="step-actions">
-                    <button type="button" class="btn-prev" onclick="prevStep()">Previous</button>
-                    <button type="button" class="btn-next" onclick="nextStep()">Next Step</button>
-                </div>
-            </section>
+                </section>
 
-            <!-- Step 4: Menu -->
-            <section class="form-step" id="step4">
-                <div class="step-header">
-                    <h2>Menu Items</h2>
-                    <p>Add 6-12 of your most popular dishes</p>
-                </div>
+                <!-- Menu Items -->
+                <section class="form-section" id="menu">
+                    <div class="section-header">
+                        <h2>Menu Items</h2>
+                        <p>Add 6-12 of your most popular dishes</p>
+                    </div>
 
                 <div class="menu-container">
                     <div id="menuItems">
@@ -357,18 +356,14 @@
                     </div>
                 </div>
 
-                <div class="step-actions">
-                    <button type="button" class="btn-prev" onclick="prevStep()">Previous</button>
-                    <button type="button" class="btn-next" onclick="nextStep()">Next Step</button>
-                </div>
-            </section>
+                </section>
 
-            <!-- Step 5: Images -->
-            <section class="form-step" id="step5">
-                <div class="step-header">
-                    <h2>Upload Images</h2>
-                    <p>High-quality photos of your restaurant and food</p>
-                </div>
+                <!-- Upload Images -->
+                <section class="form-section" id="images">
+                    <div class="section-header">
+                        <h2>Upload Images</h2>
+                        <p>High-quality photos of your restaurant and food</p>
+                    </div>
 
                 <div class="image-upload-container">
                     <div class="upload-section">
@@ -376,40 +371,46 @@
                         
                         <div class="upload-item">
                             <label>Logo (PNG with transparent background)</label>
-                            <div class="upload-box" onclick="triggerUpload('logo')">
-                                <input type="file" id="logoUpload" accept=".png,.jpg,.jpeg" style="display: none;">
-                                <div class="upload-content">
-                                    <span class="upload-icon">📷</span>
-                                    <p>Click to upload logo</p>
-                                    <small>Recommended: 400x200px, PNG format</small>
+                            <div class="upload-row">
+                                <div class="upload-box" onclick="triggerUpload('logo')">
+                                    <input type="file" id="logoUpload" accept=".png,.jpg,.jpeg" style="display: none;">
+                                    <div class="upload-content">
+                                        <span class="upload-icon">📷</span>
+                                        <p>Click to upload logo</p>
+                                        <small>Recommended: 400x200px, PNG format</small>
+                                    </div>
                                 </div>
-                                <div class="image-preview" id="logoPreview" style="display: none;"></div>
+                                <div class="image-thumbnail" id="logoThumbnail" style="display: none;"></div>
                             </div>
                         </div>
 
                         <div class="upload-item">
                             <label>Hero Image (Main banner photo)</label>
-                            <div class="upload-box" onclick="triggerUpload('hero')">
-                                <input type="file" id="heroUpload" accept=".png,.jpg,.jpeg" style="display: none;">
-                                <div class="upload-content">
-                                    <span class="upload-icon">🖼️</span>
-                                    <p>Click to upload hero image</p>
-                                    <small>Recommended: 1200x800px, high quality</small>
+                            <div class="upload-row">
+                                <div class="upload-box" onclick="triggerUpload('hero')">
+                                    <input type="file" id="heroUpload" accept=".png,.jpg,.jpeg" style="display: none;">
+                                    <div class="upload-content">
+                                        <span class="upload-icon">🖼️</span>
+                                        <p>Click to upload hero image</p>
+                                        <small>Recommended: 1200x800px, high quality</small>
+                                    </div>
                                 </div>
-                                <div class="image-preview" id="heroPreview" style="display: none;"></div>
+                                <div class="image-thumbnail" id="heroThumbnail" style="display: none;"></div>
                             </div>
                         </div>
 
                         <div class="upload-item">
                             <label>Interior Photo (Dining room/atmosphere)</label>
-                            <div class="upload-box" onclick="triggerUpload('interior')">
-                                <input type="file" id="interiorUpload" accept=".png,.jpg,.jpeg" style="display: none;">
-                                <div class="upload-content">
-                                    <span class="upload-icon">🏠</span>
-                                    <p>Click to upload interior photo</p>
-                                    <small>Recommended: 800x600px</small>
+                            <div class="upload-row">
+                                <div class="upload-box" onclick="triggerUpload('interior')">
+                                    <input type="file" id="interiorUpload" accept=".png,.jpg,.jpeg" style="display: none;">
+                                    <div class="upload-content">
+                                        <span class="upload-icon">🏠</span>
+                                        <p>Click to upload interior photo</p>
+                                        <small>Recommended: 800x600px</small>
+                                    </div>
                                 </div>
-                                <div class="image-preview" id="interiorPreview" style="display: none;"></div>
+                                <div class="image-thumbnail" id="interiorThumbnail" style="display: none;"></div>
                             </div>
                         </div>
                     </div>
@@ -423,37 +424,23 @@
                     </div>
                 </div>
 
-                <div class="step-actions">
-                    <button type="button" class="btn-prev" onclick="prevStep()">Previous</button>
-                    <button type="button" class="btn-next" onclick="nextStep()">Review & Submit</button>
-                </div>
-            </section>
+                </section>
 
-            <!-- Step 6: Review -->
-            <section class="form-step" id="step6">
-                <div class="step-header">
-                    <h2>Review & Submit</h2>
-                    <p>Please review your information before submitting</p>
-                </div>
-
-                <div class="review-container">
-                    <div id="reviewContent">
-                        <!-- Review content will be populated dynamically -->
+                <!-- Submit Section -->
+                <section class="form-section submit-section" id="submit">
+                    <div class="section-header">
+                        <h2>Submit Information</h2>
+                        <p>Ready to get your website? Click submit to download your data file.</p>
                     </div>
-                </div>
-
-                <div class="step-actions">
-                    <button type="button" class="btn-prev" onclick="prevStep()">Previous</button>
-                    <button type="button" class="btn-submit" onclick="submitForm()">Submit Information</button>
-                </div>
-            </section>
+                    
+                    <div class="submit-actions">
+                        <button type="button" class="btn-submit" onclick="submitForm()">Submit & Download</button>
+                        <p class="submit-note">This will download a JSON file with all your restaurant information.</p>
+                    </div>
+                </section>
+            </div>
         </main>
 
-        <!-- Save/Load Controls -->
-        <div class="save-controls">
-            <button type="button" class="btn-save" onclick="saveProgress()">💾 Save Progress</button>
-            <button type="button" class="btn-load" onclick="loadProgress()">📂 Load Saved</button>
-        </div>
     </div>
 
     <script src="assets/js/validation.js"></script>
