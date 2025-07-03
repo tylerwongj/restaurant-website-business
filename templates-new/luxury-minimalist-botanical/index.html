@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Fine Dining Experience</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-center">
+                <div class="botanical-icons">
+                    <span class="icon">🌿</span>
+                    <span class="icon">🌸</span>
+                    <span class="icon">🍃</span>
+                    <span class="icon">🌾</span>
+                </div>
+                <h1 class="restaurant-name">{{RESTAURANT_NAME}}</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#reservations">Reservations</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#stories">Stories</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section - Artistic Food Presentation -->
+    <section id="home" class="hero-artistic">
+        <div class="hero-image-container">
+            <img src="{{HERO_IMAGE}}" alt="{{RESTAURANT_NAME}} Signature Dish" class="hero-image">
+        </div>
+        <div class="hero-content">
+            <p class="hero-tagline">{{TAGLINE}}</p>
+            <div class="hero-actions">
+                <button class="btn-reservation" onclick="openReservationModal()">Reserve a Table</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About/Story Section -->
+    <section id="about" class="about-luxury">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Story</h2>
+                <div class="divider-botanical">🌿</div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-description">{{ABOUT_DESCRIPTION}}</p>
+                    <p class="chef-quote">"Every dish tells a story of passion, precision, and the finest ingredients nature provides."</p>
+                    <p class="chef-signature">- Executive Chef</p>
+                </div>
+                <div class="about-image">
+                    <img src="{{INTERIOR_IMAGE_1}}" alt="{{RESTAURANT_NAME}} Dining Room">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Highlights - Seasonal Focus -->
+    <section id="menu" class="menu-highlights">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Seasonal Highlights</h2>
+                <div class="divider-botanical">🌸</div>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="dish-image">
+                        <img src="{{FOOD_IMAGE_1}}" alt="{{MENU_ITEM_1}}">
+                    </div>
+                    <h3 class="dish-name">{{MENU_ITEM_1}}</h3>
+                    <p class="dish-description">{{MENU_DESCRIPTION_1}}</p>
+                    <span class="dish-price">${{PRICE_1}}</span>
+                </div>
+                <div class="menu-item">
+                    <div class="dish-image">
+                        <img src="{{FOOD_IMAGE_2}}" alt="{{MENU_ITEM_2}}">
+                    </div>
+                    <h3 class="dish-name">{{MENU_ITEM_2}}</h3>
+                    <p class="dish-description">{{MENU_DESCRIPTION_2}}</p>
+                    <span class="dish-price">${{PRICE_2}}</span>
+                </div>
+                <div class="menu-item">
+                    <div class="dish-image">
+                        <img src="{{FOOD_IMAGE_3}}" alt="{{MENU_ITEM_3}}">
+                    </div>
+                    <h3 class="dish-name">{{MENU_ITEM_3}}</h3>
+                    <p class="dish-description">{{MENU_DESCRIPTION_3}}</p>
+                    <span class="dish-price">${{PRICE_3}}</span>
+                </div>
+            </div>
+            <div class="menu-cta">
+                <a href="menu.html" class="btn-menu">View Full Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards & Recognition -->
+    <section class="awards">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Recognition</h2>
+                <div class="divider-botanical">🌾</div>
+            </div>
+            <div class="awards-grid">
+                <div class="award-item">
+                    <div class="award-icon">⭐</div>
+                    <h3>Michelin Star</h3>
+                    <p>Recognized for exceptional cuisine</p>
+                </div>
+                <div class="award-item">
+                    <div class="award-icon">🏆</div>
+                    <h3>James Beard Award</h3>
+                    <p>Outstanding Restaurant</p>
+                </div>
+                <div class="award-item">
+                    <div class="award-icon">🥇</div>
+                    <h3>Local Choice</h3>
+                    <p>Best Fine Dining Experience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wine Program -->
+    <section class="wine-program">
+        <div class="container">
+            <div class="wine-content">
+                <div class="wine-text">
+                    <h2>Wine Program</h2>
+                    <p>Our sommelier has carefully curated a selection of exceptional wines to complement our seasonal menu. Each bottle is chosen to enhance the dining experience and showcase the artistry of our cuisine.</p>
+                    <a href="#contact" class="btn-wine">View Wine List</a>
+                </div>
+                <div class="wine-image">
+                    <img src="images/wine-cellar.jpg" alt="Wine Cellar">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-luxury">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Visit Us</h2>
+                    <div class="contact-details">
+                        <p class="address">{{FULL_ADDRESS}}</p>
+                        <p class="phone">{{PHONE}}</p>
+                        <p class="email">{{EMAIL}}</p>
+                    </div>
+                    <div class="hours">
+                        <h3>Hours</h3>
+                        <p>{{WEEKDAY_HOURS}}</p>
+                        <p>{{WEEKEND_HOURS}}</p>
+                        <p>{{SUNDAY_HOURS}}</p>
+                    </div>
+                </div>
+                <div class="map-container">
+                    <iframe src="{{GOOGLE_MAPS_EMBED}}" 
+                            width="100%" 
+                            height="300" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-luxury">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-botanical">
+                    <span class="icon">🌿</span>
+                    <span class="restaurant-name">{{RESTAURANT_NAME}}</span>
+                    <span class="icon">🌿</span>
+                </div>
+                <p class="footer-tagline">{{TAGLINE}}</p>
+                <div class="social-links">
+                    <a href="{{FACEBOOK_URL}}" target="_blank" aria-label="Facebook">📘</a>
+                    <a href="{{INSTAGRAM_URL}}" target="_blank" aria-label="Instagram">📷</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Reservation Modal -->
+    <div id="reservationModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Reserve Your Table</h2>
+            <form class="reservation-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Time</label>
+                        <input type="time" id="time" name="time" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="guests">Guests</label>
+                        <select id="guests" name="guests" required>
+                            <option value="1">1 Guest</option>
+                            <option value="2">2 Guests</option>
+                            <option value="3">3 Guests</option>
+                            <option value="4">4 Guests</option>
+                            <option value="5">5 Guests</option>
+                            <option value="6">6 Guests</option>
+                            <option value="7">7 Guests</option>
+                            <option value="8">8 Guests</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="special-requests">Special Requests</label>
+                    <textarea id="special-requests" name="special-requests" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Confirm Reservation</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

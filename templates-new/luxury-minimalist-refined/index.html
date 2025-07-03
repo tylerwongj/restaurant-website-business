@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - {{TAGLINE}}</title>
+    <meta name="description" content="{{RESTAURANT_DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body class="theme-minimal">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="#home" class="logo-link">
+                    <div class="logo-botanical">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                            <path d="M20 8C17.5 8 15.5 10 15.5 12.5C15.5 15 17.5 17 20 17C22.5 17 24.5 15 24.5 12.5C24.5 10 22.5 8 20 8Z" stroke="currentColor" stroke-width="1" fill="none"/>
+                            <path d="M12 20C12 22.5 14 24.5 16.5 24.5C19 24.5 21 22.5 21 20C21 17.5 19 15.5 16.5 15.5C14 15.5 12 17.5 12 20Z" stroke="currentColor" stroke-width="1" fill="none"/>
+                            <path d="M19 20C19 22.5 21 24.5 23.5 24.5C26 24.5 28 22.5 28 20C28 17.5 26 15.5 23.5 15.5C21 15.5 19 17.5 19 20Z" stroke="currentColor" stroke-width="1" fill="none"/>
+                            <path d="M20 23C17.5 23 15.5 25 15.5 27.5C15.5 30 17.5 32 20 32C22.5 32 24.5 30 24.5 27.5C24.5 25 22.5 23 20 23Z" stroke="currentColor" stroke-width="1" fill="none"/>
+                        </svg>
+                    </div>
+                    <span class="logo-text">{{RESTAURANT_NAME}}</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#reservations">Reservations</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">{{RESTAURANT_NAME}}</h1>
+                <p class="hero-subtitle">{{TAGLINE}}</p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary" onclick="openReservationModal()">Reserve a Table</button>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="images/{{HERO_IMAGE}}" alt="{{RESTAURANT_NAME}}" class="hero-bg">
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-content">
+                <h2 class="section-title">The Experience</h2>
+                <div class="experience-grid">
+                    <div class="experience-text">
+                        <p class="experience-description">{{EXPERIENCE_DESCRIPTION}}</p>
+                        <div class="chef-signature">
+                            <p>{{CHEF_NAME}}</p>
+                            <small>Executive Chef</small>
+                        </div>
+                    </div>
+                    <div class="experience-image">
+                        <img src="images/{{INTERIOR_IMAGE}}" alt="Restaurant Interior">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Highlights -->
+    <section id="menu" class="menu-preview">
+        <div class="container">
+            <div class="section-content">
+                <h2 class="section-title">Seasonal Menu</h2>
+                <div class="menu-highlights">
+                    <div class="menu-item">
+                        <img src="images/{{FOOD_IMAGE_1}}" alt="{{MENU_ITEM_1_NAME}}">
+                        <h3>{{MENU_ITEM_1_NAME}}</h3>
+                        <p>{{MENU_ITEM_1_DESCRIPTION}}</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="images/{{FOOD_IMAGE_2}}" alt="{{MENU_ITEM_2_NAME}}">
+                        <h3>{{MENU_ITEM_2_NAME}}</h3>
+                        <p>{{MENU_ITEM_2_DESCRIPTION}}</p>
+                    </div>
+                    <div class="menu-item">
+                        <img src="images/{{FOOD_IMAGE_3}}" alt="{{MENU_ITEM_3_NAME}}">
+                        <h3>{{MENU_ITEM_3_NAME}}</h3>
+                        <p>{{MENU_ITEM_3_DESCRIPTION}}</p>
+                    </div>
+                </div>
+                <div class="menu-cta">
+                    <a href="menu.html" class="btn btn-outline">View Full Menu</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section class="awards">
+        <div class="container">
+            <div class="awards-content">
+                <h2 class="section-title">Recognition</h2>
+                <div class="awards-grid">
+                    <div class="award-item">
+                        <div class="award-icon">★</div>
+                        <p>{{AWARD_1}}</p>
+                    </div>
+                    <div class="award-item">
+                        <div class="award-icon">★</div>
+                        <p>{{AWARD_2}}</p>
+                    </div>
+                    <div class="award-item">
+                        <div class="award-icon">★</div>
+                        <p>{{AWARD_3}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Visit Us</h2>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <h4>Address</h4>
+                            <p>{{RESTAURANT_ADDRESS}}</p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>Hours</h4>
+                            <p>{{RESTAURANT_HOURS}}</p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>Contact</h4>
+                            <p>{{PHONE}}</p>
+                            <p>{{EMAIL}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Private Dining Inquiries</h3>
+                    <form class="inquiry-form">
+                        <input type="text" placeholder="Name" required>
+                        <input type="email" placeholder="Email" required>
+                        <input type="date" placeholder="Preferred Date">
+                        <input type="number" placeholder="Party Size" min="1">
+                        <textarea placeholder="Special Requirements" rows="4"></textarea>
+                        <button type="submit" class="btn btn-primary">Send Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Modal -->
+    <div id="reservationModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Reserve Your Table</h3>
+                <span class="close" onclick="closeReservationModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form class="reservation-form">
+                    <div class="form-row">
+                        <input type="text" placeholder="Name" required>
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="date" required>
+                        <select required>
+                            <option value="">Select Time</option>
+                            <option value="17:30">5:30 PM</option>
+                            <option value="18:00">6:00 PM</option>
+                            <option value="18:30">6:30 PM</option>
+                            <option value="19:00">7:00 PM</option>
+                            <option value="19:30">7:30 PM</option>
+                            <option value="20:00">8:00 PM</option>
+                            <option value="20:30">8:30 PM</option>
+                            <option value="21:00">9:00 PM</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <select required>
+                            <option value="">Party Size</option>
+                            <option value="1">1 Guest</option>
+                            <option value="2">2 Guests</option>
+                            <option value="3">3 Guests</option>
+                            <option value="4">4 Guests</option>
+                            <option value="5">5 Guests</option>
+                            <option value="6">6 Guests</option>
+                            <option value="7">7+ Guests</option>
+                        </select>
+                    </div>
+                    <textarea placeholder="Special requests (optional)" rows="3"></textarea>
+                    <button type="submit" class="btn btn-primary">Request Reservation</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-botanical">
+                        <svg width="30" height="30" viewBox="0 0 40 40" fill="none">
+                            <path d="M20 8C17.5 8 15.5 10 15.5 12.5C15.5 15 17.5 17 20 17C22.5 17 24.5 15 24.5 12.5C24.5 10 22.5 8 20 8Z" stroke="currentColor" stroke-width="1" fill="none"/>
+                            <path d="M12 20C12 22.5 14 24.5 16.5 24.5C19 24.5 21 22.5 21 20C21 17.5 19 15.5 16.5 15.5C14 15.5 12 17.5 12 20Z" stroke="currentColor" stroke-width="1" fill="none"/>
+                            <path d="M19 20C19 22.5 21 24.5 23.5 24.5C26 24.5 28 22.5 28 20C28 17.5 26 15.5 23.5 15.5C21 15.5 19 17.5 19 20Z" stroke="currentColor" stroke-width="1" fill="none"/>
+                            <path d="M20 23C17.5 23 15.5 25 15.5 27.5C15.5 30 17.5 32 20 32C22.5 32 24.5 30 24.5 27.5C24.5 25 22.5 23 20 23Z" stroke="currentColor" stroke-width="1" fill="none"/>
+                        </svg>
+                    </div>
+                    <span>{{RESTAURANT_NAME}}</span>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h5>Restaurant</h5>
+                        <a href="#experience">Experience</a>
+                        <a href="menu.html">Menu</a>
+                        <a href="#reservations">Reservations</a>
+                    </div>
+                    <div class="footer-section">
+                        <h5>Contact</h5>
+                        <p>{{RESTAURANT_ADDRESS}}</p>
+                        <p>{{PHONE}}</p>
+                        <p>{{EMAIL}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

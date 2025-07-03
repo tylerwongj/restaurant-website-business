@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Culinary Excellence</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - Experience the art of fine dining. Book your reservation for an unforgettable culinary journey.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body class="luxury-modal-theme">
+    <!-- Reservation Modal -->
+    <div id="reservationModal" class="modal">
+        <div class="modal-overlay" onclick="closeModal()"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div class="modal-header">
+                <h2>Reserve Your Experience</h2>
+                <p>Choose your preferred dining experience</p>
+            </div>
+            <div class="modal-body">
+                <div class="experience-options">
+                    <div class="experience-option" data-experience="dining-room">
+                        <div class="option-image">
+                            <img src="images/dining-room.jpg" alt="Dining Room Experience">
+                        </div>
+                        <div class="option-content">
+                            <h3>Dining Room</h3>
+                            <p>Our signature tasting menu experience in the main dining room</p>
+                            <div class="option-price">$195 per person</div>
+                        </div>
+                    </div>
+                    <div class="experience-option" data-experience="chefs-table">
+                        <div class="option-image">
+                            <img src="images/chefs-table.jpg" alt="Chef's Table Experience">
+                        </div>
+                        <div class="option-content">
+                            <h3>Chef's Table</h3>
+                            <p>An intimate experience at the kitchen counter with chef interaction</p>
+                            <div class="option-price">$295 per person</div>
+                        </div>
+                    </div>
+                    <div class="experience-option" data-experience="private-dining">
+                        <div class="option-image">
+                            <img src="images/private-dining.jpg" alt="Private Dining Experience">
+                        </div>
+                        <div class="option-content">
+                            <h3>Private Dining</h3>
+                            <p>Exclusive private room for special occasions and groups</p>
+                            <div class="option-price">$245 per person</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reservation-form" id="reservationForm" style="display: none;">
+                    <h3 id="selectedExperience">Dining Room Experience</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="date" id="reservationDate" required>
+                            <select id="reservationTime" required>
+                                <option value="">Select Time</option>
+                                <option value="17:30">5:30 PM</option>
+                                <option value="18:00">6:00 PM</option>
+                                <option value="18:30">6:30 PM</option>
+                                <option value="19:00">7:00 PM</option>
+                                <option value="19:30">7:30 PM</option>
+                                <option value="20:00">8:00 PM</option>
+                                <option value="20:30">8:30 PM</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <select id="partySize" required>
+                                <option value="">Party Size</option>
+                                <option value="1">1 Guest</option>
+                                <option value="2">2 Guests</option>
+                                <option value="3">3 Guests</option>
+                                <option value="4">4 Guests</option>
+                                <option value="5">5 Guests</option>
+                                <option value="6">6 Guests</option>
+                                <option value="7">7 Guests</option>
+                                <option value="8">8 Guests</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Name" required>
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <select>
+                                <option value="">Special Occasion (Optional)</option>
+                                <option value="anniversary">Anniversary</option>
+                                <option value="birthday">Birthday</option>
+                                <option value="engagement">Engagement</option>
+                                <option value="business">Business Dinner</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Dietary restrictions or special requests"></textarea>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-back" onclick="showExperienceOptions()">Back</button>
+                            <button type="submit" class="btn btn-reserve">Request Reservation</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="#home" class="logo-link">
+                    <img src="images/logo.png" alt="{{RESTAURANT_NAME}} Logo">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#philosophy">Philosophy</a></li>
+                <li><a href="#chef">Chef</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-cta">
+                <button class="btn btn-reservation" onclick="openModal()">Reservations</button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <img src="images/hero.jpg" alt="{{RESTAURANT_NAME}} Fine Dining">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span>{{ANNIVERSARY_YEAR}} ANNIVERSARY</span>
+            </div>
+            <h1>{{RESTAURANT_NAME}}</h1>
+            <p class="hero-subtitle">The Art of Culinary Excellence</p>
+            <div class="hero-button">
+                <button class="btn btn-primary" onclick="openModal()">Reserve Your Table</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section id="philosophy" class="philosophy">
+        <div class="container">
+            <div class="philosophy-content">
+                <div class="philosophy-text">
+                    <h2>Our Philosophy</h2>
+                    <div class="philosophy-quote">
+                        <blockquote>
+                            "{{PHILOSOPHY_QUOTE}}"
+                        </blockquote>
+                        <cite>— {{CHEF_NAME}}, Executive Chef</cite>
+                    </div>
+                    <p class="philosophy-description">{{PHILOSOPHY_DESCRIPTION}}</p>
+                </div>
+                <div class="philosophy-image">
+                    <img src="images/philosophy.jpg" alt="Culinary Philosophy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chef Section -->
+    <section id="chef" class="chef">
+        <div class="container">
+            <div class="chef-content">
+                <div class="chef-image">
+                    <img src="images/chef.jpg" alt="{{CHEF_NAME}}">
+                </div>
+                <div class="chef-text">
+                    <h2>{{CHEF_NAME}}</h2>
+                    <h3>Executive Chef</h3>
+                    <div class="chef-description">
+                        <p>{{CHEF_DESCRIPTION}}</p>
+                    </div>
+                    <div class="chef-awards">
+                        <div class="award">
+                            <div class="award-icon">🌟</div>
+                            <div class="award-text">
+                                <h4>{{AWARD_1}}</h4>
+                                <p>{{AWARD_1_YEAR}}</p>
+                            </div>
+                        </div>
+                        <div class="award">
+                            <div class="award-icon">🏆</div>
+                            <div class="award-text">
+                                <h4>{{AWARD_2}}</h4>
+                                <p>{{AWARD_2_YEAR}}</p>
+                            </div>
+                        </div>
+                        <div class="award">
+                            <div class="award-icon">📖</div>
+                            <div class="award-text">
+                                <h4>{{AWARD_3}}</h4>
+                                <p>{{AWARD_3_YEAR}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="experience-header">
+                <h2>The Experience</h2>
+                <p>Three distinct ways to experience our culinary artistry</p>
+            </div>
+            <div class="experience-grid">
+                <div class="experience-card" onclick="openModalWithExperience('dining-room')">
+                    <div class="card-image">
+                        <img src="images/dining-room.jpg" alt="Dining Room">
+                    </div>
+                    <div class="card-content">
+                        <h3>Dining Room</h3>
+                        <p>Our signature tasting menu featuring seasonal ingredients and innovative techniques</p>
+                        <div class="card-price">From $195</div>
+                        <div class="card-cta">Reserve Experience</div>
+                    </div>
+                </div>
+                <div class="experience-card" onclick="openModalWithExperience('chefs-table')">
+                    <div class="card-image">
+                        <img src="images/chefs-table.jpg" alt="Chef's Table">
+                    </div>
+                    <div class="card-content">
+                        <h3>Chef's Table</h3>
+                        <p>An intimate counter experience with direct interaction with our culinary team</p>
+                        <div class="card-price">From $295</div>
+                        <div class="card-cta">Reserve Experience</div>
+                    </div>
+                </div>
+                <div class="experience-card" onclick="openModalWithExperience('private-dining')">
+                    <div class="card-image">
+                        <img src="images/private-dining.jpg" alt="Private Dining">
+                    </div>
+                    <div class="card-content">
+                        <h3>Private Dining</h3>
+                        <p>Exclusive private rooms for special occasions and intimate gatherings</p>
+                        <div class="card-price">From $245</div>
+                        <div class="card-cta">Reserve Experience</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tasting Menu Preview -->
+    <section class="tasting-menu">
+        <div class="container">
+            <div class="menu-header">
+                <h2>Current Tasting Menu</h2>
+                <p class="menu-season">{{CURRENT_SEASON}} {{CURRENT_YEAR}}</p>
+            </div>
+            <div class="menu-courses">
+                <div class="course">
+                    <div class="course-number">01</div>
+                    <div class="course-content">
+                        <h3>{{COURSE_1_NAME}}</h3>
+                        <p>{{COURSE_1_DESCRIPTION}}</p>
+                    </div>
+                </div>
+                <div class="course">
+                    <div class="course-number">02</div>
+                    <div class="course-content">
+                        <h3>{{COURSE_2_NAME}}</h3>
+                        <p>{{COURSE_2_DESCRIPTION}}</p>
+                    </div>
+                </div>
+                <div class="course">
+                    <div class="course-number">03</div>
+                    <div class="course-content">
+                        <h3>{{COURSE_3_NAME}}</h3>
+                        <p>{{COURSE_3_DESCRIPTION}}</p>
+                    </div>
+                </div>
+                <div class="course">
+                    <div class="course-number">04</div>
+                    <div class="course-content">
+                        <h3>{{COURSE_4_NAME}}</h3>
+                        <p>{{COURSE_4_DESCRIPTION}}</p>
+                    </div>
+                </div>
+                <div class="course">
+                    <div class="course-number">05</div>
+                    <div class="course-content">
+                        <h3>{{COURSE_5_NAME}}</h3>
+                        <p>{{COURSE_5_DESCRIPTION}}</p>
+                    </div>
+                </div>
+                <div class="course">
+                    <div class="course-number">06</div>
+                    <div class="course-content">
+                        <h3>{{COURSE_6_NAME}}</h3>
+                        <p>{{COURSE_6_DESCRIPTION}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-note">
+                <p><em>Menu changes seasonally based on the finest available ingredients</em></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Press & Awards -->
+    <section class="press">
+        <div class="container">
+            <h2>Recognition</h2>
+            <div class="press-grid">
+                <div class="press-item">
+                    <div class="press-logo">
+                        <div class="press-publication">{{PRESS_1_PUBLICATION}}</div>
+                    </div>
+                    <div class="press-quote">
+                        <blockquote>"{{PRESS_1_QUOTE}}"</blockquote>
+                        <cite>{{PRESS_1_CRITIC}}</cite>
+                    </div>
+                </div>
+                <div class="press-item">
+                    <div class="press-logo">
+                        <div class="press-publication">{{PRESS_2_PUBLICATION}}</div>
+                    </div>
+                    <div class="press-quote">
+                        <blockquote>"{{PRESS_2_QUOTE}}"</blockquote>
+                        <cite>{{PRESS_2_CRITIC}}</cite>
+                    </div>
+                </div>
+                <div class="press-item">
+                    <div class="press-logo">
+                        <div class="press-publication">{{PRESS_3_PUBLICATION}}</div>
+                    </div>
+                    <div class="press-quote">
+                        <blockquote>"{{PRESS_3_QUOTE}}"</blockquote>
+                        <cite>{{PRESS_3_CRITIC}}</cite>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Visit Us</h2>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <h4>Address</h4>
+                            <p>{{ADDRESS}}<br>{{CITY}}, {{STATE}} {{ZIP}}</p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>Reservations</h4>
+                            <p><a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+                            <p><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>Service Hours</h4>
+                            <div class="hours">
+                                <div>Tuesday - Saturday</div>
+                                <div>{{SERVICE_HOURS}}</div>
+                                <div class="closed">Sunday & Monday: Closed</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reservation-note">
+                        <p><em>Reservations are required and can be made up to 60 days in advance. Please call or use our reservation system for bookings.</em></p>
+                    </div>
+                </div>
+                <div class="contact-image">
+                    <img src="images/interior.jpg" alt="{{RESTAURANT_NAME}} Interior">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="images/logo.png" alt="{{RESTAURANT_NAME}} Logo" class="footer-logo">
+                    <p>The Art of Culinary Excellence</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Experience</h4>
+                    <ul>
+                        <li><a href="#philosophy">Philosophy</a></li>
+                        <li><a href="#chef">Chef</a></li>
+                        <li><a href="#experience">Dining Experiences</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Reservations</h4>
+                    <p>{{ADDRESS}}</p>
+                    <p>{{CITY}}, {{STATE}} {{ZIP}}</p>
+                    <p><a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+                    <p><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

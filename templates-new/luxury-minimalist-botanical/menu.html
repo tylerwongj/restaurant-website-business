@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Menu</title>
+    <meta name="description" content="Explore our seasonal menu featuring contemporary cuisine and artisanal dishes">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .menu-page {
+            margin-top: 120px;
+            padding: 4rem 0;
+        }
+        
+        .menu-category {
+            margin-bottom: 4rem;
+        }
+        
+        .category-title {
+            font-family: var(--font-primary);
+            font-size: 2rem;
+            color: var(--accent);
+            text-align: center;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+        
+        .menu-items-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .menu-item-detailed {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .menu-item-detailed:last-child {
+            border-bottom: none;
+        }
+        
+        .item-info {
+            flex: 1;
+            padding-right: 2rem;
+        }
+        
+        .item-name {
+            font-family: var(--font-primary);
+            font-size: 1.2rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+        }
+        
+        .item-description {
+            color: var(--text-light);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+        
+        .item-price {
+            font-family: var(--font-primary);
+            font-size: 1.1rem;
+            color: var(--secondary);
+            font-weight: 500;
+            white-space: nowrap;
+        }
+        
+        .wine-pairing {
+            font-size: 0.85rem;
+            color: var(--secondary);
+            font-style: italic;
+            margin-top: 0.3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .menu-item-detailed {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .item-info {
+                padding-right: 0;
+            }
+            
+            .item-price {
+                align-self: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-center">
+                <div class="botanical-icons">
+                    <span class="icon">🌿</span>
+                    <span class="icon">🌸</span>
+                    <span class="icon">🍃</span>
+                    <span class="icon">🌾</span>
+                </div>
+                <h1 class="restaurant-name">{{RESTAURANT_NAME}}</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#reservations" onclick="openReservationModal()">Reservations</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu Page Content -->
+    <div class="menu-page">
+        <div class="container">
+            <!-- Page Header -->
+            <div class="section-header">
+                <h1 class="section-title">Seasonal Menu</h1>
+                <div class="divider-botanical">🌸</div>
+                <p style="text-align: center; max-width: 600px; margin: 2rem auto; color: var(--text-light); font-style: italic;">
+                    Our menu celebrates the finest seasonal ingredients, crafted with passion and presented with artistry. Each dish tells a story of culinary excellence and innovation.
+                </p>
+            </div>
+
+            <!-- Appetizers -->
+            <div class="menu-category">
+                <h2 class="category-title">Appetizers</h2>
+                <div class="menu-items-list">
+                    <div class="menu-item-detailed">
+                        <div class="item-info">
+                            <h3 class="item-name">{{APPETIZER_1_NAME}}</h3>
+                            <p class="item-description">{{APPETIZER_1_DESCRIPTION}}</p>
+                            <p class="wine-pairing">Paired with: Pinot Grigio</p>
+                        </div>
+                        <span class="item-price">${{APPETIZER_1_PRICE}}</span>
+                    </div>
+                    <div class="menu-item-detailed">
+                        <div class="item-info">
+                            <h3 class="item-name">{{APPETIZER_2_NAME}}</h3>
+                            <p class="item-description">{{APPETIZER_2_DESCRIPTION}}</p>
+                            <p class="wine-pairing">Paired with: Prosecco</p>
+                        </div>
+                        <span class="item-price">${{APPETIZER_2_PRICE}}</span>
+                    </div>
+                    <div class="menu-item-detailed">
+                        <div class="item-info">
+                            <h3 class="item-name">{{APPETIZER_3_NAME}}</h3>
+                            <p class="item-description">{{APPETIZER_3_DESCRIPTION}}</p>
+                            <p class="wine-pairing">Paired with: Sauvignon Blanc</p>
+                        </div>
+                        <span class="item-price">${{APPETIZER_3_PRICE}}</span>
+                    </div>
+                    <div class="menu-item-detailed">
+                        <div class="item-info">
+                            <h3 class="item-name">{{APPETIZER_4_NAME}}</h3>
+                            <p class="item-description">{{APPETIZER_4_DESCRIPTION}}</p>
+                            <p class="wine-pairing">Paired with: Chianti Classico</p>
+                        </div>
+                        <span class="item-price">${{APPETIZER_4_PRICE}}</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Soups -->
+            <div class="menu-category">
+                <h2 class="category-title">Soups</h2>
+                <div class="menu-items-list">
+                    <div class="menu-item-detailed">
+                        <div class="item-info">
+                            <h3 class="item-name">{{SOUP_1_NAME}}</h3>
+                            <p class="item-description">{{SOUP_1_DESCRIPTION}}</p>
+                        </div>
+                        <span class="item-price">${{SOUP_1_PRICE}}</span>
+                    </div>
+                    <div class="menu-item-detailed">
+                        <div class="item-info">
+                            <h3 class="item-name">{{SOUP_2_NAME}}</h3>
+                            <p class="item-description">{{SOUP_2_DESCRIPTION}}</p>
+                        </div>
+                        <span class="item-price">${{SOUP_2_PRICE}}</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Salads -->
+            <div class="menu-category">
+                <h2 class="category-title">Salads</h2>
+                <div class="menu-items-list">
+                    <div class="menu-item-detailed">
+                        <div class="item-info">
+                            <h3 class="item-name">{{SALAD_1_NAME}}</h3>
+                            <p class="item-description">{{SALAD_1_DESCRIPTION}}</p>
+                            <p class="wine-pairing">Paired with: Pinot Grigio</p>
+                        </div>
+                        <span class="item-price">${{SALAD_1_PRICE}}</span>
+                    </div>
+                    <div class="menu-item-detailed">
+                        <div class="item-info">
+                            <h3 class="item-name">{{SALAD_2_NAME}}</h3>
+                            <p class="item-description">{{SALAD_2_DESCRIPTION}}</p>
+                            <p class="wine-pairing">Paired with: Chardonnay</p>
+                        </div>
+                        <span class="item-price">${{SALAD_2_PRICE}}</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Courses -->
+            <div class="menu-category">
+                <h2 class="category-title">Main Courses</h2>
+                <div class="menu-items-list">
+                    <div class="menu-item-detailed">
+                        <div class="item-info">
+                            <h3 class="item-name">{{MAIN_1_NAME}}</h3>
+                            <p class="item-description">{{MAIN_1_DESCRIPTION}}</p>
+                            <p class="wine-pairing">Paired with: Barolo</p>
+                        </div>
+                        <span class="item-price">${{MAIN_1_PRICE}}</span>
+                    </div>
+                    <div class="menu-item-detailed">
+                        <div class="item-info">
+                            <h3 class="item-name">{{MAIN_2_NAME}}</h3>
+                            <p class="item-description">{{MAIN_2_DESCRIPTION}}</p>
+                            <p class="wine-pairing">Paired with: Chianti Classico</p>
+                        </div>
+                        <span class="item-price">${{MAIN_2_PRICE}}</span>
+                    </div>
+                    <div class="menu-item-detailed">
+                        <div class="item-info">
+                            <h3 class="item-name">{{MAIN_3_NAME}}</h3>
+                            <p class="item-description">{{MAIN_3_DESCRIPTION}}</p>
+                            <p class="wine-pairing">Paired with: Pinot Noir</p>
+                        </div>
+                        <span class="item-price">${{MAIN_3_PRICE}}</span>
+                    </div>
+                    <div class="menu-item-detailed">
+                        <div class="item-info">
+                            <h3 class="item-name">{{MAIN_4_NAME}}</h3>
+                            <p class="item-description">{{MAIN_4_DESCRIPTION}}</p>
+                            <p class="wine-pairing">Paired with: Sancerre</p>
+                        </div>
+                        <span class="item-price">${{MAIN_4_PRICE}}</span>
+                    </div>
+                    <div class="menu-item-detailed">
+                        <div class="item-info">
+                            <h3 class="item-name">{{MAIN_5_NAME}}</h3>
+                            <p class="item-description">{{MAIN_5_DESCRIPTION}}</p>
+                            <p class="wine-pairing">Paired with: Sangiovese</p>
+                        </div>
+                        <span class="item-price">${{MAIN_5_PRICE}}</span>
+                    </div>
+                    <div class="menu-item-detailed">
+                        <div class="item-info">
+                            <h3 class="item-name">{{MAIN_6_NAME}}</h3>
+                            <p class="item-description">{{MAIN_6_DESCRIPTION}}</p>
+                            <p class="wine-pairing">Paired with: Pinot Grigio</p>
+                        </div>
+                        <span class="item-price">${{MAIN_6_PRICE}}</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desserts -->
+            <div class="menu-category">
+                <h2 class="category-title">Desserts</h2>
+                <div class="menu-items-list">
+                    <div class="menu-item-detailed">
+                        <div class="item-info">
+                            <h3 class="item-name">{{DESSERT_1_NAME}}</h3>
+                            <p class="item-description">{{DESSERT_1_DESCRIPTION}}</p>
+                            <p class="wine-pairing">Paired with: Moscato</p>
+                        </div>
+                        <span class="item-price">${{DESSERT_1_PRICE}}</span>
+                    </div>
+                    <div class="menu-item-detailed">
+                        <div class="item-info">
+                            <h3 class="item-name">{{DESSERT_2_NAME}}</h3>
+                            <p class="item-description">{{DESSERT_2_DESCRIPTION}}</p>
+                            <p class="wine-pairing">Paired with: Port</p>
+                        </div>
+                        <span class="item-price">${{DESSERT_2_PRICE}}</span>
+                    </div>
+                    <div class="menu-item-detailed">
+                        <div class="item-info">
+                            <h3 class="item-name">{{DESSERT_3_NAME}}</h3>
+                            <p class="item-description">{{DESSERT_3_DESCRIPTION}}</p>
+                            <p class="wine-pairing">Paired with: Prosecco</p>
+                        </div>
+                        <span class="item-price">${{DESSERT_3_PRICE}}</span>
+                    </div>
+                    <div class="menu-item-detailed">
+                        <div class="item-info">
+                            <h3 class="item-name">{{DESSERT_4_NAME}}</h3>
+                            <p class="item-description">{{DESSERT_4_DESCRIPTION}}</p>
+                            <p class="wine-pairing">Paired with: Limoncello</p>
+                        </div>
+                        <span class="item-price">${{DESSERT_4_PRICE}}</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wine Selection -->
+            <div class="menu-category">
+                <h2 class="category-title">Wine Selection</h2>
+                <div class="menu-items-list">
+                    <div class="menu-item-detailed">
+                        <div class="item-info">
+                            <h3 class="item-name">{{WINE_1_NAME}}</h3>
+                            <p class="item-description">{{WINE_1_DESCRIPTION}}</p>
+                        </div>
+                        <span class="item-price">${{WINE_1_PRICE}}</span>
+                    </div>
+                    <div class="menu-item-detailed">
+                        <div class="item-info">
+                            <h3 class="item-name">{{WINE_2_NAME}}</h3>
+                            <p class="item-description">{{WINE_2_DESCRIPTION}}</p>
+                        </div>
+                        <span class="item-price">${{WINE_2_PRICE}}</span>
+                    </div>
+                    <div class="menu-item-detailed">
+                        <div class="item-info">
+                            <h3 class="item-name">{{WINE_3_NAME}}</h3>
+                            <p class="item-description">{{WINE_3_DESCRIPTION}}</p>
+                        </div>
+                        <span class="item-price">${{WINE_3_PRICE}}</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Craft Cocktails -->
+            <div class="menu-category">
+                <h2 class="category-title">Craft Cocktails</h2>
+                <div class="menu-items-list">
+                    <div class="menu-item-detailed">
+                        <div class="item-info">
+                            <h3 class="item-name">{{COCKTAIL_1_NAME}}</h3>
+                            <p class="item-description">{{COCKTAIL_1_DESCRIPTION}}</p>
+                        </div>
+                        <span class="item-price">${{COCKTAIL_1_PRICE}}</span>
+                    </div>
+                    <div class="menu-item-detailed">
+                        <div class="item-info">
+                            <h3 class="item-name">{{COCKTAIL_2_NAME}}</h3>
+                            <p class="item-description">{{COCKTAIL_2_DESCRIPTION}}</p>
+                        </div>
+                        <span class="item-price">${{COCKTAIL_2_PRICE}}</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reservation CTA -->
+            <div style="text-align: center; margin-top: 4rem; padding: 3rem; background-color: var(--white); border-radius: 10px;">
+                <div class="divider-botanical" style="margin-bottom: 1rem;">🌿</div>
+                <p style="font-style: italic; margin-bottom: 2rem; color: var(--text-light);">
+                    "Indulge in an unforgettable culinary journey"
+                </p>
+                <button class="btn-reservation" onclick="openReservationModal()">Reserve Your Table</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-luxury">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-botanical">
+                    <span class="icon">🌿</span>
+                    <span class="restaurant-name">{{RESTAURANT_NAME}}</span>
+                    <span class="icon">🌿</span>
+                </div>
+                <p class="footer-tagline">{{TAGLINE}}</p>
+                <div class="social-links">
+                    <a href="{{FACEBOOK_URL}}" target="_blank" aria-label="Facebook">📘</a>
+                    <a href="{{INSTAGRAM_URL}}" target="_blank" aria-label="Instagram">📷</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Reservation Modal -->
+    <div id="reservationModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Reserve Your Table</h2>
+            <form class="reservation-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Time</label>
+                        <input type="time" id="time" name="time" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="guests">Guests</label>
+                        <select id="guests" name="guests" required>
+                            <option value="1">1 Guest</option>
+                            <option value="2">2 Guests</option>
+                            <option value="3">3 Guests</option>
+                            <option value="4">4 Guests</option>
+                            <option value="5">5 Guests</option>
+                            <option value="6">6 Guests</option>
+                            <option value="7">7 Guests</option>
+                            <option value="8">8 Guests</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="special-requests">Special Requests</label>
+                    <textarea id="special-requests" name="special-requests" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Confirm Reservation</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

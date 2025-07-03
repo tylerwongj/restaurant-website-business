@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - {{RESTAURANT_NAME}}</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - Complete Menu with Daily Specials">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional styles for menu page */
+        .menu-page {
+            padding-top: 80px;
+            background: var(--background-warm);
+        }
+        
+        .menu-hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .menu-hero h1 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .menu-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .menu-nav {
+            background: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 80px;
+            z-index: 100;
+        }
+        
+        .menu-nav-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .menu-nav-item {
+            padding: 10px 20px;
+            background: var(--background-warm);
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .menu-nav-item:hover,
+        .menu-nav-item.active {
+            background: var(--secondary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .menu-section {
+            padding: 3rem 0;
+        }
+        
+        .menu-section h2 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+        }
+        
+        .menu-items-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .menu-item-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .menu-item-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .menu-item-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .menu-item-content {
+            padding: 1.5rem;
+        }
+        
+        .menu-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        
+        .menu-item-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .menu-item-price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+        
+        .menu-item-description {
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+        
+        .menu-item-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .menu-tag {
+            background: var(--accent-color);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .menu-tag.spicy {
+            background: var(--secondary-color);
+        }
+        
+        .menu-tag.vegetarian {
+            background: var(--accent-color);
+        }
+        
+        .menu-tag.gluten-free {
+            background: var(--warning-color);
+        }
+        
+        .specials-banner {
+            background: var(--secondary-color);
+            color: white;
+            padding: 2rem 0;
+            margin: 3rem 0;
+            text-align: center;
+        }
+        
+        .specials-banner h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .daily-special {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .combo-deals {
+            background: var(--background-light);
+            padding: 3rem 0;
+            margin: 3rem 0;
+        }
+        
+        .combo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .combo-card {
+            background: white;
+            border: 3px solid var(--accent-color);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .combo-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--warning-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        
+        .combo-title {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .combo-items {
+            margin: 1rem 0;
+            color: var(--text-dark);
+        }
+        
+        .combo-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin: 1rem 0;
+        }
+        
+        .combo-savings {
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        
+        .back-home {
+            text-align: center;
+            padding: 3rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .menu-nav-container {
+                gap: 1rem;
+                padding: 0 1rem;
+            }
+            
+            .menu-nav-item {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+            
+            .menu-items-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .menu-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .combo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="index.html#specials">Specials</a></li>
+                <li><a href="index.html#locations">Locations</a></li>
+                <li><a href="index.html#rewards">Rewards</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="tel:{{PHONE}}" class="order-btn">Order Now</a>
+                <a href="#" class="delivery-btn">Free Delivery</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="menu-page">
+        <!-- Menu Hero -->
+        <section class="menu-hero">
+            <div class="container">
+                <h1>Our Complete Menu</h1>
+                <p>Fresh ingredients, bold flavors, and family recipes passed down through generations</p>
+            </div>
+        </section>
+
+        <!-- Menu Navigation -->
+        <nav class="menu-nav">
+            <div class="container">
+                <div class="menu-nav-container">
+                    <a href="#appetizers" class="menu-nav-item">Appetizers</a>
+                    <a href="#entrees" class="menu-nav-item">Entrées</a>
+                    <a href="#pasta" class="menu-nav-item">Pasta</a>
+                    <a href="#seafood" class="menu-nav-item">Seafood</a>
+                    <a href="#desserts" class="menu-nav-item">Desserts</a>
+                    <a href="#beverages" class="menu-nav-item">Beverages</a>
+                    <a href="#combos" class="menu-nav-item">Combo Deals</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Daily Specials Banner -->
+        <section class="specials-banner">
+            <div class="container">
+                <h3>Today's Specials</h3>
+                <div class="daily-special">Monday: {{MONDAY_SPECIAL}} - ${{MONDAY_PRICE}}</div>
+                <div class="daily-special">Tuesday: {{TUESDAY_SPECIAL}} - ${{TUESDAY_PRICE}}</div>
+                <div class="daily-special">Wednesday: {{WEDNESDAY_SPECIAL}} - ${{WEDNESDAY_PRICE}}</div>
+            </div>
+        </section>
+
+        <!-- Appetizers Section -->
+        <section id="appetizers" class="menu-section">
+            <div class="container">
+                <h2>Appetizers</h2>
+                <div class="menu-items-grid">
+                    <div class="menu-item-card">
+                        <img src="{{APPETIZER_IMAGE_1}}" alt="{{APPETIZER_1}}" class="menu-item-image">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div class="menu-item-title">{{APPETIZER_1}}</div>
+                                <div class="menu-item-price">${{APPETIZER_PRICE_1}}</div>
+                            </div>
+                            <div class="menu-item-description">{{APPETIZER_DESCRIPTION_1}}</div>
+                            <div class="menu-item-tags">
+                                <span class="menu-tag">Popular</span>
+                                <span class="menu-tag vegetarian">Vegetarian</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-card">
+                        <img src="{{APPETIZER_IMAGE_2}}" alt="{{APPETIZER_2}}" class="menu-item-image">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div class="menu-item-title">{{APPETIZER_2}}</div>
+                                <div class="menu-item-price">${{APPETIZER_PRICE_2}}</div>
+                            </div>
+                            <div class="menu-item-description">{{APPETIZER_DESCRIPTION_2}}</div>
+                            <div class="menu-item-tags">
+                                <span class="menu-tag spicy">Spicy</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-card">
+                        <img src="{{APPETIZER_IMAGE_3}}" alt="{{APPETIZER_3}}" class="menu-item-image">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div class="menu-item-title">{{APPETIZER_3}}</div>
+                                <div class="menu-item-price">${{APPETIZER_PRICE_3}}</div>
+                            </div>
+                            <div class="menu-item-description">{{APPETIZER_DESCRIPTION_3}}</div>
+                            <div class="menu-item-tags">
+                                <span class="menu-tag gluten-free">Gluten Free</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-card">
+                        <img src="{{APPETIZER_IMAGE_4}}" alt="{{APPETIZER_4}}" class="menu-item-image">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div class="menu-item-title">{{APPETIZER_4}}</div>
+                                <div class="menu-item-price">${{APPETIZER_PRICE_4}}</div>
+                            </div>
+                            <div class="menu-item-description">{{APPETIZER_DESCRIPTION_4}}</div>
+                            <div class="menu-item-tags">
+                                <span class="menu-tag">Shareable</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Entrées Section -->
+        <section id="entrees" class="menu-section">
+            <div class="container">
+                <h2>Entrées</h2>
+                <div class="menu-items-grid">
+                    <div class="menu-item-card">
+                        <img src="{{ENTREE_IMAGE_1}}" alt="{{ENTREE_1}}" class="menu-item-image">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div class="menu-item-title">{{ENTREE_1}}</div>
+                                <div class="menu-item-price">${{ENTREE_PRICE_1}}</div>
+                            </div>
+                            <div class="menu-item-description">{{ENTREE_DESCRIPTION_1}}</div>
+                            <div class="menu-item-tags">
+                                <span class="menu-tag">Chef's Special</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-card">
+                        <img src="{{ENTREE_IMAGE_2}}" alt="{{ENTREE_2}}" class="menu-item-image">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div class="menu-item-title">{{ENTREE_2}}</div>
+                                <div class="menu-item-price">${{ENTREE_PRICE_2}}</div>
+                            </div>
+                            <div class="menu-item-description">{{ENTREE_DESCRIPTION_2}}</div>
+                            <div class="menu-item-tags">
+                                <span class="menu-tag">Popular</span>
+                                <span class="menu-tag gluten-free">Gluten Free</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-card">
+                        <img src="{{ENTREE_IMAGE_3}}" alt="{{ENTREE_3}}" class="menu-item-image">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div class="menu-item-title">{{ENTREE_3}}</div>
+                                <div class="menu-item-price">${{ENTREE_PRICE_3}}</div>
+                            </div>
+                            <div class="menu-item-description">{{ENTREE_DESCRIPTION_3}}</div>
+                            <div class="menu-item-tags">
+                                <span class="menu-tag">Signature</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-card">
+                        <img src="{{ENTREE_IMAGE_4}}" alt="{{ENTREE_4}}" class="menu-item-image">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div class="menu-item-title">{{ENTREE_4}}</div>
+                                <div class="menu-item-price">${{ENTREE_PRICE_4}}</div>
+                            </div>
+                            <div class="menu-item-description">{{ENTREE_DESCRIPTION_4}}</div>
+                            <div class="menu-item-tags">
+                                <span class="menu-tag vegetarian">Vegetarian</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pasta Section -->
+        <section id="pasta" class="menu-section">
+            <div class="container">
+                <h2>Pasta</h2>
+                <div class="menu-items-grid">
+                    <div class="menu-item-card">
+                        <img src="{{PASTA_IMAGE_1}}" alt="{{PASTA_1}}" class="menu-item-image">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div class="menu-item-title">{{PASTA_1}}</div>
+                                <div class="menu-item-price">${{PASTA_PRICE_1}}</div>
+                            </div>
+                            <div class="menu-item-description">{{PASTA_DESCRIPTION_1}}</div>
+                            <div class="menu-item-tags">
+                                <span class="menu-tag">House Favorite</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-card">
+                        <img src="{{PASTA_IMAGE_2}}" alt="{{PASTA_2}}" class="menu-item-image">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div class="menu-item-title">{{PASTA_2}}</div>
+                                <div class="menu-item-price">${{PASTA_PRICE_2}}</div>
+                            </div>
+                            <div class="menu-item-description">{{PASTA_DESCRIPTION_2}}</div>
+                            <div class="menu-item-tags">
+                                <span class="menu-tag spicy">Spicy</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Combo Deals Section -->
+        <section id="combos" class="combo-deals">
+            <div class="container">
+                <h2>Family Combo Deals</h2>
+                <div class="combo-grid">
+                    <div class="combo-card">
+                        <div class="combo-badge">BEST VALUE</div>
+                        <div class="combo-title">{{COMBO_1_NAME}}</div>
+                        <div class="combo-items">{{COMBO_1_ITEMS}}</div>
+                        <div class="combo-price">${{COMBO_1_PRICE}}</div>
+                        <div class="combo-savings">Save ${{COMBO_1_SAVINGS}}!</div>
+                    </div>
+                    
+                    <div class="combo-card">
+                        <div class="combo-badge">FAMILY SIZE</div>
+                        <div class="combo-title">{{COMBO_2_NAME}}</div>
+                        <div class="combo-items">{{COMBO_2_ITEMS}}</div>
+                        <div class="combo-price">${{COMBO_2_PRICE}}</div>
+                        <div class="combo-savings">Save ${{COMBO_2_SAVINGS}}!</div>
+                    </div>
+                    
+                    <div class="combo-card">
+                        <div class="combo-badge">DATE NIGHT</div>
+                        <div class="combo-title">{{COMBO_3_NAME}}</div>
+                        <div class="combo-items">{{COMBO_3_ITEMS}}</div>
+                        <div class="combo-price">${{COMBO_3_PRICE}}</div>
+                        <div class="combo-savings">Save ${{COMBO_3_SAVINGS}}!</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Back to Home -->
+        <section class="back-home">
+            <div class="container">
+                <a href="index.html" class="btn btn-primary">Back to Home</a>
+                <a href="tel:{{PHONE}}" class="btn btn-secondary">Order Now</a>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Menu navigation highlighting
+        const menuNavItems = document.querySelectorAll('.menu-nav-item');
+        const menuSections = document.querySelectorAll('.menu-section');
+
+        // Intersection Observer for menu navigation
+        const menuObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const sectionId = entry.target.getAttribute('id');
+                    menuNavItems.forEach(item => {
+                        item.classList.remove('active');
+                        if (item.getAttribute('href') === `#${sectionId}`) {
+                            item.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, {
+            threshold: 0.3
+        });
+
+        menuSections.forEach(section => {
+            menuObserver.observe(section);
+        });
+
+        // Smooth scrolling for menu navigation
+        menuNavItems.forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    const offsetTop = targetElement.offsetTop - 160; // Account for fixed headers
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - {{TAGLINE}}</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="theme-mcdonalds">
+    <!-- Mobile App Banner -->
+    <div class="app-banner">
+        <div class="app-banner-content">
+            <div class="app-info">
+                <div class="app-icon">📱</div>
+                <div class="app-text">
+                    <strong>{{APP_DOWNLOAD_TITLE}}</strong>
+                    <span>{{APP_DOWNLOAD_DESC}}</span>
+                </div>
+            </div>
+            <div class="app-buttons">
+                <a href="{{APP_STORE_URL}}" class="app-btn">App Store</a>
+                <a href="{{GOOGLE_PLAY_URL}}" class="app-btn">Google Play</a>
+            </div>
+            <button class="app-close" onclick="closeAppBanner()">&times;</button>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="images/{{LOGO_IMAGE}}" alt="{{RESTAURANT_NAME}} Logo">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#deals">Deals</a></li>
+                <li><a href="#locations">Locations</a></li>
+                <li><a href="#app">Mobile App</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#order" class="btn btn-order">Start Your Order</a>
+            </div>
+            <div class="hamburger" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section - Limited Time Offer -->
+    <section id="home" class="hero-lto">
+        <div class="container">
+            <div class="hero-content">
+                <div class="lto-badge">Limited Time</div>
+                <h1>{{LTO_TITLE}}</h1>
+                <p class="hero-description">{{LTO_DESCRIPTION}}</p>
+                <div class="hero-image">
+                    <img src="images/{{LTO_IMAGE}}" alt="{{LTO_TITLE}}">
+                </div>
+                <div class="hero-actions">
+                    <a href="#order" class="btn btn-large btn-primary">Order Now</a>
+                    <a href="#menu" class="btn btn-large btn-secondary">View Menu</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vertical Product Cards Stack -->
+    <section class="product-stack">
+        <div class="container">
+            <!-- Product Card 1 - Featured LTO -->
+            <div class="product-card featured">
+                <div class="product-visual">
+                    <img src="images/{{PRODUCT_1_IMAGE}}" alt="{{PRODUCT_1_NAME}}">
+                    <div class="product-badge">{{PRODUCT_1_BADGE}}</div>
+                </div>
+                <div class="product-content">
+                    <div class="product-info">
+                        <h2>{{PRODUCT_1_NAME}}</h2>
+                        <p>{{PRODUCT_1_DESCRIPTION}}</p>
+                        <div class="product-details">
+                            <span class="product-price">{{PRODUCT_1_PRICE}}</span>
+                            <span class="product-calories">{{PRODUCT_1_CALORIES}} cal</span>
+                        </div>
+                    </div>
+                    <div class="product-actions">
+                        <a href="#order" class="btn btn-product">Order Now</a>
+                        <button class="btn btn-outline" onclick="showProductDetails('{{PRODUCT_1_ID}}')">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 2 - Value Deal -->
+            <div class="product-card value-deal">
+                <div class="product-visual">
+                    <img src="images/{{PRODUCT_2_IMAGE}}" alt="{{PRODUCT_2_NAME}}">
+                    <div class="product-badge value">{{PRODUCT_2_BADGE}}</div>
+                </div>
+                <div class="product-content">
+                    <div class="product-info">
+                        <h2>{{PRODUCT_2_NAME}}</h2>
+                        <p>{{PRODUCT_2_DESCRIPTION}}</p>
+                        <div class="product-details">
+                            <span class="product-price">{{PRODUCT_2_PRICE}}</span>
+                            <span class="product-savings">Save {{PRODUCT_2_SAVINGS}}</span>
+                        </div>
+                    </div>
+                    <div class="product-actions">
+                        <a href="#order" class="btn btn-product">Order Now</a>
+                        <button class="btn btn-outline" onclick="showProductDetails('{{PRODUCT_2_ID}}')">Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 3 - New Item -->
+            <div class="product-card new-item">
+                <div class="product-visual">
+                    <img src="images/{{PRODUCT_3_IMAGE}}" alt="{{PRODUCT_3_NAME}}">
+                    <div class="product-badge new">{{PRODUCT_3_BADGE}}</div>
+                </div>
+                <div class="product-content">
+                    <div class="product-info">
+                        <h2>{{PRODUCT_3_NAME}}</h2>
+                        <p>{{PRODUCT_3_DESCRIPTION}}</p>
+                        <div class="product-details">
+                            <span class="product-price">{{PRODUCT_3_PRICE}}</span>
+                            <span class="product-calories">{{PRODUCT_3_CALORIES}} cal</span>
+                        </div>
+                    </div>
+                    <div class="product-actions">
+                        <a href="#order" class="btn btn-product">Try Now</a>
+                        <button class="btn btn-outline" onclick="showProductDetails('{{PRODUCT_3_ID}}')">Learn More</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 4 - Breakfast -->
+            <div class="product-card breakfast-item">
+                <div class="product-visual">
+                    <img src="images/{{PRODUCT_4_IMAGE}}" alt="{{PRODUCT_4_NAME}}">
+                    <div class="product-badge breakfast">{{PRODUCT_4_BADGE}}</div>
+                </div>
+                <div class="product-content">
+                    <div class="product-info">
+                        <h2>{{PRODUCT_4_NAME}}</h2>
+                        <p>{{PRODUCT_4_DESCRIPTION}}</p>
+                        <div class="product-details">
+                            <span class="product-price">{{PRODUCT_4_PRICE}}</span>
+                            <span class="availability">{{PRODUCT_4_AVAILABILITY}}</span>
+                        </div>
+                    </div>
+                    <div class="product-actions">
+                        <a href="#order" class="btn btn-product">Order Now</a>
+                        <button class="btn btn-outline" onclick="showProductDetails('{{PRODUCT_4_ID}}')">Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Card 5 - Delivery Focus -->
+            <div class="product-card delivery-focus">
+                <div class="product-visual">
+                    <img src="images/{{DELIVERY_IMAGE}}" alt="{{DELIVERY_TITLE}}">
+                    <div class="product-badge delivery">{{DELIVERY_BADGE}}</div>
+                </div>
+                <div class="product-content">
+                    <div class="product-info">
+                        <h2>{{DELIVERY_TITLE}}</h2>
+                        <p>{{DELIVERY_DESCRIPTION}}</p>
+                        <div class="product-details">
+                            <span class="delivery-time">{{DELIVERY_TIME}}</span>
+                            <span class="delivery-fee">{{DELIVERY_FEE}}</span>
+                        </div>
+                    </div>
+                    <div class="product-actions">
+                        <a href="#order" class="btn btn-product">Order for Delivery</a>
+                        <button class="btn btn-outline" onclick="showDeliveryZones()">Check Delivery Area</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile App Promotion -->
+    <section id="app" class="app-promotion">
+        <div class="container">
+            <div class="app-content">
+                <div class="app-info-section">
+                    <h2>{{APP_SECTION_TITLE}}</h2>
+                    <p class="app-subtitle">{{APP_SECTION_SUBTITLE}}</p>
+                    
+                    <div class="app-features">
+                        <div class="app-feature">
+                            <div class="feature-icon">🚀</div>
+                            <div class="feature-text">
+                                <h4>{{APP_FEATURE_1_TITLE}}</h4>
+                                <p>{{APP_FEATURE_1_DESC}}</p>
+                            </div>
+                        </div>
+                        
+                        <div class="app-feature">
+                            <div class="feature-icon">💰</div>
+                            <div class="feature-text">
+                                <h4>{{APP_FEATURE_2_TITLE}}</h4>
+                                <p>{{APP_FEATURE_2_DESC}}</p>
+                            </div>
+                        </div>
+                        
+                        <div class="app-feature">
+                            <div class="feature-icon">⭐</div>
+                            <div class="feature-text">
+                                <h4>{{APP_FEATURE_3_TITLE}}</h4>
+                                <p>{{APP_FEATURE_3_DESC}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="app-download-buttons">
+                        <a href="{{APP_STORE_URL}}" class="download-btn apple">
+                            <img src="images/app-store-badge.png" alt="Download on App Store">
+                        </a>
+                        <a href="{{GOOGLE_PLAY_URL}}" class="download-btn google">
+                            <img src="images/google-play-badge.png" alt="Get it on Google Play">
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="app-visual">
+                    <img src="images/{{APP_MOCKUP_IMAGE}}" alt="{{RESTAURANT_NAME}} Mobile App">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Categories -->
+    <section id="menu" class="menu-grid">
+        <div class="container">
+            <h2>Full Menu</h2>
+            <div class="menu-categories">
+                <div class="menu-category">
+                    <div class="category-image">
+                        <img src="images/{{CATEGORY_1_IMAGE}}" alt="{{CATEGORY_1_NAME}}">
+                    </div>
+                    <h3>{{CATEGORY_1_NAME}}</h3>
+                    <p>{{CATEGORY_1_DESC}}</p>
+                    <a href="#order" class="btn btn-category">Order Now</a>
+                </div>
+                
+                <div class="menu-category">
+                    <div class="category-image">
+                        <img src="images/{{CATEGORY_2_IMAGE}}" alt="{{CATEGORY_2_NAME}}">
+                    </div>
+                    <h3>{{CATEGORY_2_NAME}}</h3>
+                    <p>{{CATEGORY_2_DESC}}</p>
+                    <a href="#order" class="btn btn-category">Order Now</a>
+                </div>
+                
+                <div class="menu-category">
+                    <div class="category-image">
+                        <img src="images/{{CATEGORY_3_IMAGE}}" alt="{{CATEGORY_3_NAME}}">
+                    </div>
+                    <h3>{{CATEGORY_3_NAME}}</h3>
+                    <p>{{CATEGORY_3_DESC}}</p>
+                    <a href="#order" class="btn btn-category">Order Now</a>
+                </div>
+                
+                <div class="menu-category">
+                    <div class="category-image">
+                        <img src="images/{{CATEGORY_4_IMAGE}}" alt="{{CATEGORY_4_NAME}}">
+                    </div>
+                    <h3>{{CATEGORY_4_NAME}}</h3>
+                    <p>{{CATEGORY_4_DESC}}</p>
+                    <a href="#order" class="btn btn-category">Order Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Deals Section -->
+    <section id="deals" class="value-deals">
+        <div class="container">
+            <h2>{{VALUE_SECTION_TITLE}}</h2>
+            <p class="value-subtitle">{{VALUE_SECTION_SUBTITLE}}</p>
+            
+            <div class="deals-grid">
+                <div class="deal-card">
+                    <div class="deal-image">
+                        <img src="images/{{DEAL_1_IMAGE}}" alt="{{DEAL_1_NAME}}">
+                        <div class="deal-badge">{{DEAL_1_BADGE}}</div>
+                    </div>
+                    <div class="deal-content">
+                        <h3>{{DEAL_1_NAME}}</h3>
+                        <p>{{DEAL_1_DESCRIPTION}}</p>
+                        <div class="deal-price">{{DEAL_1_PRICE}}</div>
+                        <a href="#order" class="btn btn-deal">Get Deal</a>
+                    </div>
+                </div>
+                
+                <div class="deal-card">
+                    <div class="deal-image">
+                        <img src="images/{{DEAL_2_IMAGE}}" alt="{{DEAL_2_NAME}}">
+                        <div class="deal-badge">{{DEAL_2_BADGE}}</div>
+                    </div>
+                    <div class="deal-content">
+                        <h3>{{DEAL_2_NAME}}</h3>
+                        <p>{{DEAL_2_DESCRIPTION}}</p>
+                        <div class="deal-price">{{DEAL_2_PRICE}}</div>
+                        <a href="#order" class="btn btn-deal">Get Deal</a>
+                    </div>
+                </div>
+                
+                <div class="deal-card">
+                    <div class="deal-image">
+                        <img src="images/{{DEAL_3_IMAGE}}" alt="{{DEAL_3_NAME}}">
+                        <div class="deal-badge">{{DEAL_3_BADGE}}</div>
+                    </div>
+                    <div class="deal-content">
+                        <h3>{{DEAL_3_NAME}}</h3>
+                        <p>{{DEAL_3_DESCRIPTION}}</p>
+                        <div class="deal-price">{{DEAL_3_PRICE}}</div>
+                        <a href="#order" class="btn btn-deal">Get Deal</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Finder -->
+    <section id="locations" class="location-finder">
+        <div class="container">
+            <h2>Find a {{RESTAURANT_NAME}}</h2>
+            <div class="location-search">
+                <div class="search-form">
+                    <input type="text" placeholder="Enter your address or ZIP code" id="location-input">
+                    <button class="btn btn-search" onclick="findLocations()">Find Locations</button>
+                </div>
+                
+                <div class="quick-filters">
+                    <button class="filter-btn active" data-filter="all">All Locations</button>
+                    <button class="filter-btn" data-filter="drive-thru">Drive-Thru</button>
+                    <button class="filter-btn" data-filter="24hr">24 Hours</button>
+                    <button class="filter-btn" data-filter="delivery">Delivery</button>
+                    <button class="filter-btn" data-filter="playplace">PlayPlace</button>
+                </div>
+            </div>
+            
+            <div class="location-results">
+                <div class="location-card">
+                    <h3>{{LOCATION_1_NAME}}</h3>
+                    <p class="location-address">{{LOCATION_1_ADDRESS}}</p>
+                    <div class="location-features">
+                        <span class="feature-tag">Drive-Thru</span>
+                        <span class="feature-tag">Mobile Order</span>
+                        <span class="feature-tag">Delivery</span>
+                    </div>
+                    <div class="location-actions">
+                        <a href="{{LOCATION_1_DIRECTIONS}}" class="btn btn-outline">Directions</a>
+                        <a href="#order" class="btn btn-primary">Order Now</a>
+                    </div>
+                </div>
+                
+                <div class="location-card">
+                    <h3>{{LOCATION_2_NAME}}</h3>
+                    <p class="location-address">{{LOCATION_2_ADDRESS}}</p>
+                    <div class="location-features">
+                        <span class="feature-tag">24 Hours</span>
+                        <span class="feature-tag">PlayPlace</span>
+                        <span class="feature-tag">McCafé</span>
+                    </div>
+                    <div class="location-actions">
+                        <a href="{{LOCATION_2_DIRECTIONS}}" class="btn btn-outline">Directions</a>
+                        <a href="#order" class="btn btn-primary">Order Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About {{RESTAURANT_NAME}}</h4>
+                    <ul>
+                        <li><a href="#about">Our Story</a></li>
+                        <li><a href="#nutrition">Nutrition</a></li>
+                        <li><a href="#quality">Food Quality</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#news">Newsroom</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#order">Order Online</a></li>
+                        <li><a href="#delivery">Delivery</a></li>
+                        <li><a href="#catering">Catering</a></li>
+                        <li><a href="#franchise">Franchise</a></li>
+                        <li><a href="#gift-cards">Gift Cards</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="#community">Community Impact</a></li>
+                        <li><a href="#ronald">Ronald McDonald House</a></li>
+                        <li><a href="#sustainability">Sustainability</a></li>
+                        <li><a href="#diversity">Diversity & Inclusion</a></li>
+                        <li><a href="#suppliers">Suppliers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact & Support</h4>
+                    <ul>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#feedback">Feedback</a></li>
+                        <li><a href="#accessibility">Accessibility</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+                    <div class="legal-links">
+                        <a href="#privacy">Privacy</a>
+                        <a href="#terms">Terms</a>
+                        <a href="#california-privacy">CA Privacy Rights</a>
+                    </div>
+                </div>
+                
+                <div class="footer-social">
+                    <a href="{{FACEBOOK_URL}}" target="_blank" aria-label="Facebook">📘</a>
+                    <a href="{{TWITTER_URL}}" target="_blank" aria-label="Twitter">🐦</a>
+                    <a href="{{INSTAGRAM_URL}}" target="_blank" aria-label="Instagram">📷</a>
+                    <a href="{{YOUTUBE_URL}}" target="_blank" aria-label="YouTube">📺</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="mobile-menu-overlay">
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-header">
+                <img src="images/{{LOGO_IMAGE}}" alt="{{RESTAURANT_NAME}}" class="mobile-logo">
+                <button class="mobile-close" onclick="toggleMobileMenu()">&times;</button>
+            </div>
+            <nav class="mobile-nav">
+                <a href="#home" onclick="toggleMobileMenu()">Home</a>
+                <a href="#menu" onclick="toggleMobileMenu()">Menu</a>
+                <a href="#deals" onclick="toggleMobileMenu()">Deals</a>
+                <a href="#locations" onclick="toggleMobileMenu()">Locations</a>
+                <a href="#app" onclick="toggleMobileMenu()">Mobile App</a>
+            </nav>
+            <div class="mobile-actions">
+                <a href="#order" class="btn btn-primary btn-full" onclick="toggleMobileMenu()">Start Your Order</a>
+                <div class="app-download-mobile">
+                    <p>Download our app:</p>
+                    <div class="app-buttons-mobile">
+                        <a href="{{APP_STORE_URL}}" class="app-btn-mobile">App Store</a>
+                        <a href="{{GOOGLE_PLAY_URL}}" class="app-btn-mobile">Google Play</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

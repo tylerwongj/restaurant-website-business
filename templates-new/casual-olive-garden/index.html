@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - {{TAGLINE}}</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="theme-olive-garden">
+    <!-- Promotional Banner -->
+    <div class="promo-banner">
+        <div class="promo-content">
+            <span class="promo-text">🎉 {{CURRENT_PROMOTION}} - {{PROMO_DETAILS}}</span>
+            <a href="#order" class="promo-cta">Order Now</a>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="images/{{LOGO_IMAGE}}" alt="{{RESTAURANT_NAME}} Logo">
+                <span class="restaurant-name">{{RESTAURANT_NAME}}</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#specials">Specials</a></li>
+                <li><a href="#catering">Catering</a></li>
+                <li><a href="#locations">Locations</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#order" class="btn btn-primary">Order Online</a>
+                <a href="#rewards" class="btn btn-secondary">Join Rewards</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Promotional Stacking -->
+    <section id="home" class="hero-promotional">
+        <div class="hero-background">
+            <img src="images/{{HERO_IMAGE}}" alt="{{RESTAURANT_NAME}}" class="hero-bg-image">
+            <div class="hero-overlay"></div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-main">
+                <h1>{{HERO_TITLE}}</h1>
+                <p class="hero-subtitle">{{HERO_SUBTITLE}}</p>
+                <div class="hero-buttons">
+                    <a href="#order" class="btn btn-large btn-primary">Order for Delivery</a>
+                    <a href="#menu" class="btn btn-large btn-secondary">View Menu</a>
+                </div>
+            </div>
+            
+            <!-- Promotional Stack -->
+            <div class="promo-stack">
+                <div class="promo-item featured">
+                    <div class="promo-badge">Limited Time</div>
+                    <h3>{{FEATURED_PROMO_TITLE}}</h3>
+                    <p>{{FEATURED_PROMO_DESC}}</p>
+                    <span class="promo-price">${{FEATURED_PROMO_PRICE}}</span>
+                    <a href="#order" class="btn btn-promo">Order Now</a>
+                </div>
+                
+                <div class="promo-item">
+                    <h4>{{PROMO_2_TITLE}}</h4>
+                    <p>{{PROMO_2_DESC}}</p>
+                    <span class="promo-price">${{PROMO_2_PRICE}}</span>
+                </div>
+                
+                <div class="promo-item">
+                    <h4>{{PROMO_3_TITLE}}</h4>
+                    <p>{{PROMO_3_DESC}}</p>
+                    <span class="promo-price">${{PROMO_3_PRICE}}</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Promotions Section -->
+    <section id="specials" class="promotions-section">
+        <div class="container">
+            <h2>Current Specials</h2>
+            <div class="promotions-grid">
+                <div class="promotion-card highlight">
+                    <div class="card-image">
+                        <img src="images/{{SPECIAL_1_IMAGE}}" alt="{{SPECIAL_1_NAME}}">
+                        <div class="special-badge">Chef's Special</div>
+                    </div>
+                    <div class="card-content">
+                        <h3>{{SPECIAL_1_NAME}}</h3>
+                        <p>{{SPECIAL_1_DESC}}</p>
+                        <div class="price-section">
+                            <span class="current-price">${{SPECIAL_1_PRICE}}</span>
+                            <span class="original-price">${{SPECIAL_1_ORIGINAL}}</span>
+                        </div>
+                        <a href="#order" class="btn btn-card">Order Now</a>
+                    </div>
+                </div>
+                
+                <div class="promotion-card">
+                    <div class="card-image">
+                        <img src="images/{{SPECIAL_2_IMAGE}}" alt="{{SPECIAL_2_NAME}}">
+                    </div>
+                    <div class="card-content">
+                        <h3>{{SPECIAL_2_NAME}}</h3>
+                        <p>{{SPECIAL_2_DESC}}</p>
+                        <div class="price-section">
+                            <span class="current-price">${{SPECIAL_2_PRICE}}</span>
+                        </div>
+                        <a href="#order" class="btn btn-card">Order Now</a>
+                    </div>
+                </div>
+                
+                <div class="promotion-card">
+                    <div class="card-image">
+                        <img src="images/{{SPECIAL_3_IMAGE}}" alt="{{SPECIAL_3_NAME}}">
+                    </div>
+                    <div class="card-content">
+                        <h3>{{SPECIAL_3_NAME}}</h3>
+                        <p>{{SPECIAL_3_DESC}}</p>
+                        <div class="price-section">
+                            <span class="current-price">${{SPECIAL_3_PRICE}}</span>
+                        </div>
+                        <a href="#order" class="btn btn-card">Order Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Categories Grid -->
+    <section id="menu" class="menu-categories">
+        <div class="container">
+            <h2>Our Menu</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="images/{{APPETIZER_IMAGE}}" alt="Appetizers">
+                    </div>
+                    <div class="category-content">
+                        <h3>Appetizers</h3>
+                        <p>Start your meal with our delicious appetizers</p>
+                        <a href="menu.html#appetizers" class="btn btn-outline">View Items</a>
+                    </div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="images/{{ENTREE_IMAGE}}" alt="Entrees">
+                    </div>
+                    <div class="category-content">
+                        <h3>{{MAIN_CATEGORY}}</h3>
+                        <p>{{MAIN_CATEGORY_DESC}}</p>
+                        <a href="menu.html#entrees" class="btn btn-outline">View Items</a>
+                    </div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="images/{{PASTA_IMAGE}}" alt="Pasta">
+                    </div>
+                    <div class="category-content">
+                        <h3>{{SPECIALTY_CATEGORY}}</h3>
+                        <p>{{SPECIALTY_DESC}}</p>
+                        <a href="menu.html#pasta" class="btn btn-outline">View Items</a>
+                    </div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="images/{{DESSERT_IMAGE}}" alt="Desserts">
+                    </div>
+                    <div class="category-content">
+                        <h3>Desserts</h3>
+                        <p>Sweet endings to your perfect meal</p>
+                        <a href="menu.html#desserts" class="btn btn-outline">View Items</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="menu-cta">
+                <a href="menu.html" class="btn btn-large btn-primary">View Full Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loyalty Program Section -->
+    <section id="rewards" class="loyalty-program">
+        <div class="container">
+            <div class="loyalty-content">
+                <div class="loyalty-text">
+                    <h2>{{LOYALTY_PROGRAM_NAME}}</h2>
+                    <p class="loyalty-subtitle">{{LOYALTY_TAGLINE}}</p>
+                    <div class="loyalty-benefits">
+                        <div class="benefit">
+                            <div class="benefit-icon">🎁</div>
+                            <h4>{{BENEFIT_1_TITLE}}</h4>
+                            <p>{{BENEFIT_1_DESC}}</p>
+                        </div>
+                        <div class="benefit">
+                            <div class="benefit-icon">⭐</div>
+                            <h4>{{BENEFIT_2_TITLE}}</h4>
+                            <p>{{BENEFIT_2_DESC}}</p>
+                        </div>
+                        <div class="benefit">
+                            <div class="benefit-icon">🍰</div>
+                            <h4>{{BENEFIT_3_TITLE}}</h4>
+                            <p>{{BENEFIT_3_DESC}}</p>
+                        </div>
+                    </div>
+                    <a href="#signup" class="btn btn-large btn-primary">Join Now - It's Free!</a>
+                </div>
+                <div class="loyalty-image">
+                    <img src="images/{{LOYALTY_IMAGE}}" alt="Loyalty Program">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About/Story Section -->
+    <section class="about-family">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>{{STORY_TITLE}}</h2>
+                    <p>{{STORY_CONTENT}}</p>
+                    <div class="family-values">
+                        <div class="value">
+                            <h4>{{VALUE_1}}</h4>
+                            <p>{{VALUE_1_DESC}}</p>
+                        </div>
+                        <div class="value">
+                            <h4>{{VALUE_2}}</h4>
+                            <p>{{VALUE_2_DESC}}</p>
+                        </div>
+                        <div class="value">
+                            <h4>{{VALUE_3}}</h4>
+                            <p>{{VALUE_3_DESC}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-images">
+                    <img src="images/{{FAMILY_IMAGE_1}}" alt="{{RESTAURANT_NAME}} Family">
+                    <img src="images/{{FAMILY_IMAGE_2}}" alt="Restaurant Interior">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catering Section -->
+    <section id="catering" class="catering-section">
+        <div class="container">
+            <div class="catering-content">
+                <h2>Catering Services</h2>
+                <p>{{CATERING_INTRO}}</p>
+                <div class="catering-options">
+                    <div class="catering-option">
+                        <h3>{{CATERING_OPTION_1}}</h3>
+                        <p>{{CATERING_DESC_1}}</p>
+                        <div class="catering-price">Starting at ${{CATERING_PRICE_1}}</div>
+                    </div>
+                    <div class="catering-option">
+                        <h3>{{CATERING_OPTION_2}}</h3>
+                        <p>{{CATERING_DESC_2}}</p>
+                        <div class="catering-price">Starting at ${{CATERING_PRICE_2}}</div>
+                    </div>
+                    <div class="catering-option">
+                        <h3>{{CATERING_OPTION_3}}</h3>
+                        <p>{{CATERING_DESC_3}}</p>
+                        <div class="catering-price">Starting at ${{CATERING_PRICE_3}}</div>
+                    </div>
+                </div>
+                <a href="#catering-form" class="btn btn-large btn-primary">Request Catering Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations Section -->
+    <section id="locations" class="locations-section">
+        <div class="container">
+            <h2>Find a Location</h2>
+            <div class="locations-grid">
+                <div class="location-card">
+                    <h3>{{LOCATION_1_NAME}}</h3>
+                    <div class="location-info">
+                        <p>{{LOCATION_1_ADDRESS}}</p>
+                        <p>Phone: <a href="tel:{{LOCATION_1_PHONE}}">{{LOCATION_1_PHONE}}</a></p>
+                        <div class="location-hours">
+                            <h4>Hours:</h4>
+                            <p>{{LOCATION_1_HOURS}}</p>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <a href="{{LOCATION_1_DIRECTIONS}}" class="btn btn-outline" target="_blank">Get Directions</a>
+                        <a href="tel:{{LOCATION_1_PHONE}}" class="btn btn-primary">Call Now</a>
+                    </div>
+                </div>
+                
+                <div class="location-card">
+                    <h3>{{LOCATION_2_NAME}}</h3>
+                    <div class="location-info">
+                        <p>{{LOCATION_2_ADDRESS}}</p>
+                        <p>Phone: <a href="tel:{{LOCATION_2_PHONE}}">{{LOCATION_2_PHONE}}</a></p>
+                        <div class="location-hours">
+                            <h4>Hours:</h4>
+                            <p>{{LOCATION_2_HOURS}}</p>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <a href="{{LOCATION_2_DIRECTIONS}}" class="btn btn-outline" target="_blank">Get Directions</a>
+                        <a href="tel:{{LOCATION_2_PHONE}}" class="btn btn-primary">Call Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Contact Us</h2>
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="method-icon">📞</div>
+                            <h4>Phone</h4>
+                            <a href="tel:{{MAIN_PHONE}}">{{MAIN_PHONE}}</a>
+                        </div>
+                        <div class="contact-method">
+                            <div class="method-icon">✉️</div>
+                            <h4>Email</h4>
+                            <a href="mailto:{{EMAIL}}">{{EMAIL}}</a>
+                        </div>
+                        <div class="contact-method">
+                            <div class="method-icon">🏠</div>
+                            <h4>Address</h4>
+                            <p>{{MAIN_ADDRESS}}</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-section">
+                    <h3>Send us a Message</h3>
+                    <form class="contact-form">
+                        <div class="form-row">
+                            <input type="text" placeholder="Your Name" required>
+                            <input type="email" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-row">
+                            <input type="tel" placeholder="Phone Number">
+                            <select>
+                                <option value="">Select Topic</option>
+                                <option value="general">General Question</option>
+                                <option value="catering">Catering Inquiry</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="complaint">Complaint</option>
+                            </select>
+                        </div>
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>{{RESTAURANT_NAME}}</h4>
+                    <p>{{FOOTER_DESCRIPTION}}</p>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}" target="_blank" aria-label="Facebook">📘</a>
+                        <a href="{{INSTAGRAM_URL}}" target="_blank" aria-label="Instagram">📷</a>
+                        <a href="{{TWITTER_URL}}" target="_blank" aria-label="Twitter">🐦</a>
+                        <a href="{{YELP_URL}}" target="_blank" aria-label="Yelp">⭐</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#order">Order Online</a></li>
+                        <li><a href="#catering">Catering</a></li>
+                        <li><a href="#rewards">Rewards Program</a></li>
+                        <li><a href="#locations">Locations</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#feedback">Feedback</a></li>
+                        <li><a href="#nutrition">Nutrition Info</a></li>
+                        <li><a href="#allergens">Allergen Info</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Stay Connected</h4>
+                    <p>Join our email list for special offers!</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address">
+                        <button type="submit" class="btn btn-secondary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                    <a href="#accessibility">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

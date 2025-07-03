@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - {{RESTAURANT_NAME}}</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} full menu - order online for delivery, pickup, or drive-thru">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="theme-fastfood menu-page">
+    <!-- Top Alert Banner -->
+    <div class="alert-banner">
+        <div class="container">
+            <span class="alert-text">{{ALERT_MESSAGE}}</span>
+            <button class="alert-close">&times;</button>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <img src="images/{{LOGO_IMAGE}}" alt="{{RESTAURANT_NAME}} Logo">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html" class="active">Menu</a></li>
+                <li><a href="index.html#deals">Deals</a></li>
+                <li><a href="index.html#locations">Locations</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#download" class="btn btn-app">📱 Get App</a>
+                <a href="#order" class="btn btn-order">Order Now</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu Header -->
+    <section class="menu-header">
+        <div class="container">
+            <h1>Our Menu</h1>
+            <p class="menu-subtitle">Order online for pickup, delivery, or drive-thru</p>
+            <div class="order-types">
+                <button class="order-type active" data-type="all">All Items</button>
+                <button class="order-type" data-type="popular">Popular</button>
+                <button class="order-type" data-type="new">New</button>
+                <button class="order-type" data-type="value">Value</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Summary (Sticky) -->
+    <div class="cart-summary">
+        <div class="container">
+            <div class="cart-info">
+                <span class="cart-count">0 items</span>
+                <span class="cart-total">$0.00</span>
+            </div>
+            <button class="btn btn-cart" onclick="viewCart()">View Cart</button>
+        </div>
+    </div>
+
+    <!-- Menu Categories -->
+    <section class="menu-content">
+        <div class="container">
+            <!-- Limited Time Offers -->
+            <div class="menu-category" id="limited-time">
+                <div class="category-header">
+                    <h2>🔥 Limited Time Offers</h2>
+                    <p>Get them while they're here!</p>
+                </div>
+                <div class="menu-items">
+                    <div class="menu-item featured" data-type="new">
+                        <div class="item-badge">Limited Time</div>
+                        <div class="item-image">
+                            <img src="images/{{LTO_MENU_1_IMAGE}}" alt="{{LTO_MENU_1_NAME}}">
+                        </div>
+                        <div class="item-details">
+                            <h3>{{LTO_MENU_1_NAME}}</h3>
+                            <p class="item-description">{{LTO_MENU_1_DESCRIPTION}}</p>
+                            <div class="item-info">
+                                <span class="calories">{{LTO_MENU_1_CALORIES}} cal</span>
+                                <span class="price">{{LTO_MENU_1_PRICE}}</span>
+                            </div>
+                        </div>
+                        <button class="add-btn" onclick="addToCart('{{LTO_MENU_1_NAME}}', '{{LTO_MENU_1_PRICE}}')">Add +</button>
+                    </div>
+                    <div class="menu-item" data-type="new">
+                        <div class="item-badge new-badge">New</div>
+                        <div class="item-image">
+                            <img src="images/{{LTO_MENU_2_IMAGE}}" alt="{{LTO_MENU_2_NAME}}">
+                        </div>
+                        <div class="item-details">
+                            <h3>{{LTO_MENU_2_NAME}}</h3>
+                            <p class="item-description">{{LTO_MENU_2_DESCRIPTION}}</p>
+                            <div class="item-info">
+                                <span class="calories">{{LTO_MENU_2_CALORIES}} cal</span>
+                                <span class="price">{{LTO_MENU_2_PRICE}}</span>
+                            </div>
+                        </div>
+                        <button class="add-btn" onclick="addToCart('{{LTO_MENU_2_NAME}}', '{{LTO_MENU_2_PRICE}}')">Add +</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Burgers -->
+            <div class="menu-category" id="burgers">
+                <div class="category-header">
+                    <h2>🍔 Burgers</h2>
+                    <p>Our signature burgers made fresh</p>
+                </div>
+                <div class="menu-items">
+                    <div class="menu-item" data-type="popular">
+                        <div class="item-badge popular-badge">Popular</div>
+                        <div class="item-image">
+                            <img src="images/{{BURGER_1_IMAGE}}" alt="{{BURGER_1_NAME}}">
+                        </div>
+                        <div class="item-details">
+                            <h3>{{BURGER_1_NAME}}</h3>
+                            <p class="item-description">{{BURGER_1_DESCRIPTION}}</p>
+                            <div class="item-info">
+                                <span class="calories">{{BURGER_1_CALORIES}} cal</span>
+                                <span class="price">{{BURGER_1_PRICE}}</span>
+                            </div>
+                        </div>
+                        <button class="add-btn" onclick="addToCart('{{BURGER_1_NAME}}', '{{BURGER_1_PRICE}}')">Add +</button>
+                    </div>
+                    <div class="menu-item" data-type="popular">
+                        <div class="item-image">
+                            <img src="images/{{BURGER_2_IMAGE}}" alt="{{BURGER_2_NAME}}">
+                        </div>
+                        <div class="item-details">
+                            <h3>{{BURGER_2_NAME}}</h3>
+                            <p class="item-description">{{BURGER_2_DESCRIPTION}}</p>
+                            <div class="item-info">
+                                <span class="calories">{{BURGER_2_CALORIES}} cal</span>
+                                <span class="price">{{BURGER_2_PRICE}}</span>
+                            </div>
+                        </div>
+                        <button class="add-btn" onclick="addToCart('{{BURGER_2_NAME}}', '{{BURGER_2_PRICE}}')">Add +</button>
+                    </div>
+                    <div class="menu-item" data-type="value">
+                        <div class="item-badge value-badge">Value</div>
+                        <div class="item-image">
+                            <img src="images/{{BURGER_3_IMAGE}}" alt="{{BURGER_3_NAME}}">
+                        </div>
+                        <div class="item-details">
+                            <h3>{{BURGER_3_NAME}}</h3>
+                            <p class="item-description">{{BURGER_3_DESCRIPTION}}</p>
+                            <div class="item-info">
+                                <span class="calories">{{BURGER_3_CALORIES}} cal</span>
+                                <span class="price">{{BURGER_3_PRICE}}</span>
+                            </div>
+                        </div>
+                        <button class="add-btn" onclick="addToCart('{{BURGER_3_NAME}}', '{{BURGER_3_PRICE}}')">Add +</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chicken -->
+            <div class="menu-category" id="chicken">
+                <div class="category-header">
+                    <h2>🍗 Chicken</h2>
+                    <p>Crispy, juicy chicken favorites</p>
+                </div>
+                <div class="menu-items">
+                    <div class="menu-item" data-type="popular">
+                        <div class="item-badge popular-badge">Popular</div>
+                        <div class="item-image">
+                            <img src="images/{{CHICKEN_1_IMAGE}}" alt="{{CHICKEN_1_NAME}}">
+                        </div>
+                        <div class="item-details">
+                            <h3>{{CHICKEN_1_NAME}}</h3>
+                            <p class="item-description">{{CHICKEN_1_DESCRIPTION}}</p>
+                            <div class="item-info">
+                                <span class="calories">{{CHICKEN_1_CALORIES}} cal</span>
+                                <span class="price">{{CHICKEN_1_PRICE}}</span>
+                            </div>
+                        </div>
+                        <button class="add-btn" onclick="addToCart('{{CHICKEN_1_NAME}}', '{{CHICKEN_1_PRICE}}')">Add +</button>
+                    </div>
+                    <div class="menu-item" data-type="all">
+                        <div class="item-image">
+                            <img src="images/{{CHICKEN_2_IMAGE}}" alt="{{CHICKEN_2_NAME}}">
+                        </div>
+                        <div class="item-details">
+                            <h3>{{CHICKEN_2_NAME}}</h3>
+                            <p class="item-description">{{CHICKEN_2_DESCRIPTION}}</p>
+                            <div class="item-info">
+                                <span class="calories">{{CHICKEN_2_CALORIES}} cal</span>
+                                <span class="price">{{CHICKEN_2_PRICE}}</span>
+                            </div>
+                        </div>
+                        <button class="add-btn" onclick="addToCart('{{CHICKEN_2_NAME}}', '{{CHICKEN_2_PRICE}}')">Add +</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Breakfast -->
+            <div class="menu-category" id="breakfast">
+                <div class="category-header">
+                    <h2>🌅 All Day Breakfast</h2>
+                    <p>Available until {{BREAKFAST_END_TIME}}</p>
+                </div>
+                <div class="menu-items">
+                    <div class="menu-item" data-type="popular">
+                        <div class="item-badge breakfast-badge">All Day</div>
+                        <div class="item-image">
+                            <img src="images/{{BREAKFAST_MENU_1_IMAGE}}" alt="{{BREAKFAST_MENU_1_NAME}}">
+                        </div>
+                        <div class="item-details">
+                            <h3>{{BREAKFAST_MENU_1_NAME}}</h3>
+                            <p class="item-description">{{BREAKFAST_MENU_1_DESCRIPTION}}</p>
+                            <div class="item-info">
+                                <span class="calories">{{BREAKFAST_MENU_1_CALORIES}} cal</span>
+                                <span class="price">{{BREAKFAST_MENU_1_PRICE}}</span>
+                            </div>
+                        </div>
+                        <button class="add-btn" onclick="addToCart('{{BREAKFAST_MENU_1_NAME}}', '{{BREAKFAST_MENU_1_PRICE}}')">Add +</button>
+                    </div>
+                    <div class="menu-item" data-type="value">
+                        <div class="item-badge value-badge">Value</div>
+                        <div class="item-image">
+                            <img src="images/{{BREAKFAST_MENU_2_IMAGE}}" alt="{{BREAKFAST_MENU_2_NAME}}">
+                        </div>
+                        <div class="item-details">
+                            <h3>{{BREAKFAST_MENU_2_NAME}}</h3>
+                            <p class="item-description">{{BREAKFAST_MENU_2_DESCRIPTION}}</p>
+                            <div class="item-info">
+                                <span class="calories">{{BREAKFAST_MENU_2_CALORIES}} cal</span>
+                                <span class="price">{{BREAKFAST_MENU_2_PRICE}}</span>
+                            </div>
+                        </div>
+                        <button class="add-btn" onclick="addToCart('{{BREAKFAST_MENU_2_NAME}}', '{{BREAKFAST_MENU_2_PRICE}}')">Add +</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sides & Drinks -->
+            <div class="menu-category" id="sides">
+                <div class="category-header">
+                    <h2>🍟 Sides & Drinks</h2>
+                    <p>Complete your meal</p>
+                </div>
+                <div class="menu-items sides-grid">
+                    <div class="menu-item compact" data-type="popular">
+                        <div class="item-badge popular-badge">Popular</div>
+                        <div class="item-image small">
+                            <img src="images/{{SIDE_1_IMAGE}}" alt="{{SIDE_1_NAME}}">
+                        </div>
+                        <div class="item-details">
+                            <h4>{{SIDE_1_NAME}}</h4>
+                            <span class="price">{{SIDE_1_PRICE}}</span>
+                        </div>
+                        <button class="add-btn small" onclick="addToCart('{{SIDE_1_NAME}}', '{{SIDE_1_PRICE}}')">+</button>
+                    </div>
+                    <div class="menu-item compact" data-type="all">
+                        <div class="item-image small">
+                            <img src="images/{{SIDE_2_IMAGE}}" alt="{{SIDE_2_NAME}}">
+                        </div>
+                        <div class="item-details">
+                            <h4>{{SIDE_2_NAME}}</h4>
+                            <span class="price">{{SIDE_2_PRICE}}</span>
+                        </div>
+                        <button class="add-btn small" onclick="addToCart('{{SIDE_2_NAME}}', '{{SIDE_2_PRICE}}')">+</button>
+                    </div>
+                    <div class="menu-item compact" data-type="all">
+                        <div class="item-image small">
+                            <img src="images/{{DRINK_1_IMAGE}}" alt="{{DRINK_1_NAME}}">
+                        </div>
+                        <div class="item-details">
+                            <h4>{{DRINK_1_NAME}}</h4>
+                            <span class="price">{{DRINK_1_PRICE}}</span>
+                        </div>
+                        <button class="add-btn small" onclick="addToCart('{{DRINK_1_NAME}}', '{{DRINK_1_PRICE}}')">+</button>
+                    </div>
+                    <div class="menu-item compact" data-type="all">
+                        <div class="item-image small">
+                            <img src="images/{{DRINK_2_IMAGE}}" alt="{{DRINK_2_NAME}}">
+                        </div>
+                        <div class="item-details">
+                            <h4>{{DRINK_2_NAME}}</h4>
+                            <span class="price">{{DRINK_2_PRICE}}</span>
+                        </div>
+                        <button class="add-btn small" onclick="addToCart('{{DRINK_2_NAME}}', '{{DRINK_2_PRICE}}')">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="images/{{LOGO_IMAGE}}" alt="{{RESTAURANT_NAME}}" class="footer-logo">
+                    <div class="app-downloads">
+                        <a href="{{APP_STORE_URL}}" class="footer-app-button">
+                            <img src="images/app-store-small.png" alt="App Store">
+                        </a>
+                        <a href="{{GOOGLE_PLAY_URL}}" class="footer-app-button">
+                            <img src="images/google-play-small.png" alt="Google Play">
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h5>Quick Order</h5>
+                    <a href="#order">Order Online</a>
+                    <a href="#delivery">Delivery</a>
+                    <a href="#pickup">Pickup</a>
+                    <a href="#drivethru">Drive-Thru</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h5>Menu Info</h5>
+                    <a href="#nutrition">Nutrition</a>
+                    <a href="#allergens">Allergen Info</a>
+                    <a href="index.html">Full Menu</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <style>
+        /* Menu-specific styles */
+        .menu-page {
+            padding-bottom: 120px; /* Space for cart summary */
+        }
+        
+        .menu-header {
+            background: var(--gradient-primary);
+            padding: 3rem 0 2rem;
+            text-align: center;
+        }
+        
+        .menu-header h1 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .menu-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .order-types {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .order-type {
+            background: transparent;
+            border: 2px solid var(--text-primary);
+            color: var(--text-primary);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .order-type.active,
+        .order-type:hover {
+            background: var(--text-primary);
+            color: var(--primary-color);
+        }
+        
+        .cart-summary {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--background-primary);
+            border-top: 2px solid var(--primary-color);
+            padding: 1rem 0;
+            z-index: 100;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cart-summary .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .cart-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+        
+        .cart-count {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        
+        .cart-total {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+        
+        .btn-cart {
+            background: var(--gradient-secondary);
+            color: var(--text-light);
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 700;
+        }
+        
+        .menu-content {
+            padding: 2rem 0;
+        }
+        
+        .menu-category {
+            margin-bottom: 3rem;
+        }
+        
+        .category-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .category-header h2 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .category-header p {
+            color: var(--text-secondary);
+        }
+        
+        .menu-items {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+        
+        .sides-grid {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+        
+        .menu-item {
+            background: var(--background-primary);
+            border-radius: 15px;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            box-shadow: var(--shadow-card);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-2px);
+        }
+        
+        .menu-item.featured {
+            border: 2px solid var(--secondary-color);
+        }
+        
+        .menu-item.compact {
+            flex-direction: column;
+            text-align: center;
+            padding: 1rem 0.75rem;
+        }
+        
+        .item-badge {
+            position: absolute;
+            top: 0.5rem;
+            left: 0.5rem;
+            background: var(--secondary-color);
+            color: var(--text-light);
+            padding: 0.25rem 0.5rem;
+            border-radius: 10px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            z-index: 10;
+        }
+        
+        .popular-badge {
+            background: #ff6b35;
+        }
+        
+        .new-badge {
+            background: #28a745;
+        }
+        
+        .value-badge {
+            background: #17a2b8;
+        }
+        
+        .breakfast-badge {
+            background: #ffc107;
+            color: var(--text-primary);
+        }
+        
+        .item-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        
+        .item-image.small {
+            width: 60px;
+            height: 60px;
+        }
+        
+        .item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .item-details {
+            flex: 1;
+        }
+        
+        .item-details h3 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .item-details h4 {
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+            font-size: 0.9rem;
+        }
+        
+        .item-description {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            line-height: 1.4;
+            margin-bottom: 0.5rem;
+        }
+        
+        .item-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .calories {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+        
+        .price {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+        
+        .add-btn {
+            background: var(--primary-color);
+            color: var(--text-primary);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+        
+        .add-btn.small {
+            width: 35px;
+            height: 35px;
+            font-size: 1.25rem;
+        }
+        
+        .add-btn:hover {
+            background: var(--secondary-color);
+            color: var(--text-light);
+            transform: scale(1.1);
+        }
+        
+        .nav-menu a.active {
+            color: var(--primary-color);
+            font-weight: 800;
+        }
+        
+        @media (max-width: 768px) {
+            .order-types {
+                gap: 0.25rem;
+            }
+            
+            .order-type {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.7rem;
+            }
+            
+            .menu-item {
+                flex-direction: column;
+                text-align: center;
+                padding: 1rem;
+            }
+            
+            .menu-item.compact {
+                flex-direction: column;
+            }
+            
+            .item-image {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .item-info {
+                justify-content: center;
+                gap: 2rem;
+            }
+            
+            .sides-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+    
+    <script>
+        // Menu filtering functionality
+        const orderTypes = document.querySelectorAll('.order-type');
+        const menuItems = document.querySelectorAll('.menu-item');
+        
+        orderTypes.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                orderTypes.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                const filterType = this.dataset.type;
+                
+                // Filter menu items
+                menuItems.forEach(item => {
+                    if (filterType === 'all' || item.dataset.type === filterType) {
+                        item.style.display = 'flex';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Cart functionality
+        let cart = [];
+        let cartTotal = 0;
+        
+        function addToCart(itemName, itemPrice) {
+            const price = parseFloat(itemPrice.replace(/[^0-9.]/g, ''));
+            cart.push({ name: itemName, price: price });
+            cartTotal += price;
+            updateCartDisplay();
+            
+            // Show add animation
+            showNotification(`${itemName} added to cart!`, 'success');
+        }
+        
+        function updateCartDisplay() {
+            const cartCount = document.querySelector('.cart-count');
+            const cartTotalEl = document.querySelector('.cart-total');
+            
+            cartCount.textContent = `${cart.length} item${cart.length !== 1 ? 's' : ''}`;
+            cartTotalEl.textContent = `$${cartTotal.toFixed(2)}`;
+            
+            // Show cart summary if items in cart
+            const cartSummary = document.querySelector('.cart-summary');
+            if (cart.length > 0) {
+                cartSummary.style.display = 'block';
+            }
+        }
+        
+        function viewCart() {
+            if (cart.length === 0) {
+                showNotification('Your cart is empty!', 'info');
+                return;
+            }
+            
+            const cartItems = cart.map(item => `${item.name} - $${item.price.toFixed(2)}`).join('\\n');
+            alert(`Your Cart:\\n\\n${cartItems}\\n\\nTotal: $${cartTotal.toFixed(2)}`);
+        }
+    </script>
+</body>
+</html>

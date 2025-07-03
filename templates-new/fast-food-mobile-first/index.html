@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - {{RESTAURANT_TAGLINE}}</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - {{RESTAURANT_DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="theme-fast-food">
+    <!-- App Download Banner -->
+    <div class="app-banner">
+        <div class="app-banner-content">
+            <span class="app-icon">📱</span>
+            <div class="app-text">
+                <span class="app-message">Download our app for faster ordering & exclusive deals!</span>
+            </div>
+            <div class="app-buttons">
+                <a href="{{APP_STORE_URL}}" class="app-btn">Download</a>
+            </div>
+        </div>
+        <button class="app-close">&times;</button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="#home" class="logo-link">
+                    <img src="images/logo.png" alt="{{RESTAURANT_NAME}} Logo">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#deals">Deals</a></li>
+                <li><a href="#locations">Locations</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#order" class="btn btn-order">Start Your Order</a>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <img src="images/hero.jpg" alt="{{RESTAURANT_NAME}} Featured Item">
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">{{LIMITED_TIME_BADGE}}</div>
+            <h1>{{FEATURED_ITEM_NAME}}</h1>
+            <p class="hero-subtitle">{{FEATURED_ITEM_DESCRIPTION}}</p>
+            <div class="hero-price">
+                <span class="price-highlight">{{FEATURED_ITEM_PRICE}}</span>
+                <span class="price-note">Limited time only</span>
+            </div>
+            <div class="hero-buttons">
+                <a href="#order" class="btn btn-primary btn-large">Order Now</a>
+                <a href="#menu" class="btn btn-secondary btn-large">View Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Limited Time Offers Stack -->
+    <section id="deals" class="lto-stack">
+        <div class="container">
+            <div class="section-header">
+                <h2>Limited Time Offers</h2>
+                <p>Don't miss out on these amazing deals!</p>
+            </div>
+            <div class="lto-cards">
+                <div class="lto-card featured">
+                    <div class="lto-badge">Hot Deal</div>
+                    <div class="lto-image">
+                        <img src="images/food-1.jpg" alt="{{LTO_1_NAME}}">
+                    </div>
+                    <div class="lto-content">
+                        <h3>{{LTO_1_NAME}}</h3>
+                        <p class="lto-description">{{LTO_1_DESCRIPTION}}</p>
+                        <div class="lto-pricing">
+                            <span class="lto-price">{{LTO_1_PRICE}}</span>
+                            <span class="lto-original">{{LTO_1_ORIGINAL_PRICE}}</span>
+                        </div>
+                        <a href="#order" class="btn btn-lto">Order Now</a>
+                    </div>
+                </div>
+                <div class="lto-card">
+                    <div class="lto-badge">New</div>
+                    <div class="lto-image">
+                        <img src="images/food-2.jpg" alt="{{LTO_2_NAME}}">
+                    </div>
+                    <div class="lto-content">
+                        <h3>{{LTO_2_NAME}}</h3>
+                        <p class="lto-description">{{LTO_2_DESCRIPTION}}</p>
+                        <div class="lto-pricing">
+                            <span class="lto-price">{{LTO_2_PRICE}}</span>
+                        </div>
+                        <a href="#order" class="btn btn-lto">Try Now</a>
+                    </div>
+                </div>
+                <div class="lto-card">
+                    <div class="lto-badge">Value</div>
+                    <div class="lto-image">
+                        <img src="images/food-3.jpg" alt="{{LTO_3_NAME}}">
+                    </div>
+                    <div class="lto-content">
+                        <h3>{{LTO_3_NAME}}</h3>
+                        <p class="lto-description">{{LTO_3_DESCRIPTION}}</p>
+                        <div class="lto-pricing">
+                            <span class="lto-price">{{LTO_3_PRICE}}</span>
+                        </div>
+                        <a href="#order" class="btn btn-lto">Get Deal</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Categories -->
+    <section id="menu" class="menu-categories">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Menu</h2>
+                <p>Fresh, fast, and delicious</p>
+            </div>
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="images/food-1.jpg" alt="{{CATEGORY_1_NAME}}">
+                    </div>
+                    <div class="category-content">
+                        <h3>{{CATEGORY_1_NAME}}</h3>
+                        <p>{{CATEGORY_1_DESCRIPTION}}</p>
+                        <span class="category-count">{{CATEGORY_1_COUNT}} items</span>
+                        <a href="menu.html#{{CATEGORY_1_LINK}}" class="btn btn-category">View All</a>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="images/food-2.jpg" alt="{{CATEGORY_2_NAME}}">
+                    </div>
+                    <div class="category-content">
+                        <h3>{{CATEGORY_2_NAME}}</h3>
+                        <p>{{CATEGORY_2_DESCRIPTION}}</p>
+                        <span class="category-count">{{CATEGORY_2_COUNT}} items</span>
+                        <a href="menu.html#{{CATEGORY_2_LINK}}" class="btn btn-category">View All</a>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="images/food-3.jpg" alt="{{CATEGORY_3_NAME}}">
+                    </div>
+                    <div class="category-content">
+                        <h3>{{CATEGORY_3_NAME}}</h3>
+                        <p>{{CATEGORY_3_DESCRIPTION}}</p>
+                        <span class="category-count">{{CATEGORY_3_COUNT}} items</span>
+                        <a href="menu.html#{{CATEGORY_3_LINK}}" class="btn btn-category">View All</a>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="images/food-4.jpg" alt="{{CATEGORY_4_NAME}}">
+                    </div>
+                    <div class="category-content">
+                        <h3>{{CATEGORY_4_NAME}}</h3>
+                        <p>{{CATEGORY_4_DESCRIPTION}}</p>
+                        <span class="category-count">{{CATEGORY_4_COUNT}} items</span>
+                        <a href="menu.html#{{CATEGORY_4_LINK}}" class="btn btn-category">View All</a>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-cta">
+                <a href="menu.html" class="btn btn-primary btn-large">View Full Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Menu -->
+    <section class="value-menu">
+        <div class="container">
+            <div class="value-header">
+                <h2>Value Menu</h2>
+                <p class="value-subtitle">Great taste, great prices</p>
+            </div>
+            <div class="value-items">
+                <div class="value-item">
+                    <div class="value-image">
+                        <img src="images/food-1.jpg" alt="{{VALUE_1_NAME}}">
+                    </div>
+                    <div class="value-content">
+                        <h3>{{VALUE_1_NAME}}</h3>
+                        <p>{{VALUE_1_DESCRIPTION}}</p>
+                        <div class="value-price">{{VALUE_1_PRICE}}</div>
+                    </div>
+                    <button class="btn btn-add">Add</button>
+                </div>
+                <div class="value-item">
+                    <div class="value-image">
+                        <img src="images/food-2.jpg" alt="{{VALUE_2_NAME}}">
+                    </div>
+                    <div class="value-content">
+                        <h3>{{VALUE_2_NAME}}</h3>
+                        <p>{{VALUE_2_DESCRIPTION}}</p>
+                        <div class="value-price">{{VALUE_2_PRICE}}</div>
+                    </div>
+                    <button class="btn btn-add">Add</button>
+                </div>
+                <div class="value-item">
+                    <div class="value-image">
+                        <img src="images/food-3.jpg" alt="{{VALUE_3_NAME}}">
+                    </div>
+                    <div class="value-content">
+                        <h3>{{VALUE_3_NAME}}</h3>
+                        <p>{{VALUE_3_DESCRIPTION}}</p>
+                        <div class="value-price">{{VALUE_3_PRICE}}</div>
+                    </div>
+                    <button class="btn btn-add">Add</button>
+                </div>
+                <div class="value-item">
+                    <div class="value-image">
+                        <img src="images/food-4.jpg" alt="{{VALUE_4_NAME}}">
+                    </div>
+                    <div class="value-content">
+                        <h3>{{VALUE_4_NAME}}</h3>
+                        <p>{{VALUE_4_DESCRIPTION}}</p>
+                        <div class="value-price">{{VALUE_4_PRICE}}</div>
+                    </div>
+                    <button class="btn btn-add">Add</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile App Promotion -->
+    <section class="app-promotion">
+        <div class="container">
+            <div class="app-content">
+                <div class="app-info">
+                    <div class="app-logo">
+                        <img src="images/logo.png" alt="{{RESTAURANT_NAME}} App">
+                    </div>
+                    <h2>Download Our App</h2>
+                    <p>Get exclusive deals, faster ordering, and earn rewards with every purchase!</p>
+                    <div class="app-features">
+                        <div class="app-feature">
+                            <span class="feature-icon">⚡</span>
+                            <span>Faster Checkout</span>
+                        </div>
+                        <div class="app-feature">
+                            <span class="feature-icon">🎁</span>
+                            <span>Exclusive Offers</span>
+                        </div>
+                        <div class="app-feature">
+                            <span class="feature-icon">⭐</span>
+                            <span>Earn Rewards</span>
+                        </div>
+                        <div class="app-feature">
+                            <span class="feature-icon">🚚</span>
+                            <span>Order Tracking</span>
+                        </div>
+                    </div>
+                    <div class="app-download-buttons">
+                        <a href="{{APP_STORE_URL}}" class="app-download-btn">
+                            <span>Download on App Store</span>
+                        </a>
+                        <a href="{{GOOGLE_PLAY_URL}}" class="app-download-btn">
+                            <span>Get it on Google Play</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="app-mockup">
+                    <img src="images/interior.jpg" alt="Mobile App Screenshot">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Finder -->
+    <section id="locations" class="locations">
+        <div class="container">
+            <div class="section-header">
+                <h2>Find a Location</h2>
+                <p>Over {{TOTAL_LOCATIONS}} locations nationwide</p>
+            </div>
+            <div class="location-finder">
+                <div class="location-search">
+                    <input type="text" placeholder="Enter ZIP code or city" class="location-input">
+                    <button class="btn btn-primary">Find Locations</button>
+                </div>
+                <div class="location-features">
+                    <div class="location-feature">
+                        <span class="feature-icon">🚗</span>
+                        <span>Drive-Thru Available</span>
+                    </div>
+                    <div class="location-feature">
+                        <span class="feature-icon">🚚</span>
+                        <span>Delivery Available</span>
+                    </div>
+                    <div class="location-feature">
+                        <span class="feature-icon">📱</span>
+                        <span>Mobile Pickup</span>
+                    </div>
+                </div>
+            </div>
+            <div class="featured-location">
+                <h3>Featured Location</h3>
+                <div class="location-card">
+                    <div class="location-info">
+                        <h4>{{FEATURED_LOCATION_NAME}}</h4>
+                        <p class="location-address">{{FEATURED_LOCATION_ADDRESS}}</p>
+                        <p class="location-phone">{{FEATURED_LOCATION_PHONE}}</p>
+                        <div class="location-hours">
+                            <p><strong>Hours:</strong> {{FEATURED_LOCATION_HOURS}}</p>
+                        </div>
+                        <div class="location-services">
+                            <span class="service-tag">Drive-Thru</span>
+                            <span class="service-tag">Delivery</span>
+                            <span class="service-tag">Mobile Order</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <a href="{{FEATURED_LOCATION_DIRECTIONS}}" class="btn btn-outline" target="_blank">Get Directions</a>
+                        <a href="#order" class="btn btn-primary">Order Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="images/logo.png" alt="{{RESTAURANT_NAME}}" class="footer-logo">
+                    <p class="footer-description">{{FOOTER_DESCRIPTION}}</p>
+                    <div class="footer-social">
+                        <a href="{{SOCIAL_FACEBOOK}}" target="_blank">Facebook</a>
+                        <a href="{{SOCIAL_INSTAGRAM}}" target="_blank">Instagram</a>
+                        <a href="{{SOCIAL_TWITTER}}" target="_blank">Twitter</a>
+                        <a href="{{SOCIAL_YOUTUBE}}" target="_blank">YouTube</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="menu.html">Full Menu</a></li>
+                        <li><a href="#nutrition">Nutrition Info</a></li>
+                        <li><a href="#allergens">Allergen Info</a></li>
+                        <li><a href="#value">Value Menu</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#app">Mobile App</a></li>
+                        <li><a href="#delivery">Delivery</a></li>
+                        <li><a href="#catering">Catering</a></li>
+                        <li><a href="#gift-cards">Gift Cards</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#franchise">Franchise</a></li>
+                        <li><a href="#news">News</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+                    <div class="legal-links">
+                        <a href="#privacy">Privacy Policy</a>
+                        <a href="#terms">Terms of Service</a>
+                        <a href="#accessibility">Accessibility</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fixed Order Button (Mobile) -->
+    <div class="fixed-order-btn">
+        <a href="#order" class="btn btn-fixed-order">Start Order</a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Fast {{CUISINE_TYPE}} Food</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Banner -->
+    <div class="top-banner">
+        <span class="banner-text">🚚 Free delivery on orders over $15! Download our app for exclusive deals</span>
+        <a href="#app" class="banner-cta">Get App</a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="#home" class="logo-link">
+                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+                    <span class="logo-text">{{RESTAURANT_NAME}}</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#deals">Deals</a></li>
+                <li><a href="#locations">Locations</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="tel:{{PHONE}}" class="btn-order-nav">Order Now</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero - Limited Time Offer -->
+    <section id="home" class="hero-lto">
+        <div class="hero-container">
+            <div class="lto-content">
+                <div class="lto-badge">Limited Time Only!</div>
+                <h1 class="lto-title">{{MENU_ITEM_1}} Special</h1>
+                <p class="lto-description">{{MENU_DESCRIPTION_1}} - Now available for a limited time!</p>
+                <div class="lto-price">
+                    <span class="price-label">Starting at</span>
+                    <span class="price-value">${{PRICE_1}}</span>
+                </div>
+                <div class="lto-actions">
+                    <a href="tel:{{PHONE}}" class="btn-order-now">Order Now</a>
+                    <a href="#menu" class="btn-view-menu">View Full Menu</a>
+                </div>
+            </div>
+            <div class="lto-image">
+                <img src="{{HERO_IMAGE}}" alt="{{MENU_ITEM_1}}">
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Cards Stack -->
+    <section id="deals" class="product-stack">
+        <div class="container">
+            <!-- Product Card 1 - Large Feature -->
+            <div class="product-card featured">
+                <div class="product-content">
+                    <div class="product-badge new">New!</div>
+                    <h2>{{MENU_ITEM_2}}</h2>
+                    <p class="product-description">{{MENU_DESCRIPTION_2}}</p>
+                    <div class="product-price">${{PRICE_2}}</div>
+                    <a href="tel:{{PHONE}}" class="btn-product-order">Order Now</a>
+                </div>
+                <div class="product-image">
+                    <img src="{{FOOD_IMAGE_1}}" alt="{{MENU_ITEM_2}}">
+                </div>
+            </div>
+
+            <!-- Product Card 2 - Free Item Offer -->
+            <div class="product-card offer">
+                <div class="product-content">
+                    <div class="product-badge free">Free!</div>
+                    <h2>Free {{MENU_ITEM_3}}</h2>
+                    <p class="product-description">Get a free {{MENU_ITEM_3}} with any purchase of ${{PRICE_3}} or more!</p>
+                    <p class="offer-terms">*Valid for new app users only. Limited time offer.</p>
+                    <a href="#app" class="btn-product-order">Download App</a>
+                </div>
+                <div class="product-image">
+                    <img src="{{FOOD_IMAGE_2}}" alt="{{MENU_ITEM_3}}">
+                </div>
+            </div>
+
+            <!-- McValue Style Card -->
+            <div class="product-card value">
+                <div class="value-logo">
+                    <div class="value-badge">MEGA VALUE</div>
+                </div>
+                <div class="product-content">
+                    <h2>Value Deals</h2>
+                    <p class="product-description">Unbeatable prices on your favorite items. Save big with our value menu!</p>
+                    <div class="value-items">
+                        <span class="value-item">${{PRICE_4}} {{MENU_ITEM_4}}</span>
+                        <span class="value-item">${{PRICE_5}} {{MENU_ITEM_5}}</span>
+                        <span class="value-item">${{PRICE_6}} {{MENU_ITEM_6}}</span>
+                    </div>
+                    <a href="#menu" class="btn-product-order">View All Deals</a>
+                </div>
+            </div>
+
+            <!-- App Download Card -->
+            <div class="product-card app-promo">
+                <div class="product-content">
+                    <h2>Download Our App</h2>
+                    <p class="product-description">Order ahead, skip the line, and get exclusive mobile offers!</p>
+                    <div class="app-benefits">
+                        <div class="benefit">✅ Faster ordering</div>
+                        <div class="benefit">✅ Exclusive deals</div>
+                        <div class="benefit">✅ Loyalty rewards</div>
+                    </div>
+                    <div class="app-stores">
+                        <a href="#" class="app-store-btn">
+                            <img src="images/app-store.png" alt="Download on App Store">
+                        </a>
+                        <a href="#" class="app-store-btn">
+                            <img src="images/google-play.png" alt="Get it on Google Play">
+                        </a>
+                    </div>
+                </div>
+                <div class="product-image">
+                    <img src="images/phone-app.png" alt="Mobile App">
+                </div>
+            </div>
+
+            <!-- Breakfast Promo -->
+            <div class="product-card breakfast">
+                <div class="breakfast-banner">BREAKFAST COMES FIRST</div>
+                <div class="product-content">
+                    <h2>All-Day Breakfast</h2>
+                    <p class="product-description">Start your day right with our delicious breakfast menu, available all day long!</p>
+                    <div class="breakfast-items">
+                        <div class="breakfast-item">🍳 Fresh Eggs</div>
+                        <div class="breakfast-item">🥓 Crispy Bacon</div>
+                        <div class="breakfast-item">🥞 Fluffy Pancakes</div>
+                    </div>
+                    <a href="#menu" class="btn-product-order">Order Breakfast</a>
+                </div>
+                <div class="product-image">
+                    <img src="{{FOOD_IMAGE_3}}" alt="Breakfast Items">
+                </div>
+            </div>
+
+            <!-- Delivery Info -->
+            <div class="product-card delivery-info">
+                <div class="product-content">
+                    <h2>Free Delivery</h2>
+                    <p class="product-description">Get your favorite meals delivered free with orders over $15. Fast, fresh, and convenient!</p>
+                    <div class="delivery-features">
+                        <div class="feature">🚚 Free delivery over $15</div>
+                        <div class="feature">⏱️ 30-minute delivery</div>
+                        <div class="feature">📍 Track your order</div>
+                    </div>
+                    <a href="tel:{{PHONE}}" class="btn-product-order">Order Delivery</a>
+                </div>
+            </div>
+
+            <!-- Community/Brand Story -->
+            <div class="product-card community">
+                <div class="product-content">
+                    <h2>Our Community</h2>
+                    <p class="product-description">{{ABOUT_DESCRIPTION}}</p>
+                    <p>We're proud to serve quality food that brings people together. Every meal is made with care for our community.</p>
+                    <div class="community-stats">
+                        <div class="stat">
+                            <span class="stat-number">5M+</span>
+                            <span class="stat-label">Happy Customers</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Locations</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Years Serving</span>
+                        </div>
+                    </div>
+                    <a href="#about" class="btn-product-order">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Categories Grid -->
+    <section id="menu" class="menu-grid-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Menu</h2>
+                <p class="section-subtitle">Fresh, fast, and delicious options for everyone</p>
+            </div>
+            
+            <div class="menu-categories-grid">
+                <div class="menu-category">
+                    <div class="category-image">
+                        <img src="images/burgers-category.jpg" alt="Burgers">
+                    </div>
+                    <div class="category-info">
+                        <h3>Burgers</h3>
+                        <p>Juicy, flame-grilled perfection</p>
+                        <a href="menu.html#burgers" class="btn-category">Order Now</a>
+                    </div>
+                </div>
+                
+                <div class="menu-category">
+                    <div class="category-image">
+                        <img src="images/chicken-category.jpg" alt="Chicken">
+                    </div>
+                    <div class="category-info">
+                        <h3>Chicken</h3>
+                        <p>Crispy, tender, and flavorful</p>
+                        <a href="menu.html#chicken" class="btn-category">Order Now</a>
+                    </div>
+                </div>
+                
+                <div class="menu-category">
+                    <div class="category-image">
+                        <img src="images/sides-category.jpg" alt="Sides">
+                    </div>
+                    <div class="category-info">
+                        <h3>Sides</h3>
+                        <p>Perfect complements to any meal</p>
+                        <a href="menu.html#sides" class="btn-category">Order Now</a>
+                    </div>
+                </div>
+                
+                <div class="menu-category">
+                    <div class="category-image">
+                        <img src="images/beverages-category.jpg" alt="Beverages">
+                    </div>
+                    <div class="category-info">
+                        <h3>Beverages</h3>
+                        <p>Refreshing drinks and shakes</p>
+                        <a href="menu.html#beverages" class="btn-category">Order Now</a>
+                    </div>
+                </div>
+                
+                <div class="menu-category">
+                    <div class="category-image">
+                        <img src="images/desserts-category.jpg" alt="Desserts">
+                    </div>
+                    <div class="category-info">
+                        <h3>Desserts</h3>
+                        <p>Sweet treats to finish your meal</p>
+                        <a href="menu.html#desserts" class="btn-category">Order Now</a>
+                    </div>
+                </div>
+                
+                <div class="menu-category">
+                    <div class="category-image">
+                        <img src="images/breakfast-category.jpg" alt="Breakfast">
+                    </div>
+                    <div class="category-info">
+                        <h3>Breakfast</h3>
+                        <p>All-day breakfast favorites</p>
+                        <a href="menu.html#breakfast" class="btn-category">Order Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Download Section -->
+    <section id="app" class="app-download">
+        <div class="container">
+            <div class="app-content">
+                <div class="app-info">
+                    <h2>Order Faster with Our App</h2>
+                    <p>Skip the line and get exclusive mobile-only deals when you order with our app.</p>
+                    <div class="app-features">
+                        <div class="feature">📱 Mobile ordering</div>
+                        <div class="feature">🎁 Exclusive offers</div>
+                        <div class="feature">⭐ Earn rewards</div>
+                        <div class="feature">📍 Find locations</div>
+                    </div>
+                    <div class="download-buttons">
+                        <a href="#" class="download-btn ios">
+                            <img src="images/app-store-badge.png" alt="Download on App Store">
+                        </a>
+                        <a href="#" class="download-btn android">
+                            <img src="images/google-play-badge.png" alt="Get it on Google Play">
+                        </a>
+                    </div>
+                </div>
+                <div class="app-visual">
+                    <div class="phone-mockup">
+                        <img src="images/app-screenshot.jpg" alt="{{RESTAURANT_NAME}} App">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations -->
+    <section id="locations" class="locations-finder">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Find a Location</h2>
+                <p class="section-subtitle">We're in your neighborhood</p>
+            </div>
+            
+            <div class="location-search">
+                <input type="text" placeholder="Enter your ZIP code or city" class="location-input">
+                <button class="btn-find-location">Find Locations</button>
+            </div>
+            
+            <div class="location-card">
+                <div class="location-info">
+                    <h3>{{RESTAURANT_NAME}} - Main Street</h3>
+                    <p class="location-address">{{FULL_ADDRESS}}</p>
+                    <p class="location-phone">{{PHONE}}</p>
+                    <div class="location-hours">
+                        <strong>Open Now:</strong> {{WEEKDAY_HOURS}}
+                    </div>
+                    <div class="location-services">
+                        <span class="service">🚗 Drive-Thru</span>
+                        <span class="service">🚚 Delivery</span>
+                        <span class="service">📱 Mobile Order</span>
+                    </div>
+                    <div class="location-actions">
+                        <a href="{{GOOGLE_MAPS_URL}}" target="_blank" class="btn-directions">Get Directions</a>
+                        <a href="tel:{{PHONE}}" class="btn-call">Call Store</a>
+                    </div>
+                </div>
+                <div class="location-map">
+                    <iframe src="{{GOOGLE_MAPS_EMBED}}" 
+                            width="100%" 
+                            height="200" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}}" class="footer-logo">
+                    <p>{{TAGLINE}}</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#deals">Deals</a></li>
+                        <li><a href="#locations">Locations</a></li>
+                        <li><a href="#app">Mobile App</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="tel:{{PHONE}}">{{PHONE}}</a></li>
+                        <li><a href="mailto:{{EMAIL}}">Contact Us</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Nutritional Info</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}" target="_blank">📘</a>
+                        <a href="{{INSTAGRAM_URL}}" target="_blank">📷</a>
+                        <a href="{{YELP_URL}}" target="_blank">⭐</a>
+                    </div>
+                    <div class="download-apps">
+                        <a href="#"><img src="images/app-store-small.png" alt="App Store"></a>
+                        <a href="#"><img src="images/google-play-small.png" alt="Google Play"></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

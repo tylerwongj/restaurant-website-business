@@ -1,0 +1,596 @@
+/* Eleven Madison Park Style Template - Ultra Minimalist */
+
+:root {
+    /* Eleven Madison Neutral Palette */
+    --color-warm-white: #f8f6f3;
+    --color-muted-brown: #8b7355;
+    --color-charcoal: #2d3748;
+    --color-text-gray: #4a5568;
+    --color-light-gray: #e2e8f0;
+    --color-accent-sage: #9caf88;
+    
+    /* Typography */
+    --font-serif: 'Playfair Display', serif;
+    --font-sans: 'Inter', sans-serif;
+    
+    /* Spacing for generous white space */
+    --space-xs: 1rem;
+    --space-sm: 2rem;
+    --space-md: 4rem;
+    --space-lg: 6rem;
+    --space-xl: 8rem;
+    --space-xxl: 12rem;
+    
+    /* Container widths */
+    --container-narrow: 800px;
+    --container-wide: 1200px;
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-serif);
+    color: var(--color-text-gray);
+    background-color: var(--color-warm-white);
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+.container-wide {
+    max-width: var(--container-wide);
+    margin: 0 auto;
+    padding: 0 var(--space-sm);
+}
+
+.content-centered {
+    max-width: var(--container-narrow);
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    color: var(--color-charcoal);
+}
+
+h1 {
+    font-size: 2.5rem;
+    letter-spacing: 0.02em;
+    margin-bottom: var(--space-sm);
+}
+
+h2.section-title {
+    font-size: 2rem;
+    margin-bottom: var(--space-md);
+    font-weight: 300;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: var(--space-sm);
+}
+
+p {
+    font-family: var(--font-sans);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--color-text-gray);
+    margin-bottom: var(--space-sm);
+}
+
+/* Header with Botanical Elements */
+.header-botanical {
+    padding: var(--space-lg) 0 var(--space-md) 0;
+    text-align: center;
+    background-color: var(--color-warm-white);
+}
+
+.botanical-icons-header {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+}
+
+.botanical-icons-header svg {
+    width: 32px;
+    height: 32px;
+    fill: var(--color-muted-brown);
+    opacity: 0.7;
+}
+
+.restaurant-title h1 {
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--color-charcoal);
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-lg);
+}
+
+/* Centered Horizontal Navigation */
+.nav-horizontal {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-lg);
+    border-top: 1px solid var(--color-light-gray);
+    border-bottom: 1px solid var(--color-light-gray);
+    padding: var(--space-sm) 0;
+    margin-top: var(--space-md);
+}
+
+.nav-horizontal a {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: var(--color-text-gray);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: color 0.3s ease;
+}
+
+.nav-horizontal a:hover {
+    color: var(--color-charcoal);
+}
+
+/* Full-Width Artistic Hero */
+.hero-artistic {
+    margin: var(--space-xl) 0;
+}
+
+.hero-image-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--space-sm);
+}
+
+.hero-artistic-image {
+    width: 100%;
+    height: 70vh;
+    object-fit: cover;
+    border-radius: 0;
+}
+
+/* About Section with Generous White Space */
+.about-minimal {
+    padding: var(--space-xxl) 0;
+    background-color: var(--color-warm-white);
+}
+
+.chef-title {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    color: var(--color-muted-brown);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: var(--space-lg);
+}
+
+.story-content {
+    margin: var(--space-lg) 0;
+}
+
+.story-paragraph {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: var(--space-md);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.awards-inline {
+    margin-top: var(--space-lg);
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    color: var(--color-muted-brown);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.award-separator {
+    margin: 0 var(--space-sm);
+    opacity: 0.5;
+}
+
+/* Menu Tasting Section */
+.menu-tasting {
+    padding: var(--space-xxl) 0;
+    background-color: #fafaf9;
+}
+
+.menu-philosophy {
+    font-style: italic;
+    font-size: 1.1rem;
+    margin-bottom: var(--space-lg);
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tasting-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--space-lg);
+    margin: var(--space-xl) 0;
+}
+
+.tasting-option {
+    padding: var(--space-lg);
+    border: 1px solid var(--color-light-gray);
+    background-color: var(--color-warm-white);
+    text-align: center;
+}
+
+.tasting-option h3 {
+    font-size: 1.8rem;
+    margin-bottom: var(--space-sm);
+}
+
+.course-count {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    color: var(--color-muted-brown);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-sm);
+}
+
+.tasting-price {
+    font-size: 2rem;
+    color: var(--color-charcoal);
+    margin-bottom: var(--space-sm);
+}
+
+.tasting-description {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.menu-note {
+    margin-top: var(--space-lg);
+    font-style: italic;
+    color: var(--color-muted-brown);
+}
+
+/* Stories Section */
+.stories-section {
+    padding: var(--space-xxl) 0;
+}
+
+.story-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-xl);
+    margin-top: var(--space-lg);
+}
+
+.story-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: var(--space-sm);
+}
+
+.story-item p {
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* Reservations Section */
+.reservations-elegant {
+    padding: var(--space-xxl) 0;
+    background-color: #fafaf9;
+}
+
+.reservation-intro {
+    font-size: 1.1rem;
+    margin-bottom: var(--space-lg);
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.reservation-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-lg);
+    margin: var(--space-xl) 0;
+}
+
+.detail-item {
+    text-align: center;
+}
+
+.detail-item h4 {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    color: var(--color-muted-brown);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--space-sm);
+}
+
+.contact-methods {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-lg);
+    margin: var(--space-lg) 0;
+}
+
+.contact-button {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    color: var(--color-charcoal);
+    text-decoration: none;
+    padding: var(--space-sm) var(--space-md);
+    border: 1px solid var(--color-light-gray);
+    background-color: var(--color-warm-white);
+    transition: all 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: var(--color-charcoal);
+    color: var(--color-warm-white);
+}
+
+.btn-reserve-modal {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    color: var(--color-warm-white);
+    background-color: var(--color-charcoal);
+    border: none;
+    padding: var(--space-sm) var(--space-lg);
+    margin-top: var(--space-lg);
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+}
+
+.btn-reserve-modal:hover {
+    background-color: var(--color-muted-brown);
+}
+
+/* Contact Section */
+.contact-minimal {
+    padding: var(--space-xxl) 0;
+}
+
+.address-elegant {
+    margin: var(--space-lg) 0;
+}
+
+.contact-info a {
+    color: var(--color-charcoal);
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    color: var(--color-muted-brown);
+}
+
+/* Footer */
+.footer-botanical {
+    padding: var(--space-xl) 0 var(--space-lg) 0;
+    text-align: center;
+    border-top: 1px solid var(--color-light-gray);
+}
+
+.botanical-footer-icon {
+    margin-bottom: var(--space-sm);
+}
+
+.botanical-footer-icon svg {
+    width: 24px;
+    height: 24px;
+    fill: var(--color-muted-brown);
+    opacity: 0.6;
+}
+
+.footer-content p {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    color: var(--color-muted-brown);
+}
+
+/* Reservation Modal (Alinea-style) */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: var(--space-sm);
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-content-elegant {
+    background-color: var(--color-warm-white);
+    padding: var(--space-xl);
+    max-width: 600px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    top: var(--space-sm);
+    right: var(--space-sm);
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--color-text-gray);
+    cursor: pointer;
+}
+
+.modal-content-elegant h3 {
+    text-align: center;
+    margin-bottom: var(--space-sm);
+    font-size: 2rem;
+}
+
+.modal-subtitle {
+    text-align: center;
+    color: var(--color-muted-brown);
+    margin-bottom: var(--space-lg);
+    font-style: italic;
+}
+
+.form-section {
+    margin-bottom: var(--space-lg);
+}
+
+.form-section h4 {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-muted-brown);
+    margin-bottom: var(--space-sm);
+}
+
+.experience-selection {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.experience-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-sm);
+    border: 1px solid var(--color-light-gray);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.experience-option:hover {
+    border-color: var(--color-muted-brown);
+}
+
+.experience-option input[type="radio"] {
+    margin-right: var(--space-sm);
+}
+
+.option-price {
+    font-weight: 500;
+    color: var(--color-charcoal);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-sm);
+}
+
+.form-grid input,
+.form-grid select,
+textarea {
+    padding: var(--space-sm);
+    border: 1px solid var(--color-light-gray);
+    background-color: var(--color-warm-white);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    color: var(--color-text-gray);
+}
+
+.form-grid input:focus,
+.form-grid select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--color-muted-brown);
+}
+
+textarea {
+    width: 100%;
+    resize: vertical;
+    font-family: var(--font-sans);
+}
+
+.btn-submit-elegant {
+    width: 100%;
+    padding: var(--space-sm) 0;
+    background-color: var(--color-charcoal);
+    color: var(--color-warm-white);
+    border: none;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: var(--space-sm);
+}
+
+.btn-submit-elegant:hover {
+    background-color: var(--color-muted-brown);
+}
+
+.form-note {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--color-muted-brown);
+    margin-top: var(--space-sm);
+    font-style: italic;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .restaurant-title h1 {
+        font-size: 2rem;
+    }
+    
+    .nav-horizontal {
+        flex-direction: column;
+        gap: var(--space-sm);
+        text-align: center;
+    }
+    
+    .hero-artistic-image {
+        height: 50vh;
+    }
+    
+    .tasting-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-methods {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .story-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .reservation-details {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .experience-selection .experience-option {
+        flex-direction: column;
+        text-align: center;
+    }
+}

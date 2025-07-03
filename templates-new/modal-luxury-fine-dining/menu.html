@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Tasting Menu</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} Tasting Menu - Experience our seasonal culinary journey featuring the finest ingredients and innovative techniques">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body class="luxury-modal-theme">
+    <!-- Reservation Modal (same as index.html) -->
+    <div id="reservationModal" class="modal">
+        <div class="modal-overlay" onclick="closeModal()"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div class="modal-header">
+                <h2>Reserve Your Experience</h2>
+                <p>Choose your preferred dining experience</p>
+            </div>
+            <div class="modal-body">
+                <div class="experience-options">
+                    <div class="experience-option" data-experience="dining-room">
+                        <div class="option-image">
+                            <img src="images/dining-room.jpg" alt="Dining Room Experience">
+                        </div>
+                        <div class="option-content">
+                            <h3>Dining Room</h3>
+                            <p>Our signature tasting menu experience in the main dining room</p>
+                            <div class="option-price">$195 per person</div>
+                        </div>
+                    </div>
+                    <div class="experience-option" data-experience="chefs-table">
+                        <div class="option-image">
+                            <img src="images/chefs-table.jpg" alt="Chef's Table Experience">
+                        </div>
+                        <div class="option-content">
+                            <h3>Chef's Table</h3>
+                            <p>An intimate experience at the kitchen counter with chef interaction</p>
+                            <div class="option-price">$295 per person</div>
+                        </div>
+                    </div>
+                    <div class="experience-option" data-experience="private-dining">
+                        <div class="option-image">
+                            <img src="images/private-dining.jpg" alt="Private Dining Experience">
+                        </div>
+                        <div class="option-content">
+                            <h3>Private Dining</h3>
+                            <p>Exclusive private room for special occasions and groups</p>
+                            <div class="option-price">$245 per person</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reservation-form" id="reservationForm" style="display: none;">
+                    <h3 id="selectedExperience">Dining Room Experience</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="date" id="reservationDate" required>
+                            <select id="reservationTime" required>
+                                <option value="">Select Time</option>
+                                <option value="17:30">5:30 PM</option>
+                                <option value="18:00">6:00 PM</option>
+                                <option value="18:30">6:30 PM</option>
+                                <option value="19:00">7:00 PM</option>
+                                <option value="19:30">7:30 PM</option>
+                                <option value="20:00">8:00 PM</option>
+                                <option value="20:30">8:30 PM</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <select id="partySize" required>
+                                <option value="">Party Size</option>
+                                <option value="1">1 Guest</option>
+                                <option value="2">2 Guests</option>
+                                <option value="3">3 Guests</option>
+                                <option value="4">4 Guests</option>
+                                <option value="5">5 Guests</option>
+                                <option value="6">6 Guests</option>
+                                <option value="7">7 Guests</option>
+                                <option value="8">8 Guests</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Name" required>
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <select>
+                                <option value="">Special Occasion (Optional)</option>
+                                <option value="anniversary">Anniversary</option>
+                                <option value="birthday">Birthday</option>
+                                <option value="engagement">Engagement</option>
+                                <option value="business">Business Dinner</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Dietary restrictions or special requests"></textarea>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-back" onclick="showExperienceOptions()">Back</button>
+                            <button type="submit" class="btn btn-reserve">Request Reservation</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <img src="images/logo.png" alt="{{RESTAURANT_NAME}} Logo">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#philosophy">Philosophy</a></li>
+                <li><a href="index.html#chef">Chef</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-cta">
+                <button class="btn btn-reservation" onclick="openModal()">Reservations</button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu Hero -->
+    <section class="menu-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span>{{CURRENT_SEASON}} {{CURRENT_YEAR}}</span>
+            </div>
+            <h1>Tasting Menu</h1>
+            <p class="hero-subtitle">A Culinary Journey Through the Seasons</p>
+        </div>
+    </section>
+
+    <!-- Menu Introduction -->
+    <section class="menu-introduction">
+        <div class="container">
+            <div class="intro-content">
+                <h2>Our Philosophy on the Plate</h2>
+                <div class="intro-text">
+                    <p class="lead">{{MENU_PHILOSOPHY}}</p>
+                    <p>Each course in our tasting menu represents a chapter in our culinary story, carefully composed to create harmony between flavors, textures, and seasonal ingredients. We change our menu regularly to reflect the finest produce available, ensuring that every visit offers a unique and memorable experience.</p>
+                </div>
+                <div class="menu-details">
+                    <div class="detail-item">
+                        <h4>Duration</h4>
+                        <p>Approximately 2.5-3 hours</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Courses</h4>
+                        <p>8-course tasting menu</p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Wine Pairing</h4>
+                        <p>Available upon request</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Tasting Menu -->
+    <section id="menu" class="current-menu">
+        <div class="container">
+            <div class="menu-header">
+                <h2>Current Tasting Menu</h2>
+                <p class="menu-season">{{CURRENT_SEASON}} {{CURRENT_YEAR}}</p>
+                <p class="menu-subtitle">{{MENU_SUBTITLE}}</p>
+            </div>
+
+            <div class="menu-courses">
+                <!-- Amuse-Bouche -->
+                <div class="course-section">
+                    <div class="course-title">
+                        <h3>Amuse-Bouche</h3>
+                        <div class="course-line"></div>
+                    </div>
+                    <div class="course">
+                        <div class="course-image">
+                            <img src="images/course-amuse.jpg" alt="{{AMUSE_NAME}}">
+                        </div>
+                        <div class="course-content">
+                            <h4>{{AMUSE_NAME}}</h4>
+                            <p class="course-description">{{AMUSE_DESCRIPTION}}</p>
+                            <div class="course-notes">
+                                <span class="wine-pairing">Wine: {{AMUSE_WINE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- First Course -->
+                <div class="course-section">
+                    <div class="course-title">
+                        <h3>First</h3>
+                        <div class="course-line"></div>
+                    </div>
+                    <div class="course">
+                        <div class="course-image">
+                            <img src="images/course-1.jpg" alt="{{COURSE_1_NAME}}">
+                        </div>
+                        <div class="course-content">
+                            <h4>{{COURSE_1_NAME}}</h4>
+                            <p class="course-description">{{COURSE_1_DESCRIPTION}}</p>
+                            <div class="course-ingredients">
+                                <p><em>{{COURSE_1_INGREDIENTS}}</em></p>
+                            </div>
+                            <div class="course-notes">
+                                <span class="wine-pairing">Wine: {{COURSE_1_WINE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Second Course -->
+                <div class="course-section">
+                    <div class="course-title">
+                        <h3>Second</h3>
+                        <div class="course-line"></div>
+                    </div>
+                    <div class="course">
+                        <div class="course-image">
+                            <img src="images/course-2.jpg" alt="{{COURSE_2_NAME}}">
+                        </div>
+                        <div class="course-content">
+                            <h4>{{COURSE_2_NAME}}</h4>
+                            <p class="course-description">{{COURSE_2_DESCRIPTION}}</p>
+                            <div class="course-ingredients">
+                                <p><em>{{COURSE_2_INGREDIENTS}}</em></p>
+                            </div>
+                            <div class="course-notes">
+                                <span class="wine-pairing">Wine: {{COURSE_2_WINE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Third Course -->
+                <div class="course-section">
+                    <div class="course-title">
+                        <h3>Third</h3>
+                        <div class="course-line"></div>
+                    </div>
+                    <div class="course">
+                        <div class="course-image">
+                            <img src="images/course-3.jpg" alt="{{COURSE_3_NAME}}">
+                        </div>
+                        <div class="course-content">
+                            <h4>{{COURSE_3_NAME}}</h4>
+                            <p class="course-description">{{COURSE_3_DESCRIPTION}}</p>
+                            <div class="course-ingredients">
+                                <p><em>{{COURSE_3_INGREDIENTS}}</em></p>
+                            </div>
+                            <div class="course-notes">
+                                <span class="wine-pairing">Wine: {{COURSE_3_WINE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fourth Course -->
+                <div class="course-section">
+                    <div class="course-title">
+                        <h3>Fourth</h3>
+                        <div class="course-line"></div>
+                    </div>
+                    <div class="course">
+                        <div class="course-image">
+                            <img src="images/course-4.jpg" alt="{{COURSE_4_NAME}}">
+                        </div>
+                        <div class="course-content">
+                            <h4>{{COURSE_4_NAME}}</h4>
+                            <p class="course-description">{{COURSE_4_DESCRIPTION}}</p>
+                            <div class="course-ingredients">
+                                <p><em>{{COURSE_4_INGREDIENTS}}</em></p>
+                            </div>
+                            <div class="course-notes">
+                                <span class="wine-pairing">Wine: {{COURSE_4_WINE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fifth Course -->
+                <div class="course-section">
+                    <div class="course-title">
+                        <h3>Fifth</h3>
+                        <div class="course-line"></div>
+                    </div>
+                    <div class="course">
+                        <div class="course-image">
+                            <img src="images/course-5.jpg" alt="{{COURSE_5_NAME}}">
+                        </div>
+                        <div class="course-content">
+                            <h4>{{COURSE_5_NAME}}</h4>
+                            <p class="course-description">{{COURSE_5_DESCRIPTION}}</p>
+                            <div class="course-ingredients">
+                                <p><em>{{COURSE_5_INGREDIENTS}}</em></p>
+                            </div>
+                            <div class="course-notes">
+                                <span class="wine-pairing">Wine: {{COURSE_5_WINE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sixth Course -->
+                <div class="course-section">
+                    <div class="course-title">
+                        <h3>Sixth</h3>
+                        <div class="course-line"></div>
+                    </div>
+                    <div class="course">
+                        <div class="course-image">
+                            <img src="images/course-6.jpg" alt="{{COURSE_6_NAME}}">
+                        </div>
+                        <div class="course-content">
+                            <h4>{{COURSE_6_NAME}}</h4>
+                            <p class="course-description">{{COURSE_6_DESCRIPTION}}</p>
+                            <div class="course-ingredients">
+                                <p><em>{{COURSE_6_INGREDIENTS}}</em></p>
+                            </div>
+                            <div class="course-notes">
+                                <span class="wine-pairing">Wine: {{COURSE_6_WINE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pre-Dessert -->
+                <div class="course-section">
+                    <div class="course-title">
+                        <h3>Pre-Dessert</h3>
+                        <div class="course-line"></div>
+                    </div>
+                    <div class="course">
+                        <div class="course-image">
+                            <img src="images/course-pre-dessert.jpg" alt="{{PRE_DESSERT_NAME}}">
+                        </div>
+                        <div class="course-content">
+                            <h4>{{PRE_DESSERT_NAME}}</h4>
+                            <p class="course-description">{{PRE_DESSERT_DESCRIPTION}}</p>
+                            <div class="course-ingredients">
+                                <p><em>{{PRE_DESSERT_INGREDIENTS}}</em></p>
+                            </div>
+                            <div class="course-notes">
+                                <span class="wine-pairing">Wine: {{PRE_DESSERT_WINE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dessert -->
+                <div class="course-section">
+                    <div class="course-title">
+                        <h3>Dessert</h3>
+                        <div class="course-line"></div>
+                    </div>
+                    <div class="course">
+                        <div class="course-image">
+                            <img src="images/course-dessert.jpg" alt="{{DESSERT_NAME}}">
+                        </div>
+                        <div class="course-content">
+                            <h4>{{DESSERT_NAME}}</h4>
+                            <p class="course-description">{{DESSERT_DESCRIPTION}}</p>
+                            <div class="course-ingredients">
+                                <p><em>{{DESSERT_INGREDIENTS}}</em></p>
+                            </div>
+                            <div class="course-notes">
+                                <span class="wine-pairing">Wine: {{DESSERT_WINE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-footer">
+                <div class="pricing-info">
+                    <div class="price-item">
+                        <h4>Tasting Menu</h4>
+                        <p class="price">$195 per person</p>
+                    </div>
+                    <div class="price-item">
+                        <h4>Wine Pairing</h4>
+                        <p class="price">$85 per person</p>
+                    </div>
+                    <div class="price-item">
+                        <h4>Premium Wine Pairing</h4>
+                        <p class="price">$135 per person</p>
+                    </div>
+                </div>
+                <div class="menu-notes">
+                    <p><em>Menu items and pricing subject to change based on seasonal availability. Please inform us of any dietary restrictions when making your reservation.</em></p>
+                </div>
+                <div class="reservation-cta">
+                    <button class="btn btn-primary" onclick="openModal()">Reserve Your Experience</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wine Program -->
+    <section class="wine-program">
+        <div class="container">
+            <div class="wine-content">
+                <div class="wine-text">
+                    <h2>Wine Program</h2>
+                    <p class="lead">Our sommelier has carefully curated wine pairings that complement each course, featuring selections from both renowned vineyards and emerging winemakers.</p>
+                    <div class="wine-options">
+                        <div class="wine-option">
+                            <h4>Classic Pairing</h4>
+                            <p>Traditional wines that enhance the flavors of each dish</p>
+                            <div class="wine-price">$85 per person</div>
+                        </div>
+                        <div class="wine-option">
+                            <h4>Premium Pairing</h4>
+                            <p>Rare and exceptional wines from our reserve collection</p>
+                            <div class="wine-price">$135 per person</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wine-image">
+                    <img src="images/wine-cellar.jpg" alt="Wine Cellar">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dietary Accommodations -->
+    <section class="dietary-info">
+        <div class="container">
+            <h2>Dietary Accommodations</h2>
+            <div class="dietary-grid">
+                <div class="dietary-item">
+                    <div class="dietary-icon">🌱</div>
+                    <h4>Vegetarian</h4>
+                    <p>Plant-based alternatives for every course, maintaining the same level of creativity and flavor</p>
+                </div>
+                <div class="dietary-item">
+                    <div class="dietary-icon">🌿</div>
+                    <h4>Vegan</h4>
+                    <p>Completely plant-based menu crafted with seasonal vegetables and innovative techniques</p>
+                </div>
+                <div class="dietary-item">
+                    <div class="dietary-icon">🌾</div>
+                    <h4>Gluten-Free</h4>
+                    <p>Modified preparations ensuring all courses are safe for guests with gluten sensitivities</p>
+                </div>
+                <div class="dietary-item">
+                    <div class="dietary-icon">🥛</div>
+                    <h4>Dairy-Free</h4>
+                    <p>Alternative preparations and ingredients to accommodate lactose intolerance</p>
+                </div>
+            </div>
+            <div class="dietary-note">
+                <p><em>Please inform us of any dietary restrictions or allergies when making your reservation. Our kitchen team will work with you to create a memorable dining experience that meets your needs.</em></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="images/logo.png" alt="{{RESTAURANT_NAME}} Logo" class="footer-logo">
+                    <p>The Art of Culinary Excellence</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Experience</h4>
+                    <ul>
+                        <li><a href="index.html#philosophy">Philosophy</a></li>
+                        <li><a href="index.html#chef">Chef</a></li>
+                        <li><a href="#menu">Tasting Menu</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Reservations</h4>
+                    <p>{{ADDRESS}}</p>
+                    <p>{{CITY}}, {{STATE}} {{ZIP}}</p>
+                    <p><a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+                    <p><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <style>
+        .menu-hero {
+            height: 70vh;
+            background: linear-gradient(rgba(44, 62, 80, 0.85), rgba(44, 62, 80, 0.75)), url('images/hero.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: 90px;
+            color: white;
+        }
+
+        .menu-introduction {
+            background: var(--background-light);
+            padding: 100px 0;
+        }
+
+        .intro-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .intro-content h2 {
+            color: var(--primary-color);
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+        }
+
+        .intro-text {
+            margin-bottom: 50px;
+        }
+
+        .intro-text .lead {
+            font-size: 1.4rem;
+            color: var(--text-gray);
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .intro-text p {
+            color: var(--text-gray);
+            line-height: 1.8;
+        }
+
+        .menu-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .detail-item {
+            text-align: center;
+        }
+
+        .detail-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .detail-item p {
+            color: var(--text-gray);
+        }
+
+        .current-menu {
+            background: var(--background-section);
+            padding: 100px 0;
+        }
+
+        .menu-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .menu-header h2 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 2.5rem;
+        }
+
+        .menu-season {
+            color: var(--gold-accent);
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .menu-subtitle {
+            color: var(--text-gray);
+            font-size: 1.2rem;
+            font-style: italic;
+        }
+
+        .menu-courses {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .course-section {
+            margin-bottom: 80px;
+        }
+
+        .course-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .course-title h3 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-right: 30px;
+            min-width: 120px;
+        }
+
+        .course-line {
+            flex: 1;
+            height: 1px;
+            background: var(--border-color);
+        }
+
+        .course {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 40px;
+            align-items: center;
+            background: var(--background-card);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+        }
+
+        .course-image {
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .course-image img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .course-content h4 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .course-description {
+            color: var(--text-gray);
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .course-ingredients {
+            margin-bottom: 20px;
+        }
+
+        .course-ingredients p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .wine-pairing {
+            color: var(--gold-accent);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .menu-footer {
+            text-align: center;
+            margin-top: 80px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .pricing-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+            padding: 40px;
+            background: var(--background-card);
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+        }
+
+        .price-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .price {
+            color: var(--gold-accent);
+            font-size: 1.3rem;
+            font-weight: 500;
+        }
+
+        .menu-notes {
+            margin-bottom: 40px;
+        }
+
+        .menu-notes p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .wine-program {
+            background: var(--background-light);
+            padding: 100px 0;
+        }
+
+        .wine-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .wine-text h2 {
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+        }
+
+        .wine-text .lead {
+            color: var(--text-gray);
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        .wine-options {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .wine-option {
+            padding: 25px;
+            background: var(--background-section);
+            border-radius: 8px;
+            border-left: 4px solid var(--gold-accent);
+        }
+
+        .wine-option h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .wine-option p {
+            color: var(--text-gray);
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .wine-price {
+            color: var(--gold-accent);
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        .wine-image {
+            overflow: hidden;
+            border-radius: 12px;
+        }
+
+        .wine-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .dietary-info {
+            background: var(--background-section);
+            padding: 100px 0;
+        }
+
+        .dietary-info h2 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 60px;
+            font-size: 2.5rem;
+        }
+
+        .dietary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .dietary-item {
+            text-align: center;
+            padding: 30px;
+            background: var(--background-card);
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+        }
+
+        .dietary-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .dietary-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .dietary-item p {
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+        .dietary-note {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 30px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 8px;
+            border-left: 4px solid var(--gold-accent);
+        }
+
+        .dietary-note p {
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .course {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .course-image img {
+                height: 200px;
+            }
+
+            .wine-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .pricing-info {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .menu-hero {
+                height: 60vh;
+                margin-top: 70px;
+            }
+
+            .hero-title {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</body>
+</html>

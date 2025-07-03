@@ -1,0 +1,719 @@
+/* Luxury Minimalist Template - Eleven Madison Park Style */
+
+:root {
+    /* Color Schemes */
+    --primary: #f8f6f3;      /* Warm white */
+    --secondary: #8b7355;    /* Muted brown */
+    --accent: #2d3748;       /* Charcoal */
+    --text: #4a5568;         /* Medium gray */
+    --text-light: #718096;   /* Light gray */
+    --white: #ffffff;
+    --border: #e2e8f0;
+    
+    /* Typography */
+    --font-primary: 'Georgia', 'Times New Roman', serif;
+    --font-secondary: 'Helvetica Neue', Arial, sans-serif;
+    
+    /* Spacing */
+    --section-padding: 8rem 0;
+    --container-max-width: 1200px;
+    
+    /* Transitions */
+    --transition: all 0.3s ease;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-secondary);
+    line-height: 1.7;
+    color: var(--text);
+    background-color: var(--primary);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Navigation */
+.navbar {
+    background-color: var(--white);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    padding: 1rem 0;
+}
+
+.nav-container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.logo-center {
+    text-align: center;
+}
+
+.botanical-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.botanical-icons .icon {
+    font-size: 1.2rem;
+    opacity: 0.7;
+}
+
+.restaurant-name {
+    font-family: var(--font-primary);
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    margin: 0;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 3rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 300;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: var(--transition);
+}
+
+.nav-menu a:hover {
+    color: var(--secondary);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 2px;
+    background-color: var(--accent);
+    transition: var(--transition);
+}
+
+/* Hero Section - Artistic */
+.hero-artistic {
+    margin-top: 120px;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: var(--white);
+}
+
+.hero-image-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+    object-fit: cover;
+    border-radius: 0;
+}
+
+.hero-content {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    background: rgba(255,255,255,0.9);
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+}
+
+.hero-tagline {
+    font-family: var(--font-primary);
+    font-size: 1.1rem;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.btn-reservation {
+    background-color: var(--accent);
+    color: var(--white);
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: var(--transition);
+    border-radius: 0;
+    font-weight: 300;
+}
+
+.btn-reservation:hover {
+    background-color: var(--secondary);
+    transform: translateY(-2px);
+}
+
+/* Section Headers */
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    font-family: var(--font-primary);
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+.divider-botanical {
+    font-size: 1.5rem;
+    opacity: 0.6;
+}
+
+/* About Section */
+.about-luxury {
+    padding: var(--section-padding);
+    background-color: var(--white);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.chef-quote {
+    font-family: var(--font-primary);
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--secondary);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.chef-signature {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    text-align: right;
+}
+
+.about-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+/* Menu Highlights */
+.menu-highlights {
+    padding: var(--section-padding);
+    background-color: var(--primary);
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.menu-item {
+    text-align: center;
+    background-color: var(--white);
+    padding: 2rem;
+    transition: var(--transition);
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.dish-image {
+    width: 100%;
+    height: 250px;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+}
+
+.dish-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.dish-name {
+    font-family: var(--font-primary);
+    font-size: 1.3rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+}
+
+.dish-description {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.dish-price {
+    font-family: var(--font-primary);
+    font-size: 1.1rem;
+    color: var(--secondary);
+    font-weight: 500;
+}
+
+.menu-cta {
+    text-align: center;
+}
+
+.btn-menu {
+    display: inline-block;
+    color: var(--accent);
+    text-decoration: none;
+    border: 2px solid var(--accent);
+    padding: 1rem 2.5rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: var(--transition);
+    font-weight: 300;
+}
+
+.btn-menu:hover {
+    background-color: var(--accent);
+    color: var(--white);
+}
+
+/* Awards Section */
+.awards {
+    padding: var(--section-padding);
+    background-color: var(--white);
+}
+
+.awards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+
+.award-item {
+    text-align: center;
+    padding: 2rem;
+}
+
+.award-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.award-item h3 {
+    font-family: var(--font-primary);
+    font-size: 1.2rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+}
+
+.award-item p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* Wine Program */
+.wine-program {
+    padding: var(--section-padding);
+    background-color: var(--primary);
+}
+
+.wine-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.wine-text h2 {
+    font-family: var(--font-primary);
+    font-size: 2.2rem;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+}
+
+.wine-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.btn-wine {
+    display: inline-block;
+    color: var(--secondary);
+    text-decoration: none;
+    border: 2px solid var(--secondary);
+    padding: 1rem 2.5rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: var(--transition);
+    font-weight: 300;
+}
+
+.btn-wine:hover {
+    background-color: var(--secondary);
+    color: var(--white);
+}
+
+.wine-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+/* Contact Section */
+.contact-luxury {
+    padding: var(--section-padding);
+    background-color: var(--white);
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+.contact-info h2 {
+    font-family: var(--font-primary);
+    font-size: 2.2rem;
+    color: var(--accent);
+    margin-bottom: 2rem;
+    font-weight: 300;
+}
+
+.contact-details p {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.address {
+    color: var(--text);
+    font-weight: 500;
+}
+
+.phone, .email {
+    color: var(--secondary);
+}
+
+.hours {
+    margin-top: 2rem;
+}
+
+.hours h3 {
+    font-family: var(--font-primary);
+    color: var(--accent);
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+.hours p {
+    margin-bottom: 0.3rem;
+    font-size: 0.95rem;
+}
+
+.map-container {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+.footer-luxury {
+    background-color: var(--primary);
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.footer-botanical {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.footer-botanical .restaurant-name {
+    font-family: var(--font-primary);
+    font-size: 1.2rem;
+    color: var(--accent);
+    font-weight: 300;
+}
+
+.footer-tagline {
+    color: var(--text-light);
+    font-style: italic;
+    margin-bottom: 1.5rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social-links a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    transform: scale(1.2);
+}
+
+/* Reservation Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: var(--white);
+    margin: 5% auto;
+    padding: 3rem;
+    border: none;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.close {
+    color: var(--text-light);
+    float: right;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+}
+
+.close:hover {
+    color: var(--accent);
+}
+
+.reservation-form h2 {
+    font-family: var(--font-primary);
+    font-size: 2rem;
+    color: var(--accent);
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 300;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--accent);
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid var(--border);
+    background-color: var(--primary);
+    font-size: 1rem;
+    transition: var(--transition);
+    border-radius: 0;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--secondary);
+}
+
+.btn-submit {
+    width: 100%;
+    background-color: var(--accent);
+    color: var(--white);
+    border: none;
+    padding: 1rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 1rem;
+}
+
+.btn-submit:hover {
+    background-color: var(--secondary);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .logo-center {
+        text-align: left;
+    }
+    
+    .restaurant-name {
+        font-size: 1.4rem;
+    }
+    
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--white);
+        flex-direction: column;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        padding: 2rem;
+        gap: 1rem;
+    }
+    
+    .nav-menu.active {
+        display: flex;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .hero-artistic {
+        margin-top: 100px;
+        min-height: 60vh;
+    }
+    
+    .hero-content {
+        position: static;
+        transform: none;
+        margin-top: 2rem;
+        background: var(--white);
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .about-content,
+    .wine-content,
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .menu-grid,
+    .awards-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .container {
+        padding: 0 1rem;
+    }
+    
+    :root {
+        --section-padding: 4rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .botanical-icons {
+        gap: 0.5rem;
+    }
+    
+    .restaurant-name {
+        font-size: 1.2rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .modal-content {
+        margin: 10% auto;
+        padding: 2rem;
+    }
+}

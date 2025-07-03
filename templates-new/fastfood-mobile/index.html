@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Fast Food Restaurant</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- App Download Banner -->
+    <div class="app-banner">
+        <div class="container">
+            <div class="app-banner-content">
+                <span class="app-icon">📱</span>
+                <div class="app-text">
+                    <strong>Download our app!</strong>
+                    <span>Get exclusive deals & faster ordering</span>
+                </div>
+                <button class="btn-app-download">Download</button>
+            </div>
+            <button class="banner-close" onclick="this.parentElement.parentElement.style.display='none'">&times;</button>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="#home" class="logo-link">
+                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#deals">Deals</a></li>
+                <li><a href="#locations">Locations</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn btn-order-primary" onclick="openOrderModal()">Start Your Order</button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Bold Branding -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>{{RESTAURANT_NAME}}</h1>
+                <p class="hero-tagline">{{TAGLINE}}</p>
+                <div class="hero-value-props">
+                    <div class="value-prop">
+                        <span class="value-icon">⚡</span>
+                        <span>Fast Service</span>
+                    </div>
+                    <div class="value-prop">
+                        <span class="value-icon">💰</span>
+                        <span>Great Value</span>
+                    </div>
+                    <div class="value-prop">
+                        <span class="value-icon">🚚</span>
+                        <span>Free Delivery</span>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <button class="btn btn-order-large" onclick="openOrderModal()">Order Now</button>
+                    <a href="#menu" class="btn btn-menu-large">View Menu</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="{{HERO_IMAGE}}" alt="{{RESTAURANT_NAME}} Featured Item">
+            </div>
+        </div>
+    </section>
+
+    <!-- Limited Time Offers - Prominent Display -->
+    <section id="deals" class="limited-offers">
+        <div class="container">
+            <h2>Limited Time Offers!</h2>
+            <div class="offers-grid">
+                <div class="offer-card featured">
+                    <div class="offer-badge">NEW!</div>
+                    <img src="{{FOOD_IMAGE_1}}" alt="Limited Time Offer">
+                    <div class="offer-content">
+                        <h3>{{MENU_ITEM_1}} Combo</h3>
+                        <p class="offer-description">{{MENU_DESCRIPTION_1}}</p>
+                        <div class="offer-pricing">
+                            <span class="original-price">$12.99</span>
+                            <span class="sale-price">${{PRICE_1}}</span>
+                        </div>
+                        <button class="btn btn-order-offer" onclick="addToOrder('{{MENU_ITEM_1}}')">Add to Order</button>
+                    </div>
+                </div>
+                
+                <div class="offer-card">
+                    <img src="{{FOOD_IMAGE_2}}" alt="Value Deal">
+                    <div class="offer-content">
+                        <h3>{{MENU_ITEM_2}} Deal</h3>
+                        <p class="offer-description">{{MENU_DESCRIPTION_2}}</p>
+                        <div class="offer-pricing">
+                            <span class="sale-price">${{PRICE_2}}</span>
+                        </div>
+                        <button class="btn btn-order-offer" onclick="addToOrder('{{MENU_ITEM_2}}')">Add to Order</button>
+                    </div>
+                </div>
+                
+                <div class="offer-card">
+                    <img src="{{FOOD_IMAGE_3}}" alt="Family Pack">
+                    <div class="offer-content">
+                        <h3>Family Pack</h3>
+                        <p class="offer-description">Feed the whole family! 4 meals + sides</p>
+                        <div class="offer-pricing">
+                            <span class="sale-price">$29.99</span>
+                        </div>
+                        <button class="btn btn-order-offer" onclick="addToOrder('Family Pack')">Add to Order</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Categories - Vertical Cards -->
+    <section id="menu" class="menu-categories">
+        <div class="container">
+            <h2>Our Menu</h2>
+            <div class="category-cards">
+                <div class="category-card">
+                    <img src="{{FOOD_IMAGE_4}}" alt="Burgers">
+                    <div class="category-info">
+                        <h3>Burgers</h3>
+                        <p>Fresh beef, crispy chicken, and veggie options</p>
+                        <span class="category-count">8 items</span>
+                        <button class="btn btn-category">View Burgers</button>
+                    </div>
+                </div>
+                
+                <div class="category-card">
+                    <img src="{{FOOD_IMAGE_5}}" alt="Chicken">
+                    <div class="category-info">
+                        <h3>Chicken</h3>
+                        <p>Crispy, grilled, and saucy chicken selections</p>
+                        <span class="category-count">6 items</span>
+                        <button class="btn btn-category">View Chicken</button>
+                    </div>
+                </div>
+                
+                <div class="category-card">
+                    <img src="{{FOOD_IMAGE_6}}" alt="Sides">
+                    <div class="category-info">
+                        <h3>Sides & Drinks</h3>
+                        <p>Fries, nuggets, drinks, and desserts</p>
+                        <span class="category-count">12 items</span>
+                        <button class="btn btn-category">View Sides</button>
+                    </div>
+                </div>
+                
+                <div class="category-card">
+                    <img src="{{FOOD_IMAGE_7}}" alt="Breakfast">
+                    <div class="category-info">
+                        <h3>Breakfast</h3>
+                        <p>All-day breakfast favorites and coffee</p>
+                        <span class="category-count">10 items</span>
+                        <button class="btn btn-category">View Breakfast</button>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-cta">
+                <a href="menu.html" class="btn btn-view-full-menu">View Full Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Messaging -->
+    <section class="value-messaging">
+        <div class="container">
+            <div class="value-content">
+                <h2>Why Choose {{RESTAURANT_NAME}}?</h2>
+                <div class="value-grid">
+                    <div class="value-item">
+                        <div class="value-icon-large">🕐</div>
+                        <h3>Fast & Fresh</h3>
+                        <p>Your order ready in under 5 minutes, made fresh to order</p>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon-large">💵</div>
+                        <h3>Unbeatable Value</h3>
+                        <p>Quality food at prices that won't break the bank</p>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon-large">📱</div>
+                        <h3>Mobile Ordering</h3>
+                        <p>Skip the line with our easy-to-use mobile app</p>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon-large">🏆</div>
+                        <h3>Award Winning</h3>
+                        <p>Voted #1 Fast Food in the city 3 years running</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile App Promotion -->
+    <section class="app-promotion">
+        <div class="container">
+            <div class="app-promo-content">
+                <div class="app-info">
+                    <h2>Get Our Mobile App</h2>
+                    <h3>Exclusive App Benefits:</h3>
+                    <ul class="app-benefits">
+                        <li>✅ Skip the line with mobile ordering</li>
+                        <li>✅ Earn rewards with every purchase</li>
+                        <li>✅ Get exclusive app-only deals</li>
+                        <li>✅ Free item on your first order</li>
+                        <li>✅ Birthday surprises and special offers</li>
+                    </ul>
+                    <div class="app-download-buttons">
+                        <button class="download-btn ios">
+                            <span class="download-icon">🍎</span>
+                            <div class="download-text">
+                                <small>Download on the</small>
+                                <strong>App Store</strong>
+                            </div>
+                        </button>
+                        <button class="download-btn android">
+                            <span class="download-icon">🤖</span>
+                            <div class="download-text">
+                                <small>Get it on</small>
+                                <strong>Google Play</strong>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+                <div class="app-mockup">
+                    <div class="phone-mockup">
+                        <img src="{{FOOD_IMAGE_8}}" alt="Mobile App Interface">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Finder -->
+    <section id="locations" class="locations">
+        <div class="container">
+            <h2>Find a Location</h2>
+            <div class="location-finder">
+                <div class="finder-input">
+                    <input type="text" placeholder="Enter ZIP code or city" class="location-search">
+                    <button class="btn btn-search">Find Locations</button>
+                </div>
+                <div class="location-results">
+                    <div class="location-item">
+                        <h3>Main Location</h3>
+                        <p class="location-address">{{FULL_ADDRESS}}</p>
+                        <div class="location-details">
+                            <span class="location-hours">Open until {{HOURS_MON}}</span>
+                            <span class="location-phone">{{PHONE}}</span>
+                        </div>
+                        <div class="location-actions">
+                            <button class="btn btn-small" onclick="openOrderModal()">Order from this location</button>
+                            <a href="{{GOOGLE_MAPS_URL}}" class="btn btn-small btn-outline" target="_blank">Get Directions</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Contact -->
+    <section class="quick-contact">
+        <div class="container">
+            <div class="contact-cta">
+                <h2>Questions? We're Here to Help!</h2>
+                <div class="contact-options">
+                    <a href="tel:{{PHONE}}" class="contact-option">
+                        <span class="contact-icon">📞</span>
+                        <div class="contact-text">
+                            <strong>Call Us</strong>
+                            <span>{{PHONE}}</span>
+                        </div>
+                    </a>
+                    <a href="mailto:{{EMAIL}}" class="contact-option">
+                        <span class="contact-icon">📧</span>
+                        <div class="contact-text">
+                            <strong>Email Us</strong>
+                            <span>{{EMAIL}}</span>
+                        </div>
+                    </a>
+                    <button class="contact-option" onclick="openOrderModal()">
+                        <span class="contact-icon">🍔</span>
+                        <div class="contact-text">
+                            <strong>Order Now</strong>
+                            <span>Quick & Easy</span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <div class="footer-logo">
+                        <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}}">
+                    </div>
+                    <p class="footer-description">{{DESCRIPTION}}</p>
+                    <div class="footer-apps">
+                        <button class="footer-app-btn ios">App Store</button>
+                        <button class="footer-app-btn android">Google Play</button>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Menu</h4>
+                        <ul>
+                            <li><a href="#menu">Full Menu</a></li>
+                            <li><a href="#deals">Current Deals</a></li>
+                            <li><a href="#">Nutrition Info</a></li>
+                            <li><a href="#">Allergen Info</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="#">Mobile Ordering</a></li>
+                            <li><a href="#">Delivery</a></li>
+                            <li><a href="#">Catering</a></li>
+                            <li><a href="#">Gift Cards</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Press</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+                    <div class="legal-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Cookie Policy</a>
+                    </div>
+                </div>
+                <div class="footer-social">
+                    <a href="{{FACEBOOK_URL}}" target="_blank" class="social-link">Facebook</a>
+                    <a href="{{INSTAGRAM_URL}}" target="_blank" class="social-link">Instagram</a>
+                    <a href="{{YELP_URL}}" target="_blank" class="social-link">Yelp</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Order Modal -->
+    <div id="orderModal" class="modal">
+        <div class="modal-content order-modal">
+            <span class="close" onclick="closeOrderModal()">&times;</span>
+            <h2>Start Your Order</h2>
+            <div class="order-options">
+                <div class="order-type">
+                    <h3>How would you like to receive your order?</h3>
+                    <div class="order-type-buttons">
+                        <button class="order-type-btn active" data-type="pickup">
+                            <span class="order-icon">🏪</span>
+                            <strong>Pickup</strong>
+                            <small>Ready in 5-10 minutes</small>
+                        </button>
+                        <button class="order-type-btn" data-type="delivery">
+                            <span class="order-icon">🚚</span>
+                            <strong>Delivery</strong>
+                            <small>30-45 minutes</small>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="location-select">
+                    <h3>Select Location</h3>
+                    <select class="location-dropdown">
+                        <option value="">Choose a location</option>
+                        <option value="main">{{FULL_ADDRESS}}</option>
+                    </select>
+                </div>
+                
+                <div class="order-actions">
+                    <button class="btn btn-continue-order">Continue to Menu</button>
+                    <p class="order-note">Or <a href="tel:{{PHONE}}">call {{PHONE}}</a> to place your order</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

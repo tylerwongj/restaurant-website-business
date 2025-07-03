@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - {{RESTAURANT_NAME}}</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} full menu featuring {{CUISINE_TYPE}} family favorites">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="theme-family">
+    <!-- Promotional Banner -->
+    <div class="promo-banner">
+        <div class="container">
+            <span class="promo-text">{{PROMOTION_TEXT}} - {{PROMOTION_DETAILS}}</span>
+            <a href="#order" class="promo-cta">Order Now</a>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <img src="images/{{LOGO_IMAGE}}" alt="{{RESTAURANT_NAME}} Logo">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html" class="active">Menu</a></li>
+                <li><a href="index.html#specials">Specials</a></li>
+                <li><a href="index.html#catering">Catering</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#order" class="btn btn-order">Order Online</a>
+                <a href="#rewards" class="btn btn-rewards">Join Rewards</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu Header -->
+    <section class="menu-header">
+        <div class="container">
+            <div class="menu-intro">
+                <h1>Our Family Menu</h1>
+                <p class="menu-description">{{MENU_DESCRIPTION}}</p>
+                <div class="menu-highlights-banner">
+                    <div class="highlight">
+                        <span class="highlight-icon">🥗</span>
+                        <span>Fresh Daily</span>
+                    </div>
+                    <div class="highlight">
+                        <span class="highlight-icon">👨‍👩‍👧‍👦</span>
+                        <span>Family Portions</span>
+                    </div>
+                    <div class="highlight">
+                        <span class="highlight-icon">⚡</span>
+                        <span>Quick Service</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Specials -->
+    <section class="featured-specials">
+        <div class="container">
+            <h2>Today's Featured Specials</h2>
+            <div class="specials-banner">
+                <div class="special-item-banner">
+                    <img src="images/{{DAILY_SPECIAL_IMAGE}}" alt="{{DAILY_SPECIAL_NAME}}">
+                    <div class="special-content">
+                        <h3>{{DAILY_SPECIAL_NAME}}</h3>
+                        <p>{{DAILY_SPECIAL_DESCRIPTION}}</p>
+                        <span class="special-price">{{DAILY_SPECIAL_PRICE}}</span>
+                        <a href="#order" class="btn btn-special">Order Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Categories -->
+    <section class="menu-categories">
+        <div class="container">
+            <!-- Appetizers -->
+            <div class="menu-category" id="appetizers">
+                <div class="category-header">
+                    <h2>Appetizers & Starters</h2>
+                    <p>Perfect for sharing with the family</p>
+                </div>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3>{{APPETIZER_1_NAME}}</h3>
+                            <p class="item-description">{{APPETIZER_1_DESCRIPTION}}</p>
+                        </div>
+                        <div class="item-pricing">
+                            <span class="price">{{APPETIZER_1_PRICE}}</span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3>{{APPETIZER_2_NAME}}</h3>
+                            <p class="item-description">{{APPETIZER_2_DESCRIPTION}}</p>
+                        </div>
+                        <div class="item-pricing">
+                            <span class="price">{{APPETIZER_2_PRICE}}</span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3>{{APPETIZER_3_NAME}}</h3>
+                            <p class="item-description">{{APPETIZER_3_DESCRIPTION}}</p>
+                        </div>
+                        <div class="item-pricing">
+                            <span class="price">{{APPETIZER_3_PRICE}}</span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3>{{APPETIZER_4_NAME}}</h3>
+                            <p class="item-description">{{APPETIZER_4_DESCRIPTION}}</p>
+                        </div>
+                        <div class="item-pricing">
+                            <span class="price">{{APPETIZER_4_PRICE}}</span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Courses -->
+            <div class="menu-category" id="entrees">
+                <div class="category-header">
+                    <h2>Main Courses</h2>
+                    <p>Hearty meals for the whole family</p>
+                </div>
+                <div class="menu-items">
+                    <div class="menu-item featured">
+                        <div class="item-badge">Popular</div>
+                        <div class="item-info">
+                            <h3>{{ENTREE_1_NAME}}</h3>
+                            <p class="item-description">{{ENTREE_1_DESCRIPTION}}</p>
+                        </div>
+                        <div class="item-pricing">
+                            <span class="price">{{ENTREE_1_PRICE}}</span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3>{{ENTREE_2_NAME}}</h3>
+                            <p class="item-description">{{ENTREE_2_DESCRIPTION}}</p>
+                        </div>
+                        <div class="item-pricing">
+                            <span class="price">{{ENTREE_2_PRICE}}</span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3>{{ENTREE_3_NAME}}</h3>
+                            <p class="item-description">{{ENTREE_3_DESCRIPTION}}</p>
+                        </div>
+                        <div class="item-pricing">
+                            <span class="price">{{ENTREE_3_PRICE}}</span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3>{{ENTREE_4_NAME}}</h3>
+                            <p class="item-description">{{ENTREE_4_DESCRIPTION}}</p>
+                        </div>
+                        <div class="item-pricing">
+                            <span class="price">{{ENTREE_4_PRICE}}</span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3>{{ENTREE_5_NAME}}</h3>
+                            <p class="item-description">{{ENTREE_5_DESCRIPTION}}</p>
+                        </div>
+                        <div class="item-pricing">
+                            <span class="price">{{ENTREE_5_PRICE}}</span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3>{{ENTREE_6_NAME}}</h3>
+                            <p class="item-description">{{ENTREE_6_DESCRIPTION}}</p>
+                        </div>
+                        <div class="item-pricing">
+                            <span class="price">{{ENTREE_6_PRICE}}</span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kids Menu -->
+            <div class="menu-category" id="kids">
+                <div class="category-header">
+                    <h2>Kids Menu</h2>
+                    <p>Special meals for our little guests (12 & under)</p>
+                </div>
+                <div class="menu-items kids-items">
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3>{{KIDS_1_NAME}}</h3>
+                            <p class="item-description">{{KIDS_1_DESCRIPTION}}</p>
+                        </div>
+                        <div class="item-pricing">
+                            <span class="price">{{KIDS_1_PRICE}}</span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3>{{KIDS_2_NAME}}</h3>
+                            <p class="item-description">{{KIDS_2_DESCRIPTION}}</p>
+                        </div>
+                        <div class="item-pricing">
+                            <span class="price">{{KIDS_2_PRICE}}</span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3>{{KIDS_3_NAME}}</h3>
+                            <p class="item-description">{{KIDS_3_DESCRIPTION}}</p>
+                        </div>
+                        <div class="item-pricing">
+                            <span class="price">{{KIDS_3_PRICE}}</span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3>{{KIDS_4_NAME}}</h3>
+                            <p class="item-description">{{KIDS_4_DESCRIPTION}}</p>
+                        </div>
+                        <div class="item-pricing">
+                            <span class="price">{{KIDS_4_PRICE}}</span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desserts -->
+            <div class="menu-category" id="desserts">
+                <div class="category-header">
+                    <h2>Desserts</h2>
+                    <p>Sweet endings to perfect meals</p>
+                </div>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3>{{DESSERT_1_NAME}}</h3>
+                            <p class="item-description">{{DESSERT_1_DESCRIPTION}}</p>
+                        </div>
+                        <div class="item-pricing">
+                            <span class="price">{{DESSERT_1_PRICE}}</span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3>{{DESSERT_2_NAME}}</h3>
+                            <p class="item-description">{{DESSERT_2_DESCRIPTION}}</p>
+                        </div>
+                        <div class="item-pricing">
+                            <span class="price">{{DESSERT_2_PRICE}}</span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h3>{{DESSERT_3_NAME}}</h3>
+                            <p class="item-description">{{DESSERT_3_DESCRIPTION}}</p>
+                        </div>
+                        <div class="item-pricing">
+                            <span class="price">{{DESSERT_3_PRICE}}</span>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Beverages -->
+            <div class="menu-category" id="beverages">
+                <div class="category-header">
+                    <h2>Beverages</h2>
+                    <p>Refreshing drinks for all ages</p>
+                </div>
+                <div class="menu-items beverages-grid">
+                    <div class="beverage-section">
+                        <h4>Hot Beverages</h4>
+                        <div class="beverage-item">
+                            <span>{{HOT_BEVERAGE_1_NAME}}</span>
+                            <span class="price">{{HOT_BEVERAGE_1_PRICE}}</span>
+                        </div>
+                        <div class="beverage-item">
+                            <span>{{HOT_BEVERAGE_2_NAME}}</span>
+                            <span class="price">{{HOT_BEVERAGE_2_PRICE}}</span>
+                        </div>
+                        <div class="beverage-item">
+                            <span>{{HOT_BEVERAGE_3_NAME}}</span>
+                            <span class="price">{{HOT_BEVERAGE_3_PRICE}}</span>
+                        </div>
+                    </div>
+                    <div class="beverage-section">
+                        <h4>Cold Beverages</h4>
+                        <div class="beverage-item">
+                            <span>{{COLD_BEVERAGE_1_NAME}}</span>
+                            <span class="price">{{COLD_BEVERAGE_1_PRICE}}</span>
+                        </div>
+                        <div class="beverage-item">
+                            <span>{{COLD_BEVERAGE_2_NAME}}</span>
+                            <span class="price">{{COLD_BEVERAGE_2_PRICE}}</span>
+                        </div>
+                        <div class="beverage-item">
+                            <span>{{COLD_BEVERAGE_3_NAME}}</span>
+                            <span class="price">{{COLD_BEVERAGE_3_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order CTA -->
+    <section class="order-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Order?</h2>
+                <p>Get your favorite family meals delivered or pick them up fresh!</p>
+                <div class="cta-buttons">
+                    <a href="#order" class="btn btn-primary">Order for Delivery</a>
+                    <a href="#pickup" class="btn btn-secondary">Order for Pickup</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="images/{{LOGO_IMAGE}}" alt="{{RESTAURANT_NAME}}" class="footer-logo">
+                    <p>{{RESTAURANT_DESCRIPTION}}</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h5>Quick Links</h5>
+                    <a href="index.html">Home</a>
+                    <a href="menu.html">Full Menu</a>
+                    <a href="index.html#specials">Specials</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h5>Connect</h5>
+                    <p>{{PHONE}}</p>
+                    <p>{{EMAIL}}</p>
+                    <p>{{RESTAURANT_ADDRESS}}</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <style>
+        /* Menu-specific styles */
+        .menu-header {
+            padding: 6rem 0 3rem;
+            background: var(--background-warm);
+            text-align: center;
+        }
+        
+        .menu-intro h1 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .menu-description {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+        
+        .menu-highlights-banner {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        
+        .highlight {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .highlight-icon {
+            font-size: 1.5rem;
+        }
+        
+        .featured-specials {
+            padding: 3rem 0;
+            background: var(--background-secondary);
+        }
+        
+        .featured-specials h2 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+        }
+        
+        .special-item-banner {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 2rem;
+            background: var(--background-warm);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+        }
+        
+        .special-item-banner img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .special-item-banner .special-content {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .menu-categories {
+            padding: 4rem 0;
+        }
+        
+        .menu-category {
+            margin-bottom: 4rem;
+        }
+        
+        .category-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .category-header h2 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .category-header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+        
+        .menu-items {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+        }
+        
+        .menu-item.featured {
+            background: var(--background-warm);
+            padding: 2rem;
+            border-radius: 10px;
+            border: none;
+            margin-bottom: 1rem;
+        }
+        
+        .item-badge {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background: var(--secondary-color);
+            color: var(--text-light);
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .item-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+        }
+        
+        .item-description {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        .item-pricing {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 0.5rem;
+        }
+        
+        .price {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+        
+        .add-to-cart {
+            background: var(--accent-color);
+            color: var(--text-light);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .add-to-cart:hover {
+            background: #1e6b1e;
+        }
+        
+        .kids-items .menu-item {
+            background: #fff9e6;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            padding: 1.5rem;
+            border: 2px solid #ffd700;
+        }
+        
+        .beverages-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+        }
+        
+        .beverage-section h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .beverage-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .order-cta {
+            padding: 4rem 0;
+            background: var(--gradient-warm);
+            color: var(--text-light);
+            text-align: center;
+        }
+        
+        .order-cta h2 {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+        
+        .order-cta p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .nav-menu a.active {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+        
+        @media (max-width: 768px) {
+            .menu-highlights-banner {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .special-item-banner {
+                grid-template-columns: 1fr;
+            }
+            
+            .menu-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            
+            .item-pricing {
+                flex-direction: row;
+                align-items: center;
+                width: 100%;
+                justify-content: space-between;
+            }
+            
+            .beverages-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</body>
+</html>

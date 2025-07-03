@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - {{RESTAURANT_NAME}}</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - Complete Menu & Deals">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional styles for menu page */
+        .menu-page {
+            padding-top: 80px;
+            background: var(--background-section);
+        }
+        
+        .menu-hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--text-dark);
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .menu-hero h1 {
+            color: var(--text-dark);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .menu-hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .quick-order {
+            background: white;
+            padding: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .quick-order-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .quick-item {
+            background: var(--background-section);
+            border-radius: 12px;
+            padding: 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .quick-item:hover {
+            background: var(--primary-color);
+            transform: translateY(-2px);
+        }
+        
+        .quick-item-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 0.5rem;
+            display: block;
+        }
+        
+        .quick-item h4 {
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+            color: var(--text-dark);
+        }
+        
+        .quick-item .price {
+            font-size: 0.8rem;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+        
+        .menu-section {
+            padding: 3rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .menu-section:last-child {
+            border-bottom: none;
+        }
+        
+        .menu-section h2 {
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .menu-items-mobile {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .menu-item-mobile {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .menu-item-mobile:hover {
+            transform: translateY(-2px);
+        }
+        
+        .item-image-mobile {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+        
+        .item-content-mobile {
+            padding: 1rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .item-header-mobile {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+        
+        .item-name-mobile {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--text-dark);
+        }
+        
+        .item-price-mobile {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+        
+        .item-description-mobile {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+        
+        .item-tags-mobile {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tag-mobile {
+            background: var(--accent-color);
+            color: white;
+            padding: 2px 6px;
+            border-radius: 8px;
+            font-size: 0.7rem;
+            font-weight: 500;
+        }
+        
+        .tag-mobile.new {
+            background: var(--secondary-color);
+        }
+        
+        .tag-mobile.popular {
+            background: var(--warning-color);
+        }
+        
+        .tag-mobile.spicy {
+            background: #e74c3c;
+        }
+        
+        .add-to-order {
+            background: var(--primary-color);
+            color: var(--text-dark);
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            align-self: flex-end;
+        }
+        
+        .add-to-order:hover {
+            background: var(--secondary-color);
+            color: white;
+        }
+        
+        .combo-section {
+            background: var(--background-light);
+            padding: 3rem 0;
+        }
+        
+        .combo-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .combo-card-mobile {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .combo-badge-mobile {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: var(--secondary-color);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            z-index: 10;
+        }
+        
+        .combo-image-mobile {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        
+        .combo-content-mobile {
+            padding: 1.5rem;
+        }
+        
+        .combo-title-mobile {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        .combo-items-mobile {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+        
+        .combo-pricing-mobile {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .combo-original-price {
+            text-decoration: line-through;
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+        
+        .combo-deal-price {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+        
+        .combo-savings {
+            background: var(--accent-color);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .order-combo {
+            background: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+        
+        .order-combo:hover {
+            background: var(--primary-color);
+            color: var(--text-dark);
+        }
+        
+        .floating-cart {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--secondary-color);
+            color: white;
+            border-radius: 50px;
+            padding: 15px 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            display: none;
+        }
+        
+        .floating-cart.show {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .floating-cart:hover {
+            transform: scale(1.05);
+        }
+        
+        .cart-count {
+            background: white;
+            color: var(--secondary-color);
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {\n            .quick-order-grid {\n                grid-template-columns: repeat(4, 1fr);\n                gap: 0.5rem;\n            }\n            \n            .quick-item {\n                padding: 0.5rem;\n            }\n            \n            .quick-item-image {\n                width: 40px;\n                height: 40px;\n            }\n            \n            .quick-item h4 {\n                font-size: 0.8rem;\n            }\n            \n            .item-image-mobile {\n                width: 80px;\n                height: 80px;\n            }\n            \n            .item-content-mobile {\n                padding: 0.75rem;\n            }\n            \n            .combo-cards {\n                grid-template-columns: 1fr;\n            }\n            \n            .floating-cart {\n                bottom: 10px;\n                right: 10px;\n                padding: 12px 16px;\n            }\n        }\n    </style>\n</head>\n<body>\n    <!-- Navigation -->\n    <nav class=\"navbar\">\n        <div class=\"nav-container\">\n            <div class=\"logo\">\n                <a href=\"index.html\">\n                    <img src=\"{{LOGO_URL}}\" alt=\"{{RESTAURANT_NAME}}\">\n                </a>\n            </div>\n            <ul class=\"nav-menu\">\n                <li><a href=\"index.html\">Home</a></li>\n                <li><a href=\"menu.html\">Menu</a></li>\n                <li><a href=\"index.html#deals\">Deals</a></li>\n                <li><a href=\"index.html#locations\">Locations</a></li>\n            </ul>\n            <div class=\"nav-actions\">\n                <a href=\"#\" class=\"order-btn\">Start Order</a>\n            </div>\n            <div class=\"hamburger\">\n                <span></span>\n                <span></span>\n                <span></span>\n            </div>\n        </div>\n    </nav>\n\n    <div class=\"menu-page\">\n        <!-- Menu Hero -->\n        <section class=\"menu-hero\">\n            <div class=\"container\">\n                <h1>Our Full Menu</h1>\n                <p>Fresh, fast, and made your way</p>\n            </div>\n        </section>\n\n        <!-- Quick Order Section -->\n        <section class=\"quick-order\">\n            <div class=\"container\">\n                <h2>Quick Order</h2>\n                <div class=\"quick-order-grid\">\n                    <div class=\"quick-item\" data-item=\"{{QUICK_ITEM_1}}\" data-price=\"{{QUICK_PRICE_1}}\">\n                        <img src=\"{{QUICK_IMAGE_1}}\" alt=\"{{QUICK_ITEM_1}}\" class=\"quick-item-image\">\n                        <h4>{{QUICK_ITEM_1}}</h4>\n                        <div class=\"price\">${{QUICK_PRICE_1}}</div>\n                    </div>\n                    \n                    <div class=\"quick-item\" data-item=\"{{QUICK_ITEM_2}}\" data-price=\"{{QUICK_PRICE_2}}\">\n                        <img src=\"{{QUICK_IMAGE_2}}\" alt=\"{{QUICK_ITEM_2}}\" class=\"quick-item-image\">\n                        <h4>{{QUICK_ITEM_2}}</h4>\n                        <div class=\"price\">${{QUICK_PRICE_2}}</div>\n                    </div>\n                    \n                    <div class=\"quick-item\" data-item=\"{{QUICK_ITEM_3}}\" data-price=\"{{QUICK_PRICE_3}}\">\n                        <img src=\"{{QUICK_IMAGE_3}}\" alt=\"{{QUICK_ITEM_3}}\" class=\"quick-item-image\">\n                        <h4>{{QUICK_ITEM_3}}</h4>\n                        <div class=\"price\">${{QUICK_PRICE_3}}</div>\n                    </div>\n                    \n                    <div class=\"quick-item\" data-item=\"{{QUICK_ITEM_4}}\" data-price=\"{{QUICK_PRICE_4}}\">\n                        <img src=\"{{QUICK_IMAGE_4}}\" alt=\"{{QUICK_ITEM_4}}\" class=\"quick-item-image\">\n                        <h4>{{QUICK_ITEM_4}}</h4>\n                        <div class=\"price\">${{QUICK_PRICE_4}}</div>\n                    </div>\n                    \n                    <div class=\"quick-item\" data-item=\"{{QUICK_ITEM_5}}\" data-price=\"{{QUICK_PRICE_5}}\">\n                        <img src=\"{{QUICK_IMAGE_5}}\" alt=\"{{QUICK_ITEM_5}}\" class=\"quick-item-image\">\n                        <h4>{{QUICK_ITEM_5}}</h4>\n                        <div class=\"price\">${{QUICK_PRICE_5}}</div>\n                    </div>\n                    \n                    <div class=\"quick-item\" data-item=\"{{QUICK_ITEM_6}}\" data-price=\"{{QUICK_PRICE_6}}\">\n                        <img src=\"{{QUICK_IMAGE_6}}\" alt=\"{{QUICK_ITEM_6}}\" class=\"quick-item-image\">\n                        <h4>{{QUICK_ITEM_6}}</h4>\n                        <div class=\"price\">${{QUICK_PRICE_6}}</div>\n                    </div>\n                    \n                    <div class=\"quick-item\" data-item=\"{{QUICK_ITEM_7}}\" data-price=\"{{QUICK_PRICE_7}}\">\n                        <img src=\"{{QUICK_IMAGE_7}}\" alt=\"{{QUICK_ITEM_7}}\" class=\"quick-item-image\">\n                        <h4>{{QUICK_ITEM_7}}</h4>\n                        <div class=\"price\">${{QUICK_PRICE_7}}</div>\n                    </div>\n                    \n                    <div class=\"quick-item\" data-item=\"{{QUICK_ITEM_8}}\" data-price=\"{{QUICK_PRICE_8}}\">\n                        <img src=\"{{QUICK_IMAGE_8}}\" alt=\"{{QUICK_ITEM_8}}\" class=\"quick-item-image\">\n                        <h4>{{QUICK_ITEM_8}}</h4>\n                        <div class=\"price\">${{QUICK_PRICE_8}}</div>\n                    </div>\n                </div>\n            </div>\n        </section>\n\n        <!-- Burgers Section -->\n        <section class=\"menu-section\">\n            <div class=\"container\">\n                <h2>Burgers</h2>\n                <div class=\"menu-items-mobile\">\n                    <div class=\"menu-item-mobile\">\n                        <img src=\"{{BURGER_IMAGE_1}}\" alt=\"{{BURGER_1}}\" class=\"item-image-mobile\">\n                        <div class=\"item-content-mobile\">\n                            <div class=\"item-header-mobile\">\n                                <div class=\"item-name-mobile\">{{BURGER_1}}</div>\n                                <div class=\"item-price-mobile\">${{BURGER_PRICE_1}}</div>\n                            </div>\n                            <div class=\"item-description-mobile\">{{BURGER_DESCRIPTION_1}}</div>\n                            <div class=\"item-tags-mobile\">\n                                <span class=\"tag-mobile popular\">Popular</span>\n                                <span class=\"tag-mobile\">{{BURGER_1_CALORIES}} cal</span>\n                            </div>\n                            <button class=\"add-to-order\" data-item=\"{{BURGER_1}}\" data-price=\"{{BURGER_PRICE_1}}\">Add to Order</button>\n                        </div>\n                    </div>\n                    \n                    <div class=\"menu-item-mobile\">\n                        <img src=\"{{BURGER_IMAGE_2}}\" alt=\"{{BURGER_2}}\" class=\"item-image-mobile\">\n                        <div class=\"item-content-mobile\">\n                            <div class=\"item-header-mobile\">\n                                <div class=\"item-name-mobile\">{{BURGER_2}}</div>\n                                <div class=\"item-price-mobile\">${{BURGER_PRICE_2}}</div>\n                            </div>\n                            <div class=\"item-description-mobile\">{{BURGER_DESCRIPTION_2}}</div>\n                            <div class=\"item-tags-mobile\">\n                                <span class=\"tag-mobile new\">New</span>\n                                <span class=\"tag-mobile\">{{BURGER_2_CALORIES}} cal</span>\n                            </div>\n                            <button class=\"add-to-order\" data-item=\"{{BURGER_2}}\" data-price=\"{{BURGER_PRICE_2}}\">Add to Order</button>\n                        </div>\n                    </div>\n                    \n                    <div class=\"menu-item-mobile\">\n                        <img src=\"{{BURGER_IMAGE_3}}\" alt=\"{{BURGER_3}}\" class=\"item-image-mobile\">\n                        <div class=\"item-content-mobile\">\n                            <div class=\"item-header-mobile\">\n                                <div class=\"item-name-mobile\">{{BURGER_3}}</div>\n                                <div class=\"item-price-mobile\">${{BURGER_PRICE_3}}</div>\n                            </div>\n                            <div class=\"item-description-mobile\">{{BURGER_DESCRIPTION_3}}</div>\n                            <div class=\"item-tags-mobile\">\n                                <span class=\"tag-mobile spicy\">Spicy</span>\n                                <span class=\"tag-mobile\">{{BURGER_3_CALORIES}} cal</span>\n                            </div>\n                            <button class=\"add-to-order\" data-item=\"{{BURGER_3}}\" data-price=\"{{BURGER_PRICE_3}}\">Add to Order</button>\n                        </div>\n                    </div>\n                    \n                    <div class=\"menu-item-mobile\">\n                        <img src=\"{{BURGER_IMAGE_4}}\" alt=\"{{BURGER_4}}\" class=\"item-image-mobile\">\n                        <div class=\"item-content-mobile\">\n                            <div class=\"item-header-mobile\">\n                                <div class=\"item-name-mobile\">{{BURGER_4}}</div>\n                                <div class=\"item-price-mobile\">${{BURGER_PRICE_4}}</div>\n                            </div>\n                            <div class=\"item-description-mobile\">{{BURGER_DESCRIPTION_4}}</div>\n                            <div class=\"item-tags-mobile\">\n                                <span class=\"tag-mobile\">{{BURGER_4_CALORIES}} cal</span>\n                            </div>\n                            <button class=\"add-to-order\" data-item=\"{{BURGER_4}}\" data-price=\"{{BURGER_PRICE_4}}\">Add to Order</button>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </section>\n\n        <!-- Chicken Section -->\n        <section class=\"menu-section\">\n            <div class=\"container\">\n                <h2>Chicken</h2>\n                <div class=\"menu-items-mobile\">\n                    <div class=\"menu-item-mobile\">\n                        <img src=\"{{CHICKEN_IMAGE_1}}\" alt=\"{{CHICKEN_1}}\" class=\"item-image-mobile\">\n                        <div class=\"item-content-mobile\">\n                            <div class=\"item-header-mobile\">\n                                <div class=\"item-name-mobile\">{{CHICKEN_1}}</div>\n                                <div class=\"item-price-mobile\">${{CHICKEN_PRICE_1}}</div>\n                            </div>\n                            <div class=\"item-description-mobile\">{{CHICKEN_DESCRIPTION_1}}</div>\n                            <div class=\"item-tags-mobile\">\n                                <span class=\"tag-mobile popular\">Popular</span>\n                                <span class=\"tag-mobile\">{{CHICKEN_1_CALORIES}} cal</span>\n                            </div>\n                            <button class=\"add-to-order\" data-item=\"{{CHICKEN_1}}\" data-price=\"{{CHICKEN_PRICE_1}}\">Add to Order</button>\n                        </div>\n                    </div>\n                    \n                    <div class=\"menu-item-mobile\">\n                        <img src=\"{{CHICKEN_IMAGE_2}}\" alt=\"{{CHICKEN_2}}\" class=\"item-image-mobile\">\n                        <div class=\"item-content-mobile\">\n                            <div class=\"item-header-mobile\">\n                                <div class=\"item-name-mobile\">{{CHICKEN_2}}</div>\n                                <div class=\"item-price-mobile\">${{CHICKEN_PRICE_2}}</div>\n                            </div>\n                            <div class=\"item-description-mobile\">{{CHICKEN_DESCRIPTION_2}}</div>\n                            <div class=\"item-tags-mobile\">\n                                <span class=\"tag-mobile spicy\">Spicy</span>\n                                <span class=\"tag-mobile\">{{CHICKEN_2_CALORIES}} cal</span>\n                            </div>\n                            <button class=\"add-to-order\" data-item=\"{{CHICKEN_2}}\" data-price=\"{{CHICKEN_PRICE_2}}\">Add to Order</button>\n                        </div>\n                    </div>\n                    \n                    <div class=\"menu-item-mobile\">\n                        <img src=\"{{CHICKEN_IMAGE_3}}\" alt=\"{{CHICKEN_3}}\" class=\"item-image-mobile\">\n                        <div class=\"item-content-mobile\">\n                            <div class=\"item-header-mobile\">\n                                <div class=\"item-name-mobile\">{{CHICKEN_3}}</div>\n                                <div class=\"item-price-mobile\">${{CHICKEN_PRICE_3}}</div>\n                            </div>\n                            <div class=\"item-description-mobile\">{{CHICKEN_DESCRIPTION_3}}</div>\n                            <div class=\"item-tags-mobile\">\n                                <span class=\"tag-mobile\">{{CHICKEN_3_CALORIES}} cal</span>\n                            </div>\n                            <button class=\"add-to-order\" data-item=\"{{CHICKEN_3}}\" data-price=\"{{CHICKEN_PRICE_3}}\">Add to Order</button>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </section>\n\n        <!-- Combo Deals Section -->\n        <section class=\"combo-section\">\n            <div class=\"container\">\n                <h2>Combo Deals</h2>\n                <div class=\"combo-cards\">\n                    <div class=\"combo-card-mobile\">\n                        <div class=\"combo-badge-mobile\">BEST VALUE</div>\n                        <img src=\"{{COMBO_IMAGE_1}}\" alt=\"{{COMBO_1}}\" class=\"combo-image-mobile\">\n                        <div class=\"combo-content-mobile\">\n                            <div class=\"combo-title-mobile\">{{COMBO_1}}</div>\n                            <div class=\"combo-items-mobile\">{{COMBO_1_ITEMS}}</div>\n                            <div class=\"combo-pricing-mobile\">\n                                <span class=\"combo-original-price\">${{COMBO_1_ORIGINAL}}</span>\n                                <span class=\"combo-deal-price\">${{COMBO_1_PRICE}}</span>\n                                <span class=\"combo-savings\">Save ${{COMBO_1_SAVINGS}}</span>\n                            </div>\n                            <button class=\"order-combo\" data-combo=\"{{COMBO_1}}\" data-price=\"{{COMBO_1_PRICE}}\">Order Combo</button>\n                        </div>\n                    </div>\n                    \n                    <div class=\"combo-card-mobile\">\n                        <div class=\"combo-badge-mobile\">POPULAR</div>\n                        <img src=\"{{COMBO_IMAGE_2}}\" alt=\"{{COMBO_2}}\" class=\"combo-image-mobile\">\n                        <div class=\"combo-content-mobile\">\n                            <div class=\"combo-title-mobile\">{{COMBO_2}}</div>\n                            <div class=\"combo-items-mobile\">{{COMBO_2_ITEMS}}</div>\n                            <div class=\"combo-pricing-mobile\">\n                                <span class=\"combo-original-price\">${{COMBO_2_ORIGINAL}}</span>\n                                <span class=\"combo-deal-price\">${{COMBO_2_PRICE}}</span>\n                                <span class=\"combo-savings\">Save ${{COMBO_2_SAVINGS}}</span>\n                            </div>\n                            <button class=\"order-combo\" data-combo=\"{{COMBO_2}}\" data-price=\"{{COMBO_2_PRICE}}\">Order Combo</button>\n                        </div>\n                    </div>\n                    \n                    <div class=\"combo-card-mobile\">\n                        <div class=\"combo-badge-mobile\">FAMILY</div>\n                        <img src=\"{{COMBO_IMAGE_3}}\" alt=\"{{COMBO_3}}\" class=\"combo-image-mobile\">\n                        <div class=\"combo-content-mobile\">\n                            <div class=\"combo-title-mobile\">{{COMBO_3}}</div>\n                            <div class=\"combo-items-mobile\">{{COMBO_3_ITEMS}}</div>\n                            <div class=\"combo-pricing-mobile\">\n                                <span class=\"combo-original-price\">${{COMBO_3_ORIGINAL}}</span>\n                                <span class=\"combo-deal-price\">${{COMBO_3_PRICE}}</span>\n                                <span class=\"combo-savings\">Save ${{COMBO_3_SAVINGS}}</span>\n                            </div>\n                            <button class=\"order-combo\" data-combo=\"{{COMBO_3}}\" data-price=\"{{COMBO_3_PRICE}}\">Order Combo</button>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </section>\n    </div>\n\n    <!-- Floating Cart -->\n    <div class=\"floating-cart\" id=\"floating-cart\">\n        <span>🛒</span>\n        <span class=\"cart-count\" id=\"cart-count\">0</span>\n        <span>View Cart</span>\n    </div>\n\n    <script src=\"script.js\"></script>\n    <script>\n        // Mobile menu specific functionality\n        let cartItems = [];\n        let cartTotal = 0;\n\n        // Quick order functionality\n        document.querySelectorAll('.quick-item').forEach(item => {\n            item.addEventListener('click', function() {\n                const itemName = this.dataset.item;\n                const itemPrice = parseFloat(this.dataset.price);\n                addToCart(itemName, itemPrice);\n            });\n        });\n\n        // Add to order buttons\n        document.querySelectorAll('.add-to-order').forEach(btn => {\n            btn.addEventListener('click', function() {\n                const itemName = this.dataset.item;\n                const itemPrice = parseFloat(this.dataset.price);\n                addToCart(itemName, itemPrice);\n            });\n        });\n\n        // Order combo buttons\n        document.querySelectorAll('.order-combo').forEach(btn => {\n            btn.addEventListener('click', function() {\n                const comboName = this.dataset.combo;\n                const comboPrice = parseFloat(this.dataset.price);\n                addToCart(comboName, comboPrice);\n            });\n        });\n\n        function addToCart(itemName, price) {\n            // Add item to cart array\n            cartItems.push({ name: itemName, price: price });\n            cartTotal += price;\n            \n            // Update cart UI\n            updateCartDisplay();\n            \n            // Show success notification\n            showNotification(`${itemName} added to cart!`, 'success');\n            \n            // Add visual feedback to button\n            const buttons = document.querySelectorAll(`[data-item=\"${itemName}\"], [data-combo=\"${itemName}\"]`);\n            buttons.forEach(btn => {\n                const originalText = btn.textContent;\n                btn.textContent = 'Added!';\n                btn.style.background = 'var(--accent-color)';\n                \n                setTimeout(() => {\n                    btn.textContent = originalText;\n                    btn.style.background = '';\n                }, 1000);\n            });\n        }\n\n        function updateCartDisplay() {\n            const cartElement = document.getElementById('floating-cart');\n            const cartCountElement = document.getElementById('cart-count');\n            \n            if (cartItems.length > 0) {\n                cartElement.classList.add('show');\n                cartCountElement.textContent = cartItems.length;\n            } else {\n                cartElement.classList.remove('show');\n            }\n        }\n\n        // Floating cart click\n        document.getElementById('floating-cart').addEventListener('click', function() {\n            if (cartItems.length > 0) {\n                showCartSummary();\n            }\n        });\n\n        function showCartSummary() {\n            let cartSummary = 'Your Cart:\\n\\n';\n            cartItems.forEach(item => {\n                cartSummary += `${item.name} - $${item.price.toFixed(2)}\\n`;\n            });\n            cartSummary += `\\nTotal: $${cartTotal.toFixed(2)}`;\n            cartSummary += '\\n\\nReady to checkout?';\n            \n            if (confirm(cartSummary)) {\n                // Proceed to checkout\n                showNotification('Redirecting to checkout...', 'info');\n                // Here you would typically redirect to a checkout page\n            }\n        }\n\n        // Initialize cart display\n        updateCartDisplay();\n    </script>\n</body>\n</html>
