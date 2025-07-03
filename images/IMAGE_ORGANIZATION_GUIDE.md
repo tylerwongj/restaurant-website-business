@@ -1,7 +1,8 @@
 # Restaurant Image Library Organization Guide
 
 ## Overview
-**Total Images**: 334 organized restaurant images  
+**Total Images**: 644 organized restaurant images  
+**Added**: 310+ new commercial-use images from Unsplash, Pexels, and FoodiesFeed  
 **Removed**: 33 non-restaurant images  
 **Client Images**: 9 relocated to client projects  
 
