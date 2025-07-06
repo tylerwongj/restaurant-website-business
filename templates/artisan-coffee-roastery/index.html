@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Artisan Coffee Roastery</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="color-roasted">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#roasting">Our Process</a></li>
+                <li><a href="#coffee">Coffee Menu</a></li>
+                <li><a href="#origins">Bean Origins</a></li>
+                <li><a href="#visit">Visit Us</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>{{RESTAURANT_NAME}}</h1>
+                <p class="hero-subtitle">{{TAGLINE}}</p>
+                <p class="hero-description">Freshly roasted, ethically sourced, perfectly brewed</p>
+                <div class="hero-buttons">
+                    <a href="#coffee" class="btn btn-primary">Explore Coffee</a>
+                    <a href="#roasting" class="btn btn-secondary">Our Process</a>
+                </div>
+            </div>
+            <div class="coffee-animation">
+                <div class="coffee-bean bean1"></div>
+                <div class="coffee-bean bean2"></div>
+                <div class="coffee-bean bean3"></div>
+                <div class="coffee-steam steam1"></div>
+                <div class="coffee-steam steam2"></div>
+                <div class="coffee-steam steam3"></div>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="{{HERO_IMAGE}}" alt="{{RESTAURANT_NAME}}">
+        </div>
+    </section>
+
+    <!-- Roasting Process Section -->
+    <section id="roasting" class="roasting-process">
+        <div class="container">
+            <div class="section-header">
+                <h2>From Bean to Cup</h2>
+                <p class="section-subtitle">Our artisan roasting process brings out the unique character of every bean</p>
+            </div>
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-number">01</div>
+                    <div class="step-icon">🌱</div>
+                    <h3>Sourcing</h3>
+                    <p>Direct trade relationships with farmers worldwide ensure ethical sourcing and premium quality</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">02</div>
+                    <div class="step-icon">🔍</div>
+                    <h3>Cupping</h3>
+                    <p>Professional cupping sessions to profile flavor notes and determine optimal roasting parameters</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">03</div>
+                    <div class="step-icon">🔥</div>
+                    <h3>Roasting</h3>
+                    <p>Small-batch roasting using traditional methods to develop complex flavors and aromas</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">04</div>
+                    <div class="step-icon">☕</div>
+                    <h3>Brewing</h3>
+                    <p>Expert baristas craft each cup using precision techniques and premium equipment</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coffee Menu Section -->
+    <section id="coffee" class="coffee-menu">
+        <div class="container">
+            <h2>Our Coffee Menu</h2>
+            <div class="menu-tabs">
+                <button class="tab-btn active" data-tab="espresso">Espresso Drinks</button>
+                <button class="tab-btn" data-tab="pour-over">Pour Over</button>
+                <button class="tab-btn" data-tab="cold-brew">Cold Brew</button>
+                <button class="tab-btn" data-tab="pastries">Pastries</button>
+            </div>
+            
+            <div class="tab-content active" id="espresso">
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="{{FOOD_IMAGE_1}}" alt="{{MENU_ITEM_1}}">
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>{{MENU_ITEM_1}}</h3>
+                            <p>{{MENU_DESCRIPTION_1}}</p>
+                            <div class="menu-sizes">
+                                <span class="size">Small $4.50</span>
+                                <span class="size">Large ${{PRICE_1}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="{{FOOD_IMAGE_2}}" alt="{{MENU_ITEM_2}}">
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>{{MENU_ITEM_2}}</h3>
+                            <p>{{MENU_DESCRIPTION_2}}</p>
+                            <div class="menu-sizes">
+                                <span class="size">12oz ${{PRICE_2}}</span>
+                                <span class="size">16oz $6.50</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="{{FOOD_IMAGE_3}}" alt="{{MENU_ITEM_3}}">
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>{{MENU_ITEM_3}}</h3>
+                            <p>{{MENU_DESCRIPTION_3}}</p>
+                            <div class="menu-sizes">
+                                <span class="size">12oz ${{PRICE_3}}</span>
+                                <span class="size">16oz $7.25</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="pour-over">
+                <div class="pour-over-selection">
+                    <h3>Single Origin Selection</h3>
+                    <p>Choose from our rotating selection of single-origin coffees, each with unique flavor profiles</p>
+                    <div class="origin-cards">
+                        <div class="origin-card">
+                            <h4>Ethiopian Yirgacheffe</h4>
+                            <p>Bright, floral, citrus notes</p>
+                            <span class="price">$8.00</span>
+                        </div>
+                        <div class="origin-card">
+                            <h4>Colombian Huila</h4>
+                            <p>Balanced, chocolate, caramel</p>
+                            <span class="price">$7.50</span>
+                        </div>
+                        <div class="origin-card">
+                            <h4>Guatemalan Antigua</h4>
+                            <p>Full-bodied, spicy, smoky</p>
+                            <span class="price">$8.50</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="cold-brew">
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>Classic Cold Brew</h3>
+                            <p>Smooth, low-acid cold brew steeped for 20 hours</p>
+                            <div class="menu-sizes">
+                                <span class="size">12oz $4.50</span>
+                                <span class="size">16oz $5.50</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h3>Nitro Cold Brew</h3>
+                            <p>Creamy nitrogen-infused cold brew on tap</p>
+                            <div class="menu-sizes">
+                                <span class="size">12oz $5.00</span>
+                                <span class="size">16oz $6.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="pastries">
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="{{FOOD_IMAGE_4}}" alt="{{MENU_ITEM_4}}">
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>{{MENU_ITEM_4}}</h3>
+                            <p>{{MENU_DESCRIPTION_4}}</p>
+                            <span class="price">${{PRICE_4}}</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="{{FOOD_IMAGE_5}}" alt="{{MENU_ITEM_5}}">
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>{{MENU_ITEM_5}}</h3>
+                            <p>{{MENU_DESCRIPTION_5}}</p>
+                            <span class="price">${{PRICE_5}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bean Origins Section -->
+    <section id="origins" class="bean-origins">
+        <div class="container">
+            <h2>Our Bean Origins</h2>
+            <p class="section-subtitle">Direct trade partnerships with coffee farms around the world</p>
+            <div class="origins-map">
+                <div class="origin-point" data-country="ethiopia">
+                    <div class="point"></div>
+                    <div class="origin-info">
+                        <h4>Ethiopia</h4>
+                        <p>Birthplace of coffee, bright and floral</p>
+                    </div>
+                </div>
+                <div class="origin-point" data-country="colombia">
+                    <div class="point"></div>
+                    <div class="origin-info">
+                        <h4>Colombia</h4>
+                        <p>Balanced acidity, chocolate notes</p>
+                    </div>
+                </div>
+                <div class="origin-point" data-country="guatemala">
+                    <div class="point"></div>
+                    <div class="origin-info">
+                        <h4>Guatemala</h4>
+                        <p>Full-bodied, spicy and complex</p>
+                    </div>
+                </div>
+                <div class="origin-point" data-country="brazil">
+                    <div class="point"></div>
+                    <div class="origin-info">
+                        <h4>Brazil</h4>
+                        <p>Nutty, low acidity, perfect for espresso</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="coffee-experience">
+        <div class="container">
+            <div class="experience-content">
+                <div class="experience-text">
+                    <h2>The Coffee Experience</h2>
+                    <p class="lead">{{ABOUT_DESCRIPTION}}</p>
+                    <div class="experience-features">
+                        <div class="feature">
+                            <div class="feature-icon">👨‍🍳</div>
+                            <h4>Master Roasters</h4>
+                            <p>Certified Q Graders with years of expertise</p>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">🌿</div>
+                            <h4>Sustainable Sourcing</h4>
+                            <p>Direct trade and organic certifications</p>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">⚡</div>
+                            <h4>Fresh Daily</h4>
+                            <p>Roasted daily in small batches</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="experience-image">
+                    <img src="{{INTERIOR_IMAGE_1}}" alt="Coffee Roastery">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visit Us Section -->
+    <section id="visit" class="visit-us">
+        <div class="container">
+            <div class="visit-content">
+                <div class="visit-info">
+                    <h2>Visit Our Roastery</h2>
+                    <p class="lead">Experience the art of coffee roasting firsthand</p>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div class="contact-text">
+                                <h4>Location</h4>
+                                <p>{{FULL_ADDRESS}}</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div class="contact-text">
+                                <h4>Phone</h4>
+                                <p><a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">🕐</div>
+                            <div class="contact-text">
+                                <h4>Hours</h4>
+                                <p>{{WEEKDAY_HOURS}}</p>
+                                <p>{{WEEKEND_HOURS}}</p>
+                                <p>{{SUNDAY_HOURS}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="special-events">
+                        <h4>Special Experiences</h4>
+                        <ul>
+                            <li>🎓 Coffee cupping classes every Saturday</li>
+                            <li>🔥 Roastery tours daily at 2 PM</li>
+                            <li>☕ Latte art workshops monthly</li>
+                            <li>🌱 Bean sourcing talks quarterly</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Get In Touch</h3>
+                    <form>
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <select>
+                            <option value="">Interested In...</option>
+                            <option value="wholesale">Wholesale Accounts</option>
+                            <option value="classes">Coffee Classes</option>
+                            <option value="tours">Roastery Tours</option>
+                            <option value="events">Private Events</option>
+                            <option value="general">General Inquiry</option>
+                        </select>
+                        <textarea placeholder="Your Message" rows="4" required></textarea>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>{{RESTAURANT_NAME}}</h4>
+                    <p>{{TAGLINE}}</p>
+                    <div class="coffee-stats">
+                        <div class="stat">
+                            <strong>500+</strong>
+                            <span>Cups Daily</span>
+                        </div>
+                        <div class="stat">
+                            <strong>15</strong>
+                            <span>Origin Countries</span>
+                        </div>
+                        <div class="stat">
+                            <strong>2018</strong>
+                            <span>Since</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Our Journey</h4>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}" target="_blank">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}" target="_blank">Instagram</a>
+                        <a href="{{YELP_URL}}" target="_blank">Yelp</a>
+                    </div>
+                    <div class="newsletter">
+                        <h5>Coffee Updates</h5>
+                        <div class="newsletter-form">
+                            <input type="email" placeholder="Your email">
+                            <button type="submit">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#coffee">Coffee Menu</a></li>
+                        <li><a href="#origins">Bean Origins</a></li>
+                        <li><a href="#roasting">Our Process</a></li>
+                        <li><a href="#visit">Visit Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Premium Steakhouse</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="theme-bold">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+                <span class="logo-text">{{RESTAURANT_NAME}}</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#steaks">Prime Cuts</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#wine">Wine Cellar</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="tel:{{PHONE}}" class="btn btn-primary">Reserve Now</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <img src="{{HERO_IMAGE}}" alt="{{RESTAURANT_NAME}} Steakhouse">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>{{RESTAURANT_NAME}}</h1>
+                <p class="hero-subtitle">{{TAGLINE}}</p>
+                <p class="hero-description">{{DESCRIPTION}}</p>
+                <div class="hero-buttons">
+                    <a href="#steaks" class="btn btn-primary">Prime Selection</a>
+                    <a href="#wine" class="btn btn-outline">Wine Cellar</a>
+                </div>
+            </div>
+            <div class="hero-badge">
+                <div class="badge-content">
+                    <span class="badge-text">USDA Prime</span>
+                    <span class="badge-subtext">Certified</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prime Cuts Section -->
+    <section id="steaks" class="prime-cuts">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Prime Selection</span>
+                <h2>The Finest Cuts</h2>
+                <p>Hand-selected USDA Prime beef, aged to perfection</p>
+            </div>
+            <div class="cuts-grid">
+                <div class="cut-item">
+                    <div class="cut-image">
+                        <img src="{{STEAK_IMAGE_1}}" alt="Ribeye Steak">
+                        <div class="cut-badge">Most Popular</div>
+                    </div>
+                    <div class="cut-content">
+                        <h3>{{CUT_NAME_1}}</h3>
+                        <p class="cut-description">{{CUT_DESCRIPTION_1}}</p>
+                        <div class="cut-details">
+                            <span class="cut-weight">{{CUT_WEIGHT_1}}</span>
+                            <span class="cut-price">${{CUT_PRICE_1}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cut-item">
+                    <div class="cut-image">
+                        <img src="{{STEAK_IMAGE_2}}" alt="Filet Mignon">
+                    </div>
+                    <div class="cut-content">
+                        <h3>{{CUT_NAME_2}}</h3>
+                        <p class="cut-description">{{CUT_DESCRIPTION_2}}</p>
+                        <div class="cut-details">
+                            <span class="cut-weight">{{CUT_WEIGHT_2}}</span>
+                            <span class="cut-price">${{CUT_PRICE_2}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cut-item">
+                    <div class="cut-image">
+                        <img src="{{STEAK_IMAGE_3}}" alt="New York Strip">
+                    </div>
+                    <div class="cut-content">
+                        <h3>{{CUT_NAME_3}}</h3>
+                        <p class="cut-description">{{CUT_DESCRIPTION_3}}</p>
+                        <div class="cut-details">
+                            <span class="cut-weight">{{CUT_WEIGHT_3}}</span>
+                            <span class="cut-price">${{CUT_PRICE_3}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="aging-info">
+                <div class="aging-text">
+                    <h3>Dry-Aged Excellence</h3>
+                    <p>Our steaks are dry-aged for {{AGING_DAYS}} days in our on-site aging room, concentrating flavors and ensuring optimal tenderness.</p>
+                </div>
+                <div class="aging-features">
+                    <div class="aging-feature">
+                        <span class="feature-number">{{AGING_DAYS}}</span>
+                        <span class="feature-label">Days Aged</span>
+                    </div>
+                    <div class="aging-feature">
+                        <span class="feature-number">{{AGING_TEMP}}°F</span>
+                        <span class="feature-label">Temperature</span>
+                    </div>
+                    <div class="aging-feature">
+                        <span class="feature-number">{{AGING_HUMIDITY}}%</span>
+                        <span class="feature-label">Humidity</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Showcase -->
+    <section id="menu" class="menu-showcase">
+        <div class="container">
+            <div class="menu-header">
+                <h2>Beyond the Steak</h2>
+                <p>Expertly crafted sides and appetizers to complement your meal</p>
+            </div>
+            <div class="menu-categories">
+                <div class="menu-category">
+                    <h3>Signature Appetizers</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="menu-item-content">
+                                <h4>{{APPETIZER_1}}</h4>
+                                <p>{{APPETIZER_DESCRIPTION_1}}</p>
+                            </div>
+                            <span class="menu-price">${{APPETIZER_PRICE_1}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-content">
+                                <h4>{{APPETIZER_2}}</h4>
+                                <p>{{APPETIZER_DESCRIPTION_2}}</p>
+                            </div>
+                            <span class="menu-price">${{APPETIZER_PRICE_2}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-content">
+                                <h4>{{APPETIZER_3}}</h4>
+                                <p>{{APPETIZER_DESCRIPTION_3}}</p>
+                            </div>
+                            <span class="menu-price">${{APPETIZER_PRICE_3}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-category">
+                    <h3>Premium Sides</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="menu-item-content">
+                                <h4>{{SIDE_1}}</h4>
+                                <p>{{SIDE_DESCRIPTION_1}}</p>
+                            </div>
+                            <span class="menu-price">${{SIDE_PRICE_1}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-content">
+                                <h4>{{SIDE_2}}</h4>
+                                <p>{{SIDE_DESCRIPTION_2}}</p>
+                            </div>
+                            <span class="menu-price">${{SIDE_PRICE_2}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-content">
+                                <h4>{{SIDE_3}}</h4>
+                                <p>{{SIDE_DESCRIPTION_3}}</p>
+                            </div>
+                            <span class="menu-price">${{SIDE_PRICE_3}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-cta">
+                <a href="menu.html" class="btn btn-primary">Complete Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wine Cellar Section -->
+    <section id="wine" class="wine-cellar">
+        <div class="container">
+            <div class="wine-content">
+                <div class="wine-text">
+                    <span class="section-label">Wine Collection</span>
+                    <h2>Award-Winning Cellar</h2>
+                    <p>{{WINE_DESCRIPTION}}</p>
+                    <div class="wine-stats">
+                        <div class="wine-stat">
+                            <span class="stat-number">{{WINE_BOTTLES}}</span>
+                            <span class="stat-label">Wine Selection</span>
+                        </div>
+                        <div class="wine-stat">
+                            <span class="stat-number">{{WINE_COUNTRIES}}</span>
+                            <span class="stat-label">Countries</span>
+                        </div>
+                        <div class="wine-stat">
+                            <span class="stat-number">{{WINE_AWARDS}}</span>
+                            <span class="stat-label">Awards</span>
+                        </div>
+                    </div>
+                    <div class="wine-features">
+                        <div class="wine-feature">
+                            <h4>🍷 Sommelier Curated</h4>
+                            <p>Hand-selected by our certified sommelier</p>
+                        </div>
+                        <div class="wine-feature">
+                            <h4>🏆 Award Winners</h4>
+                            <p>Multiple Wine Spectator awards</p>
+                        </div>
+                        <div class="wine-feature">
+                            <h4>📚 Perfect Pairings</h4>
+                            <p>Expert recommendations for every cut</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="wine-image">
+                    <img src="{{WINE_CELLAR_IMAGE}}" alt="Wine Cellar">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="{{INTERIOR_IMAGE}}" alt="{{RESTAURANT_NAME}} Interior">
+                </div>
+                <div class="about-text">
+                    <span class="section-label">Our Story</span>
+                    <h2>Urban Steakhouse Excellence</h2>
+                    <p>{{ABOUT_DESCRIPTION}}</p>
+                    <div class="about-highlights">
+                        <div class="highlight">
+                            <h4>Executive Chef {{CHEF_NAME}}</h4>
+                            <p>{{CHEF_EXPERIENCE}} years of culinary mastery</p>
+                        </div>
+                        <div class="highlight">
+                            <h4>Since {{ESTABLISHED_YEAR}}</h4>
+                            <p>Serving premium steaks in the heart of the city</p>
+                        </div>
+                        <div class="highlight">
+                            <h4>Private Dining</h4>
+                            <p>Exclusive rooms for special occasions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservations -->
+    <section class="reservations">
+        <div class="container">
+            <div class="reservations-header">
+                <h2>Reserve Your Table</h2>
+                <p>Secure your spot for an unforgettable steakhouse experience</p>
+            </div>
+            <div class="reservations-content">
+                <div class="reservation-info">
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <h4>Prime Time</h4>
+                            <p>7:00 PM - 9:00 PM</p>
+                            <span>Most popular seating</span>
+                        </div>
+                        <div class="info-card">
+                            <h4>Happy Hour</h4>
+                            <p>5:00 PM - 7:00 PM</p>
+                            <span>Bar seating available</span>
+                        </div>
+                        <div class="info-card">
+                            <h4>Private Dining</h4>
+                            <p>By appointment</p>
+                            <span>Groups of 8-20</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="reservation-form">
+                    <form action="#" method="POST">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" name="name" placeholder="Full Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder="Email" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="tel" name="phone" placeholder="Phone" required>
+                            </div>
+                            <div class="form-group">
+                                <select name="party_size" required>
+                                    <option value="">Party Size</option>
+                                    <option value="2">2 Guests</option>
+                                    <option value="4">4 Guests</option>
+                                    <option value="6">6 Guests</option>
+                                    <option value="8">8+ Guests</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="date" name="date" required>
+                            </div>
+                            <div class="form-group">
+                                <select name="time" required>
+                                    <option value="">Preferred Time</option>
+                                    <option value="17:00">5:00 PM</option>
+                                    <option value="17:30">5:30 PM</option>
+                                    <option value="18:00">6:00 PM</option>
+                                    <option value="18:30">6:30 PM</option>
+                                    <option value="19:00">7:00 PM</option>
+                                    <option value="19:30">7:30 PM</option>
+                                    <option value="20:00">8:00 PM</option>
+                                    <option value="20:30">8:30 PM</option>
+                                    <option value="21:00">9:00 PM</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <select name="occasion">
+                                <option value="">Special Occasion (Optional)</option>
+                                <option value="birthday">Birthday</option>
+                                <option value="anniversary">Anniversary</option>
+                                <option value="business">Business Dinner</option>
+                                <option value="celebration">Celebration</option>
+                                <option value="date">Date Night</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="special_requests" placeholder="Special requests or dietary restrictions" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Reserve Table</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Hours -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Location & Hours</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div class="contact-text">
+                                <p>{{FULL_ADDRESS}}</p>
+                                <a href="{{GOOGLE_MAPS_URL}}" class="contact-link">Get Directions</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div class="contact-text">
+                                <p><a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+                                <span>Reservations & Private Dining</span>
+                            </div>
+                        </div>
+                        <div class="hours-section">
+                            <h4>Operating Hours</h4>
+                            <div class="hours-list">
+                                <div class="hours-item">
+                                    <span>Monday - Thursday</span>
+                                    <span>{{WEEKDAY_HOURS}}</span>
+                                </div>
+                                <div class="hours-item">
+                                    <span>Friday - Saturday</span>
+                                    <span>{{WEEKEND_HOURS}}</span>
+                                </div>
+                                <div class="hours-item">
+                                    <span>Sunday</span>
+                                    <span>{{SUNDAY_HOURS}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-map">
+                    <iframe 
+                        src="{{GOOGLE_MAPS_EMBED}}" 
+                        width="100%" 
+                        height="400" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}}" class="footer-logo">
+                    <h4>{{RESTAURANT_NAME}}</h4>
+                    <p>{{TAGLINE}}</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Experience</h4>
+                    <ul>
+                        <li><a href="#steaks">Prime Cuts</a></li>
+                        <li><a href="#menu">Full Menu</a></li>
+                        <li><a href="#wine">Wine Cellar</a></li>
+                        <li><a href="#contact">Private Dining</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>{{FULL_ADDRESS}}</p>
+                    <p>{{PHONE}}</p>
+                    <p>{{EMAIL}}</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="{{INSTAGRAM_URL}}" class="social-link">Instagram</a>
+                        <a href="{{FACEBOOK_URL}}" class="social-link">Facebook</a>
+                        <a href="{{YELP_URL}}" class="social-link">Yelp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

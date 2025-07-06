@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - {{RESTAURANT_NAME}}</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} Menu - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .menu-hero {
+            background: linear-gradient(135deg, var(--bg-light) 0%, rgba(252, 165, 165, 0.1) 100%);
+            padding: 150px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .menu-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="%23ec4899" opacity="0.1"/></svg>') repeat;
+            animation: float 20s linear infinite;
+        }
+        
+        .menu-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .menu-hero h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .menu-hero p {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+        
+        .menu-hero-divider {
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            margin: 2rem auto;
+            border-radius: 2px;
+        }
+        
+        .menu-section {
+            padding: 80px 0;
+        }
+        
+        .menu-section:nth-child(even) {
+            background: var(--bg-light);
+        }
+        
+        .menu-category {
+            margin-bottom: 4rem;
+        }
+        
+        .menu-category:last-child {
+            margin-bottom: 0;
+        }
+        
+        .menu-category h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .menu-category h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+        
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .menu-item-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px var(--shadow-color);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .menu-item-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px var(--shadow-color);
+        }
+        
+        .menu-item-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .menu-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .menu-item-card:hover .menu-item-image img {
+            transform: scale(1.1);
+        }
+        
+        .menu-item-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--accent-color);
+            color: var(--primary-color);
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        
+        .menu-item-content {
+            padding: 2rem;
+        }
+        
+        .menu-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        
+        .menu-item-card h3 {
+            font-size: 1.4rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        
+        .menu-item-price {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            min-width: 80px;
+            text-align: right;
+        }
+        
+        .menu-item-description {
+            color: var(--text-light);
+            line-height: 1.6;
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .menu-item-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .order-btn {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .order-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(124, 45, 146, 0.4);
+        }
+        
+        .back-to-home {
+            position: fixed;
+            top: 100px;
+            left: 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            z-index: 100;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.9rem;
+        }
+        
+        .back-to-home:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(124, 45, 146, 0.4);
+        }
+        
+        .menu-special-note {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 4rem auto;
+            max-width: 800px;
+        }
+        
+        .menu-special-note h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .menu-special-note p {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .menu-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .menu-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .menu-item-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .menu-item-price {
+                text-align: left;
+                margin-top: 0.5rem;
+            }
+            
+            .back-to-home {
+                position: static;
+                display: inline-block;
+                margin: 20px auto;
+                text-align: center;
+            }
+            
+            .menu-hero {
+                padding: 120px 20px 80px;
+            }
+            
+            .menu-section {
+                padding: 60px 20px;
+            }
+            
+            .menu-item-card {
+                margin: 0 10px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .menu-item-footer {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: flex-start;
+            }
+            
+            .order-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body class="color-scheme-bold">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+                <span class="logo-text">{{RESTAURANT_NAME}}</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <a href="index.html" class="back-to-home">← Home</a>
+
+    <!-- Menu Hero -->
+    <section class="menu-hero">
+        <div class="container">
+            <div class="menu-hero-content">
+                <h1>Our Menu</h1>
+                <div class="menu-hero-divider"></div>
+                <p>Discover our delicious selection of handcrafted dishes</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appetizers -->
+    <section class="menu-section" id="menu">
+        <div class="container">
+            <div class="menu-category">
+                <h2>Appetizers</h2>
+                <div class="menu-grid">
+                    <div class="menu-item-card">
+                        <div class="menu-item-image">
+                            <img src="{{FOOD_IMAGE_4}}" alt="{{MENU_ITEM_4}}">
+                            <div class="menu-item-badge">Popular</div>
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div>
+                                    <h3>{{MENU_ITEM_4}}</h3>
+                                    <p class="menu-item-description">{{MENU_DESCRIPTION_4}}</p>
+                                </div>
+                                <div class="menu-item-price">${{PRICE_4}}</div>
+                            </div>
+                            <div class="menu-item-footer">
+                                <button class="order-btn">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-image">
+                            <img src="{{FOOD_IMAGE_12}}" alt="{{MENU_ITEM_12}}">
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div>
+                                    <h3>{{MENU_ITEM_12}}</h3>
+                                    <p class="menu-item-description">{{MENU_DESCRIPTION_12}}</p>
+                                </div>
+                                <div class="menu-item-price">${{PRICE_12}}</div>
+                            </div>
+                            <div class="menu-item-footer">
+                                <button class="order-btn">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Courses -->
+    <section class="menu-section">
+        <div class="container">
+            <div class="menu-category">
+                <h2>Main Courses</h2>
+                <div class="menu-grid">
+                    <div class="menu-item-card">
+                        <div class="menu-item-image">
+                            <img src="{{FOOD_IMAGE_1}}" alt="{{MENU_ITEM_1}}">
+                            <div class="menu-item-badge">Chef's Choice</div>
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div>
+                                    <h3>{{MENU_ITEM_1}}</h3>
+                                    <p class="menu-item-description">{{MENU_DESCRIPTION_1}}</p>
+                                </div>
+                                <div class="menu-item-price">${{PRICE_1}}</div>
+                            </div>
+                            <div class="menu-item-footer">
+                                <button class="order-btn">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-image">
+                            <img src="{{FOOD_IMAGE_2}}" alt="{{MENU_ITEM_2}}">
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div>
+                                    <h3>{{MENU_ITEM_2}}</h3>
+                                    <p class="menu-item-description">{{MENU_DESCRIPTION_2}}</p>
+                                </div>
+                                <div class="menu-item-price">${{PRICE_2}}</div>
+                            </div>
+                            <div class="menu-item-footer">
+                                <button class="order-btn">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-image">
+                            <img src="{{FOOD_IMAGE_5}}" alt="{{MENU_ITEM_5}}">
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div>
+                                    <h3>{{MENU_ITEM_5}}</h3>
+                                    <p class="menu-item-description">{{MENU_DESCRIPTION_5}}</p>
+                                </div>
+                                <div class="menu-item-price">${{PRICE_5}}</div>
+                            </div>
+                            <div class="menu-item-footer">
+                                <button class="order-btn">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-image">
+                            <img src="{{FOOD_IMAGE_6}}" alt="{{MENU_ITEM_6}}">
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div>
+                                    <h3>{{MENU_ITEM_6}}</h3>
+                                    <p class="menu-item-description">{{MENU_DESCRIPTION_6}}</p>
+                                </div>
+                                <div class="menu-item-price">${{PRICE_6}}</div>
+                            </div>
+                            <div class="menu-item-footer">
+                                <button class="order-btn">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-image">
+                            <img src="{{FOOD_IMAGE_7}}" alt="{{MENU_ITEM_7}}">
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div>
+                                    <h3>{{MENU_ITEM_7}}</h3>
+                                    <p class="menu-item-description">{{MENU_DESCRIPTION_7}}</p>
+                                </div>
+                                <div class="menu-item-price">${{PRICE_7}}</div>
+                            </div>
+                            <div class="menu-item-footer">
+                                <button class="order-btn">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-image">
+                            <img src="{{FOOD_IMAGE_8}}" alt="{{MENU_ITEM_8}}">
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div>
+                                    <h3>{{MENU_ITEM_8}}</h3>
+                                    <p class="menu-item-description">{{MENU_DESCRIPTION_8}}</p>
+                                </div>
+                                <div class="menu-item-price">${{PRICE_8}}</div>
+                            </div>
+                            <div class="menu-item-footer">
+                                <button class="order-btn">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-image">
+                            <img src="{{FOOD_IMAGE_9}}" alt="{{MENU_ITEM_9}}">
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div>
+                                    <h3>{{MENU_ITEM_9}}</h3>
+                                    <p class="menu-item-description">{{MENU_DESCRIPTION_9}}</p>
+                                </div>
+                                <div class="menu-item-price">${{PRICE_9}}</div>
+                            </div>
+                            <div class="menu-item-footer">
+                                <button class="order-btn">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pizza -->
+    <section class="menu-section">
+        <div class="container">
+            <div class="menu-category">
+                <h2>Pizza</h2>
+                <div class="menu-grid">
+                    <div class="menu-item-card">
+                        <div class="menu-item-image">
+                            <img src="{{FOOD_IMAGE_3}}" alt="{{MENU_ITEM_3}}">
+                            <div class="menu-item-badge">Classic</div>
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div>
+                                    <h3>{{MENU_ITEM_3}}</h3>
+                                    <p class="menu-item-description">{{MENU_DESCRIPTION_3}}</p>
+                                </div>
+                                <div class="menu-item-price">${{PRICE_3}}</div>
+                            </div>
+                            <div class="menu-item-footer">
+                                <button class="order-btn">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item-card">
+                        <div class="menu-item-image">
+                            <img src="{{FOOD_IMAGE_10}}" alt="{{MENU_ITEM_10}}">
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div>
+                                    <h3>{{MENU_ITEM_10}}</h3>
+                                    <p class="menu-item-description">{{MENU_DESCRIPTION_10}}</p>
+                                </div>
+                                <div class="menu-item-price">${{PRICE_10}}</div>
+                            </div>
+                            <div class="menu-item-footer">
+                                <button class="order-btn">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Desserts -->
+    <section class="menu-section">
+        <div class="container">
+            <div class="menu-category">
+                <h2>Desserts</h2>
+                <div class="menu-grid">
+                    <div class="menu-item-card">
+                        <div class="menu-item-image">
+                            <img src="{{FOOD_IMAGE_11}}" alt="{{MENU_ITEM_11}}">
+                            <div class="menu-item-badge">Sweet</div>
+                        </div>
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div>
+                                    <h3>{{MENU_ITEM_11}}</h3>
+                                    <p class="menu-item-description">{{MENU_DESCRIPTION_11}}</p>
+                                </div>
+                                <div class="menu-item-price">${{PRICE_11}}</div>
+                            </div>
+                            <div class="menu-item-footer">
+                                <button class="order-btn">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-special-note">
+                    <h3>Special Dietary Options</h3>
+                    <p>We offer gluten-free, vegan, and vegetarian options for most menu items. Please inform our staff of any allergies or dietary restrictions when ordering.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" style="padding: 80px 0;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Order Today</h2>
+                <p>Ready to taste our amazing food?</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-card">
+                        <div class="info-icon">📞</div>
+                        <h4>Call for Takeout</h4>
+                        <p><a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+                        <a href="tel:{{PHONE}}" class="info-link">Call Now</a>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">📍</div>
+                        <h4>Visit Our Location</h4>
+                        <p>{{FULL_ADDRESS}}</p>
+                        <a href="{{GOOGLE_MAPS_URL}}" target="_blank" class="info-link">Get Directions</a>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">🕒</div>
+                        <h4>Hours</h4>
+                        <p>{{WEEKDAY_HOURS}}</p>
+                        <p>{{WEEKEND_HOURS}}</p>
+                        <p>{{SUNDAY_HOURS}}</p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Send Us Your Order</h3>
+                    <p>Fill out this form and we'll call you back to confirm your order!</p>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email Address">
+                        </div>
+                        <div class="form-group">
+                            <select required>
+                                <option value="">Order Type</option>
+                                <option value="pickup">Pickup</option>
+                                <option value="delivery">Delivery</option>
+                                <option value="dine-in">Dine In</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Order Details" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit Order Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h4>{{RESTAURANT_NAME}}</h4>
+                    <p>{{DESCRIPTION}}</p>
+                </div>
+                <div class="footer-info">
+                    <h5>Contact</h5>
+                    <p>{{FULL_ADDRESS}}</p>
+                    <p>{{PHONE}}</p>
+                    <p>{{EMAIL}}</p>
+                </div>
+                <div class="footer-hours">
+                    <h5>Hours</h5>
+                    <p>{{WEEKDAY_HOURS}}</p>
+                    <p>{{WEEKEND_HOURS}}</p>
+                    <p>{{SUNDAY_HOURS}}</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Add to order functionality
+        document.querySelectorAll('.order-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const card = this.closest('.menu-item-card');
+                const itemName = card.querySelector('h3').textContent;
+                const itemPrice = card.querySelector('.menu-item-price').textContent;
+                
+                this.textContent = 'Added!';
+                this.style.background = '#10b981';
+                
+                setTimeout(() => {
+                    this.textContent = 'Add to Order';
+                    this.style.background = '';
+                }, 1500);
+                
+                console.log(`Added to order: ${itemName} - ${itemPrice}`);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Complete Spanish Menu</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - Complete authentic Spanish tapas and paella menu">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 80px;
+        }
+        
+        .menu-hero {
+            background: linear-gradient(135deg, var(--background-warm), var(--background-section));
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .menu-hero::before {
+            content: '🇪🇸';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 3rem;
+            opacity: 0.3;
+        }
+        
+        .menu-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+        
+        .menu-hero p {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+        
+        .menu-content {
+            padding: 80px 0;
+            background: var(--background-light);
+        }
+        
+        .menu-section {
+            margin-bottom: 80px;
+        }
+        
+        .menu-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            text-align: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .section-icon {
+            font-size: 1.5rem;
+        }
+        
+        .menu-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--spanish-red), var(--spanish-gold));
+            border-radius: 2px;
+        }
+        
+        .section-description {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+        
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+        }
+        
+        .menu-item-detailed {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        
+        .menu-item-detailed:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        .menu-item-detailed img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        
+        .menu-item-content {
+            padding: 25px;
+        }
+        
+        .menu-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+        
+        .menu-item-detailed h3 {
+            color: var(--text-dark);
+            font-size: 1.3rem;
+            flex: 1;
+            margin-right: 15px;
+        }
+        
+        .spanish-name {
+            font-style: italic;
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+        
+        .menu-item-detailed p {
+            color: var(--text-light);
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+        
+        .menu-item-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+        }
+        
+        .menu-item-detailed .price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .spice-level {
+            display: flex;
+            gap: 3px;
+        }
+        
+        .spice-icon {
+            color: var(--spanish-red);
+            font-size: 0.8rem;
+        }
+        
+        .sharing-info {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            transform: translateX(-5px);
+        }
+        
+        .specialty-badge {
+            background: linear-gradient(45deg, var(--spanish-red), var(--spanish-gold));
+            color: white;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .chef-special {
+            background: var(--natural-orange);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+        
+        .wine-pairing {
+            background: var(--background-warm);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            border-left: 3px solid var(--spanish-gold);
+        }
+        
+        .wine-pairing h4 {
+            color: var(--text-dark);
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+        
+        .wine-pairing p {
+            margin: 0;
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+        
+        @media (max-width: 768px) {
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .menu-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .menu-section h2 {
+                font-size: 2rem;
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="#tapas">Tapas</a></li>
+                <li><a href="#paella">Paella</a></li>
+                <li><a href="#bebidas">Bebidas</a></li>
+                <li><a href="index.html#about">Nosotros</a></li>
+                <li><a href="index.html#contact">Contacto</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu Hero -->
+    <section class="menu-hero">
+        <div class="container">
+            <h1>Carta Española Completa</h1>
+            <p>Authentic flavors from the heart of Spain</p>
+        </div>
+    </section>
+
+    <!-- Menu Content -->
+    <section class="menu-content">
+        <div class="container">
+            <a href="index.html" class="back-link">
+                ← Volver al Inicio
+            </a>
+            
+            <!-- Tapas Calientes -->
+            <div class="menu-section" id="tapas">
+                <h2><span class="section-icon">🔥</span> Tapas Calientes</h2>
+                <p class="section-description">Hot small plates perfect for sharing</p>
+                <div class="menu-grid">
+                    <div class="menu-item-detailed">
+                        <img src="{{FOOD_IMAGE_1}}" alt="{{MENU_ITEM_1}}">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div>
+                                    <div class="spanish-name">Patatas Bravas Tradicionales</div>
+                                    <h3>{{MENU_ITEM_1}} <span class="specialty-badge">Especialidad</span></h3>
+                                </div>
+                            </div>
+                            <p>{{MENU_DESCRIPTION_1}}</p>
+                            <div class="menu-item-meta">
+                                <span class="price">${{PRICE_1}}</span>
+                                <div class="spice-level">
+                                    <span class="spice-icon">🌶️</span>
+                                    <span class="spice-icon">🌶️</span>
+                                </div>
+                            </div>
+                            <div class="wine-pairing">
+                                <h4>Maridaje Recomendado:</h4>
+                                <p>Rioja Crianza or Tempranillo</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-detailed">
+                        <img src="{{FOOD_IMAGE_2}}" alt="{{MENU_ITEM_2}}">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div>
+                                    <div class="spanish-name">Gambas al Ajillo</div>
+                                    <h3>{{MENU_ITEM_2}} <span class="chef-special">Chef Special</span></h3>
+                                </div>
+                            </div>
+                            <p>{{MENU_DESCRIPTION_2}}</p>
+                            <div class="menu-item-meta">
+                                <span class="price">${{PRICE_2}}</span>
+                                <div class="spice-level">
+                                    <span class="spice-icon">🌶️</span>
+                                </div>
+                            </div>
+                            <div class="wine-pairing">
+                                <h4>Maridaje Recomendado:</h4>
+                                <p>Albariño or Verdejo</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-detailed">
+                        <img src="{{FOOD_IMAGE_3}}" alt="{{MENU_ITEM_3}}">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div>
+                                    <div class="spanish-name">Croquetas de Jamón</div>
+                                    <h3>{{MENU_ITEM_3}}</h3>
+                                </div>
+                            </div>
+                            <p>{{MENU_DESCRIPTION_3}}</p>
+                            <div class="menu-item-meta">
+                                <span class="price">${{PRICE_3}}</span>
+                                <span class="sharing-info">4 pieces</span>
+                            </div>
+                            <div class="wine-pairing">
+                                <h4>Maridaje Recomendado:</h4>
+                                <p>Cava or Fino Sherry</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tapas Frías -->
+            <div class="menu-section">
+                <h2><span class="section-icon">❄️</span> Tapas Frías</h2>
+                <p class="section-description">Cold preparations highlighting fresh ingredients</p>
+                <div class="menu-grid">
+                    <div class="menu-item-detailed">
+                        <img src="{{FOOD_IMAGE_4}}" alt="{{MENU_ITEM_4}}">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div>
+                                    <div class="spanish-name">Jamón Ibérico de Bellota</div>
+                                    <h3>{{MENU_ITEM_4}} <span class="specialty-badge">Premium</span></h3>
+                                </div>
+                            </div>
+                            <p>{{MENU_DESCRIPTION_4}}</p>
+                            <div class="menu-item-meta">
+                                <span class="price">${{PRICE_4}}</span>
+                                <span class="sharing-info">100g serving</span>
+                            </div>
+                            <div class="wine-pairing">
+                                <h4>Maridaje Recomendado:</h4>
+                                <p>Amontillado Sherry or Ribera del Duero</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-detailed">
+                        <img src="{{FOOD_IMAGE_5}}" alt="{{MENU_ITEM_5}}">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div>
+                                    <div class="spanish-name">Tabla de Quesos Españoles</div>
+                                    <h3>{{MENU_ITEM_5}}</h3>
+                                </div>
+                            </div>
+                            <p>{{MENU_DESCRIPTION_5}}</p>
+                            <div class="menu-item-meta">
+                                <span class="price">${{PRICE_5}}</span>
+                                <span class="sharing-info">Perfect for 2-3</span>
+                            </div>
+                            <div class="wine-pairing">
+                                <h4>Maridaje Recomendado:</h4>
+                                <p>Moscatel or Garnacha</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-detailed">
+                        <img src="{{FOOD_IMAGE_6}}" alt="{{MENU_ITEM_6}}">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div>
+                                    <div class="spanish-name">Gazpacho Andaluz</div>
+                                    <h3>{{MENU_ITEM_6}}</h3>
+                                </div>
+                            </div>
+                            <p>{{MENU_DESCRIPTION_6}}</p>
+                            <div class="menu-item-meta">
+                                <span class="price">${{PRICE_6}}</span>
+                            </div>
+                            <div class="wine-pairing">
+                                <h4>Maridaje Recomendado:</h4>
+                                <p>Fino Sherry or Rosé</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paellas -->
+            <div class="menu-section" id="paella">
+                <h2><span class="section-icon">🥘</span> Paellas Tradicionales</h2>
+                <p class="section-description">Cooked fresh to order in traditional paelleras (20-25 min)</p>
+                <div class="menu-grid">
+                    <div class="menu-item-detailed">
+                        <img src="{{FOOD_IMAGE_7}}" alt="{{MENU_ITEM_7}}">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div>
+                                    <div class="spanish-name">Paella Valenciana Original</div>
+                                    <h3>{{MENU_ITEM_7}} <span class="specialty-badge">Tradicional</span></h3>
+                                </div>
+                            </div>
+                            <p>{{MENU_DESCRIPTION_7}}</p>
+                            <div class="menu-item-meta">
+                                <span class="price">${{PRICE_7}}</span>
+                                <span class="sharing-info">Serves 2-3 people</span>
+                            </div>
+                            <div class="wine-pairing">
+                                <h4>Maridaje Recomendado:</h4>
+                                <p>Valencian White Wine or Tempranillo</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-detailed">
+                        <img src="{{FOOD_IMAGE_8}}" alt="{{MENU_ITEM_8}}">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div>
+                                    <div class="spanish-name">Paella de Mariscos</div>
+                                    <h3>{{MENU_ITEM_8}} <span class="chef-special">Popular</span></h3>
+                                </div>
+                            </div>
+                            <p>{{MENU_DESCRIPTION_8}}</p>
+                            <div class="menu-item-meta">
+                                <span class="price">${{PRICE_8}}</span>
+                                <span class="sharing-info">Serves 2-3 people</span>
+                            </div>
+                            <div class="wine-pairing">
+                                <h4>Maridaje Recomendado:</h4>
+                                <p>Albariño or Godello</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-detailed">
+                        <img src="{{FOOD_IMAGE_9}}" alt="{{MENU_ITEM_9}}">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <div>
+                                    <div class="spanish-name">Paella Mixta</div>
+                                    <h3>{{MENU_ITEM_9}}</h3>
+                                </div>
+                            </div>
+                            <p>{{MENU_DESCRIPTION_9}}</p>
+                            <div class="menu-item-meta">
+                                <span class="price">${{PRICE_9}}</span>
+                                <span class="sharing-info">Serves 2-3 people</span>
+                            </div>
+                            <div class="wine-pairing">
+                                <h4>Maridaje Recomendado:</h4>
+                                <p>Rosé or Monastrell</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bebidas -->
+            <div class="menu-section" id="bebidas">
+                <h2><span class="section-icon">🍷</span> Vinos y Bebidas</h2>
+                <p class="section-description">Carefully selected Spanish wines and traditional drinks</p>
+                <div class="menu-grid">
+                    <div class="menu-item-detailed">
+                        <div class="menu-item-content">
+                            <h3>Vinos Tintos Españoles</h3>
+                            <div style="display: grid; gap: 15px; margin-top: 15px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background: var(--background-section); border-radius: 8px;">
+                                    <div>
+                                        <strong>{{MENU_ITEM_10}}</strong><br>
+                                        <small style="color: var(--text-light);">{{MENU_DESCRIPTION_10}}</small>
+                                    </div>
+                                    <div style="text-align: right;">
+                                        <div style="color: var(--primary-color); font-weight: 600;">Glass: ${{PRICE_10}}</div>
+                                        <div style="color: var(--text-light); font-size: 0.9rem;">Bottle: ${{PRICE_11}}</div>
+                                    </div>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background: var(--background-section); border-radius: 8px;">
+                                    <div>
+                                        <strong>{{MENU_ITEM_11}}</strong><br>
+                                        <small style="color: var(--text-light);">{{MENU_DESCRIPTION_11}}</small>
+                                    </div>
+                                    <div style="text-align: right;">
+                                        <div style="color: var(--primary-color); font-weight: 600;">Glass: ${{PRICE_11}}</div>
+                                        <div style="color: var(--text-light); font-size: 0.9rem;">Bottle: ${{PRICE_12}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-detailed">
+                        <div class="menu-item-content">
+                            <h3>Sangría y Cócteles</h3>
+                            <div style="display: grid; gap: 15px; margin-top: 15px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background: var(--background-section); border-radius: 8px;">
+                                    <div>
+                                        <strong>{{MENU_ITEM_12}}</strong><br>
+                                        <small style="color: var(--text-light);">{{MENU_DESCRIPTION_12}}</small>
+                                    </div>
+                                    <div style="color: var(--primary-color); font-weight: 600;">${{PRICE_12}}</div>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background: var(--background-section); border-radius: 8px;">
+                                    <div>
+                                        <strong>Sangría Tradicional</strong><br>
+                                        <small style="color: var(--text-light);">Red wine with fresh fruits, brandy, and Spanish liqueur</small>
+                                    </div>
+                                    <div style="color: var(--primary-color); font-weight: 600;">$9.95</div>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background: var(--background-section); border-radius: 8px;">
+                                    <div>
+                                        <strong>Tinto de Verano</strong><br>
+                                        <small style="color: var(--text-light);">Spanish summer drink with red wine and lemon soda</small>
+                                    </div>
+                                    <div style="color: var(--primary-color); font-weight: 600;">$7.95</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-detailed">
+                        <div class="menu-item-content">
+                            <h3>Postres Españoles</h3>
+                            <div style="display: grid; gap: 15px; margin-top: 15px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background: var(--background-section); border-radius: 8px;">
+                                    <div>
+                                        <strong>Flan Casero</strong><br>
+                                        <small style="color: var(--text-light);">Traditional Spanish custard with caramel sauce</small>
+                                    </div>
+                                    <div style="color: var(--primary-color); font-weight: 600;">$6.95</div>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background: var(--background-section); border-radius: 8px;">
+                                    <div>
+                                        <strong>Churros con Chocolate</strong><br>
+                                        <small style="color: var(--text-light);">Fresh churros with thick Spanish hot chocolate for dipping</small>
+                                    </div>
+                                    <div style="color: var(--primary-color); font-weight: 600;">$8.95</div>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background: var(--background-section); border-radius: 8px;">
+                                    <div>
+                                        <strong>Crema Catalana</strong><br>
+                                        <small style="color: var(--text-light);">Catalonian custard with caramelized sugar crust</small>
+                                    </div>
+                                    <div style="color: var(--primary-color); font-weight: 600;">$7.95</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>{{RESTAURANT_NAME}}</h4>
+                    <p>{{TAGLINE}}</p>
+                    <div class="footer-social">
+                        <a href="{{FACEBOOK_URL}}" target="_blank">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}" target="_blank">Instagram</a>
+                        <a href="{{YELP_URL}}" target="_blank">Yelp</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Horarios</h4>
+                    <p>Lunes: {{HOURS_MON}}</p>
+                    <p>Martes - Jueves: {{HOURS_TUE}}</p>
+                    <p>Viernes - Sábado: {{HOURS_FRI}}</p>
+                    <p>Domingo: {{HOURS_SUN}}</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p>{{FULL_ADDRESS}}</p>
+                    <p><a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+                    <p><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

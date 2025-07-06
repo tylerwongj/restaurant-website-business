@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - {{RESTAURANT_NAME}}</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} Menu - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .menu-hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            padding: 150px 0 80px;
+        }
+        .menu-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        .menu-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        .menu-section {
+            padding: 80px 0;
+        }
+        .menu-section:nth-child(even) {
+            background: var(--background-section);
+        }
+        .menu-category {
+            margin-bottom: 60px;
+        }
+        .menu-category h2 {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+        }
+        .menu-category h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--primary-color);
+        }
+        .menu-items {
+            display: grid;
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .menu-item {
+            background: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        .menu-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+        .menu-item-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+        .menu-item-price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            flex-shrink: 0;
+        }
+        .menu-item-description {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        .menu-item-dietary {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .dietary-tag {
+            background: var(--background-section);
+            color: var(--text-light);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        .back-to-home {
+            text-align: center;
+            margin: 60px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+                <span class="logo-text">{{RESTAURANT_NAME}}</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="#menu" class="nav-link">Menu</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu Hero -->
+    <section class="menu-hero">
+        <div class="container">
+            <h1>Our Menu</h1>
+            <p>Discover our carefully crafted culinary creations</p>
+        </div>
+    </section>
+
+    <!-- Menu Sections -->
+    <section class="menu-section">
+        <div class="container">
+            <div class="menu-category">
+                <h2>Appetizers</h2>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">{{MENU_ITEM_1}}</h3>
+                            <span class="menu-item-price">${{PRICE_1}}</span>
+                        </div>
+                        <p class="menu-item-description">{{MENU_DESCRIPTION_1}}</p>
+                        <div class="menu-item-dietary">
+                            <span class="dietary-tag">Fresh</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">{{MENU_ITEM_2}}</h3>
+                            <span class="menu-item-price">${{PRICE_2}}</span>
+                        </div>
+                        <p class="menu-item-description">{{MENU_DESCRIPTION_2}}</p>
+                        <div class="menu-item-dietary">
+                            <span class="dietary-tag">Signature</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="menu-section">
+        <div class="container">
+            <div class="menu-category">
+                <h2>Main Courses</h2>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">{{MENU_ITEM_3}}</h3>
+                            <span class="menu-item-price">${{PRICE_3}}</span>
+                        </div>
+                        <p class="menu-item-description">{{MENU_DESCRIPTION_3}}</p>
+                        <div class="menu-item-dietary">
+                            <span class="dietary-tag">Chef's Special</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">{{MENU_ITEM_4}}</h3>
+                            <span class="menu-item-price">${{PRICE_4}}</span>
+                        </div>
+                        <p class="menu-item-description">{{MENU_DESCRIPTION_4}}</p>
+                        <div class="menu-item-dietary">
+                            <span class="dietary-tag">Premium</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="back-to-home">
+        <a href="index.html" class="btn btn-primary">Back to Home</a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>{{RESTAURANT_NAME}}</h4>
+                    <p>{{TAGLINE}}</p>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}" class="social-link">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}" class="social-link">Instagram</a>
+                        <a href="{{YELP_URL}}" class="social-link">Yelp</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>{{FULL_ADDRESS}}</p>
+                    <p>{{PHONE}}</p>
+                    <p>{{EMAIL}}</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Hours</h4>
+                    <p>{{WEEKDAY_HOURS}}</p>
+                    <p>{{WEEKEND_HOURS}}</p>
+                    <p>{{SUNDAY_HOURS}}</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

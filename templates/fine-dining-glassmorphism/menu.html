@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - {{RESTAURANT_NAME}}</title>
+    <meta name="description" content="Discover our exquisite menu at {{RESTAURANT_NAME}}">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .menu-page {
+            padding-top: 100px;
+            min-height: 100vh;
+        }
+        
+        .menu-header {
+            text-align: center;
+            padding: 4rem 0;
+        }
+        
+        .menu-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .menu-section {
+            margin-bottom: 4rem;
+        }
+        
+        .menu-section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+        }
+        
+        .menu-items {
+            display: grid;
+            gap: 2rem;
+        }
+        
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 2rem;
+            gap: 2rem;
+        }
+        
+        .menu-item-content {
+            flex: 1;
+        }
+        
+        .menu-item-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        .menu-item-description {
+            font-size: 1rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        .menu-item-price {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            white-space: nowrap;
+        }
+        
+        .wine-pairing {
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            font-style: italic;
+            margin-top: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .menu-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .menu-item-price {
+                margin-top: 1rem;
+            }
+            
+            .menu-header h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Container -->
+    <div class="background-container">
+        <img src="{{HERO_IMAGE}}" alt="Restaurant Background" class="background-image">
+        <div class="background-overlay"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar glass">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#appetizers">Appetizers</a></li>
+                <li><a href="#mains">Main Courses</a></li>
+                <li><a href="#desserts">Desserts</a></li>
+                <li><a href="#wine">Wine</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="menu-page">
+        <div class="container">
+            <!-- Menu Header -->
+            <div class="menu-header glass">
+                <h1>Our Menu</h1>
+                <p>A culinary journey of exceptional flavors and artistry</p>
+            </div>
+
+            <!-- Appetizers Section -->
+            <section id="appetizers" class="menu-section">
+                <h2 class="menu-section-title">Appetizers</h2>
+                <div class="menu-items">
+                    <div class="menu-item glass">
+                        <div class="menu-item-content">
+                            <h3 class="menu-item-name">{{APPETIZER_1_NAME}}</h3>
+                            <p class="menu-item-description">{{APPETIZER_1_DESCRIPTION}}</p>
+                            <p class="wine-pairing">Wine pairing: {{APPETIZER_1_WINE}}</p>
+                        </div>
+                        <span class="menu-item-price">{{APPETIZER_1_PRICE}}</span>
+                    </div>
+                    
+                    <div class="menu-item glass">
+                        <div class="menu-item-content">
+                            <h3 class="menu-item-name">{{APPETIZER_2_NAME}}</h3>
+                            <p class="menu-item-description">{{APPETIZER_2_DESCRIPTION}}</p>
+                            <p class="wine-pairing">Wine pairing: {{APPETIZER_2_WINE}}</p>
+                        </div>
+                        <span class="menu-item-price">{{APPETIZER_2_PRICE}}</span>
+                    </div>
+                    
+                    <div class="menu-item glass">
+                        <div class="menu-item-content">
+                            <h3 class="menu-item-name">{{APPETIZER_3_NAME}}</h3>
+                            <p class="menu-item-description">{{APPETIZER_3_DESCRIPTION}}</p>
+                            <p class="wine-pairing">Wine pairing: {{APPETIZER_3_WINE}}</p>
+                        </div>
+                        <span class="menu-item-price">{{APPETIZER_3_PRICE}}</span>
+                    </div>
+                    
+                    <div class="menu-item glass">
+                        <div class="menu-item-content">
+                            <h3 class="menu-item-name">{{APPETIZER_4_NAME}}</h3>
+                            <p class="menu-item-description">{{APPETIZER_4_DESCRIPTION}}</p>
+                            <p class="wine-pairing">Wine pairing: {{APPETIZER_4_WINE}}</p>
+                        </div>
+                        <span class="menu-item-price">{{APPETIZER_4_PRICE}}</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Main Courses Section -->
+            <section id="mains" class="menu-section">
+                <h2 class="menu-section-title">Main Courses</h2>
+                <div class="menu-items">
+                    <div class="menu-item glass">
+                        <div class="menu-item-content">
+                            <h3 class="menu-item-name">{{MAIN_1_NAME}}</h3>
+                            <p class="menu-item-description">{{MAIN_1_DESCRIPTION}}</p>
+                            <p class="wine-pairing">Wine pairing: {{MAIN_1_WINE}}</p>
+                        </div>
+                        <span class="menu-item-price">{{MAIN_1_PRICE}}</span>
+                    </div>
+                    
+                    <div class="menu-item glass">
+                        <div class="menu-item-content">
+                            <h3 class="menu-item-name">{{MAIN_2_NAME}}</h3>
+                            <p class="menu-item-description">{{MAIN_2_DESCRIPTION}}</p>
+                            <p class="wine-pairing">Wine pairing: {{MAIN_2_WINE}}</p>
+                        </div>
+                        <span class="menu-item-price">{{MAIN_2_PRICE}}</span>
+                    </div>
+                    
+                    <div class="menu-item glass">
+                        <div class="menu-item-content">
+                            <h3 class="menu-item-name">{{MAIN_3_NAME}}</h3>
+                            <p class="menu-item-description">{{MAIN_3_DESCRIPTION}}</p>
+                            <p class="wine-pairing">Wine pairing: {{MAIN_3_WINE}}</p>
+                        </div>
+                        <span class="menu-item-price">{{MAIN_3_PRICE}}</span>
+                    </div>
+                    
+                    <div class="menu-item glass">
+                        <div class="menu-item-content">
+                            <h3 class="menu-item-name">{{MAIN_4_NAME}}</h3>
+                            <p class="menu-item-description">{{MAIN_4_DESCRIPTION}}</p>
+                            <p class="wine-pairing">Wine pairing: {{MAIN_4_WINE}}</p>
+                        </div>
+                        <span class="menu-item-price">{{MAIN_4_PRICE}}</span>
+                    </div>
+                    
+                    <div class="menu-item glass">
+                        <div class="menu-item-content">
+                            <h3 class="menu-item-name">{{MAIN_5_NAME}}</h3>
+                            <p class="menu-item-description">{{MAIN_5_DESCRIPTION}}</p>
+                            <p class="wine-pairing">Wine pairing: {{MAIN_5_WINE}}</p>
+                        </div>
+                        <span class="menu-item-price">{{MAIN_5_PRICE}}</span>
+                    </div>
+                    
+                    <div class="menu-item glass">
+                        <div class="menu-item-content">
+                            <h3 class="menu-item-name">{{MAIN_6_NAME}}</h3>
+                            <p class="menu-item-description">{{MAIN_6_DESCRIPTION}}</p>
+                            <p class="wine-pairing">Wine pairing: {{MAIN_6_WINE}}</p>
+                        </div>
+                        <span class="menu-item-price">{{MAIN_6_PRICE}}</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Desserts Section -->
+            <section id="desserts" class="menu-section">
+                <h2 class="menu-section-title">Desserts</h2>
+                <div class="menu-items">
+                    <div class="menu-item glass">
+                        <div class="menu-item-content">
+                            <h3 class="menu-item-name">{{DESSERT_1_NAME}}</h3>
+                            <p class="menu-item-description">{{DESSERT_1_DESCRIPTION}}</p>
+                            <p class="wine-pairing">Wine pairing: {{DESSERT_1_WINE}}</p>
+                        </div>
+                        <span class="menu-item-price">{{DESSERT_1_PRICE}}</span>
+                    </div>
+                    
+                    <div class="menu-item glass">
+                        <div class="menu-item-content">
+                            <h3 class="menu-item-name">{{DESSERT_2_NAME}}</h3>
+                            <p class="menu-item-description">{{DESSERT_2_DESCRIPTION}}</p>
+                            <p class="wine-pairing">Wine pairing: {{DESSERT_2_WINE}}</p>
+                        </div>
+                        <span class="menu-item-price">{{DESSERT_2_PRICE}}</span>
+                    </div>
+                    
+                    <div class="menu-item glass">
+                        <div class="menu-item-content">
+                            <h3 class="menu-item-name">{{DESSERT_3_NAME}}</h3>
+                            <p class="menu-item-description">{{DESSERT_3_DESCRIPTION}}</p>
+                            <p class="wine-pairing">Wine pairing: {{DESSERT_3_WINE}}</p>
+                        </div>
+                        <span class="menu-item-price">{{DESSERT_3_PRICE}}</span>
+                    </div>
+                    
+                    <div class="menu-item glass">
+                        <div class="menu-item-content">
+                            <h3 class="menu-item-name">{{DESSERT_4_NAME}}</h3>
+                            <p class="menu-item-description">{{DESSERT_4_DESCRIPTION}}</p>
+                            <p class="wine-pairing">Wine pairing: {{DESSERT_4_WINE}}</p>
+                        </div>
+                        <span class="menu-item-price">{{DESSERT_4_PRICE}}</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Wine Selection -->
+            <section id="wine" class="menu-section">
+                <h2 class="menu-section-title">Wine Selection</h2>
+                <div class="menu-items">
+                    <div class="menu-item glass">
+                        <div class="menu-item-content">
+                            <h3 class="menu-item-name">{{WINE_1_NAME}}</h3>
+                            <p class="menu-item-description">{{WINE_1_DESCRIPTION}}</p>
+                        </div>
+                        <span class="menu-item-price">{{WINE_1_PRICE}}</span>
+                    </div>
+                    
+                    <div class="menu-item glass">
+                        <div class="menu-item-content">
+                            <h3 class="menu-item-name">{{WINE_2_NAME}}</h3>
+                            <p class="menu-item-description">{{WINE_2_DESCRIPTION}}</p>
+                        </div>
+                        <span class="menu-item-price">{{WINE_2_PRICE}}</span>
+                    </div>
+                    
+                    <div class="menu-item glass">
+                        <div class="menu-item-content">
+                            <h3 class="menu-item-name">{{WINE_3_NAME}}</h3>
+                            <p class="menu-item-description">{{WINE_3_DESCRIPTION}}</p>
+                        </div>
+                        <span class="menu-item-price">{{WINE_3_PRICE}}</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Menu Footer -->
+            <div class="menu-cta">
+                <a href="index.html#reservations" class="btn btn-primary glass">Make a Reservation</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,859 @@
+/* Steakhouse Premium Dark Template Styles */
+
+:root {
+  /* Base Colors */
+  --primary: #b8860b;
+  --secondary: #8b4513;
+  --accent: #cd853f;
+  --dark: #1a1a1a;
+  --darker: #0d0d0d;
+  --light: #f5f5f5;
+  --white: #ffffff;
+  --text-dark: #1a1a1a;
+  --text-light: #666666;
+  
+  /* Steakhouse Luxury Colors */
+  --gold: #d4af37;
+  --bronze: #cd7f32;
+  --charcoal: #2c2c2c;
+  --smoke: #3c3c3c;
+  --cream: #f8f6f0;
+  
+  /* Typography */
+  --font-primary: 'Georgia', serif;
+  --font-secondary: 'Arial', sans-serif;
+  
+  /* Spacing */
+  --section-padding: 100px 0;
+  --container-padding: 0 20px;
+}
+
+/* Theme: Dark Luxury */
+.theme-dark-luxury {
+  --primary: var(--gold);
+  --secondary: var(--bronze);
+  --accent: var(--smoke);
+  --background: var(--dark);
+  --text-primary: var(--cream);
+}
+
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  line-height: 1.6;
+  color: var(--text-primary, var(--text-dark));
+  background-color: var(--background, var(--light));
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--container-padding);
+}
+
+/* Navigation */
+.navbar {
+  background: rgba(26, 26, 26, 0.95);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--gold);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo img {
+  height: 70px;
+  width: auto;
+  filter: brightness(1.2);
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: var(--cream);
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-menu a:hover {
+  color: var(--gold);
+}
+
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gold);
+  transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after {
+  width: 100%;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: var(--cream);
+  margin: 3px 0;
+  transition: 0.3s;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(26, 26, 26, 0.8), rgba(60, 60, 60, 0.6));
+  z-index: 2;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 800px;
+  padding: 0 2rem;
+}
+
+.hero-content h1 {
+  font-size: 4.5rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  color: var(--gold);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+  opacity: 0.9;
+  font-style: italic;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 3px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  font-family: var(--font-secondary);
+  letter-spacing: 0.5px;
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: var(--dark);
+  border: 2px solid var(--gold);
+}
+
+.btn-primary:hover {
+  background: transparent;
+  color: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--white);
+  border: 2px solid var(--white);
+}
+
+.btn-secondary:hover {
+  background: var(--white);
+  color: var(--dark);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--gold);
+  border: 2px solid var(--gold);
+}
+
+.btn-outline:hover {
+  background: var(--gold);
+  color: var(--dark);
+}
+
+/* Premium Cuts Section */
+.premium-cuts {
+  padding: var(--section-padding);
+  background: var(--dark);
+  color: var(--cream);
+}
+
+.premium-cuts h2 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--gold);
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.3rem;
+  margin-bottom: 4rem;
+  font-style: italic;
+  color: var(--cream);
+  opacity: 0.8;
+}
+
+.cuts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+}
+
+.cut-item {
+  background: var(--charcoal);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.cut-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(212, 175, 55, 0.2);
+}
+
+.cut-item.featured {
+  border: 2px solid var(--gold);
+}
+
+.featured-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var(--gold);
+  color: var(--dark);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  z-index: 5;
+}
+
+.cut-image {
+  height: 250px;
+  overflow: hidden;
+}
+
+.cut-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.cut-item:hover .cut-image img {
+  transform: scale(1.1);
+}
+
+.cut-info {
+  padding: 2rem;
+}
+
+.cut-info h3 {
+  font-size: 1.8rem;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.cut-specs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.cut-specs span {
+  background: var(--smoke);
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  color: var(--cream);
+  border: 1px solid var(--gold);
+}
+
+.cut-info p {
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--gold);
+}
+
+/* About Section */
+.about {
+  padding: var(--section-padding);
+  background: var(--charcoal);
+  color: var(--cream);
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about h2 {
+  font-size: 2.8rem;
+  margin-bottom: 2rem;
+  color: var(--gold);
+}
+
+.about p {
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  line-height: 1.8;
+}
+
+.steakhouse-features {
+  display: grid;
+  gap: 2rem;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: var(--dark);
+  border-radius: 10px;
+  border-left: 4px solid var(--gold);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gold);
+  border-radius: 50%;
+  color: var(--dark);
+  flex-shrink: 0;
+}
+
+.feature h3 {
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.feature p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.about-image img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid var(--gold);
+}
+
+/* Wine Pairing Section */
+.wine-pairing {
+  padding: var(--section-padding);
+  background: var(--dark);
+  color: var(--cream);
+}
+
+.wine-pairing h2 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--gold);
+}
+
+.pairing-grid {
+  display: grid;
+  gap: 3rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.pairing-item {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 2rem;
+  align-items: center;
+  padding: 2rem;
+  background: var(--charcoal);
+  border-radius: 10px;
+  border: 1px solid var(--smoke);
+}
+
+.wine-info h3 {
+  color: var(--gold);
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.vintage {
+  color: var(--bronze);
+  font-style: italic;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.wine-price {
+  color: var(--gold);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.pairing-line {
+  width: 2px;
+  height: 60px;
+  background: linear-gradient(to bottom, var(--gold), var(--bronze));
+  position: relative;
+}
+
+.pairing-line::before {
+  content: '⚬';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--gold);
+  font-size: 1.5rem;
+  background: var(--charcoal);
+  padding: 0 10px;
+}
+
+.steak-pairing {
+  text-align: center;
+  color: var(--cream);
+  font-style: italic;
+}
+
+/* Menu Section */
+.menu-preview {
+  padding: var(--section-padding);
+  background: var(--charcoal);
+  color: var(--cream);
+}
+
+.menu-preview h2 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 4rem;
+  color: var(--gold);
+}
+
+.menu-categories {
+  display: grid;
+  gap: 4rem;
+}
+
+.menu-category h3 {
+  font-size: 2.2rem;
+  color: var(--gold);
+  margin-bottom: 2rem;
+  text-align: center;
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 1rem;
+}
+
+.menu-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.menu-item {
+  background: var(--dark);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  border: 1px solid var(--smoke);
+}
+
+.menu-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.1);
+}
+
+.menu-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.menu-item-content {
+  padding: 1.5rem;
+}
+
+.menu-item h4 {
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.menu-item p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.price {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--gold);
+}
+
+.menu-cta {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+/* Hours & Location */
+.hours-location {
+  padding: var(--section-padding);
+  background: var(--dark);
+  color: var(--cream);
+}
+
+.hours-location-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+
+.hours h3, .location h3 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--gold);
+}
+
+.hours-list {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.hours-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--smoke);
+  font-size: 1.1rem;
+}
+
+.location-info p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.location-info a {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.directions {
+  margin-top: 2rem;
+}
+
+/* Reservation Section */
+.reservation {
+  padding: var(--section-padding);
+  background: var(--charcoal);
+  color: var(--cream);
+}
+
+.reservation h2 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--gold);
+}
+
+.reservation-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-top: 3rem;
+}
+
+.reservation-form {
+  background: var(--dark);
+  padding: 3rem;
+  border-radius: 10px;
+  border: 1px solid var(--gold);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid var(--smoke);
+  border-radius: 5px;
+  font-size: 1rem;
+  background: var(--charcoal);
+  color: var(--cream);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+.form-group textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+.reservation-info h3 {
+  color: var(--gold);
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+}
+
+.policy-items {
+  margin-bottom: 3rem;
+}
+
+.policy-item {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--smoke);
+  line-height: 1.6;
+}
+
+.policy-item strong {
+  color: var(--gold);
+}
+
+.contact-direct {
+  background: var(--dark);
+  padding: 2rem;
+  border-radius: 10px;
+  border-left: 4px solid var(--gold);
+}
+
+.contact-direct h4 {
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.phone-link {
+  color: var(--gold);
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Footer */
+.footer {
+  background: var(--darker);
+  color: var(--cream);
+  padding: 4rem 0 2rem;
+  border-top: 1px solid var(--gold);
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-logo {
+  height: 50px;
+  margin-bottom: 1.5rem;
+  filter: brightness(1.2);
+}
+
+.footer h4 {
+  margin-bottom: 1.5rem;
+  color: var(--gold);
+  font-size: 1.3rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.social-links a {
+  color: var(--cream);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 1.1rem;
+}
+
+.social-links a:hover {
+  color: var(--gold);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid var(--smoke);
+  color: #999;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+  
+  .nav-menu {
+    display: none;
+  }
+  
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .cuts-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .hours-location-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .reservation-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .pairing-item {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .pairing-line {
+    width: 60px;
+    height: 2px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-container {
+    padding: 1rem;
+  }
+  
+  .hero {
+    height: 70vh;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .btn {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+  
+  :root {
+    --section-padding: 60px 0;
+  }
+}

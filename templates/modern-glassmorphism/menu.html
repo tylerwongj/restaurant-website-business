@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - {{RESTAURANT_NAME}}</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} Menu - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .menu-page {
+            padding-top: 120px;
+            min-height: 100vh;
+        }
+        
+        .menu-hero {
+            text-align: center;
+            padding: 4rem 0;
+            margin-bottom: 3rem;
+        }
+        
+        .menu-hero .glass-card {
+            padding: 3rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .menu-categories {
+            display: grid;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+        
+        .menu-category {
+            background: var(--glass-bg);
+            backdrop-filter: blur(var(--blur-strength));
+            border: 1px solid var(--glass-border);
+            border-radius: var(--border-radius);
+            padding: 3rem;
+            box-shadow: 0 8px 32px var(--glass-shadow);
+        }
+        
+        .category-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--glass-border);
+        }
+        
+        .category-header h2 {
+            color: var(--text-white);
+            margin-bottom: 0.5rem;
+        }
+        
+        .category-description {
+            color: var(--text-white);
+            opacity: 0.8;
+            font-style: italic;
+        }
+        
+        .menu-items {
+            display: grid;
+            gap: 2rem;
+        }
+        
+        .menu-item-detail {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--border-radius-small);
+            transition: all 0.3s ease;
+        }
+        
+        .menu-item-detail:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateX(10px);
+        }
+        
+        .item-info {
+            flex: 1;
+        }
+        
+        .item-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-white);
+            margin-bottom: 0.5rem;
+        }
+        
+        .item-description {
+            color: var(--text-white);
+            opacity: 0.8;
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+        
+        .item-ingredients {
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            font-style: italic;
+        }
+        
+        .item-price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-left: 2rem;
+            min-width: 80px;
+            text-align: right;
+        }
+        
+        .dietary-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .dietary-tag {
+            background: var(--accent-color);
+            color: var(--text-white);
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .dietary-tag.vegetarian {
+            background: #10b981;
+        }
+        
+        .dietary-tag.vegan {
+            background: #059669;
+        }
+        
+        .dietary-tag.gluten-free {
+            background: #f59e0b;
+        }
+        
+        .dietary-tag.spicy {
+            background: #ef4444;
+        }
+        
+        .back-to-home {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .menu-item-detail {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .item-price {
+                margin-left: 0;
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#appetizers">Appetizers</a></li>
+                <li><a href="#mains">Main Courses</a></li>
+                <li><a href="#desserts">Desserts</a></li>
+                <li><a href="#beverages">Beverages</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="menu-page">
+        <div class="container">
+            <!-- Menu Hero -->
+            <section class="menu-hero">
+                <div class="glass-card">
+                    <h1>Our Menu</h1>
+                    <p class="tagline">{{TAGLINE}}</p>
+                    <p>Discover our carefully crafted dishes made with the finest ingredients and passion for culinary excellence.</p>
+                </div>
+            </section>
+
+            <!-- Appetizers -->
+            <section id="appetizers" class="menu-categories">
+                <div class="menu-category">
+                    <div class="category-header">
+                        <h2>Appetizers</h2>
+                        <p class="category-description">Start your culinary journey with our exquisite appetizers</p>
+                    </div>
+                    <div class="menu-items">
+                        <div class="menu-item-detail">
+                            <div class="item-info">
+                                <div class="item-name">{{MENU_ITEM_1}}</div>
+                                <div class="item-description">{{MENU_DESCRIPTION_1}}</div>
+                                <div class="item-ingredients">Fresh herbs, seasonal vegetables, house-made sauce</div>
+                                <div class="dietary-tags">
+                                    <span class="dietary-tag vegetarian">Vegetarian</span>
+                                </div>
+                            </div>
+                            <div class="item-price">${{PRICE_1}}</div>
+                        </div>
+                        
+                        <div class="menu-item-detail">
+                            <div class="item-info">
+                                <div class="item-name">Truffle Arancini</div>
+                                <div class="item-description">Crispy risotto balls filled with mushroom and truffle, served with garlic aioli</div>
+                                <div class="item-ingredients">Arborio rice, truffle oil, porcini mushrooms, parmesan</div>
+                                <div class="dietary-tags">
+                                    <span class="dietary-tag vegetarian">Vegetarian</span>
+                                </div>
+                            </div>
+                            <div class="item-price">$16.00</div>
+                        </div>
+                        
+                        <div class="menu-item-detail">
+                            <div class="item-info">
+                                <div class="item-name">Seared Scallops</div>
+                                <div class="item-description">Pan-seared sea scallops with cauliflower purée and pancetta crisp</div>
+                                <div class="item-ingredients">Diver scallops, cauliflower, pancetta, microgreens</div>
+                            </div>
+                            <div class="item-price">$22.00</div>
+                        </div>
+                        
+                        <div class="menu-item-detail">
+                            <div class="item-info">
+                                <div class="item-name">Burrata & Prosciutto</div>
+                                <div class="item-description">Creamy burrata cheese with aged prosciutto, fig jam, and toasted brioche</div>
+                                <div class="item-ingredients">Burrata, prosciutto di Parma, fresh figs, brioche</div>
+                            </div>
+                            <div class="item-price">$19.00</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Main Courses -->
+            <section id="mains" class="menu-categories">
+                <div class="menu-category">
+                    <div class="category-header">
+                        <h2>Main Courses</h2>
+                        <p class="category-description">Our signature dishes crafted with precision and artistry</p>
+                    </div>
+                    <div class="menu-items">
+                        <div class="menu-item-detail">
+                            <div class="item-info">
+                                <div class="item-name">{{MENU_ITEM_2}}</div>
+                                <div class="item-description">{{MENU_DESCRIPTION_2}}</div>
+                                <div class="item-ingredients">Fresh Atlantic halibut, seasonal vegetables, herb butter</div>
+                            </div>
+                            <div class="item-price">${{PRICE_2}}</div>
+                        </div>
+                        
+                        <div class="menu-item-detail">
+                            <div class="item-info">
+                                <div class="item-name">{{MENU_ITEM_3}}</div>
+                                <div class="item-description">{{MENU_DESCRIPTION_3}}</div>
+                                <div class="item-ingredients">Premium wagyu beef, truffle, seasonal vegetables</div>
+                            </div>
+                            <div class="item-price">${{PRICE_3}}</div>
+                        </div>
+                        
+                        <div class="menu-item-detail">
+                            <div class="item-info">
+                                <div class="item-name">Roasted Duck Breast</div>
+                                <div class="item-description">Five-spice roasted duck with sweet potato purée and cherry gastrique</div>
+                                <div class="item-ingredients">Duck breast, five-spice blend, sweet potato, dried cherries</div>
+                            </div>
+                            <div class="item-price">$38.00</div>
+                        </div>
+                        
+                        <div class="menu-item-detail">
+                            <div class="item-info">
+                                <div class="item-name">Lobster Risotto</div>
+                                <div class="item-description">Creamy saffron risotto with butter-poached lobster and fresh herbs</div>
+                                <div class="item-ingredients">Maine lobster, Arborio rice, saffron, white wine</div>
+                            </div>
+                            <div class="item-price">$45.00</div>
+                        </div>
+                        
+                        <div class="menu-item-detail">
+                            <div class="item-info">
+                                <div class="item-name">Vegetarian Tasting Plate</div>
+                                <div class="item-description">Seasonal vegetables prepared three ways with quinoa and tahini dressing</div>
+                                <div class="item-ingredients">Seasonal vegetables, quinoa, tahini, fresh herbs</div>
+                                <div class="dietary-tags">
+                                    <span class="dietary-tag vegan">Vegan</span>
+                                    <span class="dietary-tag gluten-free">Gluten-Free</span>
+                                </div>
+                            </div>
+                            <div class="item-price">$32.00</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Desserts -->
+            <section id="desserts" class="menu-categories">
+                <div class="menu-category">
+                    <div class="category-header">
+                        <h2>Desserts</h2>
+                        <p class="category-description">Sweet endings to complete your dining experience</p>
+                    </div>
+                    <div class="menu-items">
+                        <div class="menu-item-detail">
+                            <div class="item-info">
+                                <div class="item-name">{{MENU_ITEM_4}}</div>
+                                <div class="item-description">{{MENU_DESCRIPTION_4}}</div>
+                                <div class="item-ingredients">Seasonal ingredients, wine pairings available</div>
+                            </div>
+                            <div class="item-price">${{PRICE_4}}</div>
+                        </div>
+                        
+                        <div class="menu-item-detail">
+                            <div class="item-info">
+                                <div class="item-name">Chocolate Lava Cake</div>
+                                <div class="item-description">Warm dark chocolate cake with molten center, vanilla bean ice cream</div>
+                                <div class="item-ingredients">Belgian chocolate, vanilla bean, fresh berries</div>
+                            </div>
+                            <div class="item-price">$14.00</div>
+                        </div>
+                        
+                        <div class="menu-item-detail">
+                            <div class="item-info">
+                                <div class="item-name">Lemon Tart</div>
+                                <div class="item-description">Classic lemon curd tart with candied lemon zest and raspberry coulis</div>
+                                <div class="item-ingredients">Fresh lemons, pastry cream, raspberry, shortbread crust</div>
+                                <div class="dietary-tags">
+                                    <span class="dietary-tag vegetarian">Vegetarian</span>
+                                </div>
+                            </div>
+                            <div class="item-price">$12.00</div>
+                        </div>
+                        
+                        <div class="menu-item-detail">
+                            <div class="item-info">
+                                <div class="item-name">Tiramisu</div>
+                                <div class="item-description">Traditional Italian tiramisu with espresso-soaked ladyfingers</div>
+                                <div class="item-ingredients">Mascarpone, espresso, ladyfingers, cocoa</div>
+                                <div class="dietary-tags">
+                                    <span class="dietary-tag vegetarian">Vegetarian</span>
+                                </div>
+                            </div>
+                            <div class="item-price">$13.00</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Beverages -->
+            <section id="beverages" class="menu-categories">
+                <div class="menu-category">
+                    <div class="category-header">
+                        <h2>Beverages</h2>
+                        <p class="category-description">Carefully curated wines, cocktails, and non-alcoholic options</p>
+                    </div>
+                    <div class="menu-items">
+                        <div class="menu-item-detail">
+                            <div class="item-info">
+                                <div class="item-name">House Wine Selection</div>
+                                <div class="item-description">Red, white, or rosé - ask your server for today's selection</div>
+                                <div class="item-ingredients">Rotating selection of premium wines</div>
+                            </div>
+                            <div class="item-price">$12-18</div>
+                        </div>
+                        
+                        <div class="menu-item-detail">
+                            <div class="item-info">
+                                <div class="item-name">Signature Cocktails</div>
+                                <div class="item-description">Craft cocktails made with premium spirits and fresh ingredients</div>
+                                <div class="item-ingredients">Premium spirits, fresh juices, house-made syrups</div>
+                            </div>
+                            <div class="item-price">$14-16</div>
+                        </div>
+                        
+                        <div class="menu-item-detail">
+                            <div class="item-info">
+                                <div class="item-name">Artisan Coffee</div>
+                                <div class="item-description">Locally roasted coffee beans, espresso drinks, and specialty preparations</div>
+                                <div class="item-ingredients">Single-origin beans, organic milk alternatives</div>
+                            </div>
+                            <div class="item-price">$4-8</div>
+                        </div>
+                        
+                        <div class="menu-item-detail">
+                            <div class="item-info">
+                                <div class="item-name">Fresh Juices & Sodas</div>
+                                <div class="item-description">House-made fresh juices and premium sodas</div>
+                                <div class="item-ingredients">Seasonal fruits, sparkling water, natural flavors</div>
+                                <div class="dietary-tags">
+                                    <span class="dietary-tag vegan">Vegan</span>
+                                </div>
+                            </div>
+                            <div class="item-price">$5-7</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Back to Home -->
+            <section class="back-to-home">
+                <div class="glass-card">
+                    <h3>Ready to Make a Reservation?</h3>
+                    <p>Experience our exceptional cuisine and service</p>
+                    <div style="margin-top: 2rem;">
+                        <a href="index.html#contact" class="btn btn-primary">Make Reservation</a>
+                        <a href="index.html" class="btn btn-secondary">Back to Home</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

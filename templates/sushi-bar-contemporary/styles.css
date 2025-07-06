@@ -1,0 +1,1111 @@
+/* CSS Variables for Contemporary Sushi Bar */
+:root {
+  /* Minimalist Japanese Color Scheme */
+  --primary-color: #1a1a1a;
+  --secondary-color: #2d2d2d;
+  --accent-color: #c9a961;
+  --accent-light: #d4af37;
+  --text-dark: #1a1a1a;
+  --text-light: #666666;
+  --text-muted: #999999;
+  --background-light: #ffffff;
+  --background-off-white: #fafafa;
+  --background-section: #f8f8f8;
+  --background-dark: #1a1a1a;
+  --border-light: #e8e8e8;
+  --border-accent: #c9a961;
+  --shadow-light: rgba(0, 0, 0, 0.05);
+  --shadow-medium: rgba(0, 0, 0, 0.1);
+  --shadow-dark: rgba(0, 0, 0, 0.2);
+  --overlay-dark: rgba(26, 26, 26, 0.8);
+  --overlay-light: rgba(255, 255, 255, 0.95);
+}
+
+/* Color Scheme Variations */
+.color-classic {
+  --primary-color: #2c3e50;
+  --secondary-color: #34495e;
+  --accent-color: #95a5a6;
+}
+
+.color-business {
+  --primary-color: #1565c0;
+  --secondary-color: #1976d2;
+  --accent-color: #42a5f5;
+}
+
+.color-cool {
+  --primary-color: #16a085;
+  --secondary-color: #1abc9c;
+  --accent-color: #48c9b0;
+}
+
+.color-bold {
+  --primary-color: #8e44ad;
+  --secondary-color: #9b59b6;
+  --accent-color: #af7ac5;
+}
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: var(--background-light);
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 300;
+  letter-spacing: -1px;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--text-dark);
+  letter-spacing: -0.5px;
+}
+
+h3 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  letter-spacing: -0.25px;
+}
+
+h4 {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+p {
+  margin-bottom: 1rem;
+  color: var(--text-light);
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 400;
+}
+
+/* Japanese Typography */
+.hero-subtitle-jp {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 1.2rem;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+.item-japanese {
+  font-family: 'Noto Sans JP', sans-serif;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.omakase-japanese {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 3rem;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.principle-number {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 3rem;
+  color: var(--accent-color);
+  font-weight: 300;
+}
+
+/* Button Styles */
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  text-decoration: none;
+  border-radius: 0;
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  letter-spacing: 0.5px;
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  color: white;
+  border: 1px solid var(--primary-color);
+}
+
+.btn-primary:hover {
+  background: transparent;
+  color: var(--primary-color);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.btn-ghost:hover {
+  background: white;
+  color: var(--primary-color);
+  border-color: white;
+}
+
+.btn-minimal {
+  background: transparent;
+  color: var(--text-dark);
+  border: 1px solid var(--border-light);
+  padding: 8px 20px;
+  font-size: 0.9rem;
+}
+
+.btn-minimal:hover {
+  background: var(--text-dark);
+  color: white;
+}
+
+/* Navigation */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: var(--overlay-light);
+  backdrop-filter: blur(20px);
+  z-index: 1000;
+  padding: 1rem 0;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 400;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.nav-menu a:hover {
+  color: var(--accent-color);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 20px;
+  height: 1px;
+  background: var(--text-dark);
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+
+.hero-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--overlay-dark);
+  z-index: -1;
+}
+
+.hero-content {
+  z-index: 1;
+  color: white;
+  max-width: 700px;
+  padding: 0 20px;
+}
+
+.hero-title {
+  font-size: 4.5rem;
+  font-weight: 200;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+
+.hero-description {
+  font-size: 1.3rem;
+  margin-bottom: 3rem;
+  opacity: 0.9;
+  font-weight: 300;
+}
+
+.hero-philosophy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.philosophy-line {
+  width: 60px;
+  height: 1px;
+  background: var(--accent-color);
+}
+
+.hero-philosophy p {
+  color: var(--accent-color);
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.hero-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.element {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: var(--accent-color);
+  border-radius: 50%;
+}
+
+.element-1 {
+  top: 20%;
+  left: 15%;
+  animation: float 6s ease-in-out infinite;
+}
+
+.element-2 {
+  top: 60%;
+  right: 20%;
+  animation: float 8s ease-in-out infinite delay-2s;
+}
+
+.element-3 {
+  bottom: 30%;
+  left: 10%;
+  animation: float 10s ease-in-out infinite delay-4s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); opacity: 0.3; }
+  50% { transform: translateY(-20px); opacity: 1; }
+}
+
+/* Philosophy Section */
+.philosophy {
+  padding: 120px 0;
+  background: var(--background-off-white);
+}
+
+.philosophy-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.philosophy-text h2 {
+  margin-bottom: 2rem;
+}
+
+.philosophy-lead {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  margin-bottom: 3rem;
+  line-height: 1.8;
+}
+
+.principles {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.principle {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.principle-text h4 {
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.principle-text p {
+  color: var(--text-muted);
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.philosophy-image {
+  text-align: center;
+}
+
+.image-frame {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 2rem;
+  border: 3px solid var(--accent-color);
+}
+
+.image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-caption h4 {
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.image-caption p {
+  color: var(--text-muted);
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
+}
+
+/* Sushi Menu Section */
+.sushi-menu {
+  padding: 120px 0;
+  background: white;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.sushi-categories {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 3rem;
+}
+
+.sushi-category h3 {
+  color: var(--text-dark);
+  margin-bottom: 3rem;
+  text-align: center;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--accent-color);
+  position: relative;
+}
+
+.sushi-items {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.sushi-item {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1.5rem;
+  background: var(--background-section);
+  border-radius: 0;
+  transition: transform 0.3s ease;
+}
+
+.sushi-item:hover {
+  transform: translateY(-2px);
+}
+
+.item-image {
+  width: 120px;
+  height: 80px;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.item-details h4 {
+  color: var(--text-dark);
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+}
+
+.item-description {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.price {
+  color: var(--accent-color);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.menu-note {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.menu-note p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+/* Omakase Section */
+.omakase {
+  position: relative;
+  padding: 120px 0;
+  color: white;
+}
+
+.omakase-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-color);
+  z-index: -2;
+}
+
+.omakase-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  z-index: -1;
+}
+
+.omakase-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.omakase-text h2 {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.omakase-definition {
+  color: var(--accent-color);
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-style: italic;
+}
+
+.omakase-description {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 3rem;
+}
+
+.omakase-options {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.omakase-option {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.omakase-option h4 {
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.option-price {
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.omakase-option p {
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0.25rem 0;
+  font-size: 0.95rem;
+}
+
+.omakase-note {
+  background: rgba(201, 169, 97, 0.2);
+  padding: 1.5rem;
+  border-left: 3px solid var(--accent-color);
+}
+
+.omakase-note p {
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0.25rem 0;
+}
+
+.visual-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.visual-grid img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+/* Sake Section */
+.sake {
+  padding: 120px 0;
+  background: var(--background-section);
+}
+
+.sake-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.sake-info h2 {
+  margin-bottom: 2rem;
+}
+
+.sake-description {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-bottom: 3rem;
+  line-height: 1.7;
+}
+
+.sake-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.sake-category {
+  background: white;
+  padding: 2rem;
+  border-left: 3px solid var(--accent-color);
+}
+
+.sake-category h4 {
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.sake-category > p {
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.sake-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sake-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: var(--background-section);
+  border: 1px solid var(--border-light);
+}
+
+.sake-name {
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+.sake-price {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.sake-visual img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  margin-bottom: 2rem;
+}
+
+.sake-fact {
+  background: white;
+  padding: 2rem;
+  border-left: 3px solid var(--accent-color);
+}
+
+.sake-fact h4 {
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.sake-fact p {
+  color: var(--text-muted);
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* About Section */
+.about {
+  padding: 120px 0;
+  background: white;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.about-text h2 {
+  margin-bottom: 2rem;
+}
+
+.about-lead {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-bottom: 3rem;
+  line-height: 1.7;
+}
+
+.about-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.detail {
+  background: var(--background-section);
+  padding: 2rem;
+  border-left: 3px solid var(--accent-color);
+}
+
+.detail h4 {
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.detail p {
+  color: var(--text-muted);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.about-gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 2fr 1fr;
+  gap: 1rem;
+  height: 500px;
+}
+
+.gallery-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-side {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.gallery-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Reservations Section */
+.reservations {
+  padding: 120px 0;
+  background: var(--background-off-white);
+}
+
+.reservations-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+}
+
+.reservations-info h2 {
+  margin-bottom: 2rem;
+}
+
+.reservations-info > p {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-bottom: 3rem;
+  line-height: 1.7;
+}
+
+.seating-options {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.seating-option {
+  background: white;
+  padding: 2rem;
+  border-left: 3px solid var(--accent-color);
+}
+
+.seating-option h4 {
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.seating-option p {
+  color: var(--text-muted);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.contact-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-method {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: white;
+  text-decoration: none;
+  color: var(--text-dark);
+  border: 1px solid var(--border-light);
+  transition: background-color 0.3s ease;
+}
+
+.contact-method:hover {
+  background: var(--background-section);
+}
+
+.method-icon {
+  font-size: 1.2rem;
+}
+
+.hours-location h3 {
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.hours-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 3rem;
+}
+
+.hours-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: white;
+  border: 1px solid var(--border-light);
+}
+
+.hours-item.closed {
+  opacity: 0.6;
+}
+
+.location-info {
+  background: white;
+  padding: 2rem;
+  border-left: 3px solid var(--accent-color);
+}
+
+.location-info p {
+  color: var(--text-muted);
+  margin: 0.5rem 0;
+}
+
+/* Contact Section */
+.contact {
+  padding: 60px 0;
+  background: white;
+}
+
+.contact-map {
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 0 10px 30px var(--shadow-medium);
+}
+
+/* Footer */
+.footer {
+  background: var(--primary-color);
+  color: white;
+  padding: 60px 0 30px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4rem;
+  margin-bottom: 2rem;
+}
+
+.footer-main {
+  text-align: center;
+}
+
+.footer-logo {
+  height: 50px;
+  margin-bottom: 1.5rem;
+}
+
+.footer-description {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.footer-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.footer-social svg {
+  width: 20px;
+  height: 20px;
+}
+
+.footer-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.footer-section h4 {
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.footer-section p {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.footer-section a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: var(--accent-color);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+  }
+  
+  .hamburger {
+    display: flex;
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .philosophy-content,
+  .omakase-content,
+  .sake-content,
+  .about-content,
+  .reservations-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .sushi-categories {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .sushi-item {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .visual-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .footer-info {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-methods {
+    text-align: center;
+  }
+}

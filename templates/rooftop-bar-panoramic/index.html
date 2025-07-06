@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Rooftop Bar & Lounge</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#reservations">Reservations</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="tel:{{PHONE}}" class="btn btn-reserve">Reserve Now</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-slider">
+            <div class="hero-slide active">
+                <div class="hero-background">
+                    <img src="{{HERO_IMAGE}}" alt="{{RESTAURANT_NAME}} Rooftop View">
+                    <div class="hero-overlay"></div>
+                </div>
+                <div class="hero-content">
+                    <div class="hero-badge">🏙️ Sky High Experience</div>
+                    <h1>{{RESTAURANT_NAME}}</h1>
+                    <p class="hero-subtitle">{{TAGLINE}}</p>
+                    <p class="hero-description">{{DESCRIPTION}}</p>
+                    <div class="hero-buttons">
+                        <a href="#reservations" class="btn btn-primary">Make Reservation</a>
+                        <a href="#menu" class="btn btn-secondary">View Menu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hero-features">
+            <div class="feature-item">
+                <div class="feature-icon">🌅</div>
+                <span>Panoramic City Views</span>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🍸</div>
+                <span>Craft Cocktails</span>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🎵</div>
+                <span>Live Music</span>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🌟</div>
+                <span>Premium Experience</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="experience-content">
+                <div class="experience-text">
+                    <h2>Above the City</h2>
+                    <p class="section-subtitle">Where the sky meets sophistication</p>
+                    <p class="experience-description">
+                        Escape to our exclusive rooftop sanctuary high above the city. With breathtaking panoramic views, 
+                        expertly crafted cocktails, and an atmosphere that captures the essence of urban luxury, 
+                        {{RESTAURANT_NAME}} offers an unforgettable experience that elevates every moment.
+                    </p>
+                    
+                    <div class="experience-highlights">
+                        <div class="highlight">
+                            <h4>🌆 360° Views</h4>
+                            <p>Unobstructed panoramic views of the city skyline, perfect for sunset cocktails and city lights</p>
+                        </div>
+                        <div class="highlight">
+                            <h4>🍹 Signature Cocktails</h4>
+                            <p>Handcrafted cocktails by our award-winning mixologists using premium spirits and fresh ingredients</p>
+                        </div>
+                        <div class="highlight">
+                            <h4>🎭 Live Entertainment</h4>
+                            <p>Live DJ sets, acoustic performances, and special events throughout the week</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="experience-gallery">
+                    <div class="gallery-main">
+                        <img src="{{INTERIOR_IMAGE_1}}" alt="{{RESTAURANT_NAME}} Interior">
+                    </div>
+                    <div class="gallery-thumbs">
+                        <div class="thumb active">
+                            <img src="{{FOOD_IMAGE_1}}" alt="Cocktail Selection">
+                        </div>
+                        <div class="thumb">
+                            <img src="{{FOOD_IMAGE_2}}" alt="Rooftop Ambiance">
+                        </div>
+                        <div class="thumb">
+                            <img src="{{FOOD_IMAGE_3}}" alt="City Views">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <h2>Elevated Dining & Cocktails</h2>
+            <p class="section-subtitle">Premium selections with a view</p>
+            
+            <div class="menu-tabs">
+                <button class="tab-btn active" data-tab="cocktails">Signature Cocktails</button>
+                <button class="tab-btn" data-tab="wines">Fine Wines</button>
+                <button class="tab-btn" data-tab="bites">Small Bites</button>
+                <button class="tab-btn" data-tab="desserts">Desserts</button>
+            </div>
+            
+            <div class="menu-content">
+                <div class="tab-content active" id="cocktails">
+                    <div class="menu-grid">
+                        <div class="menu-item premium">
+                            <div class="item-image">
+                                <img src="{{FOOD_IMAGE_1}}" alt="{{MENU_ITEM_1}}">
+                                <div class="premium-badge">Signature</div>
+                            </div>
+                            <div class="item-info">
+                                <div class="item-header">
+                                    <h4>{{MENU_ITEM_1}}</h4>
+                                    <span class="price">${{PRICE_1}}</span>
+                                </div>
+                                <p class="item-description">{{MENU_DESCRIPTION_1}}</p>
+                                <div class="item-tags">
+                                    <span class="tag">Premium</span>
+                                    <span class="tag">Handcrafted</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="{{FOOD_IMAGE_2}}" alt="{{MENU_ITEM_2}}">
+                            </div>
+                            <div class="item-info">
+                                <div class="item-header">
+                                    <h4>{{MENU_ITEM_2}}</h4>
+                                    <span class="price">${{PRICE_2}}</span>
+                                </div>
+                                <p class="item-description">{{MENU_DESCRIPTION_2}}</p>
+                                <div class="item-tags">
+                                    <span class="tag">Classic</span>
+                                    <span class="tag">Refreshing</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="{{FOOD_IMAGE_3}}" alt="{{MENU_ITEM_3}}">
+                            </div>
+                            <div class="item-info">
+                                <div class="item-header">
+                                    <h4>{{MENU_ITEM_3}}</h4>
+                                    <span class="price">${{PRICE_3}}</span>
+                                </div>
+                                <p class="item-description">{{MENU_DESCRIPTION_3}}</p>
+                                <div class="item-tags">
+                                    <span class="tag">Tropical</span>
+                                    <span class="tag">Exotic</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="{{FOOD_IMAGE_4}}" alt="{{MENU_ITEM_4}}">
+                            </div>
+                            <div class="item-info">
+                                <div class="item-header">
+                                    <h4>{{MENU_ITEM_4}}</h4>
+                                    <span class="price">${{PRICE_4}}</span>
+                                </div>
+                                <p class="item-description">{{MENU_DESCRIPTION_4}}</p>
+                                <div class="item-tags">
+                                    <span class="tag">Smoky</span>
+                                    <span class="tag">Bold</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="wines">
+                    <div class="wine-section">
+                        <h3>Premium Wine Selection</h3>
+                        <p>Curated collection of fine wines from around the world</p>
+                        <div class="wine-categories">
+                            <div class="wine-category">
+                                <h4>Champagne & Sparkling</h4>
+                                <div class="wine-item">
+                                    <div class="wine-details">
+                                        <h5>Dom Pérignon 2012</h5>
+                                        <p>France, Champagne</p>
+                                    </div>
+                                    <span class="wine-price">$285</span>
+                                </div>
+                                <div class="wine-item">
+                                    <div class="wine-details">
+                                        <h5>Veuve Clicquot Brut</h5>
+                                        <p>France, Champagne</p>
+                                    </div>
+                                    <span class="wine-price">$95</span>
+                                </div>
+                            </div>
+                            
+                            <div class="wine-category">
+                                <h4>Red Wines</h4>
+                                <div class="wine-item">
+                                    <div class="wine-details">
+                                        <h5>Opus One 2018</h5>
+                                        <p>Napa Valley, California</p>
+                                    </div>
+                                    <span class="wine-price">$425</span>
+                                </div>
+                                <div class="wine-item">
+                                    <div class="wine-details">
+                                        <h5>Caymus Cabernet Sauvignon</h5>
+                                        <p>Napa Valley, California</p>
+                                    </div>
+                                    <span class="wine-price">$125</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="bites">
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="{{FOOD_IMAGE_5}}" alt="{{MENU_ITEM_5}}">
+                            </div>
+                            <div class="item-info">
+                                <div class="item-header">
+                                    <h4>{{MENU_ITEM_5}}</h4>
+                                    <span class="price">${{PRICE_5}}</span>
+                                </div>
+                                <p class="item-description">{{MENU_DESCRIPTION_5}}</p>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="{{FOOD_IMAGE_6}}" alt="{{MENU_ITEM_6}}">
+                            </div>
+                            <div class="item-info">
+                                <div class="item-header">
+                                    <h4>{{MENU_ITEM_6}}</h4>
+                                    <span class="price">${{PRICE_6}}</span>
+                                </div>
+                                <p class="item-description">{{MENU_DESCRIPTION_6}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="desserts">
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="{{FOOD_IMAGE_7}}" alt="{{MENU_ITEM_7}}">
+                            </div>
+                            <div class="item-info">
+                                <div class="item-header">
+                                    <h4>{{MENU_ITEM_7}}</h4>
+                                    <span class="price">${{PRICE_7}}</span>
+                                </div>
+                                <p class="item-description">{{MENU_DESCRIPTION_7}}</p>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="{{FOOD_IMAGE_8}}" alt="{{MENU_ITEM_8}}">
+                            </div>
+                            <div class="item-info">
+                                <div class="item-header">
+                                    <h4>{{MENU_ITEM_8}}</h4>
+                                    <span class="price">${{PRICE_8}}</span>
+                                </div>
+                                <p class="item-description">{{MENU_DESCRIPTION_8}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="events">
+        <div class="container">
+            <h2>Exclusive Events</h2>
+            <p class="section-subtitle">Elevate your special occasions</p>
+            
+            <div class="events-grid">
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="{{INTERIOR_IMAGE_1}}" alt="Private Events">
+                        <div class="event-overlay">
+                            <div class="event-badge">Private</div>
+                        </div>
+                    </div>
+                    <div class="event-info">
+                        <h3>Private Events</h3>
+                        <p>Host unforgettable private parties with exclusive access to our rooftop space. Perfect for corporate events, birthday celebrations, and special occasions.</p>
+                        <div class="event-details">
+                            <span>👥 Up to 150 guests</span>
+                            <span>🎵 Private DJ</span>
+                            <span>🍾 Custom bar service</span>
+                        </div>
+                        <a href="#contact" class="btn btn-outline">Inquire Now</a>
+                    </div>
+                </div>
+                
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="{{FOOD_IMAGE_1}}" alt="Corporate Events">
+                        <div class="event-overlay">
+                            <div class="event-badge">Corporate</div>
+                        </div>
+                    </div>
+                    <div class="event-info">
+                        <h3>Corporate Events</h3>
+                        <p>Impress clients and colleagues with sophisticated corporate events featuring panoramic city views and premium catering options.</p>
+                        <div class="event-details">
+                            <span>💼 Business atmosphere</span>
+                            <span>🍽️ Premium catering</span>
+                            <span>📊 AV equipment</span>
+                        </div>
+                        <a href="#contact" class="btn btn-outline">Book Now</a>
+                    </div>
+                </div>
+                
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="{{FOOD_IMAGE_2}}" alt="Wedding Events">
+                        <div class="event-overlay">
+                            <div class="event-badge">Wedding</div>
+                        </div>
+                    </div>
+                    <div class="event-info">
+                        <h3>Wedding Celebrations</h3>
+                        <p>Create magical wedding moments with our romantic rooftop setting, stunning city backdrop, and personalized service.</p>
+                        <div class="event-details">
+                            <span>💒 Romantic setting</span>
+                            <span>📸 Photo opportunities</span>
+                            <span>🎂 Custom packages</span>
+                        </div>
+                        <a href="#contact" class="btn btn-outline">Plan Your Day</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservations Section -->
+    <section id="reservations" class="reservations">
+        <div class="container">
+            <h2>Reserve Your Experience</h2>
+            <p class="section-subtitle">Book your table with a view</p>
+            
+            <div class="reservation-content">
+                <div class="reservation-info">
+                    <div class="info-card">
+                        <h3>🕐 Operating Hours</h3>
+                        <div class="hours-list">
+                            <div class="hours-item">
+                                <span>Monday - Tuesday</span>
+                                <span>{{HOURS_MON}} - {{HOURS_TUE}}</span>
+                            </div>
+                            <div class="hours-item">
+                                <span>Wednesday - Thursday</span>
+                                <span>{{HOURS_WED}} - {{HOURS_THU}}</span>
+                            </div>
+                            <div class="hours-item">
+                                <span>Friday - Saturday</span>
+                                <span>{{HOURS_FRI}} - {{HOURS_SAT}}</span>
+                            </div>
+                            <div class="hours-item">
+                                <span>Sunday</span>
+                                <span>{{HOURS_SUN}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>📋 Reservation Policy</h3>
+                        <ul>
+                            <li>Reservations recommended for parties of 4 or more</li>
+                            <li>Walk-ins welcome based on availability</li>
+                            <li>Dress code: Smart casual to elegant</li>
+                            <li>Minimum age: 21+ after 9 PM</li>
+                            <li>Private events available upon request</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="reservation-form">
+                    <h3>Make a Reservation</h3>
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" placeholder="Email Address" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" placeholder="Phone Number" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="guests">Party Size</label>
+                                <select id="guests" required>
+                                    <option value="">Select Size</option>
+                                    <option value="1">1 Guest</option>
+                                    <option value="2">2 Guests</option>
+                                    <option value="3">3 Guests</option>
+                                    <option value="4">4 Guests</option>
+                                    <option value="5">5 Guests</option>
+                                    <option value="6">6 Guests</option>
+                                    <option value="7">7+ Guests</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="date">Date</label>
+                                <input type="date" id="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="time">Time</label>
+                                <select id="time" required>
+                                    <option value="">Select Time</option>
+                                    <option value="5:00">5:00 PM</option>
+                                    <option value="5:30">5:30 PM</option>
+                                    <option value="6:00">6:00 PM</option>
+                                    <option value="6:30">6:30 PM</option>
+                                    <option value="7:00">7:00 PM</option>
+                                    <option value="7:30">7:30 PM</option>
+                                    <option value="8:00">8:00 PM</option>
+                                    <option value="8:30">8:30 PM</option>
+                                    <option value="9:00">9:00 PM</option>
+                                    <option value="9:30">9:30 PM</option>
+                                    <option value="10:00">10:00 PM</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="occasion">Special Occasion (Optional)</label>
+                            <select id="occasion">
+                                <option value="">Select Occasion</option>
+                                <option value="birthday">Birthday</option>
+                                <option value="anniversary">Anniversary</option>
+                                <option value="date">Date Night</option>
+                                <option value="business">Business</option>
+                                <option value="celebration">Celebration</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="requests">Special Requests</label>
+                            <textarea id="requests" placeholder="Any special requests or dietary restrictions..." rows="3"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Reserve Now</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p class="section-subtitle">Reach out for inquiries and special requests</p>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <p><a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+                            <p class="contact-note">For reservations and inquiries</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
+                            <p class="contact-note">Private events and corporate bookings</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <p>{{FULL_ADDRESS}}</p>
+                            <p class="contact-note">Valet parking available</p>
+                            <a href="{{GOOGLE_MAPS_URL}}" class="btn btn-outline">Get Directions</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-map">
+                    <iframe src="{{GOOGLE_MAPS_EMBED}}" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}}">
+                    </div>
+                    <p class="footer-tagline">{{TAGLINE}}</p>
+                    <div class="footer-social">
+                        <a href="{{FACEBOOK_URL}}" class="social-link">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}" class="social-link">Instagram</a>
+                        <a href="{{YELP_URL}}" class="social-link">Yelp</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#events">Events</a></li>
+                        <li><a href="#reservations">Reservations</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Hours</h4>
+                    <div class="footer-hours">
+                        <p>{{WEEKDAY_HOURS}}</p>
+                        <p>{{WEEKEND_HOURS}}</p>
+                        <p>{{SUNDAY_HOURS}}</p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>📞 <a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+                    <p>📧 <a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
+                    <p>📍 {{FULL_ADDRESS}}</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+                <p>Elevating experiences above the city</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

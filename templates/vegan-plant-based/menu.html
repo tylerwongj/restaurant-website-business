@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Complete Plant-Based Menu</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - Our complete selection of nourishing plant-based dishes">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 80px;
+        }
+        
+        .menu-hero {
+            background: linear-gradient(135deg, var(--background-section), var(--background-warm));
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .menu-hero::before {
+            content: '🌱';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 4rem;
+            opacity: 0.2;
+        }
+        
+        .menu-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+        
+        .menu-hero p {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .hero-badges {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .hero-badge {
+            background: var(--primary-color);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .menu-content {
+            padding: 80px 0;
+            background: var(--background-light);
+        }
+        
+        .menu-section {
+            margin-bottom: 80px;
+        }
+        
+        .menu-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            text-align: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .section-icon {
+            font-size: 1.8rem;
+        }
+        
+        .menu-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+        
+        .section-description {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            font-style: italic;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 40px;
+        }
+        
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+        }
+        
+        .menu-item-detailed {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        
+        .menu-item-detailed:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        .menu-item-detailed img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .menu-item-content {
+            padding: 25px;
+        }
+        
+        .menu-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .menu-item-detailed h3 {
+            color: var(--text-dark);
+            font-size: 1.3rem;
+            flex: 1;
+            margin-right: 15px;
+        }
+        
+        .item-badges {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+        }
+        
+        .diet-badge {
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .diet-badge.gluten-free {
+            background: #ff9800;
+            color: white;
+        }
+        
+        .diet-badge.raw {
+            background: #4caf50;
+            color: white;
+        }
+        
+        .diet-badge.protein {
+            background: #9c27b0;
+            color: white;
+        }
+        
+        .diet-badge.keto {
+            background: #f44336;
+            color: white;
+        }
+        
+        .diet-badge.superfood {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+        }
+        
+        .diet-badge.organic {
+            background: var(--natural-orange);
+            color: white;
+        }
+        
+        .menu-item-detailed p {
+            color: var(--text-light);
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+        
+        .menu-item-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+        }
+        
+        .menu-item-detailed .price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .nutrition-highlight {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            font-style: italic;
+            background: var(--background-section);
+            padding: 8px 12px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            transform: translateX(-5px);
+        }
+        
+        .chef-favorite {
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+        
+        .seasonal-special {
+            background: var(--natural-orange);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+        
+        .nutritional-info {
+            background: var(--background-warm);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            border-left: 3px solid var(--accent-color);
+        }
+        
+        .nutritional-info h4 {
+            color: var(--text-dark);
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+        
+        .nutritional-info p {
+            margin: 0;
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+        
+        .allergen-info {
+            display: flex;
+            gap: 5px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .allergen-tag {
+            background: #e0e0e0;
+            color: var(--text-dark);
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.7rem;
+        }
+        
+        .allergen-tag.free {
+            background: var(--accent-color);
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .menu-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .menu-section h2 {
+                font-size: 2rem;
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .hero-badges {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#starters">Starters</a></li>
+                <li><a href="#mains">Mains</a></li>
+                <li><a href="#desserts">Desserts</a></li>
+                <li><a href="#beverages">Beverages</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu Hero -->
+    <section class="menu-hero">
+        <div class="container">
+            <h1>Complete Plant-Based Menu</h1>
+            <p>Nourishing your body while caring for our planet - every dish is 100% plant-based, thoughtfully crafted, and deliciously satisfying</p>
+            <div class="hero-badges">
+                <span class="hero-badge">🌱 100% Vegan</span>
+                <span class="hero-badge">🌾 80% Organic</span>
+                <span class="hero-badge">♻️ Zero Waste</span>
+                <span class="hero-badge">💚 Nutrient Dense</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Content -->
+    <section class="menu-content">
+        <div class="container">
+            <a href="index.html" class="back-link">
+                ← Back to Home
+            </a>
+            
+            <!-- Nourishing Starters -->
+            <div class="menu-section" id="starters">
+                <h2><span class="section-icon">🥗</span> Nourishing Starters</h2>
+                <p class="section-description">Light, fresh beginnings packed with vitamins and energy</p>
+                <div class="menu-grid">
+                    <div class="menu-item-detailed">
+                        <img src="{{FOOD_IMAGE_1}}" alt="{{MENU_ITEM_1}}">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3>{{MENU_ITEM_1}} <span class="chef-favorite">Chef's Favorite</span></h3>
+                                <div class="item-badges">
+                                    <span class="diet-badge gluten-free">GF</span>
+                                    <span class="diet-badge raw">Raw</span>
+                                    <span class="diet-badge superfood">Superfood</span>
+                                </div>
+                            </div>
+                            <p>{{MENU_DESCRIPTION_1}}</p>
+                            <div class="menu-item-meta">
+                                <span class="price">${{PRICE_1}}</span>
+                            </div>
+                            <div class="nutritional-info">
+                                <h4>Nutritional Benefits:</h4>
+                                <p>High in antioxidants, vitamin C, and fiber. Supports immune system and digestive health.</p>
+                            </div>
+                            <div class="allergen-info">
+                                <span class="allergen-tag free">Gluten-Free</span>
+                                <span class="allergen-tag free">Nut-Free</span>
+                                <span class="allergen-tag free">Soy-Free</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-detailed">
+                        <img src="{{FOOD_IMAGE_2}}" alt="{{MENU_ITEM_2}}">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3>{{MENU_ITEM_2}}</h3>
+                                <div class="item-badges">
+                                    <span class="diet-badge protein">High Protein</span>
+                                    <span class="diet-badge organic">Organic</span>
+                                </div>
+                            </div>
+                            <p>{{MENU_DESCRIPTION_2}}</p>
+                            <div class="menu-item-meta">
+                                <span class="price">${{PRICE_2}}</span>
+                            </div>
+                            <div class="nutritional-info">
+                                <h4>Nutritional Benefits:</h4>
+                                <p>20g plant protein per serving. Rich in iron, B-vitamins, and healthy omega-3 fatty acids.</p>
+                            </div>
+                            <div class="allergen-info">
+                                <span class="allergen-tag">Contains Nuts</span>
+                                <span class="allergen-tag free">Gluten-Free</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-detailed">
+                        <img src="{{FOOD_IMAGE_3}}" alt="{{MENU_ITEM_3}}">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3>{{MENU_ITEM_3}} <span class="seasonal-special">Seasonal</span></h3>
+                                <div class="item-badges">
+                                    <span class="diet-badge keto">Keto</span>
+                                    <span class="diet-badge raw">Raw</span>
+                                </div>
+                            </div>
+                            <p>{{MENU_DESCRIPTION_3}}</p>
+                            <div class="menu-item-meta">
+                                <span class="price">${{PRICE_3}}</span>
+                            </div>
+                            <div class="nutritional-info">
+                                <h4>Nutritional Benefits:</h4>
+                                <p>Low in carbs, high in healthy fats. Rich in vitamins A, C, and E.</p>
+                            </div>
+                            <div class="allergen-info">
+                                <span class="allergen-tag free">Gluten-Free</span>
+                                <span class="allergen-tag free">Nut-Free</span>
+                                <span class="allergen-tag free">Soy-Free</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Satisfying Mains -->
+            <div class="menu-section" id="mains">
+                <h2><span class="section-icon">🍽️</span> Satisfying Main Courses</h2>
+                <p class="section-description">Hearty, protein-rich dishes that will leave you completely satisfied</p>
+                <div class="menu-grid">
+                    <div class="menu-item-detailed">
+                        <img src="{{FOOD_IMAGE_4}}" alt="{{MENU_ITEM_4}}">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3>{{MENU_ITEM_4}} <span class="chef-favorite">Signature</span></h3>
+                                <div class="item-badges">
+                                    <span class="diet-badge protein">High Protein</span>
+                                    <span class="diet-badge gluten-free">GF</span>
+                                </div>
+                            </div>
+                            <p>{{MENU_DESCRIPTION_4}}</p>
+                            <div class="menu-item-meta">
+                                <span class="price">${{PRICE_4}}</span>
+                            </div>
+                            <div class="nutritional-info">
+                                <h4>Nutritional Benefits:</h4>
+                                <p>Complete amino acid profile with 25g protein. High in fiber and B-vitamins.</p>
+                            </div>
+                            <div class="allergen-info">
+                                <span class="allergen-tag free">Gluten-Free</span>
+                                <span class="allergen-tag">Contains Soy</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-detailed">
+                        <img src="{{FOOD_IMAGE_5}}" alt="{{MENU_ITEM_5}}">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3>{{MENU_ITEM_5}}</h3>
+                                <div class="item-badges">
+                                    <span class="diet-badge organic">Organic</span>
+                                    <span class="diet-badge superfood">Superfood</span>
+                                </div>
+                            </div>
+                            <p>{{MENU_DESCRIPTION_5}}</p>
+                            <div class="menu-item-meta">
+                                <span class="price">${{PRICE_5}}</span>
+                            </div>
+                            <div class="nutritional-info">
+                                <h4>Nutritional Benefits:</h4>
+                                <p>Loaded with antioxidants, healthy fats, and plant-based protein. Anti-inflammatory properties.</p>
+                            </div>
+                            <div class="allergen-info">
+                                <span class="allergen-tag">Contains Gluten</span>
+                                <span class="allergen-tag free">Nut-Free</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-detailed">
+                        <img src="{{FOOD_IMAGE_6}}" alt="{{MENU_ITEM_6}}">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3>{{MENU_ITEM_6}}</h3>
+                                <div class="item-badges">
+                                    <span class="diet-badge keto">Keto Friendly</span>
+                                    <span class="diet-badge gluten-free">GF</span>
+                                </div>
+                            </div>
+                            <p>{{MENU_DESCRIPTION_6}}</p>
+                            <div class="menu-item-meta">
+                                <span class="price">${{PRICE_6}}</span>
+                            </div>
+                            <div class="nutritional-info">
+                                <h4>Nutritional Benefits:</h4>
+                                <p>Low carb, high in healthy monounsaturated fats. Rich in potassium and folate.</p>
+                            </div>
+                            <div class="allergen-info">
+                                <span class="allergen-tag free">Gluten-Free</span>
+                                <span class="allergen-tag free">Soy-Free</span>
+                                <span class="allergen-tag">Contains Nuts</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-detailed">
+                        <img src="{{FOOD_IMAGE_7}}" alt="{{MENU_ITEM_7}}">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3>{{MENU_ITEM_7}} <span class="seasonal-special">New</span></h3>
+                                <div class="item-badges">
+                                    <span class="diet-badge protein">High Protein</span>
+                                    <span class="diet-badge organic">Organic</span>
+                                </div>
+                            </div>
+                            <p>{{MENU_DESCRIPTION_7}}</p>
+                            <div class="menu-item-meta">
+                                <span class="price">${{PRICE_7}}</span>
+                            </div>
+                            <div class="nutritional-info">
+                                <h4>Nutritional Benefits:</h4>
+                                <p>22g plant protein per serving. High in iron, magnesium, and zinc.</p>
+                            </div>
+                            <div class="allergen-info">
+                                <span class="allergen-tag">Contains Gluten</span>
+                                <span class="allergen-tag">Contains Soy</span>
+                                <span class="allergen-tag free">Nut-Free</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Guilt-Free Desserts -->
+            <div class="menu-section" id="desserts">
+                <h2><span class="section-icon">🍰</span> Guilt-Free Desserts</h2>
+                <p class="section-description">Naturally sweetened treats that satisfy your sweet tooth while nourishing your body</p>
+                <div class="menu-grid">
+                    <div class="menu-item-detailed">
+                        <img src="{{FOOD_IMAGE_8}}" alt="{{MENU_ITEM_8}}">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3>{{MENU_ITEM_8}} <span class="chef-favorite">Popular</span></h3>
+                                <div class="item-badges">
+                                    <span class="diet-badge raw">Raw</span>
+                                    <span class="diet-badge gluten-free">GF</span>
+                                    <span class="diet-badge superfood">Superfood</span>
+                                </div>
+                            </div>
+                            <p>{{MENU_DESCRIPTION_8}}</p>
+                            <div class="menu-item-meta">
+                                <span class="price">${{PRICE_8}}</span>
+                            </div>
+                            <div class="nutritional-info">
+                                <h4>Nutritional Benefits:</h4>
+                                <p>Naturally sweetened with dates. Rich in healthy fats, fiber, and antioxidants.</p>
+                            </div>
+                            <div class="allergen-info">
+                                <span class="allergen-tag free">Gluten-Free</span>
+                                <span class="allergen-tag">Contains Nuts</span>
+                                <span class="allergen-tag free">Refined Sugar Free</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-detailed">
+                        <img src="{{FOOD_IMAGE_9}}" alt="{{MENU_ITEM_9}}">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3>{{MENU_ITEM_9}}</h3>
+                                <div class="item-badges">
+                                    <span class="diet-badge organic">Organic</span>
+                                    <span class="diet-badge gluten-free">GF</span>
+                                </div>
+                            </div>
+                            <p>{{MENU_DESCRIPTION_9}}</p>
+                            <div class="menu-item-meta">
+                                <span class="price">${{PRICE_9}}</span>
+                            </div>
+                            <div class="nutritional-info">
+                                <h4>Nutritional Benefits:</h4>
+                                <p>Natural fruit sugars, high in vitamin C and antioxidants. Supports immune function.</p>
+                            </div>
+                            <div class="allergen-info">
+                                <span class="allergen-tag free">Gluten-Free</span>
+                                <span class="allergen-tag free">Nut-Free</span>
+                                <span class="allergen-tag free">Soy-Free</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-detailed">
+                        <img src="{{FOOD_IMAGE_10}}" alt="{{MENU_ITEM_10}}">
+                        <div class="menu-item-content">
+                            <div class="menu-item-header">
+                                <h3>{{MENU_ITEM_10}} <span class="seasonal-special">Limited</span></h3>
+                                <div class="item-badges">
+                                    <span class="diet-badge raw">Raw</span>
+                                    <span class="diet-badge superfood">Superfood</span>
+                                </div>
+                            </div>
+                            <p>{{MENU_DESCRIPTION_10}}</p>
+                            <div class="menu-item-meta">
+                                <span class="price">${{PRICE_10}}</span>
+                            </div>
+                            <div class="nutritional-info">
+                                <h4>Nutritional Benefits:</h4>
+                                <p>Packed with superfoods including chia, cacao, and maca. Natural energy boost.</p>
+                            </div>
+                            <div class="allergen-info">
+                                <span class="allergen-tag">Contains Gluten</span>
+                                <span class="allergen-tag">Contains Nuts</span>
+                                <span class="allergen-tag free">Refined Sugar Free</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Energizing Beverages -->
+            <div class="menu-section" id="beverages">
+                <h2><span class="section-icon">🥤</span> Energizing Beverages</h2>
+                <p class="section-description">Fresh-pressed juices, smoothies, and wellness drinks to fuel your day</p>
+                <div class="menu-grid">
+                    <div class="menu-item-detailed">
+                        <div class="menu-item-content">
+                            <h3>Fresh-Pressed Juices</h3>
+                            <div style="display: grid; gap: 15px; margin-top: 15px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px; background: var(--background-section); border-radius: 12px;">
+                                    <div>
+                                        <strong>{{MENU_ITEM_11}}</strong>
+                                        <div class="item-badges" style="margin-top: 5px;">
+                                            <span class="diet-badge superfood">Superfood</span>
+                                            <span class="diet-badge organic">Organic</span>
+                                        </div>
+                                        <small style="color: var(--text-light); margin-top: 5px; display: block;">{{MENU_DESCRIPTION_11}}</small>
+                                    </div>
+                                    <div style="text-align: right;">
+                                        <div style="color: var(--primary-color); font-weight: 700; font-size: 1.1rem;">${{PRICE_11}}</div>
+                                        <small style="color: var(--text-light);">16oz</small>
+                                    </div>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px; background: var(--background-section); border-radius: 12px;">
+                                    <div>
+                                        <strong>Green Goddess</strong>
+                                        <div class="item-badges" style="margin-top: 5px;">
+                                            <span class="diet-badge raw">Raw</span>
+                                            <span class="diet-badge gluten-free">GF</span>
+                                        </div>
+                                        <small style="color: var(--text-light); margin-top: 5px; display: block;">Kale, spinach, cucumber, celery, apple, lemon, ginger</small>
+                                    </div>
+                                    <div style="text-align: right;">
+                                        <div style="color: var(--primary-color); font-weight: 700; font-size: 1.1rem;">$8.95</div>
+                                        <small style="color: var(--text-light);">16oz</small>
+                                    </div>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px; background: var(--background-section); border-radius: 12px;">
+                                    <div>
+                                        <strong>Immunity Boost</strong>
+                                        <div class="item-badges" style="margin-top: 5px;">
+                                            <span class="diet-badge superfood">Superfood</span>
+                                        </div>
+                                        <small style="color: var(--text-light); margin-top: 5px; display: block;">Orange, carrot, ginger, turmeric, cayenne, lemon</small>
+                                    </div>
+                                    <div style="text-align: right;">
+                                        <div style="color: var(--primary-color); font-weight: 700; font-size: 1.1rem;">$9.95</div>
+                                        <small style="color: var(--text-light);">16oz</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-detailed">
+                        <div class="menu-item-content">
+                            <h3>Power Smoothies</h3>
+                            <div style="display: grid; gap: 15px; margin-top: 15px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px; background: var(--background-section); border-radius: 12px;">
+                                    <div>
+                                        <strong>{{MENU_ITEM_12}}</strong>
+                                        <div class="item-badges" style="margin-top: 5px;">
+                                            <span class="diet-badge protein">High Protein</span>
+                                            <span class="diet-badge superfood">Superfood</span>
+                                        </div>
+                                        <small style="color: var(--text-light); margin-top: 5px; display: block;">{{MENU_DESCRIPTION_12}}</small>
+                                    </div>
+                                    <div style="text-align: right;">
+                                        <div style="color: var(--primary-color); font-weight: 700; font-size: 1.1rem;">${{PRICE_12}}</div>
+                                        <small style="color: var(--text-light);">20oz</small>
+                                    </div>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px; background: var(--background-section); border-radius: 12px;">
+                                    <div>
+                                        <strong>Tropical Paradise</strong>
+                                        <div class="item-badges" style="margin-top: 5px;">
+                                            <span class="diet-badge raw">Raw</span>
+                                            <span class="diet-badge gluten-free">GF</span>
+                                        </div>
+                                        <small style="color: var(--text-light); margin-top: 5px; display: block;">Mango, pineapple, coconut milk, banana, lime, mint</small>
+                                    </div>
+                                    <div style="text-align: right;">
+                                        <div style="color: var(--primary-color); font-weight: 700; font-size: 1.1rem;">$11.95</div>
+                                        <small style="color: var(--text-light);">20oz</small>
+                                    </div>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px; background: var(--background-section); border-radius: 12px;">
+                                    <div>
+                                        <strong>Chocolate Almond Bliss</strong>
+                                        <div class="item-badges" style="margin-top: 5px;">
+                                            <span class="diet-badge protein">High Protein</span>
+                                        </div>
+                                        <small style="color: var(--text-light); margin-top: 5px; display: block;">Cacao, almond butter, banana, dates, almond milk, vanilla</small>
+                                    </div>
+                                    <div style="text-align: right;">
+                                        <div style="color: var(--primary-color); font-weight: 700; font-size: 1.1rem;">$12.95</div>
+                                        <small style="color: var(--text-light);">20oz</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-detailed">
+                        <div class="menu-item-content">
+                            <h3>Wellness Lattes & Teas</h3>
+                            <div style="display: grid; gap: 15px; margin-top: 15px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px; background: var(--background-section); border-radius: 12px;">
+                                    <div>
+                                        <strong>Golden Turmeric Latte</strong>
+                                        <div class="item-badges" style="margin-top: 5px;">
+                                            <span class="diet-badge superfood">Superfood</span>
+                                            <span class="diet-badge organic">Organic</span>
+                                        </div>
+                                        <small style="color: var(--text-light); margin-top: 5px; display: block;">Turmeric, ginger, cinnamon, black pepper, coconut milk</small>
+                                    </div>
+                                    <div style="color: var(--primary-color); font-weight: 700; font-size: 1.1rem;">$5.95</div>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px; background: var(--background-section); border-radius: 12px;">
+                                    <div>
+                                        <strong>Matcha Adaptogen Latte</strong>
+                                        <div class="item-badges" style="margin-top: 5px;">
+                                            <span class="diet-badge superfood">Superfood</span>
+                                        </div>
+                                        <small style="color: var(--text-light); margin-top: 5px; display: block;">Ceremonial matcha, ashwagandha, maca, oat milk</small>
+                                    </div>
+                                    <div style="color: var(--primary-color); font-weight: 700; font-size: 1.1rem;">$6.95</div>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; padding: 15px; background: var(--background-section); border-radius: 12px;">
+                                    <div>
+                                        <strong>Herbal Wellness Tea</strong>
+                                        <div class="item-badges" style="margin-top: 5px;">
+                                            <span class="diet-badge organic">Organic</span>
+                                        </div>
+                                        <small style="color: var(--text-light); margin-top: 5px; display: block;">Blend of chamomile, nettle, red clover, rose hips</small>
+                                    </div>
+                                    <div style="color: var(--primary-color); font-weight: 700; font-size: 1.1rem;">$4.95</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>{{RESTAURANT_NAME}}</h4>
+                    <p>{{TAGLINE}}</p>
+                    <div class="footer-certifications">
+                        <span class="cert-badge">🌱 100% Vegan</span>
+                        <span class="cert-badge">🌾 Organic Certified</span>
+                        <span class="cert-badge">♻️ Zero Waste</span>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Hours</h4>
+                    <p>Monday - Thursday: {{HOURS_MON}}</p>
+                    <p>Friday - Saturday: {{HOURS_FRI}}</p>
+                    <p>Sunday: {{HOURS_SUN}}</p>
+                    <p><strong>Happy Hour:</strong> Mon-Fri 3-6 PM</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>{{FULL_ADDRESS}}</p>
+                    <p><a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+                    <p><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
+                    <div class="footer-social">
+                        <a href="{{FACEBOOK_URL}}" target="_blank">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}" target="_blank">Instagram</a>
+                        <a href="{{YELP_URL}}" target="_blank">Yelp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved. | Powered by plants 🌱</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

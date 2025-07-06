@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Menu | Premium Steakhouse</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} Menu - Premium steaks, chops, and fine dining cuisine">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Menu-specific styles */
+        .menu-hero {
+            background: linear-gradient(rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), url('{{HERO_IMAGE}}');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-top: 90px;
+        }
+
+        .menu-hero h1 {
+            font-size: 4rem;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .menu-section {
+            padding: 60px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .menu-section:last-child {
+            border-bottom: none;
+        }
+
+        .menu-section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 40px;
+        }
+
+        .menu-item-detailed {
+            display: flex;
+            gap: 20px;
+            padding: 30px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .menu-item-detailed:last-child {
+            border-bottom: none;
+        }
+
+        .menu-item-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 10px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .menu-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .menu-item-content {
+            flex: 1;
+        }
+
+        .menu-item-header {
+            display: flex;
+            justify-content: between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .menu-item-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .menu-item-price {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            font-weight: 700;
+            margin-left: auto;
+            flex-shrink: 0;
+        }
+
+        .menu-item-description {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .menu-item-details {
+            display: flex;
+            gap: 20px;
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .wine-pairing {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .wine-pairing-title {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .dietary-info {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .dietary-tag {
+            background: var(--secondary-color);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 3px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .chef-special {
+            position: relative;
+        }
+
+        .chef-special::before {
+            content: "Chef's Special";
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: var(--secondary-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .prix-fixe-section {
+            background: var(--background-color);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .prix-fixe-menu {
+            background: white;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .prix-fixe-price {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .course-section {
+            margin-bottom: 40px;
+        }
+
+        .course-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+        }
+
+        .course-options {
+            display: grid;
+            gap: 15px;
+        }
+
+        .course-option {
+            text-align: left;
+            padding: 15px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+        }
+
+        .option-title {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .menu-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .menu-item-detailed {
+                flex-direction: column;
+            }
+
+            .menu-item-image {
+                width: 100%;
+                height: 200px;
+            }
+
+            .prix-fixe-menu {
+                padding: 30px 20px;
+                margin: 0 20px;
+            }
+        }
+    </style>
+</head>
+<body class="steakhouse-theme">
+    <!-- Navigation -->
+    <nav class="navbar navbar-dark">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+                <span class="logo-text">{{RESTAURANT_NAME}}</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#steaks">Steaks</a></li>
+                <li><a href="#seafood">Seafood</a></li>
+                <li><a href="#wine">Wine</a></li>
+                <li><a href="#desserts">Desserts</a></li>
+                <li><a href="index.html#contact">Reservations</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu Hero -->
+    <section class="menu-hero">
+        <div class="hero-content">
+            <h1>Our Menu</h1>
+            <p class="hero-subtitle">Exceptional cuisine, unforgettable experience</p>
+        </div>
+    </section>
+
+    <!-- Prix Fixe Menu -->
+    <section class="prix-fixe-section">
+        <div class="container">
+            <h2>Chef's Tasting Menu</h2>
+            <div class="prix-fixe-menu">
+                <div class="prix-fixe-price">${{PRICE_4}}</div>
+                <p class="lead">Seven-course culinary journey with wine pairings available (+$65)</p>
+                
+                <div class="course-section">
+                    <h3 class="course-title">Amuse-Bouche</h3>
+                    <div class="course-option">
+                        <div class="option-title">Oyster & Champagne Pearls</div>
+                        <p>Kumamoto oyster with champagne foam and caviar</p>
+                    </div>
+                </div>
+
+                <div class="course-section">
+                    <h3 class="course-title">First Course</h3>
+                    <div class="course-options">
+                        <div class="course-option">
+                            <div class="option-title">Foie Gras Terrine</div>
+                            <p>With fig compote and brioche toast</p>
+                        </div>
+                        <div class="course-option">
+                            <div class="option-title">Lobster Bisque</div>
+                            <p>Cognac cream and fresh herbs</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-section">
+                    <h3 class="course-title">Main Course</h3>
+                    <div class="course-options">
+                        <div class="course-option">
+                            <div class="option-title">Wagyu Beef Tenderloin</div>
+                            <p>Truffle potato gratin and red wine reduction</p>
+                        </div>
+                        <div class="course-option">
+                            <div class="option-title">John Dory</div>
+                            <p>Brown butter, capers, and lemon</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-section">
+                    <h3 class="course-title">Dessert</h3>
+                    <div class="course-option">
+                        <div class="option-title">Dark Chocolate Soufflé</div>
+                        <p>Raspberry coulis and vanilla bean ice cream</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Steaks & Chops -->
+    <section id="steaks" class="menu-section">
+        <div class="container">
+            <h2>Premium Steaks & Chops</h2>
+            <p class="section-subtitle">Dry-aged to perfection, served with choice of potato and vegetable</p>
+            
+            <div class="menu-grid">
+                <div class="menu-item-detailed chef-special">
+                    <div class="menu-item-image">
+                        <img src="{{FOOD_IMAGE_1}}" alt="{{MENU_ITEM_1}}">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <div>
+                                <h3 class="menu-item-title">{{MENU_ITEM_1}}</h3>
+                                <div class="menu-item-details">
+                                    <span>32oz • Dry-aged 28 days</span>
+                                </div>
+                            </div>
+                            <span class="menu-item-price">${{PRICE_1}}</span>
+                        </div>
+                        <p class="menu-item-description">{{MENU_DESCRIPTION_1}}</p>
+                        <div class="wine-pairing">
+                            <div class="wine-pairing-title">Recommended Pairing</div>
+                            <p>2019 Caymus Cabernet Sauvignon, Napa Valley</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item-detailed">
+                    <div class="menu-item-image">
+                        <img src="{{FOOD_IMAGE_2}}" alt="{{MENU_ITEM_2}}">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <div>
+                                <h3 class="menu-item-title">{{MENU_ITEM_2}}</h3>
+                                <div class="menu-item-details">
+                                    <span>40oz • Japanese A5 Wagyu</span>
+                                </div>
+                            </div>
+                            <span class="menu-item-price">${{PRICE_2}}</span>
+                        </div>
+                        <p class="menu-item-description">{{MENU_DESCRIPTION_2}}</p>
+                        <div class="wine-pairing">
+                            <div class="wine-pairing-title">Recommended Pairing</div>
+                            <p>2018 Opus One, Napa Valley</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item-detailed">
+                    <div class="menu-item-image">
+                        <img src="{{FOOD_IMAGE_3}}" alt="{{MENU_ITEM_3}}">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <div>
+                                <h3 class="menu-item-title">{{MENU_ITEM_3}}</h3>
+                                <div class="menu-item-details">
+                                    <span>8oz • Center Cut</span>
+                                </div>
+                            </div>
+                            <span class="menu-item-price">${{PRICE_3}}</span>
+                        </div>
+                        <p class="menu-item-description">{{MENU_DESCRIPTION_3}}</p>
+                        <div class="wine-pairing">
+                            <div class="wine-pairing-title">Recommended Pairing</div>
+                            <p>2020 Pinot Noir, Willamette Valley</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item-detailed">
+                    <div class="menu-item-image">
+                        <img src="{{FOOD_IMAGE_4}}" alt="Prime New York Strip">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <div>
+                                <h3 class="menu-item-title">Prime New York Strip</h3>
+                                <div class="menu-item-details">
+                                    <span>16oz • Dry-aged 21 days</span>
+                                </div>
+                            </div>
+                            <span class="menu-item-price">$58</span>
+                        </div>
+                        <p class="menu-item-description">Classic cut with bold flavor, char-grilled to perfection</p>
+                    </div>
+                </div>
+
+                <div class="menu-item-detailed">
+                    <div class="menu-item-image">
+                        <img src="{{FOOD_IMAGE_5}}" alt="Lamb Rack">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <div>
+                                <h3 class="menu-item-title">Herb-Crusted Lamb Rack</h3>
+                                <div class="menu-item-details">
+                                    <span>8-rib rack • Australian lamb</span>
+                                </div>
+                            </div>
+                            <span class="menu-item-price">$62</span>
+                        </div>
+                        <p class="menu-item-description">Rosemary and thyme crust with mint chimichurri</p>
+                    </div>
+                </div>
+
+                <div class="menu-item-detailed">
+                    <div class="menu-item-image">
+                        <img src="{{FOOD_IMAGE_6}}" alt="Pork Chop">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <div>
+                                <h3 class="menu-item-title">Berkshire Pork Chop</h3>
+                                <div class="menu-item-details">
+                                    <span>14oz • Bone-in</span>
+                                </div>
+                            </div>
+                            <span class="menu-item-price">$42</span>
+                        </div>
+                        <p class="menu-item-description">Apple butter glaze with sage and pancetta</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seafood -->
+    <section id="seafood" class="menu-section">
+        <div class="container">
+            <h2>Fresh Seafood</h2>
+            <p class="section-subtitle">Daily selections from premier waters worldwide</p>
+            
+            <div class="menu-grid">
+                <div class="menu-item-detailed">
+                    <div class="menu-item-image">
+                        <img src="{{FOOD_IMAGE_7}}" alt="Lobster Tail">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <div>
+                                <h3 class="menu-item-title">Maine Lobster Tail</h3>
+                                <div class="menu-item-details">
+                                    <span>8oz • Cold water</span>
+                                </div>
+                            </div>
+                            <span class="menu-item-price">$48</span>
+                        </div>
+                        <p class="menu-item-description">Butter poached with lemon and fresh herbs</p>
+                        <div class="dietary-info">
+                            <span class="dietary-tag">Gluten-Free</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-item-detailed">
+                    <div class="menu-item-image">
+                        <img src="{{FOOD_IMAGE_8}}" alt="Halibut">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <div>
+                                <h3 class="menu-item-title">Pacific Halibut</h3>
+                                <div class="menu-item-details">
+                                    <span>8oz • Wild caught</span>
+                                </div>
+                            </div>
+                            <span class="menu-item-price">$44</span>
+                        </div>
+                        <p class="menu-item-description">Pan-seared with cauliflower purée and caviar beurre blanc</p>
+                    </div>
+                </div>
+
+                <div class="menu-item-detailed chef-special">
+                    <div class="menu-item-image">
+                        <img src="{{FOOD_IMAGE_9}}" alt="Sea Bass">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <div>
+                                <h3 class="menu-item-title">Chilean Sea Bass</h3>
+                                <div class="menu-item-details">
+                                    <span>6oz • Miso glazed</span>
+                                </div>
+                            </div>
+                            <span class="menu-item-price">$52</span>
+                        </div>
+                        <p class="menu-item-description">24-hour miso marinade with bok choy and ginger oil</p>
+                    </div>
+                </div>
+
+                <div class="menu-item-detailed">
+                    <div class="menu-item-image">
+                        <img src="{{FOOD_IMAGE_10}}" alt="Scallops">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <div>
+                                <h3 class="menu-item-title">Diver Scallops</h3>
+                                <div class="menu-item-details">
+                                    <span>U-10 • Day boat</span>
+                                </div>
+                            </div>
+                            <span class="menu-item-price">$38</span>
+                        </div>
+                        <p class="menu-item-description">Seared with cauliflower cream and crispy pancetta</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appetizers -->
+    <section class="menu-section">
+        <div class="container">
+            <h2>Appetizers</h2>
+            
+            <div class="menu-grid">
+                <div class="menu-item-detailed">
+                    <div class="menu-item-image">
+                        <img src="{{FOOD_IMAGE_11}}" alt="Oysters">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <div>
+                                <h3 class="menu-item-title">Fresh Oysters</h3>
+                                <div class="menu-item-details">
+                                    <span>½ dozen • Daily selection</span>
+                                </div>
+                            </div>
+                            <span class="menu-item-price">$24</span>
+                        </div>
+                        <p class="menu-item-description">Served with traditional mignonette and cocktail sauce</p>
+                    </div>
+                </div>
+
+                <div class="menu-item-detailed">
+                    <div class="menu-item-image">
+                        <img src="{{FOOD_IMAGE_12}}" alt="Steak Tartare">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <div>
+                                <h3 class="menu-item-title">Steak Tartare</h3>
+                                <div class="menu-item-details">
+                                    <span>4oz • Hand-cut prime beef</span>
+                                </div>
+                            </div>
+                            <span class="menu-item-price">$22</span>
+                        </div>
+                        <p class="menu-item-description">Capers, shallots, quail egg, with brioche points</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Desserts -->
+    <section id="desserts" class="menu-section">
+        <div class="container">
+            <h2>Desserts</h2>
+            
+            <div class="menu-grid">
+                <div class="menu-item-detailed">
+                    <div class="menu-item-image">
+                        <img src="{{FOOD_IMAGE_1}}" alt="Chocolate Soufflé">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <div>
+                                <h3 class="menu-item-title">Dark Chocolate Soufflé</h3>
+                                <div class="menu-item-details">
+                                    <span>Allow 20 minutes</span>
+                                </div>
+                            </div>
+                            <span class="menu-item-price">$16</span>
+                        </div>
+                        <p class="menu-item-description">Warm chocolate soufflé with vanilla bean ice cream</p>
+                    </div>
+                </div>
+
+                <div class="menu-item-detailed">
+                    <div class="menu-item-image">
+                        <img src="{{FOOD_IMAGE_2}}" alt="Crème Brûlée">
+                    </div>
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <div>
+                                <h3 class="menu-item-title">Vanilla Bean Crème Brûlée</h3>
+                            </div>
+                            <span class="menu-item-price">$12</span>
+                        </div>
+                        <p class="menu-item-description">Classic custard with caramelized sugar and fresh berries</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wine Section -->
+    <section id="wine" class="wine-cellar">
+        <div class="container">
+            <h2 style="color: var(--secondary-color);">Award-Winning Wine Cellar</h2>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">Over 1,000 selections curated by our sommelier</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 50px;">
+                <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 10px;">
+                    <h3 style="color: var(--secondary-color); margin-bottom: 20px;">Red Wines</h3>
+                    <p style="color: rgba(255,255,255,0.8);">Exceptional Cabernets, Pinot Noirs, and international selections</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 10px;">
+                    <h3 style="color: var(--secondary-color); margin-bottom: 20px;">White Wines</h3>
+                    <p style="color: rgba(255,255,255,0.8);">Chardonnays, Sauvignon Blancs, and rare varietals</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 10px;">
+                    <h3 style="color: var(--secondary-color); margin-bottom: 20px;">Champagne</h3>
+                    <p style="color: rgba(255,255,255,0.8);">Prestigious houses and grower Champagnes</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+                    <p>{{TAGLINE}}</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="#steaks">Steaks & Chops</a></li>
+                        <li><a href="#seafood">Seafood</a></li>
+                        <li><a href="#wine">Wine</a></li>
+                        <li><a href="#desserts">Desserts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Reservations</h4>
+                    <p>{{PHONE}}</p>
+                    <p>{{EMAIL}}</p>
+                    <p>{{FULL_ADDRESS}}</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}" class="social-link">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}" class="social-link">Instagram</a>
+                        <a href="{{YELP_URL}}" class="social-link">Yelp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Fresh Breakfast & Brunch</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#specials">Specials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="tel:{{PHONE}}" class="btn btn-order">Order Now</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <img src="{{HERO_IMAGE}}" alt="{{RESTAURANT_NAME}} Fresh Breakfast">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">☀️ Fresh Daily</div>
+            <h1>{{RESTAURANT_NAME}}</h1>
+            <p class="hero-subtitle">{{TAGLINE}}</p>
+            <p class="hero-description">{{DESCRIPTION}}</p>
+            <div class="hero-buttons">
+                <a href="#menu" class="btn btn-primary">View Menu</a>
+                <a href="tel:{{PHONE}}" class="btn btn-secondary">Call to Order</a>
+            </div>
+        </div>
+        
+        <div class="hero-info">
+            <div class="info-item">
+                <div class="info-icon">🕐</div>
+                <div class="info-text">
+                    <span class="info-title">Open Early</span>
+                    <span class="info-detail">6:00 AM Daily</span>
+                </div>
+            </div>
+            <div class="info-item">
+                <div class="info-icon">🥞</div>
+                <div class="info-text">
+                    <span class="info-title">Fresh Made</span>
+                    <span class="info-detail">All Day</span>
+                </div>
+            </div>
+            <div class="info-item">
+                <div class="info-icon">☕</div>
+                <div class="info-text">
+                    <span class="info-title">Premium Coffee</span>
+                    <span class="info-detail">Locally Roasted</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <h2>Our Fresh Menu</h2>
+            <p class="section-subtitle">Made with love, served with a smile</p>
+            
+            <div class="menu-categories">
+                <button class="category-btn active" data-category="breakfast">Breakfast Classics</button>
+                <button class="category-btn" data-category="brunch">Brunch Specials</button>
+                <button class="category-btn" data-category="beverages">Beverages</button>
+                <button class="category-btn" data-category="sweets">Sweet Treats</button>
+            </div>
+            
+            <div class="menu-content">
+                <div class="menu-category active" id="breakfast">
+                    <div class="menu-grid">
+                        <div class="menu-item featured">
+                            <div class="item-image">
+                                <img src="{{FOOD_IMAGE_1}}" alt="{{MENU_ITEM_1}}">
+                                <div class="featured-badge">Popular</div>
+                            </div>
+                            <div class="item-details">
+                                <div class="item-header">
+                                    <h4>{{MENU_ITEM_1}}</h4>
+                                    <span class="price">${{PRICE_1}}</span>
+                                </div>
+                                <p class="item-description">{{MENU_DESCRIPTION_1}}</p>
+                                <div class="item-tags">
+                                    <span class="tag">Fresh</span>
+                                    <span class="tag">Homemade</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="{{FOOD_IMAGE_2}}" alt="{{MENU_ITEM_2}}">
+                            </div>
+                            <div class="item-details">
+                                <div class="item-header">
+                                    <h4>{{MENU_ITEM_2}}</h4>
+                                    <span class="price">${{PRICE_2}}</span>
+                                </div>
+                                <p class="item-description">{{MENU_DESCRIPTION_2}}</p>
+                                <div class="item-tags">
+                                    <span class="tag">Protein Rich</span>
+                                    <span class="tag">Healthy</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="{{FOOD_IMAGE_3}}" alt="{{MENU_ITEM_3}}">
+                            </div>
+                            <div class="item-details">
+                                <div class="item-header">
+                                    <h4>{{MENU_ITEM_3}}</h4>
+                                    <span class="price">${{PRICE_3}}</span>
+                                </div>
+                                <p class="item-description">{{MENU_DESCRIPTION_3}}</p>
+                                <div class="item-tags">
+                                    <span class="tag">Classic</span>
+                                    <span class="tag">Comfort Food</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="{{FOOD_IMAGE_4}}" alt="{{MENU_ITEM_4}}">
+                            </div>
+                            <div class="item-details">
+                                <div class="item-header">
+                                    <h4>{{MENU_ITEM_4}}</h4>
+                                    <span class="price">${{PRICE_4}}</span>
+                                </div>
+                                <p class="item-description">{{MENU_DESCRIPTION_4}}</p>
+                                <div class="item-tags">
+                                    <span class="tag">Vegetarian</span>
+                                    <span class="tag">Fresh</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-category" id="brunch">
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="{{FOOD_IMAGE_5}}" alt="{{MENU_ITEM_5}}">
+                            </div>
+                            <div class="item-details">
+                                <div class="item-header">
+                                    <h4>{{MENU_ITEM_5}}</h4>
+                                    <span class="price">${{PRICE_5}}</span>
+                                </div>
+                                <p class="item-description">{{MENU_DESCRIPTION_5}}</p>
+                                <div class="item-tags">
+                                    <span class="tag">Weekend Special</span>
+                                    <span class="tag">Gourmet</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="{{FOOD_IMAGE_6}}" alt="{{MENU_ITEM_6}}">
+                            </div>
+                            <div class="item-details">
+                                <div class="item-header">
+                                    <h4>{{MENU_ITEM_6}}</h4>
+                                    <span class="price">${{PRICE_6}}</span>
+                                </div>
+                                <p class="item-description">{{MENU_DESCRIPTION_6}}</p>
+                                <div class="item-tags">
+                                    <span class="tag">Signature</span>
+                                    <span class="tag">Popular</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="{{FOOD_IMAGE_7}}" alt="{{MENU_ITEM_7}}">
+                            </div>
+                            <div class="item-details">
+                                <div class="item-header">
+                                    <h4>{{MENU_ITEM_7}}</h4>
+                                    <span class="price">${{PRICE_7}}</span>
+                                </div>
+                                <p class="item-description">{{MENU_DESCRIPTION_7}}</p>
+                                <div class="item-tags">
+                                    <span class="tag">Healthy</span>
+                                    <span class="tag">Local</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="{{FOOD_IMAGE_8}}" alt="{{MENU_ITEM_8}}">
+                            </div>
+                            <div class="item-details">
+                                <div class="item-header">
+                                    <h4>{{MENU_ITEM_8}}</h4>
+                                    <span class="price">${{PRICE_8}}</span>
+                                </div>
+                                <p class="item-description">{{MENU_DESCRIPTION_8}}</p>
+                                <div class="item-tags">
+                                    <span class="tag">Indulgent</span>
+                                    <span class="tag">Sweet</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-category" id="beverages">
+                    <div class="beverage-menu">
+                        <div class="beverage-section">
+                            <h3>☕ Coffee & Espresso</h3>
+                            <div class="beverage-list">
+                                <div class="beverage-item">
+                                    <div class="beverage-info">
+                                        <h5>House Blend Coffee</h5>
+                                        <p>Rich, smooth, locally roasted</p>
+                                    </div>
+                                    <span class="beverage-price">$3.25</span>
+                                </div>
+                                <div class="beverage-item">
+                                    <div class="beverage-info">
+                                        <h5>Cappuccino</h5>
+                                        <p>Espresso with steamed milk foam</p>
+                                    </div>
+                                    <span class="beverage-price">$4.50</span>
+                                </div>
+                                <div class="beverage-item">
+                                    <div class="beverage-info">
+                                        <h5>Caramel Macchiato</h5>
+                                        <p>Espresso, vanilla, steamed milk, caramel</p>
+                                    </div>
+                                    <span class="beverage-price">$5.25</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="beverage-section">
+                            <h3>🥤 Fresh Juices & Smoothies</h3>
+                            <div class="beverage-list">
+                                <div class="beverage-item">
+                                    <div class="beverage-info">
+                                        <h5>Fresh Orange Juice</h5>
+                                        <p>Squeezed daily from local oranges</p>
+                                    </div>
+                                    <span class="beverage-price">$4.95</span>
+                                </div>
+                                <div class="beverage-item">
+                                    <div class="beverage-info">
+                                        <h5>Green Goddess Smoothie</h5>
+                                        <p>Spinach, banana, mango, coconut milk</p>
+                                    </div>
+                                    <span class="beverage-price">$6.95</span>
+                                </div>
+                                <div class="beverage-item">
+                                    <div class="beverage-info">
+                                        <h5>Berry Blast Smoothie</h5>
+                                        <p>Mixed berries, yogurt, honey</p>
+                                    </div>
+                                    <span class="beverage-price">$6.50</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-category" id="sweets">
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="{{FOOD_IMAGE_9}}" alt="{{MENU_ITEM_9}}">
+                            </div>
+                            <div class="item-details">
+                                <div class="item-header">
+                                    <h4>{{MENU_ITEM_9}}</h4>
+                                    <span class="price">${{PRICE_9}}</span>
+                                </div>
+                                <p class="item-description">{{MENU_DESCRIPTION_9}}</p>
+                                <div class="item-tags">
+                                    <span class="tag">House Made</span>
+                                    <span class="tag">Sweet</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="{{FOOD_IMAGE_10}}" alt="{{MENU_ITEM_10}}">
+                            </div>
+                            <div class="item-details">
+                                <div class="item-header">
+                                    <h4>{{MENU_ITEM_10}}</h4>
+                                    <span class="price">${{PRICE_10}}</span>
+                                </div>
+                                <p class="item-description">{{MENU_DESCRIPTION_10}}</p>
+                                <div class="item-tags">
+                                    <span class="tag">Warm</span>
+                                    <span class="tag">Comfort</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specials Section -->
+    <section id="specials" class="specials">
+        <div class="container">
+            <h2>Daily Specials</h2>
+            <p class="section-subtitle">Something special every day</p>
+            
+            <div class="specials-grid">
+                <div class="special-card">
+                    <div class="special-day">Monday</div>
+                    <div class="special-name">Meatless Monday</div>
+                    <div class="special-description">All vegetarian dishes 15% off</div>
+                    <div class="special-highlight">🥗 Healthy Start</div>
+                </div>
+                
+                <div class="special-card">
+                    <div class="special-day">Tuesday</div>
+                    <div class="special-name">Pancake Tuesday</div>
+                    <div class="special-description">Buy 2 pancake stacks, get 1 free</div>
+                    <div class="special-highlight">🥞 Sweet Deal</div>
+                </div>
+                
+                <div class="special-card">
+                    <div class="special-day">Wednesday</div>
+                    <div class="special-name">Coffee & Pastry</div>
+                    <div class="special-description">Any coffee + pastry combo $7.99</div>
+                    <div class="special-highlight">☕ Midweek Pick-Me-Up</div>
+                </div>
+                
+                <div class="special-card">
+                    <div class="special-day">Thursday</div>
+                    <div class="special-name">Omelette Thursday</div>
+                    <div class="special-description">Create your own omelette $12.99</div>
+                    <div class="special-highlight">🍳 Your Way</div>
+                </div>
+                
+                <div class="special-card">
+                    <div class="special-day">Friday</div>
+                    <div class="special-name">French Toast Friday</div>
+                    <div class="special-description">Upgrade to brioche French toast free</div>
+                    <div class="special-highlight">🍞 Weekend Preview</div>
+                </div>
+                
+                <div class="special-card weekend">
+                    <div class="special-day">Weekend</div>
+                    <div class="special-name">Bottomless Brunch</div>
+                    <div class="special-description">Unlimited mimosas with brunch entrée</div>
+                    <div class="special-highlight">🥂 Weekend Vibes</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Our Story</h2>
+                    <p class="about-description">{{ABOUT_DESCRIPTION}}</p>
+                    <p>Since opening our doors, we've been committed to serving the freshest breakfast and brunch in town. Every dish is made with locally sourced ingredients and prepared with care by our passionate culinary team.</p>
+                    
+                    <div class="about-stats">
+                        <div class="stat">
+                            <div class="stat-number">6AM</div>
+                            <div class="stat-label">Opening Time</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">Fresh</div>
+                            <div class="stat-label">Daily Ingredients</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">Local</div>
+                            <div class="stat-label">Coffee Roasted</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">Made</div>
+                            <div class="stat-label">With Love</div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-features">
+                        <div class="feature">
+                            <div class="feature-icon">🌱</div>
+                            <div class="feature-text">
+                                <h4>Farm Fresh</h4>
+                                <p>Ingredients sourced from local farms daily</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">👨‍🍳</div>
+                            <div class="feature-text">
+                                <h4>Expert Chefs</h4>
+                                <p>Passionate culinary team with years of experience</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">💚</div>
+                            <div class="feature-text">
+                                <h4>Health Conscious</h4>
+                                <p>Healthy options and dietary accommodations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-images">
+                    <div class="image-main">
+                        <img src="{{INTERIOR_IMAGE_1}}" alt="{{RESTAURANT_NAME}} Interior">
+                    </div>
+                    <div class="image-grid">
+                        <div class="image-small">
+                            <img src="{{FOOD_IMAGE_1}}" alt="Fresh Breakfast">
+                        </div>
+                        <div class="image-small">
+                            <img src="{{FOOD_IMAGE_2}}" alt="Coffee Service">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Visit Us</h2>
+            <p class="section-subtitle">Start your day right with us</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <p>{{FULL_ADDRESS}}</p>
+                            <a href="{{GOOGLE_MAPS_URL}}" class="btn btn-outline">Get Directions</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">🕐</div>
+                        <div class="contact-details">
+                            <h4>Hours</h4>
+                            <div class="hours-list">
+                                <div class="hours-item">
+                                    <span>Monday - Friday</span>
+                                    <span>{{WEEKDAY_HOURS}}</span>
+                                </div>
+                                <div class="hours-item">
+                                    <span>Saturday - Sunday</span>
+                                    <span>{{WEEKEND_HOURS}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-details">
+                            <h4>Contact</h4>
+                            <p>Phone: <a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+                            <p>Email: <a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
+                            <div class="contact-actions">
+                                <a href="tel:{{PHONE}}" class="btn btn-primary">Call Now</a>
+                                <a href="mailto:{{EMAIL}}" class="btn btn-outline">Email Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send us a Message</h3>
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" placeholder="Email Address" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Phone Number">
+                        </div>
+                        <div class="form-group">
+                            <select required>
+                                <option value="">Select Inquiry Type</option>
+                                <option value="general">General Question</option>
+                                <option value="catering">Catering Inquiry</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="map-container">
+                <iframe src="{{GOOGLE_MAPS_EMBED}}" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}}">
+                    </div>
+                    <p class="footer-tagline">{{TAGLINE}}</p>
+                    <p>Start your day right with fresh, delicious breakfast and brunch made with love.</p>
+                    <div class="footer-social">
+                        <a href="{{FACEBOOK_URL}}" class="social-link">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}" class="social-link">Instagram</a>
+                        <a href="{{YELP_URL}}" class="social-link">Yelp</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#specials">Daily Specials</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Hours</h4>
+                    <div class="footer-hours">
+                        <p>{{WEEKDAY_HOURS}}</p>
+                        <p>{{WEEKEND_HOURS}}</p>
+                    </div>
+                    <p class="early-bird">🌅 Open early for early birds!</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>📞 <a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+                    <p>📧 <a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
+                    <p>📍 {{FULL_ADDRESS}}</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+                <p>Fresh ingredients, fresh start, fresh day!</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

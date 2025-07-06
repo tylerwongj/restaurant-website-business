@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - {{RESTAURANT_NAME}}</title>
+    <meta name="description" content="Discover our mindfully crafted seasonal menu at {{RESTAURANT_NAME}}">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        .menu-page {
+            padding-top: 100px;
+            min-height: 100vh;
+        }
+        
+        .menu-hero {
+            background: var(--background-section);
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .menu-hero h1 {
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+        
+        .menu-hero .hero-divider {
+            width: 80px;
+            height: 1px;
+            background: var(--accent-color);
+            margin: 2rem auto;
+        }
+        
+        .menu-section {
+            padding: 4rem 0;
+        }
+        
+        .menu-section:nth-child(even) {
+            background: var(--background-section);
+        }
+        
+        .category-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .category-title {
+            font-size: 2.2rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+        
+        .category-description {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+            font-style: italic;
+        }
+        
+        .category-divider {
+            width: 60px;
+            height: 1px;
+            background: var(--accent-color);
+            margin: 1.5rem auto;
+        }
+        
+        .menu-items {
+            display: grid;
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .menu-item {
+            background: var(--background-light);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px var(--shadow-light);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .menu-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(232, 184, 122, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .menu-item:hover::before {
+            left: 100%;
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px var(--shadow-medium);
+        }
+        
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            gap: 2rem;
+        }
+        
+        .item-name {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            margin: 0;
+            flex: 1;
+        }
+        
+        .item-price {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            white-space: nowrap;
+        }
+        
+        .item-description {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+        
+        .item-details {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .dietary-tag {
+            padding: 0.3rem 0.8rem;
+            background: var(--background-section);
+            border: 1px solid var(--border-accent);
+            border-radius: 15px;
+            font-size: 0.8rem;
+            color: var(--text-dark);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .dietary-tag.vegetarian {
+            background: rgba(72, 211, 145, 0.1);
+            border-color: #48d391;
+            color: #2f855a;
+        }
+        
+        .dietary-tag.vegan {
+            background: rgba(104, 211, 145, 0.1);
+            border-color: #68d391;
+            color: #2f855a;
+        }
+        
+        .dietary-tag.gluten-free {
+            background: rgba(251, 191, 36, 0.1);
+            border-color: #fbbf24;
+            color: #92400e;
+        }
+        
+        .dietary-tag.spicy {
+            background: rgba(248, 113, 113, 0.1);
+            border-color: #f87171;
+            color: #dc2626;
+        }
+        
+        .dietary-tag.signature {
+            background: rgba(232, 184, 122, 0.1);
+            border-color: var(--accent-color);
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+        
+        .wine-pairing {
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            font-style: italic;
+            margin-top: 0.5rem;
+            padding-top: 0.5rem;
+            border-top: 1px solid var(--border-light);
+        }
+        
+        .featured-item {
+            background: linear-gradient(135deg, var(--background-light), rgba(232, 184, 122, 0.05));
+            border: 1px solid var(--accent-color);
+            position: relative;
+        }
+        
+        .featured-item::after {
+            content: 'Chef\'s Choice';
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--accent-color);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .seasonal-note {
+            text-align: center;
+            margin: 3rem 0;
+            padding: 2rem;
+            background: var(--background-light);
+            border-radius: 8px;
+            box-shadow: 0 4px 20px var(--shadow-light);
+        }
+        
+        .seasonal-note h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+        
+        .seasonal-note p {
+            color: var(--text-light);
+            line-height: 1.8;
+            font-style: italic;
+        }
+        
+        .menu-navigation {
+            position: fixed;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--background-overlay);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            padding: 1rem 0.5rem;
+            box-shadow: 0 4px 20px var(--shadow-light);
+            z-index: 1000;
+        }
+        
+        .nav-item {
+            display: block;
+            padding: 0.8rem;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            text-align: center;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .nav-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .nav-item:hover,
+        .nav-item.active {
+            background: var(--accent-color);
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 1rem 2rem;
+            cursor: pointer;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        .back-to-top:hover {
+            transform: translateX(-50%) translateY(-5px);
+            box-shadow: 0 8px 25px var(--shadow-medium);
+        }
+        
+        @media (max-width: 768px) {
+            .menu-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .item-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+            
+            .item-price {
+                align-self: flex-end;
+            }
+            
+            .menu-navigation {
+                display: none;
+            }
+            
+            .menu-items {
+                padding: 0 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .menu-item {
+                padding: 1.5rem;
+            }
+            
+            .category-title {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+                <span class="logo-text">{{RESTAURANT_NAME}}</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#appetizers">Appetizers</a></li>
+                <li><a href="#mains">Main Courses</a></li>
+                <li><a href="#desserts">Desserts</a></li>
+                <li><a href="#beverages">Beverages</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu Navigation -->
+    <div class="menu-navigation">
+        <a href="#appetizers" class="nav-item">Appetizers</a>
+        <a href="#mains" class="nav-item">Mains</a>
+        <a href="#desserts" class="nav-item">Desserts</a>
+        <a href="#beverages" class="nav-item">Beverages</a>
+    </div>
+
+    <div class="menu-page">
+        <!-- Menu Hero -->
+        <section class="menu-hero">
+            <div class="container">
+                <h1>Seasonal Menu</h1>
+                <div class="hero-divider"></div>
+                <p class="category-description">Each dish is mindfully crafted with seasonal ingredients, reflecting our commitment to harmony between nature and nourishment.</p>
+            </div>
+        </section>
+
+        <!-- Appetizers Section -->
+        <section id="appetizers" class="menu-section">
+            <div class="container">
+                <div class="category-intro">
+                    <h2 class="category-title">Gentle Beginnings</h2>
+                    <div class="category-divider"></div>
+                    <p class="category-description">Delicate preparations to awaken the senses and prepare the spirit for the meal ahead.</p>
+                </div>
+                
+                <div class="menu-items">
+                    <div class="menu-item featured-item">
+                        <div class="item-header">
+                            <h3 class="item-name">{{APPETIZER_1_NAME}}</h3>
+                            <span class="item-price">{{APPETIZER_1_PRICE}}</span>
+                        </div>
+                        <p class="item-description">{{APPETIZER_1_DESCRIPTION}}</p>
+                        <div class="item-details">
+                            <span class="dietary-tag signature">Signature</span>
+                            <span class="dietary-tag vegetarian">Vegetarian</span>
+                        </div>
+                        <div class="wine-pairing">Wine pairing: {{APPETIZER_1_WINE}}</div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h3 class="item-name">{{APPETIZER_2_NAME}}</h3>
+                            <span class="item-price">{{APPETIZER_2_PRICE}}</span>
+                        </div>
+                        <p class="item-description">{{APPETIZER_2_DESCRIPTION}}</p>
+                        <div class="item-details">
+                            <span class="dietary-tag vegan">Vegan</span>
+                            <span class="dietary-tag gluten-free">Gluten-Free</span>
+                        </div>
+                        <div class="wine-pairing">Wine pairing: {{APPETIZER_2_WINE}}</div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h3 class="item-name">{{APPETIZER_3_NAME}}</h3>
+                            <span class="item-price">{{APPETIZER_3_PRICE}}</span>
+                        </div>
+                        <p class="item-description">{{APPETIZER_3_DESCRIPTION}}</p>
+                        <div class="item-details">
+                            <span class="dietary-tag spicy">Spicy</span>
+                        </div>
+                        <div class="wine-pairing">Wine pairing: {{APPETIZER_3_WINE}}</div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h3 class="item-name">{{APPETIZER_4_NAME}}</h3>
+                            <span class="item-price">{{APPETIZER_4_PRICE}}</span>
+                        </div>
+                        <p class="item-description">{{APPETIZER_4_DESCRIPTION}}</p>
+                        <div class="item-details">
+                            <span class="dietary-tag gluten-free">Gluten-Free</span>
+                        </div>
+                        <div class="wine-pairing">Wine pairing: {{APPETIZER_4_WINE}}</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Courses Section -->
+        <section id="mains" class="menu-section">
+            <div class="container">
+                <div class="category-intro">
+                    <h2 class="category-title">Harmonious Mains</h2>
+                    <div class="category-divider"></div>
+                    <p class="category-description">Centered compositions that celebrate the essence of each ingredient in perfect balance.</p>
+                </div>
+                
+                <div class="menu-items">
+                    <div class="menu-item featured-item">
+                        <div class="item-header">
+                            <h3 class="item-name">{{MAIN_1_NAME}}</h3>
+                            <span class="item-price">{{MAIN_1_PRICE}}</span>
+                        </div>
+                        <p class="item-description">{{MAIN_1_DESCRIPTION}}</p>
+                        <div class="item-details">
+                            <span class="dietary-tag signature">Signature</span>
+                        </div>
+                        <div class="wine-pairing">Wine pairing: {{MAIN_1_WINE}}</div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h3 class="item-name">{{MAIN_2_NAME}}</h3>
+                            <span class="item-price">{{MAIN_2_PRICE}}</span>
+                        </div>
+                        <p class="item-description">{{MAIN_2_DESCRIPTION}}</p>
+                        <div class="item-details">
+                            <span class="dietary-tag gluten-free">Gluten-Free</span>
+                        </div>
+                        <div class="wine-pairing">Wine pairing: {{MAIN_2_WINE}}</div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h3 class="item-name">{{MAIN_3_NAME}}</h3>
+                            <span class="item-price">{{MAIN_3_PRICE}}</span>
+                        </div>
+                        <p class="item-description">{{MAIN_3_DESCRIPTION}}</p>
+                        <div class="item-details">
+                            <span class="dietary-tag vegan">Vegan</span>
+                            <span class="dietary-tag signature">Signature</span>
+                        </div>
+                        <div class="wine-pairing">Wine pairing: {{MAIN_3_WINE}}</div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h3 class="item-name">{{MAIN_4_NAME}}</h3>
+                            <span class="item-price">{{MAIN_4_PRICE}}</span>
+                        </div>
+                        <p class="item-description">{{MAIN_4_DESCRIPTION}}</p>
+                        <div class="item-details">
+                            <span class="dietary-tag spicy">Spicy</span>
+                        </div>
+                        <div class="wine-pairing">Wine pairing: {{MAIN_4_WINE}}</div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h3 class="item-name">{{MAIN_5_NAME}}</h3>
+                            <span class="item-price">{{MAIN_5_PRICE}}</span>
+                        </div>
+                        <p class="item-description">{{MAIN_5_DESCRIPTION}}</p>
+                        <div class="item-details">
+                            <span class="dietary-tag vegetarian">Vegetarian</span>
+                        </div>
+                        <div class="wine-pairing">Wine pairing: {{MAIN_5_WINE}}</div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h3 class="item-name">{{MAIN_6_NAME}}</h3>
+                            <span class="item-price">{{MAIN_6_PRICE}}</span>
+                        </div>
+                        <p class="item-description">{{MAIN_6_DESCRIPTION}}</p>
+                        <div class="item-details">
+                            <span class="dietary-tag gluten-free">Gluten-Free</span>
+                        </div>
+                        <div class="wine-pairing">Wine pairing: {{MAIN_6_WINE}}</div>
+                    </div>
+                </div>
+                
+                <div class="seasonal-note">
+                    <h3>Seasonal Variations</h3>
+                    <p>Our menu evolves with the seasons, ensuring that each dish reflects the natural rhythm of the earth. Some preparations may vary based on the finest ingredients available.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Desserts Section -->
+        <section id="desserts" class="menu-section">
+            <div class="container">
+                <div class="category-intro">
+                    <h2 class="category-title">Sweet Conclusions</h2>
+                    <div class="category-divider"></div>
+                    <p class="category-description">Thoughtful endings that leave a lasting impression of tranquility and satisfaction.</p>
+                </div>
+                
+                <div class="menu-items">
+                    <div class="menu-item featured-item">
+                        <div class="item-header">
+                            <h3 class="item-name">{{DESSERT_1_NAME}}</h3>
+                            <span class="item-price">{{DESSERT_1_PRICE}}</span>
+                        </div>
+                        <p class="item-description">{{DESSERT_1_DESCRIPTION}}</p>
+                        <div class="item-details">
+                            <span class="dietary-tag signature">Signature</span>
+                            <span class="dietary-tag vegetarian">Vegetarian</span>
+                        </div>
+                        <div class="wine-pairing">Wine pairing: {{DESSERT_1_WINE}}</div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h3 class="item-name">{{DESSERT_2_NAME}}</h3>
+                            <span class="item-price">{{DESSERT_2_PRICE}}</span>
+                        </div>
+                        <p class="item-description">{{DESSERT_2_DESCRIPTION}}</p>
+                        <div class="item-details">
+                            <span class="dietary-tag vegan">Vegan</span>
+                            <span class="dietary-tag gluten-free">Gluten-Free</span>
+                        </div>
+                        <div class="wine-pairing">Wine pairing: {{DESSERT_2_WINE}}</div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h3 class="item-name">{{DESSERT_3_NAME}}</h3>
+                            <span class="item-price">{{DESSERT_3_PRICE}}</span>
+                        </div>
+                        <p class="item-description">{{DESSERT_3_DESCRIPTION}}</p>
+                        <div class="item-details">
+                            <span class="dietary-tag vegetarian">Vegetarian</span>
+                        </div>
+                        <div class="wine-pairing">Wine pairing: {{DESSERT_3_WINE}}</div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h3 class="item-name">{{DESSERT_4_NAME}}</h3>
+                            <span class="item-price">{{DESSERT_4_PRICE}}</span>
+                        </div>
+                        <p class="item-description">{{DESSERT_4_DESCRIPTION}}</p>
+                        <div class="item-details">
+                            <span class="dietary-tag gluten-free">Gluten-Free</span>
+                        </div>
+                        <div class="wine-pairing">Wine pairing: {{DESSERT_4_WINE}}</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Beverages Section -->
+        <section id="beverages" class="menu-section">
+            <div class="container">
+                <div class="category-intro">
+                    <h2 class="category-title">Mindful Libations</h2>
+                    <div class="category-divider"></div>
+                    <p class="category-description">Carefully curated beverages to complement your dining journey and enhance each moment.</p>
+                </div>
+                
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h3 class="item-name">{{TEA_1_NAME}}</h3>
+                            <span class="item-price">{{TEA_1_PRICE}}</span>
+                        </div>
+                        <p class="item-description">{{TEA_1_DESCRIPTION}}</p>
+                        <div class="item-details">
+                            <span class="dietary-tag vegan">Vegan</span>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h3 class="item-name">{{WINE_1_NAME}}</h3>
+                            <span class="item-price">{{WINE_1_PRICE}}</span>
+                        </div>
+                        <p class="item-description">{{WINE_1_DESCRIPTION}}</p>
+                        <div class="item-details">
+                            <span class="dietary-tag signature">House Selection</span>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h3 class="item-name">{{COCKTAIL_1_NAME}}</h3>
+                            <span class="item-price">{{COCKTAIL_1_PRICE}}</span>
+                        </div>
+                        <p class="item-description">{{COCKTAIL_1_DESCRIPTION}}</p>
+                        <div class="item-details">
+                            <span class="dietary-tag signature">Signature</span>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-header">
+                            <h3 class="item-name">{{NON_ALCOHOLIC_1_NAME}}</h3>
+                            <span class="item-price">{{NON_ALCOHOLIC_1_PRICE}}</span>
+                        </div>
+                        <p class="item-description">{{NON_ALCOHOLIC_1_DESCRIPTION}}</p>
+                        <div class="item-details">
+                            <span class="dietary-tag vegan">Vegan</span>
+                            <span class="dietary-tag gluten-free">Gluten-Free</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="menu-section" style="text-align: center; padding: 3rem 0;">
+            <div class="container">
+                <h3 style="margin-bottom: 2rem; color: var(--text-dark);">Ready to Experience Our Menu?</h3>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="index.html#contact" class="btn btn-primary">Make Reservation</a>
+                    <a href="tel:{{PHONE}}" class="btn btn-outline">Call Now</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top">Back to Top</a>
+
+    <script src="script.js"></script>
+    <script>
+        // Menu navigation functionality
+        const menuNavigation = document.querySelector('.menu-navigation');
+        const navItems = document.querySelectorAll('.nav-item');
+        const sections = document.querySelectorAll('.menu-section[id]');
+        const backToTop = document.querySelector('.back-to-top');
+
+        // Update active navigation item based on scroll position
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                if (window.pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href') === '#' + current) {
+                    item.classList.add('active');
+                }
+            });
+
+            // Show/hide back to top button
+            if (window.pageYOffset > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        // Back to top functionality
+        backToTop.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Hide menu navigation on mobile
+        function checkScreenSize() {
+            if (window.innerWidth <= 768) {
+                menuNavigation.style.display = 'none';
+            } else {
+                menuNavigation.style.display = 'block';
+            }
+        }
+
+        window.addEventListener('resize', checkScreenSize);
+        checkScreenSize();
+    </script>
+</body>
+</html>

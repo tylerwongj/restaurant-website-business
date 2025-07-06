@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Food Truck</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}}">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#locations">Find Us</a></li>
+                <li><a href="#catering">Catering</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-order">
+                <a href="tel:{{PHONE}}" class="btn btn-order">Order Now!</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <img src="{{HERO_IMAGE}}" alt="{{RESTAURANT_NAME}} Food Truck">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-icon">🚚</span>
+                <span class="badge-text">Mobile Eats</span>
+            </div>
+            <h1 class="hero-title">{{RESTAURANT_NAME}}</h1>
+            <p class="hero-subtitle">{{TAGLINE}}</p>
+            <div class="hero-features">
+                <div class="feature-bubble">
+                    <span class="bubble-icon">🔥</span>
+                    <span>Fresh Daily</span>
+                </div>
+                <div class="feature-bubble">
+                    <span class="bubble-icon">⚡</span>
+                    <span>Quick Service</span>
+                </div>
+                <div class="feature-bubble">
+                    <span class="bubble-icon">📍</span>
+                    <span>Find Us Anywhere</span>
+                </div>
+            </div>
+            <div class="hero-buttons">
+                <a href="#menu" class="btn btn-primary">Check Menu</a>
+                <a href="#locations" class="btn btn-secondary">Find Our Truck</a>
+            </div>
+        </div>
+        <div class="hero-truck">
+            <div class="truck-icon">🚚</div>
+        </div>
+    </section>
+
+    <!-- Current Location Banner -->
+    <section class="current-location">
+        <div class="container">
+            <div class="location-banner">
+                <div class="location-info">
+                    <h3>📍 We're Currently At:</h3>
+                    <p class="current-spot">{{CURRENT_LOCATION}}</p>
+                    <p class="current-time">{{CURRENT_TIME_FRAME}}</p>
+                </div>
+                <div class="location-action">
+                    <a href="{{CURRENT_LOCATION_MAPS}}" target="_blank" class="btn btn-location">Get Directions</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <div class="menu-header">
+                <h2>Street Food Menu</h2>
+                <p class="section-subtitle">Fresh, bold flavors served fast!</p>
+            </div>
+            <div class="menu-categories">
+                <div class="menu-category">
+                    <div class="category-header">
+                        <h3>🌮 Main Dishes</h3>
+                    </div>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="{{MAIN_DISH_IMAGE_1}}" alt="{{MAIN_DISH_1}}">
+                                <div class="price-tag">${{MAIN_DISH_PRICE_1}}</div>
+                            </div>
+                            <div class="item-details">
+                                <h4>{{MAIN_DISH_1}}</h4>
+                                <p>{{MAIN_DISH_DESCRIPTION_1}}</p>
+                                <div class="item-tags">
+                                    <span class="tag">{{MAIN_DISH_TAG_1}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="{{MAIN_DISH_IMAGE_2}}" alt="{{MAIN_DISH_2}}">
+                                <div class="price-tag">${{MAIN_DISH_PRICE_2}}</div>
+                            </div>
+                            <div class="item-details">
+                                <h4>{{MAIN_DISH_2}}</h4>
+                                <p>{{MAIN_DISH_DESCRIPTION_2}}</p>
+                                <div class="item-tags">
+                                    <span class="tag">{{MAIN_DISH_TAG_2}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="{{MAIN_DISH_IMAGE_3}}" alt="{{MAIN_DISH_3}}">
+                                <div class="price-tag">${{MAIN_DISH_PRICE_3}}</div>
+                            </div>
+                            <div class="item-details">
+                                <h4>{{MAIN_DISH_3}}</h4>
+                                <p>{{MAIN_DISH_DESCRIPTION_3}}</p>
+                                <div class="item-tags">
+                                    <span class="tag">{{MAIN_DISH_TAG_3}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-category">
+                    <div class="category-header">
+                        <h3>🍟 Sides & Snacks</h3>
+                    </div>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="{{SIDE_IMAGE_1}}" alt="{{SIDE_DISH_1}}">
+                                <div class="price-tag">${{SIDE_PRICE_1}}</div>
+                            </div>
+                            <div class="item-details">
+                                <h4>{{SIDE_DISH_1}}</h4>
+                                <p>{{SIDE_DESCRIPTION_1}}</p>
+                                <div class="item-tags">
+                                    <span class="tag">{{SIDE_TAG_1}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="{{SIDE_IMAGE_2}}" alt="{{SIDE_DISH_2}}">
+                                <div class="price-tag">${{SIDE_PRICE_2}}</div>
+                            </div>
+                            <div class="item-details">
+                                <h4>{{SIDE_DISH_2}}</h4>
+                                <p>{{SIDE_DESCRIPTION_2}}</p>
+                                <div class="item-tags">
+                                    <span class="tag">{{SIDE_TAG_2}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-category">
+                    <div class="category-header">
+                        <h3>🥤 Drinks & Treats</h3>
+                    </div>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="{{DRINK_IMAGE_1}}" alt="{{DRINK_1}}">
+                                <div class="price-tag">${{DRINK_PRICE_1}}</div>
+                            </div>
+                            <div class="item-details">
+                                <h4>{{DRINK_1}}</h4>
+                                <p>{{DRINK_DESCRIPTION_1}}</p>
+                                <div class="item-tags">
+                                    <span class="tag">{{DRINK_TAG_1}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="{{DESSERT_IMAGE_1}}" alt="{{DESSERT_1}}">
+                                <div class="price-tag">${{DESSERT_PRICE_1}}</div>
+                            </div>
+                            <div class="item-details">
+                                <h4>{{DESSERT_1}}</h4>
+                                <p>{{DESSERT_DESCRIPTION_1}}</p>
+                                <div class="item-tags">
+                                    <span class="tag">{{DESSERT_TAG_1}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-note">
+                <p>🌱 Vegetarian options available | 🌾 Gluten-free upon request</p>
+                <p>Prices and availability may vary by location</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Find Us Section -->
+    <section id="locations" class="find-us">
+        <div class="container">
+            <div class="find-us-header">
+                <h2>Find Our Truck!</h2>
+                <p class="section-subtitle">We're always on the move - catch us at these locations</p>
+            </div>
+            <div class="schedule-grid">
+                <div class="day-schedule">
+                    <div class="day-header">
+                        <h3>Monday</h3>
+                        <span class="day-icon">📅</span>
+                    </div>
+                    <div class="location-card">
+                        <h4>{{MONDAY_LOCATION}}</h4>
+                        <p class="location-address">{{MONDAY_ADDRESS}}</p>
+                        <p class="location-time">{{MONDAY_HOURS}}</p>
+                        <a href="{{MONDAY_MAPS_URL}}" target="_blank" class="location-link">📍 Get Directions</a>
+                    </div>
+                </div>
+                
+                <div class="day-schedule">
+                    <div class="day-header">
+                        <h3>Tuesday</h3>
+                        <span class="day-icon">📅</span>
+                    </div>
+                    <div class="location-card">
+                        <h4>{{TUESDAY_LOCATION}}</h4>
+                        <p class="location-address">{{TUESDAY_ADDRESS}}</p>
+                        <p class="location-time">{{TUESDAY_HOURS}}</p>
+                        <a href="{{TUESDAY_MAPS_URL}}" target="_blank" class="location-link">📍 Get Directions</a>
+                    </div>
+                </div>
+                
+                <div class="day-schedule">
+                    <div class="day-header">
+                        <h3>Wednesday</h3>
+                        <span class="day-icon">📅</span>
+                    </div>
+                    <div class="location-card">
+                        <h4>{{WEDNESDAY_LOCATION}}</h4>
+                        <p class="location-address">{{WEDNESDAY_ADDRESS}}</p>
+                        <p class="location-time">{{WEDNESDAY_HOURS}}</p>
+                        <a href="{{WEDNESDAY_MAPS_URL}}" target="_blank" class="location-link">📍 Get Directions</a>
+                    </div>
+                </div>
+                
+                <div class="day-schedule">
+                    <div class="day-header">
+                        <h3>Thursday</h3>
+                        <span class="day-icon">📅</span>
+                    </div>
+                    <div class="location-card">
+                        <h4>{{THURSDAY_LOCATION}}</h4>
+                        <p class="location-address">{{THURSDAY_ADDRESS}}</p>
+                        <p class="location-time">{{THURSDAY_HOURS}}</p>
+                        <a href="{{THURSDAY_MAPS_URL}}" target="_blank" class="location-link">📍 Get Directions</a>
+                    </div>
+                </div>
+                
+                <div class="day-schedule">
+                    <div class="day-header">
+                        <h3>Friday</h3>
+                        <span class="day-icon">📅</span>
+                    </div>
+                    <div class="location-card">
+                        <h4>{{FRIDAY_LOCATION}}</h4>
+                        <p class="location-address">{{FRIDAY_ADDRESS}}</p>
+                        <p class="location-time">{{FRIDAY_HOURS}}</p>
+                        <a href="{{FRIDAY_MAPS_URL}}" target="_blank" class="location-link">📍 Get Directions</a>
+                    </div>
+                </div>
+                
+                <div class="day-schedule">
+                    <div class="day-header">
+                        <h3>Weekend</h3>
+                        <span class="day-icon">🎉</span>
+                    </div>
+                    <div class="location-card">
+                        <h4>{{WEEKEND_LOCATION}}</h4>
+                        <p class="location-address">{{WEEKEND_ADDRESS}}</p>
+                        <p class="location-time">{{WEEKEND_HOURS}}</p>
+                        <a href="{{WEEKEND_MAPS_URL}}" target="_blank" class="location-link">📍 Get Directions</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="social-updates">
+                <h3>Stay Updated!</h3>
+                <p>Follow us on social media for real-time location updates and special announcements</p>
+                <div class="social-links">
+                    <a href="{{INSTAGRAM_URL}}" target="_blank" class="social-link instagram">
+                        <span class="social-icon">📸</span>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="{{FACEBOOK_URL}}" target="_blank" class="social-link facebook">
+                        <span class="social-icon">👍</span>
+                        <span>Facebook</span>
+                    </a>
+                    <a href="{{TWITTER_URL}}" target="_blank" class="social-link twitter">
+                        <span class="social-icon">🐦</span>
+                        <span>Twitter</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catering Section -->
+    <section id="catering" class="catering">
+        <div class="catering-background">
+            <div class="catering-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="catering-content">
+                <div class="catering-info">
+                    <h2>Private Catering</h2>
+                    <p class="catering-lead">Bring the street food experience to your event!</p>
+                    <p>{{CATERING_DESCRIPTION}}</p>
+                    
+                    <div class="catering-options">
+                        <div class="catering-option">
+                            <div class="option-icon">🎉</div>
+                            <h4>Corporate Events</h4>
+                            <p>Office parties, team building, lunch meetings</p>
+                            <p class="option-price">Starting at ${{CORPORATE_CATERING_PRICE}}/person</p>
+                        </div>
+                        <div class="catering-option">
+                            <div class="option-icon">🎂</div>
+                            <h4>Private Parties</h4>
+                            <p>Birthdays, graduations, family gatherings</p>
+                            <p class="option-price">Starting at ${{PRIVATE_CATERING_PRICE}}/person</p>
+                        </div>
+                        <div class="catering-option">
+                            <div class="option-icon">🏫</div>
+                            <h4>School Events</h4>
+                            <p>Fundraisers, festivals, sporting events</p>
+                            <p class="option-price">Starting at ${{SCHOOL_CATERING_PRICE}}/person</p>
+                        </div>
+                    </div>
+                    
+                    <div class="catering-features">
+                        <div class="feature">✅ Full truck setup at your location</div>
+                        <div class="feature">✅ Professional staff included</div>
+                        <div class="feature">✅ Customizable menu options</div>
+                        <div class="feature">✅ All equipment and supplies provided</div>
+                    </div>
+                    
+                    <div class="catering-cta">
+                        <a href="tel:{{CATERING_PHONE}}" class="btn btn-primary">Book Catering</a>
+                        <a href="mailto:{{CATERING_EMAIL}}" class="btn btn-secondary">Email Quote</a>
+                    </div>
+                </div>
+                <div class="catering-visual">
+                    <img src="{{CATERING_IMAGE}}" alt="Catering Service">
+                    <div class="visual-badge">
+                        <span class="badge-number">{{YEARS_CATERING}}+</span>
+                        <span class="badge-text">Years Catering</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Our Story</h2>
+                    <p class="about-lead">{{ABOUT_STORY}}</p>
+                    <div class="story-stats">
+                        <div class="stat">
+                            <span class="stat-number">{{YEARS_OPERATING}}</span>
+                            <span class="stat-label">Years Rolling</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">{{CUSTOMERS_SERVED}}</span>
+                            <span class="stat-label">Happy Customers</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">{{LOCATIONS_VISITED}}</span>
+                            <span class="stat-label">Locations Served</span>
+                        </div>
+                    </div>
+                    <div class="owner-info">
+                        <h4>Meet the Owner</h4>
+                        <p><strong>{{OWNER_NAME}}</strong> - {{OWNER_DESCRIPTION}}</p>
+                    </div>
+                </div>
+                <div class="about-images">
+                    <div class="image-grid">
+                        <img src="{{OWNER_IMAGE}}" alt="{{OWNER_NAME}}">
+                        <img src="{{TRUCK_PREP_IMAGE}}" alt="Food Preparation">
+                        <img src="{{HAPPY_CUSTOMERS_IMAGE}}" alt="Happy Customers">
+                        <img src="{{TRUCK_EXTERIOR_IMAGE}}" alt="Food Truck">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Get In Touch!</h2>
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="method-icon">📞</div>
+                            <div class="method-info">
+                                <h4>Call or Text</h4>
+                                <p><a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+                                <p>Orders, questions, catering inquiries</p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="method-icon">✉️</div>
+                            <div class="method-info">
+                                <h4>Email Us</h4>
+                                <p><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
+                                <p>General inquiries and feedback</p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="method-icon">📱</div>
+                            <div class="method-info">
+                                <h4>Follow Us</h4>
+                                <p>Real-time location updates</p>
+                                <div class="social-quick">
+                                    <a href="{{INSTAGRAM_URL}}" target="_blank">Instagram</a>
+                                    <a href="{{FACEBOOK_URL}}" target="_blank">Facebook</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="operating-info">
+                        <h4>Operating Hours</h4>
+                        <p>{{GENERAL_OPERATING_HOURS}}</p>
+                        <p class="weather-note">*Weather permitting - follow our social media for daily updates</p>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form action="#" method="POST">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" name="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder="Email Address" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" name="phone" placeholder="Phone Number (optional)">
+                        </div>
+                        <div class="form-group">
+                            <select name="inquiry_type" required>
+                                <option value="">What's this about?</option>
+                                <option value="catering">Catering Inquiry</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="partnership">Partnership</option>
+                                <option value="general">General Question</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Your message..." rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message 🚀</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-pattern"></div>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}}" class="footer-logo">
+                    <p class="footer-description">{{RESTAURANT_NAME}} - Bringing amazing street food to your neighborhood since {{ESTABLISHED_YEAR}}</p>
+                    <div class="footer-social">
+                        <a href="{{FACEBOOK_URL}}" target="_blank" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="{{INSTAGRAM_URL}}" target="_blank" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="{{TWITTER_URL}}" target="_blank" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-info">
+                    <div class="footer-section">
+                        <h4>Quick Contact</h4>
+                        <p><a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+                        <p><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Catering</h4>
+                        <p><a href="tel:{{CATERING_PHONE}}">{{CATERING_PHONE}}</a></p>
+                        <p><a href="mailto:{{CATERING_EMAIL}}">{{CATERING_EMAIL}}</a></p>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Follow Our Route</h4>
+                        <p>Instagram: Daily locations</p>
+                        <p>Facebook: Weekly schedule</p>
+                        <p>Twitter: Real-time updates</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved. | Made with ❤️ and lots of flavor!</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - {{RESTAURANT_NAME}}</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} Menu - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .menu-hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: white;
+            padding: 120px 0 60px;
+            text-align: center;
+        }
+        
+        .menu-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .menu-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .menu-section {
+            padding: 60px 0;
+        }
+        
+        .menu-section:nth-child(even) {
+            background: var(--bg-light);
+        }
+        
+        .menu-category {
+            margin-bottom: 3rem;
+        }
+        
+        .menu-category h2 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .menu-category h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--secondary-color);
+        }
+        
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+        
+        .menu-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px var(--shadow-color);
+            transition: transform 0.3s ease;
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-3px);
+        }
+        
+        .menu-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        
+        .menu-item h3 {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .menu-item-price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            min-width: 80px;
+            text-align: right;
+        }
+        
+        .menu-item-description {
+            color: var(--text-light);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+        
+        .menu-item-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+        
+        .back-to-home {
+            position: fixed;
+            top: 90px;
+            left: 20px;
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+        
+        .back-to-home:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .menu-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .menu-item-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .menu-item-price {
+                text-align: left;
+                margin-top: 0.5rem;
+            }
+            
+            .back-to-home {
+                position: static;
+                display: inline-block;
+                margin: 20px;
+            }
+        }
+    </style>
+</head>
+<body class="color-scheme-warm">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+                <span class="logo-text">{{RESTAURANT_NAME}}</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <a href="index.html" class="back-to-home">← Back to Home</a>
+
+    <!-- Menu Hero -->
+    <section class="menu-hero">
+        <div class="container">
+            <h1>Our Menu</h1>
+            <p>Discover our carefully crafted selection of dishes</p>
+        </div>
+    </section>
+
+    <!-- Appetizers -->
+    <section class="menu-section" id="menu">
+        <div class="container">
+            <div class="menu-category">
+                <h2>Appetizers</h2>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <img src="{{FOOD_IMAGE_4}}" alt="{{MENU_ITEM_4}}" class="menu-item-image">
+                        <div class="menu-item-header">
+                            <div>
+                                <h3>{{MENU_ITEM_4}}</h3>
+                                <p class="menu-item-description">{{MENU_DESCRIPTION_4}}</p>
+                            </div>
+                            <div class="menu-item-price">${{PRICE_4}}</div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <img src="{{FOOD_IMAGE_12}}" alt="{{MENU_ITEM_12}}" class="menu-item-image">
+                        <div class="menu-item-header">
+                            <div>
+                                <h3>{{MENU_ITEM_12}}</h3>
+                                <p class="menu-item-description">{{MENU_DESCRIPTION_12}}</p>
+                            </div>
+                            <div class="menu-item-price">${{PRICE_12}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Courses -->
+    <section class="menu-section">
+        <div class="container">
+            <div class="menu-category">
+                <h2>Main Courses</h2>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <img src="{{FOOD_IMAGE_1}}" alt="{{MENU_ITEM_1}}" class="menu-item-image">
+                        <div class="menu-item-header">
+                            <div>
+                                <h3>{{MENU_ITEM_1}}</h3>
+                                <p class="menu-item-description">{{MENU_DESCRIPTION_1}}</p>
+                            </div>
+                            <div class="menu-item-price">${{PRICE_1}}</div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <img src="{{FOOD_IMAGE_2}}" alt="{{MENU_ITEM_2}}" class="menu-item-image">
+                        <div class="menu-item-header">
+                            <div>
+                                <h3>{{MENU_ITEM_2}}</h3>
+                                <p class="menu-item-description">{{MENU_DESCRIPTION_2}}</p>
+                            </div>
+                            <div class="menu-item-price">${{PRICE_2}}</div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <img src="{{FOOD_IMAGE_5}}" alt="{{MENU_ITEM_5}}" class="menu-item-image">
+                        <div class="menu-item-header">
+                            <div>
+                                <h3>{{MENU_ITEM_5}}</h3>
+                                <p class="menu-item-description">{{MENU_DESCRIPTION_5}}</p>
+                            </div>
+                            <div class="menu-item-price">${{PRICE_5}}</div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <img src="{{FOOD_IMAGE_6}}" alt="{{MENU_ITEM_6}}" class="menu-item-image">
+                        <div class="menu-item-header">
+                            <div>
+                                <h3>{{MENU_ITEM_6}}</h3>
+                                <p class="menu-item-description">{{MENU_DESCRIPTION_6}}</p>
+                            </div>
+                            <div class="menu-item-price">${{PRICE_6}}</div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <img src="{{FOOD_IMAGE_7}}" alt="{{MENU_ITEM_7}}" class="menu-item-image">
+                        <div class="menu-item-header">
+                            <div>
+                                <h3>{{MENU_ITEM_7}}</h3>
+                                <p class="menu-item-description">{{MENU_DESCRIPTION_7}}</p>
+                            </div>
+                            <div class="menu-item-price">${{PRICE_7}}</div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <img src="{{FOOD_IMAGE_8}}" alt="{{MENU_ITEM_8}}" class="menu-item-image">
+                        <div class="menu-item-header">
+                            <div>
+                                <h3>{{MENU_ITEM_8}}</h3>
+                                <p class="menu-item-description">{{MENU_DESCRIPTION_8}}</p>
+                            </div>
+                            <div class="menu-item-price">${{PRICE_8}}</div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <img src="{{FOOD_IMAGE_9}}" alt="{{MENU_ITEM_9}}" class="menu-item-image">
+                        <div class="menu-item-header">
+                            <div>
+                                <h3>{{MENU_ITEM_9}}</h3>
+                                <p class="menu-item-description">{{MENU_DESCRIPTION_9}}</p>
+                            </div>
+                            <div class="menu-item-price">${{PRICE_9}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pizza -->
+    <section class="menu-section">
+        <div class="container">
+            <div class="menu-category">
+                <h2>Pizza</h2>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <img src="{{FOOD_IMAGE_3}}" alt="{{MENU_ITEM_3}}" class="menu-item-image">
+                        <div class="menu-item-header">
+                            <div>
+                                <h3>{{MENU_ITEM_3}}</h3>
+                                <p class="menu-item-description">{{MENU_DESCRIPTION_3}}</p>
+                            </div>
+                            <div class="menu-item-price">${{PRICE_3}}</div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <img src="{{FOOD_IMAGE_10}}" alt="{{MENU_ITEM_10}}" class="menu-item-image">
+                        <div class="menu-item-header">
+                            <div>
+                                <h3>{{MENU_ITEM_10}}</h3>
+                                <p class="menu-item-description">{{MENU_DESCRIPTION_10}}</p>
+                            </div>
+                            <div class="menu-item-price">${{PRICE_10}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Desserts -->
+    <section class="menu-section">
+        <div class="container">
+            <div class="menu-category">
+                <h2>Desserts</h2>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <img src="{{FOOD_IMAGE_11}}" alt="{{MENU_ITEM_11}}" class="menu-item-image">
+                        <div class="menu-item-header">
+                            <div>
+                                <h3>{{MENU_ITEM_11}}</h3>
+                                <p class="menu-item-description">{{MENU_DESCRIPTION_11}}</p>
+                            </div>
+                            <div class="menu-item-price">${{PRICE_11}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" style="padding: 60px 0;">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Visit Us</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h4>Address</h4>
+                            <p>{{FULL_ADDRESS}}</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p><a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🕒</div>
+                        <div>
+                            <h4>Hours</h4>
+                            <p>{{WEEKDAY_HOURS}}</p>
+                            <p>{{WEEKEND_HOURS}}</p>
+                            <p>{{SUNDAY_HOURS}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Make a Reservation</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="date" required>
+                        </div>
+                        <div class="form-group">
+                            <select required>
+                                <option value="">Select Time</option>
+                                <option value="5:30 PM">5:30 PM</option>
+                                <option value="6:00 PM">6:00 PM</option>
+                                <option value="6:30 PM">6:30 PM</option>
+                                <option value="7:00 PM">7:00 PM</option>
+                                <option value="7:30 PM">7:30 PM</option>
+                                <option value="8:00 PM">8:00 PM</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <select required>
+                                <option value="">Party Size</option>
+                                <option value="1">1 Person</option>
+                                <option value="2">2 People</option>
+                                <option value="3">3 People</option>
+                                <option value="4">4 People</option>
+                                <option value="5">5 People</option>
+                                <option value="6+">6+ People</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Request Reservation</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>{{RESTAURANT_NAME}}</h4>
+                    <p>{{DESCRIPTION}}</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>{{FULL_ADDRESS}}</p>
+                    <p>{{PHONE}}</p>
+                    <p>{{EMAIL}}</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Hours</h4>
+                    <p>{{WEEKDAY_HOURS}}</p>
+                    <p>{{WEEKEND_HOURS}}</p>
+                    <p>{{SUNDAY_HOURS}}</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

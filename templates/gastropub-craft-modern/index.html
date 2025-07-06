@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - {{CUISINE_TYPE}} Gastropub</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="theme-bold">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#pub">The Pub</a></li>
+                <li><a href="#food">Gastropub Food</a></li>
+                <li><a href="#beer">Craft Beer</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>{{RESTAURANT_NAME}}</h1>
+            <p class="hero-subtitle">{{TAGLINE}}</p>
+            <div class="hero-buttons">
+                <a href="#food" class="btn btn-primary">Gastropub Menu</a>
+                <a href="#beer" class="btn btn-secondary">Craft Beer</a>
+            </div>
+        </div>
+        <div class="hero-background">
+            <img src="{{HERO_IMAGE}}" alt="{{RESTAURANT_NAME}}">
+        </div>
+        <div class="hero-elements">
+            <div class="beer-bubble bubble1">🍺</div>
+            <div class="beer-bubble bubble2">🍺</div>
+            <div class="beer-bubble bubble3">🍺</div>
+        </div>
+    </section>
+
+    <!-- The Pub Section -->
+    <section id="pub" class="the-pub">
+        <div class="container">
+            <div class="pub-content">
+                <div class="pub-text">
+                    <h2>Modern Gastropub Experience</h2>
+                    <p class="lead">{{ABOUT_DESCRIPTION}}</p>
+                    <div class="pub-highlights">
+                        <div class="highlight">
+                            <div class="highlight-icon">🍺</div>
+                            <div class="highlight-text">
+                                <h4>Craft Beer Selection</h4>
+                                <p>20 rotating taps featuring local and international brews</p>
+                            </div>
+                        </div>
+                        <div class="highlight">
+                            <div class="highlight-icon">🍴</div>
+                            <div class="highlight-text">
+                                <h4>Elevated Pub Food</h4>
+                                <p>Classic comfort food reimagined with gourmet ingredients</p>
+                            </div>
+                        </div>
+                        <div class="highlight">
+                            <div class="highlight-icon">🎵</div>
+                            <div class="highlight-text">
+                                <h4>Live Entertainment</h4>
+                                <p>Local bands, trivia nights, and sports viewing</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pub-image">
+                    <img src="{{INTERIOR_IMAGE_1}}" alt="Gastropub Interior">
+                    <div class="atmosphere-badge">
+                        <span>Live Music</span>
+                        <span>Sports Bar</span>
+                        <span>Craft Beer</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gastropub Food -->
+    <section id="food" class="gastropub-food">
+        <div class="container">
+            <div class="food-header">
+                <h2>Gastropub Classics, Elevated</h2>
+                <p>Comfort food meets culinary artistry</p>
+            </div>
+            <div class="food-categories">
+                <div class="category-tabs">
+                    <button class="tab-btn active" data-category="starters">Starters</button>
+                    <button class="tab-btn" data-category="mains">Mains</button>
+                    <button class="tab-btn" data-category="burgers">Burgers</button>
+                    <button class="tab-btn" data-category="sides">Sides</button>
+                </div>
+                
+                <div class="food-grid" id="starters">
+                    <div class="food-item">
+                        <div class="food-image">
+                            <img src="{{FOOD_IMAGE_1}}" alt="{{MENU_ITEM_1}}">
+                            <div class="popular-badge">Popular</div>
+                        </div>
+                        <div class="food-content">
+                            <h3>{{MENU_ITEM_1}}</h3>
+                            <p>{{MENU_DESCRIPTION_1}}</p>
+                            <div class="food-tags">
+                                <span class="tag">Shareable</span>
+                                <span class="tag">Crispy</span>
+                            </div>
+                            <div class="food-price">${{PRICE_1}}</div>
+                        </div>
+                    </div>
+                    
+                    <div class="food-item">
+                        <div class="food-image">
+                            <img src="{{FOOD_IMAGE_2}}" alt="{{MENU_ITEM_2}}">
+                            <div class="popular-badge chef">Chef's Choice</div>
+                        </div>
+                        <div class="food-content">
+                            <h3>{{MENU_ITEM_2}}</h3>
+                            <p>{{MENU_DESCRIPTION_2}}</p>
+                            <div class="food-tags">
+                                <span class="tag">Signature</span>
+                                <span class="tag">Gourmet</span>
+                            </div>
+                            <div class="food-price">${{PRICE_2}}</div>
+                        </div>
+                    </div>
+                    
+                    <div class="food-item">
+                        <div class="food-image">
+                            <img src="{{FOOD_IMAGE_3}}" alt="{{MENU_ITEM_3}}">
+                            <div class="popular-badge new">New</div>
+                        </div>
+                        <div class="food-content">
+                            <h3>{{MENU_ITEM_3}}</h3>
+                            <p>{{MENU_DESCRIPTION_3}}</p>
+                            <div class="food-tags">
+                                <span class="tag">Spicy</span>
+                                <span class="tag">Bold</span>
+                            </div>
+                            <div class="food-price">${{PRICE_3}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="food-cta">
+                <a href="menu.html" class="btn btn-primary">Full Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Craft Beer Section -->
+    <section id="beer" class="craft-beer">
+        <div class="container">
+            <div class="beer-content">
+                <div class="beer-text">
+                    <h2>Craft Beer Selection</h2>
+                    <p>From hoppy IPAs to smooth stouts, our rotating selection features the best craft breweries from around the world. Our beer experts carefully curate each tap to complement our gastropub menu.</p>
+                    <div class="beer-stats">
+                        <div class="stat">
+                            <div class="stat-number">20</div>
+                            <div class="stat-label">Rotating Taps</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Bottle Selection</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">8</div>
+                            <div class="stat-label">Local Breweries</div>
+                        </div>
+                    </div>
+                    <div class="beer-styles">
+                        <h4>Featured Styles</h4>
+                        <div class="styles-grid">
+                            <div class="style-item">
+                                <span class="style-name">IPA</span>
+                                <span class="style-desc">Hoppy & Bold</span>
+                            </div>
+                            <div class="style-item">
+                                <span class="style-name">Stout</span>
+                                <span class="style-desc">Rich & Smooth</span>
+                            </div>
+                            <div class="style-item">
+                                <span class="style-name">Lager</span>
+                                <span class="style-desc">Crisp & Clean</span>
+                            </div>
+                            <div class="style-item">
+                                <span class="style-name">Wheat</span>
+                                <span class="style-desc">Light & Refreshing</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#contact" class="btn btn-outline">Beer Pairing Experience</a>
+                </div>
+                <div class="beer-image">
+                    <img src="{{FOOD_IMAGE_4}}" alt="Craft Beer Selection">
+                    <div class="beer-features">
+                        <div class="feature">Happy Hour: 4-6 PM</div>
+                        <div class="feature">Flight Tastings Available</div>
+                        <div class="feature">Growlers To-Go</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="events">
+        <div class="container">
+            <h2>Events & Entertainment</h2>
+            <div class="events-grid">
+                <div class="event-item">
+                    <div class="event-day">Monday</div>
+                    <div class="event-content">
+                        <h3>Trivia Night</h3>
+                        <p>Test your knowledge and win prizes</p>
+                        <span class="event-time">7:00 PM</span>
+                    </div>
+                </div>
+                <div class="event-item">
+                    <div class="event-day">Wednesday</div>
+                    <div class="event-content">
+                        <h3>Wing Wednesday</h3>
+                        <p>$0.50 wings with any beer purchase</p>
+                        <span class="event-time">All Day</span>
+                    </div>
+                </div>
+                <div class="event-item">
+                    <div class="event-day">Friday</div>
+                    <div class="event-content">
+                        <h3>Live Music</h3>
+                        <p>Local bands and acoustic performances</p>
+                        <span class="event-time">8:00 PM</span>
+                    </div>
+                </div>
+                <div class="event-item">
+                    <div class="event-day">Saturday</div>
+                    <div class="event-content">
+                        <h3>Game Day</h3>
+                        <p>All major sports on multiple screens</p>
+                        <span class="event-time">All Day</span>
+                    </div>
+                </div>
+                <div class="event-item">
+                    <div class="event-day">Sunday</div>
+                    <div class="event-content">
+                        <h3>Brunch & Mimosas</h3>
+                        <p>Bottomless brunch with craft cocktails</p>
+                        <span class="event-time">11 AM - 3 PM</span>
+                    </div>
+                </div>
+            </div>
+            <div class="private-events">
+                <h3>Private Events</h3>
+                <p>Book our space for birthday parties, corporate events, and celebrations</p>
+                <a href="#contact" class="btn btn-primary">Inquire About Events</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Hours -->
+    <section class="location-hours">
+        <div class="container">
+            <div class="location-hours-grid">
+                <div class="hours">
+                    <h3>Hours</h3>
+                    <div class="hours-list">
+                        <div class="hours-item">
+                            <span>Monday - Thursday</span>
+                            <span>{{WEEKDAY_HOURS}}</span>
+                        </div>
+                        <div class="hours-item">
+                            <span>Friday - Saturday</span>
+                            <span>{{WEEKEND_HOURS}}</span>
+                        </div>
+                        <div class="hours-item">
+                            <span>Sunday</span>
+                            <span>{{SUNDAY_HOURS}}</span>
+                        </div>
+                        <div class="happy-hour">
+                            <h4>Happy Hour</h4>
+                            <p>Monday - Friday: 4:00 PM - 6:00 PM</p>
+                            <p>$1 off all beers and appetizers</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="location">
+                    <h3>Location & Amenities</h3>
+                    <div class="location-info">
+                        <p>{{FULL_ADDRESS}}</p>
+                        <p>Phone: <a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+                        <p>Email: <a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
+                        <div class="amenities">
+                            <h4>Amenities</h4>
+                            <ul>
+                                <li>Free WiFi</li>
+                                <li>Multiple TV Screens</li>
+                                <li>Pool Table & Darts</li>
+                                <li>Private Event Space</li>
+                                <li>Outdoor Patio</li>
+                            </ul>
+                        </div>
+                        <div class="directions">
+                            <a href="{{GOOGLE_MAPS_URL}}" target="_blank" class="btn btn-outline">Get Directions</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-form">
+                    <h3>Join the Fun</h3>
+                    <form action="#" method="POST">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" name="name" placeholder="Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder="Email" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="tel" name="phone" placeholder="Phone">
+                            </div>
+                            <div class="form-group">
+                                <input type="number" name="guests" placeholder="Party Size" min="1" max="30">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <select name="inquiry_type">
+                                <option value="">What can we help with?</option>
+                                <option value="reservation">Table Reservation</option>
+                                <option value="private_event">Private Event</option>
+                                <option value="catering">Catering</option>
+                                <option value="live_music">Live Music Booking</option>
+                                <option value="general">General Question</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Tell us more about your visit or event" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-map">
+                    <iframe 
+                        src="{{GOOGLE_MAPS_EMBED}}" 
+                        width="100%" 
+                        height="400" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo" class="footer-logo">
+                    <p>{{RESTAURANT_NAME}}</p>
+                    <p>Modern Gastropub Experience</p>
+                    <p>{{FULL_ADDRESS}}</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Stay Connected</h4>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}" target="_blank">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}" target="_blank">Instagram</a>
+                        <a href="{{YELP_URL}}" target="_blank">Yelp</a>
+                    </div>
+                    <div class="newsletter">
+                        <h4>Events Newsletter</h4>
+                        <p>Get updates on live music and events</p>
+                        <input type="email" placeholder="Your email">
+                        <button class="btn-small">Subscribe</button>
+                    </div>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>{{PHONE}}</p>
+                    <p>{{EMAIL}}</p>
+                    <div class="business-hours">
+                        <h4>Kitchen Hours</h4>
+                        <p>Sun-Thu: Until 10 PM</p>
+                        <p>Fri-Sat: Until 11 PM</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

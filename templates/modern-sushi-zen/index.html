@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Authentic Japanese Sushi Bar</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="sushi-theme">
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-logo">
+            <div class="circle-wave"></div>
+            <div class="zen-symbol">禅</div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-minimal">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+                <span class="logo-text">{{RESTAURANT_NAME}}</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#omakase">Omakase</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Reservations</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero hero-sushi">
+        <div class="hero-background">
+            <img src="{{HERO_IMAGE}}" alt="{{RESTAURANT_NAME}}">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-japanese">
+                <span class="kanji">寿司</span>
+                <span class="romaji">SUSHI</span>
+            </div>
+            <h1 class="hero-title">{{RESTAURANT_NAME}}</h1>
+            <p class="hero-subtitle">{{TAGLINE}}</p>
+            <div class="hero-description">
+                <p>{{DESCRIPTION}}</p>
+            </div>
+            <div class="hero-buttons">
+                <a href="#omakase" class="btn btn-primary">Omakase Experience</a>
+                <a href="tel:{{PHONE}}" class="btn btn-outline">Reserve Now</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="philosophy">
+        <div class="container">
+            <div class="philosophy-content">
+                <div class="philosophy-text">
+                    <h2>The Art of Sushi</h2>
+                    <p class="lead">In the tradition of authentic Japanese cuisine, every piece of sushi is crafted with precision, respect, and decades of mastery.</p>
+                    <div class="philosophy-principles">
+                        <div class="principle">
+                            <div class="principle-icon">一</div>
+                            <div class="principle-text">
+                                <h4>Ichigo Ichie</h4>
+                                <p>One time, one meeting - every moment is unique</p>
+                            </div>
+                        </div>
+                        <div class="principle">
+                            <div class="principle-icon">技</div>
+                            <div class="principle-text">
+                                <h4>Waza (Technique)</h4>
+                                <p>20 years of training, perfected through devotion</p>
+                            </div>
+                        </div>
+                        <div class="principle">
+                            <div class="principle-icon">心</div>
+                            <div class="principle-text">
+                                <h4>Kokoro (Heart)</h4>
+                                <p>Soul and spirit infused into every creation</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="philosophy-image">
+                    <img src="{{INTERIOR_IMAGE_1}}" alt="Sushi Counter">
+                    <div class="image-caption">The sacred space where tradition meets artistry</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Omakase Section -->
+    <section id="omakase" class="omakase-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Omakase Experience</h2>
+                <p class="japanese-subtitle">お任せ - "I leave it up to you"</p>
+                <p class="section-description">Trust in our chef's expertise for a personalized journey through the finest seasonal selections</p>
+            </div>
+            
+            <div class="omakase-tiers">
+                <div class="omakase-tier">
+                    <div class="tier-header">
+                        <h3>Sakura</h3>
+                        <div class="tier-price">${{PRICE_1}}</div>
+                        <p class="tier-subtitle">8-Course Experience</p>
+                    </div>
+                    <div class="tier-content">
+                        <ul class="tier-features">
+                            <li>Seasonal appetizer</li>
+                            <li>6 pieces of chef's selection nigiri</li>
+                            <li>1 specialty roll</li>
+                            <li>Miso soup</li>
+                            <li>Seasonal dessert</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="omakase-tier featured">
+                    <div class="tier-badge">Most Popular</div>
+                    <div class="tier-header">
+                        <h3>Tsubaki</h3>
+                        <div class="tier-price">${{PRICE_2}}</div>
+                        <p class="tier-subtitle">12-Course Premium</p>
+                    </div>
+                    <div class="tier-content">
+                        <ul class="tier-features">
+                            <li>Seasonal amuse-bouche</li>
+                            <li>Sashimi course (5 pieces)</li>
+                            <li>10 pieces premium nigiri</li>
+                            <li>Chef's specialty roll</li>
+                            <li>Hot dish of the day</li>
+                            <li>Traditional dessert</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="omakase-tier">
+                    <div class="tier-header">
+                        <h3>Kaiseki</h3>
+                        <div class="tier-price">${{PRICE_3}}</div>
+                        <p class="tier-subtitle">18-Course Ultimate</p>
+                    </div>
+                    <div class="tier-content">
+                        <ul class="tier-features">
+                            <li>Traditional kaiseki progression</li>
+                            <li>Premium sashimi selection</li>
+                            <li>15 pieces finest nigiri</li>
+                            <li>Multiple seasonal courses</li>
+                            <li>Rare and exotic selections</li>
+                            <li>Traditional tea ceremony</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chef Section -->
+    <section class="chef-section">
+        <div class="container">
+            <div class="chef-content">
+                <div class="chef-image">
+                    <img src="{{FOOD_IMAGE_1}}" alt="Chef at Work">
+                    <div class="chef-overlay">
+                        <div class="chef-quote">
+                            <p>"Sushi is not just food, it is a meditation in motion"</p>
+                            <cite>- Master Chef</cite>
+                        </div>
+                    </div>
+                </div>
+                <div class="chef-story">
+                    <h2>Master Craftsman</h2>
+                    <p class="lead">{{ABOUT_DESCRIPTION}}</p>
+                    <div class="chef-credentials">
+                        <div class="credential">
+                            <span class="credential-number">20+</span>
+                            <span class="credential-label">Years Training</span>
+                        </div>
+                        <div class="credential">
+                            <span class="credential-number">Tokyo</span>
+                            <span class="credential-label">Tsukiji Trained</span>
+                        </div>
+                        <div class="credential">
+                            <span class="credential-number">Daily</span>
+                            <span class="credential-label">Fresh Selection</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Preview -->
+    <section id="menu" class="menu-preview">
+        <div class="container">
+            <div class="section-header">
+                <h2>Seasonal Menu</h2>
+                <p>Fresh selections change daily based on the finest available ingredients</p>
+            </div>
+            
+            <div class="menu-tabs">
+                <button class="tab-button active" data-tab="nigiri">Nigiri</button>
+                <button class="tab-button" data-tab="sashimi">Sashimi</button>
+                <button class="tab-button" data-tab="rolls">Specialty Rolls</button>
+                <button class="tab-button" data-tab="appetizers">Appetizers</button>
+            </div>
+
+            <div class="menu-content">
+                <div class="tab-content active" id="nigiri">
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="{{FOOD_IMAGE_2}}" alt="{{MENU_ITEM_1}}">
+                            </div>
+                            <div class="item-info">
+                                <h4>{{MENU_ITEM_1}}</h4>
+                                <p>{{MENU_DESCRIPTION_1}}</p>
+                                <span class="price">${{PRICE_1}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="{{FOOD_IMAGE_3}}" alt="{{MENU_ITEM_2}}">
+                            </div>
+                            <div class="item-info">
+                                <h4>{{MENU_ITEM_2}}</h4>
+                                <p>{{MENU_DESCRIPTION_2}}</p>
+                                <span class="price">${{PRICE_2}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="{{FOOD_IMAGE_4}}" alt="{{MENU_ITEM_3}}">
+                            </div>
+                            <div class="item-info">
+                                <h4>{{MENU_ITEM_3}}</h4>
+                                <p>{{MENU_DESCRIPTION_3}}</p>
+                                <span class="price">${{PRICE_3}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="sashimi">
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="{{FOOD_IMAGE_5}}" alt="Sashimi Selection">
+                            </div>
+                            <div class="item-info">
+                                <h4>Chef's Sashimi Selection</h4>
+                                <p>Daily selection of the finest fish, sliced to perfection</p>
+                                <span class="price">$32</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="rolls">
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="{{FOOD_IMAGE_6}}" alt="Signature Roll">
+                            </div>
+                            <div class="item-info">
+                                <h4>Dragon Roll</h4>
+                                <p>Eel, cucumber, avocado with special sauce</p>
+                                <span class="price">$18</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="appetizers">
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="{{FOOD_IMAGE_7}}" alt="Appetizer">
+                            </div>
+                            <div class="item-info">
+                                <h4>Edamame</h4>
+                                <p>Steamed soybeans with sea salt</p>
+                                <span class="price">$6</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-cta">
+                <a href="menu.html" class="btn btn-primary">View Full Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservations -->
+    <section id="contact" class="reservations">
+        <div class="container">
+            <div class="section-header">
+                <h2>Reservations</h2>
+                <p class="japanese-subtitle">予約 - Limited seating at our sushi counter</p>
+            </div>
+            
+            <div class="reservation-content">
+                <div class="reservation-info">
+                    <div class="info-card">
+                        <h3>Reservation Policy</h3>
+                        <ul class="policy-list">
+                            <li>Omakase experiences require 24-hour advance booking</li>
+                            <li>Counter seating for 8 guests maximum</li>
+                            <li>Traditional dining room available for groups</li>
+                            <li>Cancellations require 4-hour notice</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h3>Contact Information</h3>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <strong>Phone:</strong> {{PHONE}}
+                            </div>
+                            <div class="contact-item">
+                                <strong>Email:</strong> {{EMAIL}}
+                            </div>
+                            <div class="contact-item">
+                                <strong>Address:</strong> {{FULL_ADDRESS}}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Hours</h3>
+                        <div class="hours-list">
+                            <div class="hours-item">
+                                <span>Tuesday - Thursday:</span>
+                                <span>{{WEEKDAY_HOURS}}</span>
+                            </div>
+                            <div class="hours-item">
+                                <span>Friday - Saturday:</span>
+                                <span>{{WEEKEND_HOURS}}</span>
+                            </div>
+                            <div class="hours-item">
+                                <span>Sunday:</span>
+                                <span>{{SUNDAY_HOURS}}</span>
+                            </div>
+                            <div class="hours-item">
+                                <span>Monday:</span>
+                                <span>Closed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reservation-form">
+                    <form class="contact-form">
+                        <h3>Request Reservation</h3>
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" name="phone" placeholder="Phone Number" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="date" name="date" required>
+                            </div>
+                            <div class="form-group">
+                                <select name="time" required>
+                                    <option value="">Select Time</option>
+                                    <option value="17:30">5:30 PM</option>
+                                    <option value="18:00">6:00 PM</option>
+                                    <option value="18:30">6:30 PM</option>
+                                    <option value="19:00">7:00 PM</option>
+                                    <option value="19:30">7:30 PM</option>
+                                    <option value="20:00">8:00 PM</option>
+                                    <option value="20:30">8:30 PM</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <select name="party_size" required>
+                                <option value="">Party Size</option>
+                                <option value="1">1 Person</option>
+                                <option value="2">2 People</option>
+                                <option value="3">3 People</option>
+                                <option value="4">4 People</option>
+                                <option value="5">5 People</option>
+                                <option value="6">6 People</option>
+                                <option value="7+">7+ People</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <select name="experience_type">
+                                <option value="">Dining Preference</option>
+                                <option value="omakase-sakura">Omakase - Sakura</option>
+                                <option value="omakase-tsubaki">Omakase - Tsubaki</option>
+                                <option value="omakase-kaiseki">Omakase - Kaiseki</option>
+                                <option value="a-la-carte">À la Carte</option>
+                                <option value="counter-seating">Counter Seating</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="dietary_restrictions" placeholder="Dietary restrictions or special requests"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Request Reservation</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="map-container">
+            <iframe src="{{GOOGLE_MAPS_EMBED}}" 
+                    width="100%" 
+                    height="400" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+                    <p class="footer-tagline">{{TAGLINE}}</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Experience</h4>
+                    <ul>
+                        <li><a href="#omakase">Omakase</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Reservations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Visit Us</h4>
+                    <p>{{FULL_ADDRESS}}</p>
+                    <p>{{PHONE}}</p>
+                    <p>{{EMAIL}}</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}" class="social-link">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}" class="social-link">Instagram</a>
+                        <a href="{{YELP_URL}}" class="social-link">Yelp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

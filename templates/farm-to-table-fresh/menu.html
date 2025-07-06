@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - {{RESTAURANT_NAME}}</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - Farm-to-Table Fresh Menu">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu Header -->
+    <section class="menu-header">
+        <div class="container">
+            <div class="menu-header-content">
+                <span class="menu-date">Today's Harvest: <span id="current-date"></span></span>
+                <h1>Fresh Daily Menu</h1>
+                <p>Our menu changes daily based on the freshest ingredients from our local farm partners</p>
+                <div class="harvest-info">
+                    <div class="harvest-stat">
+                        <span class="harvest-number">15</span>
+                        <span class="harvest-label">Local Farms</span>
+                    </div>
+                    <div class="harvest-stat">
+                        <span class="harvest-number">50</span>
+                        <span class="harvest-label">Mile Radius</span>
+                    </div>
+                    <div class="harvest-stat">
+                        <span class="harvest-number">100%</span>
+                        <span class="harvest-label">Organic</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Sections -->
+    <section class="menu-section">
+        <div class="container">
+            <!-- Today's Specials -->
+            <div class="menu-category featured">
+                <div class="category-header">
+                    <h2>Today's Farm Specials</h2>
+                    <p class="category-description">Featuring the freshest picks from this morning's harvest</p>
+                </div>
+                <div class="special-items">
+                    <div class="special-item">
+                        <div class="special-image">
+                            <img src="{{FOOD_IMAGE_1}}" alt="{{MENU_ITEM_1}}">
+                            <div class="harvest-badge">Just Picked</div>
+                        </div>
+                        <div class="special-content">
+                            <div class="special-header">
+                                <h3>{{MENU_ITEM_1}}</h3>
+                                <span class="price">${{PRICE_1}}</span>
+                            </div>
+                            <p>{{MENU_DESCRIPTION_1}}</p>
+                            <div class="farm-info">
+                                <span class="farm-name">🚜 Smith Family Farm</span>
+                                <span class="distance">12 miles • Picked at dawn</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="special-item">
+                        <div class="special-image">
+                            <img src="{{FOOD_IMAGE_2}}" alt="{{MENU_ITEM_2}}">
+                            <div class="harvest-badge organic">Certified Organic</div>
+                        </div>
+                        <div class="special-content">
+                            <div class="special-header">
+                                <h3>{{MENU_ITEM_2}}</h3>
+                                <span class="price">${{PRICE_2}}</span>
+                            </div>
+                            <p>{{MENU_DESCRIPTION_2}}</p>
+                            <div class="farm-info">
+                                <span class="farm-name">🌱 Green Valley Organic</span>
+                                <span class="distance">8 miles • USDA Certified</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seasonal Starters -->
+            <div class="menu-category">
+                <div class="category-header">
+                    <h2>Seasonal Starters</h2>
+                    <p class="category-description">Fresh beginnings with locally sourced ingredients</p>
+                </div>
+                <div class="menu-items">
+                    <div class="menu-item-detailed">
+                        <div class="item-image">
+                            <img src="{{FOOD_IMAGE_3}}" alt="{{MENU_ITEM_3}}">
+                            <div class="ingredient-tag">Local Greens</div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>{{MENU_ITEM_3}}</h3>
+                                <span class="price">${{PRICE_3}}</span>
+                            </div>
+                            <p>{{MENU_DESCRIPTION_3}}</p>
+                            <div class="item-details">
+                                <span class="farm-source">Sunrise Organic Farm</span>
+                                <span class="dietary-info">🌱 Vegan • 🥗 Gluten-Free</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-detailed">
+                        <div class="item-image">
+                            <img src="{{FOOD_IMAGE_4}}" alt="Farm Fresh Soup">
+                            <div class="ingredient-tag">Heirloom Tomatoes</div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Heritage Tomato Bisque</h3>
+                                <span class="price">$14.00</span>
+                            </div>
+                            <p>Roasted heirloom tomatoes from Heritage Farm with fresh basil and organic cream</p>
+                            <div class="item-details">
+                                <span class="farm-source">Heritage Farm</span>
+                                <span class="dietary-info">🥛 Vegetarian • Local Herbs</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-detailed">
+                        <div class="item-image">
+                            <img src="{{FOOD_IMAGE_5}}" alt="Artisan Bread">
+                            <div class="ingredient-tag">Stone Ground</div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Farm Fresh Bread Board</h3>
+                                <span class="price">$12.00</span>
+                            </div>
+                            <p>House-baked bread with locally churned butter, seasonal jam, and farm honey</p>
+                            <div class="item-details">
+                                <span class="farm-source">Mill Creek Grains</span>
+                                <span class="dietary-info">🍞 Fresh Baked • 🍯 Raw Honey</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Harvest -->
+            <div class="menu-category">
+                <div class="category-header">
+                    <h2>Main Harvest</h2>
+                    <p class="category-description">Hearty dishes celebrating the season's best produce</p>
+                </div>
+                <div class="menu-items">
+                    <div class="menu-item-detailed">
+                        <div class="item-image">
+                            <img src="{{FOOD_IMAGE_6}}" alt="{{MENU_ITEM_4}}">
+                            <div class="ingredient-tag">Grass-Fed</div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>{{MENU_ITEM_4}}</h3>
+                                <span class="price">${{PRICE_4}}</span>
+                            </div>
+                            <p>{{MENU_DESCRIPTION_4}}</p>
+                            <div class="item-details">
+                                <span class="farm-source">Meadowbrook Farm</span>
+                                <span class="dietary-info">🥩 Grass-Fed • 🌿 Free-Range</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-detailed">
+                        <div class="item-image">
+                            <img src="{{FOOD_IMAGE_7}}" alt="Seasonal Pasta">
+                            <div class="ingredient-tag">House Made</div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Seasonal Vegetable Pasta</h3>
+                                <span class="price">$22.00</span>
+                            </div>
+                            <p>House-made pasta with whatever vegetables are at their peak today</p>
+                            <div class="item-details">
+                                <span class="farm-source">Multiple Local Farms</span>
+                                <span class="dietary-info">🌱 Vegetarian • Changes Daily</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-detailed">
+                        <div class="item-image">
+                            <img src="{{FOOD_IMAGE_8}}" alt="Farm Chicken">
+                            <div class="ingredient-tag">Free-Range</div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>{{MENU_ITEM_5}}</h3>
+                                <span class="price">${{PRICE_5}}</span>
+                            </div>
+                            <p>{{MENU_DESCRIPTION_5}}</p>
+                            <div class="item-details">
+                                <span class="farm-source">Free Bird Farm</span>
+                                <span class="dietary-info">🐔 Free-Range • 🌾 Grain-Fed</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-detailed">
+                        <div class="item-image">
+                            <img src="{{FOOD_IMAGE_9}}" alt="Market Fish">
+                            <div class="ingredient-tag">Day Boat</div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Market Fresh Fish</h3>
+                                <span class="price">Market Price</span>
+                            </div>
+                            <p>Today's catch prepared simply with seasonal vegetables and herbs</p>
+                            <div class="item-details">
+                                <span class="farm-source">Coastal Waters</span>
+                                <span class="dietary-info">🐟 Wild Caught • 🌊 Sustainable</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sweet Endings -->
+            <div class="menu-category">
+                <div class="category-header">
+                    <h2>Sweet Endings</h2>
+                    <p class="category-description">Desserts featuring seasonal fruits and local dairy</p>
+                </div>
+                <div class="menu-items">
+                    <div class="menu-item-detailed">
+                        <div class="item-image">
+                            <img src="{{FOOD_IMAGE_10}}" alt="{{MENU_ITEM_6}}">
+                            <div class="ingredient-tag">Farm Fresh</div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>{{MENU_ITEM_6}}</h3>
+                                <span class="price">${{PRICE_6}}</span>
+                            </div>
+                            <p>{{MENU_DESCRIPTION_6}}</p>
+                            <div class="item-details">
+                                <span class="farm-source">Orchard Hill Farm</span>
+                                <span class="dietary-info">🍓 Seasonal • 🥛 Local Cream</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-detailed">
+                        <div class="item-image">
+                            <img src="{{FOOD_IMAGE_11}}" alt="Farm Ice Cream">
+                            <div class="ingredient-tag">House Made</div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Farm Fresh Ice Cream</h3>
+                                <span class="price">$8.00</span>
+                            </div>
+                            <p>Daily flavors made with milk from grass-fed cows and seasonal ingredients</p>
+                            <div class="item-details">
+                                <span class="farm-source">Dairy Dreams Farm</span>
+                                <span class="dietary-info">🍦 Made Daily • 🥛 Grass-Fed</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-detailed">
+                        <div class="item-image">
+                            <img src="{{FOOD_IMAGE_12}}" alt="Raw Honey Dessert">
+                            <div class="ingredient-tag">Raw Honey</div>
+                        </div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3>Honey Lavender Panna Cotta</h3>
+                                <span class="price">$10.00</span>
+                            </div>
+                            <p>Silky panna cotta with raw local honey and organic lavender</p>
+                            <div class="item-details">
+                                <span class="farm-source">Bee Happy Apiaries</span>
+                                <span class="dietary-info">🍯 Raw Honey • 🌸 Edible Flowers</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Farm Partners Info -->
+            <div class="farm-partners-info">
+                <h2>Today's Farm Partners</h2>
+                <div class="partners-list">
+                    <div class="partner-card">
+                        <h3>Smith Family Farm</h3>
+                        <p>Providing today's greens, herbs, and root vegetables</p>
+                        <span class="distance">12 miles north</span>
+                    </div>
+                    <div class="partner-card">
+                        <h3>Green Valley Organic</h3>
+                        <p>Certified organic produce and free-range eggs</p>
+                        <span class="distance">8 miles east</span>
+                    </div>
+                    <div class="partner-card">
+                        <h3>Heritage Farm</h3>
+                        <p>Heirloom tomatoes and seasonal vegetables</p>
+                        <span class="distance">15 miles south</span>
+                    </div>
+                    <div class="partner-card">
+                        <h3>Meadowbrook Farm</h3>
+                        <p>Grass-fed beef and pasture-raised pork</p>
+                        <span class="distance">20 miles west</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Notes -->
+    <section class="menu-notes">
+        <div class="container">
+            <div class="notes-content">
+                <h2>About Our Menu</h2>
+                <div class="notes-grid">
+                    <div class="note">
+                        <div class="note-icon">📅</div>
+                        <h3>Daily Updates</h3>
+                        <p>Our menu changes daily based on what's fresh and available from our farm partners.</p>
+                    </div>
+                    <div class="note">
+                        <div class="note-icon">🌾</div>
+                        <h3>Seasonal Focus</h3>
+                        <p>We celebrate each season by featuring ingredients at their peak flavor and nutrition.</p>
+                    </div>
+                    <div class="note">
+                        <div class="note-icon">🥗</div>
+                        <h3>Dietary Options</h3>
+                        <p>We accommodate various dietary needs with advance notice. Please inform us of any restrictions.</p>
+                    </div>
+                    <div class="note">
+                        <div class="note-icon">🚜</div>
+                        <h3>Zero Waste</h3>
+                        <p>We minimize waste through composting, recycling, and using every part of our ingredients.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="menu-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Experience Farm-Fresh Dining</h2>
+                <p>Reserve your table to taste the difference that fresh, local ingredients make</p>
+                <div class="cta-buttons">
+                    <a href="tel:{{PHONE}}" class="btn btn-primary">Call {{PHONE}}</a>
+                    <a href="index.html#contact" class="btn btn-secondary">Make Reservation</a>
+                </div>
+                <div class="cta-note">
+                    <p><em>Menu items and prices subject to change based on daily harvest and seasonal availability</em></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}}" class="footer-logo">
+                    <p>{{TAGLINE}}</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>{{FULL_ADDRESS}}</p>
+                    <p>{{PHONE}}</p>
+                    <p>{{EMAIL}}</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Hours</h3>
+                    <p>{{WEEKDAY_HOURS}}</p>
+                    <p>{{WEEKEND_HOURS}}</p>
+                    <p>{{SUNDAY_HOURS}}</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}" target="_blank">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}" target="_blank">Instagram</a>
+                        <a href="{{YELP_URL}}" target="_blank">Yelp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved. Committed to sustainable dining.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Set current date
+        document.getElementById('current-date').textContent = new Date().toLocaleDateString('en-US', {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+    </script>
+</body>
+</html>
+
+<style>
+/* Additional Menu Page Styles */
+.menu-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    padding: 120px 0 80px;
+    text-align: center;
+}
+
+.menu-header-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.menu-date {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    backdrop-filter: blur(10px);
+}
+
+.menu-header h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.harvest-info {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.harvest-stat {
+    text-align: center;
+}
+
+.harvest-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.harvest-label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.9;
+}
+
+.menu-section {
+    padding: 80px 0;
+}
+
+.menu-category {
+    margin-bottom: 5rem;
+}
+
+.menu-category.featured {
+    background: var(--background-natural);
+    padding: 4rem 0;
+    border-radius: 20px;
+    margin-bottom: 6rem;
+}
+
+.category-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.category-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.category-description {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Special Items */
+.special-items {
+    display: grid;
+    gap: 3rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.special-item {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 3rem;
+    align-items: center;
+    background: white;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.special-image {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.special-image img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.harvest-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: var(--fresh-green);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.harvest-badge.organic {
+    background: var(--organic-brown);
+}
+
+.special-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.special-header h3 {
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+.farm-info {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.farm-name {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.distance {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+/* Menu Items Detailed */
+.menu-items {
+    display: grid;
+    gap: 2rem;
+}
+
+.menu-item-detailed {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 2rem;
+    align-items: center;
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.menu-item-detailed:hover {
+    transform: translateY(-5px);
+}
+
+.item-image {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.item-image img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.ingredient-tag {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(74, 124, 89, 0.9);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.item-header h3 {
+    font-size: 1.3rem;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+.item-details {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.farm-source {
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.dietary-info {
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+/* Farm Partners Info */
+.farm-partners-info {
+    background: var(--background-earth);
+    padding: 4rem;
+    border-radius: 20px;
+    margin-top: 4rem;
+}
+
+.farm-partners-info h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--text-dark);
+}
+
+.partners-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.partner-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.partner-card h3 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.partner-card .distance {
+    display: inline-block;
+    background: var(--fresh-green);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    margin-top: 1rem;
+}
+
+/* Menu Notes */
+.menu-notes {
+    background: var(--background-natural);
+    padding: 80px 0;
+}
+
+.notes-content h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--text-dark);
+}
+
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.note {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.note-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.note h3 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+/* Call to Action */
+.menu-cta {
+    background: var(--primary-color);
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.cta-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.cta-note {
+    margin-top: 2rem;
+}
+
+.cta-note p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .harvest-info {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .special-item {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .menu-item-detailed {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .item-image {
+        width: 100%;
+    }
+    
+    .item-image img {
+        height: 200px;
+    }
+    
+    .partners-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .notes-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .menu-header h1 {
+        font-size: 2.5rem;
+    }
+}
+</style>

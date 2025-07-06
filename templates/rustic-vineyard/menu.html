@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Full Menu</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} Full Menu - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        .menu-page {
+            padding-top: 100px;
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--background-light), var(--background-warm));
+        }
+        
+        .menu-category {
+            margin-bottom: 4rem;
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .category-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+        
+        .category-header h2 {
+            color: var(--primary-color);
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .category-description {
+            color: var(--text-muted);
+            font-style: italic;
+        }
+        
+        .menu-items {
+            display: grid;
+            gap: 1.5rem;
+        }
+        
+        .menu-dish {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 1rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .menu-dish:last-child {
+            border-bottom: none;
+        }
+        
+        .dish-info {
+            flex: 1;
+        }
+        
+        .dish-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+        
+        .dish-description {
+            color: var(--text-muted);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+        
+        .dish-price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-left: 1rem;
+            min-width: 60px;
+            text-align: right;
+        }
+        
+        .wine-pairing {
+            font-size: 0.85rem;
+            color: var(--wine-red);
+            font-style: italic;
+            margin-top: 0.3rem;
+        }
+        
+        .seasonal-badge {
+            background: var(--gold-accent);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.7rem;
+            margin-left: 0.5rem;
+        }
+        
+        .chef-special {
+            position: relative;
+        }
+        
+        .chef-special::before {
+            content: "👨‍🍳";
+            position: absolute;
+            left: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .menu-navigation {
+            position: sticky;
+            top: 90px;
+            background: rgba(255, 248, 220, 0.95);
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+    </style>
+</head>
+<body class="color-rustic">
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">Our Story</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="index.html#wine">Wine</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="menu-page">
+        <div class="container">
+            <div class="menu-navigation">
+                <div class="nav-links">
+                    <a href="#appetizers">Appetizers</a>
+                    <a href="#soups">Soups & Salads</a>
+                    <a href="#mains">Main Courses</a>
+                    <a href="#desserts">Desserts</a>
+                    <a href="#wines">Wine Selection</a>
+                </div>
+            </div>
+
+            <section id="appetizers" class="menu-category">
+                <div class="category-header">
+                    <h2>Appetizers</h2>
+                    <p class="category-description">Start your culinary journey with our seasonal small plates</p>
+                </div>
+                <div class="menu-items">
+                    <div class="menu-dish chef-special">
+                        <div class="dish-info">
+                            <div class="dish-name">Rustic Charcuterie Board <span class="seasonal-badge">Seasonal</span></div>
+                            <div class="dish-description">Local artisan meats, farmhouse cheeses, house-made preserves, honeycomb, and rustic bread</div>
+                            <div class="wine-pairing">Pairs with: Pinot Noir or Sangiovese</div>
+                        </div>
+                        <div class="dish-price">$24</div>
+                    </div>
+                    
+                    <div class="menu-dish">
+                        <div class="dish-info">
+                            <div class="dish-name">Burrata with Heirloom Tomatoes</div>
+                            <div class="dish-description">Creamy burrata, vine-ripened tomatoes, basil oil, aged balsamic, grilled sourdough</div>
+                            <div class="wine-pairing">Pairs with: Sauvignon Blanc</div>
+                        </div>
+                        <div class="dish-price">$18</div>
+                    </div>
+                    
+                    <div class="menu-dish">
+                        <div class="dish-info">
+                            <div class="dish-name">Wild Mushroom Crostini</div>
+                            <div class="dish-description">Sautéed forest mushrooms, goat cheese, truffle oil, microgreens, toasted brioche</div>
+                        </div>
+                        <div class="dish-price">$16</div>
+                    </div>
+                    
+                    <div class="menu-dish">
+                        <div class="dish-info">
+                            <div class="dish-name">Pan-Seared Scallops</div>
+                            <div class="dish-description">Diver scallops, cauliflower purée, pancetta, pea shoots, lemon vinaigrette</div>
+                            <div class="wine-pairing">Pairs with: Chardonnay</div>
+                        </div>
+                        <div class="dish-price">$22</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="soups" class="menu-category">
+                <div class="category-header">
+                    <h2>Soups & Salads</h2>
+                    <p class="category-description">Fresh, seasonal ingredients from our garden and local farms</p>
+                </div>
+                <div class="menu-items">
+                    <div class="menu-dish">
+                        <div class="dish-info">
+                            <div class="dish-name">Seasonal Vegetable Soup</div>
+                            <div class="dish-description">Chef's daily creation featuring the finest seasonal produce</div>
+                        </div>
+                        <div class="dish-price">$12</div>
+                    </div>
+                    
+                    <div class="menu-dish chef-special">
+                        <div class="dish-info">
+                            <div class="dish-name">Harvest Salad <span class="seasonal-badge">Chef's Choice</span></div>
+                            <div class="dish-description">Mixed greens, roasted butternut squash, candied walnuts, dried cranberries, goat cheese, apple cider vinaigrette</div>
+                        </div>
+                        <div class="dish-price">$16</div>
+                    </div>
+                    
+                    <div class="menu-dish">
+                        <div class="dish-info">
+                            <div class="dish-name">Caesar Salad</div>
+                            <div class="dish-description">Romaine hearts, house-made croutons, parmesan, traditional caesar dressing</div>
+                        </div>
+                        <div class="dish-price">$14</div>
+                    </div>
+                    
+                    <div class="menu-dish">
+                        <div class="dish-info">
+                            <div class="dish-name">Roasted Beet Salad</div>
+                            <div class="dish-description">Golden and red beets, arugula, herbed goat cheese, toasted pistachios, balsamic reduction</div>
+                        </div>
+                        <div class="dish-price">$15</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="mains" class="menu-category">
+                <div class="category-header">
+                    <h2>Main Courses</h2>
+                    <p class="category-description">Hearty, satisfying dishes that celebrate the bounty of wine country</p>
+                </div>
+                <div class="menu-items">
+                    <div class="menu-dish chef-special">
+                        <div class="dish-info">
+                            <div class="dish-name">Wine-Braised Short Ribs <span class="seasonal-badge">Signature</span></div>
+                            <div class="dish-description">Slow-braised beef short ribs, red wine reduction, roasted root vegetables, garlic mashed potatoes</div>
+                            <div class="wine-pairing">Pairs with: Cabernet Sauvignon or Malbec</div>
+                        </div>
+                        <div class="dish-price">$38</div>
+                    </div>
+                    
+                    <div class="menu-dish">
+                        <div class="dish-info">
+                            <div class="dish-name">Pan-Roasted Salmon</div>
+                            <div class="dish-description">Atlantic salmon, quinoa pilaf, roasted asparagus, lemon herb butter</div>
+                            <div class="wine-pairing">Pairs with: Pinot Grigio or Rosé</div>
+                        </div>
+                        <div class="dish-price">$32</div>
+                    </div>
+                    
+                    <div class="menu-dish">
+                        <div class="dish-info">
+                            <div class="dish-name">Free-Range Chicken</div>
+                            <div class="dish-description">Herb-roasted half chicken, wild rice stuffing, seasonal vegetables, pan gravy</div>
+                        </div>
+                        <div class="dish-price">$28</div>
+                    </div>
+                    
+                    <div class="menu-dish">
+                        <div class="dish-info">
+                            <div class="dish-name">Rustic Pasta</div>
+                            <div class="dish-description">House-made pappardelle, wild boar ragu, pecorino romano, fresh herbs</div>
+                            <div class="wine-pairing">Pairs with: Chianti or Sangiovese</div>
+                        </div>
+                        <div class="dish-price">$26</div>
+                    </div>
+                    
+                    <div class="menu-dish">
+                        <div class="dish-info">
+                            <div class="dish-name">Grilled Lamb Chops</div>
+                            <div class="dish-description">New Zealand lamb, rosemary jus, grilled vegetables, herbed polenta</div>
+                            <div class="wine-pairing">Pairs with: Syrah or Bordeaux blend</div>
+                        </div>
+                        <div class="dish-price">$42</div>
+                    </div>
+                    
+                    <div class="menu-dish">
+                        <div class="dish-info">
+                            <div class="dish-name">Vegetarian Wellington</div>
+                            <div class="dish-description">Seasonal vegetables and mushrooms wrapped in puff pastry, red wine reduction</div>
+                        </div>
+                        <div class="dish-price">$24</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="desserts" class="menu-category">
+                <div class="category-header">
+                    <h2>Desserts</h2>
+                    <p class="category-description">Sweet endings crafted with local ingredients and seasonal inspiration</p>
+                </div>
+                <div class="menu-items">
+                    <div class="menu-dish chef-special">
+                        <div class="dish-info">
+                            <div class="dish-name">Wine Country Tiramisu <span class="seasonal-badge">House Made</span></div>
+                            <div class="dish-description">Espresso-soaked ladyfingers, mascarpone cream, local wine reduction, cocoa dust</div>
+                        </div>
+                        <div class="dish-price">$12</div>
+                    </div>
+                    
+                    <div class="menu-dish">
+                        <div class="dish-info">
+                            <div class="dish-name">Seasonal Fruit Tart</div>
+                            <div class="dish-description">Buttery pastry shell, vanilla pastry cream, fresh seasonal fruits, honey glaze</div>
+                        </div>
+                        <div class="dish-price">$10</div>
+                    </div>
+                    
+                    <div class="menu-dish">
+                        <div class="dish-info">
+                            <div class="dish-name">Chocolate Pot de Crème</div>
+                            <div class="dish-description">Rich chocolate custard, whipped cream, candied orange peel</div>
+                        </div>
+                        <div class="dish-price">$9</div>
+                    </div>
+                    
+                    <div class="menu-dish">
+                        <div class="dish-info">
+                            <div class="dish-name">Local Cheese Selection</div>
+                            <div class="dish-description">Three artisan cheeses, honeycomb, dried fruits, wine crackers</div>
+                        </div>
+                        <div class="dish-price">$18</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="wines" class="menu-category">
+                <div class="category-header">
+                    <h2>Wine Selection</h2>
+                    <p class="category-description">Curated collection featuring local vineyards and international favorites</p>
+                </div>
+                <div class="menu-items">
+                    <div class="menu-dish">
+                        <div class="dish-info">
+                            <div class="dish-name">House Red</div>
+                            <div class="dish-description">Local Cabernet Sauvignon blend, full-bodied with notes of blackberry and oak</div>
+                        </div>
+                        <div class="dish-price">$9/glass, $34/bottle</div>
+                    </div>
+                    
+                    <div class="menu-dish">
+                        <div class="dish-info">
+                            <div class="dish-name">House White</div>
+                            <div class="dish-description">Chardonnay, crisp and clean with hints of green apple and citrus</div>
+                        </div>
+                        <div class="dish-price">$8/glass, $30/bottle</div>
+                    </div>
+                    
+                    <div class="menu-dish chef-special">
+                        <div class="dish-info">
+                            <div class="dish-name">Reserve Pinot Noir <span class="seasonal-badge">Limited</span></div>
+                            <div class="dish-description">Estate reserve, aged 18 months in French oak, complex with cherry and spice notes</div>
+                        </div>
+                        <div class="dish-price">$16/glass, $65/bottle</div>
+                    </div>
+                    
+                    <div class="menu-dish">
+                        <div class="dish-info">
+                            <div class="dish-name">Champagne & Sparkling</div>
+                            <div class="dish-description">Selection of domestic and imported sparkling wines and champagnes</div>
+                        </div>
+                        <div class="dish-price">$12-22/glass</div>
+                    </div>
+                </div>
+            </section>
+
+            <div style="text-align: center; margin: 3rem 0;">
+                <a href="index.html#reservations" class="btn btn-primary">Make a Reservation</a>
+                <a href="index.html" class="btn btn-secondary" style="margin-left: 1rem;">Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}}">
+                </div>
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

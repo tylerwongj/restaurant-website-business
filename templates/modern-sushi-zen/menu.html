@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Menu | Authentic Japanese Sushi</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} Menu - Fresh sushi, sashimi, and traditional Japanese cuisine">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Menu-specific styles */
+        .menu-hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('{{HERO_IMAGE}}');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .menu-hero h1 {
+            font-size: 4rem;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .menu-section {
+            padding: 80px 0;
+            border-bottom: 1px solid #F8F9FA;
+        }
+
+        .menu-section:last-child {
+            border-bottom: none;
+        }
+
+        .menu-section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+        }
+
+        .menu-section .japanese-title {
+            text-align: center;
+            font-family: var(--font-accent);
+            font-size: 1.5rem;
+            color: var(--zen-color);
+            margin-bottom: 50px;
+            letter-spacing: 3px;
+        }
+
+        .menu-category {
+            margin-bottom: 60px;
+        }
+
+        .menu-category h3 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        .menu-items-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+        }
+
+        .menu-item-detailed {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .menu-item-detailed:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .menu-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .item-title-group h4 {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .item-japanese {
+            font-family: var(--font-accent);
+            color: var(--zen-color);
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .item-price {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .item-description {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .item-details {
+            display: flex;
+            gap: 15px;
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+
+        .dietary-tags {
+            display: flex;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .dietary-tag {
+            background: var(--secondary-color);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .chef-special {
+            position: relative;
+        }
+
+        .chef-special::before {
+            content: "Chef's Special";
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: var(--secondary-color);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: 600;
+            z-index: 1;
+        }
+
+        .seasonal-item {
+            border-left: 4px solid var(--zen-color);
+        }
+
+        .omakase-section {
+            background: #F8F9FA;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .omakase-tiers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .omakase-tier {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .omakase-tier:hover {
+            transform: translateY(-10px);
+        }
+
+        .tier-header h3 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .tier-japanese {
+            font-family: var(--font-accent);
+            color: var(--zen-color);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .tier-price {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .tier-description {
+            color: var(--text-light);
+            margin-bottom: 25px;
+        }
+
+        .tier-includes {
+            list-style: none;
+            text-align: left;
+        }
+
+        .tier-includes li {
+            padding: 8px 0;
+            border-bottom: 1px solid #F8F9FA;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .tier-includes li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        .sake-pairing {
+            background: rgba(230, 126, 34, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .sake-title {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .seasonal-note {
+            background: rgba(142, 107, 59, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 40px 0;
+            text-align: center;
+            border: 2px dashed var(--zen-color);
+        }
+
+        .seasonal-note h4 {
+            color: var(--zen-color);
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .menu-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .menu-items-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .menu-item-detailed {
+                padding: 20px;
+            }
+
+            .omakase-tiers {
+                grid-template-columns: 1fr;
+            }
+
+            .tier-price {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body class="sushi-theme">
+    <!-- Navigation -->
+    <nav class="navbar navbar-minimal">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+                <span class="logo-text">{{RESTAURANT_NAME}}</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#omakase">Omakase</a></li>
+                <li><a href="#nigiri">Nigiri</a></li>
+                <li><a href="#sashimi">Sashimi</a></li>
+                <li><a href="#rolls">Rolls</a></li>
+                <li><a href="index.html#contact">Reservations</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu Hero -->
+    <section class="menu-hero">
+        <div class="hero-content">
+            <h1>Menu</h1>
+            <p class="japanese-subtitle">お品書き</p>
+            <p class="hero-subtitle">Daily selections of the finest seasonal ingredients</p>
+        </div>
+    </section>
+
+    <!-- Omakase Section -->
+    <section id="omakase" class="omakase-section">
+        <div class="container">
+            <h2>Omakase Experience</h2>
+            <p class="japanese-title">おまかせ体験</p>
+            <p class="section-description">Trust in our chef's expertise for a personalized journey through seasonal selections</p>
+            
+            <div class="omakase-tiers">
+                <div class="omakase-tier">
+                    <div class="tier-header">
+                        <h3>Sakura</h3>
+                        <p class="tier-japanese">桜 - Cherry Blossom</p>
+                        <div class="tier-price">${{PRICE_1}}</div>
+                        <p class="tier-description">8-course introduction to authentic sushi</p>
+                    </div>
+                    <ul class="tier-includes">
+                        <li>Seasonal appetizer (zensai)</li>
+                        <li>6 pieces chef's selection nigiri</li>
+                        <li>1 specialty roll</li>
+                        <li>Miso soup</li>
+                        <li>Seasonal dessert</li>
+                    </ul>
+                </div>
+
+                <div class="omakase-tier">
+                    <div class="tier-header">
+                        <h3>Tsubaki</h3>
+                        <p class="tier-japanese">椿 - Camellia</p>
+                        <div class="tier-price">${{PRICE_2}}</div>
+                        <p class="tier-description">12-course premium experience</p>
+                    </div>
+                    <ul class="tier-includes">
+                        <li>Seasonal amuse-bouche</li>
+                        <li>Sashimi course (5 pieces)</li>
+                        <li>10 pieces premium nigiri</li>
+                        <li>Chef's specialty roll</li>
+                        <li>Hot dish of the day</li>
+                        <li>Traditional dessert</li>
+                    </ul>
+                </div>
+
+                <div class="omakase-tier">
+                    <div class="tier-header">
+                        <h3>Kaiseki</h3>
+                        <p class="tier-japanese">懐石 - Traditional Course</p>
+                        <div class="tier-price">${{PRICE_3}}</div>
+                        <p class="tier-description">18-course ultimate experience</p>
+                    </div>
+                    <ul class="tier-includes">
+                        <li>Traditional kaiseki progression</li>
+                        <li>Premium sashimi selection</li>
+                        <li>15 pieces finest nigiri</li>
+                        <li>Multiple seasonal courses</li>
+                        <li>Rare and exotic selections</li>
+                        <li>Traditional tea ceremony</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nigiri Section -->
+    <section id="nigiri" class="menu-section">
+        <div class="container">
+            <h2>Nigiri Sushi</h2>
+            <p class="japanese-title">握り寿司</p>
+            
+            <div class="seasonal-note">
+                <h4>Seasonal Selection</h4>
+                <p>Our nigiri selection changes daily based on the finest available fish from Tsukiji and local waters</p>
+            </div>
+
+            <div class="menu-category">
+                <h3>Premium Selection</h3>
+                <div class="menu-items-grid">
+                    <div class="menu-item-detailed chef-special">
+                        <div class="menu-item-header">
+                            <div class="item-title-group">
+                                <h4>{{MENU_ITEM_1}}</h4>
+                                <p class="item-japanese">ほんまぐろ</p>
+                            </div>
+                            <span class="item-price">${{PRICE_1}}</span>
+                        </div>
+                        <p class="item-description">{{MENU_DESCRIPTION_1}}</p>
+                        <div class="item-details">
+                            <span>Wild-caught</span>
+                            <span>Sustainably sourced</span>
+                            <span>Daily selection</span>
+                        </div>
+                        <div class="sake-pairing">
+                            <div class="sake-title">Recommended Pairing</div>
+                            <p>Junmai Daiginjo, Dassai 23</p>
+                        </div>
+                    </div>
+
+                    <div class="menu-item-detailed">
+                        <div class="menu-item-header">
+                            <div class="item-title-group">
+                                <h4>{{MENU_ITEM_2}}</h4>
+                                <p class="item-japanese">さけ</p>
+                            </div>
+                            <span class="item-price">${{PRICE_2}}</span>
+                        </div>
+                        <p class="item-description">{{MENU_DESCRIPTION_2}}</p>
+                        <div class="item-details">
+                            <span>Scottish salmon</span>
+                            <span>Rich texture</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item-detailed seasonal-item">
+                        <div class="menu-item-header">
+                            <div class="item-title-group">
+                                <h4>{{MENU_ITEM_3}}</h4>
+                                <p class="item-japanese">うに</p>
+                            </div>
+                            <span class="item-price">${{PRICE_3}}</span>
+                        </div>
+                        <p class="item-description">{{MENU_DESCRIPTION_3}}</p>
+                        <div class="item-details">
+                            <span>Santa Barbara</span>
+                            <span>Seasonal availability</span>
+                        </div>
+                        <div class="dietary-tags">
+                            <span class="dietary-tag">Seasonal</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item-detailed">
+                        <div class="menu-item-header">
+                            <div class="item-title-group">
+                                <h4>Yellowtail</h4>
+                                <p class="item-japanese">はまち</p>
+                            </div>
+                            <span class="item-price">$8</span>
+                        </div>
+                        <p class="item-description">Buttery Japanese yellowtail with subtle sweetness</p>
+                        <div class="item-details">
+                            <span>Japanese hamachi</span>
+                            <span>Rich flavor</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item-detailed">
+                        <div class="menu-item-header">
+                            <div class="item-title-group">
+                                <h4>Eel</h4>
+                                <p class="item-japanese">うなぎ</p>
+                            </div>
+                            <span class="item-price">$9</span>
+                        </div>
+                        <p class="item-description">Grilled freshwater eel with sweet kabayaki glaze</p>
+                        <div class="item-details">
+                            <span>Grilled to order</span>
+                            <span>Traditional preparation</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item-detailed">
+                        <div class="menu-item-header">
+                            <div class="item-title-group">
+                                <h4>Mackerel</h4>
+                                <p class="item-japanese">さば</p>
+                            </div>
+                            <span class="item-price">$6</span>
+                        </div>
+                        <p class="item-description">Lightly cured Norwegian mackerel with ginger and scallion</p>
+                        <div class="item-details">
+                            <span>Cured in-house</span>
+                            <span>Traditional method</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sashimi Section -->
+    <section id="sashimi" class="menu-section">
+        <div class="container">
+            <h2>Sashimi</h2>
+            <p class="japanese-title">刺身</p>
+            
+            <div class="menu-category">
+                <h3>Sashimi Selections</h3>
+                <div class="menu-items-grid">
+                    <div class="menu-item-detailed chef-special">
+                        <div class="menu-item-header">
+                            <div class="item-title-group">
+                                <h4>Chef's Sashimi Selection</h4>
+                                <p class="item-japanese">板前おまかせ刺身</p>
+                            </div>
+                            <span class="item-price">$32</span>
+                        </div>
+                        <p class="item-description">5 pieces of the finest daily selection, showcasing seasonal fish at their peak</p>
+                        <div class="item-details">
+                            <span>5 pieces</span>
+                            <span>Daily selection</span>
+                            <span>Premium cuts</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item-detailed">
+                        <div class="menu-item-header">
+                            <div class="item-title-group">
+                                <h4>Tuna Trio</h4>
+                                <p class="item-japanese">まぐろ三種</p>
+                            </div>
+                            <span class="item-price">$28</span>
+                        </div>
+                        <p class="item-description">Akami, chu-toro, and o-toro showcasing different cuts of bluefin tuna</p>
+                        <div class="item-details">
+                            <span>3 pieces each</span>
+                            <span>Bluefin tuna</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item-detailed seasonal-item">
+                        <div class="menu-item-header">
+                            <div class="item-title-group">
+                                <h4>Seasonal Fish</h4>
+                                <p class="item-japanese">季節の魚</p>
+                            </div>
+                            <span class="item-price">Market Price</span>
+                        </div>
+                        <p class="item-description">Ask your server about today's special seasonal selections</p>
+                        <div class="dietary-tags">
+                            <span class="dietary-tag">Seasonal</span>
+                            <span class="dietary-tag">Limited</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specialty Rolls -->
+    <section id="rolls" class="menu-section">
+        <div class="container">
+            <h2>Specialty Rolls</h2>
+            <p class="japanese-title">特製巻物</p>
+            
+            <div class="menu-category">
+                <h3>Signature Creations</h3>
+                <div class="menu-items-grid">
+                    <div class="menu-item-detailed chef-special">
+                        <div class="menu-item-header">
+                            <div class="item-title-group">
+                                <h4>Dragon Roll</h4>
+                                <p class="item-japanese">ドラゴン巻</p>
+                            </div>
+                            <span class="item-price">$18</span>
+                        </div>
+                        <p class="item-description">Eel and cucumber inside, topped with avocado and eel sauce in a dragon pattern</p>
+                        <div class="item-details">
+                            <span>8 pieces</span>
+                            <span>House specialty</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item-detailed">
+                        <div class="menu-item-header">
+                            <div class="item-title-group">
+                                <h4>Rainbow Roll</h4>
+                                <p class="item-japanese">レインボー巻</p>
+                            </div>
+                            <span class="item-price">$16</span>
+                        </div>
+                        <p class="item-description">California roll topped with assorted fresh fish and avocado</p>
+                        <div class="item-details">
+                            <span>8 pieces</span>
+                            <span>Colorful presentation</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item-detailed">
+                        <div class="menu-item-header">
+                            <div class="item-title-group">
+                                <h4>Spicy Tuna Roll</h4>
+                                <p class="item-japanese">スパイシーツナ巻</p>
+                            </div>
+                            <span class="item-price">$12</span>
+                        </div>
+                        <p class="item-description">Fresh tuna with spicy mayo, cucumber, and scallions</p>
+                        <div class="item-details">
+                            <span>6 pieces</span>
+                            <span>Medium spice</span>
+                        </div>
+                        <div class="dietary-tags">
+                            <span class="dietary-tag">Spicy</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item-detailed">
+                        <div class="menu-item-header">
+                            <div class="item-title-group">
+                                <h4>Philadelphia Roll</h4>
+                                <p class="item-japanese">フィラデルフィア巻</p>
+                            </div>
+                            <span class="item-price">$10</span>
+                        </div>
+                        <p class="item-description">Smoked salmon, cream cheese, and cucumber</p>
+                        <div class="item-details">
+                            <span>6 pieces</span>
+                            <span>Classic style</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appetizers & Sides -->
+    <section class="menu-section">
+        <div class="container">
+            <h2>Appetizers & Sides</h2>
+            <p class="japanese-title">前菜・副菜</p>
+            
+            <div class="menu-category">
+                <h3>Traditional Starters</h3>
+                <div class="menu-items-grid">
+                    <div class="menu-item-detailed">
+                        <div class="menu-item-header">
+                            <div class="item-title-group">
+                                <h4>Edamame</h4>
+                                <p class="item-japanese">枝豆</p>
+                            </div>
+                            <span class="item-price">$6</span>
+                        </div>
+                        <p class="item-description">Steamed young soybeans with sea salt</p>
+                        <div class="dietary-tags">
+                            <span class="dietary-tag">Vegan</span>
+                            <span class="dietary-tag">Gluten-Free</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item-detailed">
+                        <div class="menu-item-header">
+                            <div class="item-title-group">
+                                <h4>Gyoza</h4>
+                                <p class="item-japanese">餃子</p>
+                            </div>
+                            <span class="item-price">$8</span>
+                        </div>
+                        <p class="item-description">Pan-fried pork dumplings with ponzu dipping sauce</p>
+                        <div class="item-details">
+                            <span>5 pieces</span>
+                            <span>House-made</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item-detailed">
+                        <div class="menu-item-header">
+                            <div class="item-title-group">
+                                <h4>Miso Soup</h4>
+                                <p class="item-japanese">味噌汁</p>
+                            </div>
+                            <span class="item-price">$4</span>
+                        </div>
+                        <p class="item-description">Traditional soybean paste soup with tofu, wakame, and scallions</p>
+                        <div class="dietary-tags">
+                            <span class="dietary-tag">Vegetarian</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item-detailed">
+                        <div class="menu-item-header">
+                            <div class="item-title-group">
+                                <h4>Sunomono</h4>
+                                <p class="item-japanese">酢の物</p>
+                            </div>
+                            <span class="item-price">$7</span>
+                        </div>
+                        <p class="item-description">Cucumber salad with rice vinegar dressing and sesame seeds</p>
+                        <div class="dietary-tags">
+                            <span class="dietary-tag">Vegan</span>
+                            <span class="dietary-tag">Refreshing</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Desserts -->
+    <section class="menu-section">
+        <div class="container">
+            <h2>Desserts</h2>
+            <p class="japanese-title">デザート</p>
+            
+            <div class="menu-category">
+                <h3>Traditional Sweets</h3>
+                <div class="menu-items-grid">
+                    <div class="menu-item-detailed">
+                        <div class="menu-item-header">
+                            <div class="item-title-group">
+                                <h4>Mochi Ice Cream</h4>
+                                <p class="item-japanese">もちアイス</p>
+                            </div>
+                            <span class="item-price">$8</span>
+                        </div>
+                        <p class="item-description">Traditional rice cake filled with premium ice cream</p>
+                        <div class="item-details">
+                            <span>3 pieces</span>
+                            <span>Vanilla, Green Tea, Red Bean</span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item-detailed seasonal-item">
+                        <div class="menu-item-header">
+                            <div class="item-title-group">
+                                <h4>Dorayaki</h4>
+                                <p class="item-japanese">どら焼き</p>
+                            </div>
+                            <span class="item-price">$6</span>
+                        </div>
+                        <p class="item-description">Fluffy pancake sandwich filled with sweet red bean paste</p>
+                        <div class="item-details">
+                            <span>Made fresh daily</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+                    <p class="footer-tagline">{{TAGLINE}}</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="#omakase">Omakase</a></li>
+                        <li><a href="#nigiri">Nigiri</a></li>
+                        <li><a href="#sashimi">Sashimi</a></li>
+                        <li><a href="#rolls">Specialty Rolls</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Reservations</h4>
+                    <p>{{PHONE}}</p>
+                    <p>{{EMAIL}}</p>
+                    <p>{{FULL_ADDRESS}}</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}" class="social-link">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}" class="social-link">Instagram</a>
+                        <a href="{{YELP_URL}}" class="social-link">Yelp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

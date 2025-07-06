@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Midnight Speakeasy</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body class="theme-midnight">
+    <!-- Hidden Password Modal -->
+    <div id="password-modal" class="password-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>🔐 Enter the Secret Code</h2>
+                <p>Welcome to the underground. What's the password?</p>
+            </div>
+            <form class="password-form">
+                <input type="password" id="secret-code" placeholder="Secret Code..." autocomplete="off">
+                <button type="submit" class="btn btn-gold">Enter Speakeasy</button>
+            </form>
+            <div class="password-hint">
+                <small>Hint: The year prohibition ended</small>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#prohibition">The Story</a></li>
+                <li><a href="#cocktails">Cocktails</a></li>
+                <li><a href="#bites">Small Plates</a></li>
+                <li><a href="#reservations">Reservations</a></li>
+            </ul>
+            <div class="nav-reserve">
+                <a href="tel:{{PHONE}}" class="btn btn-outline">Secret Line</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <img src="{{HERO_IMAGE}}" alt="{{RESTAURANT_NAME}} Underground">
+            <div class="hero-smoke"></div>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">EST. {{YEAR_ESTABLISHED}}</div>
+            <h1>{{RESTAURANT_NAME}}</h1>
+            <p class="hero-subtitle">{{TAGLINE}}</p>
+            <div class="hero-divider">
+                <span class="divider-line"></span>
+                <span class="divider-diamond">◆</span>
+                <span class="divider-line"></span>
+            </div>
+            <p class="hero-description">A hidden sanctuary where spirits flow and secrets remain buried</p>
+            <div class="hero-buttons">
+                <a href="#cocktails" class="btn btn-gold">Enter the Underground</a>
+                <a href="#reservations" class="btn btn-outline">Reserve Your Table</a>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <div class="scroll-text">Discover the Secret</div>
+            <div class="scroll-arrow">↓</div>
+        </div>
+    </section>
+
+    <!-- Prohibition Story Section -->
+    <section id="prohibition" class="story">
+        <div class="container">
+            <div class="story-content">
+                <div class="story-text">
+                    <div class="section-badge">The Legend</div>
+                    <h2>Born in the Shadows</h2>
+                    <p class="lead">{{ABOUT_DESCRIPTION}}</p>
+                    <div class="story-details">
+                        <div class="detail-item">
+                            <div class="detail-icon">🍸</div>
+                            <div class="detail-content">
+                                <h3>Craft Cocktails</h3>
+                                <p>Hand-crafted libations using recipes lost to time, prepared by master mixologists</p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-icon">🎭</div>
+                            <div class="detail-content">
+                                <h3>Secret Atmosphere</h3>
+                                <p>Hidden away from prying eyes, where jazz flows as freely as the spirits</p>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-icon">🗝️</div>
+                            <div class="detail-content">
+                                <h3>Exclusive Access</h3>
+                                <p>A members-only experience for those who know the secret</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="story-image">
+                    <img src="{{INTERIOR_IMAGE_1}}" alt="{{RESTAURANT_NAME}} Interior">
+                    <div class="image-frame"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cocktails Section -->
+    <section id="cocktails" class="cocktails">
+        <div class="container">
+            <div class="cocktails-header">
+                <div class="section-badge">Liquid Courage</div>
+                <h2>Prohibition Cocktails</h2>
+                <p>Secret recipes from the underground</p>
+            </div>
+            <div class="cocktails-grid">
+                <div class="cocktail-card">
+                    <div class="cocktail-image">
+                        <img src="{{COCKTAIL_IMAGE_1}}" alt="{{COCKTAIL_1_NAME}}">
+                        <div class="cocktail-overlay">
+                            <div class="cocktail-price">${{COCKTAIL_1_PRICE}}</div>
+                        </div>
+                    </div>
+                    <div class="cocktail-content">
+                        <h3>{{COCKTAIL_1_NAME}}</h3>
+                        <div class="cocktail-ingredients">{{COCKTAIL_1_INGREDIENTS}}</div>
+                        <p>{{COCKTAIL_1_DESCRIPTION}}</p>
+                        <div class="cocktail-strength">
+                            <span class="strength-label">Strength:</span>
+                            <div class="strength-meter">
+                                <div class="strength-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cocktail-card">
+                    <div class="cocktail-image">
+                        <img src="{{COCKTAIL_IMAGE_2}}" alt="{{COCKTAIL_2_NAME}}">
+                        <div class="cocktail-overlay">
+                            <div class="cocktail-price">${{COCKTAIL_2_PRICE}}</div>
+                        </div>
+                    </div>
+                    <div class="cocktail-content">
+                        <h3>{{COCKTAIL_2_NAME}}</h3>
+                        <div class="cocktail-ingredients">{{COCKTAIL_2_INGREDIENTS}}</div>
+                        <p>{{COCKTAIL_2_DESCRIPTION}}</p>
+                        <div class="cocktail-strength">
+                            <span class="strength-label">Strength:</span>
+                            <div class="strength-meter">
+                                <div class="strength-fill" style="width: 70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cocktail-card">
+                    <div class="cocktail-image">
+                        <img src="{{COCKTAIL_IMAGE_3}}" alt="{{COCKTAIL_3_NAME}}">
+                        <div class="cocktail-overlay">
+                            <div class="cocktail-price">${{COCKTAIL_3_PRICE}}</div>
+                        </div>
+                    </div>
+                    <div class="cocktail-content">
+                        <h3>{{COCKTAIL_3_NAME}}</h3>
+                        <div class="cocktail-ingredients">{{COCKTAIL_3_INGREDIENTS}}</div>
+                        <p>{{COCKTAIL_3_DESCRIPTION}}</p>
+                        <div class="cocktail-strength">
+                            <span class="strength-label">Strength:</span>
+                            <div class="strength-meter">
+                                <div class="strength-fill" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cocktails-cta">
+                <a href="menu.html" class="btn btn-gold">Full Cocktail Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Small Plates Section -->
+    <section id="bites" class="small-plates">
+        <div class="container">
+            <div class="plates-header">
+                <div class="section-badge">Midnight Munchies</div>
+                <h2>Small Plates & Shareable Bites</h2>
+            </div>
+            <div class="plates-grid">
+                <div class="plate-item">
+                    <div class="plate-image">
+                        <img src="{{FOOD_IMAGE_1}}" alt="{{FOOD_1_NAME}}">
+                    </div>
+                    <div class="plate-content">
+                        <h3>{{FOOD_1_NAME}}</h3>
+                        <p>{{FOOD_1_DESCRIPTION}}</p>
+                        <div class="plate-price">${{FOOD_1_PRICE}}</div>
+                    </div>
+                </div>
+                <div class="plate-item">
+                    <div class="plate-image">
+                        <img src="{{FOOD_IMAGE_2}}" alt="{{FOOD_2_NAME}}">
+                    </div>
+                    <div class="plate-content">
+                        <h3>{{FOOD_2_NAME}}</h3>
+                        <p>{{FOOD_2_DESCRIPTION}}</p>
+                        <div class="plate-price">${{FOOD_2_PRICE}}</div>
+                    </div>
+                </div>
+                <div class="plate-item">
+                    <div class="plate-image">
+                        <img src="{{FOOD_IMAGE_3}}" alt="{{FOOD_3_NAME}}">
+                    </div>
+                    <div class="plate-content">
+                        <h3>{{FOOD_3_NAME}}</h3>
+                        <p>{{FOOD_3_DESCRIPTION}}</p>
+                        <div class="plate-price">${{FOOD_3_PRICE}}</div>
+                    </div>
+                </div>
+                <div class="plate-item">
+                    <div class="plate-image">
+                        <img src="{{FOOD_IMAGE_4}}" alt="{{FOOD_4_NAME}}">
+                    </div>
+                    <div class="plate-content">
+                        <h3>{{FOOD_4_NAME}}</h3>
+                        <p>{{FOOD_4_DESCRIPTION}}</p>
+                        <div class="plate-price">${{FOOD_4_PRICE}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Entertainment Section -->
+    <section class="entertainment">
+        <div class="container">
+            <div class="entertainment-content">
+                <div class="entertainment-text">
+                    <div class="section-badge">Live Entertainment</div>
+                    <h2>Jazz, Blues & More</h2>
+                    <div class="entertainment-schedule">
+                        <div class="schedule-item">
+                            <div class="schedule-day">Monday - Wednesday</div>
+                            <div class="schedule-event">Live Jazz Trio</div>
+                            <div class="schedule-time">9 PM - 1 AM</div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="schedule-day">Thursday - Friday</div>
+                            <div class="schedule-event">Blues & Soul</div>
+                            <div class="schedule-time">8 PM - 2 AM</div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="schedule-day">Saturday</div>
+                            <div class="schedule-event">Swing Dance Night</div>
+                            <div class="schedule-time">7 PM - 2 AM</div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="schedule-day">Sunday</div>
+                            <div class="schedule-event">Acoustic Sessions</div>
+                            <div class="schedule-time">6 PM - 12 AM</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="entertainment-image">
+                    <img src="{{ENTERTAINMENT_IMAGE}}" alt="Live Jazz Performance">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservations Section -->
+    <section id="reservations" class="reservations">
+        <div class="container">
+            <div class="reservations-content">
+                <div class="reservations-info">
+                    <div class="section-badge">Join the Underground</div>
+                    <h2>Secure Your Table</h2>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">📱</div>
+                            <div class="contact-text">
+                                <h4>Secret Line</h4>
+                                <a href="tel:{{PHONE}}">{{PHONE}}</a>
+                                <p>Text "SPEAKEASY" for priority reservations</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div class="contact-text">
+                                <h4>Hidden Location</h4>
+                                <p>{{ADDRESS}}</p>
+                                <p>Look for the unmarked door</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">🕐</div>
+                            <div class="contact-text">
+                                <h4>Underground Hours</h4>
+                                <p>{{HOURS}}</p>
+                                <p>Open until the last guest leaves</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reservation-form">
+                    <h3>Reserve Your Table</h3>
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" placeholder="Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" placeholder="Email" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="tel" placeholder="Phone" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="date" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <select required>
+                                    <option value="">Party Size</option>
+                                    <option value="2">2 Guests</option>
+                                    <option value="4">4 Guests</option>
+                                    <option value="6">6 Guests</option>
+                                    <option value="8+">8+ Guests</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <select required>
+                                    <option value="">Preferred Time</option>
+                                    <option value="6:00 PM">6:00 PM</option>
+                                    <option value="7:30 PM">7:30 PM</option>
+                                    <option value="9:00 PM">9:00 PM</option>
+                                    <option value="10:30 PM">10:30 PM</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Special requests or occasion"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-gold">Enter the Speakeasy</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}}">
+                    </div>
+                    <p>Where secrets are kept and memories are made</p>
+                    <div class="footer-social">
+                        <a href="{{FACEBOOK_URL}}" class="social-link">📘</a>
+                        <a href="{{INSTAGRAM_URL}}" class="social-link">📷</a>
+                        <a href="{{TWITTER_URL}}" class="social-link">🐦</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>The Underground</h4>
+                    <ul>
+                        <li><a href="#cocktails">Cocktails</a></li>
+                        <li><a href="#bites">Small Plates</a></li>
+                        <li><a href="#reservations">Reservations</a></li>
+                        <li><a href="#">Private Events</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Secret Contact</h4>
+                    <div class="footer-contact">
+                        <p>📱 <a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+                        <p>📍 {{ADDRESS}}</p>
+                        <p>✉️ <a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 {{RESTAURANT_NAME}}. All rights reserved. | What happens here, stays here.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

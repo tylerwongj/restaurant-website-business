@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - {{RESTAURANT_NAME}}</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} Menu - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;700&family=Noto+Serif:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        .menu-page {
+            padding-top: 100px;
+            min-height: 100vh;
+        }
+        .menu-hero {
+            text-align: center;
+            padding: 3rem 0;
+            background: var(--background-section);
+        }
+        .menu-hero h1 {
+            font-family: 'Noto Serif', serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+        .menu-categories {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        .category-btn {
+            padding: 0.8rem 1.5rem;
+            border: 2px solid var(--primary-color);
+            background: transparent;
+            color: var(--primary-color);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .category-btn:hover,
+        .category-btn.active {
+            background: var(--primary-color);
+            color: white;
+        }
+        .menu-section {
+            padding: 3rem 0;
+        }
+        .menu-section h2 {
+            font-family: 'Noto Serif', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+        }
+        .menu-items {
+            display: grid;
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .menu-item-full {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .menu-item-full:hover {
+            transform: translateY(-3px);
+        }
+        .menu-item-image-full {
+            width: 120px;
+            height: 120px;
+            border-radius: 10px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        .menu-item-image-full img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .menu-item-details {
+            flex: 1;
+        }
+        .menu-item-details h3 {
+            font-family: 'Noto Serif', serif;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+        .menu-item-details p {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+        .menu-item-price {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        .dietary-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        .tag {
+            padding: 0.2rem 0.5rem;
+            background: var(--accent-color);
+            color: white;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 500;
+        }
+        .back-link {
+            display: inline-block;
+            margin: 2rem 0;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body class="theme-warm">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+                <span class="logo-text">{{RESTAURANT_NAME}}</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#philosophy">Philosophy</a></li>
+                <li><a href="#menu" class="active">Menu</a></li>
+                <li><a href="index.html#chef">Chef</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="menu-page">
+        <!-- Menu Hero -->
+        <section class="menu-hero">
+            <div class="container">
+                <h1>Our Menu</h1>
+                <p class="lead">A culinary journey through Asian fusion cuisine</p>
+                <a href="index.html" class="back-link">← Back to Home</a>
+            </div>
+        </section>
+
+        <!-- Menu Categories -->
+        <div class="container">
+            <div class="menu-categories">
+                <a href="#appetizers" class="category-btn active">Appetizers</a>
+                <a href="#mains" class="category-btn">Main Courses</a>
+                <a href="#desserts" class="category-btn">Desserts</a>
+                <a href="#beverages" class="category-btn">Beverages</a>
+            </div>
+        </div>
+
+        <!-- Appetizers Section -->
+        <section id="appetizers" class="menu-section">
+            <div class="container">
+                <h2>Appetizers</h2>
+                <div class="menu-items">
+                    <div class="menu-item-full">
+                        <div class="menu-item-image-full">
+                            <img src="{{FOOD_IMAGE_1}}" alt="{{MENU_ITEM_1}}">
+                        </div>
+                        <div class="menu-item-details">
+                            <h3>{{MENU_ITEM_1}}</h3>
+                            <p>{{MENU_DESCRIPTION_1}}</p>
+                            <div class="dietary-tags">
+                                <span class="tag">Gluten Free</span>
+                                <span class="tag">Spicy</span>
+                            </div>
+                            <div class="menu-item-price">${{PRICE_1}}</div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item-full">
+                        <div class="menu-item-image-full">
+                            <img src="images/food-5.jpg" alt="Spring Rolls">
+                        </div>
+                        <div class="menu-item-details">
+                            <h3>Crispy Spring Rolls</h3>
+                            <p>Hand-rolled spring rolls with fresh vegetables, served with sweet chili dipping sauce</p>
+                            <div class="dietary-tags">
+                                <span class="tag">Vegan</span>
+                            </div>
+                            <div class="menu-item-price">$12.00</div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item-full">
+                        <div class="menu-item-image-full">
+                            <img src="images/food-6.jpg" alt="Gyoza">
+                        </div>
+                        <div class="menu-item-details">
+                            <h3>Pan-Fried Gyoza</h3>
+                            <p>Traditional pork and vegetable dumplings with ginger soy dipping sauce</p>
+                            <div class="menu-item-price">$14.00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Courses Section -->
+        <section id="mains" class="menu-section">
+            <div class="container">
+                <h2>Main Courses</h2>
+                <div class="menu-items">
+                    <div class="menu-item-full">
+                        <div class="menu-item-image-full">
+                            <img src="{{FOOD_IMAGE_2}}" alt="{{MENU_ITEM_2}}">
+                        </div>
+                        <div class="menu-item-details">
+                            <h3>{{MENU_ITEM_2}}</h3>
+                            <p>{{MENU_DESCRIPTION_2}}</p>
+                            <div class="dietary-tags">
+                                <span class="tag">Gluten Free</span>
+                            </div>
+                            <div class="menu-item-price">${{PRICE_2}}</div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item-full">
+                        <div class="menu-item-image-full">
+                            <img src="{{FOOD_IMAGE_3}}" alt="{{MENU_ITEM_3}}">
+                        </div>
+                        <div class="menu-item-details">
+                            <h3>{{MENU_ITEM_3}}</h3>
+                            <p>{{MENU_DESCRIPTION_3}}</p>
+                            <div class="dietary-tags">
+                                <span class="tag">Premium</span>
+                            </div>
+                            <div class="menu-item-price">${{PRICE_3}}</div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item-full">
+                        <div class="menu-item-image-full">
+                            <img src="images/food-7.jpg" alt="Pad Thai">
+                        </div>
+                        <div class="menu-item-details">
+                            <h3>Signature Pad Thai</h3>
+                            <p>Classic Thai noodles with shrimp, tofu, bean sprouts, and crushed peanuts</p>
+                            <div class="dietary-tags">
+                                <span class="tag">Gluten Free</span>
+                                <span class="tag">Nut Free</span>
+                            </div>
+                            <div class="menu-item-price">$22.00</div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item-full">
+                        <div class="menu-item-image-full">
+                            <img src="images/food-8.jpg" alt="Korean BBQ">
+                        </div>
+                        <div class="menu-item-details">
+                            <h3>Korean BBQ Bulgogi</h3>
+                            <p>Marinated beef short ribs with kimchi, pickled vegetables, and steamed rice</p>
+                            <div class="dietary-tags">
+                                <span class="tag">Spicy</span>
+                            </div>
+                            <div class="menu-item-price">$28.00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Desserts Section -->
+        <section id="desserts" class="menu-section">
+            <div class="container">
+                <h2>Desserts</h2>
+                <div class="menu-items">
+                    <div class="menu-item-full">
+                        <div class="menu-item-image-full">
+                            <img src="{{FOOD_IMAGE_4}}" alt="{{MENU_ITEM_4}}">
+                        </div>
+                        <div class="menu-item-details">
+                            <h3>{{MENU_ITEM_4}}</h3>
+                            <p>{{MENU_DESCRIPTION_4}}</p>
+                            <div class="menu-item-price">${{PRICE_4}}</div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item-full">
+                        <div class="menu-item-image-full">
+                            <img src="images/dessert-1.jpg" alt="Mochi Ice Cream">
+                        </div>
+                        <div class="menu-item-details">
+                            <h3>Mochi Ice Cream Trio</h3>
+                            <p>Traditional Japanese mochi with green tea, red bean, and mango ice cream</p>
+                            <div class="dietary-tags">
+                                <span class="tag">Gluten Free</span>
+                            </div>
+                            <div class="menu-item-price">$12.00</div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item-full">
+                        <div class="menu-item-image-full">
+                            <img src="images/dessert-2.jpg" alt="Sesame Balls">
+                        </div>
+                        <div class="menu-item-details">
+                            <h3>Golden Sesame Balls</h3>
+                            <p>Crispy fried glutinous rice balls filled with sweet red bean paste</p>
+                            <div class="dietary-tags">
+                                <span class="tag">Vegan</span>
+                            </div>
+                            <div class="menu-item-price">$10.00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Beverages Section -->
+        <section id="beverages" class="menu-section">
+            <div class="container">
+                <h2>Beverages</h2>
+                <div class="menu-items">
+                    <div class="menu-item-full">
+                        <div class="menu-item-image-full">
+                            <img src="images/drink-1.jpg" alt="Tea Selection">
+                        </div>
+                        <div class="menu-item-details">
+                            <h3>Premium Tea Selection</h3>
+                            <p>Choose from jasmine, oolong, pu-erh, or green tea - served traditionally</p>
+                            <div class="dietary-tags">
+                                <span class="tag">Caffeine</span>
+                            </div>
+                            <div class="menu-item-price">$6.00</div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item-full">
+                        <div class="menu-item-image-full">
+                            <img src="images/drink-2.jpg" alt="Sake">
+                        </div>
+                        <div class="menu-item-details">
+                            <h3>House Sake</h3>
+                            <p>Premium junmai sake served warm or chilled</p>
+                            <div class="dietary-tags">
+                                <span class="tag">Alcohol</span>
+                            </div>
+                            <div class="menu-item-price">$8.00</div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item-full">
+                        <div class="menu-item-image-full">
+                            <img src="images/drink-3.jpg" alt="Fresh Juice">
+                        </div>
+                        <div class="menu-item-details">
+                            <h3>Fresh Lychee Juice</h3>
+                            <p>Freshly squeezed lychee juice with a hint of lime</p>
+                            <div class="dietary-tags">
+                                <span class="tag">Fresh</span>
+                                <span class="tag">No Sugar Added</span>
+                            </div>
+                            <div class="menu-item-price">$7.00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="reservation" style="padding: 3rem 0;">
+            <div class="container">
+                <div class="text-center">
+                    <h2>Ready to Experience Our Cuisine?</h2>
+                    <p class="lead">Make a reservation today</p>
+                    <div style="margin-top: 2rem;">
+                        <a href="index.html#reservations" class="btn btn-primary">Make Reservation</a>
+                        <a href="tel:{{PHONE}}" class="btn btn-outline">Call {{PHONE}}</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+                    <p>{{RESTAURANT_NAME}}</p>
+                    <p>{{TAGLINE}}</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html#menu">Menu</a></li>
+                        <li><a href="index.html#philosophy">Philosophy</a></li>
+                        <li><a href="index.html#chef">Chef</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>{{FULL_ADDRESS}}</p>
+                    <p>{{PHONE}}</p>
+                    <p>{{EMAIL}}</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Menu category navigation
+        document.querySelectorAll('.category-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Remove active class from all buttons
+                document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                // Smooth scroll to section
+                const target = this.getAttribute('href');
+                const section = document.querySelector(target);
+                if (section) {
+                    section.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Update active category on scroll
+        const sections = document.querySelectorAll('.menu-section');
+        const categoryBtns = document.querySelectorAll('.category-btn');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                if (window.pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            categoryBtns.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('href') === `#${current}`) {
+                    btn.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

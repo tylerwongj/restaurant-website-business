@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seasonal Menu - {{RESTAURANT_NAME}}</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} Seasonal Menu - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="color-scheme-cool">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#menu" class="active">Menu</a></li>
+                <li><a href="index.html#farm">Our Farm</a></li>
+                <li><a href="index.html#about">Story</a></li>
+                <li><a href="index.html#contact">Visit</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu Header -->
+    <section class="menu-header">
+        <div class="menu-header-content">
+            <h1>Today's Harvest Menu</h1>
+            <p>Fresh from our organic gardens to your table</p>
+            <div class="harvest-time">
+                🌅 Currently harvesting fresh vegetables for today's menu!
+            </div>
+            <div class="seasonal-badges">
+                <span class="season-badge">🌱 Spring Harvest</span>
+                <span class="season-badge">🌿 Garden Fresh</span>
+                <span class="season-badge">🥕 Root to Leaf</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Content -->
+    <section class="menu-content">
+        <div class="container">
+            <!-- Menu Categories -->
+            <div class="menu-categories">
+                <button class="category-btn active" data-category="all">Full Menu</button>
+                <button class="category-btn" data-category="starters">Garden Starters</button>
+                <button class="category-btn" data-category="salads">Fresh Salads</button>
+                <button class="category-btn" data-category="mains">Farm Mains</button>
+                <button class="category-btn" data-category="desserts">Sweet Harvest</button>
+                <button class="category-btn" data-category="drinks">Garden Drinks</button>
+            </div>
+
+            <!-- Garden Starters -->
+            <div class="menu-section" data-category="starters">
+                <div class="section-header">
+                    <h2>🌱 Garden Starters</h2>
+                    <p>Fresh appetizers featuring today's harvest</p>
+                </div>
+                <div class="menu-items-organic">
+                    <div class="menu-item-organic">
+                        <div class="menu-image-organic">
+                            <img src="{{FOOD_IMAGE_1}}" alt="{{MENU_ITEM_1}}">
+                            <div class="harvest-tag">Today's Harvest</div>
+                        </div>
+                        <div class="menu-info-organic">
+                            <div class="menu-header-organic">
+                                <h3>{{MENU_ITEM_1}}</h3>
+                                <span class="price-organic">${{PRICE_1}}</span>
+                            </div>
+                            <p class="menu-description">{{MENU_DESCRIPTION_1}}</p>
+                            <div class="farm-source">🌿 From our heirloom tomato garden</div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item-organic">
+                        <div class="menu-image-organic">
+                            <img src="{{FOOD_IMAGE_2}}" alt="Garden Bruschetta Trio">
+                        </div>
+                        <div class="menu-info-organic">
+                            <div class="menu-header-organic">
+                                <h3>Garden Bruschetta Trio</h3>
+                                <span class="price-organic">$14</span>
+                            </div>
+                            <p class="menu-description">Three seasonal bruschettas on sourdough: heirloom tomato basil, roasted beet hummus, and cucumber dill</p>
+                            <div class="farm-source">🥒 Fresh herbs from greenhouse #2</div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item-organic">
+                        <div class="menu-image-organic">
+                            <img src="{{FOOD_IMAGE_3}}" alt="Roasted Root Vegetable Dip">
+                        </div>
+                        <div class="menu-info-organic">
+                            <div class="menu-header-organic">
+                                <h3>Roasted Root Vegetable Dip</h3>
+                                <span class="price-organic">$12</span>
+                            </div>
+                            <p class="menu-description">Warm dip made from roasted carrots, parsnips, and beets, served with house-made seed crackers</p>
+                            <div class="farm-source">🥕 Harvested this morning from plot 7</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fresh Salads -->
+            <div class="menu-section" data-category="salads">
+                <div class="section-header">
+                    <h2>🥬 Fresh Garden Salads</h2>
+                    <p>Crisp greens picked within hours of serving</p>
+                </div>
+                <div class="menu-items-organic">
+                    <div class="menu-item-organic">
+                        <div class="menu-image-organic">
+                            <img src="{{FOOD_IMAGE_4}}" alt="Farmers Market Salad">
+                        </div>
+                        <div class="menu-info-organic">
+                            <div class="menu-header-organic">
+                                <h3>Farmers Market Salad</h3>
+                                <span class="price-organic">$16</span>
+                            </div>
+                            <p class="menu-description">Mixed baby greens, cherry tomatoes, cucumber, radishes, and carrots with herb vinaigrette</p>
+                            <div class="farm-source">🌱 7 varieties of lettuce from our salad garden</div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item-organic">
+                        <div class="menu-image-organic">
+                            <img src="{{FOOD_IMAGE_5}}" alt="Roasted Beet & Goat Cheese">
+                        </div>
+                        <div class="menu-info-organic">
+                            <div class="menu-header-organic">
+                                <h3>Roasted Beet & Goat Cheese</h3>
+                                <span class="price-organic">$18</span>
+                            </div>
+                            <p class="menu-description">Golden and red beets, local goat cheese, candied walnuts, and arugula with balsamic reduction</p>
+                            <div class="farm-source">🟣 Chioggia beets from our heritage plot</div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item-organic">
+                        <div class="menu-image-organic">
+                            <img src="{{FOOD_IMAGE_6}}" alt="Harvest Bowl">
+                        </div>
+                        <div class="menu-info-organic">
+                            <div class="menu-header-organic">
+                                <h3>Seasonal Harvest Bowl</h3>
+                                <span class="price-organic">$22</span>
+                            </div>
+                            <p class="menu-description">Quinoa, roasted seasonal vegetables, pickled onions, pumpkin seeds, and tahini dressing</p>
+                            <div class="farm-source">🌾 Ancient grains from our heritage seed collection</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Farm Mains -->
+            <div class="menu-section" data-category="mains">
+                <div class="section-header">
+                    <h2>🌿 Farm-to-Table Mains</h2>
+                    <p>Hearty dishes celebrating the season's best</p>
+                </div>
+                <div class="menu-items-organic">
+                    <div class="menu-item-organic">
+                        <div class="menu-image-organic">
+                            <img src="{{FOOD_IMAGE_7}}" alt="{{MENU_ITEM_7}}">
+                        </div>
+                        <div class="menu-info-organic">
+                            <div class="menu-header-organic">
+                                <h3>{{MENU_ITEM_7}}</h3>
+                                <span class="price-organic">${{PRICE_7}}</span>
+                            </div>
+                            <p class="menu-description">{{MENU_DESCRIPTION_7}}</p>
+                            <div class="farm-source">🌊 Sustainably sourced from local waters</div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item-organic">
+                        <div class="menu-image-organic">
+                            <img src="{{FOOD_IMAGE_8}}" alt="Garden Vegetable Lasagna">
+                        </div>
+                        <div class="menu-info-organic">
+                            <div class="menu-header-organic">
+                                <h3>Garden Vegetable Lasagna</h3>
+                                <span class="price-organic">$24</span>
+                            </div>
+                            <p class="menu-description">Layers of zucchini, eggplant, spinach, and heirloom tomatoes with house-made ricotta</p>
+                            <div class="farm-source">🍆 All vegetables from our main garden plots</div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item-organic">
+                        <div class="menu-image-organic">
+                            <img src="{{FOOD_IMAGE_9}}" alt="Herb-Crusted Free-Range Chicken">
+                        </div>
+                        <div class="menu-info-organic">
+                            <div class="menu-header-organic">
+                                <h3>Herb-Crusted Free-Range Chicken</h3>
+                                <span class="price-organic">$28</span>
+                            </div>
+                            <p class="menu-description">Local chicken breast with fresh herb crust, roasted root vegetables, and pan jus</p>
+                            <div class="farm-source">🌿 Rosemary and thyme from our herb spiral</div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item-organic">
+                        <div class="menu-image-organic">
+                            <img src="{{FOOD_IMAGE_10}}" alt="Seasonal Vegetable Risotto">
+                        </div>
+                        <div class="menu-info-organic">
+                            <div class="menu-header-organic">
+                                <h3>Seasonal Vegetable Risotto</h3>
+                                <span class="price-organic">$26</span>
+                            </div>
+                            <p class="menu-description">Creamy arborio rice with today's fresh vegetables, parmesan, and microgreens</p>
+                            <div class="farm-source">🌱 Microgreens grown in our greenhouse</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sweet Harvest -->
+            <div class="menu-section" data-category="desserts">
+                <div class="section-header">
+                    <h2>🍯 Sweet Harvest</h2>
+                    <p>Desserts featuring fruits and herbs from our gardens</p>
+                </div>
+                <div class="menu-items-organic">
+                    <div class="menu-item-organic">
+                        <div class="menu-image-organic">
+                            <img src="{{FOOD_IMAGE_11}}" alt="Seasonal Fruit Galette">
+                        </div>
+                        <div class="menu-info-organic">
+                            <div class="menu-header-organic">
+                                <h3>Seasonal Fruit Galette</h3>
+                                <span class="price-organic">$12</span>
+                            </div>
+                            <p class="menu-description">Rustic pastry with today's fresh fruit, served with vanilla bean ice cream</p>
+                            <div class="farm-source">🍎 Fruits from our heritage orchard</div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item-organic">
+                        <div class="menu-image-organic">
+                            <img src="{{FOOD_IMAGE_12}}" alt="Lavender Honey Panna Cotta">
+                        </div>
+                        <div class="menu-info-organic">
+                            <div class="menu-header-organic">
+                                <h3>Lavender Honey Panna Cotta</h3>
+                                <span class="price-organic">$10</span>
+                            </div>
+                            <p class="menu-description">Silky panna cotta infused with lavender and our own honey, topped with fresh berries</p>
+                            <div class="farm-source">🍯 Honey from our bee colonies</div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item-organic">
+                        <div class="menu-image-organic">
+                            <img src="images/herb-ice-cream.jpg" alt="Garden Herb Ice Cream">
+                        </div>
+                        <div class="menu-info-organic">
+                            <div class="menu-header-organic">
+                                <h3>Garden Herb Ice Cream</h3>
+                                <span class="price-organic">$9</span>
+                            </div>
+                            <p class="menu-description">Rotating flavors: basil, mint, or rosemary ice cream with seasonal fruit compote</p>
+                            <div class="farm-source">🌿 Fresh herbs picked daily</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Garden Drinks -->
+            <div class="menu-section" data-category="drinks">
+                <div class="section-header">
+                    <h2>🌱 Garden Fresh Drinks</h2>
+                    <p>Beverages made with herbs and fruits from our farm</p>
+                </div>
+                <div class="menu-items-organic">
+                    <div class="menu-item-organic">
+                        <div class="menu-image-organic">
+                            <img src="images/herb-tea.jpg" alt="Fresh Herb Tea">
+                        </div>
+                        <div class="menu-info-organic">
+                            <div class="menu-header-organic">
+                                <h3>Fresh Herb Tea</h3>
+                                <span class="price-organic">$6</span>
+                            </div>
+                            <p class="menu-description">Choose from mint, chamomile, lemon balm, or our seasonal herb blend</p>
+                            <div class="farm-source">🌿 Dried herbs from our medicinal garden</div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item-organic">
+                        <div class="menu-image-organic">
+                            <img src="images/cucumber-water.jpg" alt="Infused Garden Water">
+                        </div>
+                        <div class="menu-info-organic">
+                            <div class="menu-header-organic">
+                                <h3>Infused Garden Water</h3>
+                                <span class="price-organic">$4</span>
+                            </div>
+                            <p class="menu-description">Still or sparkling water infused with cucumber, mint, lemon, or herbs</p>
+                            <div class="farm-source">🥒 Fresh from our greenhouse cucumbers</div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item-organic">
+                        <div class="menu-image-organic">
+                            <img src="images/fresh-juice.jpg" alt="Garden Green Juice">
+                        </div>
+                        <div class="menu-info-organic">
+                            <div class="menu-header-organic">
+                                <h3>Garden Green Juice</h3>
+                                <span class="price-organic">$8</span>
+                            </div>
+                            <p class="menu-description">Fresh pressed juice with spinach, cucumber, celery, apple, and ginger</p>
+                            <div class="farm-source">🍃 All greens harvested this morning</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="menu-cta-organic">
+                <div class="cta-content">
+                    <h2>Experience Farm-to-Table Dining</h2>
+                    <p>Reserve your table and taste the difference fresh makes</p>
+                    <div class="cta-features">
+                        <span>🌱 100% Organic</span>
+                        <span>🚜 Farm Tours Available</span>
+                        <span>🌿 Seasonal Menu</span>
+                    </div>
+                    <div class="cta-buttons">
+                        <a href="index.html#contact" class="btn btn-primary">Reserve Your Table</a>
+                        <a href="tel:{{PHONE}}" class="btn btn-secondary">Call {{PHONE}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo" class="footer-logo">
+                    <p>{{DESCRIPTION}}</p>
+                    <div class="certifications">
+                        <span>🌱 USDA Organic</span>
+                        <span>🌍 Certified Sustainable</span>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Experience</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Seasonal Menu</a></li>
+                        <li><a href="index.html#farm">Our Farm</a></li>
+                        <li><a href="index.html#about">Our Story</a></li>
+                        <li><a href="index.html#contact">Visit Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-farm">
+                    <h3>Farm Fresh</h3>
+                    <ul>
+                        <li>🌱 Daily Harvest</li>
+                        <li>🥕 Seasonal Vegetables</li>
+                        <li>🌿 Fresh Herbs</li>
+                        <li>🌾 Heritage Grains</li>
+                        <li>🍯 Local Honey</li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Farm Location</h3>
+                    <p>{{FULL_ADDRESS}}</p>
+                    <p><a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+                    <p><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}" target="_blank">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}" target="_blank">Instagram</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved. | Farm to Table Since 2018</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Menu category filtering with organic animation
+        document.querySelectorAll('.category-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const category = this.getAttribute('data-category');
+                
+                // Update active button
+                document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Animate sections out then in
+                document.querySelectorAll('.menu-section').forEach(section => {
+                    section.style.opacity = '0';
+                    section.style.transform = 'translateY(20px)';
+                    
+                    setTimeout(() => {
+                        if (category === 'all' || section.getAttribute('data-category') === category) {
+                            section.style.display = 'block';
+                            setTimeout(() => {
+                                section.style.opacity = '1';
+                                section.style.transform = 'translateY(0)';
+                            }, 100);
+                        } else {
+                            section.style.display = 'none';
+                        }
+                    }, 200);
+                });
+            });
+        });
+
+        // Add organic-specific CSS for menu page
+        const organicMenuStyles = `
+            .menu-header {
+                background: linear-gradient(135deg, rgba(167, 243, 208, 0.8), rgba(240, 253, 250, 0.9)), 
+                           url('{{HERO_IMAGE}}') center/cover;
+                padding: 150px 0 100px;
+                text-align: center;
+                margin-top: 80px;
+            }
+
+            .menu-header-content h1 {
+                font-size: 3.5rem;
+                color: var(--primary-color);
+                margin-bottom: 1rem;
+                font-weight: 700;
+            }
+
+            .menu-header-content p {
+                font-size: 1.3rem;
+                color: var(--text-color);
+                margin-bottom: 2rem;
+            }
+
+            .harvest-time {
+                background: white;
+                padding: 1rem 2rem;
+                border-radius: 30px;
+                display: inline-block;
+                margin-bottom: 2rem;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                border: 2px solid var(--accent-color);
+                color: var(--primary-color);
+                font-weight: 500;
+            }
+
+            .seasonal-badges {
+                display: flex;
+                gap: 1rem;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .season-badge {
+                background: var(--primary-color);
+                color: white;
+                padding: 0.5rem 1rem;
+                border-radius: 20px;
+                font-size: 0.9rem;
+                font-weight: 500;
+            }
+
+            .menu-content {
+                padding: 80px 0;
+            }
+
+            .menu-categories {
+                display: flex;
+                justify-content: center;
+                gap: 1rem;
+                margin-bottom: 4rem;
+                flex-wrap: wrap;
+            }
+
+            .category-btn {
+                padding: 12px 24px;
+                border: 2px solid var(--primary-color);
+                background: transparent;
+                color: var(--primary-color);
+                border-radius: 30px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                font-weight: 500;
+                font-family: inherit;
+            }
+
+            .category-btn:hover,
+            .category-btn.active {
+                background: var(--primary-color);
+                color: white;
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(13, 148, 136, 0.3);
+            }
+
+            .menu-section {
+                margin-bottom: 5rem;
+                transition: opacity 0.3s ease, transform 0.3s ease;
+            }
+
+            .menu-items-organic {
+                display: grid;
+                gap: 2rem;
+            }
+
+            .menu-item-organic {
+                display: grid;
+                grid-template-columns: 300px 1fr;
+                gap: 2rem;
+                background: white;
+                border-radius: 20px;
+                padding: 2rem;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+                border: 2px solid var(--accent-color);
+                transition: all 0.3s ease;
+            }
+
+            .menu-item-organic:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 20px 40px rgba(13, 148, 136, 0.15);
+            }
+
+            .menu-image-organic {
+                position: relative;
+                border-radius: 15px;
+                overflow: hidden;
+            }
+
+            .menu-image-organic img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+                transition: transform 0.3s ease;
+            }
+
+            .menu-item-organic:hover .menu-image-organic img {
+                transform: scale(1.1);
+            }
+
+            .harvest-tag {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                background: var(--primary-color);
+                color: white;
+                padding: 0.25rem 0.75rem;
+                border-radius: 15px;
+                font-size: 0.75rem;
+                font-weight: 600;
+            }
+
+            .menu-header-organic {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 1rem;
+            }
+
+            .menu-header-organic h3 {
+                color: var(--primary-color);
+                font-size: 1.5rem;
+                font-weight: 600;
+            }
+
+            .price-organic {
+                font-size: 1.4rem;
+                font-weight: bold;
+                color: var(--secondary-color);
+            }
+
+            .menu-description {
+                margin-bottom: 1rem;
+                line-height: 1.7;
+                color: var(--text-color);
+            }
+
+            .farm-source {
+                color: var(--primary-color);
+                font-style: italic;
+                font-size: 0.9rem;
+                background: var(--accent-color);
+                padding: 0.5rem 1rem;
+                border-radius: 15px;
+                display: inline-block;
+            }
+
+            .menu-cta-organic {
+                background: linear-gradient(135deg, var(--accent-color), rgba(167, 243, 208, 0.3));
+                border-radius: 25px;
+                padding: 4rem 2rem;
+                text-align: center;
+                margin-top: 4rem;
+            }
+
+            .cta-content h2 {
+                color: var(--primary-color);
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
+            }
+
+            .cta-content p {
+                font-size: 1.2rem;
+                margin-bottom: 2rem;
+            }
+
+            .cta-features {
+                display: flex;
+                gap: 2rem;
+                justify-content: center;
+                margin-bottom: 2rem;
+                flex-wrap: wrap;
+            }
+
+            .cta-features span {
+                background: white;
+                padding: 0.5rem 1rem;
+                border-radius: 20px;
+                font-weight: 500;
+                box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            }
+
+            .cta-buttons {
+                display: flex;
+                gap: 1rem;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            @media (max-width: 768px) {
+                .menu-item-organic {
+                    grid-template-columns: 1fr;
+                    text-align: center;
+                }
+
+                .menu-header-content h1 {
+                    font-size: 2.5rem;
+                }
+
+                .category-btn {
+                    padding: 10px 18px;
+                    font-size: 0.9rem;
+                }
+
+                .seasonal-badges {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .cta-features {
+                    flex-direction: column;
+                    align-items: center;
+                }
+            }
+        `;
+
+        const style = document.createElement('style');
+        style.textContent = organicMenuStyles;
+        document.head.appendChild(style);
+
+        // Update harvest time dynamically
+        function updateHarvestTime() {
+            const now = new Date();
+            const hour = now.getHours();
+            const harvestElement = document.querySelector('.harvest-time');
+            
+            if (hour >= 6 && hour <= 8) {
+                harvestElement.innerHTML = '🌅 Currently harvesting fresh vegetables for today\'s menu!';
+                harvestElement.style.background = '#f0fdfa';
+                harvestElement.style.borderColor = '#0d9488';
+            } else if (hour >= 9 && hour <= 11) {
+                harvestElement.innerHTML = '👨‍🍳 Chefs are preparing today\'s harvest in the kitchen';
+                harvestElement.style.background = '#fffaf7';
+                harvestElement.style.borderColor = '#c05621';
+            } else {
+                harvestElement.innerHTML = '🌱 Tomorrow\'s harvest will be picked at dawn';
+                harvestElement.style.background = '#f7fafc';
+                harvestElement.style.borderColor = '#2c5aa0';
+            }
+        }
+
+        updateHarvestTime();
+        setInterval(updateHarvestTime, 60000);
+    </script>
+</body>
+</html>

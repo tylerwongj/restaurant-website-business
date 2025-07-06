@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - {{CUISINE_TYPE}} Restaurant</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-slider">
+            <div class="hero-slide active">
+                <img src="{{HERO_IMAGE}}" alt="{{RESTAURANT_NAME}}">
+                <div class="hero-content">
+                    <h1>{{RESTAURANT_NAME}}</h1>
+                    <p class="hero-subtitle">{{TAGLINE}}</p>
+                    <div class="hero-buttons">
+                        <a href="#menu" class="btn btn-primary">Explore Menu</a>
+                        <a href="tel:{{PHONE}}" class="btn btn-secondary">Reserve Table</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🌊</div>
+                    <h3>Coastal Inspired</h3>
+                    <p>Fresh seafood and Mediterranean flavors inspired by the coast</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🍷</div>
+                    <h3>Wine Selection</h3>
+                    <p>Curated selection of Mediterranean wines and local favorites</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌿</div>
+                    <h3>Fresh Ingredients</h3>
+                    <p>Locally sourced ingredients and traditional recipes</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌅</div>
+                    <h3>Sunset Views</h3>
+                    <p>Beautiful terrace dining with stunning sunset views</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>A Taste of the Mediterranean</h2>
+                    <p class="about-intro">{{ABOUT_DESCRIPTION}}</p>
+                    
+                    <div class="about-highlights">
+                        <div class="highlight">
+                            <h4>Authentic Flavors</h4>
+                            <p>Traditional Mediterranean recipes passed down through generations</p>
+                        </div>
+                        <div class="highlight">
+                            <h4>Fresh Seafood</h4>
+                            <p>Daily catch from local fishermen, prepared with care</p>
+                        </div>
+                        <div class="highlight">
+                            <h4>Family Tradition</h4>
+                            <p>Three generations of culinary expertise in Mediterranean cuisine</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-images">
+                    <div class="about-image-grid">
+                        <img src="{{INTERIOR_IMAGE_1}}" alt="Restaurant Interior" class="about-img-main">
+                        <img src="{{FOOD_IMAGE_1}}" alt="Mediterranean Dish" class="about-img-small">
+                        <img src="{{FOOD_IMAGE_2}}" alt="Fresh Seafood" class="about-img-small">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Preview Section -->
+    <section id="menu" class="menu-preview">
+        <div class="container">
+            <h2>Our Signature Dishes</h2>
+            <div class="menu-tabs">
+                <button class="tab-button active" data-tab="appetizers">Appetizers</button>
+                <button class="tab-button" data-tab="mains">Main Courses</button>
+                <button class="tab-button" data-tab="desserts">Desserts</button>
+            </div>
+            
+            <div class="menu-content">
+                <div class="tab-content active" id="appetizers">
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <img src="{{FOOD_IMAGE_3}}" alt="{{MENU_ITEM_1}}">
+                            <div class="menu-item-info">
+                                <h3>{{MENU_ITEM_1}}</h3>
+                                <p>{{MENU_DESCRIPTION_1}}</p>
+                                <span class="price">${{PRICE_1}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="{{FOOD_IMAGE_4}}" alt="{{MENU_ITEM_2}}">
+                            <div class="menu-item-info">
+                                <h3>{{MENU_ITEM_2}}</h3>
+                                <p>{{MENU_DESCRIPTION_2}}</p>
+                                <span class="price">${{PRICE_2}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="{{FOOD_IMAGE_5}}" alt="Mediterranean Mezze">
+                            <div class="menu-item-info">
+                                <h3>Mediterranean Mezze</h3>
+                                <p>Assorted dips, olives, cheese, and fresh vegetables</p>
+                                <span class="price">$18.95</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="mains">
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <img src="{{FOOD_IMAGE_6}}" alt="{{MENU_ITEM_3}}">
+                            <div class="menu-item-info">
+                                <h3>{{MENU_ITEM_3}}</h3>
+                                <p>{{MENU_DESCRIPTION_3}}</p>
+                                <span class="price">${{PRICE_3}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="{{FOOD_IMAGE_7}}" alt="{{MENU_ITEM_4}}">
+                            <div class="menu-item-info">
+                                <h3>{{MENU_ITEM_4}}</h3>
+                                <p>{{MENU_DESCRIPTION_4}}</p>
+                                <span class="price">${{PRICE_4}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="{{FOOD_IMAGE_8}}" alt="Grilled Branzino">
+                            <div class="menu-item-info">
+                                <h3>Grilled Branzino</h3>
+                                <p>Whole Mediterranean sea bass with lemon, herbs, and olive oil</p>
+                                <span class="price">$32.95</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="desserts">
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <img src="{{FOOD_IMAGE_9}}" alt="Baklava">
+                            <div class="menu-item-info">
+                                <h3>Traditional Baklava</h3>
+                                <p>Layers of phyllo pastry with nuts and honey syrup</p>
+                                <span class="price">$8.95</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="{{FOOD_IMAGE_10}}" alt="Panna Cotta">
+                            <div class="menu-item-info">
+                                <h3>Lemon Panna Cotta</h3>
+                                <p>Silky lemon custard with berry compote</p>
+                                <span class="price">$9.95</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="{{FOOD_IMAGE_11}}" alt="Tiramisu">
+                            <div class="menu-item-info">
+                                <h3>Coastal Tiramisu</h3>
+                                <p>Our signature twist on the classic Italian dessert</p>
+                                <span class="price">$10.95</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="menu-cta">
+                <a href="menu.html" class="btn btn-primary">View Full Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery">
+        <div class="container">
+            <h2>Experience Our Atmosphere</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="{{INTERIOR_IMAGE_1}}" alt="Restaurant Interior">
+                </div>
+                <div class="gallery-item">
+                    <img src="{{FOOD_IMAGE_12}}" alt="Mediterranean Cuisine">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/terrace-dining.jpg" alt="Terrace Dining">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/sunset-view.jpg" alt="Sunset View">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/wine-selection.jpg" alt="Wine Selection">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/chef-kitchen.jpg" alt="Chef in Kitchen">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Visit Us</h2>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <h4>Location</h4>
+                                <p>{{FULL_ADDRESS}}</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div>
+                                <h4>Phone</h4>
+                                <p><a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">✉️</div>
+                            <div>
+                                <h4>Email</h4>
+                                <p><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">🕒</div>
+                            <div>
+                                <h4>Hours</h4>
+                                <p>{{WEEKDAY_HOURS}}</p>
+                                <p>{{WEEKEND_HOURS}}</p>
+                                <p>{{SUNDAY_HOURS}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Make a Reservation</h3>
+                    <form>
+                        <div class="form-row">
+                            <input type="text" placeholder="Full Name" required>
+                            <input type="email" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-row">
+                            <input type="tel" placeholder="Phone Number" required>
+                            <select required>
+                                <option value="">Party Size</option>
+                                <option value="1">1 Person</option>
+                                <option value="2">2 People</option>
+                                <option value="3">3 People</option>
+                                <option value="4">4 People</option>
+                                <option value="5">5 People</option>
+                                <option value="6">6+ People</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <input type="date" required>
+                            <input type="time" required>
+                        </div>
+                        <textarea placeholder="Special Requests or Dietary Requirements" rows="4"></textarea>
+                        <button type="submit" class="btn btn-primary">Request Reservation</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+                    </div>
+                    <p>Experience the taste of the Mediterranean coast</p>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}" target="_blank" aria-label="Facebook">📘</a>
+                        <a href="{{INSTAGRAM_URL}}" target="_blank" aria-label="Instagram">📷</a>
+                        <a href="{{YELP_URL}}" target="_blank" aria-label="Yelp">⭐</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>{{FULL_ADDRESS}}</p>
+                    <p>{{PHONE}}</p>
+                    <p>{{EMAIL}}</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Hours</h4>
+                    <p>{{WEEKDAY_HOURS}}</p>
+                    <p>{{WEEKEND_HOURS}}</p>
+                    <p>{{SUNDAY_HOURS}}</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

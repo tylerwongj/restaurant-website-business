@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - {{CUISINE_TYPE}} Restaurant</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background Video/Image -->
+    <div class="background-container">
+        <img src="{{HERO_IMAGE}}" alt="Restaurant Background" class="background-image">
+        <div class="background-overlay"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar glass">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#reservations">Reservations</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content glass">
+            <h1>{{RESTAURANT_NAME}}</h1>
+            <p class="hero-subtitle">{{TAGLINE}}</p>
+            <p class="hero-description">{{DESCRIPTION}}</p>
+            <div class="hero-buttons">
+                <a href="#menu" class="btn btn-primary glass">Explore Menu</a>
+                <a href="tel:{{PHONE}}" class="btn btn-secondary glass">Make Reservation</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-header glass">
+                <h2>Culinary Experience</h2>
+                <p>Where artistry meets flavor</p>
+            </div>
+            <div class="experience-grid">
+                <div class="experience-card glass">
+                    <div class="card-icon">🍷</div>
+                    <h3>Curated Wine Selection</h3>
+                    <p>Hand-selected wines from renowned vineyards worldwide, perfectly paired with our seasonal menu.</p>
+                </div>
+                <div class="experience-card glass">
+                    <div class="card-icon">👨‍🍳</div>
+                    <h3>Master Chef</h3>
+                    <p>{{CHEF_NAME}} brings decades of culinary expertise from world-class establishments.</p>
+                </div>
+                <div class="experience-card glass">
+                    <div class="card-icon">🌟</div>
+                    <h3>Michelin Quality</h3>
+                    <p>Every dish is crafted with precision using the finest locally-sourced ingredients.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Preview -->
+    <section id="menu" class="menu-preview">
+        <div class="container">
+            <div class="section-header glass">
+                <h2>Our Menu</h2>
+                <p>A symphony of flavors awaits</p>
+            </div>
+            <div class="menu-categories">
+                <div class="menu-category glass">
+                    <img src="{{APPETIZER_IMAGE}}" alt="Appetizers">
+                    <div class="category-content">
+                        <h3>Appetizers</h3>
+                        <p>Artfully crafted small plates to begin your journey</p>
+                        <span class="price-range">$18 - $32</span>
+                    </div>
+                </div>
+                <div class="menu-category glass">
+                    <img src="{{MAIN_COURSE_IMAGE}}" alt="Main Courses">
+                    <div class="category-content">
+                        <h3>Main Courses</h3>
+                        <p>Signature dishes that define culinary excellence</p>
+                        <span class="price-range">$48 - $85</span>
+                    </div>
+                </div>
+                <div class="menu-category glass">
+                    <img src="{{DESSERT_IMAGE}}" alt="Desserts">
+                    <div class="category-content">
+                        <h3>Desserts</h3>
+                        <p>Sweet masterpieces to complete your experience</p>
+                        <span class="price-range">$16 - $28</span>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-cta">
+                <a href="menu.html" class="btn btn-primary glass">View Full Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text glass">
+                    <h2>Our Story</h2>
+                    <p>{{RESTAURANT_STORY}}</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number">{{YEARS_ESTABLISHED}}</span>
+                            <span class="stat-label">Years of Excellence</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">{{AWARDS_COUNT}}+</span>
+                            <span class="stat-label">Awards</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">{{DISHES_COUNT}}+</span>
+                            <span class="stat-label">Signature Dishes</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="{{RESTAURANT_INTERIOR}}" alt="Restaurant Interior" class="glass">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservations Section -->
+    <section id="reservations" class="reservations">
+        <div class="container">
+            <div class="reservations-content glass">
+                <h2>Reserve Your Table</h2>
+                <p>Experience culinary artistry in an atmosphere of refined elegance</p>
+                <div class="reservation-info">
+                    <div class="info-item">
+                        <span class="label">Hours:</span>
+                        <span class="value">{{HOURS}}</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Phone:</span>
+                        <span class="value">{{PHONE}}</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Email:</span>
+                        <span class="value">{{EMAIL}}</span>
+                    </div>
+                </div>
+                <div class="reservation-buttons">
+                    <a href="tel:{{PHONE}}" class="btn btn-primary glass">Call for Reservation</a>
+                    <a href="mailto:{{EMAIL}}" class="btn btn-secondary glass">Email Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info glass">
+                    <h2>Visit Us</h2>
+                    <div class="contact-details">
+                        <div class="detail">
+                            <h3>Address</h3>
+                            <p>{{ADDRESS}}</p>
+                        </div>
+                        <div class="detail">
+                            <h3>Hours</h3>
+                            <p>{{HOURS}}</p>
+                        </div>
+                        <div class="detail">
+                            <h3>Contact</h3>
+                            <p>{{PHONE}}</p>
+                            <p>{{EMAIL}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form glass">
+                    <h3>Send Us a Message</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Phone Number">
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary glass">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer glass">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+                </div>
+                <div class="footer-info">
+                    <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}" aria-label="Facebook">📘</a>
+                        <a href="{{INSTAGRAM_URL}}" aria-label="Instagram">📷</a>
+                        <a href="{{TWITTER_URL}}" aria-label="Twitter">🐦</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

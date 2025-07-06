@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Complete Dessert Menu</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - Our complete selection of artisan desserts and coffee">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            padding-top: 80px;
+        }
+        
+        .menu-hero {
+            background: linear-gradient(135deg, var(--pink-light), var(--purple-light));
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .menu-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+        
+        .menu-hero p {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+        
+        .menu-content {
+            padding: 80px 0;
+            background: var(--background-light);
+        }
+        
+        .menu-section {
+            margin-bottom: 80px;
+        }
+        
+        .menu-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+            text-align: center;
+            position: relative;
+        }
+        
+        .menu-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            border-radius: 2px;
+        }
+        
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .menu-item-detailed {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .menu-item-detailed:hover {
+            transform: translateY(-5px);
+        }
+        
+        .menu-item-detailed img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .menu-item-content {
+            padding: 25px;
+        }
+        
+        .menu-item-detailed h3 {
+            color: var(--text-dark);
+            margin-bottom: 12px;
+            font-size: 1.4rem;
+        }
+        
+        .menu-item-detailed p {
+            color: var(--text-light);
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+        
+        .menu-item-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+        }
+        
+        .menu-item-detailed .price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .allergen-info {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            transform: translateX(-5px);
+        }
+        
+        .seasonal-badge {
+            background: linear-gradient(45deg, var(--accent-color), var(--gold));
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .popular-badge {
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        @media (max-width: 768px) {
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .menu-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .menu-section h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#menu">Desserts</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu Hero -->
+    <section class="menu-hero">
+        <div class="container">
+            <h1>Sweet Temptations</h1>
+            <p>Indulge in our complete collection of artisan desserts</p>
+        </div>
+    </section>
+
+    <!-- Menu Content -->
+    <section class="menu-content">
+        <div class="container">
+            <a href="index.html" class="back-link">
+                ← Back to Home
+            </a>
+            
+            <div class="menu-section">
+                <h2>Signature Cakes</h2>
+                <div class="menu-grid">
+                    <div class="menu-item-detailed">
+                        <img src="{{FOOD_IMAGE_1}}" alt="{{MENU_ITEM_1}}">
+                        <div class="menu-item-content">
+                            <h3>{{MENU_ITEM_1}} <span class="popular-badge">Popular</span></h3>
+                            <p>{{MENU_DESCRIPTION_1}}</p>
+                            <div class="menu-item-meta">
+                                <span class="price">${{PRICE_1}}</span>
+                                <span class="allergen-info">Contains: dairy, eggs, gluten</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-detailed">
+                        <img src="{{FOOD_IMAGE_2}}" alt="{{MENU_ITEM_2}}">
+                        <div class="menu-item-content">
+                            <h3>{{MENU_ITEM_2}}</h3>
+                            <p>{{MENU_DESCRIPTION_2}}</p>
+                            <div class="menu-item-meta">
+                                <span class="price">${{PRICE_2}}</span>
+                                <span class="allergen-info">Contains: dairy, eggs</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-detailed">
+                        <img src="{{FOOD_IMAGE_3}}" alt="{{MENU_ITEM_3}}">
+                        <div class="menu-item-content">
+                            <h3>{{MENU_ITEM_3}}</h3>
+                            <p>{{MENU_DESCRIPTION_3}}</p>
+                            <div class="menu-item-meta">
+                                <span class="price">${{PRICE_3}}</span>
+                                <span class="allergen-info">Contains: dairy, gluten</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-section">
+                <h2>Artisan Pastries</h2>
+                <div class="menu-grid">
+                    <div class="menu-item-detailed">
+                        <img src="{{FOOD_IMAGE_4}}" alt="{{MENU_ITEM_4}}">
+                        <div class="menu-item-content">
+                            <h3>{{MENU_ITEM_4}}</h3>
+                            <p>{{MENU_DESCRIPTION_4}}</p>
+                            <div class="menu-item-meta">
+                                <span class="price">${{PRICE_4}}</span>
+                                <span class="allergen-info">Contains: dairy, eggs, nuts</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-detailed">
+                        <img src="{{FOOD_IMAGE_5}}" alt="{{MENU_ITEM_5}}">
+                        <div class="menu-item-content">
+                            <h3>{{MENU_ITEM_5}}</h3>
+                            <p>{{MENU_DESCRIPTION_5}}</p>
+                            <div class="menu-item-meta">
+                                <span class="price">${{PRICE_5}}</span>
+                                <span class="allergen-info">Contains: dairy, gluten</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-detailed">
+                        <img src="{{FOOD_IMAGE_6}}" alt="{{MENU_ITEM_6}}">
+                        <div class="menu-item-content">
+                            <h3>{{MENU_ITEM_6}} <span class="popular-badge">Popular</span></h3>
+                            <p>{{MENU_DESCRIPTION_6}}</p>
+                            <div class="menu-item-meta">
+                                <span class="price">${{PRICE_6}}</span>
+                                <span class="allergen-info">Contains: dairy, eggs</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-section">
+                <h2>Coffee & Beverages</h2>
+                <div class="menu-grid">
+                    <div class="menu-item-detailed">
+                        <img src="{{FOOD_IMAGE_7}}" alt="{{MENU_ITEM_7}}">
+                        <div class="menu-item-content">
+                            <h3>{{MENU_ITEM_7}}</h3>
+                            <p>{{MENU_DESCRIPTION_7}}</p>
+                            <div class="menu-item-meta">
+                                <span class="price">${{PRICE_7}}</span>
+                                <span class="allergen-info">Contains: dairy</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-detailed">
+                        <img src="{{FOOD_IMAGE_8}}" alt="{{MENU_ITEM_8}}">
+                        <div class="menu-item-content">
+                            <h3>{{MENU_ITEM_8}}</h3>
+                            <p>{{MENU_DESCRIPTION_8}}</p>
+                            <div class="menu-item-meta">
+                                <span class="price">${{PRICE_8}}</span>
+                                <span class="allergen-info">Dairy-free option available</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-detailed">
+                        <img src="{{FOOD_IMAGE_9}}" alt="{{MENU_ITEM_9}}">
+                        <div class="menu-item-content">
+                            <h3>{{MENU_ITEM_9}}</h3>
+                            <p>{{MENU_DESCRIPTION_9}}</p>
+                            <div class="menu-item-meta">
+                                <span class="price">${{PRICE_9}}</span>
+                                <span class="allergen-info">Vegan friendly</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-section">
+                <h2>Seasonal Specialties</h2>
+                <div class="menu-grid">
+                    <div class="menu-item-detailed">
+                        <img src="{{FOOD_IMAGE_10}}" alt="{{MENU_ITEM_10}}">
+                        <div class="menu-item-content">
+                            <h3>{{MENU_ITEM_10}} <span class="seasonal-badge">Seasonal</span></h3>
+                            <p>{{MENU_DESCRIPTION_10}}</p>
+                            <div class="menu-item-meta">
+                                <span class="price">${{PRICE_10}}</span>
+                                <span class="allergen-info">Limited time only</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-detailed">
+                        <img src="{{FOOD_IMAGE_11}}" alt="{{MENU_ITEM_11}}">
+                        <div class="menu-item-content">
+                            <h3>{{MENU_ITEM_11}} <span class="seasonal-badge">Seasonal</span></h3>
+                            <p>{{MENU_DESCRIPTION_11}}</p>
+                            <div class="menu-item-meta">
+                                <span class="price">${{PRICE_11}}</span>
+                                <span class="allergen-info">Contains: dairy, eggs, gluten</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-detailed">
+                        <img src="{{FOOD_IMAGE_12}}" alt="{{MENU_ITEM_12}}">
+                        <div class="menu-item-content">
+                            <h3>{{MENU_ITEM_12}}</h3>
+                            <p>{{MENU_DESCRIPTION_12}}</p>
+                            <div class="menu-item-meta">
+                                <span class="price">${{PRICE_12}}</span>
+                                <span class="allergen-info">Gluten-free available</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>{{RESTAURANT_NAME}}</h4>
+                    <p>{{TAGLINE}}</p>
+                    <div class="footer-social">
+                        <a href="{{FACEBOOK_URL}}" target="_blank">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}" target="_blank">Instagram</a>
+                        <a href="{{YELP_URL}}" target="_blank">Yelp</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Hours</h4>
+                    <p>Monday - Thursday: {{HOURS_MON}}</p>
+                    <p>Friday - Saturday: {{HOURS_FRI}}</p>
+                    <p>Sunday: {{HOURS_SUN}}</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>{{FULL_ADDRESS}}</p>
+                    <p><a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+                    <p><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

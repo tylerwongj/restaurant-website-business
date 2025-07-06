@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - {{CUISINE_TYPE}} Restaurant</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="theme-warm">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#story">Our Story</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#chef">Chef's Table</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>{{RESTAURANT_NAME}}</h1>
+            <p class="hero-subtitle">{{TAGLINE}}</p>
+            <div class="hero-buttons">
+                <a href="#menu" class="btn btn-primary">Explore Menu</a>
+                <a href="tel:{{PHONE}}" class="btn btn-secondary">Reserve Table</a>
+            </div>
+        </div>
+        <div class="hero-background">
+            <img src="{{HERO_IMAGE}}" alt="{{RESTAURANT_NAME}}">
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section id="story" class="story">
+        <div class="container">
+            <div class="story-content">
+                <div class="story-text">
+                    <h2>Thai Fusion, Modern Soul</h2>
+                    <p class="lead">{{ABOUT_DESCRIPTION}}</p>
+                    <div class="highlights">
+                        <div class="highlight">
+                            <div class="highlight-icon">🌶️</div>
+                            <div class="highlight-text">
+                                <h4>Authentic Spices</h4>
+                                <p>Traditional Thai herbs and spices sourced directly from Thailand</p>
+                            </div>
+                        </div>
+                        <div class="highlight">
+                            <div class="highlight-icon">🌿</div>
+                            <div class="highlight-text">
+                                <h4>Fresh Ingredients</h4>
+                                <p>Locally sourced produce combined with authentic Thai elements</p>
+                            </div>
+                        </div>
+                        <div class="highlight">
+                            <div class="highlight-icon">🍽️</div>
+                            <div class="highlight-text">
+                                <h4>Modern Presentation</h4>
+                                <p>Traditional flavors presented with contemporary flair</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="story-image">
+                    <img src="{{INTERIOR_IMAGE_1}}" alt="Restaurant Interior">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Highlights -->
+    <section id="menu" class="menu-preview">
+        <div class="container">
+            <div class="menu-header">
+                <h2>Signature Dishes</h2>
+                <p>Where traditional Thai meets contemporary innovation</p>
+            </div>
+            <div class="menu-categories">
+                <div class="category-tabs">
+                    <button class="tab-btn active" data-category="signature">Signature</button>
+                    <button class="tab-btn" data-category="curry">Curry</button>
+                    <button class="tab-btn" data-category="noodles">Noodles</button>
+                    <button class="tab-btn" data-category="fusion">Fusion</button>
+                </div>
+                <div class="menu-grid" id="signature">
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="{{FOOD_IMAGE_1}}" alt="{{MENU_ITEM_1}}">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>{{MENU_ITEM_1}}</h3>
+                            <p>{{MENU_DESCRIPTION_1}}</p>
+                            <div class="spice-level">
+                                <span class="spice-label">Spice Level:</span>
+                                <span class="spice-indicator mild">●●○○○</span>
+                            </div>
+                            <span class="price">${{PRICE_1}}</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="{{FOOD_IMAGE_2}}" alt="{{MENU_ITEM_2}}">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>{{MENU_ITEM_2}}</h3>
+                            <p>{{MENU_DESCRIPTION_2}}</p>
+                            <div class="spice-level">
+                                <span class="spice-label">Spice Level:</span>
+                                <span class="spice-indicator medium">●●●○○</span>
+                            </div>
+                            <span class="price">${{PRICE_2}}</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="{{FOOD_IMAGE_3}}" alt="{{MENU_ITEM_3}}">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>{{MENU_ITEM_3}}</h3>
+                            <p>{{MENU_DESCRIPTION_3}}</p>
+                            <div class="spice-level">
+                                <span class="spice-label">Spice Level:</span>
+                                <span class="spice-indicator hot">●●●●○</span>
+                            </div>
+                            <span class="price">${{PRICE_3}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-cta">
+                <a href="menu.html" class="btn btn-primary">View Full Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chef's Table Section -->
+    <section id="chef" class="chef-table">
+        <div class="container">
+            <div class="chef-content">
+                <div class="chef-text">
+                    <h2>Chef's Table Experience</h2>
+                    <p>Join us for an intimate culinary journey where our chef prepares a special tasting menu featuring seasonal ingredients and traditional techniques with modern innovation.</p>
+                    <div class="chef-features">
+                        <div class="feature">
+                            <h4>7-Course Tasting</h4>
+                            <p>Carefully curated seasonal selections</p>
+                        </div>
+                        <div class="feature">
+                            <h4>Wine Pairings</h4>
+                            <p>Complementary wines selected by our sommelier</p>
+                        </div>
+                        <div class="feature">
+                            <h4>Interactive Experience</h4>
+                            <p>Watch the chef prepare each course</p>
+                        </div>
+                    </div>
+                    <div class="chef-pricing">
+                        <span class="price">$95 per person</span>
+                        <span class="wine-price">Wine pairing +$35</span>
+                    </div>
+                    <a href="#contact" class="btn btn-primary">Reserve Chef's Table</a>
+                </div>
+                <div class="chef-image">
+                    <img src="{{FOOD_IMAGE_4}}" alt="Chef's Table">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Hours -->
+    <section class="location-hours">
+        <div class="container">
+            <div class="location-hours-grid">
+                <div class="hours">
+                    <h3>Hours</h3>
+                    <div class="hours-list">
+                        <div class="hours-item">
+                            <span>Monday - Thursday</span>
+                            <span>{{WEEKDAY_HOURS}}</span>
+                        </div>
+                        <div class="hours-item">
+                            <span>Friday - Saturday</span>
+                            <span>{{WEEKEND_HOURS}}</span>
+                        </div>
+                        <div class="hours-item">
+                            <span>Sunday</span>
+                            <span>{{SUNDAY_HOURS}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="location">
+                    <h3>Location & Contact</h3>
+                    <div class="location-info">
+                        <p>{{FULL_ADDRESS}}</p>
+                        <p>Phone: <a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+                        <p>Email: <a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
+                        <div class="directions">
+                            <a href="{{GOOGLE_MAPS_URL}}" target="_blank" class="btn btn-outline">Get Directions</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-form">
+                    <h3>Make a Reservation</h3>
+                    <form action="#" method="POST">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" name="name" placeholder="Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder="Email" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="tel" name="phone" placeholder="Phone" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="number" name="guests" placeholder="Guests" min="1" max="10" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="date" name="date" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="time" name="time" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <select name="table_type">
+                                <option value="regular">Regular Table</option>
+                                <option value="chef">Chef's Table</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="special_requests" placeholder="Dietary restrictions or special requests"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Request Reservation</button>
+                    </form>
+                </div>
+                <div class="contact-map">
+                    <iframe 
+                        src="{{GOOGLE_MAPS_EMBED}}" 
+                        width="100%" 
+                        height="400" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo" class="footer-logo">
+                    <p>{{RESTAURANT_NAME}}</p>
+                    <p>Modern Thai Fusion Cuisine</p>
+                    <p>{{FULL_ADDRESS}}</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}" target="_blank">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}" target="_blank">Instagram</a>
+                        <a href="{{YELP_URL}}" target="_blank">Yelp</a>
+                    </div>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>{{PHONE}}</p>
+                    <p>{{EMAIL}}</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

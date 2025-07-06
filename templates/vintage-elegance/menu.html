@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - {{RESTAURANT_NAME}}</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} Menu - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        .menu-hero {
+            background: linear-gradient(
+                135deg,
+                rgba(44, 24, 16, 0.8) 0%,
+                rgba(139, 90, 60, 0.7) 50%,
+                rgba(212, 175, 55, 0.6) 100%
+            ),
+            url('{{HERO_IMAGE}}') center/cover;
+            color: white;
+            text-align: center;
+            padding: 180px 0 100px;
+            position: relative;
+        }
+        .menu-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(139, 90, 60, 0.1) 0%, rgba(212, 175, 55, 0.1) 100%);
+        }
+        .menu-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .menu-hero h1 {
+            font-family: var(--font-serif);
+            font-size: 4rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .menu-hero-divider {
+            width: 120px;
+            height: 3px;
+            background: var(--secondary-color);
+            margin: 0 auto 30px;
+        }
+        .menu-hero p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            font-style: italic;
+        }
+        .menu-section {
+            padding: 100px 0;
+        }
+        .menu-section:nth-child(even) {
+            background: var(--background-cream);
+        }
+        .menu-category {
+            max-width: 900px;
+            margin: 0 auto 80px;
+        }
+        .menu-category h2 {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            text-align: center;
+            position: relative;
+            font-weight: 600;
+        }
+        .menu-category-divider {
+            width: 100px;
+            height: 3px;
+            background: var(--secondary-color);
+            margin: 0 auto 40px;
+        }
+        .menu-category-description {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 50px;
+            font-style: italic;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .menu-items {
+            display: grid;
+            gap: 40px;
+        }
+        .menu-item {
+            background: white;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition);
+            border-left: 4px solid var(--secondary-color);
+        }
+        .menu-item:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-heavy);
+        }
+        .menu-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .menu-item-name {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin: 0;
+        }
+        .menu-item-price {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            flex-shrink: 0;
+        }
+        .menu-item-description {
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+        .menu-item-tags {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .menu-tag {
+            background: var(--background-cream);
+            color: var(--text-light);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid var(--border-color);
+        }
+        .menu-tag.signature {
+            background: var(--secondary-color);
+            color: var(--text-dark);
+            border-color: var(--secondary-color);
+        }
+        .menu-tag.spicy {
+            background: #ff6b6b;
+            color: white;
+            border-color: #ff6b6b;
+        }
+        .menu-tag.vegetarian {
+            background: #51cf66;
+            color: white;
+            border-color: #51cf66;
+        }
+        .back-to-home {
+            text-align: center;
+            margin: 80px 0;
+        }
+        .menu-navigation {
+            background: white;
+            padding: 30px 0;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 90px;
+            z-index: 999;
+        }
+        .menu-nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        .menu-nav-link {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+        .menu-nav-link:hover,
+        .menu-nav-link.active {
+            color: var(--primary-color);
+            background: var(--background-cream);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+                <div class="logo-text">
+                    <span class="logo-name">{{RESTAURANT_NAME}}</span>
+                    <span class="logo-subtitle">{{CUISINE_TYPE}}</span>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="#appetizers" class="nav-link">Menu</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu Hero -->
+    <section class="menu-hero">
+        <div class="container">
+            <div class="menu-hero-content">
+                <h1>Our Menu</h1>
+                <div class="menu-hero-divider"></div>
+                <p>A culinary journey through time-honored traditions and innovative flavors</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Navigation -->
+    <section class="menu-navigation">
+        <div class="container">
+            <nav class="menu-nav-links">
+                <a href="#appetizers" class="menu-nav-link">Appetizers</a>
+                <a href="#mains" class="menu-nav-link">Main Courses</a>
+                <a href="#desserts" class="menu-nav-link">Desserts</a>
+                <a href="#beverages" class="menu-nav-link">Beverages</a>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Appetizers Section -->
+    <section id="appetizers" class="menu-section">
+        <div class="container">
+            <div class="menu-category">
+                <h2>Appetizers</h2>
+                <div class="menu-category-divider"></div>
+                <p class="menu-category-description">Begin your culinary journey with our carefully crafted starters, designed to awaken your palate</p>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">{{MENU_ITEM_1}}</h3>
+                            <span class="menu-item-price">${{PRICE_1}}</span>
+                        </div>
+                        <p class="menu-item-description">{{MENU_DESCRIPTION_1}}</p>
+                        <div class="menu-item-tags">
+                            <span class="menu-tag signature">Signature</span>
+                            <span class="menu-tag">Fresh</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">{{MENU_ITEM_2}}</h3>
+                            <span class="menu-item-price">${{PRICE_2}}</span>
+                        </div>
+                        <p class="menu-item-description">{{MENU_DESCRIPTION_2}}</p>
+                        <div class="menu-item-tags">
+                            <span class="menu-tag">Chef's Choice</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Courses Section -->
+    <section id="mains" class="menu-section">
+        <div class="container">
+            <div class="menu-category">
+                <h2>Main Courses</h2>
+                <div class="menu-category-divider"></div>
+                <p class="menu-category-description">Our signature entrees showcase the finest ingredients prepared with masterful technique</p>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">{{MENU_ITEM_3}}</h3>
+                            <span class="menu-item-price">${{PRICE_3}}</span>
+                        </div>
+                        <p class="menu-item-description">{{MENU_DESCRIPTION_3}}</p>
+                        <div class="menu-item-tags">
+                            <span class="menu-tag signature">Signature</span>
+                            <span class="menu-tag">Premium</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">{{MENU_ITEM_4}}</h3>
+                            <span class="menu-item-price">${{PRICE_4}}</span>
+                        </div>
+                        <p class="menu-item-description">{{MENU_DESCRIPTION_4}}</p>
+                        <div class="menu-item-tags">
+                            <span class="menu-tag">Seasonal</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Desserts Section -->
+    <section id="desserts" class="menu-section">
+        <div class="container">
+            <div class="menu-category">
+                <h2>Desserts</h2>
+                <div class="menu-category-divider"></div>
+                <p class="menu-category-description">End your meal on a sweet note with our house-made desserts and artisanal confections</p>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Classic Tiramisu</h3>
+                            <span class="menu-item-price">$12.00</span>
+                        </div>
+                        <p class="menu-item-description">Traditional Italian dessert with espresso-soaked ladyfingers, mascarpone, and dark chocolate</p>
+                        <div class="menu-item-tags">
+                            <span class="menu-tag">House Made</span>
+                            <span class="menu-tag vegetarian">Vegetarian</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Chocolate Lava Cake</h3>
+                            <span class="menu-item-price">$14.00</span>
+                        </div>
+                        <p class="menu-item-description">Warm chocolate cake with molten center, served with vanilla ice cream and berry compote</p>
+                        <div class="menu-item-tags">
+                            <span class="menu-tag signature">Signature</span>
+                            <span class="menu-tag vegetarian">Vegetarian</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beverages Section -->
+    <section id="beverages" class="menu-section">
+        <div class="container">
+            <div class="menu-category">
+                <h2>Beverages</h2>
+                <div class="menu-category-divider"></div>
+                <p class="menu-category-description">Complement your meal with our curated selection of wines, craft cocktails, and artisanal beverages</p>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">House Wine Selection</h3>
+                            <span class="menu-item-price">$8-15</span>
+                        </div>
+                        <p class="menu-item-description">Carefully curated wines from local and international vineyards, available by the glass or bottle</p>
+                        <div class="menu-item-tags">
+                            <span class="menu-tag">Curated</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">Craft Cocktails</h3>
+                            <span class="menu-item-price">$12-16</span>
+                        </div>
+                        <p class="menu-item-description">Handcrafted cocktails using premium spirits and house-made syrups, garnished with fresh herbs</p>
+                        <div class="menu-item-tags">
+                            <span class="menu-tag signature">Signature</span>
+                            <span class="menu-tag">Handcrafted</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="back-to-home">
+        <a href="index.html" class="btn btn-primary">Return to Home</a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}}">
+                        <div class="footer-logo-text">
+                            <span class="footer-logo-name">{{RESTAURANT_NAME}}</span>
+                            <span class="footer-logo-subtitle">{{TAGLINE}}</span>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}" class="social-link">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}" class="social-link">Instagram</a>
+                        <a href="{{YELP_URL}}" class="social-link">Yelp</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Information</h4>
+                    <div class="footer-contact">
+                        <p>{{FULL_ADDRESS}}</p>
+                        <p>{{PHONE}}</p>
+                        <p>{{EMAIL}}</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Opening Hours</h4>
+                    <div class="footer-hours">
+                        <p>{{WEEKDAY_HOURS}}</p>
+                        <p>{{WEEKEND_HOURS}}</p>
+                        <p>{{SUNDAY_HOURS}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-divider"></div>
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Menu navigation scroll effect
+        const menuNavLinks = document.querySelectorAll('.menu-nav-link');
+        const sections = document.querySelectorAll('.menu-section');
+        
+        window.addEventListener('scroll', function() {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                if (pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            menuNavLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - {{RESTAURANT_NAME}}</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .menu-hero {
+            height: 40vh;
+            background: linear-gradient(135deg, var(--ocean-blue) 0%, var(--coral) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .menu-hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+        }
+
+        .menu-hero h1 {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: var(--shadow-medium);
+        }
+
+        .menu-section {
+            padding: 60px 0;
+            background: var(--bg-color);
+        }
+
+        .menu-category {
+            margin-bottom: 4rem;
+        }
+
+        .category-title {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .category-title::after {
+            content: '🌺';
+            display: block;
+            font-size: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .menu-items {
+            display: grid;
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .menu-item-row {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-light);
+            transition: transform 0.3s ease;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .menu-item-row:hover {
+            transform: translateX(10px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .menu-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+
+        .menu-item-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin: 0;
+        }
+
+        .menu-item-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            min-width: fit-content;
+            margin-left: 1rem;
+        }
+
+        .menu-item-description {
+            color: var(--text-light);
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .specialty-badge {
+            display: inline-block;
+            background: var(--coral);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        .chef-special {
+            border-left-color: var(--coral);
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.05) 0%, white 100%);
+        }
+
+        .back-link {
+            position: fixed;
+            top: 100px;
+            left: 20px;
+            background: var(--primary-color);
+            color: white;
+            padding: 12px 20px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: var(--shadow-medium);
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .back-link:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .menu-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .menu-item-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .menu-item-price {
+                margin-left: 0;
+                margin-top: 0.5rem;
+            }
+
+            .back-link {
+                position: static;
+                display: inline-block;
+                margin: 20px;
+            }
+        }
+    </style>
+</head>
+<body class="warm-scheme">
+    <!-- Mobile Navigation Toggle -->
+    <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="menu.html" class="nav-link active">Menu</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Back to Home Link -->
+    <a href="index.html" class="back-link">← Back to Home</a>
+
+    <!-- Menu Hero -->
+    <section class="menu-hero">
+        <div class="menu-hero-content">
+            <h1>Paradise Menu</h1>
+            <p>Fresh flavors from land and sea</p>
+        </div>
+    </section>
+
+    <!-- Menu Content -->
+    <section class="menu-section">
+        <div class="container">
+            
+            <!-- Tropical Appetizers -->
+            <div class="menu-category">
+                <h2 class="category-title">Tropical Starters</h2>
+                <div class="menu-items">
+                    <div class="menu-item-row chef-special">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">{{MENU_ITEM_12}}</h3>
+                            <span class="menu-item-price">${{PRICE_12}}</span>
+                        </div>
+                        <p class="menu-item-description">{{MENU_DESCRIPTION_12}}</p>
+                        <span class="specialty-badge">Chef's Special</span>
+                    </div>
+                    <div class="menu-item-row">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">{{MENU_ITEM_4}}</h3>
+                            <span class="menu-item-price">${{PRICE_4}}</span>
+                        </div>
+                        <p class="menu-item-description">{{MENU_DESCRIPTION_4}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ocean Fresh -->
+            <div class="menu-category">
+                <h2 class="category-title">Ocean Fresh</h2>
+                <div class="menu-items">
+                    <div class="menu-item-row chef-special">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">{{MENU_ITEM_7}}</h3>
+                            <span class="menu-item-price">${{PRICE_7}}</span>
+                        </div>
+                        <p class="menu-item-description">{{MENU_DESCRIPTION_7}}</p>
+                        <span class="specialty-badge">Daily Catch</span>
+                    </div>
+                    <div class="menu-item-row">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">{{MENU_ITEM_8}}</h3>
+                            <span class="menu-item-price">${{PRICE_8}}</span>
+                        </div>
+                        <p class="menu-item-description">{{MENU_DESCRIPTION_8}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Island Classics -->
+            <div class="menu-category">
+                <h2 class="category-title">Island Classics</h2>
+                <div class="menu-items">
+                    <div class="menu-item-row">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">{{MENU_ITEM_1}}</h3>
+                            <span class="menu-item-price">${{PRICE_1}}</span>
+                        </div>
+                        <p class="menu-item-description">{{MENU_DESCRIPTION_1}}</p>
+                    </div>
+                    <div class="menu-item-row">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">{{MENU_ITEM_2}}</h3>
+                            <span class="menu-item-price">${{PRICE_2}}</span>
+                        </div>
+                        <p class="menu-item-description">{{MENU_DESCRIPTION_2}}</p>
+                    </div>
+                    <div class="menu-item-row">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">{{MENU_ITEM_5}}</h3>
+                            <span class="menu-item-price">${{PRICE_5}}</span>
+                        </div>
+                        <p class="menu-item-description">{{MENU_DESCRIPTION_5}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pasta & Island Fusion -->
+            <div class="menu-category">
+                <h2 class="category-title">Pasta & Island Fusion</h2>
+                <div class="menu-items">
+                    <div class="menu-item-row">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">{{MENU_ITEM_6}}</h3>
+                            <span class="menu-item-price">${{PRICE_6}}</span>
+                        </div>
+                        <p class="menu-item-description">{{MENU_DESCRIPTION_6}}</p>
+                    </div>
+                    <div class="menu-item-row">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">{{MENU_ITEM_9}}</h3>
+                            <span class="menu-item-price">${{PRICE_9}}</span>
+                        </div>
+                        <p class="menu-item-description">{{MENU_DESCRIPTION_9}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wood-Fired Pizzas -->
+            <div class="menu-category">
+                <h2 class="category-title">Wood-Fired Island Pizzas</h2>
+                <div class="menu-items">
+                    <div class="menu-item-row">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">{{MENU_ITEM_3}}</h3>
+                            <span class="menu-item-price">${{PRICE_3}}</span>
+                        </div>
+                        <p class="menu-item-description">{{MENU_DESCRIPTION_3}}</p>
+                    </div>
+                    <div class="menu-item-row">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">{{MENU_ITEM_10}}</h3>
+                            <span class="menu-item-price">${{PRICE_10}}</span>
+                        </div>
+                        <p class="menu-item-description">{{MENU_DESCRIPTION_10}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sweet Paradise -->
+            <div class="menu-category">
+                <h2 class="category-title">Sweet Paradise</h2>
+                <div class="menu-items">
+                    <div class="menu-item-row chef-special">
+                        <div class="menu-item-header">
+                            <h3 class="menu-item-name">{{MENU_ITEM_11}}</h3>
+                            <span class="menu-item-price">${{PRICE_11}}</span>
+                        </div>
+                        <p class="menu-item-description">{{MENU_DESCRIPTION_11}}</p>
+                        <span class="specialty-badge">House Favorite</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div style="text-align: center; margin-top: 4rem;">
+                <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Ready to Experience Paradise?</h3>
+                <a href="index.html#contact" class="btn-primary">Make a Reservation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+                    <p>{{TAGLINE}}</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="index.html#about">About</a></li>
+                            <li><a href="menu.html">Menu</a></li>
+                            <li><a href="index.html#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Hours</h4>
+                        <p>{{WEEKDAY_HOURS}}</p>
+                        <p>{{WEEKEND_HOURS}}</p>
+                        <p>{{SUNDAY_HOURS}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

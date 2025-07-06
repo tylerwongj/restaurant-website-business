@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Full Menu</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} Full Menu - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .menu-page {
+            padding-top: 100px;
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--background-light), var(--background-section));
+        }
+        
+        .menu-hero {
+            text-align: center;
+            padding: 3rem 0;
+            background: var(--gradient-dark);
+            color: white;
+            margin-bottom: 3rem;
+        }
+        
+        .menu-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .menu-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .menu-navigation {
+            position: sticky;
+            top: 90px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            z-index: 100;
+        }
+        
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            background: transparent;
+            border: 2px solid transparent;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.active {
+            background: var(--gradient-primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .menu-category {
+            margin-bottom: 4rem;
+            background: white;
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .menu-category::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+        }
+        
+        .category-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .category-header h2 {
+            color: var(--text-dark);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .category-subtitle {
+            color: var(--text-muted);
+            font-style: italic;
+            font-size: 1.1rem;
+        }
+        
+        .menu-grid {
+            display: grid;
+            gap: 2rem;
+        }
+        
+        .menu-item {
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            gap: 1.5rem;
+            align-items: start;
+            padding: 2rem;
+            border-radius: 12px;
+            background: var(--background-section);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .menu-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+            background: white;
+        }
+        
+        .item-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .item-content {
+            flex: 1;
+        }
+        
+        .item-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        
+        .item-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin: 0;
+        }
+        
+        .item-badges {
+            display: flex;
+            gap: 0.5rem;
+            margin-left: 1rem;
+        }
+        
+        .badge {
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .badge-chef {
+            background: #fbbf24;
+            color: #92400e;
+        }
+        
+        .badge-spicy {
+            background: #fecaca;
+            color: #dc2626;
+        }
+        
+        .badge-vegan {
+            background: #bbf7d0;
+            color: #065f46;
+        }
+        
+        .badge-gf {
+            background: #ddd6fe;
+            color: #5b21b6;
+        }
+        
+        .item-description {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        
+        .item-details {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        
+        .item-allergens,
+        .item-wine-pairing {
+            font-style: italic;
+        }
+        
+        .item-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-align: right;
+            align-self: center;
+        }
+        
+        .price-note {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+        
+        .featured-item {
+            position: relative;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(59, 130, 246, 0.05));
+            border: 2px solid var(--accent-color);
+        }
+        
+        .featured-item::after {
+            content: '⭐ Featured';
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        
+        .tasting-menu {
+            background: var(--gradient-dark);
+            color: white;
+            text-align: center;
+            padding: 3rem;
+            border-radius: 16px;
+            margin: 3rem 0;
+        }
+        
+        .tasting-menu h3 {
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .tasting-courses {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .course {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .course-number {
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .course-name {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .course-description {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .wine-section {
+            background: linear-gradient(135deg, #fef3c7, #fcd34d);
+            color: #92400e;
+            padding: 3rem;
+            border-radius: 16px;
+            margin: 3rem 0;
+        }
+        
+        .wine-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .wine-category {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 2rem;
+            border-radius: 12px;
+        }
+        
+        .wine-category h4 {
+            color: #92400e;
+            margin-bottom: 1rem;
+        }
+        
+        .wine-list {
+            list-style: none;
+        }
+        
+        .wine-list li {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(146, 64, 14, 0.2);
+        }
+        
+        .wine-name {
+            font-weight: 500;
+        }
+        
+        .wine-price {
+            font-weight: 600;
+            color: #92400e;
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .menu-item {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 1rem;
+            }
+            
+            .item-image {
+                width: 60px;
+                height: 60px;
+                margin: 0 auto;
+            }
+            
+            .item-header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .item-badges {
+                margin-left: 0;
+                justify-content: center;
+            }
+            
+            .item-price {
+                text-align: center;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+            }
+            
+            .nav-links a {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .tasting-courses {
+                grid-template-columns: 1fr;
+            }
+            
+            .wine-categories {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="color-urban">
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#dining">Dining</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="index.html#rooftop">Rooftop</a></li>
+                <li><a href="index.html#events">Events</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="menu-page">
+        <div class="menu-hero">
+            <div class="container">
+                <h1>{{RESTAURANT_NAME}} Menu</h1>
+                <p>Modern urban cuisine with skyline views</p>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="menu-navigation">
+                <div class="nav-links">
+                    <a href="#appetizers">Small Plates</a>
+                    <a href="#mains">Main Courses</a>
+                    <a href="#tasting">Tasting Menu</a>
+                    <a href="#cocktails">Cocktails</a>
+                    <a href="#wines">Wine Selection</a>
+                    <a href="#desserts">Desserts</a>
+                </div>
+            </div>
+
+            <section id="appetizers" class="menu-category">
+                <div class="category-header">
+                    <h2>Small Plates & Appetizers</h2>
+                    <p class="category-subtitle">Perfect for sharing while enjoying city views</p>
+                </div>
+                <div class="menu-grid">
+                    <div class="menu-item featured-item">
+                        <div class="item-image">🦪</div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3 class="item-name">Urban Oyster Selection</h3>
+                                <div class="item-badges">
+                                    <span class="badge badge-chef">Chef's Choice</span>
+                                </div>
+                            </div>
+                            <p class="item-description">Half dozen fresh oysters from both coasts, served with classic mignonette and spicy cocktail sauce</p>
+                            <div class="item-details">
+                                <span class="item-wine-pairing">Pairs with: Champagne or Sancerre</span>
+                            </div>
+                        </div>
+                        <div class="item-price">$28</div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-image">🥩</div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3 class="item-name">Wagyu Beef Tartare</h3>
+                                <div class="item-badges">
+                                    <span class="badge badge-spicy">Mild Heat</span>
+                                </div>
+                            </div>
+                            <p class="item-description">Hand-cut wagyu beef, quail egg, capers, shallots, truffle aioli, brioche toast points</p>
+                            <div class="item-details">
+                                <span class="item-wine-pairing">Pairs with: Pinot Noir or Champagne</span>
+                            </div>
+                        </div>
+                        <div class="item-price">$32</div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-image">🦐</div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3 class="item-name">Crispy Shrimp & Grits</h3>
+                            </div>
+                            <p class="item-description">Tempura Gulf shrimp, creamy parmesan grits, andouille sausage, green onion oil</p>
+                            <div class="item-details">
+                                <span class="item-wine-pairing">Pairs with: Viognier or light red</span>
+                            </div>
+                        </div>
+                        <div class="item-price">$18</div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-image">🥬</div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3 class="item-name">Rooftop Garden Salad</h3>
+                                <div class="item-badges">
+                                    <span class="badge badge-vegan">Vegan</span>
+                                    <span class="badge badge-gf">GF</span>
+                                </div>
+                            </div>
+                            <p class="item-description">Mixed greens from our rooftop garden, heirloom tomatoes, cucumber, radish, herb vinaigrette</p>
+                            <div class="item-details">
+                                <span class="item-allergens">Allergens: None</span>
+                            </div>
+                        </div>
+                        <div class="item-price">$14</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="mains" class="menu-category">
+                <div class="category-header">
+                    <h2>Main Courses</h2>
+                    <p class="category-subtitle">Elevated dishes showcasing global techniques</p>
+                </div>
+                <div class="menu-grid">
+                    <div class="menu-item featured-item">
+                        <div class="item-image">🥩</div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3 class="item-name">Dry-Aged Ribeye</h3>
+                                <div class="item-badges">
+                                    <span class="badge badge-chef">Signature</span>
+                                </div>
+                            </div>
+                            <p class="item-description">28-day dry-aged 14oz ribeye, truffle butter, roasted bone marrow, seasonal vegetables</p>
+                            <div class="item-details">
+                                <span class="item-wine-pairing">Pairs with: Cabernet Sauvignon or Malbec</span>
+                            </div>
+                        </div>
+                        <div class="item-price">
+                            $68
+                            <div class="price-note">Market Price</div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-image">🐟</div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3 class="item-name">Miso Glazed Chilean Sea Bass</h3>
+                                <div class="item-badges">
+                                    <span class="badge badge-gf">GF</span>
+                                </div>
+                            </div>
+                            <p class="item-description">48-hour miso marinade, forbidden black rice, baby bok choy, ginger scallion oil</p>
+                            <div class="item-details">
+                                <span class="item-wine-pairing">Pairs with: Chardonnay or Sake</span>
+                            </div>
+                        </div>
+                        <div class="item-price">$42</div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-image">🦆</div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3 class="item-name">Duck Confit</h3>
+                            </div>
+                            <p class="item-description">Slow-cooked duck leg, cherry gastrique, duck fat potatoes, wilted spinach</p>
+                            <div class="item-details">
+                                <span class="item-wine-pairing">Pairs with: Pinot Noir or Rhône blend</span>
+                            </div>
+                        </div>
+                        <div class="item-price">$38</div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-image">🍝</div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3 class="item-name">Lobster Ravioli</h3>
+                            </div>
+                            <p class="item-description">House-made pasta, Maine lobster filling, brown butter sage sauce, microgreens</p>
+                            <div class="item-details">
+                                <span class="item-wine-pairing">Pairs with: Chardonnay or Prosecco</span>
+                            </div>
+                        </div>
+                        <div class="item-price">$36</div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-image">🥕</div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3 class="item-name">Roasted Vegetable Wellington</h3>
+                                <div class="item-badges">
+                                    <span class="badge badge-vegan">Vegan</span>
+                                </div>
+                            </div>
+                            <p class="item-description">Seasonal vegetables in flaky pastry, mushroom duxelles, red wine reduction</p>
+                            <div class="item-details">
+                                <span class="item-wine-pairing">Pairs with: Côtes du Rhône or Grenache</span>
+                            </div>
+                        </div>
+                        <div class="item-price">$28</div>
+                    </div>
+                </div>
+            </section>
+
+            <div id="tasting" class="tasting-menu">
+                <h3>Chef's Tasting Menu</h3>
+                <p>A seven-course journey through modern urban cuisine, featuring seasonal ingredients and innovative techniques</p>
+                
+                <div class="tasting-courses">
+                    <div class="course">
+                        <div class="course-number">Course 1</div>
+                        <div class="course-name">Amuse-Bouche</div>
+                        <div class="course-description">Chef's surprise bite</div>
+                    </div>
+                    <div class="course">
+                        <div class="course-number">Course 2</div>
+                        <div class="course-name">Crudo</div>
+                        <div class="course-description">Fresh fish preparation</div>
+                    </div>
+                    <div class="course">
+                        <div class="course-number">Course 3</div>
+                        <div class="course-name">Soup</div>
+                        <div class="course-description">Seasonal vegetable bisque</div>
+                    </div>
+                    <div class="course">
+                        <div class="course-number">Course 4</div>
+                        <div class="course-name">Pasta</div>
+                        <div class="course-description">House-made pasta course</div>
+                    </div>
+                    <div class="course">
+                        <div class="course-number">Course 5</div>
+                        <div class="course-name">Fish</div>
+                        <div class="course-description">Market fish preparation</div>
+                    </div>
+                    <div class="course">
+                        <div class="course-number">Course 6</div>
+                        <div class="course-name">Meat</div>
+                        <div class="course-description">Premium protein selection</div>
+                    </div>
+                    <div class="course">
+                        <div class="course-number">Course 7</div>
+                        <div class="course-name">Dessert</div>
+                        <div class="course-description">Sweet finale</div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 2rem;">
+                    <div style="font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem;">$125 per person</div>
+                    <div style="opacity: 0.9;">Wine pairing available for additional $65</div>
+                </div>
+            </div>
+
+            <section id="cocktails" class="menu-category">
+                <div class="category-header">
+                    <h2>Signature Cocktails</h2>
+                    <p class="category-subtitle">Craft cocktails inspired by the urban landscape</p>
+                </div>
+                <div class="menu-grid">
+                    <div class="menu-item featured-item">
+                        <div class="item-image">🍸</div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3 class="item-name">Skyline Martini</h3>
+                                <div class="item-badges">
+                                    <span class="badge badge-chef">Signature</span>
+                                </div>
+                            </div>
+                            <p class="item-description">Premium gin, dry vermouth, blue cheese stuffed olives, served with a view</p>
+                        </div>
+                        <div class="item-price">$18</div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-image">🥃</div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3 class="item-name">Smoke & Mirrors</h3>
+                            </div>
+                            <p class="item-description">Mezcal, yellow Chartreuse, lime, agave, smoked salt rim</p>
+                        </div>
+                        <div class="item-price">$16</div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-image">🍹</div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3 class="item-name">Rooftop Spritz</h3>
+                            </div>
+                            <p class="item-description">Aperol, prosecco, blood orange, rosemary, soda water</p>
+                        </div>
+                        <div class="item-price">$14</div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-image">🍷</div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3 class="item-name">Urban Sangria</h3>
+                            </div>
+                            <p class="item-description">Red wine, brandy, seasonal fruit, cinnamon, citrus</p>
+                        </div>
+                        <div class="item-price">$12</div>
+                    </div>
+                </div>
+            </section>
+
+            <div id="wines" class="wine-section">
+                <div class="container">
+                    <h2 style="text-align: center; margin-bottom: 1rem; color: #92400e;">Wine Selection</h2>
+                    <p style="text-align: center; margin-bottom: 2rem; color: #92400e;">Curated collection emphasizing both local and international vintages</p>
+                    
+                    <div class="wine-categories">
+                        <div class="wine-category">
+                            <h4>Sparkling & Champagne</h4>
+                            <ul class="wine-list">
+                                <li><span class="wine-name">House Cava</span> <span class="wine-price">$10/glass</span></li>
+                                <li><span class="wine-name">Veuve Clicquot</span> <span class="wine-price">$18/glass</span></li>
+                                <li><span class="wine-name">Dom Pérignon</span> <span class="wine-price">$45/glass</span></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="wine-category">
+                            <h4>White Wines</h4>
+                            <ul class="wine-list">
+                                <li><span class="wine-name">Sauvignon Blanc</span> <span class="wine-price">$12/glass</span></li>
+                                <li><span class="wine-name">Chardonnay Reserve</span> <span class="wine-price">$16/glass</span></li>
+                                <li><span class="wine-name">Pinot Grigio</span> <span class="wine-price">$14/glass</span></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="wine-category">
+                            <h4>Red Wines</h4>
+                            <ul class="wine-list">
+                                <li><span class="wine-name">House Cabernet</span> <span class="wine-price">$13/glass</span></li>
+                                <li><span class="wine-name">Pinot Noir</span> <span class="wine-price">$15/glass</span></li>
+                                <li><span class="wine-name">Malbec Reserve</span> <span class="wine-price">$18/glass</span></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="wine-category">
+                            <h4>Specialty Selections</h4>
+                            <ul class="wine-list">
+                                <li><span class="wine-name">Natural Wine Flight</span> <span class="wine-price">$22</span></li>
+                                <li><span class="wine-name">Sommelier's Choice</span> <span class="wine-price">$20/glass</span></li>
+                                <li><span class="wine-name">Vintage Port</span> <span class="wine-price">$25/glass</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section id="desserts" class="menu-category">
+                <div class="category-header">
+                    <h2>Desserts</h2>
+                    <p class="category-subtitle">Sweet conclusions to your urban dining experience</p>
+                </div>
+                <div class="menu-grid">
+                    <div class="menu-item featured-item">
+                        <div class="item-image">🍰</div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3 class="item-name">City Lights Cheesecake</h3>
+                                <div class="item-badges">
+                                    <span class="badge badge-chef">Signature</span>
+                                </div>
+                            </div>
+                            <p class="item-description">NY-style cheesecake, caramelized white chocolate, gold leaf, berry compote</p>
+                        </div>
+                        <div class="item-price">$14</div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-image">🍫</div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3 class="item-name">Dark Chocolate Soufflé</h3>
+                            </div>
+                            <p class="item-description">Warm chocolate soufflé, vanilla bean ice cream, raspberry coulis</p>
+                            <div class="item-details">
+                                <span style="color: #ef4444; font-weight: 600;">20-minute preparation time</span>
+                            </div>
+                        </div>
+                        <div class="item-price">$16</div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-image">🍨</div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3 class="item-name">Artisan Gelato Trio</h3>
+                                <div class="item-badges">
+                                    <span class="badge badge-gf">GF Available</span>
+                                </div>
+                            </div>
+                            <p class="item-description">Chef's selection of three house-made gelatos, seasonal flavors</p>
+                        </div>
+                        <div class="item-price">$12</div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="item-image">🥧</div>
+                        <div class="item-content">
+                            <div class="item-header">
+                                <h3 class="item-name">Deconstructed Apple Pie</h3>
+                                <div class="item-badges">
+                                    <span class="badge badge-vegan">Vegan Option</span>
+                                </div>
+                            </div>
+                            <p class="item-description">Spiced apple compote, oat crumble, cinnamon ice cream, caramel sauce</p>
+                        </div>
+                        <div class="item-price">$13</div>
+                    </div>
+                </div>
+            </section>
+
+            <div style="text-align: center; margin: 4rem 0;">
+                <a href="index.html#reservations" class="btn btn-primary">Make a Reservation</a>
+                <a href="index.html" class="btn btn-secondary" style="margin-left: 1rem;">Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}}">
+                </div>
+                <div class="footer-info">
+                    <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

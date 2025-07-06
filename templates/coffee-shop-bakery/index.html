@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Coffee Shop & Bakery</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#bakery">Bakery</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>{{RESTAURANT_NAME}}</h1>
+                <p class="hero-subtitle">{{TAGLINE}}</p>
+                <div class="hero-buttons">
+                    <a href="#menu" class="btn btn-primary">View Menu</a>
+                    <a href="tel:{{PHONE}}" class="btn btn-secondary">Order Now</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="{{HERO_IMAGE}}" alt="{{RESTAURANT_NAME}}">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">☕</div>
+                    <h3>Artisan Coffee</h3>
+                    <p>Freshly roasted beans from around the world, expertly brewed to perfection</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🥐</div>
+                    <h3>Fresh Pastries</h3>
+                    <p>Daily baked croissants, muffins, and artisan breads made from scratch</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏠</div>
+                    <h3>Cozy Atmosphere</h3>
+                    <p>Comfortable seating perfect for work, study, or catching up with friends</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>Study Friendly</h3>
+                    <p>Free WiFi, quiet corners, and outlets available for students and remote workers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Preview Section -->
+    <section id="menu" class="menu-preview">
+        <div class="container">
+            <h2>Our Specialties</h2>
+            <div class="menu-tabs">
+                <button class="tab-btn active" data-tab="coffee">Coffee & Drinks</button>
+                <button class="tab-btn" data-tab="breakfast">Breakfast</button>
+                <button class="tab-btn" data-tab="lunch">Light Lunch</button>
+                <button class="tab-btn" data-tab="pastries">Pastries</button>
+            </div>
+            
+            <div class="tab-content active" id="coffee">
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <img src="{{FOOD_IMAGE_1}}" alt="{{MENU_ITEM_1}}">
+                        <div class="menu-item-content">
+                            <h3>{{MENU_ITEM_1}}</h3>
+                            <p>{{MENU_DESCRIPTION_1}}</p>
+                            <span class="price">${{PRICE_1}}</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <img src="{{FOOD_IMAGE_2}}" alt="{{MENU_ITEM_2}}">
+                        <div class="menu-item-content">
+                            <h3>{{MENU_ITEM_2}}</h3>
+                            <p>{{MENU_DESCRIPTION_2}}</p>
+                            <span class="price">${{PRICE_2}}</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <img src="{{FOOD_IMAGE_3}}" alt="Iced Caramel Macchiato">
+                        <div class="menu-item-content">
+                            <h3>Iced Caramel Macchiato</h3>
+                            <p>Espresso, steamed milk, and caramel syrup over ice</p>
+                            <span class="price">$5.25</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="breakfast">
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <img src="{{FOOD_IMAGE_4}}" alt="{{MENU_ITEM_4}}">
+                        <div class="menu-item-content">
+                            <h3>{{MENU_ITEM_4}}</h3>
+                            <p>{{MENU_DESCRIPTION_4}}</p>
+                            <span class="price">${{PRICE_4}}</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <img src="{{FOOD_IMAGE_5}}" alt="Avocado Toast">
+                        <div class="menu-item-content">
+                            <h3>Avocado Toast</h3>
+                            <p>Fresh avocado on artisan sourdough with tomato and microgreens</p>
+                            <span class="price">$8.95</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <img src="{{FOOD_IMAGE_6}}" alt="Breakfast Burrito">
+                        <div class="menu-item-content">
+                            <h3>Breakfast Burrito</h3>
+                            <p>Scrambled eggs, cheese, hash browns, and choice of meat in flour tortilla</p>
+                            <span class="price">$9.50</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="lunch">
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <img src="{{FOOD_IMAGE_7}}" alt="Grilled Panini">
+                        <div class="menu-item-content">
+                            <h3>Grilled Panini</h3>
+                            <p>Choice of turkey, ham, or veggie with cheese on artisan bread</p>
+                            <span class="price">$10.95</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <img src="{{FOOD_IMAGE_8}}" alt="Garden Salad">
+                        <div class="menu-item-content">
+                            <h3>Garden Salad</h3>
+                            <p>Mixed greens, tomatoes, cucumbers, and house vinaigrette</p>
+                            <span class="price">$8.50</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <img src="{{FOOD_IMAGE_9}}" alt="Soup of the Day">
+                        <div class="menu-item-content">
+                            <h3>Soup of the Day</h3>
+                            <p>Ask about our daily homemade soup selection</p>
+                            <span class="price">$6.95</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="pastries">
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <img src="{{FOOD_IMAGE_10}}" alt="Fresh Croissants">
+                        <div class="menu-item-content">
+                            <h3>Fresh Croissants</h3>
+                            <p>Buttery, flaky croissants baked fresh daily</p>
+                            <span class="price">$3.50</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <img src="{{FOOD_IMAGE_11}}" alt="Blueberry Muffin">
+                        <div class="menu-item-content">
+                            <h3>Blueberry Muffin</h3>
+                            <p>House-made muffin packed with fresh blueberries</p>
+                            <span class="price">$4.25</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <img src="{{FOOD_IMAGE_12}}" alt="Chocolate Chip Cookie">
+                        <div class="menu-item-content">
+                            <h3>Chocolate Chip Cookie</h3>
+                            <p>Warm, gooey cookies made with premium chocolate chips</p>
+                            <span class="price">$2.95</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="menu-cta">
+                <a href="menu.html" class="btn btn-primary">View Full Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bakery Section -->
+    <section id="bakery" class="bakery">
+        <div class="container">
+            <div class="bakery-content">
+                <div class="bakery-text">
+                    <h2>Fresh Daily Baking</h2>
+                    <p>Our skilled bakers start before dawn to ensure everything is fresh when you arrive. From artisan breads to delicate pastries, every item is crafted with care using traditional techniques and the finest ingredients.</p>
+                    <div class="bakery-highlights">
+                        <div class="highlight">
+                            <span class="highlight-number">4am</span>
+                            <span class="highlight-text">Baking starts daily</span>
+                        </div>
+                        <div class="highlight">
+                            <span class="highlight-number">20+</span>
+                            <span class="highlight-text">Fresh items daily</span>
+                        </div>
+                        <div class="highlight">
+                            <span class="highlight-number">100%</span>
+                            <span class="highlight-text">Made from scratch</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bakery-image">
+                    <img src="{{INTERIOR_IMAGE_1}}" alt="Bakery Display">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="{{HERO_IMAGE}}" alt="Coffee Shop Interior">
+                </div>
+                <div class="about-text">
+                    <h2>About {{RESTAURANT_NAME}}</h2>
+                    <p>{{ABOUT_DESCRIPTION}}</p>
+                    <div class="about-values">
+                        <div class="value">
+                            <h3>Quality First</h3>
+                            <p>We source the finest coffee beans and use only premium ingredients in our baking</p>
+                        </div>
+                        <div class="value">
+                            <h3>Community Hub</h3>
+                            <p>A welcoming space where neighbors connect, students study, and friends gather</p>
+                        </div>
+                        <div class="value">
+                            <h3>Sustainable Practices</h3>
+                            <p>Committed to eco-friendly packaging and supporting local suppliers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hours & Location -->
+    <section class="hours-location">
+        <div class="container">
+            <div class="hours-location-grid">
+                <div class="hours">
+                    <h3>Hours</h3>
+                    <div class="hours-list">
+                        <div class="hours-item">
+                            <span>Monday</span>
+                            <span>{{HOURS_MON}}</span>
+                        </div>
+                        <div class="hours-item">
+                            <span>Tuesday</span>
+                            <span>{{HOURS_TUE}}</span>
+                        </div>
+                        <div class="hours-item">
+                            <span>Wednesday</span>
+                            <span>{{HOURS_WED}}</span>
+                        </div>
+                        <div class="hours-item">
+                            <span>Thursday</span>
+                            <span>{{HOURS_THU}}</span>
+                        </div>
+                        <div class="hours-item">
+                            <span>Friday</span>
+                            <span>{{HOURS_FRI}}</span>
+                        </div>
+                        <div class="hours-item">
+                            <span>Saturday</span>
+                            <span>{{HOURS_SAT}}</span>
+                        </div>
+                        <div class="hours-item">
+                            <span>Sunday</span>
+                            <span>{{HOURS_SUN}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="location">
+                    <h3>Visit Us</h3>
+                    <div class="location-info">
+                        <p>{{FULL_ADDRESS}}</p>
+                        <p>Phone: <a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+                        <p>Email: <a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
+                        <div class="wifi-info">
+                            <p><strong>Free WiFi Available</strong></p>
+                            <p>Perfect for remote work and studying</p>
+                        </div>
+                        <div class="directions">
+                            <a href="{{GOOGLE_MAPS_URL}}" target="_blank" class="btn btn-outline">Get Directions</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-form">
+                    <h3>Questions or Catering Inquiries?</h3>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" name="phone" placeholder="Your Phone">
+                        </div>
+                        <div class="form-group">
+                            <select name="inquiry_type">
+                                <option value="">Select Inquiry Type</option>
+                                <option value="general">General Question</option>
+                                <option value="catering">Catering</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-map">
+                    <iframe 
+                        src="{{GOOGLE_MAPS_EMBED}}" 
+                        width="100%" 
+                        height="300" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo" class="footer-logo">
+                    <p>{{RESTAURANT_NAME}} - Coffee Shop & Bakery</p>
+                    <p>{{FULL_ADDRESS}}</p>
+                    <p>Phone: {{PHONE}}</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}" target="_blank">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}" target="_blank">Instagram</a>
+                        <a href="{{YELP_URL}}" target="_blank">Yelp</a>
+                    </div>
+                </div>
+                <div class="footer-hours">
+                    <h4>Quick Hours</h4>
+                    <p>Mon-Thu: {{WEEKDAY_HOURS}}</p>
+                    <p>Fri-Sat: {{WEEKEND_HOURS}}</p>
+                    <p>Sunday: {{SUNDAY_HOURS}}</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

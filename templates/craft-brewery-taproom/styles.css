@@ -1,0 +1,1287 @@
+/* CSS Variables for Craft Brewery Theme */
+:root {
+  /* Industrial Color Scheme */
+  --primary-color: #d2691e;
+  --secondary-color: #8b4513;
+  --accent-color: #ff6b35;
+  --accent-dark: #cc5429;
+  --text-dark: #2c2c2c;
+  --text-light: #666666;
+  --text-muted: #999999;
+  --background-light: #ffffff;
+  --background-dark: #1a1a1a;
+  --background-section: #f5f5f5;
+  --background-industrial: #2d2d2d;
+  --border-color: #ddd;
+  --border-industrial: #444;
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --shadow-medium: rgba(0, 0, 0, 0.2);
+  --shadow-dark: rgba(0, 0, 0, 0.3);
+  --overlay-dark: rgba(44, 44, 44, 0.8);
+  --copper-color: #b87333;
+  --steel-color: #708090;
+  --rust-color: #b7410e;
+}
+
+/* Color Scheme Variations */
+.color-classic {
+  --primary-color: #2c3e50;
+  --secondary-color: #34495e;
+  --accent-color: #95a5a6;
+}
+
+.color-business {
+  --primary-color: #1565c0;
+  --secondary-color: #1976d2;
+  --accent-color: #42a5f5;
+}
+
+.color-cool {
+  --primary-color: #16a085;
+  --secondary-color: #1abc9c;
+  --accent-color: #48c9b0;
+}
+
+.color-bold {
+  --primary-color: #8e44ad;
+  --secondary-color: #9b59b6;
+  --accent-color: #af7ac5;
+}
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: var(--background-light);
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Bebas Neue', cursive;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: 4.5rem;
+  letter-spacing: 3px;
+}
+
+h2 {
+  font-size: 3rem;
+  color: var(--text-dark);
+  letter-spacing: 2px;
+}
+
+h3 {
+  font-size: 2.2rem;
+  letter-spacing: 1.5px;
+}
+
+h4 {
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+}
+
+p {
+  margin-bottom: 1rem;
+  color: var(--text-light);
+  font-weight: 400;
+}
+
+.section-subtitle {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+/* Button Styles */
+.btn {
+  display: inline-block;
+  padding: 15px 35px;
+  text-decoration: none;
+  border-radius: 0;
+  font-weight: 700;
+  font-size: 1rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-family: 'Bebas Neue', cursive;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  color: white;
+  box-shadow: 0 4px 15px rgba(210, 105, 30, 0.3);
+}
+
+.btn-primary:hover {
+  background: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(210, 105, 30, 0.4);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  border: 3px solid white;
+}
+
+.btn-secondary:hover {
+  background: white;
+  color: var(--primary-color);
+}
+
+.btn-industrial {
+  background: var(--background-industrial);
+  color: white;
+  border: 2px solid var(--steel-color);
+}
+
+.btn-industrial:hover {
+  background: var(--steel-color);
+  border-color: var(--primary-color);
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+/* Navigation */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(26, 26, 26, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  padding: 1rem 0;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 50px;
+  width: auto;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.nav-menu a:hover {
+  color: var(--primary-color);
+}
+
+.nav-menu a:hover::after {
+  width: 100%;
+}
+
+.nav-cta .btn {
+  padding: 10px 25px;
+  font-size: 0.9rem;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 30px;
+  height: 3px;
+  background: white;
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+
+.hero-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--overlay-dark);
+  z-index: -1;
+}
+
+.hero-content {
+  z-index: 1;
+  color: white;
+  max-width: 900px;
+  padding: 0 20px;
+}
+
+.hero-badge {
+  background: var(--primary-color);
+  color: white;
+  padding: 10px 30px;
+  border-radius: 0;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+  display: inline-block;
+  border: 2px solid var(--copper-color);
+}
+
+.hero-title {
+  font-size: 6rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+}
+
+.hero-tagline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.tagline-border {
+  width: 100px;
+  height: 2px;
+  background: var(--primary-color);
+}
+
+.hero-tagline p {
+  font-size: 1.4rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0;
+  color: var(--primary-color);
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  margin: 3rem 0;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--primary-color);
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 3rem;
+  color: var(--primary-color);
+  letter-spacing: 2px;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.stat-separator {
+  color: var(--primary-color);
+  font-size: 2rem;
+  opacity: 0.6;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin: 3rem 0;
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: white;
+  opacity: 0.7;
+}
+
+.hero-scroll span {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.scroll-line {
+  width: 2px;
+  height: 30px;
+  background: var(--primary-color);
+  margin: 0 auto;
+  animation: scrollPulse 2s infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+/* Brewing Process Section */
+.brewing-process {
+  padding: 120px 0;
+  background: var(--background-section);
+}
+
+.process-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+}
+
+.step {
+  background: white;
+  padding: 3rem 2rem;
+  text-align: center;
+  position: relative;
+  border-top: 4px solid var(--primary-color);
+  box-shadow: 0 10px 30px var(--shadow-light);
+  transition: transform 0.3s ease;
+}
+
+.step:hover {
+  transform: translateY(-10px);
+}
+
+.step-number {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 4rem;
+  color: var(--primary-color);
+  opacity: 0.3;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  letter-spacing: 2px;
+}
+
+.step-content h3 {
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.step-content p {
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+.step-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Our Beers Section */
+.our-beers {
+  padding: 120px 0;
+  background: white;
+}
+
+.beers-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.beer-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.beer-category h3 {
+  color: var(--text-dark);
+  margin-bottom: 3rem;
+  text-align: center;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.beer-category h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: var(--primary-color);
+}
+
+.beer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem;
+}
+
+.beer-card {
+  background: var(--background-section);
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 0 10px 30px var(--shadow-light);
+  transition: transform 0.3s ease;
+  border-left: 5px solid var(--primary-color);
+}
+
+.beer-card:hover {
+  transform: translateY(-5px);
+}
+
+.beer-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.beer-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.beer-card:hover .beer-image img {
+  transform: scale(1.05);
+}
+
+.beer-info {
+  padding: 2rem;
+}
+
+.beer-info h4 {
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.beer-style {
+  color: var(--primary-color);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.beer-description {
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.beer-specs {
+  display: flex;
+  gap: 1rem;
+}
+
+.spec {
+  background: var(--background-industrial);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Taproom Section */
+.taproom {
+  position: relative;
+  padding: 120px 0;
+  color: white;
+}
+
+.taproom-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--background-industrial);
+  z-index: -2;
+}
+
+.taproom-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--background-industrial), var(--text-dark));
+  z-index: -1;
+}
+
+.taproom-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.taproom-info h2 {
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.taproom-description {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 3rem;
+  line-height: 1.7;
+}
+
+.taproom-features {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+  border-left: 4px solid var(--primary-color);
+}
+
+.feature-icon {
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+.feature-text h4 {
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.feature-text p {
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.taproom-hours {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 2rem;
+  border: 1px solid var(--primary-color);
+}
+
+.taproom-hours h4 {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.hours-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.hours-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-left: 2px solid var(--primary-color);
+}
+
+.taproom-visual {
+  position: relative;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.taproom-visual img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.visual-overlay {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var(--primary-color);
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+  border: 2px solid white;
+}
+
+.count-number {
+  display: block;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 3rem;
+  letter-spacing: 2px;
+}
+
+.count-label {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Food Menu Section */
+.food-menu {
+  padding: 120px 0;
+  background: var(--background-section);
+}
+
+.food-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.food-categories {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+
+.food-category {
+  background: white;
+  padding: 3rem;
+  box-shadow: 0 10px 30px var(--shadow-light);
+  border-top: 5px solid var(--primary-color);
+}
+
+.food-category h3 {
+  color: var(--text-dark);
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.food-items {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.food-item {
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1.5rem;
+}
+
+.food-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.item-header h4 {
+  color: var(--text-dark);
+  margin: 0;
+}
+
+.price {
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 1.2rem;
+  font-family: 'Bebas Neue', cursive;
+  letter-spacing: 1px;
+}
+
+.food-item p {
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.beer-pairing {
+  background: var(--background-section);
+  color: var(--primary-color);
+  padding: 8px 15px;
+  border-radius: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-left: 3px solid var(--primary-color);
+}
+
+/* Tours & Events Section */
+.tours-events {
+  padding: 120px 0;
+  background: white;
+}
+
+.tours-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+}
+
+.tours-info h2 {
+  margin-bottom: 2rem;
+}
+
+.tours-description {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-bottom: 3rem;
+  line-height: 1.7;
+}
+
+.tour-options {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.tour-option {
+  background: var(--background-section);
+  padding: 2rem;
+  border-left: 5px solid var(--primary-color);
+}
+
+.tour-option h4 {
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.tour-schedule {
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.tour-option p {
+  color: var(--text-light);
+  margin-bottom: 1rem;
+}
+
+.tour-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.tour-details span {
+  background: var(--background-industrial);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.events-calendar {
+  background: var(--background-section);
+  padding: 2rem;
+  border-left: 5px solid var(--primary-color);
+}
+
+.events-calendar h4 {
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+}
+
+.event-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.event-item {
+  display: flex;
+  gap: 1rem;
+  background: white;
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px var(--shadow-light);
+}
+
+.event-date {
+  background: var(--primary-color);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  min-width: 80px;
+}
+
+.event-details h5 {
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.event-details p {
+  color: var(--text-light);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.visual-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  height: 400px;
+}
+
+.visual-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* About Brewery Section */
+.about-brewery {
+  padding: 120px 0;
+  background: var(--background-section);
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.about-text h2 {
+  margin-bottom: 2rem;
+}
+
+.about-lead {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-bottom: 3rem;
+  line-height: 1.7;
+}
+
+.brewery-facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.fact {
+  background: white;
+  padding: 2rem;
+  text-align: center;
+  border-top: 4px solid var(--primary-color);
+  box-shadow: 0 5px 15px var(--shadow-light);
+}
+
+.fact h4 {
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.fact p {
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.brewmaster-info {
+  background: white;
+  padding: 2rem;
+  border-left: 5px solid var(--primary-color);
+  box-shadow: 0 5px 15px var(--shadow-light);
+}
+
+.brewmaster-info h4 {
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.brewmaster-info p {
+  color: var(--text-light);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.about-image {
+  position: relative;
+}
+
+.about-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  box-shadow: 0 10px 30px var(--shadow-medium);
+}
+
+.image-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 1rem;
+  backdrop-filter: blur(10px);
+}
+
+.image-caption p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Contact Section */
+.contact {
+  padding: 120px 0;
+  background: white;
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+
+.contact-info h2 {
+  margin-bottom: 2rem;
+}
+
+.location-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.detail {
+  background: var(--background-section);
+  padding: 2rem;
+  border-left: 5px solid var(--primary-color);
+}
+
+.detail h4 {
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.detail p {
+  color: var(--text-light);
+  margin: 0.5rem 0;
+}
+
+.detail a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.contact-map {
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 0 10px 30px var(--shadow-medium);
+  border: 5px solid var(--primary-color);
+}
+
+/* Footer */
+.footer {
+  background: var(--background-industrial);
+  color: white;
+  padding: 60px 0 30px;
+  position: relative;
+}
+
+.footer-pipes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--primary-color), var(--copper-color), var(--steel-color), var(--rust-color));
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4rem;
+  margin-bottom: 2rem;
+}
+
+.footer-main {
+  text-align: center;
+}
+
+.footer-logo {
+  height: 60px;
+  margin-bottom: 1.5rem;
+}
+
+.footer-description {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.footer-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+  background: var(--secondary-color);
+  transform: translateY(-3px);
+}
+
+.footer-social svg {
+  width: 24px;
+  height: 24px;
+}
+
+.footer-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.footer-section h4 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-family: 'Bebas Neue', cursive;
+  letter-spacing: 1px;
+}
+
+.footer-section p {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: var(--primary-color);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-bottom p {
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+  }
+  
+  .hamburger {
+    display: flex;
+  }
+  
+  .hero-title {
+    font-size: 4rem;
+  }
+  
+  .hero-stats {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .stat-separator {
+    display: none;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .process-steps {
+    grid-template-columns: 1fr;
+  }
+  
+  .beer-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .taproom-content,
+  .tours-content,
+  .about-content,
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .food-categories {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .brewery-facts {
+    grid-template-columns: 1fr;
+  }
+  
+  .visual-grid {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .footer-info {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-actions {
+    flex-direction: column;
+  }
+}

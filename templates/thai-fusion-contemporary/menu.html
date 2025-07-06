@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - {{RESTAURANT_NAME}}</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} Menu - Modern Thai Fusion Cuisine">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="theme-warm">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#story">Our Story</a></li>
+                <li><a href="#menu" class="active">Menu</a></li>
+                <li><a href="index.html#chef">Chef's Table</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu Header -->
+    <section class="menu-hero">
+        <div class="container">
+            <h1>Our Menu</h1>
+            <p class="lead">Authentic Thai flavors with contemporary presentation</p>
+        </div>
+    </section>
+
+    <!-- Menu Categories -->
+    <section class="menu-content">
+        <div class="container">
+            <!-- Category Navigation -->
+            <div class="menu-nav">
+                <button class="menu-nav-btn active" data-category="appetizers">Appetizers</button>
+                <button class="menu-nav-btn" data-category="soups">Soups & Salads</button>
+                <button class="menu-nav-btn" data-category="curries">Curries</button>
+                <button class="menu-nav-btn" data-category="noodles">Noodles & Rice</button>
+                <button class="menu-nav-btn" data-category="mains">Main Courses</button>
+                <button class="menu-nav-btn" data-category="fusion">Fusion Specialties</button>
+                <button class="menu-nav-btn" data-category="desserts">Desserts</button>
+                <button class="menu-nav-btn" data-category="beverages">Beverages</button>
+            </div>
+
+            <!-- Appetizers -->
+            <div id="appetizers" class="menu-category active">
+                <h2>Appetizers</h2>
+                <div class="menu-items">
+                    <div class="menu-item-full">
+                        <div class="item-info">
+                            <h3>{{MENU_ITEM_1}}</h3>
+                            <p>{{MENU_DESCRIPTION_1}}</p>
+                            <div class="spice-level">
+                                <span class="spice-label">Spice Level:</span>
+                                <span class="spice-indicator mild">●●○○○</span>
+                            </div>
+                        </div>
+                        <span class="item-price">${{PRICE_1}}</span>
+                    </div>
+                    
+                    <div class="menu-item-full">
+                        <div class="item-info">
+                            <h3>Thai Spring Rolls</h3>
+                            <p>Fresh vegetables and herbs wrapped in rice paper, served with peanut dipping sauce</p>
+                            <div class="spice-level">
+                                <span class="spice-label">Spice Level:</span>
+                                <span class="spice-indicator mild">●○○○○</span>
+                            </div>
+                        </div>
+                        <span class="item-price">$12.00</span>
+                    </div>
+                    
+                    <div class="menu-item-full">
+                        <div class="item-info">
+                            <h3>Crying Tiger</h3>
+                            <p>Grilled beef slices with spicy tamarind dipping sauce and fresh vegetables</p>
+                            <div class="spice-level">
+                                <span class="spice-label">Spice Level:</span>
+                                <span class="spice-indicator hot">●●●●○</span>
+                            </div>
+                        </div>
+                        <span class="item-price">$16.00</span>
+                    </div>
+                    
+                    <div class="menu-item-full">
+                        <div class="item-info">
+                            <h3>Satay Skewers</h3>
+                            <p>Marinated chicken or beef skewers with peanut sauce and cucumber relish</p>
+                            <div class="spice-level">
+                                <span class="spice-label">Spice Level:</span>
+                                <span class="spice-indicator mild">●●○○○</span>
+                            </div>
+                        </div>
+                        <span class="item-price">$14.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Soups & Salads -->
+            <div id="soups" class="menu-category">
+                <h2>Soups & Salads</h2>
+                <div class="menu-items">
+                    <div class="menu-item-full">
+                        <div class="item-info">
+                            <h3>Tom Yum Soup</h3>
+                            <p>Classic Thai hot and sour soup with mushrooms, tomatoes, and fresh herbs</p>
+                            <div class="spice-level">
+                                <span class="spice-label">Spice Level:</span>
+                                <span class="spice-indicator medium">●●●○○</span>
+                            </div>
+                        </div>
+                        <span class="item-price">$13.00</span>
+                    </div>
+                    
+                    <div class="menu-item-full">
+                        <div class="item-info">
+                            <h3>Tom Kha Gai</h3>
+                            <p>Coconut chicken soup with galanga, lemongrass, and lime leaves</p>
+                            <div class="spice-level">
+                                <span class="spice-label">Spice Level:</span>
+                                <span class="spice-indicator mild">●●○○○</span>
+                            </div>
+                        </div>
+                        <span class="item-price">$14.00</span>
+                    </div>
+                    
+                    <div class="menu-item-full">
+                        <div class="item-info">
+                            <h3>Som Tam</h3>
+                            <p>Green papaya salad with tomatoes, carrots, peanuts, and lime dressing</p>
+                            <div class="spice-level">
+                                <span class="spice-label">Spice Level:</span>
+                                <span class="spice-indicator medium">●●●○○</span>
+                            </div>
+                        </div>
+                        <span class="item-price">$11.00</span>
+                    </div>
+                    
+                    <div class="menu-item-full">
+                        <div class="item-info">
+                            <h3>Larb Gai</h3>
+                            <p>Northern Thai chicken salad with mint, cilantro, and toasted rice</p>
+                            <div class="spice-level">
+                                <span class="spice-label">Spice Level:</span>
+                                <span class="spice-indicator hot">●●●●○</span>
+                            </div>
+                        </div>
+                        <span class="item-price">$15.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Curries -->
+            <div id="curries" class="menu-category">
+                <h2>Traditional Curries</h2>
+                <div class="menu-items">
+                    <div class="menu-item-full">
+                        <div class="item-info">
+                            <h3>{{MENU_ITEM_2}}</h3>
+                            <p>{{MENU_DESCRIPTION_2}}</p>
+                            <div class="spice-level">
+                                <span class="spice-label">Spice Level:</span>
+                                <span class="spice-indicator medium">●●●○○</span>
+                            </div>
+                        </div>
+                        <span class="item-price">${{PRICE_2}}</span>
+                    </div>
+                    
+                    <div class="menu-item-full">
+                        <div class="item-info">
+                            <h3>Massaman Curry</h3>
+                            <p>Rich coconut curry with potatoes, onions, and your choice of protein</p>
+                            <div class="spice-level">
+                                <span class="spice-label">Spice Level:</span>
+                                <span class="spice-indicator mild">●●○○○</span>
+                            </div>
+                        </div>
+                        <span class="item-price">$19.00</span>
+                    </div>
+                    
+                    <div class="menu-item-full">
+                        <div class="item-info">
+                            <h3>Panang Curry</h3>
+                            <p>Thick coconut curry with Thai basil and kaffir lime leaves</p>
+                            <div class="spice-level">
+                                <span class="spice-label">Spice Level:</span>
+                                <span class="spice-indicator medium">●●●○○</span>
+                            </div>
+                        </div>
+                        <span class="item-price">$18.00</span>
+                    </div>
+                    
+                    <div class="menu-item-full">
+                        <div class="item-info">
+                            <h3>Jungle Curry</h3>
+                            <p>Traditional herbaceous curry without coconut milk, very spicy</p>
+                            <div class="spice-level">
+                                <span class="spice-label">Spice Level:</span>
+                                <span class="spice-indicator hot">●●●●●</span>
+                            </div>
+                        </div>
+                        <span class="item-price">$20.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Noodles & Rice -->
+            <div id="noodles" class="menu-category">
+                <h2>Noodles & Rice</h2>
+                <div class="menu-items">
+                    <div class="menu-item-full">
+                        <div class="item-info">
+                            <h3>Pad Thai</h3>
+                            <p>Classic stir-fried rice noodles with tamarind, fish sauce, and peanuts</p>
+                            <div class="spice-level">
+                                <span class="spice-label">Spice Level:</span>
+                                <span class="spice-indicator mild">●●○○○</span>
+                            </div>
+                        </div>
+                        <span class="item-price">$16.00</span>
+                    </div>
+                    
+                    <div class="menu-item-full">
+                        <div class="item-info">
+                            <h3>Drunken Noodles</h3>
+                            <p>Wide rice noodles with Thai basil, chilies, and garlic</p>
+                            <div class="spice-level">
+                                <span class="spice-label">Spice Level:</span>
+                                <span class="spice-indicator hot">●●●●○</span>
+                            </div>
+                        </div>
+                        <span class="item-price">$17.00</span>
+                    </div>
+                    
+                    <div class="menu-item-full">
+                        <div class="item-info">
+                            <h3>Khao Pad</h3>
+                            <p>Thai fried rice with egg, onions, and your choice of protein</p>
+                            <div class="spice-level">
+                                <span class="spice-label">Spice Level:</span>
+                                <span class="spice-indicator mild">●●○○○</span>
+                            </div>
+                        </div>
+                        <span class="item-price">$15.00</span>
+                    </div>
+                    
+                    <div class="menu-item-full">
+                        <div class="item-info">
+                            <h3>Boat Noodle Soup</h3>
+                            <p>Rich beef broth with rice noodles, herbs, and spices</p>
+                            <div class="spice-level">
+                                <span class="spice-label">Spice Level:</span>
+                                <span class="spice-indicator medium">●●●○○</span>
+                            </div>
+                        </div>
+                        <span class="item-price">$18.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Courses -->
+            <div id="mains" class="menu-category">
+                <h2>Main Courses</h2>
+                <div class="menu-items">
+                    <div class="menu-item-full">
+                        <div class="item-info">
+                            <h3>{{MENU_ITEM_3}}</h3>
+                            <p>{{MENU_DESCRIPTION_3}}</p>
+                            <div class="spice-level">
+                                <span class="spice-label">Spice Level:</span>
+                                <span class="spice-indicator hot">●●●●○</span>
+                            </div>
+                        </div>
+                        <span class="item-price">${{PRICE_3}}</span>
+                    </div>
+                    
+                    <div class="menu-item-full">
+                        <div class="item-info">
+                            <h3>Whole Fish with Garlic</h3>
+                            <p>Deep-fried whole fish topped with crispy garlic and chili sauce</p>
+                            <div class="spice-level">
+                                <span class="spice-label">Spice Level:</span>
+                                <span class="spice-indicator medium">●●●○○</span>
+                            </div>
+                        </div>
+                        <span class="item-price">$28.00</span>
+                    </div>
+                    
+                    <div class="menu-item-full">
+                        <div class="item-info">
+                            <h3>Grilled Pork Neck</h3>
+                            <p>Isaan-style grilled pork with sticky rice and jeaw sauce</p>
+                            <div class="spice-level">
+                                <span class="spice-label">Spice Level:</span>
+                                <span class="spice-indicator hot">●●●●○</span>
+                            </div>
+                        </div>
+                        <span class="item-price">$22.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fusion Specialties -->
+            <div id="fusion" class="menu-category">
+                <h2>Fusion Specialties</h2>
+                <div class="menu-items">
+                    <div class="menu-item-full">
+                        <div class="item-info">
+                            <h3>Thai-Style Short Ribs</h3>
+                            <p>Braised short ribs with tamarind glaze and coconut rice</p>
+                            <div class="spice-level">
+                                <span class="spice-label">Spice Level:</span>
+                                <span class="spice-indicator mild">●●○○○</span>
+                            </div>
+                        </div>
+                        <span class="item-price">$32.00</span>
+                    </div>
+                    
+                    <div class="menu-item-full">
+                        <div class="item-info">
+                            <h3>Lemongrass Salmon</h3>
+                            <p>Pan-seared salmon with lemongrass butter and jasmine rice</p>
+                            <div class="spice-level">
+                                <span class="spice-label">Spice Level:</span>
+                                <span class="spice-indicator mild">●●○○○</span>
+                            </div>
+                        </div>
+                        <span class="item-price">$26.00</span>
+                    </div>
+                    
+                    <div class="menu-item-full">
+                        <div class="item-info">
+                            <h3>Thai Fusion Tacos</h3>
+                            <p>Soft shell tacos with Thai-spiced proteins and fresh herbs</p>
+                            <div class="spice-level">
+                                <span class="spice-label">Spice Level:</span>
+                                <span class="spice-indicator medium">●●●○○</span>
+                            </div>
+                        </div>
+                        <span class="item-price">$18.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desserts -->
+            <div id="desserts" class="menu-category">
+                <h2>Desserts</h2>
+                <div class="menu-items">
+                    <div class="menu-item-full">
+                        <div class="item-info">
+                            <h3>Mango Sticky Rice</h3>
+                            <p>Traditional Thai dessert with coconut cream and toasted sesame</p>
+                        </div>
+                        <span class="item-price">$9.00</span>
+                    </div>
+                    
+                    <div class="menu-item-full">
+                        <div class="item-info">
+                            <h3>Thai Tea Crème Brûlée</h3>
+                            <p>Classic French dessert infused with Thai tea flavors</p>
+                        </div>
+                        <span class="item-price">$10.00</span>
+                    </div>
+                    
+                    <div class="menu-item-full">
+                        <div class="item-info">
+                            <h3>Coconut Ice Cream</h3>
+                            <p>House-made coconut ice cream with toasted coconut flakes</p>
+                        </div>
+                        <span class="item-price">$8.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Beverages -->
+            <div id="beverages" class="menu-category">
+                <h2>Beverages</h2>
+                <div class="menu-items">
+                    <div class="menu-item-full">
+                        <div class="item-info">
+                            <h3>Thai Iced Tea</h3>
+                            <p>Traditional Thai tea with condensed milk and ice</p>
+                        </div>
+                        <span class="item-price">$5.00</span>
+                    </div>
+                    
+                    <div class="menu-item-full">
+                        <div class="item-info">
+                            <h3>Fresh Coconut Water</h3>
+                            <p>Young coconut water served in the shell</p>
+                        </div>
+                        <span class="item-price">$6.00</span>
+                    </div>
+                    
+                    <div class="menu-item-full">
+                        <div class="item-info">
+                            <h3>Lemongrass Ginger Tea</h3>
+                            <p>Fresh brewed herbal tea with honey</p>
+                        </div>
+                        <span class="item-price">$4.00</span>
+                    </div>
+                    
+                    <div class="menu-item-full">
+                        <div class="item-info">
+                            <h3>Thai Basil Mojito</h3>
+                            <p>Rum-based cocktail with Thai basil and lime</p>
+                        </div>
+                        <span class="item-price">$12.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chef's Special Notice -->
+    <section class="chef-special">
+        <div class="container">
+            <div class="special-content">
+                <h2>Chef's Table Experience</h2>
+                <p>Join us for a 7-course tasting menu featuring seasonal ingredients and traditional techniques with modern innovation.</p>
+                <div class="special-price">$95 per person | Wine pairing +$35</div>
+                <a href="index.html#contact" class="btn btn-primary">Reserve Chef's Table</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo" class="footer-logo">
+                    <p>{{RESTAURANT_NAME}}</p>
+                    <p>Modern Thai Fusion Cuisine</p>
+                    <p>{{FULL_ADDRESS}}</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}" target="_blank">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}" target="_blank">Instagram</a>
+                        <a href="{{YELP_URL}}" target="_blank">Yelp</a>
+                    </div>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>{{PHONE}}</p>
+                    <p>{{EMAIL}}</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Menu category navigation
+        document.querySelectorAll('.menu-nav-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active from all buttons and categories
+                document.querySelectorAll('.menu-nav-btn').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.menu-category').forEach(c => c.classList.remove('active'));
+                
+                // Add active to clicked button
+                this.classList.add('active');
+                
+                // Show corresponding category
+                const category = this.getAttribute('data-category');
+                document.getElementById(category).classList.add('active');
+            });
+        });
+    </script>
+    
+    <style>
+        .menu-hero {
+            padding: 120px 0 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+        }
+        
+        .menu-content {
+            padding: 60px 0;
+        }
+        
+        .menu-nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+        
+        .menu-nav-btn {
+            padding: 12px 24px;
+            background: transparent;
+            border: 2px solid var(--border-color);
+            border-radius: 25px;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .menu-nav-btn.active,
+        .menu-nav-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        
+        .menu-category {
+            display: none;
+        }
+        
+        .menu-category.active {
+            display: block;
+        }
+        
+        .menu-items {
+            display: grid;
+            gap: 1.5rem;
+        }
+        
+        .menu-item-full {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 1.5rem;
+            background: var(--surface-color);
+            border-radius: 12px;
+            box-shadow: 0 5px 15px var(--shadow-color);
+            gap: 2rem;
+        }
+        
+        .item-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .item-price {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            white-space: nowrap;
+        }
+        
+        .chef-special {
+            padding: 60px 0;
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+        }
+        
+        .special-price {
+            font-size: 1.2rem;
+            margin: 1rem 0;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 768px) {
+            .menu-item-full {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .item-price {
+                align-self: flex-start;
+            }
+        }
+    </style>
+</body>
+</html>
