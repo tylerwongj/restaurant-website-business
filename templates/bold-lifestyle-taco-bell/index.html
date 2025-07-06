@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Bold Flavors</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="color-bold">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#delivery">Delivery</a></li>
+                <li><a href="#rewards">Rewards</a></li>
+                <li><a href="#gift-cards">Gift Cards</a></li>
+            </ul>
+            <div class="nav-actions">
+                <div class="location-selector">
+                    <span class="location-icon">📍</span>
+                    <span class="location-text">{{DEFAULT_LOCATION}}</span>
+                </div>
+                <a href="#order" class="btn btn-order">Start Your Order</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Lifestyle Photography -->
+    <section id="home" class="hero-lifestyle">
+        <div class="hero-background">
+            <img src="{{HERO_LIFESTYLE_IMAGE}}" alt="{{HERO_TITLE}}" class="hero-bg">
+            <div class="hero-gradient"></div>
+        </div>
+        <div class="hero-content">
+            <div class="container">
+                <div class="hero-text">
+                    <h1 class="hero-title">{{HERO_TITLE}}</h1>
+                    <p class="hero-subtitle">{{HERO_SUBTITLE}}</p>
+                    <p class="hero-description">{{HERO_DESCRIPTION}}</p>
+                    <div class="hero-actions">
+                        <a href="#order" class="btn btn-hero">Order Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-disclaimer">
+            <p>{{LOCATION_DISCLAIMER}}</p>
+        </div>
+    </section>
+
+    <!-- Featured Product Section -->
+    <section id="featured" class="featured-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>{{FEATURED_SECTION_TITLE}}</h2>
+            </div>
+            <div class="featured-grid">
+                <div class="featured-item">
+                    <div class="featured-image">
+                        <img src="{{FEATURED_1_IMAGE}}" alt="{{FEATURED_1_NAME}}">
+                    </div>
+                    <div class="featured-content">
+                        <h3>{{FEATURED_1_NAME}}</h3>
+                        <p>{{FEATURED_1_DESCRIPTION}}</p>
+                    </div>
+                </div>
+                
+                <div class="featured-item">
+                    <div class="featured-image">
+                        <img src="{{FEATURED_2_IMAGE}}" alt="{{FEATURED_2_NAME}}">
+                    </div>
+                    <div class="featured-content">
+                        <h3>{{FEATURED_2_NAME}}</h3>
+                        <p>{{FEATURED_2_DESCRIPTION}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Categories -->
+    <section id="menu" class="menu-section">
+        <div class="container">
+            <h2>Menu</h2>
+            <div class="menu-nav">
+                <button class="menu-tab active" data-category="favorites">Favorites</button>
+                <button class="menu-tab" data-category="tacos">Tacos & Burritos</button>
+                <button class="menu-tab" data-category="specialties">Specialties</button>
+                <button class="menu-tab" data-category="sides">Sides & Drinks</button>
+                <button class="menu-tab" data-category="breakfast">Breakfast</button>
+                <button class="menu-tab" data-category="desserts">Desserts</button>
+            </div>
+            
+            <div class="menu-content">
+                <!-- Favorites Tab -->
+                <div class="menu-category active" id="favorites">
+                    <div class="menu-items-grid">
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="{{FAV_ITEM_1_IMAGE}}" alt="{{FAV_ITEM_1_NAME}}">
+                            </div>
+                            <div class="menu-item-content">
+                                <h3>{{FAV_ITEM_1_NAME}}</h3>
+                                <p>{{FAV_ITEM_1_DESCRIPTION}}</p>
+                                <div class="menu-item-footer">
+                                    <span class="price">{{FAV_ITEM_1_PRICE}}</span>
+                                    <button class="btn btn-small">Add to Order</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="{{FAV_ITEM_2_IMAGE}}" alt="{{FAV_ITEM_2_NAME}}">
+                            </div>
+                            <div class="menu-item-content">
+                                <h3>{{FAV_ITEM_2_NAME}}</h3>
+                                <p>{{FAV_ITEM_2_DESCRIPTION}}</p>
+                                <div class="menu-item-footer">
+                                    <span class="price">{{FAV_ITEM_2_PRICE}}</span>
+                                    <button class="btn btn-small">Add to Order</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="{{FAV_ITEM_3_IMAGE}}" alt="{{FAV_ITEM_3_NAME}}">
+                            </div>
+                            <div class="menu-item-content">
+                                <h3>{{FAV_ITEM_3_NAME}}</h3>
+                                <p>{{FAV_ITEM_3_DESCRIPTION}}</p>
+                                <div class="menu-item-footer">
+                                    <span class="price">{{FAV_ITEM_3_PRICE}}</span>
+                                    <button class="btn btn-small">Add to Order</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="{{FAV_ITEM_4_IMAGE}}" alt="{{FAV_ITEM_4_NAME}}">
+                            </div>
+                            <div class="menu-item-content">
+                                <h3>{{FAV_ITEM_4_NAME}}</h3>
+                                <p>{{FAV_ITEM_4_DESCRIPTION}}</p>
+                                <div class="menu-item-footer">
+                                    <span class="price">{{FAV_ITEM_4_PRICE}}</span>
+                                    <button class="btn btn-small">Add to Order</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Other menu categories would be populated similarly -->
+                <div class="menu-category" id="tacos">
+                    <div class="menu-items-grid">
+                        <!-- Tacos & Burritos items -->
+                    </div>
+                </div>
+                
+                <div class="menu-category" id="specialties">
+                    <div class="menu-items-grid">
+                        <!-- Specialties items -->
+                    </div>
+                </div>
+                
+                <div class="menu-category" id="sides">
+                    <div class="menu-items-grid">
+                        <!-- Sides & Drinks items -->
+                    </div>
+                </div>
+                
+                <div class="menu-category" id="breakfast">
+                    <div class="menu-items-grid">
+                        <!-- Breakfast items -->
+                    </div>
+                </div>
+                
+                <div class="menu-category" id="desserts">
+                    <div class="menu-items-grid">
+                        <!-- Desserts items -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="menu-cta">
+                <a href="menu.html" class="btn btn-primary">View Full Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Delivery & Pickup -->
+    <section id="delivery" class="delivery-section">
+        <div class="container">
+            <div class="delivery-content">
+                <div class="delivery-text">
+                    <h2>{{DELIVERY_TITLE}}</h2>
+                    <p>{{DELIVERY_DESCRIPTION}}</p>
+                    
+                    <div class="delivery-options">
+                        <div class="delivery-option">
+                            <div class="option-icon">🚗</div>
+                            <h4>{{DELIVERY_OPTION_1_TITLE}}</h4>
+                            <p>{{DELIVERY_OPTION_1_DESC}}</p>
+                        </div>
+                        
+                        <div class="delivery-option">
+                            <div class="option-icon">🏪</div>
+                            <h4>{{DELIVERY_OPTION_2_TITLE}}</h4>
+                            <p>{{DELIVERY_OPTION_2_DESC}}</p>
+                        </div>
+                        
+                        <div class="delivery-option">
+                            <div class="option-icon">🍟</div>
+                            <h4>{{DELIVERY_OPTION_3_TITLE}}</h4>
+                            <p>{{DELIVERY_OPTION_3_DESC}}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="delivery-actions">
+                        <a href="#order" class="btn btn-primary">Start Order</a>
+                        <a href="#locations" class="btn btn-outline">Find Location</a>
+                    </div>
+                </div>
+                
+                <div class="delivery-image">
+                    <img src="{{DELIVERY_IMAGE}}" alt="{{DELIVERY_TITLE}}">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rewards Program -->
+    <section id="rewards" class="rewards-section">
+        <div class="container">
+            <div class="rewards-content">
+                <div class="rewards-image">
+                    <img src="{{REWARDS_IMAGE}}" alt="{{REWARDS_TITLE}}">
+                </div>
+                
+                <div class="rewards-text">
+                    <h2>{{REWARDS_TITLE}}</h2>
+                    <p>{{REWARDS_DESCRIPTION}}</p>
+                    
+                    <div class="rewards-benefits">
+                        <div class="reward-benefit">
+                            <span class="benefit-icon">🎁</span>
+                            <div class="benefit-content">
+                                <h4>{{REWARD_1_TITLE}}</h4>
+                                <p>{{REWARD_1_DESC}}</p>
+                            </div>
+                        </div>
+                        
+                        <div class="reward-benefit">
+                            <span class="benefit-icon">⭐</span>
+                            <div class="benefit-content">
+                                <h4>{{REWARD_2_TITLE}}</h4>
+                                <p>{{REWARD_2_DESC}}</p>
+                            </div>
+                        </div>
+                        
+                        <div class="reward-benefit">
+                            <span class="benefit-icon">🔥</span>
+                            <div class="benefit-content">
+                                <h4>{{REWARD_3_TITLE}}</h4>
+                                <p>{{REWARD_3_DESC}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="rewards-actions">
+                        <a href="#join-rewards" class="btn btn-primary">Join Rewards</a>
+                        <a href="#app-download" class="btn btn-outline">Download App</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gift Cards -->
+    <section id="gift-cards" class="gift-cards-section">
+        <div class="container">
+            <div class="gift-cards-content">
+                <div class="gift-cards-text">
+                    <h2>{{GIFT_CARDS_TITLE}}</h2>
+                    <p>{{GIFT_CARDS_DESCRIPTION}}</p>
+                    
+                    <div class="gift-card-types">
+                        <div class="gift-card-type">
+                            <div class="card-visual">
+                                <img src="{{GIFT_CARD_PHYSICAL_IMAGE}}" alt="Physical Gift Card">
+                            </div>
+                            <h4>{{GIFT_CARD_PHYSICAL_TITLE}}</h4>
+                            <p>{{GIFT_CARD_PHYSICAL_DESC}}</p>
+                        </div>
+                        
+                        <div class="gift-card-type">
+                            <div class="card-visual">
+                                <img src="{{GIFT_CARD_DIGITAL_IMAGE}}" alt="Digital Gift Card">
+                            </div>
+                            <h4>{{GIFT_CARD_DIGITAL_TITLE}}</h4>
+                            <p>{{GIFT_CARD_DIGITAL_DESC}}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gift-cards-actions">
+                        <a href="#buy-gift-card" class="btn btn-primary">Buy Gift Card</a>
+                        <a href="#check-balance" class="btn btn-outline">Check Balance</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Finder -->
+    <section id="locations" class="locations-section">
+        <div class="container">
+            <h2>Find a {{RESTAURANT_NAME}}</h2>
+            <div class="location-finder">
+                <div class="finder-input">
+                    <input type="text" placeholder="Enter ZIP code, city, or address" id="locationInput">
+                    <button class="btn btn-primary" onclick="findLocations()">Find</button>
+                </div>
+                
+                <div class="location-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="drive-thru">Drive-Thru</button>
+                    <button class="filter-btn" data-filter="24hour">24 Hours</button>
+                    <button class="filter-btn" data-filter="delivery">Delivery</button>
+                </div>
+            </div>
+            
+            <div class="popular-locations">
+                <h3>Popular Locations</h3>
+                <div class="locations-grid">
+                    <div class="location-item">
+                        <div class="location-info">
+                            <h4>{{LOCATION_1_NAME}}</h4>
+                            <p class="location-address">{{LOCATION_1_ADDRESS}}</p>
+                            <div class="location-features">
+                                <span class="feature-tag">Drive-Thru</span>
+                                <span class="feature-tag">24 Hours</span>
+                            </div>
+                        </div>
+                        <div class="location-actions">
+                            <button class="btn btn-small">Directions</button>
+                            <button class="btn btn-small btn-primary">Order</button>
+                        </div>
+                    </div>
+                    
+                    <div class="location-item">
+                        <div class="location-info">
+                            <h4>{{LOCATION_2_NAME}}</h4>
+                            <p class="location-address">{{LOCATION_2_ADDRESS}}</p>
+                            <div class="location-features">
+                                <span class="feature-tag">Drive-Thru</span>
+                                <span class="feature-tag">Delivery</span>
+                            </div>
+                        </div>
+                        <div class="location-actions">
+                            <button class="btn btn-small">Directions</button>
+                            <button class="btn btn-small btn-primary">Order</button>
+                        </div>
+                    </div>
+                    
+                    <div class="location-item">
+                        <div class="location-info">
+                            <h4>{{LOCATION_3_NAME}}</h4>
+                            <p class="location-address">{{LOCATION_3_ADDRESS}}</p>
+                            <div class="location-features">
+                                <span class="feature-tag">Pickup</span>
+                                <span class="feature-tag">Delivery</span>
+                            </div>
+                        </div>
+                        <div class="location-actions">
+                            <button class="btn btn-small">Directions</button>
+                            <button class="btn btn-small btn-primary">Order</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+                    </div>
+                    <p>{{FOOTER_TAGLINE}}</p>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}" class="social-link">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}" class="social-link">Instagram</a>
+                        <a href="{{TWITTER_URL}}" class="social-link">Twitter</a>
+                        <a href="{{YOUTUBE_URL}}" class="social-link">YouTube</a>
+                        <a href="{{TIKTOK_URL}}" class="social-link">TikTok</a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Food</h4>
+                        <ul>
+                            <li><a href="#menu">Menu</a></li>
+                            <li><a href="#nutrition">Nutrition</a></li>
+                            <li><a href="#allergens">Allergen Info</a></li>
+                            <li><a href="#ingredients">Ingredients</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h4>Experience</h4>
+                        <ul>
+                            <li><a href="#locations">Locations</a></li>
+                            <li><a href="#delivery">Delivery</a></li>
+                            <li><a href="#rewards">Rewards</a></li>
+                            <li><a href="#gift-cards">Gift Cards</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#careers">Careers</a></li>
+                            <li><a href="#news">News</a></li>
+                            <li><a href="#franchise">Franchise</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="#feedback">Feedback</a></li>
+                            <li><a href="#accessibility">Accessibility</a></li>
+                            <li><a href="#terms">Terms</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <a href="#privacy">Privacy Notice</a>
+                    <a href="#terms">Terms of Use</a>
+                    <a href="#california-privacy">California Privacy</a>
+                    <a href="#cookies">Cookie Policy</a>
+                </div>
+                <p>&copy; {{CURRENT_YEAR}} {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Order Button (Mobile) -->
+    <div class="floating-order">
+        <a href="#order" class="floating-btn">
+            <span class="floating-icon">🌮</span>
+            <span class="floating-text">Order</span>
+        </a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

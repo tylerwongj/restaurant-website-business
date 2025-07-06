@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - {{RESTAURANT_TAGLINE}}</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - {{RESTAURANT_DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body class="theme-modal-luxury">
+    <!-- Anniversary Modal (Auto-show on load) -->
+    <div id="anniversary-modal" class="modal anniversary-modal">
+        <div class="modal-content anniversary-content">
+            <div class="anniversary-header">
+                <div class="anniversary-logo">
+                    <img src="images/logo.png" alt="{{RESTAURANT_NAME}}">
+                </div>
+                <h1 class="anniversary-title">{{ANNIVERSARY_TITLE}}</h1>
+                <p class="anniversary-subtitle">{{ANNIVERSARY_SUBTITLE}}</p>
+            </div>
+            <div class="anniversary-body">
+                <div class="anniversary-image">
+                    <img src="images/food-1.jpg" alt="{{ANNIVERSARY_SPECIAL_DISH}}">
+                </div>
+                <div class="anniversary-text">
+                    <h2>{{ANNIVERSARY_SPECIAL_NAME}}</h2>
+                    <p>{{ANNIVERSARY_SPECIAL_DESCRIPTION}}</p>
+                    <div class="anniversary-details">
+                        <div class="detail">
+                            <span class="detail-label">{{ANNIVERSARY_DETAIL_1_LABEL}}</span>
+                            <span class="detail-value">{{ANNIVERSARY_DETAIL_1_VALUE}}</span>
+                        </div>
+                        <div class="detail">
+                            <span class="detail-label">{{ANNIVERSARY_DETAIL_2_LABEL}}</span>
+                            <span class="detail-value">{{ANNIVERSARY_DETAIL_2_VALUE}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="anniversary-actions">
+                <button class="btn btn-primary" onclick="openReservationModal()">{{ANNIVERSARY_CTA}}</button>
+                <button class="btn btn-outline close-anniversary">{{ANNIVERSARY_CLOSE_TEXT}}</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-center">
+                <ul class="nav-menu">
+                    <li><a href="#home">{{NAV_HOME}}</a></li>
+                    <li><a href="#experiences">{{NAV_EXPERIENCES}}</a></li>
+                    <li><a href="#gallery">{{NAV_GALLERY}}</a></li>
+                    <li><a href="#salon">{{NAV_SALON}}</a></li>
+                    <li><a href="#about">{{NAV_ABOUT}}</a></li>
+                </ul>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-minimal">
+        <div class="hero-background">
+            <img src="images/hero.jpg" alt="{{RESTAURANT_NAME}} Signature Creation">
+        </div>
+        <div class="hero-content">
+            <div class="hero-logo">
+                <img src="images/logo.png" alt="{{RESTAURANT_NAME}}">
+            </div>
+            <h1 class="hero-title">{{RESTAURANT_NAME}}</h1>
+            <p class="hero-tagline">{{RESTAURANT_TAGLINE}}</p>
+        </div>
+        <div class="hero-scroll">
+            <span class="scroll-text">{{HERO_SCROLL_TEXT}}</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Mailing List -->
+    <section class="mailing-list">
+        <div class="container">
+            <div class="mailing-content">
+                <h2>{{MAILING_LIST_TITLE}}</h2>
+                <p class="mailing-description">{{MAILING_LIST_DESCRIPTION}}</p>
+                <form class="mailing-form" action="#" method="POST">
+                    <input type="email" name="email" placeholder="{{MAILING_PLACEHOLDER}}" required>
+                    <button type="submit" class="btn btn-minimal">{{MAILING_CTA}}</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dining Experiences -->
+    <section id="experiences" class="dining-experiences">
+        <div class="container">
+            <div class="experiences-header">
+                <h2>{{EXPERIENCES_TITLE}}</h2>
+                <p class="experiences-subtitle">{{EXPERIENCES_SUBTITLE}}</p>
+            </div>
+            <div class="experiences-grid">
+                <div class="experience-card" onclick="openReservationModal('gallery')">
+                    <div class="experience-content">
+                        <h3>{{EXPERIENCE_1_NAME}}</h3>
+                        <p class="experience-description">{{EXPERIENCE_1_DESCRIPTION}}</p>
+                        <div class="experience-details">
+                            <div class="detail-row">
+                                <span class="detail-label">{{EXPERIENCE_1_DETAIL_1_LABEL}}</span>
+                                <span class="detail-value">{{EXPERIENCE_1_DETAIL_1_VALUE}}</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">{{EXPERIENCE_1_DETAIL_2_LABEL}}</span>
+                                <span class="detail-value">{{EXPERIENCE_1_DETAIL_2_VALUE}}</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">{{EXPERIENCE_1_DETAIL_3_LABEL}}</span>
+                                <span class="detail-value">{{EXPERIENCE_1_DETAIL_3_VALUE}}</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-outline">{{EXPERIENCE_1_CTA}}</button>
+                    </div>
+                </div>
+                
+                <div class="experience-card" onclick="openReservationModal('kitchen')">
+                    <div class="experience-content">
+                        <h3>{{EXPERIENCE_2_NAME}}</h3>
+                        <p class="experience-description">{{EXPERIENCE_2_DESCRIPTION}}</p>
+                        <div class="experience-details">
+                            <div class="detail-row">
+                                <span class="detail-label">{{EXPERIENCE_2_DETAIL_1_LABEL}}</span>
+                                <span class="detail-value">{{EXPERIENCE_2_DETAIL_1_VALUE}}</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">{{EXPERIENCE_2_DETAIL_2_LABEL}}</span>
+                                <span class="detail-value">{{EXPERIENCE_2_DETAIL_2_VALUE}}</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label">{{EXPERIENCE_2_DETAIL_3_LABEL}}</span>
+                                <span class="detail-value">{{EXPERIENCE_2_DETAIL_3_VALUE}}</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-outline">{{EXPERIENCE_2_CTA}}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-dining">
+        <div class="container">
+            <div class="about-content">
+                <h2>{{ABOUT_TITLE}}</h2>
+                <div class="about-text">
+                    <p class="about-paragraph">{{ABOUT_PARAGRAPH_1}}</p>
+                    <p class="about-paragraph">{{ABOUT_PARAGRAPH_2}}</p>
+                    <p class="about-paragraph">{{ABOUT_PARAGRAPH_3}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Navigation -->
+    <section id="gallery" class="gallery-nav">
+        <div class="container">
+            <div class="gallery-title">
+                <h2>{{GALLERY_TITLE}}</h2>
+            </div>
+            <div class="gallery-options">
+                <button class="gallery-btn" onclick="openGalleryModal('kitchen-table')">
+                    {{GALLERY_OPTION_1}}
+                </button>
+                <button class="gallery-btn" onclick="openGalleryModal('gallery-room')">
+                    {{GALLERY_OPTION_2}}
+                </button>
+                <button class="gallery-btn" onclick="openGalleryModal('salon')">
+                    {{GALLERY_OPTION_3}}
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wine Series -->
+    <section class="wine-series">
+        <div class="container">
+            <div class="wine-content">
+                <h2>{{WINE_SERIES_TITLE}}</h2>
+                <p class="wine-description">{{WINE_SERIES_DESCRIPTION}}</p>
+                <button class="btn btn-outline" onclick="openWineModal()">{{WINE_SERIES_CTA}}</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Careers Section -->
+    <section class="careers">
+        <div class="container">
+            <div class="careers-content">
+                <h2>{{CAREERS_TITLE}}</h2>
+                <p class="careers-description">{{CAREERS_DESCRIPTION}}</p>
+                <div class="careers-highlight">
+                    <h3>{{CAREERS_HIGHLIGHT_TITLE}}</h3>
+                    <p>{{CAREERS_HIGHLIGHT_DESCRIPTION}}</p>
+                </div>
+                <div class="careers-actions">
+                    <a href="{{CAREERS_LINK}}" class="btn btn-outline">{{CAREERS_CTA}}</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Modal -->
+    <div id="reservation-modal" class="modal reservation-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>{{RESERVATION_MODAL_TITLE}}</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="reservation-tabs">
+                    <button class="tab-btn active" data-tab="gallery">{{RESERVATION_TAB_1}}</button>
+                    <button class="tab-btn" data-tab="kitchen">{{RESERVATION_TAB_2}}</button>
+                </div>
+                
+                <div class="tab-content active" id="gallery-tab">
+                    <div class="experience-info">
+                        <h3>{{GALLERY_EXPERIENCE_NAME}}</h3>
+                        <p>{{GALLERY_EXPERIENCE_DESCRIPTION}}</p>
+                        <div class="experience-pricing">
+                            <div class="price-item">
+                                <span class="price-label">{{GALLERY_PRICE_LABEL}}</span>
+                                <span class="price-value">{{GALLERY_PRICE_VALUE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="reservation-form">
+                        <div class="form-row">
+                            <select name="party_size" required>
+                                <option value="">{{PARTY_SIZE_PLACEHOLDER}}</option>
+                                <option value="1">1 {{GUEST_LABEL}}</option>
+                                <option value="2">2 {{GUESTS_LABEL}}</option>
+                                <option value="3">3 {{GUESTS_LABEL}}</option>
+                                <option value="4">4 {{GUESTS_LABEL}}</option>
+                                <option value="5">5 {{GUESTS_LABEL}}</option>
+                                <option value="6">6 {{GUESTS_LABEL}}</option>
+                            </select>
+                            <input type="date" name="date" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">{{RESERVATION_SUBMIT}}</button>
+                    </form>
+                </div>
+                
+                <div class="tab-content" id="kitchen-tab">
+                    <div class="experience-info">
+                        <h3>{{KITCHEN_EXPERIENCE_NAME}}</h3>
+                        <p>{{KITCHEN_EXPERIENCE_DESCRIPTION}}</p>
+                        <div class="experience-pricing">
+                            <div class="price-item">
+                                <span class="price-label">{{KITCHEN_PRICE_LABEL}}</span>
+                                <span class="price-value">{{KITCHEN_PRICE_VALUE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="reservation-form">
+                        <div class="form-row">
+                            <select name="party_size" required>
+                                <option value="">{{PARTY_SIZE_PLACEHOLDER}}</option>
+                                <option value="1">1 {{GUEST_LABEL}}</option>
+                                <option value="2">2 {{GUESTS_LABEL}}</option>
+                                <option value="3">3 {{GUESTS_LABEL}}</option>
+                                <option value="4">4 {{GUESTS_LABEL}}</option>
+                            </select>
+                            <input type="date" name="date" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">{{RESERVATION_SUBMIT}}</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Modal -->
+    <div id="gallery-modal" class="modal gallery-modal">
+        <div class="modal-content gallery-content">
+            <div class="modal-header">
+                <h2 id="gallery-modal-title">{{GALLERY_MODAL_TITLE}}</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="images/food-1.jpg" alt="Gallery Image 1">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/food-2.jpg" alt="Gallery Image 2">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/food-3.jpg" alt="Gallery Image 3">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/food-4.jpg" alt="Gallery Image 4">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/interior.jpg" alt="Gallery Image 5">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="images/food-1.jpg" alt="Gallery Image 6">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo.png" alt="{{RESTAURANT_NAME}}">
+                </div>
+                <div class="footer-info">
+                    <p>{{RESTAURANT_ADDRESS}}</p>
+                    <p>{{RESTAURANT_CITY_STATE_ZIP}}</p>
+                    <p>{{RESTAURANT_PHONE}}</p>
+                </div>
+                <div class="footer-social">
+                    <a href="{{SOCIAL_INSTAGRAM}}" target="_blank">{{SOCIAL_INSTAGRAM_LABEL}}</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; {{CURRENT_YEAR}} {{RESTAURANT_NAME}}. {{FOOTER_COPYRIGHT_TEXT}}</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

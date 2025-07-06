@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - {{TAGLINE}}</title>
+    <meta name="description" content="{{RESTAURANT_DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="theme-dessert-upscale">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="#home" class="logo-link">
+                    <div class="logo-crown">
+                        <svg width="45" height="45" viewBox="0 0 45 45" fill="none">
+                            <path d="M5 30h35l-3-15h-6l-3 8-3-8h-6l-3 8-3-8h-6l-3 15z" stroke="currentColor" stroke-width="2" fill="currentColor" opacity="0.1"/>
+                            <circle cx="7" cy="20" r="3" fill="currentColor"/>
+                            <circle cx="22.5" cy="12" r="3" fill="currentColor"/>
+                            <circle cx="38" cy="20" r="3" fill="currentColor"/>
+                            <rect x="5" y="30" width="35" height="3" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <span class="restaurant-name">{{RESTAURANT_NAME}}</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#desserts">Desserts</a></li>
+                <li><a href="#catering">Catering</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#order" class="btn btn-order">Order Online</a>
+                <a href="#reservations" class="btn btn-reserve">Reservations</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">{{RESTAURANT_NAME}}</h1>
+                <p class="hero-subtitle">{{TAGLINE}}</p>
+                <p class="hero-description">{{HERO_DESCRIPTION}}</p>
+                <div class="hero-actions">
+                    <a href="#menu" class="btn btn-primary">Explore Menu</a>
+                    <a href="#desserts" class="btn btn-secondary">Famous Desserts</a>
+                </div>
+            </div>
+            <div class="hero-showcase">
+                <div class="showcase-grid">
+                    <div class="showcase-item featured">
+                        <img src="images/{{SIGNATURE_DESSERT_IMAGE}}" alt="{{SIGNATURE_DESSERT_NAME}}">
+                        <div class="showcase-label">
+                            <h3>{{SIGNATURE_DESSERT_NAME}}</h3>
+                            <p>Our Famous Signature</p>
+                        </div>
+                    </div>
+                    <div class="showcase-item">
+                        <img src="images/{{HERO_DISH_IMAGE}}" alt="{{HERO_DISH_NAME}}">
+                        <div class="showcase-label">
+                            <h4>{{HERO_DISH_NAME}}</h4>
+                        </div>
+                    </div>
+                    <div class="showcase-item">
+                        <img src="images/{{HERO_APPETIZER_IMAGE}}" alt="{{HERO_APPETIZER_NAME}}">
+                        <div class="showcase-label">
+                            <h4>{{HERO_APPETIZER_NAME}}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Signature Desserts Section -->
+    <section id="desserts" class="signature-desserts">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Sweet Perfection</div>
+                <h2>Our Legendary Desserts</h2>
+                <p class="section-subtitle">{{DESSERT_SECTION_DESCRIPTION}}</p>
+            </div>
+            
+            <div class="dessert-grid">
+                <div class="dessert-card signature">
+                    <div class="dessert-badge">Signature</div>
+                    <div class="dessert-image">
+                        <img src="images/{{DESSERT_1_IMAGE}}" alt="{{DESSERT_1_NAME}}">
+                    </div>
+                    <div class="dessert-content">
+                        <h3>{{DESSERT_1_NAME}}</h3>
+                        <p class="dessert-description">{{DESSERT_1_DESCRIPTION}}</p>
+                        <div class="dessert-details">
+                            <span class="dessert-price">{{DESSERT_1_PRICE}}</span>
+                            <span class="dessert-size">{{DESSERT_1_SIZE}}</span>
+                        </div>
+                        <button class="btn btn-dessert" onclick="addDessertToCart('{{DESSERT_1_NAME}}', '{{DESSERT_1_PRICE}}')">Order Now</button>
+                    </div>
+                </div>
+                
+                <div class="dessert-card popular">
+                    <div class="dessert-badge popular-badge">Most Popular</div>
+                    <div class="dessert-image">
+                        <img src="images/{{DESSERT_2_IMAGE}}" alt="{{DESSERT_2_NAME}}">
+                    </div>
+                    <div class="dessert-content">
+                        <h3>{{DESSERT_2_NAME}}</h3>
+                        <p class="dessert-description">{{DESSERT_2_DESCRIPTION}}</p>
+                        <div class="dessert-details">
+                            <span class="dessert-price">{{DESSERT_2_PRICE}}</span>
+                            <span class="dessert-size">{{DESSERT_2_SIZE}}</span>
+                        </div>
+                        <button class="btn btn-dessert" onclick="addDessertToCart('{{DESSERT_2_NAME}}', '{{DESSERT_2_PRICE}}')">Order Now</button>
+                    </div>
+                </div>
+                
+                <div class="dessert-card seasonal">
+                    <div class="dessert-badge seasonal-badge">Seasonal</div>
+                    <div class="dessert-image">
+                        <img src="images/{{DESSERT_3_IMAGE}}" alt="{{DESSERT_3_NAME}}">
+                    </div>
+                    <div class="dessert-content">
+                        <h3>{{DESSERT_3_NAME}}</h3>
+                        <p class="dessert-description">{{DESSERT_3_DESCRIPTION}}</p>
+                        <div class="dessert-details">
+                            <span class="dessert-price">{{DESSERT_3_PRICE}}</span>
+                            <span class="dessert-size">{{DESSERT_3_SIZE}}</span>
+                        </div>
+                        <button class="btn btn-dessert" onclick="addDessertToCart('{{DESSERT_3_NAME}}', '{{DESSERT_3_PRICE}}')">Order Now</button>
+                    </div>
+                </div>
+                
+                <div class="dessert-card">
+                    <div class="dessert-image">
+                        <img src="images/{{DESSERT_4_IMAGE}}" alt="{{DESSERT_4_NAME}}">
+                    </div>
+                    <div class="dessert-content">
+                        <h3>{{DESSERT_4_NAME}}</h3>
+                        <p class="dessert-description">{{DESSERT_4_DESCRIPTION}}</p>
+                        <div class="dessert-details">
+                            <span class="dessert-price">{{DESSERT_4_PRICE}}</span>
+                            <span class="dessert-size">{{DESSERT_4_SIZE}}</span>
+                        </div>
+                        <button class="btn btn-dessert" onclick="addDessertToCart('{{DESSERT_4_NAME}}', '{{DESSERT_4_PRICE}}')">Order Now</button>
+                    </div>
+                </div>
+                
+                <div class="dessert-card">
+                    <div class="dessert-image">
+                        <img src="images/{{DESSERT_5_IMAGE}}" alt="{{DESSERT_5_NAME}}">
+                    </div>
+                    <div class="dessert-content">
+                        <h3>{{DESSERT_5_NAME}}</h3>
+                        <p class="dessert-description">{{DESSERT_5_DESCRIPTION}}</p>
+                        <div class="dessert-details">
+                            <span class="dessert-price">{{DESSERT_5_PRICE}}</span>
+                            <span class="dessert-size">{{DESSERT_5_SIZE}}</span>
+                        </div>
+                        <button class="btn btn-dessert" onclick="addDessertToCart('{{DESSERT_5_NAME}}', '{{DESSERT_5_PRICE}}')">Order Now</button>
+                    </div>
+                </div>
+                
+                <div class="dessert-card">
+                    <div class="dessert-image">
+                        <img src="images/{{DESSERT_6_IMAGE}}" alt="{{DESSERT_6_NAME}}">
+                    </div>
+                    <div class="dessert-content">
+                        <h3>{{DESSERT_6_NAME}}</h3>
+                        <p class="dessert-description">{{DESSERT_6_DESCRIPTION}}</p>
+                        <div class="dessert-details">
+                            <span class="dessert-price">{{DESSERT_6_PRICE}}</span>
+                            <span class="dessert-size">{{DESSERT_6_SIZE}}</span>
+                        </div>
+                        <button class="btn btn-dessert" onclick="addDessertToCart('{{DESSERT_6_NAME}}', '{{DESSERT_6_PRICE}}')">Order Now</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="dessert-cta">
+                <a href="menu.html#desserts" class="btn btn-outline">View All Desserts</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Categories -->
+    <section id="menu" class="menu-categories">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Complete Menu</h2>
+                <p class="section-subtitle">From appetizers to our world-famous desserts</p>
+            </div>
+            
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="images/{{APPETIZER_CATEGORY_IMAGE}}" alt="Appetizers">
+                    </div>
+                    <div class="category-content">
+                        <h3>Appetizers</h3>
+                        <p>Start your meal with our creative small plates</p>
+                        <a href="menu.html#appetizers" class="category-link">Explore Appetizers</a>
+                    </div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="images/{{SALAD_CATEGORY_IMAGE}}" alt="Salads">
+                    </div>
+                    <div class="category-content">
+                        <h3>Fresh Salads</h3>
+                        <p>Garden fresh with premium ingredients</p>
+                        <a href="menu.html#salads" class="category-link">View Salads</a>
+                    </div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="images/{{ENTREE_CATEGORY_IMAGE}}" alt="Entrees">
+                    </div>
+                    <div class="category-content">
+                        <h3>Signature Entrees</h3>
+                        <p>Expertly crafted main courses</p>
+                        <a href="menu.html#entrees" class="category-link">Browse Entrees</a>
+                    </div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-image">
+                        <img src="images/{{PASTA_CATEGORY_IMAGE}}" alt="Pasta">
+                    </div>
+                    <div class="category-content">
+                        <h3>Pasta & Italian</h3>
+                        <p>Authentic Italian flavors and techniques</p>
+                        <a href="menu.html#pasta" class="category-link">See Pasta Menu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="section-badge">Our Story</div>
+                    <h2>A Sweet Legacy</h2>
+                    <p class="about-lead">{{ABOUT_LEAD}}</p>
+                    <div class="about-details">
+                        <p>{{ABOUT_DESCRIPTION}}</p>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <span class="stat-number">{{YEARS_ESTABLISHED}}</span>
+                            <span class="stat-label">Years of Excellence</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">{{DESSERT_VARIETIES}}</span>
+                            <span class="stat-label">Dessert Varieties</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">{{LOCATIONS_COUNT}}</span>
+                            <span class="stat-label">Locations</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-images">
+                    <div class="image-collage">
+                        <img src="images/{{ABOUT_IMAGE_1}}" alt="Restaurant Interior" class="about-img-large">
+                        <img src="images/{{ABOUT_IMAGE_2}}" alt="Chef Preparing Dessert" class="about-img-small">
+                        <img src="images/{{ABOUT_IMAGE_3}}" alt="Kitchen" class="about-img-small">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catering Section -->
+    <section id="catering" class="catering">
+        <div class="catering-bg">
+            <img src="images/{{CATERING_BG_IMAGE}}" alt="Catering Setup">
+            <div class="catering-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="catering-content">
+                <div class="catering-text">
+                    <div class="section-badge light">Catering Services</div>
+                    <h2>Memorable Events</h2>
+                    <p class="catering-description">{{CATERING_DESCRIPTION}}</p>
+                    <div class="catering-features">
+                        <div class="catering-feature">
+                            <div class="feature-icon">🎂</div>
+                            <div class="feature-text">
+                                <h4>{{CATERING_FEATURE_1_TITLE}}</h4>
+                                <p>{{CATERING_FEATURE_1_DESCRIPTION}}</p>
+                            </div>
+                        </div>
+                        <div class="catering-feature">
+                            <div class="feature-icon">🍽️</div>
+                            <div class="feature-text">
+                                <h4>{{CATERING_FEATURE_2_TITLE}}</h4>
+                                <p>{{CATERING_FEATURE_2_DESCRIPTION}}</p>
+                            </div>
+                        </div>
+                        <div class="catering-feature">
+                            <div class="feature-icon">🎉</div>
+                            <div class="feature-text">
+                                <h4>{{CATERING_FEATURE_3_TITLE}}</h4>
+                                <p>{{CATERING_FEATURE_3_DESCRIPTION}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="catering-cta">
+                        <a href="#contact" class="btn btn-light">Get Catering Quote</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="section-badge">Visit Us</div>
+                    <h2>Location & Contact</h2>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <h4>Address</h4>
+                            <p>{{RESTAURANT_ADDRESS}}</p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>Phone</h4>
+                            <p>{{PHONE}}</p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>Hours</h4>
+                            <p>{{RESTAURANT_HOURS}}</p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>Email</h4>
+                            <p>{{EMAIL}}</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}">Instagram</a>
+                        <a href="{{TWITTER_URL}}">Twitter</a>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <h3>Make a Reservation</h3>
+                    <form class="reservation-form">
+                        <div class="form-row">
+                            <input type="text" placeholder="First Name" required>
+                            <input type="text" placeholder="Last Name" required>
+                        </div>
+                        <div class="form-row">
+                            <input type="email" placeholder="Email" required>
+                            <input type="tel" placeholder="Phone" required>
+                        </div>
+                        <div class="form-row">
+                            <input type="date" required>
+                            <select required>
+                                <option value="">Time</option>
+                                <option value="17:00">5:00 PM</option>
+                                <option value="17:30">5:30 PM</option>
+                                <option value="18:00">6:00 PM</option>
+                                <option value="18:30">6:30 PM</option>
+                                <option value="19:00">7:00 PM</option>
+                                <option value="19:30">7:30 PM</option>
+                                <option value="20:00">8:00 PM</option>
+                                <option value="20:30">8:30 PM</option>
+                                <option value="21:00">9:00 PM</option>
+                            </select>
+                        </div>
+                        <select required>
+                            <option value="">Party Size</option>
+                            <option value="1">1 Guest</option>
+                            <option value="2">2 Guests</option>
+                            <option value="3">3 Guests</option>
+                            <option value="4">4 Guests</option>
+                            <option value="5">5 Guests</option>
+                            <option value="6">6 Guests</option>
+                            <option value="7">7+ Guests</option>
+                        </select>
+                        <textarea placeholder="Special requests" rows="3"></textarea>
+                        <button type="submit" class="btn btn-primary">Request Reservation</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-crown">
+                            <svg width="35" height="35" viewBox="0 0 45 45" fill="none">
+                                <path d="M5 30h35l-3-15h-6l-3 8-3-8h-6l-3 8-3-8h-6l-3 15z" stroke="currentColor" stroke-width="2" fill="currentColor" opacity="0.1"/>
+                                <circle cx="7" cy="20" r="3" fill="currentColor"/>
+                                <circle cx="22.5" cy="12" r="3" fill="currentColor"/>
+                                <circle cx="38" cy="20" r="3" fill="currentColor"/>
+                                <rect x="5" y="30" width="35" height="3" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <span class="restaurant-name">{{RESTAURANT_NAME}}</span>
+                    </div>
+                    <p class="footer-description">{{FOOTER_DESCRIPTION}}</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h5>Menu</h5>
+                        <a href="#appetizers">Appetizers</a>
+                        <a href="#entrees">Entrees</a>
+                        <a href="#desserts">Desserts</a>
+                        <a href="menu.html">Full Menu</a>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h5>Services</h5>
+                        <a href="#reservations">Reservations</a>
+                        <a href="#catering">Catering</a>
+                        <a href="#order">Online Ordering</a>
+                        <a href="#gift-cards">Gift Cards</a>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h5>Connect</h5>
+                        <p>{{PHONE}}</p>
+                        <p>{{EMAIL}}</p>
+                        <p>{{RESTAURANT_ADDRESS}}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

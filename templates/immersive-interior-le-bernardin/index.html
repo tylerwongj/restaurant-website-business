@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Fine Dining</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body class="color-sophisticated">
+    <!-- Overlay Navigation -->
+    <nav class="navbar-overlay">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-text">{{RESTAURANT_NAME}}</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#cuisine">Cuisine</a></li>
+                <li><a href="#wine">Wine</a></li>
+                <li><a href="#private">Private Dining</a></li>
+                <li><a href="#reservations">Reservations</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Immersive Hero Section -->
+    <section id="home" class="hero-immersive">
+        <div class="hero-background">
+            <img src="{{HERO_INTERIOR_IMAGE}}" alt="{{RESTAURANT_NAME}} Interior" class="hero-bg">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="restaurant-name">{{RESTAURANT_NAME}}</h1>
+                <p class="hero-tagline">{{HERO_TAGLINE}}</p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary" onclick="openReservationModal()">Reserve Table</button>
+                    <a href="#cuisine" class="btn btn-secondary">Explore Menu</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+            <span>Scroll to explore</span>
+        </div>
+    </section>
+
+    <!-- Chef's Philosophy -->
+    <section id="philosophy" class="philosophy-section">
+        <div class="container">
+            <div class="philosophy-content">
+                <div class="philosophy-text">
+                    <h2>{{CHEF_PHILOSOPHY_TITLE}}</h2>
+                    <div class="philosophy-quote">
+                        <blockquote>
+                            "{{CHEF_QUOTE}}"
+                        </blockquote>
+                        <cite>— {{CHEF_NAME}}, {{CHEF_TITLE}}</cite>
+                    </div>
+                    <p>{{PHILOSOPHY_DESCRIPTION}}</p>
+                </div>
+                <div class="philosophy-image">
+                    <img src="{{CHEF_IMAGE}}" alt="{{CHEF_NAME}}">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cuisine Showcase -->
+    <section id="cuisine" class="cuisine-section">
+        <div class="cuisine-background">
+            <img src="{{CUISINE_BACKGROUND}}" alt="Culinary artistry">
+        </div>
+        <div class="container">
+            <div class="cuisine-content">
+                <h2>{{CUISINE_TITLE}}</h2>
+                <p class="cuisine-subtitle">{{CUISINE_SUBTITLE}}</p>
+                
+                <div class="cuisine-highlights">
+                    <div class="cuisine-item">
+                        <div class="cuisine-image">
+                            <img src="{{DISH_1_IMAGE}}" alt="{{DISH_1_NAME}}">
+                        </div>
+                        <div class="cuisine-details">
+                            <h3>{{DISH_1_NAME}}</h3>
+                            <p>{{DISH_1_DESCRIPTION}}</p>
+                            <span class="cuisine-price">{{DISH_1_PRICE}}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="cuisine-item">
+                        <div class="cuisine-image">
+                            <img src="{{DISH_2_IMAGE}}" alt="{{DISH_2_NAME}}">
+                        </div>
+                        <div class="cuisine-details">
+                            <h3>{{DISH_2_NAME}}</h3>
+                            <p>{{DISH_2_DESCRIPTION}}</p>
+                            <span class="cuisine-price">{{DISH_2_PRICE}}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="cuisine-item">
+                        <div class="cuisine-image">
+                            <img src="{{DISH_3_IMAGE}}" alt="{{DISH_3_NAME}}">
+                        </div>
+                        <div class="cuisine-details">
+                            <h3>{{DISH_3_NAME}}</h3>
+                            <p>{{DISH_3_DESCRIPTION}}</p>
+                            <span class="cuisine-price">{{DISH_3_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cuisine-cta">
+                    <a href="menu.html" class="btn btn-elegant">View Complete Menu</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wine Program -->
+    <section id="wine" class="wine-section">
+        <div class="container">
+            <div class="wine-content">
+                <div class="wine-text">
+                    <h2>{{WINE_PROGRAM_TITLE}}</h2>
+                    <p>{{WINE_PROGRAM_DESCRIPTION}}</p>
+                    
+                    <div class="wine-features">
+                        <div class="wine-feature">
+                            <div class="feature-number">{{WINE_STAT_1_NUMBER}}</div>
+                            <div class="feature-text">
+                                <h4>{{WINE_STAT_1_TITLE}}</h4>
+                                <p>{{WINE_STAT_1_DESC}}</p>
+                            </div>
+                        </div>
+                        
+                        <div class="wine-feature">
+                            <div class="feature-number">{{WINE_STAT_2_NUMBER}}</div>
+                            <div class="feature-text">
+                                <h4>{{WINE_STAT_2_TITLE}}</h4>
+                                <p>{{WINE_STAT_2_DESC}}</p>
+                            </div>
+                        </div>
+                        
+                        <div class="wine-feature">
+                            <div class="feature-number">{{WINE_STAT_3_NUMBER}}</div>
+                            <div class="feature-text">
+                                <h4>{{WINE_STAT_3_TITLE}}</h4>
+                                <p>{{WINE_STAT_3_DESC}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="wine-actions">
+                        <a href="#wine-list" class="btn btn-primary">View Wine List</a>
+                        <a href="#sommelier" class="btn btn-outline">Meet Our Sommelier</a>
+                    </div>
+                </div>
+                
+                <div class="wine-gallery">
+                    <div class="wine-image-main">
+                        <img src="{{WINE_CELLAR_IMAGE}}" alt="Wine Cellar">
+                    </div>
+                    <div class="wine-images-small">
+                        <img src="{{WINE_GLASS_IMAGE}}" alt="Wine Service">
+                        <img src="{{WINE_PAIRING_IMAGE}}" alt="Wine Pairing">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Private Dining -->
+    <section id="private" class="private-dining-section">
+        <div class="private-background">
+            <img src="{{PRIVATE_DINING_IMAGE}}" alt="Private Dining Room">
+        </div>
+        <div class="container">
+            <div class="private-content">
+                <h2>{{PRIVATE_DINING_TITLE}}</h2>
+                <p class="private-subtitle">{{PRIVATE_DINING_SUBTITLE}}</p>
+                
+                <div class="private-rooms">
+                    <div class="private-room">
+                        <h3>{{PRIVATE_ROOM_1_NAME}}</h3>
+                        <div class="room-details">
+                            <span class="room-capacity">{{PRIVATE_ROOM_1_CAPACITY}}</span>
+                            <span class="room-style">{{PRIVATE_ROOM_1_STYLE}}</span>
+                        </div>
+                        <p>{{PRIVATE_ROOM_1_DESC}}</p>
+                        <a href="#inquiry" class="btn btn-small">Inquire</a>
+                    </div>
+                    
+                    <div class="private-room">
+                        <h3>{{PRIVATE_ROOM_2_NAME}}</h3>
+                        <div class="room-details">
+                            <span class="room-capacity">{{PRIVATE_ROOM_2_CAPACITY}}</span>
+                            <span class="room-style">{{PRIVATE_ROOM_2_STYLE}}</span>
+                        </div>
+                        <p>{{PRIVATE_ROOM_2_DESC}}</p>
+                        <a href="#inquiry" class="btn btn-small">Inquire</a>
+                    </div>
+                    
+                    <div class="private-room">
+                        <h3>{{PRIVATE_ROOM_3_NAME}}</h3>
+                        <div class="room-details">
+                            <span class="room-capacity">{{PRIVATE_ROOM_3_CAPACITY}}</span>
+                            <span class="room-style">{{PRIVATE_ROOM_3_STYLE}}</span>
+                        </div>
+                        <p>{{PRIVATE_ROOM_3_DESC}}</p>
+                        <a href="#inquiry" class="btn btn-small">Inquire</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards & Recognition -->
+    <section id="awards" class="awards-section">
+        <div class="container">
+            <h2>Recognition & Awards</h2>
+            <div class="awards-grid">
+                <div class="award-item">
+                    <div class="award-icon">
+                        <img src="{{AWARD_1_ICON}}" alt="{{AWARD_1_NAME}}">
+                    </div>
+                    <h3>{{AWARD_1_NAME}}</h3>
+                    <p class="award-year">{{AWARD_1_YEAR}}</p>
+                    <p class="award-description">{{AWARD_1_DESCRIPTION}}</p>
+                </div>
+                
+                <div class="award-item">
+                    <div class="award-icon">
+                        <img src="{{AWARD_2_ICON}}" alt="{{AWARD_2_NAME}}">
+                    </div>
+                    <h3>{{AWARD_2_NAME}}</h3>
+                    <p class="award-year">{{AWARD_2_YEAR}}</p>
+                    <p class="award-description">{{AWARD_2_DESCRIPTION}}</p>
+                </div>
+                
+                <div class="award-item">
+                    <div class="award-icon">
+                        <img src="{{AWARD_3_ICON}}" alt="{{AWARD_3_NAME}}">
+                    </div>
+                    <h3>{{AWARD_3_NAME}}</h3>
+                    <p class="award-year">{{AWARD_3_YEAR}}</p>
+                    <p class="award-description">{{AWARD_3_DESCRIPTION}}</p>
+                </div>
+                
+                <div class="award-item">
+                    <div class="award-icon">
+                        <img src="{{AWARD_4_ICON}}" alt="{{AWARD_4_NAME}}">
+                    </div>
+                    <h3>{{AWARD_4_NAME}}</h3>
+                    <p class="award-year">{{AWARD_4_YEAR}}</p>
+                    <p class="award-description">{{AWARD_4_DESCRIPTION}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservations -->
+    <section id="reservations" class="reservations-section">
+        <div class="container">
+            <div class="reservations-content">
+                <div class="reservations-text">
+                    <h2>{{RESERVATIONS_TITLE}}</h2>
+                    <p>{{RESERVATIONS_DESCRIPTION}}</p>
+                    
+                    <div class="reservation-info">
+                        <div class="info-item">
+                            <h4>Dinner Service</h4>
+                            <p>{{DINNER_HOURS}}</p>
+                        </div>
+                        <div class="info-item">
+                            <h4>Lunch Service</h4>
+                            <p>{{LUNCH_HOURS}}</p>
+                        </div>
+                        <div class="info-item">
+                            <h4>Dress Code</h4>
+                            <p>{{DRESS_CODE}}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="reservation-actions">
+                        <button class="btn btn-primary" onclick="openReservationModal()">Make Reservation</button>
+                        <a href="#private" class="btn btn-outline">Private Events</a>
+                    </div>
+                </div>
+                
+                <div class="reservations-image">
+                    <img src="{{DINING_ROOM_IMAGE}}" alt="Dining Room">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Visit Us</h2>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <h4>Address</h4>
+                            <p>{{RESTAURANT_ADDRESS}}<br>{{CITY}}, {{STATE}} {{ZIP_CODE}}</p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>Reservations</h4>
+                            <p>{{RESERVATION_PHONE}}</p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>General Inquiries</h4>
+                            <p>{{GENERAL_PHONE}}</p>
+                            <p>{{EMAIL}}</p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>Hours</h4>
+                            <p>{{OPERATING_HOURS}}</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-map">
+                    <div class="map-placeholder">
+                        <iframe 
+                            src="{{GOOGLE_MAPS_EMBED}}" 
+                            width="100%" 
+                            height="400" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-text">{{RESTAURANT_NAME}}</span>
+                    <p>{{FOOTER_TAGLINE}}</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Dining</h4>
+                        <ul>
+                            <li><a href="#cuisine">Menu</a></li>
+                            <li><a href="#wine">Wine List</a></li>
+                            <li><a href="#private">Private Dining</a></li>
+                            <li><a href="#reservations">Reservations</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h4>Information</h4>
+                        <ul>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#chef">Chef</a></li>
+                            <li><a href="#awards">Awards</a></li>
+                            <li><a href="#press">Press</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h4>Connect</h4>
+                        <ul>
+                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="#newsletter">Newsletter</a></li>
+                            <li><a href="{{INSTAGRAM_URL}}">Instagram</a></li>
+                            <li><a href="{{FACEBOOK_URL}}">Facebook</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; {{CURRENT_YEAR}} {{RESTAURANT_NAME}}. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Reservation Modal -->
+    <div id="reservationModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Make a Reservation</h2>
+                <span class="close" onclick="closeReservationModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="reservationForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="party-size">Party Size</label>
+                            <select id="party-size" name="party-size" required>
+                                <option value="">Select</option>
+                                <option value="1">1 Guest</option>
+                                <option value="2">2 Guests</option>
+                                <option value="3">3 Guests</option>
+                                <option value="4">4 Guests</option>
+                                <option value="5">5 Guests</option>
+                                <option value="6">6 Guests</option>
+                                <option value="7">7 Guests</option>
+                                <option value="8">8 Guests</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="date">Date</label>
+                            <input type="date" id="date" name="date" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="time">Preferred Time</label>
+                            <select id="time" name="time" required>
+                                <option value="">Select Time</option>
+                                <option value="17:30">5:30 PM</option>
+                                <option value="18:00">6:00 PM</option>
+                                <option value="18:30">6:30 PM</option>
+                                <option value="19:00">7:00 PM</option>
+                                <option value="19:30">7:30 PM</option>
+                                <option value="20:00">8:00 PM</option>
+                                <option value="20:30">8:30 PM</option>
+                                <option value="21:00">9:00 PM</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="occasion">Occasion</label>
+                            <select id="occasion" name="occasion">
+                                <option value="">Select (Optional)</option>
+                                <option value="birthday">Birthday</option>
+                                <option value="anniversary">Anniversary</option>
+                                <option value="business">Business Dinner</option>
+                                <option value="celebration">Celebration</option>
+                                <option value="date">Date Night</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="requests">Special Requests</label>
+                        <textarea id="requests" name="requests" rows="3" placeholder="Dietary restrictions, seating preferences, etc."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-full">Confirm Reservation</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

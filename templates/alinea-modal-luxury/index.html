@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - {{CUISINE_TYPE}} Restaurant</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="theme-luxury">
+    <!-- Anniversary/Special Modal (like Alinea's 20th Anniversary) -->
+    <div id="anniversaryModal" class="anniversary-modal active">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="modal-close" onclick="closeAnniversaryModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="anniversary-logo">
+                    <img src="{{ANNIVERSARY_LOGO}}" alt="{{ANNIVERSARY_TITLE}}">
+                </div>
+                <h1 class="anniversary-title">{{ANNIVERSARY_TITLE}}</h1>
+                <p class="anniversary-subtitle">{{ANNIVERSARY_SUBTITLE}}</p>
+                <p class="anniversary-description">{{ANNIVERSARY_DESCRIPTION}}</p>
+                
+                <div class="dining-experiences">
+                    <h3>Reserve Your Experience</h3>
+                    <div class="experience-options">
+                        <div class="experience-option">
+                            <h4>{{EXPERIENCE_1_NAME}}</h4>
+                            <p>{{EXPERIENCE_1_DESC}}</p>
+                            <span class="experience-price">{{EXPERIENCE_1_PRICE}}</span>
+                            <button class="btn btn-primary" onclick="openReservationModal('{{EXPERIENCE_1_NAME}}')">Reserve</button>
+                        </div>
+                        <div class="experience-option">
+                            <h4>{{EXPERIENCE_2_NAME}}</h4>
+                            <p>{{EXPERIENCE_2_DESC}}</p>
+                            <span class="experience-price">{{EXPERIENCE_2_PRICE}}</span>
+                            <button class="btn btn-primary" onclick="openReservationModal('{{EXPERIENCE_2_NAME}}')">Reserve</button>
+                        </div>
+                        <div class="experience-option">
+                            <h4>{{EXPERIENCE_3_NAME}}</h4>
+                            <p>{{EXPERIENCE_3_DESC}}</p>
+                            <span class="experience-price">{{EXPERIENCE_3_PRICE}}</span>
+                            <button class="btn btn-primary" onclick="openReservationModal('{{EXPERIENCE_3_NAME}}')">Reserve</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Website Content -->
+    <div class="main-content">
+        <!-- Minimal Navigation -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="#home" class="logo-link">
+                        <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#" onclick="openAnniversaryModal()">Reservations</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section with Artistic Food -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="hero-image">
+                    <img src="{{HERO_IMAGE}}" alt="{{RESTAURANT_NAME}} - Culinary Art">
+                </div>
+            </div>
+        </section>
+
+        <!-- Mailing List Section -->
+        <section class="mailing-list">
+            <div class="container">
+                <h2>Mailing List</h2>
+                <p>{{MAILING_LIST_DESCRIPTION}}</p>
+                <form class="mailing-form">
+                    <input type="email" placeholder="Enter your email address" class="email-input" required>
+                    <button type="submit" class="btn btn-secondary">Subscribe</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Dining Room Reservations -->
+        <section class="dining-room-section">
+            <div class="container">
+                <h2>{{RESTAURANT_NAME}} Dining Room</h2>
+                <p>{{DINING_ROOM_DESCRIPTION}}</p>
+                
+                <div class="reservation-form-container">
+                    <form class="reservation-form-inline">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="party-size">Party Size</label>
+                                <select id="party-size" name="partySize" required>
+                                    <option value="">Select</option>
+                                    <option value="2">2 people</option>
+                                    <option value="3">3 people</option>
+                                    <option value="4">4 people</option>
+                                    <option value="5">5 people</option>
+                                    <option value="6">6 people</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="date">Date</label>
+                                <input type="date" id="date" name="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="time">Time</label>
+                                <select id="time" name="time" required>
+                                    <option value="">Select</option>
+                                    <option value="17:30">5:30 PM</option>
+                                    <option value="18:00">6:00 PM</option>
+                                    <option value="19:00">7:00 PM</option>
+                                    <option value="20:00">8:00 PM</option>
+                                    <option value="21:00">9:00 PM</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Find Table</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about-content">
+                    <h2>Dining At {{RESTAURANT_NAME}}</h2>
+                    <p class="about-intro">{{ABOUT_INTRO}}</p>
+                    <p>{{ABOUT_DESCRIPTION}}</p>
+                    <p>{{ABOUT_PHILOSOPHY}}</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Sections -->
+        <section class="experiences">
+            <div class="container">
+                <div class="experience-grid">
+                    <div class="experience-card">
+                        <h3>The Kitchen Table</h3>
+                        <button class="btn btn-outline" onclick="openExperienceModal('kitchen-table')">Learn More</button>
+                    </div>
+                    <div class="experience-card">
+                        <h3>The Gallery</h3>
+                        <button class="btn btn-outline" onclick="openExperienceModal('gallery')">Learn More</button>
+                    </div>
+                    <div class="experience-card">
+                        <h3>The Salon</h3>
+                        <button class="btn btn-outline" onclick="openExperienceModal('salon')">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="gallery-section">
+            <div class="container">
+                <h2>Gallery</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="{{GALLERY_IMAGE_1}}" alt="Culinary Creation">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="{{GALLERY_IMAGE_2}}" alt="Dining Experience">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="{{GALLERY_IMAGE_3}}" alt="Restaurant Interior">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="{{GALLERY_IMAGE_4}}" alt="Chef's Creation">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Wine Series Section -->
+        <section class="wine-series">
+            <div class="container">
+                <h2>The {{RESTAURANT_NAME}} Living Wine Series</h2>
+                <p>{{WINE_SERIES_DESCRIPTION}}</p>
+                <div class="wine-signup">
+                    <form class="wine-form">
+                        <input type="email" placeholder="Enter your email" class="email-input" required>
+                        <button type="submit" class="btn btn-primary">Join</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Careers Section -->
+        <section class="careers">
+            <div class="container">
+                <h2>Careers</h2>
+                <p>{{CAREERS_DESCRIPTION}}</p>
+                <div class="careers-links">
+                    <a href="#" class="career-link">View Current Openings</a>
+                    <a href="#" class="career-link">Submit Application</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h2>{{RESTAURANT_NAME}}</h2>
+                        <div class="contact-details">
+                            <p>{{ADDRESS}}</p>
+                            <p>{{CITY}}, {{STATE}} {{ZIP}}</p>
+                            <p><a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+                            <p><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
+                        </div>
+                        <div class="hours">
+                            <h3>Hours</h3>
+                            <p>{{HOURS_WEEKDAY}}</p>
+                            <p>{{HOURS_WEEKEND}}</p>
+                        </div>
+                    </div>
+                    <div class="contact-map">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb={{GOOGLE_MAPS_EMBED}}"
+                            width="100%" 
+                            height="300" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+                    </div>
+                    <div class="footer-social">
+                        <a href="{{INSTAGRAM_URL}}" target="_blank" aria-label="Instagram">Instagram</a>
+                        <a href="{{FACEBOOK_URL}}" target="_blank" aria-label="Facebook">Facebook</a>
+                        <a href="{{TWITTER_URL}}" target="_blank" aria-label="Twitter">Twitter</a>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+                    <div class="footer-links">
+                        <a href="#privacy">Privacy Policy</a>
+                        <a href="#terms">Terms</a>
+                        <a href="#accessibility">Accessibility</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Reservation Modal -->
+    <div id="reservationModal" class="reservation-modal">
+        <div class="modal-overlay" onclick="closeReservationModal()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Complete Your Reservation</h2>
+                <button class="modal-close" onclick="closeReservationModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form class="detailed-reservation-form">
+                    <div class="form-group">
+                        <label for="experience-type">Experience</label>
+                        <input type="text" id="experience-type" name="experienceType" readonly>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="res-date">Date</label>
+                            <input type="date" id="res-date" name="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="res-time">Time</label>
+                            <select id="res-time" name="time" required>
+                                <option value="">Select Time</option>
+                                <option value="17:30">5:30 PM</option>
+                                <option value="18:00">6:00 PM</option>
+                                <option value="19:00">7:00 PM</option>
+                                <option value="20:00">8:00 PM</option>
+                                <option value="21:00">9:00 PM</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="res-guests">Guests</label>
+                            <select id="res-guests" name="guests" required>
+                                <option value="">Select</option>
+                                <option value="1">1 Guest</option>
+                                <option value="2">2 Guests</option>
+                                <option value="3">3 Guests</option>
+                                <option value="4">4 Guests</option>
+                                <option value="5">5 Guests</option>
+                                <option value="6">6 Guests</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="res-name">Name</label>
+                            <input type="text" id="res-name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="res-phone">Phone</label>
+                            <input type="tel" id="res-phone" name="phone" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="res-email">Email</label>
+                        <input type="email" id="res-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="res-notes">Special Requests</label>
+                        <textarea id="res-notes" name="notes" placeholder="Dietary restrictions, special occasions, etc."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Confirm Reservation</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,902 @@
+/* Texas Roadhouse Steakhouse Template */
+/* CSS Variables for Rustic Steakhouse Design */
+:root {
+  /* Texas Roadhouse Orange/Brown (Default) */
+  --primary-color: #ff6600;          /* Texas orange */
+  --secondary-color: #8b4513;        /* Saddle brown */
+  --accent-color: #ffcc00;           /* Golden yellow */
+  --background-color: #ffffff;       /* White */
+  --background-warm: #fdf6e3;        /* Warm cream */
+  --background-dark: #2c1810;        /* Dark brown */
+  --text-dark: #333333;              /* Dark gray */
+  --text-light: #666666;             /* Medium gray */
+  --text-white: #ffffff;             /* White text */
+  --border-color: #dddddd;           /* Light border */
+  --shadow-light: rgba(255, 102, 0, 0.1);
+  --shadow-medium: rgba(255, 102, 0, 0.2);
+  --overlay-dark: rgba(44, 24, 16, 0.8);
+}
+
+/* Alternative Color Schemes */
+.theme-classic {
+  --primary-color: #d2691e;          /* Chocolate */
+  --secondary-color: #a0522d;        /* Sienna */
+  --accent-color: #daa520;           /* Goldenrod */
+  --background-warm: #fff8dc;        /* Cornsilk */
+}
+
+.theme-western {
+  --primary-color: #cd853f;          /* Peru */
+  --secondary-color: #8b0000;        /* Dark red */
+  --accent-color: #ffd700;           /* Gold */
+  --background-warm: #faf0e6;        /* Linen */
+}
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: var(--background-color);
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+  font-family: 'Bebas Neue', cursive;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+h1 {
+  font-size: 4.5rem;
+  color: var(--text-white);
+  text-transform: uppercase;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--text-dark);
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 1.8rem;
+  color: var(--text-dark);
+  text-transform: uppercase;
+}
+
+h4 {
+  font-size: 1.4rem;
+  color: var(--primary-color);
+  text-transform: uppercase;
+}
+
+p {
+  margin-bottom: 1rem;
+  color: var(--text-light);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--text-light);
+  margin-bottom: 3rem;
+  font-style: italic;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Navigation */
+.navbar {
+  background: var(--background-dark);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 3px solid var(--primary-color);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.logo img {
+  height: 50px;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: var(--text-white);
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+  color: var(--primary-color);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: var(--primary-color);
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 700;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid;
+  cursor: pointer;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-family: 'Bebas Neue', cursive;
+  letter-spacing: 1px;
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  color: var(--text-white);
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background: transparent;
+  color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: var(--secondary-color);
+  color: var(--text-white);
+  border-color: var(--secondary-color);
+}
+
+.btn-secondary:hover {
+  background: transparent;
+  color: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+.btn-order {
+  background: var(--primary-color);
+  color: var(--text-white);
+  border-color: var(--primary-color);
+  padding: 0.8rem 1.5rem;
+}
+
+.btn-steak {
+  background: var(--accent-color);
+  color: var(--text-dark);
+  border-color: var(--accent-color);
+  padding: 0.8rem 1.5rem;
+}
+
+.btn-social {
+  background: #e4405f;
+  color: var(--text-white);
+  border-color: #e4405f;
+}
+
+.btn-small {
+  padding: 0.6rem 1.2rem;
+  font-size: 0.8rem;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-find {
+  background: var(--primary-color);
+  color: var(--text-white);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+}
+
+.hero-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--overlay-dark);
+  z-index: -1;
+}
+
+.hero-content {
+  text-align: center;
+  color: var(--text-white);
+  max-width: 800px;
+  padding: 0 2rem;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.hero-actions {
+  margin-top: 2rem;
+}
+
+/* Menu Categories */
+.menu-categories {
+  padding: 5rem 0;
+  background: var(--background-warm);
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.category-card {
+  background: var(--background-color);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px var(--shadow-light);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.category-card:hover {
+  transform: translateY(-8px);
+}
+
+.category-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.category-content {
+  padding: 2rem;
+  text-align: center;
+}
+
+.category-content h3 {
+  color: var(--secondary-color);
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.category-btn {
+  background: var(--primary-color);
+  color: var(--text-white);
+  padding: 0.8rem 2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  font-family: 'Bebas Neue', cursive;
+  letter-spacing: 1px;
+}
+
+.category-btn:hover {
+  background: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+/* Featured Promotion */
+.featured-promo {
+  padding: 5rem 0;
+  background: var(--primary-color);
+  color: var(--text-white);
+}
+
+.promo-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.promo-text h2 {
+  text-align: left;
+  margin-bottom: 2rem;
+  color: var(--text-white);
+}
+
+.promo-text p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: var(--text-white);
+}
+
+.promo-details {
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.promo-price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  font-family: 'Bebas Neue', cursive;
+}
+
+.promo-original {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: line-through;
+}
+
+.promo-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Legendary Steaks */
+.legendary-steaks {
+  padding: 6rem 0;
+  background: var(--background-color);
+}
+
+.steaks-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.steak-card {
+  background: var(--background-warm);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px var(--shadow-light);
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.steak-card:hover {
+  transform: translateY(-8px);
+}
+
+.steak-card.signature {
+  border: 3px solid var(--primary-color);
+}
+
+.steak-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: var(--primary-color);
+  color: var(--text-white);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+.steak-image img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.steak-content {
+  padding: 2rem;
+  text-align: center;
+}
+
+.steak-content h3 {
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+}
+
+.steak-content p {
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.steak-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  font-family: 'Bebas Neue', cursive;
+}
+
+/* Ribs Section */
+.ribs-section {
+  padding: 6rem 0;
+  background: var(--background-warm);
+}
+
+.ribs-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.ribs-text h2 {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.ribs-features {
+  margin-bottom: 3rem;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.feature-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.feature-check {
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.ribs-visual img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Team Spirit */
+.team-spirit {
+  padding: 6rem 0;
+  background: var(--background-color);
+}
+
+.team-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.team-text h2 {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.team-values {
+  margin-bottom: 3rem;
+}
+
+.value {
+  margin-bottom: 2rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.value:last-child {
+  border-bottom: none;
+}
+
+.value h4 {
+  margin-bottom: 0.5rem;
+}
+
+.value p {
+  margin-bottom: 0;
+  font-size: 0.95rem;
+}
+
+.team-visual img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Social Follow */
+.social-follow {
+  padding: 5rem 0;
+  background: var(--background-warm);
+}
+
+.social-subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-bottom: 3rem;
+}
+
+.instagram-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.instagram-post {
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.instagram-post:hover {
+  transform: scale(1.05);
+}
+
+.instagram-post img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.social-cta {
+  text-align: center;
+}
+
+/* Locations */
+.locations {
+  padding: 6rem 0;
+  background: var(--background-color);
+}
+
+.location-finder {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.finder-form {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 0 auto 3rem;
+}
+
+.location-input {
+  flex: 1;
+  padding: 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.featured-locations h3 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--secondary-color);
+}
+
+.locations-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.location-card {
+  background: var(--background-warm);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px var(--shadow-light);
+}
+
+.location-card h4 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.location-address {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.location-phone {
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.location-hours {
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.location-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Gift Cards */
+.gift-cards {
+  padding: 6rem 0;
+  background: var(--background-warm);
+}
+
+.gift-card-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.gift-card-text h2 {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.gift-card-features {
+  margin-bottom: 3rem;
+}
+
+.gift-card-visual img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Footer */
+.footer {
+  background: var(--background-dark);
+  color: var(--text-white);
+  padding: 4rem 0 2rem;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-logo img {
+  height: 40px;
+  margin-bottom: 1rem;
+}
+
+.footer-section h4 {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-section a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.footer-section a:hover {
+  color: var(--primary-color);
+}
+
+.footer-section p {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-links a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.social-links a:hover {
+  color: var(--primary-color);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-legal {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-legal a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+  
+  .nav-menu {
+    display: none;
+  }
+  
+  .nav-actions {
+    display: none;
+  }
+  
+  h1 {
+    font-size: 3rem;
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+  }
+  
+  .hero {
+    height: 70vh;
+  }
+  
+  .categories-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .promo-content,
+  .ribs-content,
+  .team-content,
+  .gift-card-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .steaks-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .instagram-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .locations-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .finder-form {
+    flex-direction: column;
+  }
+  
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  .instagram-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.8rem;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
