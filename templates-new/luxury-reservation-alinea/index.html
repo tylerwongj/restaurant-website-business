@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Exceptional Dining Experience</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - Reserve your table for an unforgettable culinary journey">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="color-alinea">
+    <div class="reservation-modal" id="reservationModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Reserve Your Experience</h2>
+                <button class="close-btn" onclick="closeReservationModal()">&times;</button>
+            </div>
+            <div class="dining-experiences">
+                <div class="experience-card" data-experience="tasting">
+                    <div class="experience-image">
+                        <img src="{{TASTING_MENU_IMAGE}}" alt="Chef's Tasting Menu">
+                    </div>
+                    <div class="experience-content">
+                        <h3>Chef's Tasting Menu</h3>
+                        <p>{{TASTING_MENU_DESCRIPTION}}</p>
+                        <div class="experience-details">
+                            <span class="duration">{{TASTING_DURATION}}</span>
+                            <span class="price">{{TASTING_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="experience-card" data-experience="chefs-table">
+                    <div class="experience-image">
+                        <img src="{{CHEFS_TABLE_IMAGE}}" alt="Chef's Table Experience">
+                    </div>
+                    <div class="experience-content">
+                        <h3>Chef's Table</h3>
+                        <p>{{CHEFS_TABLE_DESCRIPTION}}</p>
+                        <div class="experience-details">
+                            <span class="duration">{{CHEFS_TABLE_DURATION}}</span>
+                            <span class="price">{{CHEFS_TABLE_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="experience-card" data-experience="private">
+                    <div class="experience-image">
+                        <img src="{{PRIVATE_DINING_IMAGE}}" alt="Private Dining Room">
+                    </div>
+                    <div class="experience-content">
+                        <h3>Private Dining</h3>
+                        <p>{{PRIVATE_DINING_DESCRIPTION}}</p>
+                        <div class="experience-details">
+                            <span class="duration">{{PRIVATE_DINING_DURATION}}</span>
+                            <span class="price">{{PRIVATE_DINING_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="reservation-form">
+                <form id="experienceReservation">
+                    <input type="hidden" id="selectedExperience" name="experience" value="">
+                    <div class="form-row">
+                        <input type="date" name="date" required>
+                        <select name="time" required>
+                            <option value="">Select Time</option>
+                            <option value="18:00">6:00 PM</option>
+                            <option value="18:30">6:30 PM</option>
+                            <option value="19:00">7:00 PM</option>
+                            <option value="19:30">7:30 PM</option>
+                            <option value="20:00">8:00 PM</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <input type="text" name="name" placeholder="Full Name" required>
+                        <select name="guests" required>
+                            <option value="">Party Size</option>
+                            <option value="2">2 Guests</option>
+                            <option value="4">4 Guests</option>
+                            <option value="6">6 Guests</option>
+                            <option value="8">8 Guests</option>
+                            <option value="10">10+ Guests</option>
+                        </select>
+                    </div>
+                    <input type="email" name="email" placeholder="Email Address" required>
+                    <input type="tel" name="phone" placeholder="Phone Number" required>
+                    <textarea name="special" placeholder="Special occasions, dietary restrictions, or preferences"></textarea>
+                    <button type="submit" class="btn btn-primary">Complete Reservation</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>{{RESTAURANT_NAME}}</h1>
+                <div class="logo-botanical">
+                    <svg width="60" height="20" viewBox="0 0 60 20">
+                        <path d="M10 10 Q20 5 30 10 Q40 15 50 10" stroke="currentColor" fill="none" stroke-width="1"/>
+                        <circle cx="15" cy="8" r="1" fill="currentColor"/>
+                        <circle cx="35" cy="12" r="1" fill="currentColor"/>
+                        <circle cx="45" cy="8" r="1" fill="currentColor"/>
+                    </svg>
+                </div>
+            </div>
+            <nav class="nav">
+                <ul class="nav-menu">
+                    <li><a href="#story">Our Story</a></li>
+                    <li><a href="#cuisine">Cuisine</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="reserve-btn" onclick="openReservationModal()">Reserve</button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>{{HERO_TITLE}}</h2>
+            <p>{{HERO_SUBTITLE}}</p>
+            <div class="hero-cta">
+                <button class="btn btn-primary" onclick="openReservationModal()">Reserve Your Experience</button>
+                <a href="#story" class="btn btn-secondary">Discover Our Story</a>
+            </div>
+        </div>
+        <div class="hero-artwork">
+            <div class="artwork-frame">
+                <img src="{{HERO_ARTWORK_IMAGE}}" alt="Culinary artistry">
+                <div class="artwork-caption">{{HERO_ARTWORK_CAPTION}}</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="philosophy">
+        <div class="container">
+            <div class="philosophy-content">
+                <div class="philosophy-quote">
+                    <blockquote>
+                        "{{PHILOSOPHY_QUOTE}}"
+                    </blockquote>
+                    <cite>— {{CHEF_NAME}}, {{CHEF_TITLE}}</cite>
+                </div>
+                <div class="philosophy-description">
+                    <p>{{PHILOSOPHY_DESCRIPTION}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="story" class="story-section">
+        <div class="container">
+            <div class="story-grid">
+                <div class="story-content">
+                    <h2>{{STORY_TITLE}}</h2>
+                    <p>{{STORY_DESCRIPTION}}</p>
+                    <div class="story-highlights">
+                        <div class="highlight">
+                            <span class="highlight-number">{{YEARS_EXPERIENCE}}</span>
+                            <span class="highlight-label">Years of Innovation</span>
+                        </div>
+                        <div class="highlight">
+                            <span class="highlight-number">{{MICHELIN_STARS}}</span>
+                            <span class="highlight-label">Michelin Stars</span>
+                        </div>
+                        <div class="highlight">
+                            <span class="highlight-number">{{AWARDS_COUNT}}</span>
+                            <span class="highlight-label">International Awards</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="story-image">
+                    <img src="{{STORY_IMAGE}}" alt="{{CHEF_NAME}} in the kitchen">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cuisine" class="cuisine-section">
+        <div class="container">
+            <h2>Culinary Philosophy</h2>
+            <div class="cuisine-grid">
+                <div class="cuisine-card">
+                    <div class="cuisine-image">
+                        <img src="{{CUISINE_IMAGE_1}}" alt="{{CUISINE_TITLE_1}}">
+                    </div>
+                    <div class="cuisine-content">
+                        <h3>{{CUISINE_TITLE_1}}</h3>
+                        <p>{{CUISINE_DESCRIPTION_1}}</p>
+                    </div>
+                </div>
+                <div class="cuisine-card">
+                    <div class="cuisine-image">
+                        <img src="{{CUISINE_IMAGE_2}}" alt="{{CUISINE_TITLE_2}}">
+                    </div>
+                    <div class="cuisine-content">
+                        <h3>{{CUISINE_TITLE_2}}</h3>
+                        <p>{{CUISINE_DESCRIPTION_2}}</p>
+                    </div>
+                </div>
+                <div class="cuisine-card">
+                    <div class="cuisine-image">
+                        <img src="{{CUISINE_IMAGE_3}}" alt="{{CUISINE_TITLE_3}}">
+                    </div>
+                    <div class="cuisine-content">
+                        <h3>{{CUISINE_TITLE_3}}</h3>
+                        <p>{{CUISINE_DESCRIPTION_3}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="seasonal-menu">
+        <div class="container">
+            <div class="seasonal-content">
+                <div class="seasonal-info">
+                    <h2>Seasonal Experience</h2>
+                    <p>{{SEASONAL_DESCRIPTION}}</p>
+                    <div class="seasonal-details">
+                        <div class="detail">
+                            <h4>Current Season</h4>
+                            <p>{{CURRENT_SEASON}}</p>
+                        </div>
+                        <div class="detail">
+                            <h4>Featured Ingredients</h4>
+                            <p>{{FEATURED_INGREDIENTS}}</p>
+                        </div>
+                        <div class="detail">
+                            <h4>Duration</h4>
+                            <p>{{MENU_DURATION}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="seasonal-preview">
+                    <div class="menu-preview">
+                        <img src="{{SEASONAL_MENU_IMAGE}}" alt="Current seasonal menu">
+                        <div class="preview-overlay">
+                            <button class="btn btn-secondary" onclick="openReservationModal()">Experience This Menu</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="events" class="events-section">
+        <div class="container">
+            <h2>Special Events</h2>
+            <div class="events-grid">
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="{{EVENT_IMAGE_1}}" alt="{{EVENT_TITLE_1}}">
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date">{{EVENT_DATE_1}}</div>
+                        <h3>{{EVENT_TITLE_1}}</h3>
+                        <p>{{EVENT_DESCRIPTION_1}}</p>
+                        <div class="event-price">{{EVENT_PRICE_1}}</div>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="{{EVENT_IMAGE_2}}" alt="{{EVENT_TITLE_2}}">
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date">{{EVENT_DATE_2}}</div>
+                        <h3>{{EVENT_TITLE_2}}</h3>
+                        <p>{{EVENT_DESCRIPTION_2}}</p>
+                        <div class="event-price">{{EVENT_PRICE_2}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="anniversary-section">
+        <div class="container">
+            <div class="anniversary-content">
+                <h2>Celebrate Your Special Moments</h2>
+                <p>Create unforgettable memories with our bespoke anniversary and celebration experiences.</p>
+                <div class="celebration-types">
+                    <div class="celebration">
+                        <h4>Anniversaries</h4>
+                        <p>{{ANNIVERSARY_EXPERIENCE}}</p>
+                    </div>
+                    <div class="celebration">
+                        <h4>Proposals</h4>
+                        <p>{{PROPOSAL_EXPERIENCE}}</p>
+                    </div>
+                    <div class="celebration">
+                        <h4>Special Occasions</h4>
+                        <p>{{SPECIAL_OCCASION_EXPERIENCE}}</p>
+                    </div>
+                </div>
+                <button class="btn btn-primary" onclick="openReservationModal()">Plan Your Celebration</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Visit Us</h2>
+                    <div class="contact-details">
+                        <div class="detail">
+                            <h4>Address</h4>
+                            <p>{{RESTAURANT_ADDRESS}}</p>
+                        </div>
+                        <div class="detail">
+                            <h4>Reservations</h4>
+                            <p>{{RESTAURANT_PHONE}}</p>
+                            <p>{{RESTAURANT_EMAIL}}</p>
+                        </div>
+                        <div class="detail">
+                            <h4>Hours</h4>
+                            <p>{{RESTAURANT_HOURS}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-map">
+                    <div class="map-placeholder">
+                        <p>Interactive Map</p>
+                        <span>{{RESTAURANT_ADDRESS}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>{{RESTAURANT_NAME}}</h3>
+                    <div class="footer-botanical">
+                        <svg width="80" height="20" viewBox="0 0 80 20">
+                            <path d="M10 10 Q25 5 40 10 Q55 15 70 10" stroke="currentColor" fill="none" stroke-width="1"/>
+                            <circle cx="20" cy="8" r="1" fill="currentColor"/>
+                            <circle cx="40" cy="12" r="1" fill="currentColor"/>
+                            <circle cx="60" cy="8" r="1" fill="currentColor"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <a href="{{PRESS_URL}}">Press</a>
+                    <a href="{{CAREERS_URL}}">Careers</a>
+                    <a href="{{PRIVACY_URL}}">Privacy</a>
+                </div>
+                <div class="footer-social">
+                    <a href="{{INSTAGRAM_URL}}">Instagram</a>
+                    <a href="{{FACEBOOK_URL}}">Facebook</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

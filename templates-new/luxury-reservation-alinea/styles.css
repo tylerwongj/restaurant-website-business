@@ -1,0 +1,819 @@
+/* Luxury Reservation Alinea Template */
+
+:root {
+    --alinea-primary: #f8f6f3;        /* Warm white */
+    --alinea-secondary: #8b7355;      /* Muted brown */
+    --alinea-accent: #2d3748;         /* Dark gray */
+    --alinea-text: #4a5568;           /* Medium gray */
+    --alinea-dark: #1a202c;           /* Deep charcoal */
+    --alinea-white: #ffffff;
+    --alinea-light: #f7fafc;
+    --alinea-border: #e2e8f0;
+}
+
+.color-alinea {
+    --primary-color: var(--alinea-primary);
+    --secondary-color: var(--alinea-secondary);
+    --accent-color: var(--alinea-accent);
+    --text-color: var(--alinea-text);
+    --background-color: var(--alinea-white);
+    --section-bg: var(--alinea-primary);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    line-height: 1.7;
+    color: var(--text-color);
+    background: var(--background-color);
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+.reservation-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--alinea-white);
+    width: 90%;
+    max-width: 900px;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 0;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    border-bottom: 1px solid var(--alinea-border);
+}
+
+.modal-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--alinea-dark);
+    font-weight: 400;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--alinea-text);
+    cursor: pointer;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dining-experiences {
+    padding: 2rem;
+    border-bottom: 1px solid var(--alinea-border);
+}
+
+.experience-card {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    border: 1px solid var(--alinea-border);
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.experience-card:hover {
+    background: var(--alinea-light);
+    border-color: var(--alinea-secondary);
+}
+
+.experience-card.selected {
+    background: var(--alinea-primary);
+    border-color: var(--alinea-secondary);
+}
+
+.experience-image {
+    width: 120px;
+    height: 80px;
+    overflow: hidden;
+}
+
+.experience-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.experience-content {
+    flex: 1;
+}
+
+.experience-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--alinea-dark);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.experience-content p {
+    color: var(--alinea-text);
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.experience-details {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.duration {
+    background: var(--alinea-light);
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    color: var(--alinea-text);
+}
+
+.price {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    color: var(--alinea-secondary);
+    font-size: 1.1rem;
+}
+
+.reservation-form {
+    padding: 2rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.reservation-form input,
+.reservation-form select,
+.reservation-form textarea {
+    width: 100%;
+    padding: 0.875rem;
+    border: 1px solid var(--alinea-border);
+    border-radius: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1rem;
+    background: var(--alinea-white);
+    transition: border-color 0.3s ease;
+}
+
+.reservation-form input:focus,
+.reservation-form select:focus,
+.reservation-form textarea:focus {
+    outline: none;
+    border-color: var(--alinea-secondary);
+}
+
+.reservation-form textarea {
+    grid-column: 1 / -1;
+    resize: vertical;
+    min-height: 100px;
+}
+
+.btn {
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 0.875rem 2rem;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary {
+    background: var(--alinea-dark);
+    color: white;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.btn-primary:hover {
+    background: #2d3748;
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--alinea-dark);
+    border: 1px solid var(--alinea-dark);
+}
+
+.btn-secondary:hover {
+    background: var(--alinea-dark);
+    color: white;
+}
+
+.header {
+    background: var(--alinea-white);
+    border-bottom: 1px solid var(--alinea-border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+}
+
+.logo h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--alinea-dark);
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.logo-botanical {
+    margin-top: 0.5rem;
+    color: var(--alinea-secondary);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+.nav-menu a {
+    color: var(--alinea-text);
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--alinea-dark);
+}
+
+.reserve-btn {
+    background: var(--alinea-dark);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.reserve-btn:hover {
+    background: #2d3748;
+    transform: translateY(-1px);
+}
+
+.hero {
+    min-height: 80vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
+    padding: 4rem 2rem;
+    background: var(--alinea-white);
+}
+
+.hero-content {
+    max-width: 500px;
+}
+
+.hero-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    line-height: 1.2;
+    color: var(--alinea-dark);
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 3rem;
+    color: var(--alinea-text);
+    line-height: 1.6;
+}
+
+.hero-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.hero-artwork {
+    position: relative;
+}
+
+.artwork-frame {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+}
+
+.artwork-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.artwork-caption {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    background: rgba(255,255,255,0.95);
+    padding: 0.75rem 1rem;
+    font-style: italic;
+    color: var(--alinea-text);
+    font-size: 0.9rem;
+}
+
+.philosophy {
+    background: var(--alinea-primary);
+    padding: 6rem 0;
+}
+
+.philosophy-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.philosophy-quote blockquote {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    line-height: 1.4;
+    color: var(--alinea-dark);
+    margin-bottom: 2rem;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.philosophy-quote cite {
+    color: var(--alinea-secondary);
+    font-size: 1.1rem;
+    font-style: normal;
+}
+
+.philosophy-description {
+    margin-top: 3rem;
+}
+
+.philosophy-description p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: var(--alinea-text);
+}
+
+.story-section {
+    padding: 6rem 0;
+}
+
+.story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.story-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--alinea-dark);
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+.story-content p {
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    line-height: 1.7;
+}
+
+.story-highlights {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.highlight {
+    text-align: center;
+}
+
+.highlight-number {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--alinea-secondary);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.highlight-label {
+    color: var(--alinea-text);
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+.story-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.cuisine-section {
+    background: var(--alinea-primary);
+    padding: 6rem 0;
+}
+
+.cuisine-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--alinea-dark);
+    text-align: center;
+    margin-bottom: 4rem;
+    font-weight: 400;
+}
+
+.cuisine-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+}
+
+.cuisine-card {
+    background: var(--alinea-white);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.cuisine-card:hover {
+    transform: translateY(-5px);
+}
+
+.cuisine-image {
+    height: 250px;
+    overflow: hidden;
+}
+
+.cuisine-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cuisine-content {
+    padding: 2rem;
+}
+
+.cuisine-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--alinea-dark);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.cuisine-content p {
+    line-height: 1.7;
+}
+
+.seasonal-menu {
+    padding: 6rem 0;
+}
+
+.seasonal-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.seasonal-info h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--alinea-dark);
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+.seasonal-info p {
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    line-height: 1.7;
+}
+
+.seasonal-details {
+    display: grid;
+    gap: 2rem;
+}
+
+.detail h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--alinea-secondary);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.detail p {
+    color: var(--alinea-text);
+    margin: 0;
+}
+
+.menu-preview {
+    position: relative;
+    height: 600px;
+    overflow: hidden;
+}
+
+.menu-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.preview-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    padding: 3rem 2rem 2rem;
+    text-align: center;
+}
+
+.events-section {
+    background: var(--alinea-primary);
+    padding: 6rem 0;
+}
+
+.events-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--alinea-dark);
+    text-align: center;
+    margin-bottom: 4rem;
+    font-weight: 400;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
+}
+
+.event-card {
+    background: var(--alinea-white);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+}
+
+.event-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.event-content {
+    padding: 2rem;
+}
+
+.event-date {
+    color: var(--alinea-secondary);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.event-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--alinea-dark);
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.event-content p {
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.event-price {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    color: var(--alinea-secondary);
+    font-size: 1.1rem;
+}
+
+.anniversary-section {
+    padding: 6rem 0;
+    text-align: center;
+}
+
+.anniversary-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--alinea-dark);
+    margin-bottom: 2rem;
+    font-weight: 400;
+}
+
+.anniversary-content > p {
+    font-size: 1.2rem;
+    margin-bottom: 4rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.celebration-types {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.celebration h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--alinea-secondary);
+    margin-bottom: 1rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.celebration p {
+    line-height: 1.7;
+}
+
+.contact-section {
+    background: var(--alinea-primary);
+    padding: 6rem 0;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+.contact-info h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--alinea-dark);
+    margin-bottom: 3rem;
+    font-weight: 400;
+}
+
+.contact-details {
+    display: grid;
+    gap: 2rem;
+}
+
+.contact-details .detail h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--alinea-secondary);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.contact-details .detail p {
+    margin: 0;
+    line-height: 1.7;
+}
+
+.map-placeholder {
+    background: var(--alinea-white);
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--alinea-text);
+}
+
+.footer {
+    background: var(--alinea-dark);
+    color: white;
+    padding: 3rem 0 1rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 3rem;
+    align-items: start;
+    margin-bottom: 2rem;
+}
+
+.footer-logo h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+.footer-botanical {
+    color: rgba(255,255,255,0.6);
+}
+
+.footer-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-links a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.footer-social {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-social a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding: 3rem 1rem;
+    }
+    
+    .hero-content h2 { font-size: 2.5rem; }
+    
+    .story-grid { grid-template-columns: 1fr; }
+    .seasonal-content { grid-template-columns: 1fr; }
+    .contact-content { grid-template-columns: 1fr; }
+    
+    .form-row { grid-template-columns: 1fr; }
+    
+    .nav-menu { display: none; }
+    
+    .modal-content { width: 95%; }
+    
+    .experience-card { flex-direction: column; }
+    .experience-image { width: 100%; height: 200px; }
+    
+    .story-highlights { grid-template-columns: 1fr; }
+    .celebration-types { grid-template-columns: 1fr; }
+    
+    .footer-content { grid-template-columns: 1fr; text-align: center; }
+}

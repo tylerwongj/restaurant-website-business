@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Craft Brewery & Gastropub</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="craft-brewery-theme">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+                <div class="logo-text">
+                    <h1>{{RESTAURANT_NAME}}</h1>
+                    <span class="tagline">Craft Beer • Great Food • Good Times</span>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#beers">Our Beers</a></li>
+                <li><a href="#menu">Food Menu</a></li>
+                <li><a href="#brewery">Brewery Tour</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#visit">Visit Us</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#order" class="btn btn-primary">Order Online</a>
+                <a href="tel:{{PHONE}}" class="phone-link">{{PHONE}}</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <video autoplay muted loop>
+                <source src="{{HERO_VIDEO_URL}}" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h2>Handcrafted Beer & Elevated Pub Food</h2>
+            <p class="hero-subtitle">{{HERO_DESCRIPTION}}</p>
+            <div class="hero-features">
+                <div class="feature">
+                    <span class="feature-icon">🍺</span>
+                    <span>{{BEER_COUNT}}+ Craft Beers</span>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">🍔</span>
+                    <span>Gastropub Cuisine</span>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">🏭</span>
+                    <span>Onsite Brewery</span>
+                </div>
+            </div>
+            <div class="hero-buttons">
+                <a href="#beers" class="btn btn-hero-primary">Try Our Beers</a>
+                <a href="#menu" class="btn btn-hero-secondary">View Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brewing Today Banner -->
+    <section class="brewing-today">
+        <div class="container">
+            <div class="brewing-content">
+                <div class="brewing-text">
+                    <h3>Brewing Today</h3>
+                    <h4>{{TODAYS_BREW_NAME}}</h4>
+                    <p>{{TODAYS_BREW_DESCRIPTION}}</p>
+                </div>
+                <div class="brewing-details">
+                    <div class="brew-stat">
+                        <span class="stat-number">{{BREW_ABV}}%</span>
+                        <span class="stat-label">ABV</span>
+                    </div>
+                    <div class="brew-stat">
+                        <span class="stat-number">{{BREW_IBU}}</span>
+                        <span class="stat-label">IBU</span>
+                    </div>
+                    <div class="brew-stat">
+                        <span class="stat-number">{{BREW_READY}}</span>
+                        <span class="stat-label">Days to Ready</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Beers Section -->
+    <section id="beers" class="beer-selection">
+        <div class="container">
+            <div class="beer-header">
+                <h2>Our Craft Beer Selection</h2>
+                <p>{{BEER_SELECTION_DESCRIPTION}}</p>
+            </div>
+            
+            <div class="beer-categories">
+                <!-- Core Beers -->
+                <div class="beer-category">
+                    <div class="category-header">
+                        <h3>Core Collection</h3>
+                        <p>Our flagship beers, always on tap</p>
+                    </div>
+                    <div class="beer-grid">
+                        <div class="beer-card flagship">
+                            <div class="flagship-badge">Flagship</div>
+                            <img src="{{CORE_BEER_1_IMAGE}}" alt="{{CORE_BEER_1_NAME}}">
+                            <div class="beer-content">
+                                <h4>{{CORE_BEER_1_NAME}}</h4>
+                                <p class="beer-style">{{CORE_BEER_1_STYLE}}</p>
+                                <p>{{CORE_BEER_1_DESCRIPTION}}</p>
+                                <div class="beer-stats">
+                                    <div class="stat">
+                                        <span class="label">ABV</span>
+                                        <span class="value">{{CORE_BEER_1_ABV}}%</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="label">IBU</span>
+                                        <span class="value">{{CORE_BEER_1_IBU}}</span>
+                                    </div>
+                                </div>
+                                <div class="beer-tasting">
+                                    <h5>Tasting Notes</h5>
+                                    <p>{{CORE_BEER_1_NOTES}}</p>
+                                </div>
+                                <div class="beer-pricing">
+                                    <span class="pint-price">Pint: {{CORE_BEER_1_PINT_PRICE}}</span>
+                                    <span class="flight-price">Flight: {{CORE_BEER_1_FLIGHT_PRICE}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="beer-card">
+                            <img src="{{CORE_BEER_2_IMAGE}}" alt="{{CORE_BEER_2_NAME}}">
+                            <div class="beer-content">
+                                <h4>{{CORE_BEER_2_NAME}}</h4>
+                                <p class="beer-style">{{CORE_BEER_2_STYLE}}</p>
+                                <p>{{CORE_BEER_2_DESCRIPTION}}</p>
+                                <div class="beer-stats">
+                                    <div class="stat">
+                                        <span class="label">ABV</span>
+                                        <span class="value">{{CORE_BEER_2_ABV}}%</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="label">IBU</span>
+                                        <span class="value">{{CORE_BEER_2_IBU}}</span>
+                                    </div>
+                                </div>
+                                <div class="beer-tasting">
+                                    <h5>Tasting Notes</h5>
+                                    <p>{{CORE_BEER_2_NOTES}}</p>
+                                </div>
+                                <div class="beer-pricing">
+                                    <span class="pint-price">Pint: {{CORE_BEER_2_PINT_PRICE}}</span>
+                                    <span class="flight-price">Flight: {{CORE_BEER_2_FLIGHT_PRICE}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="beer-card">
+                            <img src="{{CORE_BEER_3_IMAGE}}" alt="{{CORE_BEER_3_NAME}}">
+                            <div class="beer-content">
+                                <h4>{{CORE_BEER_3_NAME}}</h4>
+                                <p class="beer-style">{{CORE_BEER_3_STYLE}}</p>
+                                <p>{{CORE_BEER_3_DESCRIPTION}}</p>
+                                <div class="beer-stats">
+                                    <div class="stat">
+                                        <span class="label">ABV</span>
+                                        <span class="value">{{CORE_BEER_3_ABV}}%</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="label">IBU</span>
+                                        <span class="value">{{CORE_BEER_3_IBU}}</span>
+                                    </div>
+                                </div>
+                                <div class="beer-tasting">
+                                    <h5>Tasting Notes</h5>
+                                    <p>{{CORE_BEER_3_NOTES}}</p>
+                                </div>
+                                <div class="beer-pricing">
+                                    <span class="pint-price">Pint: {{CORE_BEER_3_PINT_PRICE}}</span>
+                                    <span class="flight-price">Flight: {{CORE_BEER_3_FLIGHT_PRICE}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="beer-card">
+                            <img src="{{CORE_BEER_4_IMAGE}}" alt="{{CORE_BEER_4_NAME}}">
+                            <div class="beer-content">
+                                <h4>{{CORE_BEER_4_NAME}}</h4>
+                                <p class="beer-style">{{CORE_BEER_4_STYLE}}</p>
+                                <p>{{CORE_BEER_4_DESCRIPTION}}</p>
+                                <div class="beer-stats">
+                                    <div class="stat">
+                                        <span class="label">ABV</span>
+                                        <span class="value">{{CORE_BEER_4_ABV}}%</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="label">IBU</span>
+                                        <span class="value">{{CORE_BEER_4_IBU}}</span>
+                                    </div>
+                                </div>
+                                <div class="beer-tasting">
+                                    <h5>Tasting Notes</h5>
+                                    <p>{{CORE_BEER_4_NOTES}}</p>
+                                </div>
+                                <div class="beer-pricing">
+                                    <span class="pint-price">Pint: {{CORE_BEER_4_PINT_PRICE}}</span>
+                                    <span class="flight-price">Flight: {{CORE_BEER_4_FLIGHT_PRICE}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Seasonal & Limited -->
+                <div class="beer-category">
+                    <div class="category-header">
+                        <h3>Seasonal & Limited Releases</h3>
+                        <p>Rotating taps featuring experimental and seasonal brews</p>
+                    </div>
+                    <div class="beer-grid">
+                        <div class="beer-card seasonal">
+                            <div class="seasonal-badge">Limited</div>
+                            <img src="{{SEASONAL_BEER_1_IMAGE}}" alt="{{SEASONAL_BEER_1_NAME}}">
+                            <div class="beer-content">
+                                <h4>{{SEASONAL_BEER_1_NAME}}</h4>
+                                <p class="beer-style">{{SEASONAL_BEER_1_STYLE}}</p>
+                                <p>{{SEASONAL_BEER_1_DESCRIPTION}}</p>
+                                <div class="beer-stats">
+                                    <div class="stat">
+                                        <span class="label">ABV</span>
+                                        <span class="value">{{SEASONAL_BEER_1_ABV}}%</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="label">IBU</span>
+                                        <span class="value">{{SEASONAL_BEER_1_IBU}}</span>
+                                    </div>
+                                </div>
+                                <div class="availability">
+                                    <span>{{SEASONAL_BEER_1_AVAILABILITY}}</span>
+                                </div>
+                                <div class="beer-pricing">
+                                    <span class="pint-price">Pint: {{SEASONAL_BEER_1_PINT_PRICE}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="beer-card">
+                            <img src="{{SEASONAL_BEER_2_IMAGE}}" alt="{{SEASONAL_BEER_2_NAME}}">
+                            <div class="beer-content">
+                                <h4>{{SEASONAL_BEER_2_NAME}}</h4>
+                                <p class="beer-style">{{SEASONAL_BEER_2_STYLE}}</p>
+                                <p>{{SEASONAL_BEER_2_DESCRIPTION}}</p>
+                                <div class="beer-stats">
+                                    <div class="stat">
+                                        <span class="label">ABV</span>
+                                        <span class="value">{{SEASONAL_BEER_2_ABV}}%</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="label">IBU</span>
+                                        <span class="value">{{SEASONAL_BEER_2_IBU}}</span>
+                                    </div>
+                                </div>
+                                <div class="availability">
+                                    <span>{{SEASONAL_BEER_2_AVAILABILITY}}</span>
+                                </div>
+                                <div class="beer-pricing">
+                                    <span class="pint-price">Pint: {{SEASONAL_BEER_2_PINT_PRICE}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="beer-card">
+                            <img src="{{SEASONAL_BEER_3_IMAGE}}" alt="{{SEASONAL_BEER_3_NAME}}">
+                            <div class="beer-content">
+                                <h4>{{SEASONAL_BEER_3_NAME}}</h4>
+                                <p class="beer-style">{{SEASONAL_BEER_3_STYLE}}</p>
+                                <p>{{SEASONAL_BEER_3_DESCRIPTION}}</p>
+                                <div class="beer-stats">
+                                    <div class="stat">
+                                        <span class="label">ABV</span>
+                                        <span class="value">{{SEASONAL_BEER_3_ABV}}%</span>
+                                    </div>
+                                    <div class="stat">
+                                        <span class="label">IBU</span>
+                                        <span class="value">{{SEASONAL_BEER_3_IBU}}</span>
+                                    </div>
+                                </div>
+                                <div class="availability">
+                                    <span>{{SEASONAL_BEER_3_AVAILABILITY}}</span>
+                                </div>
+                                <div class="beer-pricing">
+                                    <span class="pint-price">Pint: {{SEASONAL_BEER_3_PINT_PRICE}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Beer Flights -->
+                <div class="beer-flights">
+                    <h3>Beer Flights</h3>
+                    <p>Sample multiple beers with our curated flights</p>
+                    <div class="flight-options">
+                        <div class="flight-option">
+                            <h4>{{FLIGHT_1_NAME}}</h4>
+                            <p>{{FLIGHT_1_DESCRIPTION}}</p>
+                            <div class="flight-beers">
+                                <span>{{FLIGHT_1_BEER_1}}</span>
+                                <span>{{FLIGHT_1_BEER_2}}</span>
+                                <span>{{FLIGHT_1_BEER_3}}</span>
+                                <span>{{FLIGHT_1_BEER_4}}</span>
+                            </div>
+                            <span class="flight-price">{{FLIGHT_1_PRICE}}</span>
+                        </div>
+                        <div class="flight-option">
+                            <h4>{{FLIGHT_2_NAME}}</h4>
+                            <p>{{FLIGHT_2_DESCRIPTION}}</p>
+                            <div class="flight-beers">
+                                <span>{{FLIGHT_2_BEER_1}}</span>
+                                <span>{{FLIGHT_2_BEER_2}}</span>
+                                <span>{{FLIGHT_2_BEER_3}}</span>
+                                <span>{{FLIGHT_2_BEER_4}}</span>
+                            </div>
+                            <span class="flight-price">{{FLIGHT_2_PRICE}}</span>
+                        </div>
+                        <div class="flight-option">
+                            <h4>{{FLIGHT_3_NAME}}</h4>
+                            <p>{{FLIGHT_3_DESCRIPTION}}</p>
+                            <div class="flight-beers">
+                                <span>{{FLIGHT_3_BEER_1}}</span>
+                                <span>{{FLIGHT_3_BEER_2}}</span>
+                                <span>{{FLIGHT_3_BEER_3}}</span>
+                                <span>{{FLIGHT_3_BEER_4}}</span>
+                            </div>
+                            <span class="flight-price">{{FLIGHT_3_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gastropub Menu -->
+    <section id="menu" class="gastropub-menu">
+        <div class="container">
+            <div class="menu-header">
+                <h2>Gastropub Menu</h2>
+                <p>{{MENU_DESCRIPTION}}</p>
+            </div>
+            
+            <div class="menu-sections">
+                <!-- Starters & Shareables -->
+                <div class="menu-section">
+                    <div class="section-header">
+                        <h3>Starters & Shareables</h3>
+                        <p>Perfect for pairing with our craft beers</p>
+                    </div>
+                    <div class="menu-items">
+                        <div class="menu-item featured">
+                            <div class="featured-badge">Beer Favorite</div>
+                            <img src="{{STARTER_1_IMAGE}}" alt="{{STARTER_1_NAME}}">
+                            <div class="item-content">
+                                <h4>{{STARTER_1_NAME}}</h4>
+                                <p>{{STARTER_1_DESCRIPTION}}</p>
+                                <div class="beer-pairing">
+                                    <span>Pairs with: {{STARTER_1_PAIRING}}</span>
+                                </div>
+                                <span class="price">{{STARTER_1_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="{{STARTER_2_IMAGE}}" alt="{{STARTER_2_NAME}}">
+                            <div class="item-content">
+                                <h4>{{STARTER_2_NAME}}</h4>
+                                <p>{{STARTER_2_DESCRIPTION}}</p>
+                                <div class="beer-pairing">
+                                    <span>Pairs with: {{STARTER_2_PAIRING}}</span>
+                                </div>
+                                <span class="price">{{STARTER_2_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="{{STARTER_3_IMAGE}}" alt="{{STARTER_3_NAME}}">
+                            <div class="item-content">
+                                <h4>{{STARTER_3_NAME}}</h4>
+                                <p>{{STARTER_3_DESCRIPTION}}</p>
+                                <div class="beer-pairing">
+                                    <span>Pairs with: {{STARTER_3_PAIRING}}</span>
+                                </div>
+                                <span class="price">{{STARTER_3_PRICE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Burgers & Sandwiches -->
+                <div class="menu-section">
+                    <div class="section-header">
+                        <h3>Burgers & Sandwiches</h3>
+                        <p>Elevated classics made with local ingredients</p>
+                    </div>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <img src="{{BURGER_1_IMAGE}}" alt="{{BURGER_1_NAME}}">
+                            <div class="item-content">
+                                <h4>{{BURGER_1_NAME}}</h4>
+                                <p>{{BURGER_1_DESCRIPTION}}</p>
+                                <div class="beer-pairing">
+                                    <span>Pairs with: {{BURGER_1_PAIRING}}</span>
+                                </div>
+                                <span class="price">{{BURGER_1_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="{{BURGER_2_IMAGE}}" alt="{{BURGER_2_NAME}}">
+                            <div class="item-content">
+                                <h4>{{BURGER_2_NAME}}</h4>
+                                <p>{{BURGER_2_DESCRIPTION}}</p>
+                                <div class="beer-pairing">
+                                    <span>Pairs with: {{BURGER_2_PAIRING}}</span>
+                                </div>
+                                <span class="price">{{BURGER_2_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="{{SANDWICH_1_IMAGE}}" alt="{{SANDWICH_1_NAME}}">
+                            <div class="item-content">
+                                <h4>{{SANDWICH_1_NAME}}</h4>
+                                <p>{{SANDWICH_1_DESCRIPTION}}</p>
+                                <div class="beer-pairing">
+                                    <span>Pairs with: {{SANDWICH_1_PAIRING}}</span>
+                                </div>
+                                <span class="price">{{SANDWICH_1_PRICE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mains -->
+                <div class="menu-section">
+                    <div class="section-header">
+                        <h3>Main Dishes</h3>
+                        <p>Hearty plates for serious appetites</p>
+                    </div>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <img src="{{MAIN_1_IMAGE}}" alt="{{MAIN_1_NAME}}">
+                            <div class="item-content">
+                                <h4>{{MAIN_1_NAME}}</h4>
+                                <p>{{MAIN_1_DESCRIPTION}}</p>
+                                <div class="beer-pairing">
+                                    <span>Pairs with: {{MAIN_1_PAIRING}}</span>
+                                </div>
+                                <span class="price">{{MAIN_1_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="{{MAIN_2_IMAGE}}" alt="{{MAIN_2_NAME}}">
+                            <div class="item-content">
+                                <h4>{{MAIN_2_NAME}}</h4>
+                                <p>{{MAIN_2_DESCRIPTION}}</p>
+                                <div class="beer-pairing">
+                                    <span>Pairs with: {{MAIN_2_PAIRING}}</span>
+                                </div>
+                                <span class="price">{{MAIN_2_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="{{MAIN_3_IMAGE}}" alt="{{MAIN_3_NAME}}">
+                            <div class="item-content">
+                                <h4>{{MAIN_3_NAME}}</h4>
+                                <p>{{MAIN_3_DESCRIPTION}}</p>
+                                <div class="beer-pairing">
+                                    <span>Pairs with: {{MAIN_3_PAIRING}}</span>
+                                </div>
+                                <span class="price">{{MAIN_3_PRICE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Desserts -->
+                <div class="menu-section">
+                    <div class="section-header">
+                        <h3>Sweet Endings</h3>
+                        <p>Desserts that pair surprisingly well with beer</p>
+                    </div>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <img src="{{DESSERT_1_IMAGE}}" alt="{{DESSERT_1_NAME}}">
+                            <div class="item-content">
+                                <h4>{{DESSERT_1_NAME}}</h4>
+                                <p>{{DESSERT_1_DESCRIPTION}}</p>
+                                <div class="beer-pairing">
+                                    <span>Pairs with: {{DESSERT_1_PAIRING}}</span>
+                                </div>
+                                <span class="price">{{DESSERT_1_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="{{DESSERT_2_IMAGE}}" alt="{{DESSERT_2_NAME}}">
+                            <div class="item-content">
+                                <h4>{{DESSERT_2_NAME}}</h4>
+                                <p>{{DESSERT_2_DESCRIPTION}}</p>
+                                <div class="beer-pairing">
+                                    <span>Pairs with: {{DESSERT_2_PAIRING}}</span>
+                                </div>
+                                <span class="price">{{DESSERT_2_PRICE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brewery Tour -->
+    <section id="brewery" class="brewery-tour">
+        <div class="container">
+            <div class="brewery-content">
+                <div class="brewery-text">
+                    <h2>Behind the Scenes: Brewery Tour</h2>
+                    <p>{{BREWERY_TOUR_DESCRIPTION}}</p>
+                    <div class="tour-details">
+                        <div class="tour-info">
+                            <h4>Tour Schedule</h4>
+                            <div class="tour-times">
+                                <div class="tour-time">
+                                    <span class="day">{{TOUR_DAY_1}}</span>
+                                    <span class="times">{{TOUR_TIMES_1}}</span>
+                                </div>
+                                <div class="tour-time">
+                                    <span class="day">{{TOUR_DAY_2}}</span>
+                                    <span class="times">{{TOUR_TIMES_2}}</span>
+                                </div>
+                                <div class="tour-time">
+                                    <span class="day">{{TOUR_DAY_3}}</span>
+                                    <span class="times">{{TOUR_TIMES_3}}</span>
+                                </div>
+                            </div>
+                            <div class="tour-pricing">
+                                <span class="tour-price">{{TOUR_PRICE}}</span>
+                                <span class="tour-includes">{{TOUR_INCLUDES}}</span>
+                            </div>
+                        </div>
+                        <div class="brewing-process">
+                            <h4>Our Brewing Process</h4>
+                            <div class="process-steps">
+                                <div class="process-step">
+                                    <div class="step-number">1</div>
+                                    <h5>{{PROCESS_STEP_1_TITLE}}</h5>
+                                    <p>{{PROCESS_STEP_1_DESCRIPTION}}</p>
+                                </div>
+                                <div class="process-step">
+                                    <div class="step-number">2</div>
+                                    <h5>{{PROCESS_STEP_2_TITLE}}</h5>
+                                    <p>{{PROCESS_STEP_2_DESCRIPTION}}</p>
+                                </div>
+                                <div class="process-step">
+                                    <div class="step-number">3</div>
+                                    <h5>{{PROCESS_STEP_3_TITLE}}</h5>
+                                    <p>{{PROCESS_STEP_3_DESCRIPTION}}</p>
+                                </div>
+                                <div class="process-step">
+                                    <div class="step-number">4</div>
+                                    <h5>{{PROCESS_STEP_4_TITLE}}</h5>
+                                    <p>{{PROCESS_STEP_4_DESCRIPTION}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#tour-booking" class="btn btn-brewery">Book Brewery Tour</a>
+                </div>
+                <div class="brewery-image">
+                    <img src="{{BREWERY_IMAGE}}" alt="Brewery Equipment">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="events-section">
+        <div class="container">
+            <div class="events-content">
+                <div class="events-text">
+                    <h2>Events & Private Parties</h2>
+                    <p>{{EVENTS_DESCRIPTION}}</p>
+                    <div class="event-types">
+                        <div class="event-type">
+                            <h4>{{EVENT_TYPE_1_NAME}}</h4>
+                            <p>{{EVENT_TYPE_1_DESCRIPTION}}</p>
+                            <div class="event-details">
+                                <span class="capacity">{{EVENT_TYPE_1_CAPACITY}} people</span>
+                                <span class="duration">{{EVENT_TYPE_1_DURATION}}</span>
+                            </div>
+                            <span class="event-price">{{EVENT_TYPE_1_PRICE}}</span>
+                        </div>
+                        <div class="event-type">
+                            <h4>{{EVENT_TYPE_2_NAME}}</h4>
+                            <p>{{EVENT_TYPE_2_DESCRIPTION}}</p>
+                            <div class="event-details">
+                                <span class="capacity">{{EVENT_TYPE_2_CAPACITY}} people</span>
+                                <span class="duration">{{EVENT_TYPE_2_DURATION}}</span>
+                            </div>
+                            <span class="event-price">{{EVENT_TYPE_2_PRICE}}</span>
+                        </div>
+                        <div class="event-type">
+                            <h4>{{EVENT_TYPE_3_NAME}}</h4>
+                            <p>{{EVENT_TYPE_3_DESCRIPTION}}</p>
+                            <div class="event-details">
+                                <span class="capacity">{{EVENT_TYPE_3_CAPACITY}} people</span>
+                                <span class="duration">{{EVENT_TYPE_3_DURATION}}</span>
+                            </div>
+                            <span class="event-price">{{EVENT_TYPE_3_PRICE}}</span>
+                        </div>
+                    </div>
+                    <div class="weekly-events">
+                        <h4>Weekly Events</h4>
+                        <div class="weekly-event">
+                            <h5>{{WEEKLY_EVENT_1_NAME}}</h5>
+                            <p>{{WEEKLY_EVENT_1_DESCRIPTION}}</p>
+                            <span class="event-day">{{WEEKLY_EVENT_1_DAY}} {{WEEKLY_EVENT_1_TIME}}</span>
+                        </div>
+                        <div class="weekly-event">
+                            <h5>{{WEEKLY_EVENT_2_NAME}}</h5>
+                            <p>{{WEEKLY_EVENT_2_DESCRIPTION}}</p>
+                            <span class="event-day">{{WEEKLY_EVENT_2_DAY}} {{WEEKLY_EVENT_2_TIME}}</span>
+                        </div>
+                        <div class="weekly-event">
+                            <h5>{{WEEKLY_EVENT_3_NAME}}</h5>
+                            <p>{{WEEKLY_EVENT_3_DESCRIPTION}}</p>
+                            <span class="event-day">{{WEEKLY_EVENT_3_DAY}} {{WEEKLY_EVENT_3_TIME}}</span>
+                        </div>
+                    </div>
+                    <a href="#events-inquiry" class="btn btn-events">Plan Your Event</a>
+                </div>
+                <div class="events-image">
+                    <img src="{{EVENTS_SPACE_IMAGE}}" alt="Event Space">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Head Brewer Section -->
+    <section class="brewer-section">
+        <div class="container">
+            <div class="brewer-content">
+                <div class="brewer-image">
+                    <img src="{{BREWER_IMAGE}}" alt="{{BREWER_NAME}}">
+                </div>
+                <div class="brewer-text">
+                    <h2>Head Brewer {{BREWER_NAME}}</h2>
+                    <p class="brewer-intro">{{BREWER_INTRO}}</p>
+                    <p>{{BREWER_BIOGRAPHY}}</p>
+                    <div class="brewer-experience">
+                        <div class="experience-item">
+                            <h4>{{EXPERIENCE_1_TITLE}}</h4>
+                            <p>{{EXPERIENCE_1_DESCRIPTION}}</p>
+                        </div>
+                        <div class="experience-item">
+                            <h4>{{EXPERIENCE_2_TITLE}}</h4>
+                            <p>{{EXPERIENCE_2_DESCRIPTION}}</p>
+                        </div>
+                        <div class="experience-item">
+                            <h4>{{EXPERIENCE_3_TITLE}}</h4>
+                            <p>{{EXPERIENCE_3_DESCRIPTION}}</p>
+                        </div>
+                    </div>
+                    <div class="brewing-philosophy">
+                        <h4>Brewing Philosophy</h4>
+                        <p>{{BREWING_PHILOSOPHY}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Our Craft Beer Story</h2>
+                    <p>{{BREWERY_STORY}}</p>
+                    <div class="about-values">
+                        <div class="value">
+                            <h4>{{VALUE_1_TITLE}}</h4>
+                            <p>{{VALUE_1_DESCRIPTION}}</p>
+                        </div>
+                        <div class="value">
+                            <h4>{{VALUE_2_TITLE}}</h4>
+                            <p>{{VALUE_2_DESCRIPTION}}</p>
+                        </div>
+                        <div class="value">
+                            <h4>{{VALUE_3_TITLE}}</h4>
+                            <p>{{VALUE_3_DESCRIPTION}}</p>
+                        </div>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h3>{{YEARS_BREWING}}+</h3>
+                            <p>Years Brewing</p>
+                        </div>
+                        <div class="stat">
+                            <h3>{{BEERS_BREWED}}</h3>
+                            <p>Unique Beers Brewed</p>
+                        </div>
+                        <div class="stat">
+                            <h3>{{AWARDS_WON}}</h3>
+                            <p>Awards Won</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="{{BREWERY_EXTERIOR_IMAGE}}" alt="{{RESTAURANT_NAME}} Exterior">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visit Us Section -->
+    <section id="visit" class="visit-section">
+        <div class="container">
+            <div class="visit-grid">
+                <div class="visit-details">
+                    <h2>Visit Our Brewery</h2>
+                    <div class="visit-info">
+                        <div class="info-item">
+                            <h3>Location</h3>
+                            <p>{{RESTAURANT_ADDRESS}}</p>
+                            <p>{{RESTAURANT_NEIGHBORHOOD}}</p>
+                        </div>
+                        <div class="info-item">
+                            <h3>Contact</h3>
+                            <p>Phone: <a href="tel:{{RESTAURANT_PHONE}}">{{RESTAURANT_PHONE}}</a></p>
+                            <p>Email: <a href="mailto:{{RESTAURANT_EMAIL}}">{{RESTAURANT_EMAIL}}</a></p>
+                        </div>
+                        <div class="info-item">
+                            <h3>Hours</h3>
+                            <div class="hours-list">
+                                <div class="hours-item">
+                                    <span>Monday - Thursday</span>
+                                    <span>{{HOURS_WEEKDAY}}</span>
+                                </div>
+                                <div class="hours-item">
+                                    <span>Friday - Saturday</span>
+                                    <span>{{HOURS_WEEKEND}}</span>
+                                </div>
+                                <div class="hours-item">
+                                    <span>Sunday</span>
+                                    <span>{{HOURS_SUNDAY}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <h3>Happy Hour</h3>
+                            <div class="happy-hour">
+                                <p>{{HAPPY_HOUR_DAYS}}</p>
+                                <p>{{HAPPY_HOUR_TIME}}</p>
+                                <p class="happy-hour-details">{{HAPPY_HOUR_DETAILS}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="visit-features">
+                        <span class="feature-tag">Dog Friendly</span>
+                        <span class="feature-tag">Outdoor Seating</span>
+                        <span class="feature-tag">Live Music</span>
+                        <span class="feature-tag">Free Parking</span>
+                    </div>
+                </div>
+                <div class="visit-map">
+                    <iframe 
+                        src="{{GOOGLE_MAPS_EMBED}}" 
+                        width="100%" 
+                        height="400" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay Updated on New Brews</h2>
+                <p>{{NEWSLETTER_DESCRIPTION}}</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-newsletter">Join Our List</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section main">
+                    <h3>{{RESTAURANT_NAME}}</h3>
+                    <p>{{FOOTER_DESCRIPTION}}</p>
+                    <div class="contact-info">
+                        <p>{{RESTAURANT_ADDRESS}}</p>
+                        <p>{{RESTAURANT_PHONE}}</p>
+                        <p>{{RESTAURANT_EMAIL}}</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}" target="_blank" aria-label="Facebook">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}" target="_blank" aria-label="Instagram">Instagram</a>
+                        <a href="{{TWITTER_URL}}" target="_blank" aria-label="Twitter">Twitter</a>
+                        <a href="{{UNTAPPD_URL}}" target="_blank" aria-label="Untappd">Untappd</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Our Beers</h4>
+                    <ul>
+                        <li><a href="#beers">Core Collection</a></li>
+                        <li><a href="#beers">Seasonal Releases</a></li>
+                        <li><a href="#beers">Limited Edition</a></li>
+                        <li><a href="#beers">Beer Flights</a></li>
+                        <li><a href="#distribution">Where to Buy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Food & Drink</h4>
+                    <ul>
+                        <li><a href="#menu">Gastropub Menu</a></li>
+                        <li><a href="#menu">Burgers & Sandwiches</a></li>
+                        <li><a href="#menu">Shareables</a></li>
+                        <li><a href="#happy-hour">Happy Hour</a></li>
+                        <li><a href="#catering">Catering</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Experience</h4>
+                    <ul>
+                        <li><a href="#brewery">Brewery Tours</a></li>
+                        <li><a href="#events">Private Events</a></li>
+                        <li><a href="#events">Weekly Events</a></li>
+                        <li><a href="#brewer">Meet the Brewer</a></li>
+                        <li><a href="#merchandise">Merchandise</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; {{CURRENT_YEAR}} {{RESTAURANT_NAME}}. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                    <a href="#responsible-drinking">Drink Responsibly</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

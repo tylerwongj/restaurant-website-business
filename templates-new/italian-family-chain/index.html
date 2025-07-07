@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Authentic Italian Family Restaurant</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="warm-scheme">
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>{{RESTAURANT_NAME}}</h1>
+                <span class="tagline">Authentic Italian Cuisine</span>
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#pasta">Fresh Pasta</a></li>
+                    <li><a href="#wine">Wine Bar</a></li>
+                    <li><a href="#catering">Catering</a></li>
+                    <li><a href="#locations">Locations</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#reservations" class="btn btn-reservation">Reservations</a>
+                <a href="#order" class="btn btn-order">Order Online</a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h2>Benvenuti alla Famiglia</h2>
+            <p class="hero-subtitle">Welcome to the Family</p>
+            <p>Experience authentic Italian cuisine made with time-honored recipes passed down through generations. From our family to yours.</p>
+            <div class="hero-buttons">
+                <a href="#menu" class="btn btn-primary">Explore Menu</a>
+                <a href="#reservations" class="btn btn-secondary">Make Reservation</a>
+            </div>
+        </div>
+        <div class="hero-features">
+            <div class="feature">
+                <div class="feature-icon">🍝</div>
+                <h4>Fresh Pasta Daily</h4>
+                <p>Made from scratch</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🍷</div>
+                <h4>Italian Wine Selection</h4>
+                <p>{{WINE_COUNT}}+ bottles</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">👨‍🍳</div>
+                <h4>Family Recipes</h4>
+                <p>{{RECIPE_YEARS}} years of tradition</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="family-story">
+        <div class="container">
+            <div class="story-content">
+                <div class="story-text">
+                    <h2>Our Family Story</h2>
+                    <p class="story-lead">From {{ORIGIN_REGION}}, Italy to your neighborhood, our family has been sharing authentic Italian flavors for over {{FAMILY_YEARS}} years.</p>
+                    <p>Started by {{FOUNDER_NAME}} in {{YEAR_ESTABLISHED}}, our restaurant began as a small trattoria serving traditional recipes from our hometown. Today, we continue that legacy with the same passion for fresh ingredients, handmade pasta, and warm Italian hospitality.</p>
+                    <div class="story-highlights">
+                        <div class="highlight">
+                            <span class="number">{{FAMILY_YEARS}}</span>
+                            <span class="label">Years of Tradition</span>
+                        </div>
+                        <div class="highlight">
+                            <span class="number">{{LOCATIONS_COUNT}}</span>
+                            <span class="label">Family Locations</span>
+                        </div>
+                        <div class="highlight">
+                            <span class="number">{{RECIPES_COUNT}}</span>
+                            <span class="label">Family Recipes</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="story-image">
+                    <img src="{{FAMILY_PHOTO_IMAGE}}" alt="Our Italian family">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="menu-showcase" id="menu">
+        <div class="container">
+            <h2>Menu Tradizionale</h2>
+            <div class="menu-categories">
+                <div class="menu-category">
+                    <div class="category-header">
+                        <h3>Antipasti</h3>
+                        <p>Traditional Italian starters</p>
+                    </div>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Antipasto della Casa</h4>
+                                <p>Prosciutto, salami, mozzarella, roasted peppers, olives</p>
+                            </div>
+                            <span class="price">{{ANTIPASTO_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Bruschetta Classica</h4>
+                                <p>Grilled bread, fresh tomatoes, basil, garlic</p>
+                            </div>
+                            <span class="price">{{BRUSCHETTA_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Calamari Fritti</h4>
+                                <p>Fresh squid, lightly breaded, marinara sauce</p>
+                            </div>
+                            <span class="price">{{CALAMARI_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-category featured">
+                    <div class="category-header">
+                        <h3>Pasta Fresca</h3>
+                        <p>Handmade daily with imported Italian flour</p>
+                    </div>
+                    <div class="menu-items">
+                        <div class="menu-item signature">
+                            <div class="item-info">
+                                <h4>Fettuccine Alfredo</h4>
+                                <p>Fresh fettuccine, butter, parmigiano-reggiano, cream</p>
+                                <span class="signature-badge">Signature</span>
+                            </div>
+                            <span class="price">{{FETTUCCINE_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Spaghetti Carbonara</h4>
+                                <p>Pancetta, eggs, pecorino romano, black pepper</p>
+                            </div>
+                            <span class="price">{{CARBONARA_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Lasagna della Nonna</h4>
+                                <p>Layers of pasta, meat sauce, ricotta, mozzarella</p>
+                            </div>
+                            <span class="price">{{LASAGNA_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Ravioli di Ricotta e Spinaci</h4>
+                                <p>Homemade ravioli, ricotta, spinach, sage butter</p>
+                            </div>
+                            <span class="price">{{RAVIOLI_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-category">
+                    <div class="category-header">
+                        <h3>Secondi Piatti</h3>
+                        <p>Traditional main courses</p>
+                    </div>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Pollo Parmigiana</h4>
+                                <p>Breaded chicken breast, mozzarella, marinara, pasta</p>
+                            </div>
+                            <span class="price">{{CHICKEN_PARM_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Veal Marsala</h4>
+                                <p>Tender veal, mushrooms, marsala wine sauce</p>
+                            </div>
+                            <span class="price">{{VEAL_MARSALA_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Salmon Livornese</h4>
+                                <p>Fresh salmon, tomatoes, olives, capers, herbs</p>
+                            </div>
+                            <span class="price">{{SALMON_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-cta">
+                <a href="menu.html" class="btn btn-primary">View Full Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="fresh-pasta-feature" id="pasta">
+        <div class="pasta-overlay"></div>
+        <div class="container">
+            <div class="pasta-content">
+                <h2>Fresh Pasta Made Daily</h2>
+                <p>Our pasta masters arrive each morning at 5 AM to begin the time-honored process of creating fresh pasta using imported Italian flour and farm-fresh eggs.</p>
+                <div class="pasta-process">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h4>Italian Flour</h4>
+                        <p>Imported durum wheat from Italy</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h4>Farm Fresh Eggs</h4>
+                        <p>Local organic eggs added to dough</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h4>Hand Rolled</h4>
+                        <p>Traditional techniques, no shortcuts</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <h4>Made to Order</h4>
+                        <p>Cooked fresh when you order</p>
+                    </div>
+                </div>
+                <a href="#menu" class="btn btn-primary">Try Our Pasta</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="wine-program" id="wine">
+        <div class="container">
+            <div class="wine-content">
+                <div class="wine-text">
+                    <h2>Carta dei Vini</h2>
+                    <p class="wine-subtitle">Our Italian Wine Collection</p>
+                    <p>Curated selection of over {{WINE_COUNT}} Italian wines featuring both renowned and boutique vineyards from across Italy's 20 wine regions.</p>
+                    <div class="wine-regions">
+                        <div class="region">
+                            <h4>Tuscany</h4>
+                            <p>Chianti, Brunello, Super Tuscans</p>
+                        </div>
+                        <div class="region">
+                            <h4>Piedmont</h4>
+                            <p>Barolo, Barbaresco, Nebbiolo</p>
+                        </div>
+                        <div class="region">
+                            <h4>Veneto</h4>
+                            <p>Amarone, Prosecco, Pinot Grigio</p>
+                        </div>
+                        <div class="region">
+                            <h4>Sicily</h4>
+                            <p>Nero d'Avola, Etna Rosso</p>
+                        </div>
+                    </div>
+                    <div class="wine-events">
+                        <h4>Wine Events</h4>
+                        <p>Join us for monthly wine tastings and pairing dinners featuring Italian vintners and regional specialties.</p>
+                    </div>
+                    <a href="#reservations" class="btn btn-primary">Book Wine Tasting</a>
+                </div>
+                <div class="wine-image">
+                    <img src="{{WINE_CELLAR_IMAGE}}" alt="Italian wine collection">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="catering-family" id="catering">
+        <div class="container">
+            <h2>Family Style Catering</h2>
+            <p class="section-subtitle">Bring authentic Italian flavors to your next gathering</p>
+            <div class="catering-options">
+                <div class="catering-option">
+                    <div class="option-icon">🏠</div>
+                    <h3>Family Meals</h3>
+                    <p>Complete family dinners for {{FAMILY_MEAL_SIZE}} people with pasta, salad, bread, and dessert</p>
+                    <div class="option-features">
+                        <span>✓ Serves {{FAMILY_MEAL_SIZE}}</span>
+                        <span>✓ Complete meal</span>
+                        <span>✓ Ready to heat</span>
+                    </div>
+                    <span class="starting-price">Starting at {{FAMILY_MEAL_PRICE}}</span>
+                </div>
+                <div class="catering-option">
+                    <div class="option-icon">🎉</div>
+                    <h3>Party Platters</h3>
+                    <p>Perfect for office parties, celebrations, and large gatherings</p>
+                    <div class="option-features">
+                        <span>✓ Feeds {{PARTY_PLATTER_SIZE}}</span>
+                        <span>✓ Multiple options</span>
+                        <span>✓ Setup included</span>
+                    </div>
+                    <span class="starting-price">Starting at {{PARTY_PLATTER_PRICE}}</span>
+                </div>
+                <div class="catering-option">
+                    <div class="option-icon">💼</div>
+                    <h3>Corporate Lunch</h3>
+                    <p>Individual boxed lunches or buffet style for business meetings</p>
+                    <div class="option-features">
+                        <span>✓ Individual or buffet</span>
+                        <span>✓ {{CORPORATE_MIN}} person minimum</span>
+                        <span>✓ Delivery available</span>
+                    </div>
+                    <span class="starting-price">Starting at {{CORPORATE_PRICE}}</span>
+                </div>
+            </div>
+            <div class="catering-notice">
+                <p><strong>Advance Notice:</strong> {{CATERING_NOTICE}} for all catering orders. Delivery available within {{DELIVERY_RADIUS}} miles.</p>
+            </div>
+            <a href="#" class="btn btn-primary">Order Catering</a>
+        </div>
+    </section>
+
+    <section class="reservations" id="reservations">
+        <div class="container">
+            <div class="reservation-content">
+                <h2>Make a Reservation</h2>
+                <p>Join our family for an unforgettable Italian dining experience</p>
+                <form class="reservation-form">
+                    <div class="form-row">
+                        <input type="text" placeholder="Name" required>
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="tel" placeholder="Phone" required>
+                        <select required>
+                            <option value="">Party Size</option>
+                            <option value="2">2 Guests</option>
+                            <option value="3">3 Guests</option>
+                            <option value="4">4 Guests</option>
+                            <option value="5">5 Guests</option>
+                            <option value="6">6 Guests</option>
+                            <option value="7">7 Guests</option>
+                            <option value="8">8 Guests</option>
+                            <option value="8+">8+ Guests</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <input type="date" required>
+                        <select required>
+                            <option value="">Preferred Time</option>
+                            <option value="5:00">5:00 PM</option>
+                            <option value="5:30">5:30 PM</option>
+                            <option value="6:00">6:00 PM</option>
+                            <option value="6:30">6:30 PM</option>
+                            <option value="7:00">7:00 PM</option>
+                            <option value="7:30">7:30 PM</option>
+                            <option value="8:00">8:00 PM</option>
+                            <option value="8:30">8:30 PM</option>
+                            <option value="9:00">9:00 PM</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <select>
+                            <option value="">Special Occasion (Optional)</option>
+                            <option value="anniversary">Anniversary</option>
+                            <option value="birthday">Birthday</option>
+                            <option value="date-night">Date Night</option>
+                            <option value="business">Business Dinner</option>
+                            <option value="celebration">Celebration</option>
+                        </select>
+                        <select>
+                            <option value="">Seating Preference</option>
+                            <option value="indoor">Indoor Dining</option>
+                            <option value="patio">Patio (Weather Permitting)</option>
+                            <option value="wine-room">Wine Room</option>
+                            <option value="no-preference">No Preference</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <textarea placeholder="Special requests or dietary restrictions"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Reserve Table</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="locations" id="locations">
+        <div class="container">
+            <h2>Visit Our Family</h2>
+            <div class="locations-grid">
+                <div class="location">
+                    <h3>{{LOCATION_1_NAME}}</h3>
+                    <p>{{LOCATION_1_ADDRESS}}</p>
+                    <p>{{LOCATION_1_PHONE}}</p>
+                    <div class="location-features">
+                        <span class="feature-tag">Wine Bar</span>
+                        <span class="feature-tag">Patio Dining</span>
+                        <span class="feature-tag">Private Events</span>
+                    </div>
+                    <div class="location-hours">
+                        <p><strong>Hours:</strong></p>
+                        <p>{{LOCATION_1_HOURS}}</p>
+                    </div>
+                    <div class="location-actions">
+                        <a href="#" class="btn btn-outline">Directions</a>
+                        <a href="#order" class="btn btn-primary">Order Online</a>
+                    </div>
+                </div>
+                <div class="location">
+                    <h3>{{LOCATION_2_NAME}}</h3>
+                    <p>{{LOCATION_2_ADDRESS}}</p>
+                    <p>{{LOCATION_2_PHONE}}</p>
+                    <div class="location-features">
+                        <span class="feature-tag">Full Bar</span>
+                        <span class="feature-tag">Live Music</span>
+                        <span class="feature-tag">Catering Pickup</span>
+                    </div>
+                    <div class="location-hours">
+                        <p><strong>Hours:</strong></p>
+                        <p>{{LOCATION_2_HOURS}}</p>
+                    </div>
+                    <div class="location-actions">
+                        <a href="#" class="btn btn-outline">Directions</a>
+                        <a href="#order" class="btn btn-primary">Order Online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter-signup">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Join the Famiglia</h2>
+                <p>Get exclusive offers, wine event invitations, and family recipes delivered to your inbox</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn btn-primary">Join Our Family</button>
+                </form>
+                <p class="newsletter-note">We respect your privacy. Unsubscribe at any time.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>{{RESTAURANT_NAME}}</h3>
+                    <p>Serving authentic Italian cuisine with amore since {{YEAR_ESTABLISHED}}</p>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}">Instagram</a>
+                        <a href="{{TWITTER_URL}}">Twitter</a>
+                        <a href="{{YELP_URL}}">Yelp</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Reservations</h4>
+                    <p>{{PHONE}}</p>
+                    <p>{{EMAIL}}</p>
+                    <p>{{RESERVATION_HOURS}}</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Catering</h4>
+                    <p>{{CATERING_PHONE}}</p>
+                    <p>{{CATERING_EMAIL}}</p>
+                    <p>{{CATERING_NOTICE}} advance notice</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Private Events</h4>
+                    <p>{{EVENTS_PHONE}}</p>
+                    <p>{{EVENTS_EMAIL}}</p>
+                    <p>Wine tastings, anniversaries, rehearsal dinners</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; {{CURRENT_YEAR}} {{RESTAURANT_NAME}}. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Gift Cards</a>
+                    <a href="#">Careers</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

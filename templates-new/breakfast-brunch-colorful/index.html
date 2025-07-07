@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Rise & Dine</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="color-scheme-vibrant">
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}}">
+            </div>
+            <nav class="nav">
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#specials">Daily Specials</a></li>
+                    <li><a href="#drinks">Drinks</a></li>
+                    <li><a href="#locations">Locations</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="header-actions">
+                    <a href="#waitlist" class="btn btn-secondary">Join Waitlist</a>
+                    <a href="#order" class="btn btn-primary">Order Ahead</a>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Rise & Dine</h1>
+                    <p class="hero-subtitle">Where breakfast dreams come true</p>
+                    <p class="hero-description">Start your day with creative breakfast and brunch dishes that put a modern twist on morning classics. Fresh ingredients, bold flavors, and Instagram-worthy presentation.</p>
+                    <div class="hero-buttons">
+                        <a href="#waitlist" class="btn btn-primary btn-large">Join Waitlist</a>
+                        <a href="#menu" class="btn btn-secondary btn-large">Explore Menu</a>
+                    </div>
+                    <div class="hero-features">
+                        <div class="feature">
+                            <span class="feature-icon">🥞</span>
+                            <span>Creative Pancakes</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">🍳</span>
+                            <span>Signature Benedicts</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">☕</span>
+                            <span>Specialty Coffee</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">🥂</span>
+                            <span>Bottomless Mimosas</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-image-stack">
+                        <img src="{{HERO_PANCAKES_IMAGE}}" alt="Colorful pancakes" class="hero-image main">
+                        <img src="{{HERO_BENEDICT_IMAGE}}" alt="Eggs Benedict" class="hero-image floating-1">
+                        <img src="{{HERO_COFFEE_IMAGE}}" alt="Specialty coffee" class="hero-image floating-2">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="daily-special-banner">
+            <div class="container">
+                <div class="special-content">
+                    <h2>🌟 Today's Special</h2>
+                    <h3>{{DAILY_SPECIAL_NAME}}</h3>
+                    <p>{{DAILY_SPECIAL_DESCRIPTION}}</p>
+                    <span class="special-price">${{DAILY_SPECIAL_PRICE}}</span>
+                </div>
+                <div class="special-image">
+                    <img src="{{DAILY_SPECIAL_IMAGE}}" alt="{{DAILY_SPECIAL_NAME}}">
+                </div>
+            </div>
+        </section>
+
+        <section id="menu" class="menu-showcase">
+            <div class="container">
+                <h2 class="section-title">Breakfast & Brunch Favorites</h2>
+                
+                <div class="menu-categories">
+                    <button class="category-btn active" data-category="pancakes">Pancakes & Waffles</button>
+                    <button class="category-btn" data-category="eggs">Eggs & Benedicts</button>
+                    <button class="category-btn" data-category="healthy">Healthy Options</button>
+                    <button class="category-btn" data-category="sweet">Sweet Treats</button>
+                </div>
+
+                <div class="menu-grid" data-category="pancakes">
+                    <div class="menu-item featured">
+                        <div class="menu-item-image">
+                            <img src="{{RAINBOW_PANCAKES_IMAGE}}" alt="Rainbow Pancakes">
+                            <div class="item-badge">🌈 Instagram Famous</div>
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Rainbow Pancakes</h3>
+                            <p class="description">Fluffy pancakes layered with vibrant colors, topped with whipped cream and sprinkles</p>
+                            <div class="menu-item-tags">
+                                <span class="tag">Kid Favorite</span>
+                                <span class="tag">Photo-worthy</span>
+                            </div>
+                            <div class="menu-item-footer">
+                                <span class="price">${{RAINBOW_PANCAKES_PRICE}}</span>
+                                <button class="btn btn-small btn-primary">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="{{STUFFED_FRENCH_TOAST_IMAGE}}" alt="Stuffed French Toast">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Stuffed French Toast</h3>
+                            <p class="description">Thick-cut brioche stuffed with cream cheese and berries, topped with maple syrup</p>
+                            <div class="menu-item-tags">
+                                <span class="tag">Signature</span>
+                            </div>
+                            <div class="menu-item-footer">
+                                <span class="price">${{FRENCH_TOAST_PRICE}}</span>
+                                <button class="btn btn-small btn-primary">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="{{CHICKEN_WAFFLES_IMAGE}}" alt="Chicken & Waffles">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Fried Chicken & Waffles</h3>
+                            <p class="description">Crispy fried chicken served on buttermilk waffles with spicy honey drizzle</p>
+                            <div class="menu-item-tags">
+                                <span class="tag">Brunch Classic</span>
+                            </div>
+                            <div class="menu-item-footer">
+                                <span class="price">${{CHICKEN_WAFFLES_PRICE}}</span>
+                                <button class="btn btn-small btn-primary">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-grid" data-category="eggs" style="display: none;">
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="{{LOADED_BENEDICT_IMAGE}}" alt="Loaded Benedict">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>The Loaded Benedict</h3>
+                            <p class="description">English muffins topped with crab cakes, poached eggs, and sriracha hollandaise</p>
+                            <div class="menu-item-tags">
+                                <span class="tag">Chef's Choice</span>
+                                <span class="tag">Spicy</span>
+                            </div>
+                            <div class="menu-item-footer">
+                                <span class="price">${{LOADED_BENEDICT_PRICE}}</span>
+                                <button class="btn btn-small btn-primary">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="signature-drinks">
+                    <h3>Signature Morning Cocktails</h3>
+                    <div class="drinks-grid">
+                        <div class="drink-item">
+                            <div class="drink-image">
+                                <img src="{{BOTTOMLESS_MIMOSA_IMAGE}}" alt="Bottomless Mimosas">
+                            </div>
+                            <div class="drink-content">
+                                <h4>Bottomless Mimosas</h4>
+                                <p>Endless mimosas for 90 minutes</p>
+                                <span class="price">${{BOTTOMLESS_MIMOSAS_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="drink-item">
+                            <div class="drink-image">
+                                <img src="{{BLOODY_MARY_IMAGE}}" alt="Build Your Bloody">
+                            </div>
+                            <div class="drink-content">
+                                <h4>Build Your Bloody</h4>
+                                <p>Customize your Bloody Mary with our topping bar</p>
+                                <span class="price">${{BLOODY_MARY_PRICE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="specials" class="daily-specials">
+            <div class="container">
+                <h2 class="section-title">Daily Specials</h2>
+                <div class="specials-calendar">
+                    <div class="special-day">
+                        <div class="day-header">
+                            <h3>Monday</h3>
+                            <span class="day-emoji">💰</span>
+                        </div>
+                        <div class="special-content">
+                            <h4>Manic Monday</h4>
+                            <p>{{MONDAY_SPECIAL}}</p>
+                        </div>
+                    </div>
+
+                    <div class="special-day">
+                        <div class="day-header">
+                            <h3>Tuesday</h3>
+                            <span class="day-emoji">🌮</span>
+                        </div>
+                        <div class="special-content">
+                            <h4>Taco Tuesday</h4>
+                            <p>{{TUESDAY_SPECIAL}}</p>
+                        </div>
+                    </div>
+
+                    <div class="special-day">
+                        <div class="day-header">
+                            <h3>Wednesday</h3>
+                            <span class="day-emoji">🧇</span>
+                        </div>
+                        <div class="special-content">
+                            <h4>Waffle Wednesday</h4>
+                            <p>{{WEDNESDAY_SPECIAL}}</p>
+                        </div>
+                    </div>
+
+                    <div class="special-day">
+                        <div class="day-header">
+                            <h3>Thursday</h3>
+                            <span class="day-emoji">🥞</span>
+                        </div>
+                        <div class="special-content">
+                            <h4>Throwback Thursday</h4>
+                            <p>{{THURSDAY_SPECIAL}}</p>
+                        </div>
+                    </div>
+
+                    <div class="special-day featured">
+                        <div class="day-header">
+                            <h3>Friday</h3>
+                            <span class="day-emoji">🎉</span>
+                        </div>
+                        <div class="special-content">
+                            <h4>Friday Funday</h4>
+                            <p>{{FRIDAY_SPECIAL}}</p>
+                        </div>
+                    </div>
+
+                    <div class="special-day weekend">
+                        <div class="day-header">
+                            <h3>Weekend</h3>
+                            <span class="day-emoji">🥂</span>
+                        </div>
+                        <div class="special-content">
+                            <h4>Weekend Brunch</h4>
+                            <p>{{WEEKEND_SPECIAL}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="brunch-experience">
+            <div class="container">
+                <div class="experience-content">
+                    <div class="experience-text">
+                        <h2>The Snooze Experience</h2>
+                        <p>More than just breakfast - it's a celebration of mornings! Our vibrant atmosphere, creative dishes, and exceptional service make every visit memorable.</p>
+                        
+                        <div class="experience-features">
+                            <div class="feature">
+                                <div class="feature-icon">👨‍🍳</div>
+                                <h3>Fresh Made Daily</h3>
+                                <p>Everything made from scratch with the freshest ingredients</p>
+                            </div>
+                            <div class="feature">
+                                <div class="feature-icon">🎨</div>
+                                <h3>Instagram Ready</h3>
+                                <p>Every dish is a work of art designed to wow your feed</p>
+                            </div>
+                            <div class="feature">
+                                <div class="feature-icon">⏰</div>
+                                <h3>No Wait Technology</h3>
+                                <p>Join our waitlist from anywhere and get text updates</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="experience-image">
+                        <img src="{{RESTAURANT_ATMOSPHERE_IMAGE}}" alt="Restaurant atmosphere">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="waitlist" class="waitlist-section">
+            <div class="container">
+                <div class="waitlist-content">
+                    <h2>Join the Waitlist</h2>
+                    <p>Skip the line! Join our digital waitlist and get notified when your table is ready.</p>
+                    
+                    <div class="waitlist-form">
+                        <form>
+                            <div class="form-row">
+                                <select required>
+                                    <option value="">Choose Location</option>
+                                    <option value="location1">{{LOCATION_1_NAME}}</option>
+                                    <option value="location2">{{LOCATION_2_NAME}}</option>
+                                    <option value="location3">{{LOCATION_3_NAME}}</option>
+                                </select>
+                                <select required>
+                                    <option value="">Party Size</option>
+                                    <option value="1">1 person</option>
+                                    <option value="2">2 people</option>
+                                    <option value="3">3 people</option>
+                                    <option value="4">4 people</option>
+                                    <option value="5">5 people</option>
+                                    <option value="6+">6+ people</option>
+                                </select>
+                            </div>
+                            <div class="form-row">
+                                <input type="text" placeholder="Your Name" required>
+                                <input type="tel" placeholder="Phone Number" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-large">Join Waitlist</button>
+                        </form>
+                        
+                        <div class="waitlist-info">
+                            <p>💡 <strong>Pro Tip:</strong> Join the waitlist before you leave home to minimize your wait time!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="locations" class="locations">
+            <div class="container">
+                <h2 class="section-title">Find Your Snooze</h2>
+                <div class="locations-grid">
+                    <div class="location-card">
+                        <div class="location-image">
+                            <img src="{{LOCATION_1_IMAGE}}" alt="{{LOCATION_1_NAME}}">
+                        </div>
+                        <div class="location-content">
+                            <h3>{{LOCATION_1_NAME}}</h3>
+                            <p class="address">{{LOCATION_1_ADDRESS}}</p>
+                            <p class="hours">{{LOCATION_1_HOURS}}</p>
+                            <p class="phone">{{LOCATION_1_PHONE}}</p>
+                            <div class="location-features">
+                                <span class="feature">Patio Seating</span>
+                                <span class="feature">Full Bar</span>
+                                <span class="feature">WiFi</span>
+                            </div>
+                            <div class="location-actions">
+                                <a href="{{LOCATION_1_DIRECTIONS}}" class="btn btn-secondary">Get Directions</a>
+                                <button class="btn btn-primary" onclick="joinWaitlist('{{LOCATION_1_NAME}}')">Join Waitlist</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="location-card">
+                        <div class="location-image">
+                            <img src="{{LOCATION_2_IMAGE}}" alt="{{LOCATION_2_NAME}}">
+                        </div>
+                        <div class="location-content">
+                            <h3>{{LOCATION_2_NAME}}</h3>
+                            <p class="address">{{LOCATION_2_ADDRESS}}</p>
+                            <p class="hours">{{LOCATION_2_HOURS}}</p>
+                            <p class="phone">{{LOCATION_2_PHONE}}</p>
+                            <div class="location-features">
+                                <span class="feature">Dog Friendly</span>
+                                <span class="feature">Brunch Cocktails</span>
+                                <span class="feature">Large Groups</span>
+                            </div>
+                            <div class="location-actions">
+                                <a href="{{LOCATION_2_DIRECTIONS}}" class="btn btn-secondary">Get Directions</a>
+                                <button class="btn btn-primary" onclick="joinWaitlist('{{LOCATION_2_NAME}}')">Join Waitlist</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="location-card">
+                        <div class="location-image">
+                            <img src="{{LOCATION_3_IMAGE}}" alt="{{LOCATION_3_NAME}}">
+                        </div>
+                        <div class="location-content">
+                            <h3>{{LOCATION_3_NAME}}</h3>
+                            <p class="address">{{LOCATION_3_ADDRESS}}</p>
+                            <p class="hours">{{LOCATION_3_HOURS}}</p>
+                            <p class="phone">{{LOCATION_3_PHONE}}</p>
+                            <div class="location-features">
+                                <span class="feature">Rooftop Seating</span>
+                                <span class="feature">Private Events</span>
+                                <span class="feature">Valet Parking</span>
+                            </div>
+                            <div class="location-actions">
+                                <a href="{{LOCATION_3_DIRECTIONS}}" class="btn btn-secondary">Get Directions</a>
+                                <button class="btn btn-primary" onclick="joinWaitlist('{{LOCATION_3_NAME}}')">Join Waitlist</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="order" class="order-ahead">
+            <div class="container">
+                <div class="order-content">
+                    <h2>Order Ahead</h2>
+                    <p>Beat the rush! Order your favorites for pickup and skip the wait.</p>
+                    
+                    <div class="order-options">
+                        <div class="order-option">
+                            <div class="option-icon">📱</div>
+                            <h3>Mobile App</h3>
+                            <p>Download our app for the fastest ordering experience</p>
+                            <div class="app-buttons">
+                                <a href="{{APP_STORE_URL}}" class="app-btn">
+                                    <img src="{{APP_STORE_BADGE}}" alt="Download on App Store">
+                                </a>
+                                <a href="{{GOOGLE_PLAY_URL}}" class="app-btn">
+                                    <img src="{{GOOGLE_PLAY_BADGE}}" alt="Get it on Google Play">
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="order-option">
+                            <div class="option-icon">💻</div>
+                            <h3>Online Ordering</h3>
+                            <p>Order directly through our website</p>
+                            <a href="{{ONLINE_ORDER_URL}}" class="btn btn-primary">Start Order</a>
+                        </div>
+                    </div>
+                    
+                    <div class="order-benefits">
+                        <h3>Why Order Ahead?</h3>
+                        <div class="benefits-list">
+                            <div class="benefit">
+                                <span class="benefit-icon">⚡</span>
+                                <span>Skip the wait</span>
+                            </div>
+                            <div class="benefit">
+                                <span class="benefit-icon">🎁</span>
+                                <span>Earn rewards</span>
+                            </div>
+                            <div class="benefit">
+                                <span class="benefit-icon">⏰</span>
+                                <span>Schedule pickup</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h2>Get in Touch</h2>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <h3>General Info</h3>
+                                <p>{{MAIN_PHONE}}</p>
+                                <p>{{EMAIL}}</p>
+                            </div>
+                            <div class="contact-item">
+                                <h3>Catering</h3>
+                                <p>{{CATERING_PHONE}}</p>
+                                <p>{{CATERING_EMAIL}}</p>
+                            </div>
+                            <div class="contact-item">
+                                <h3>Follow the Fun</h3>
+                                <div class="social-links">
+                                    <a href="{{INSTAGRAM_URL}}">Instagram</a>
+                                    <a href="{{FACEBOOK_URL}}">Facebook</a>
+                                    <a href="{{TWITTER_URL}}">Twitter</a>
+                                    <a href="{{TIKTOK_URL}}">TikTok</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <h3>Send us a Message</h3>
+                        <form>
+                            <input type="text" placeholder="Your Name" required>
+                            <input type="email" placeholder="Email Address" required>
+                            <select required>
+                                <option value="">What can we help with?</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="catering">Catering</option>
+                                <option value="franchise">Franchise</option>
+                                <option value="careers">Careers</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <textarea placeholder="Your Message" rows="4" required></textarea>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>{{RESTAURANT_NAME}}</h3>
+                    <p>Rise & Dine - Where breakfast dreams come true</p>
+                    <div class="newsletter">
+                        <h4>Stay in the Loop</h4>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Enter your email">
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#locations">Locations</a></li>
+                        <li><a href="#waitlist">Join Waitlist</a></li>
+                        <li><a href="#order">Order Ahead</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Catering</a></li>
+                        <li><a href="#">Franchise</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="{{INSTAGRAM_URL}}">Instagram</a>
+                        <a href="{{FACEBOOK_URL}}">Facebook</a>
+                        <a href="{{TWITTER_URL}}">Twitter</a>
+                        <a href="{{TIKTOK_URL}}">TikTok</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Healthy Menu</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="color-scheme-healthy">
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="{{LOGO_IMAGE}}" alt="{{RESTAURANT_NAME}} Logo">
+                    <h1>{{RESTAURANT_NAME}}</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html" class="active">Menu</a></li>
+                    <li><a href="index.html#nutrition">Nutrition</a></li>
+                    <li><a href="index.html#ingredients">Ingredients</a></li>
+                    <li><a href="index.html#sustainability">Sustainability</a></li>
+                    <li><a href="index.html#locations">Locations</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="#order" class="order-button">Order Online</a>
+                    <a href="index.html#rewards" class="rewards-button">Join Rewards</a>
+                </div>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="menu-page">
+        <section class="menu-hero">
+            <div class="container">
+                <h1>Our Healthy Menu</h1>
+                <p>Fresh, nutritious, and delicious options for every lifestyle</p>
+                <div class="menu-filters">
+                    <button class="filter-btn active" data-filter="all">All Items</button>
+                    <button class="filter-btn" data-filter="bowls">Power Bowls</button>
+                    <button class="filter-btn" data-filter="salads">Fresh Salads</button>
+                    <button class="filter-btn" data-filter="wraps">Wraps & Sandwiches</button>
+                    <button class="filter-btn" data-filter="smoothies">Smoothies</button>
+                    <button class="filter-btn" data-filter="sides">Sides</button>
+                </div>
+                <div class="dietary-filters">
+                    <button class="dietary-btn" data-dietary="vegetarian">🥗 Vegetarian</button>
+                    <button class="dietary-btn" data-dietary="vegan">🌱 Vegan</button>
+                    <button class="dietary-btn" data-dietary="gluten-free">🌾 Gluten-Free</button>
+                    <button class="dietary-btn" data-dietary="keto">🥑 Keto</button>
+                    <button class="dietary-btn" data-dietary="protein">💪 High Protein</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="menu-content">
+            <div class="container">
+                <!-- Power Bowls -->
+                <div class="menu-section" data-category="bowls">
+                    <h2>Power Bowls</h2>
+                    <p>Nutrient-packed bowls designed to fuel your day</p>
+                    <div class="menu-grid">
+                        <div class="menu-item-card" data-dietary="vegetarian,gluten-free">
+                            <img src="{{BOWL_IMAGE_1}}" alt="{{BOWL_NAME_1}}">
+                            <div class="menu-item-info">
+                                <h3>{{BOWL_NAME_1}}</h3>
+                                <p>{{BOWL_DESCRIPTION_1}}</p>
+                                <div class="nutrition-badges">
+                                    <span class="badge calories">{{BOWL_CALORIES_1}} cal</span>
+                                    <span class="badge protein">{{BOWL_PROTEIN_1}}g protein</span>
+                                    <span class="badge fiber">{{BOWL_FIBER_1}}g fiber</span>
+                                </div>
+                                <div class="dietary-tags">
+                                    <span class="tag vegetarian">Vegetarian</span>
+                                    <span class="tag gluten-free">Gluten-Free</span>
+                                </div>
+                                <div class="price-order">
+                                    <span class="price">{{BOWL_PRICE_1}}</span>
+                                    <button class="add-to-cart" data-item="{{BOWL_NAME_1}}">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-item-card" data-dietary="vegan,protein">
+                            <img src="{{BOWL_IMAGE_2}}" alt="{{BOWL_NAME_2}}">
+                            <div class="menu-item-info">
+                                <h3>{{BOWL_NAME_2}}</h3>
+                                <p>{{BOWL_DESCRIPTION_2}}</p>
+                                <div class="nutrition-badges">
+                                    <span class="badge calories">{{BOWL_CALORIES_2}} cal</span>
+                                    <span class="badge protein">{{BOWL_PROTEIN_2}}g protein</span>
+                                    <span class="badge fiber">{{BOWL_FIBER_2}}g fiber</span>
+                                </div>
+                                <div class="dietary-tags">
+                                    <span class="tag vegan">Vegan</span>
+                                    <span class="tag protein">High Protein</span>
+                                </div>
+                                <div class="price-order">
+                                    <span class="price">{{BOWL_PRICE_2}}</span>
+                                    <button class="add-to-cart" data-item="{{BOWL_NAME_2}}">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-item-card" data-dietary="keto,protein">
+                            <img src="{{BOWL_IMAGE_3}}" alt="{{BOWL_NAME_3}}">
+                            <div class="menu-item-info">
+                                <h3>{{BOWL_NAME_3}}</h3>
+                                <p>{{BOWL_DESCRIPTION_3}}</p>
+                                <div class="nutrition-badges">
+                                    <span class="badge calories">{{BOWL_CALORIES_3}} cal</span>
+                                    <span class="badge protein">{{BOWL_PROTEIN_3}}g protein</span>
+                                    <span class="badge carbs">{{BOWL_CARBS_3}}g carbs</span>
+                                </div>
+                                <div class="dietary-tags">
+                                    <span class="tag keto">Keto</span>
+                                    <span class="tag protein">High Protein</span>
+                                </div>
+                                <div class="price-order">
+                                    <span class="price">{{BOWL_PRICE_3}}</span>
+                                    <button class="add-to-cart" data-item="{{BOWL_NAME_3}}">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fresh Salads -->
+                <div class="menu-section" data-category="salads">
+                    <h2>Fresh Salads</h2>
+                    <p>Crisp, colorful salads made with the freshest ingredients</p>
+                    <div class="menu-grid">
+                        <div class="menu-item-card" data-dietary="vegetarian,gluten-free">
+                            <img src="{{SALAD_IMAGE_1}}" alt="{{SALAD_NAME_1}}">
+                            <div class="menu-item-info">
+                                <h3>{{SALAD_NAME_1}}</h3>
+                                <p>{{SALAD_DESCRIPTION_1}}</p>
+                                <div class="nutrition-badges">
+                                    <span class="badge calories">{{SALAD_CALORIES_1}} cal</span>
+                                    <span class="badge protein">{{SALAD_PROTEIN_1}}g protein</span>
+                                    <span class="badge fiber">{{SALAD_FIBER_1}}g fiber</span>
+                                </div>
+                                <div class="dietary-tags">
+                                    <span class="tag vegetarian">Vegetarian</span>
+                                    <span class="tag gluten-free">Gluten-Free</span>
+                                </div>
+                                <div class="price-order">
+                                    <span class="price">{{SALAD_PRICE_1}}</span>
+                                    <button class="add-to-cart" data-item="{{SALAD_NAME_1}}">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-item-card" data-dietary="vegan,gluten-free">
+                            <img src="{{SALAD_IMAGE_2}}" alt="{{SALAD_NAME_2}}">
+                            <div class="menu-item-info">
+                                <h3>{{SALAD_NAME_2}}</h3>
+                                <p>{{SALAD_DESCRIPTION_2}}</p>
+                                <div class="nutrition-badges">
+                                    <span class="badge calories">{{SALAD_CALORIES_2}} cal</span>
+                                    <span class="badge protein">{{SALAD_PROTEIN_2}}g protein</span>
+                                    <span class="badge fiber">{{SALAD_FIBER_2}}g fiber</span>
+                                </div>
+                                <div class="dietary-tags">
+                                    <span class="tag vegan">Vegan</span>
+                                    <span class="tag gluten-free">Gluten-Free</span>
+                                </div>
+                                <div class="price-order">
+                                    <span class="price">{{SALAD_PRICE_2}}</span>
+                                    <button class="add-to-cart" data-item="{{SALAD_NAME_2}}">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-item-card" data-dietary="protein">
+                            <img src="{{SALAD_IMAGE_3}}" alt="{{SALAD_NAME_3}}">
+                            <div class="menu-item-info">
+                                <h3>{{SALAD_NAME_3}}</h3>
+                                <p>{{SALAD_DESCRIPTION_3}}</p>
+                                <div class="nutrition-badges">
+                                    <span class="badge calories">{{SALAD_CALORIES_3}} cal</span>
+                                    <span class="badge protein">{{SALAD_PROTEIN_3}}g protein</span>
+                                    <span class="badge fiber">{{SALAD_FIBER_3}}g fiber</span>
+                                </div>
+                                <div class="dietary-tags">
+                                    <span class="tag protein">High Protein</span>
+                                </div>
+                                <div class="price-order">
+                                    <span class="price">{{SALAD_PRICE_3}}</span>
+                                    <button class="add-to-cart" data-item="{{SALAD_NAME_3}}">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wraps & Sandwiches -->
+                <div class="menu-section" data-category="wraps">
+                    <h2>Wraps & Sandwiches</h2>
+                    <p>Wholesome wraps and sandwiches for meals on the go</p>
+                    <div class="menu-grid">
+                        <div class="menu-item-card" data-dietary="vegetarian">
+                            <img src="{{WRAP_IMAGE_1}}" alt="{{WRAP_NAME_1}}">
+                            <div class="menu-item-info">
+                                <h3>{{WRAP_NAME_1}}</h3>
+                                <p>{{WRAP_DESCRIPTION_1}}</p>
+                                <div class="nutrition-badges">
+                                    <span class="badge calories">{{WRAP_CALORIES_1}} cal</span>
+                                    <span class="badge protein">{{WRAP_PROTEIN_1}}g protein</span>
+                                    <span class="badge fiber">{{WRAP_FIBER_1}}g fiber</span>
+                                </div>
+                                <div class="dietary-tags">
+                                    <span class="tag vegetarian">Vegetarian</span>
+                                </div>
+                                <div class="price-order">
+                                    <span class="price">{{WRAP_PRICE_1}}</span>
+                                    <button class="add-to-cart" data-item="{{WRAP_NAME_1}}">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-item-card" data-dietary="protein">
+                            <img src="{{WRAP_IMAGE_2}}" alt="{{WRAP_NAME_2}}">
+                            <div class="menu-item-info">
+                                <h3>{{WRAP_NAME_2}}</h3>
+                                <p>{{WRAP_DESCRIPTION_2}}</p>
+                                <div class="nutrition-badges">
+                                    <span class="badge calories">{{WRAP_CALORIES_2}} cal</span>
+                                    <span class="badge protein">{{WRAP_PROTEIN_2}}g protein</span>
+                                    <span class="badge fiber">{{WRAP_FIBER_2}}g fiber</span>
+                                </div>
+                                <div class="dietary-tags">
+                                    <span class="tag protein">High Protein</span>
+                                </div>
+                                <div class="price-order">
+                                    <span class="price">{{WRAP_PRICE_2}}</span>
+                                    <button class="add-to-cart" data-item="{{WRAP_NAME_2}}">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Smoothies -->
+                <div class="menu-section" data-category="smoothies">
+                    <h2>Fresh Smoothies</h2>
+                    <p>Nutrient-packed smoothies made with fresh fruits and superfoods</p>
+                    <div class="menu-grid">
+                        <div class="menu-item-card" data-dietary="vegan,gluten-free">
+                            <img src="{{SMOOTHIE_IMAGE_1}}" alt="{{SMOOTHIE_NAME_1}}">
+                            <div class="menu-item-info">
+                                <h3>{{SMOOTHIE_NAME_1}}</h3>
+                                <p>{{SMOOTHIE_DESCRIPTION_1}}</p>
+                                <div class="nutrition-badges">
+                                    <span class="badge calories">{{SMOOTHIE_CALORIES_1}} cal</span>
+                                    <span class="badge protein">{{SMOOTHIE_PROTEIN_1}}g protein</span>
+                                    <span class="badge vitamin-c">{{SMOOTHIE_VITAMIN_C_1}}mg Vitamin C</span>
+                                </div>
+                                <div class="dietary-tags">
+                                    <span class="tag vegan">Vegan</span>
+                                    <span class="tag gluten-free">Gluten-Free</span>
+                                </div>
+                                <div class="price-order">
+                                    <span class="price">{{SMOOTHIE_PRICE_1}}</span>
+                                    <button class="add-to-cart" data-item="{{SMOOTHIE_NAME_1}}">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-item-card" data-dietary="protein,gluten-free">
+                            <img src="{{SMOOTHIE_IMAGE_2}}" alt="{{SMOOTHIE_NAME_2}}">
+                            <div class="menu-item-info">
+                                <h3>{{SMOOTHIE_NAME_2}}</h3>
+                                <p>{{SMOOTHIE_DESCRIPTION_2}}</p>
+                                <div class="nutrition-badges">
+                                    <span class="badge calories">{{SMOOTHIE_CALORIES_2}} cal</span>
+                                    <span class="badge protein">{{SMOOTHIE_PROTEIN_2}}g protein</span>
+                                    <span class="badge antioxidants">High Antioxidants</span>
+                                </div>
+                                <div class="dietary-tags">
+                                    <span class="tag protein">High Protein</span>
+                                    <span class="tag gluten-free">Gluten-Free</span>
+                                </div>
+                                <div class="price-order">
+                                    <span class="price">{{SMOOTHIE_PRICE_2}}</span>
+                                    <button class="add-to-cart" data-item="{{SMOOTHIE_NAME_2}}">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sides -->
+                <div class="menu-section" data-category="sides">
+                    <h2>Healthy Sides</h2>
+                    <p>Nutritious sides to complement your meal</p>
+                    <div class="menu-grid">
+                        <div class="menu-item-card" data-dietary="vegan,gluten-free">
+                            <img src="{{SIDE_IMAGE_1}}" alt="{{SIDE_NAME_1}}">
+                            <div class="menu-item-info">
+                                <h3>{{SIDE_NAME_1}}</h3>
+                                <p>{{SIDE_DESCRIPTION_1}}</p>
+                                <div class="nutrition-badges">
+                                    <span class="badge calories">{{SIDE_CALORIES_1}} cal</span>
+                                    <span class="badge fiber">{{SIDE_FIBER_1}}g fiber</span>
+                                </div>
+                                <div class="dietary-tags">
+                                    <span class="tag vegan">Vegan</span>
+                                    <span class="tag gluten-free">Gluten-Free</span>
+                                </div>
+                                <div class="price-order">
+                                    <span class="price">{{SIDE_PRICE_1}}</span>
+                                    <button class="add-to-cart" data-item="{{SIDE_NAME_1}}">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-item-card" data-dietary="vegetarian">
+                            <img src="{{SIDE_IMAGE_2}}" alt="{{SIDE_NAME_2}}">
+                            <div class="menu-item-info">
+                                <h3>{{SIDE_NAME_2}}</h3>
+                                <p>{{SIDE_DESCRIPTION_2}}</p>
+                                <div class="nutrition-badges">
+                                    <span class="badge calories">{{SIDE_CALORIES_2}} cal</span>
+                                    <span class="badge protein">{{SIDE_PROTEIN_2}}g protein</span>
+                                </div>
+                                <div class="dietary-tags">
+                                    <span class="tag vegetarian">Vegetarian</span>
+                                </div>
+                                <div class="price-order">
+                                    <span class="price">{{SIDE_PRICE_2}}</span>
+                                    <button class="add-to-cart" data-item="{{SIDE_NAME_2}}">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="menu-footer">
+            <div class="container">
+                <div class="nutrition-disclaimer">
+                    <h3>Nutrition Information</h3>
+                    <p>All nutrition information is based on standard recipes and serving sizes. Actual nutritional content may vary based on preparation methods and ingredient substitutions. For specific dietary restrictions or allergen information, please consult with our staff.</p>
+                </div>
+                <div class="customization-note">
+                    <h3>Customization Available</h3>
+                    <p>Most menu items can be customized to meet your dietary needs. Ask about ingredient substitutions, portion adjustments, and dressing options.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>{{RESTAURANT_NAME}}</h3>
+                    <p>{{FOOTER_DESCRIPTION}}</p>
+                    <div class="social-links">
+                        <a href="{{SOCIAL_FACEBOOK}}" aria-label="Facebook">Facebook</a>
+                        <a href="{{SOCIAL_INSTAGRAM}}" aria-label="Instagram">Instagram</a>
+                        <a href="{{SOCIAL_TWITTER}}" aria-label="Twitter">Twitter</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Menu</h3>
+                    <ul>
+                        <li><a href="menu.html">Full Menu</a></li>
+                        <li><a href="index.html#nutrition">Nutrition Info</a></li>
+                        <li><a href="#allergens">Allergen Guide</a></li>
+                        <li><a href="#dietary">Dietary Options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#sustainability">Sustainability</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#press">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Stay Connected</h3>
+                    <p>Join our newsletter for healthy tips and special offers</p>
+                    <div class="newsletter">
+                        <input type="email" placeholder="Your email">
+                        <button type="button">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; {{CURRENT_YEAR}} {{RESTAURANT_NAME}}. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Menu-specific JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            // Category filtering
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const menuSections = document.querySelectorAll('.menu-section');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const filter = this.dataset.filter;
+                    
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Show/hide sections
+                    menuSections.forEach(section => {
+                        if (filter === 'all' || section.dataset.category === filter) {
+                            section.style.display = 'block';
+                        } else {
+                            section.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Dietary filtering
+            const dietaryButtons = document.querySelectorAll('.dietary-btn');
+            const menuItems = document.querySelectorAll('.menu-item-card');
+            
+            dietaryButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const dietary = this.dataset.dietary;
+                    
+                    // Toggle active state
+                    this.classList.toggle('active');
+                    
+                    // Get all active dietary filters
+                    const activeFilters = Array.from(document.querySelectorAll('.dietary-btn.active')).map(btn => btn.dataset.dietary);
+                    
+                    // Filter menu items
+                    menuItems.forEach(item => {
+                        const itemDietary = item.dataset.dietary ? item.dataset.dietary.split(',') : [];
+                        const shouldShow = activeFilters.length === 0 || activeFilters.some(filter => itemDietary.includes(filter));
+                        
+                        item.style.display = shouldShow ? 'block' : 'none';
+                    });
+                });
+            });
+            
+            // Add to cart functionality
+            const addToCartButtons = document.querySelectorAll('.add-to-cart');
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const itemName = this.dataset.item;
+                    // In a real implementation, this would add to cart
+                    console.log('Added to cart:', itemName);
+                    
+                    // Visual feedback
+                    this.textContent = 'Added!';
+                    this.style.backgroundColor = 'var(--success-color)';
+                    
+                    setTimeout(() => {
+                        this.textContent = 'Add to Cart';
+                        this.style.backgroundColor = '';
+                    }, 2000);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

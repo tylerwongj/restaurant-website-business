@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Seasonal Menu</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        .menu-page {
+            padding-top: 120px;
+            min-height: 100vh;
+        }
+        
+        .menu-hero {
+            text-align: center;
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+        }
+        
+        .menu-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+        
+        .menu-hero p {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .menu-section {
+            padding: 3rem 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .menu-section:last-child {
+            border-bottom: none;
+        }
+        
+        .menu-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+        
+        .menu-section .section-description {
+            text-align: center;
+            font-size: 1.125rem;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .menu-items {
+            display: grid;
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .menu-item-detail {
+            border-bottom: 1px solid #f3f4f6;
+            padding-bottom: 2rem;
+        }
+        
+        .menu-item-detail:last-child {
+            border-bottom: none;
+        }
+        
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+        
+        .item-name {
+            font-size: 1.375rem;
+            font-weight: 500;
+            color: var(--text);
+            margin: 0;
+        }
+        
+        .item-price {
+            font-size: 1.125rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .item-description {
+            font-size: 1rem;
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+        
+        .item-details {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+        
+        .wine-pairing {
+            background: #f9fafb;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-top: 1rem;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .wine-pairing h4 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+        
+        .wine-pairing p {
+            margin: 0;
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+        
+        .tasting-menu-info {
+            background: var(--primary);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            margin: 4rem 0;
+        }
+        
+        .tasting-menu-info h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .tasting-menu-info p {
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+        
+        .tasting-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .tasting-option {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .tasting-option h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .tasting-option .price {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .tasting-option p {
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0;
+        }
+        
+        .seasonal-note {
+            background: #f0f9ff;
+            border: 1px solid #bae6fd;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .seasonal-note h3 {
+            color: var(--text);
+            margin-bottom: 1rem;
+        }
+        
+        .seasonal-note p {
+            color: var(--text-light);
+            margin: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .menu-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .menu-section h2 {
+                font-size: 2rem;
+            }
+            
+            .item-header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .tasting-options {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="scheme-warm">
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-logo">
+                <h1>{{RESTAURANT_NAME}}</h1>
+                <span class="nav-tagline">culinary artistry</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">Story</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="index.html#wine">Wine</a></li>
+                <li><a href="index.html#awards">Recognition</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-cta">
+                <button class="btn-reservation" onclick="window.location.href='index.html#contact'">Reserve</button>
+            </div>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Menu Page Content -->
+    <main class="menu-page">
+        <!-- Menu Hero -->
+        <section class="menu-hero">
+            <div class="container">
+                <h1>Seasonal Tasting Menu</h1>
+                <p>Our menu changes with the seasons, celebrating the finest ingredients at their peak. Each dish represents our commitment to culinary excellence and innovation.</p>
+            </div>
+        </section>
+
+        <!-- Seasonal Note -->
+        <div class="container">
+            <div class="seasonal-note">
+                <h3>🍂 Current Season: Autumn Harvest</h3>
+                <p>This menu features the abundant flavors of autumn, showcasing locally-sourced ingredients and time-honored techniques. Menu items may vary based on seasonal availability.</p>
+            </div>
+        </div>
+
+        <!-- Tasting Menu Options -->
+        <section class="tasting-menu-info">
+            <div class="container">
+                <h2>Tasting Menu Experiences</h2>
+                <p>Choose from our curated tasting experiences, each designed to take you on a unique culinary journey.</p>
+                <div class="tasting-options">
+                    <div class="tasting-option">
+                        <h3>Chef's Tasting</h3>
+                        <div class="price">$295</div>
+                        <p>8-course seasonal menu showcasing our signature techniques and finest ingredients.</p>
+                    </div>
+                    <div class="tasting-option">
+                        <h3>Grand Tasting</h3>
+                        <div class="price">$395</div>
+                        <p>12-course extended journey with rare ingredients and exclusive preparations.</p>
+                    </div>
+                    <div class="tasting-option">
+                        <h3>Wine Pairing</h3>
+                        <div class="price">+$150</div>
+                        <p>Expertly selected wines to complement each course, curated by our sommelier team.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Appetizers -->
+        <section class="menu-section">
+            <div class="container">
+                <h2>Amuse-Bouches</h2>
+                <p class="section-description">Our meal begins with these small bites designed to awaken the palate and set the stage for the culinary journey ahead.</p>
+                
+                <div class="menu-items">
+                    <div class="menu-item-detail">
+                        <div class="item-header">
+                            <h3 class="item-name">Oyster Pearls</h3>
+                        </div>
+                        <p class="item-description">Blue Point oyster essence, caviar pearls, cucumber foam, micro herbs</p>
+                        <p class="item-details">Gluten-free | Contains shellfish</p>
+                        <div class="wine-pairing">
+                            <h4>Wine Pairing</h4>
+                            <p>Chablis Premier Cru, Domaine William Fèvre</p>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-detail">
+                        <div class="item-header">
+                            <h3 class="item-name">Autumn Spoon</h3>
+                        </div>
+                        <p class="item-description">Butternut squash velouté, truffle oil, toasted pumpkin seeds, sage crisp</p>
+                        <p class="item-details">Vegetarian | Gluten-free</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- First Courses -->
+        <section class="menu-section">
+            <div class="container">
+                <h2>First Courses</h2>
+                <p class="section-description">Elegant beginnings that showcase seasonal ingredients with refined technique and artistic presentation.</p>
+                
+                <div class="menu-items">
+                    <div class="menu-item-detail">
+                        <div class="item-header">
+                            <h3 class="item-name">Diver Scallop</h3>
+                        </div>
+                        <p class="item-description">Pan-seared day boat scallop, cauliflower purée, pancetta crisp, brown butter, sea beans</p>
+                        <p class="item-details">Contains shellfish, pork</p>
+                        <div class="wine-pairing">
+                            <h4>Wine Pairing</h4>
+                            <p>Sancerre, Henri Bourgeois</p>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-detail">
+                        <div class="item-header">
+                            <h3 class="item-name">Foie Gras Torchon</h3>
+                        </div>
+                        <p class="item-description">Hudson Valley foie gras, fig compote, brioche toast, aged balsamic, microgreens</p>
+                        <p class="item-details">Contains liver, gluten</p>
+                        <div class="wine-pairing">
+                            <h4>Wine Pairing</h4>
+                            <p>Sauternes, Château d'Yquem</p>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-detail">
+                        <div class="item-header">
+                            <h3 class="item-name">Tuna Crudo</h3>
+                        </div>
+                        <p class="item-description">Yellowfin tuna, avocado mousse, citrus segments, jalapeño oil, crispy shallots</p>
+                        <p class="item-details">Raw fish | Gluten-free</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Courses -->
+        <section class="menu-section">
+            <div class="container">
+                <h2>Main Courses</h2>
+                <p class="section-description">The heart of our menu, featuring proteins and vegetables treated with the utmost care and creativity.</p>
+                
+                <div class="menu-items">
+                    <div class="menu-item-detail">
+                        <div class="item-header">
+                            <h3 class="item-name">Dry-Aged Duck Breast</h3>
+                        </div>
+                        <p class="item-description">28-day aged Pekin duck, confit leg roulade, cherry gastrique, roasted root vegetables, duck jus</p>
+                        <p class="item-details">Contains poultry</p>
+                        <div class="wine-pairing">
+                            <h4>Wine Pairing</h4>
+                            <p>Pinot Noir, Domaine de la Romanée-Conti</p>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-detail">
+                        <div class="item-header">
+                            <h3 class="item-name">Wagyu Beef Tenderloin</h3>
+                        </div>
+                        <p class="item-description">A5 Wagyu, bone marrow, roasted shallots, red wine reduction, seasonal vegetables</p>
+                        <p class="item-details">Premium beef | Contains bone marrow</p>
+                        <div class="wine-pairing">
+                            <h4>Wine Pairing</h4>
+                            <p>Cabernet Sauvignon, Screaming Eagle</p>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-detail">
+                        <div class="item-header">
+                            <h3 class="item-name">Wild Striped Bass</h3>
+                        </div>
+                        <p class="item-description">Line-caught striped bass, saffron beurre blanc, fennel confit, olive tapenade, herb oil</p>
+                        <p class="item-details">Contains fish</p>
+                        <div class="wine-pairing">
+                            <h4>Wine Pairing</h4>
+                            <p>Chardonnay, Montrachet</p>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-detail">
+                        <div class="item-header">
+                            <h3 class="item-name">Roasted Vegetables</h3>
+                        </div>
+                        <p class="item-description">Market vegetables, truffle emulsion, aged parmesan, herb crust, balsamic pearls</p>
+                        <p class="item-details">Vegetarian</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cheese Course -->
+        <section class="menu-section">
+            <div class="container">
+                <h2>Artisanal Cheese</h2>
+                <p class="section-description">A selection of finest domestic and imported cheeses, served with seasonal accompaniments.</p>
+                
+                <div class="menu-items">
+                    <div class="menu-item-detail">
+                        <div class="item-header">
+                            <h3 class="item-name">Cheese Selection</h3>
+                        </div>
+                        <p class="item-description">Three carefully chosen cheeses: aged Comté, Roquefort, Vermont creamery goat cheese</p>
+                        <p class="item-details">Served with honeycomb, marcona almonds, fig jam, artisan crackers</p>
+                        <div class="wine-pairing">
+                            <h4>Wine Pairing</h4>
+                            <p>Port, Taylor Fladgate 20 Year Tawny</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Desserts -->
+        <section class="menu-section">
+            <div class="container">
+                <h2>Desserts</h2>
+                <p class="section-description">Sweet conclusions that provide the perfect ending to your culinary journey.</p>
+                
+                <div class="menu-items">
+                    <div class="menu-item-detail">
+                        <div class="item-header">
+                            <h3 class="item-name">Chocolate Soufflé</h3>
+                        </div>
+                        <p class="item-description">Valrhona dark chocolate soufflé, raspberry coulis, vanilla bean ice cream, gold leaf</p>
+                        <p class="item-details">Contains eggs, dairy | Allow 20 minutes preparation</p>
+                        <div class="wine-pairing">
+                            <h4>Wine Pairing</h4>
+                            <p>Banyuls, Domaine du Mas Blanc</p>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item-detail">
+                        <div class="item-header">
+                            <h3 class="item-name">Seasonal Fruit Tart</h3>
+                        </div>
+                        <p class="item-description">Pear and almond tart, cinnamon ice cream, caramel sauce, candied walnuts</p>
+                        <p class="item-details">Contains nuts, gluten, dairy</p>
+                    </div>
+                    
+                    <div class="menu-item-detail">
+                        <div class="item-header">
+                            <h3 class="item-name">Mignardises</h3>
+                        </div>
+                        <p class="item-description">Selection of petit fours: chocolate truffle, macarons, fruit pâtes, coffee service</p>
+                        <p class="item-details">Various allergens | Perfect ending to your meal</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dietary Information -->
+        <section class="menu-section">
+            <div class="container">
+                <h2>Dietary Accommodations</h2>
+                <p class="section-description">We are committed to accommodating all dietary needs and preferences.</p>
+                
+                <div class="menu-items">
+                    <div class="menu-item-detail">
+                        <div class="item-header">
+                            <h3 class="item-name">Special Diets</h3>
+                        </div>
+                        <p class="item-description">Vegetarian, vegan, gluten-free, and allergen-free preparations available upon request</p>
+                        <p class="item-details">Please inform us of any dietary restrictions when making your reservation</p>
+                    </div>
+                    
+                    <div class="menu-item-detail">
+                        <div class="item-header">
+                            <h3 class="item-name">Chef's Recommendations</h3>
+                        </div>
+                        <p class="item-description">Our chef is happy to create custom preparations to accommodate specific dietary needs</p>
+                        <p class="item-details">24-hour advance notice required for extensive modifications</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>{{RESTAURANT_NAME}}</h3>
+                    <p>Culinary artistry since 2004</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Restaurant</h4>
+                        <a href="index.html#about">Our Story</a>
+                        <a href="menu.html">Menu</a>
+                        <a href="index.html#wine">Wine Program</a>
+                        <a href="index.html#awards">Awards</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Experience</h4>
+                        <a href="index.html#contact">Reservations</a>
+                        <a href="index.html#contact">Private Events</a>
+                        <a href="index.html#contact">Gift Cards</a>
+                        <a href="index.html#contact">Wine Tastings</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Connect</h4>
+                        <a href="{{INSTAGRAM_URL}}" target="_blank">Instagram</a>
+                        <a href="{{FACEBOOK_URL}}" target="_blank">Facebook</a>
+                        <a href="index.html#contact">Newsletter</a>
+                        <a href="index.html#contact">Press</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="{{INSTAGRAM_URL}}" target="_blank" aria-label="Instagram">📷</a>
+                    <a href="{{FACEBOOK_URL}}" target="_blank" aria-label="Facebook">📘</a>
+                    <a href="{{TWITTER_URL}}" target="_blank" aria-label="Twitter">🐦</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

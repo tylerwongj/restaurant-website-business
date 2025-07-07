@@ -1,0 +1,634 @@
+/* Family Diner Template - Denny's Style */
+
+:root {
+    --diner-primary: #ff6b35;        /* Orange Red */
+    --diner-secondary: #ffd700;      /* Gold */
+    --diner-accent: #dc143c;         /* Crimson */
+    --diner-brown: #8b4513;          /* Saddle Brown */
+    --diner-cream: #fff8dc;          /* Cornsilk */
+    --diner-white: #ffffff;
+    --diner-dark: #2f2f2f;
+    --diner-gray: #666666;
+}
+
+.color-diner {
+    --primary-color: var(--diner-primary);
+    --secondary-color: var(--diner-secondary);
+    --accent-color: var(--diner-accent);
+    --brown-color: var(--diner-brown);
+    --text-color: var(--diner-dark);
+    --background-color: var(--diner-white);
+    --section-bg: var(--diner-cream);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: var(--background-color);
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+
+.header {
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-family: 'Merriweather', serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.logo .tagline {
+    opacity: 0.9;
+    font-style: italic;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity 0.3s ease;
+}
+
+.nav-menu a:hover { opacity: 0.8; }
+
+.hours-badge {
+    background: var(--secondary-color);
+    color: var(--diner-dark);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #e55a2b;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.hero {
+    background: var(--section-bg);
+    padding: 3rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.hero-content h2 {
+    font-family: 'Merriweather', serif;
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: var(--diner-gray);
+    margin-bottom: 2rem;
+}
+
+.hero-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.feature {
+    background: white;
+    padding: 0.75rem;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.daily-specials {
+    padding: 3rem 0;
+}
+
+.daily-specials h2 {
+    font-family: 'Merriweather', serif;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.specials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.special-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.special-card:hover {
+    transform: translateY(-5px);
+}
+
+.special-day {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--accent-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    z-index: 2;
+}
+
+.special-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.special-content {
+    padding: 1.5rem;
+}
+
+.special-content h3 {
+    font-family: 'Merriweather', serif;
+    font-size: 1.3rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.special-content p {
+    color: var(--diner-gray);
+    margin-bottom: 1rem;
+}
+
+.special-price {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.price-old {
+    text-decoration: line-through;
+    color: var(--diner-gray);
+}
+
+.price-new {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+.breakfast-section {
+    background: var(--section-bg);
+    padding: 3rem 0;
+}
+
+.breakfast-section h2 {
+    font-family: 'Merriweather', serif;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.breakfast-section p {
+    text-align: center;
+    color: var(--diner-gray);
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+.breakfast-menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+}
+
+.breakfast-category {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.breakfast-category h3 {
+    font-family: 'Merriweather', serif;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.5rem;
+}
+
+.menu-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.menu-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+
+.menu-item:hover {
+    background: var(--section-bg);
+}
+
+.menu-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.item-details {
+    flex: 1;
+}
+
+.item-details h4 {
+    font-family: 'Merriweather', serif;
+    color: var(--text-color);
+    margin-bottom: 0.25rem;
+}
+
+.item-details p {
+    color: var(--diner-gray);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.price {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.menu-section {
+    padding: 3rem 0;
+}
+
+.menu-section h2 {
+    font-family: 'Merriweather', serif;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.menu-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.menu-grid .menu-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    display: block;
+}
+
+.menu-grid .menu-item h4 {
+    font-family: 'Merriweather', serif;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.menu-grid .menu-item p {
+    color: var(--diner-gray);
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.value-section {
+    background: var(--section-bg);
+    padding: 3rem 0;
+}
+
+.value-section h2 {
+    font-family: 'Merriweather', serif;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.value-offers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.value-offer {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.offer-price {
+    background: var(--secondary-color);
+    color: var(--diner-dark);
+    padding: 1rem;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: 700;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+}
+
+.value-offer h3 {
+    font-family: 'Merriweather', serif;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.locations-section {
+    padding: 3rem 0;
+}
+
+.locations-section h2 {
+    font-family: 'Merriweather', serif;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.location-search {
+    max-width: 500px;
+    margin: 0 auto 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.location-input {
+    flex: 1;
+    padding: 0.75rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.locations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.location-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.location-card h3 {
+    font-family: 'Merriweather', serif;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.location-info {
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.hours {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.phone {
+    color: var(--diner-gray);
+}
+
+.location-features {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.feature-tag {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.footer {
+    background: var(--diner-dark);
+    color: white;
+    padding: 2rem 0 1rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    font-family: 'Merriweather', serif;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+.footer-section p {
+    opacity: 0.9;
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.9;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+    
+    .hero-features {
+        grid-template-columns: 1fr;
+    }
+    
+    .specials-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .breakfast-menu {
+        grid-template-columns: 1fr;
+    }
+    
+    .menu-tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .value-offers {
+        grid-template-columns: 1fr;
+    }
+    
+    .location-search {
+        flex-direction: column;
+    }
+    
+    .locations-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .nav-menu {
+        display: none;
+    }
+}

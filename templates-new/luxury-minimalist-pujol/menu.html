@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Menu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="theme-minimalist">
+    <!-- Navigation -->
+    <nav class="nav-minimal">
+        <div class="nav-container">
+            <div class="nav-center">
+                <a href="index.html" class="nav-link">HOME</a>
+                <a href="#" class="nav-link active">MENU</a>
+                <a href="#" class="nav-link">RESERVATIONS</a>
+                <a href="#" class="nav-link">PRIVATE DINING</a>
+                <a href="#" class="nav-link">CONTACT</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu Hero -->
+    <section class="menu-hero">
+        <div class="hero-content">
+            <h1>Tasting Menu</h1>
+            <p>{{TASTING_MENU_SUBTITLE}}</p>
+        </div>
+    </section>
+
+    <!-- Menu Sections -->
+    <section class="menu-content">
+        <div class="container">
+            <!-- Seasonal Menu -->
+            <div class="menu-section">
+                <h2>Current Season</h2>
+                <p class="menu-description">{{SEASONAL_MENU_DESCRIPTION}}</p>
+                
+                <div class="menu-grid">
+                    <div class="menu-course">
+                        <div class="course-number">01</div>
+                        <h3>{{COURSE_1_NAME}}</h3>
+                        <p class="course-description">{{COURSE_1_DESCRIPTION}}</p>
+                        <p class="course-ingredients">{{COURSE_1_INGREDIENTS}}</p>
+                    </div>
+                    
+                    <div class="menu-course">
+                        <div class="course-number">02</div>
+                        <h3>{{COURSE_2_NAME}}</h3>
+                        <p class="course-description">{{COURSE_2_DESCRIPTION}}</p>
+                        <p class="course-ingredients">{{COURSE_2_INGREDIENTS}}</p>
+                    </div>
+                    
+                    <div class="menu-course">
+                        <div class="course-number">03</div>
+                        <h3>{{COURSE_3_NAME}}</h3>
+                        <p class="course-description">{{COURSE_3_DESCRIPTION}}</p>
+                        <p class="course-ingredients">{{COURSE_3_INGREDIENTS}}</p>
+                    </div>
+                    
+                    <div class="menu-course">
+                        <div class="course-number">04</div>
+                        <h3>{{COURSE_4_NAME}}</h3>
+                        <p class="course-description">{{COURSE_4_DESCRIPTION}}</p>
+                        <p class="course-ingredients">{{COURSE_4_INGREDIENTS}}</p>
+                    </div>
+                    
+                    <div class="menu-course">
+                        <div class="course-number">05</div>
+                        <h3>{{COURSE_5_NAME}}</h3>
+                        <p class="course-description">{{COURSE_5_DESCRIPTION}}</p>
+                        <p class="course-ingredients">{{COURSE_5_INGREDIENTS}}</p>
+                    </div>
+                    
+                    <div class="menu-course">
+                        <div class="course-number">06</div>
+                        <h3>{{COURSE_6_NAME}}</h3>
+                        <p class="course-description">{{COURSE_6_DESCRIPTION}}</p>
+                        <p class="course-ingredients">{{COURSE_6_INGREDIENTS}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wine Pairing -->
+            <div class="wine-section">
+                <h2>Wine Pairing</h2>
+                <p class="wine-description">{{WINE_PAIRING_DESCRIPTION}}</p>
+                
+                <div class="wine-options">
+                    <div class="wine-option">
+                        <h3>Standard Pairing</h3>
+                        <p class="wine-price">{{STANDARD_WINE_PRICE}}</p>
+                        <p>{{STANDARD_WINE_DESCRIPTION}}</p>
+                    </div>
+                    
+                    <div class="wine-option">
+                        <h3>Premium Pairing</h3>
+                        <p class="wine-price">{{PREMIUM_WINE_PRICE}}</p>
+                        <p>{{PREMIUM_WINE_DESCRIPTION}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Menu Pricing -->
+            <div class="pricing-section">
+                <div class="pricing-item">
+                    <h3>Tasting Menu</h3>
+                    <p class="price">{{TASTING_MENU_PRICE}}</p>
+                </div>
+            </div>
+
+            <!-- Allergies & Dietary -->
+            <div class="dietary-section">
+                <h2>Dietary Requirements</h2>
+                <p>{{DIETARY_ACCOMMODATION_TEXT}}</p>
+                <p class="dietary-note">Please inform us of any allergies or dietary restrictions when making your reservation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Modal -->
+    <div id="reservationModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Make a Reservation</h2>
+            <form class="reservation-form">
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input type="date" id="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">Time</label>
+                    <select id="time" required>
+                        <option value="">Select Time</option>
+                        <option value="18:00">6:00 PM</option>
+                        <option value="18:30">6:30 PM</option>
+                        <option value="19:00">7:00 PM</option>
+                        <option value="19:30">7:30 PM</option>
+                        <option value="20:00">8:00 PM</option>
+                        <option value="20:30">8:30 PM</option>
+                        <option value="21:00">9:00 PM</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="guests">Guests</label>
+                    <select id="guests" required>
+                        <option value="">Number of Guests</option>
+                        <option value="1">1 Guest</option>
+                        <option value="2">2 Guests</option>
+                        <option value="3">3 Guests</option>
+                        <option value="4">4 Guests</option>
+                        <option value="5">5 Guests</option>
+                        <option value="6">6 Guests</option>
+                        <option value="7">7 Guests</option>
+                        <option value="8">8 Guests</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="special">Special Requests</label>
+                    <textarea id="special" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn-reserve">Confirm Reservation</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <style>
+        /* Additional Menu-specific Styles */
+        .menu-hero {
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-primary);
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .menu-hero h1 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 300;
+            letter-spacing: 6px;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .menu-hero p {
+            font-size: 16px;
+            letter-spacing: 2px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            font-weight: 300;
+        }
+
+        .menu-content {
+            padding: 80px 0;
+            background: var(--bg-secondary);
+        }
+
+        .menu-section {
+            margin-bottom: 100px;
+        }
+
+        .menu-section h2 {
+            font-size: 2rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            text-align: center;
+            color: var(--text-primary);
+        }
+
+        .menu-description {
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+            font-weight: 300;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .menu-course {
+            text-align: center;
+            padding: 40px 20px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .course-number {
+            font-size: 14px;
+            letter-spacing: 2px;
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .menu-course h3 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .course-description {
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+
+        .course-ingredients {
+            font-size: 14px;
+            font-style: italic;
+            color: var(--text-light);
+            font-weight: 300;
+        }
+
+        .wine-section {
+            margin-bottom: 80px;
+            text-align: center;
+        }
+
+        .wine-section h2 {
+            font-size: 2rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            color: var(--text-primary);
+        }
+
+        .wine-description {
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto 60px;
+            font-weight: 300;
+        }
+
+        .wine-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .wine-option {
+            padding: 30px;
+            border: 1px solid var(--border);
+            background: var(--bg-primary);
+        }
+
+        .wine-option h3 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            color: var(--accent);
+        }
+
+        .wine-price {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+        }
+
+        .pricing-section {
+            margin-bottom: 80px;
+            text-align: center;
+        }
+
+        .pricing-item {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 40px;
+            border: 2px solid var(--accent);
+            background: var(--bg-primary);
+        }
+
+        .pricing-item h3 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            color: var(--text-primary);
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: var(--accent);
+        }
+
+        .dietary-section {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .dietary-section h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            letter-spacing: 3px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            color: var(--text-primary);
+        }
+
+        .dietary-section p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+
+        .dietary-note {
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        .nav-link.active {
+            color: var(--accent);
+        }
+
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .menu-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .wine-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .menu-hero {
+                height: 50vh;
+                margin-top: 60px;
+            }
+            
+            .menu-content {
+                padding: 60px 0;
+            }
+            
+            .menu-section {
+                margin-bottom: 80px;
+            }
+        }
+    </style>
+</body>
+</html>

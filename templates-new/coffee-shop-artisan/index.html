@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Artisan Coffee & Cafe</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@300;400;600;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="warm-scheme">
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>{{RESTAURANT_NAME}}</h1>
+                <span class="tagline">Artisan Coffee & Cafe</span>
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#coffee">Coffee</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#beans">Coffee Beans</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#locations">Locations</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#order" class="btn btn-order">Order Ahead</a>
+                <a href="#rewards" class="btn btn-rewards">Rewards</a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h2>Crafted with Care, Served with Love</h2>
+                <p>From bean to cup, we source the finest coffee beans and craft each drink with passion and precision. Welcome to your neighborhood coffee haven.</p>
+                <div class="hero-highlights">
+                    <div class="highlight">
+                        <span class="highlight-icon">☕</span>
+                        <div class="highlight-text">
+                            <h4>Small Batch Roasted</h4>
+                            <p>Fresh roasted {{ROASTING_FREQUENCY}}</p>
+                        </div>
+                    </div>
+                    <div class="highlight">
+                        <span class="highlight-icon">🌱</span>
+                        <div class="highlight-text">
+                            <h4>Direct Trade</h4>
+                            <p>Ethically sourced beans</p>
+                        </div>
+                    </div>
+                    <div class="highlight">
+                        <span class="highlight-icon">👨‍🍳</span>
+                        <div class="highlight-text">
+                            <h4>Expert Baristas</h4>
+                            <p>Professionally trained</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#order" class="btn btn-primary">Order Coffee</a>
+                    <a href="#beans" class="btn btn-secondary">Shop Beans</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="{{HERO_COFFEE_IMAGE}}" alt="Artisan coffee cup">
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-drink">
+        <div class="container">
+            <div class="featured-content">
+                <div class="featured-text">
+                    <span class="featured-label">Drink of the Month</span>
+                    <h2>{{FEATURED_DRINK_NAME}}</h2>
+                    <p>{{FEATURED_DRINK_DESCRIPTION}}</p>
+                    <div class="drink-specs">
+                        <span class="spec">{{FEATURED_DRINK_BASE}}</span>
+                        <span class="spec">{{FEATURED_DRINK_FLAVOR}}</span>
+                        <span class="spec">{{FEATURED_DRINK_SPECIAL}}</span>
+                    </div>
+                    <div class="featured-pricing">
+                        <span class="regular-price">Regular: {{FEATURED_REGULAR_PRICE}}</span>
+                        <span class="large-price">Large: {{FEATURED_LARGE_PRICE}}</span>
+                    </div>
+                    <a href="#order" class="btn btn-primary">Try It Now</a>
+                </div>
+                <div class="featured-image">
+                    <img src="{{FEATURED_DRINK_IMAGE}}" alt="{{FEATURED_DRINK_NAME}}">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="coffee-menu" id="coffee">
+        <div class="container">
+            <h2>Our Coffee Menu</h2>
+            <div class="menu-categories">
+                <div class="category-tabs">
+                    <button class="tab-btn active" data-category="espresso">Espresso</button>
+                    <button class="tab-btn" data-category="specialty">Specialty</button>
+                    <button class="tab-btn" data-category="cold">Cold Brew</button>
+                    <button class="tab-btn" data-category="tea">Tea</button>
+                </div>
+
+                <div class="category-content active" id="espresso">
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <h4>Espresso</h4>
+                            <p>Single or double shot of our signature blend</p>
+                            <div class="item-pricing">
+                                <span>Single {{ESPRESSO_SINGLE_PRICE}}</span>
+                                <span>Double {{ESPRESSO_DOUBLE_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Americano</h4>
+                            <p>Espresso with hot water, clean and bold</p>
+                            <div class="item-pricing">
+                                <span>12oz {{AMERICANO_SMALL_PRICE}}</span>
+                                <span>16oz {{AMERICANO_LARGE_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Cappuccino</h4>
+                            <p>Espresso with steamed milk and thick foam</p>
+                            <div class="item-pricing">
+                                <span>8oz {{CAPPUCCINO_SMALL_PRICE}}</span>
+                                <span>12oz {{CAPPUCCINO_LARGE_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Latte</h4>
+                            <p>Espresso with steamed milk and light foam</p>
+                            <div class="item-pricing">
+                                <span>12oz {{LATTE_SMALL_PRICE}}</span>
+                                <span>16oz {{LATTE_LARGE_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Macchiato</h4>
+                            <p>Espresso "marked" with steamed milk foam</p>
+                            <div class="item-pricing">
+                                <span>Traditional {{MACCHIATO_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Mocha</h4>
+                            <p>Espresso with chocolate and steamed milk</p>
+                            <div class="item-pricing">
+                                <span>12oz {{MOCHA_SMALL_PRICE}}</span>
+                                <span>16oz {{MOCHA_LARGE_PRICE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category-content" id="specialty">
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <h4>Vanilla Latte</h4>
+                            <p>Our signature latte with pure vanilla syrup</p>
+                            <div class="item-pricing">
+                                <span>12oz {{VANILLA_LATTE_SMALL_PRICE}}</span>
+                                <span>16oz {{VANILLA_LATTE_LARGE_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Caramel Macchiato</h4>
+                            <p>Steamed milk, vanilla, espresso, caramel drizzle</p>
+                            <div class="item-pricing">
+                                <span>12oz {{CARAMEL_MAC_SMALL_PRICE}}</span>
+                                <span>16oz {{CARAMEL_MAC_LARGE_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Seasonal Spice Latte</h4>
+                            <p>{{SEASONAL_LATTE_DESCRIPTION}}</p>
+                            <div class="item-pricing">
+                                <span>12oz {{SEASONAL_SMALL_PRICE}}</span>
+                                <span>16oz {{SEASONAL_LARGE_PRICE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category-content" id="cold">
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <h4>Cold Brew</h4>
+                            <p>Smooth, low-acid coffee steeped for {{COLD_BREW_HOURS}} hours</p>
+                            <div class="item-pricing">
+                                <span>12oz {{COLD_BREW_SMALL_PRICE}}</span>
+                                <span>16oz {{COLD_BREW_LARGE_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Iced Americano</h4>
+                            <p>Espresso over ice with cold water</p>
+                            <div class="item-pricing">
+                                <span>12oz {{ICED_AMERICANO_SMALL_PRICE}}</span>
+                                <span>16oz {{ICED_AMERICANO_LARGE_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Iced Latte</h4>
+                            <p>Espresso with cold milk over ice</p>
+                            <div class="item-pricing">
+                                <span>12oz {{ICED_LATTE_SMALL_PRICE}}</span>
+                                <span>16oz {{ICED_LATTE_LARGE_PRICE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="category-content" id="tea">
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <h4>Earl Grey</h4>
+                            <p>Classic black tea with bergamot</p>
+                            <div class="item-pricing">
+                                <span>Hot/Iced {{EARL_GREY_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Green Tea</h4>
+                            <p>Premium sencha green tea</p>
+                            <div class="item-pricing">
+                                <span>Hot/Iced {{GREEN_TEA_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Chamomile</h4>
+                            <p>Soothing herbal blend</p>
+                            <div class="item-pricing">
+                                <span>Hot {{CHAMOMILE_PRICE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="food-menu" id="menu">
+        <div class="container">
+            <h2>Fresh Food Menu</h2>
+            <div class="food-categories">
+                <div class="food-category">
+                    <h3>Breakfast</h3>
+                    <div class="food-items">
+                        <div class="food-item">
+                            <h4>Avocado Toast</h4>
+                            <p>Smashed avocado, everything seasoning, sourdough</p>
+                            <span class="price">{{AVOCADO_TOAST_PRICE}}</span>
+                        </div>
+                        <div class="food-item">
+                            <h4>Breakfast Burrito</h4>
+                            <p>Scrambled eggs, cheese, potatoes, salsa</p>
+                            <span class="price">{{BREAKFAST_BURRITO_PRICE}}</span>
+                        </div>
+                        <div class="food-item">
+                            <h4>Greek Yogurt Parfait</h4>
+                            <p>Greek yogurt, granola, seasonal berries</p>
+                            <span class="price">{{YOGURT_PARFAIT_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="food-category">
+                    <h3>Pastries & Sweets</h3>
+                    <div class="food-items">
+                        <div class="food-item">
+                            <h4>Croissant</h4>
+                            <p>Buttery, flaky, baked fresh daily</p>
+                            <span class="price">{{CROISSANT_PRICE}}</span>
+                        </div>
+                        <div class="food-item">
+                            <h4>Blueberry Muffin</h4>
+                            <p>Made with fresh blueberries</p>
+                            <span class="price">{{BLUEBERRY_MUFFIN_PRICE}}</span>
+                        </div>
+                        <div class="food-item">
+                            <h4>Chocolate Chip Cookie</h4>
+                            <p>House-made with Belgian chocolate</p>
+                            <span class="price">{{CHOCOLATE_COOKIE_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="food-category">
+                    <h3>Lunch</h3>
+                    <div class="food-items">
+                        <div class="food-item">
+                            <h4>Grilled Panini</h4>
+                            <p>Choice of turkey, ham, or veggie with cheese</p>
+                            <span class="price">{{PANINI_PRICE}}</span>
+                        </div>
+                        <div class="food-item">
+                            <h4>Caesar Salad</h4>
+                            <p>Romaine, parmesan, croutons, caesar dressing</p>
+                            <span class="price">{{CAESAR_SALAD_PRICE}}</span>
+                        </div>
+                        <div class="food-item">
+                            <h4>Soup of the Day</h4>
+                            <p>Ask about today's selection</p>
+                            <span class="price">{{SOUP_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="coffee-beans-section" id="beans">
+        <div class="container">
+            <h2>Take Home Our Coffee</h2>
+            <p class="section-subtitle">Enjoy our artisan roasted beans at home</p>
+            <div class="beans-grid">
+                <div class="bean-item">
+                    <img src="{{SIGNATURE_BLEND_IMAGE}}" alt="Signature Blend">
+                    <div class="bean-info">
+                        <h3>{{SIGNATURE_BLEND_NAME}}</h3>
+                        <p>{{SIGNATURE_BLEND_DESCRIPTION}}</p>
+                        <div class="bean-details">
+                            <span class="origin">Origin: {{SIGNATURE_ORIGIN}}</span>
+                            <span class="roast">Roast: {{SIGNATURE_ROAST}}</span>
+                            <span class="notes">Notes: {{SIGNATURE_NOTES}}</span>
+                        </div>
+                        <div class="bean-pricing">
+                            <span>12oz bag {{SIGNATURE_12OZ_PRICE}}</span>
+                            <span>5lb bag {{SIGNATURE_5LB_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bean-item">
+                    <img src="{{SINGLE_ORIGIN_IMAGE}}" alt="Single Origin">
+                    <div class="bean-info">
+                        <h3>{{SINGLE_ORIGIN_NAME}}</h3>
+                        <p>{{SINGLE_ORIGIN_DESCRIPTION}}</p>
+                        <div class="bean-details">
+                            <span class="origin">Origin: {{SINGLE_ORIGIN_LOCATION}}</span>
+                            <span class="roast">Roast: {{SINGLE_ORIGIN_ROAST}}</span>
+                            <span class="notes">Notes: {{SINGLE_ORIGIN_NOTES}}</span>
+                        </div>
+                        <div class="bean-pricing">
+                            <span>12oz bag {{SINGLE_ORIGIN_12OZ_PRICE}}</span>
+                            <span>5lb bag {{SINGLE_ORIGIN_5LB_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bean-item">
+                    <img src="{{DECAF_BLEND_IMAGE}}" alt="Decaf Blend">
+                    <div class="bean-info">
+                        <h3>{{DECAF_BLEND_NAME}}</h3>
+                        <p>{{DECAF_BLEND_DESCRIPTION}}</p>
+                        <div class="bean-details">
+                            <span class="origin">Origin: {{DECAF_ORIGIN}}</span>
+                            <span class="roast">Roast: {{DECAF_ROAST}}</span>
+                            <span class="notes">Process: {{DECAF_PROCESS}}</span>
+                        </div>
+                        <div class="bean-pricing">
+                            <span>12oz bag {{DECAF_12OZ_PRICE}}</span>
+                            <span>5lb bag {{DECAF_5LB_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="beans-info">
+                <h3>Roasting Information</h3>
+                <p>All our coffee is roasted fresh {{ROASTING_FREQUENCY}} in small batches. We recommend using beans within {{FRESHNESS_WINDOW}} of the roast date for optimal flavor.</p>
+                <div class="roasting-details">
+                    <div class="detail">
+                        <h4>Grind Options</h4>
+                        <p>Whole bean, coarse, medium, fine, espresso</p>
+                    </div>
+                    <div class="detail">
+                        <h4>Subscription</h4>
+                        <p>Get fresh beans delivered monthly with {{SUBSCRIPTION_DISCOUNT}}% off</p>
+                    </div>
+                    <div class="detail">
+                        <h4>Bulk Orders</h4>
+                        <p>Contact us for wholesale pricing on {{BULK_MINIMUM}}+ orders</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="coffee-education">
+        <div class="container">
+            <div class="education-content">
+                <div class="education-text">
+                    <h2>Learn About Coffee</h2>
+                    <p>Discover the art and science behind great coffee with our educational events and workshops.</p>
+                    <div class="education-offerings">
+                        <div class="offering">
+                            <h4>Coffee Cupping</h4>
+                            <p>Learn to taste and evaluate coffee like a pro</p>
+                            <span class="schedule">Every {{CUPPING_SCHEDULE}}</span>
+                        </div>
+                        <div class="offering">
+                            <h4>Brewing Workshop</h4>
+                            <p>Master different brewing methods at home</p>
+                            <span class="schedule">Monthly on {{BREWING_WORKSHOP_DAY}}</span>
+                        </div>
+                        <div class="offering">
+                            <h4>Latte Art Classes</h4>
+                            <p>Create beautiful designs in your milk foam</p>
+                            <span class="schedule">{{LATTE_ART_FREQUENCY}}</span>
+                        </div>
+                    </div>
+                    <a href="#events" class="btn btn-primary">View All Events</a>
+                </div>
+                <div class="education-image">
+                    <img src="{{COFFEE_EDUCATION_IMAGE}}" alt="Coffee education">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="events-community" id="events">
+        <div class="container">
+            <h2>Events & Community</h2>
+            <div class="events-grid">
+                <div class="event-category">
+                    <h3>Regular Events</h3>
+                    <div class="event-list">
+                        <div class="event">
+                            <h4>Open Mic Night</h4>
+                            <p>Every {{OPEN_MIC_DAY}} from {{OPEN_MIC_TIME}}</p>
+                            <span class="event-type">Music & Poetry</span>
+                        </div>
+                        <div class="event">
+                            <h4>Book Club</h4>
+                            <p>{{BOOK_CLUB_FREQUENCY}} - {{BOOK_CLUB_TIME}}</p>
+                            <span class="event-type">Literature Discussion</span>
+                        </div>
+                        <div class="event">
+                            <h4>Study Sessions</h4>
+                            <p>{{STUDY_SESSIONS_DAYS}} {{STUDY_SESSIONS_TIME}}</p>
+                            <span class="event-type">Quiet Study Environment</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="event-category">
+                    <h3>Special Events</h3>
+                    <div class="event-list">
+                        <div class="event">
+                            <h4>Coffee & Art Shows</h4>
+                            <p>Featuring local artists monthly</p>
+                            <span class="event-type">Art Exhibition</span>
+                        </div>
+                        <div class="event">
+                            <h4>Seasonal Celebrations</h4>
+                            <p>Holiday-themed drinks and decorations</p>
+                            <span class="event-type">Community Celebration</span>
+                        </div>
+                        <div class="event">
+                            <h4>Charity Fundraisers</h4>
+                            <p>Supporting local causes and organizations</p>
+                            <span class="event-type">Community Service</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="community-info">
+                <h3>Be Part of Our Community</h3>
+                <p>{{RESTAURANT_NAME}} is more than just a coffee shop - we're a gathering place for our neighborhood. Join us for events, meet new friends, and be part of our coffee-loving community.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="rewards-loyalty" id="rewards">
+        <div class="container">
+            <div class="rewards-content">
+                <h2>{{REWARDS_PROGRAM_NAME}}</h2>
+                <p>Earn points with every purchase and enjoy exclusive member benefits</p>
+                <div class="rewards-structure">
+                    <div class="reward-tier">
+                        <h3>Welcome</h3>
+                        <span class="tier-bonus">{{WELCOME_BONUS}} Points</span>
+                        <p>Just for joining</p>
+                    </div>
+                    <div class="reward-tier">
+                        <h3>Earn</h3>
+                        <span class="tier-bonus">{{POINTS_PER_DOLLAR}} Point/$1</span>
+                        <p>On every purchase</p>
+                    </div>
+                    <div class="reward-tier">
+                        <h3>Redeem</h3>
+                        <span class="tier-bonus">{{REWARD_THRESHOLD}} Points</span>
+                        <p>Free drink of choice</p>
+                    </div>
+                </div>
+                
+                <div class="member-benefits">
+                    <h3>Member Benefits</h3>
+                    <div class="benefits-grid">
+                        <span class="benefit">🎂 Birthday drink</span>
+                        <span class="benefit">☕ Exclusive offers</span>
+                        <span class="benefit">📧 Event invitations</span>
+                        <span class="benefit">🚀 Skip the line ordering</span>
+                        <span class="benefit">📱 Mobile ordering</span>
+                        <span class="benefit">🎁 Surprise rewards</span>
+                    </div>
+                </div>
+                
+                <form class="rewards-signup">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn btn-primary">Join {{REWARDS_PROGRAM_NAME}}</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="order-ahead" id="order">
+        <div class="container">
+            <h2>Order Ahead</h2>
+            <div class="order-benefits">
+                <div class="benefit-item">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>Skip the Wait</h3>
+                    <p>Order from your phone and pick up when ready</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>Customize Everything</h3>
+                    <p>Milk type, temperature, sweetness - your way</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">💰</div>
+                    <h3>Earn Rewards</h3>
+                    <p>Double points on all mobile orders</p>
+                </div>
+            </div>
+            
+            <div class="app-download">
+                <h3>Download Our App</h3>
+                <p>The fastest way to get your coffee fix</p>
+                <div class="app-buttons">
+                    <a href="{{APP_STORE_URL}}" class="app-btn">
+                        <img src="{{APP_STORE_BADGE}}" alt="Download on App Store">
+                    </a>
+                    <a href="{{GOOGLE_PLAY_URL}}" class="app-btn">
+                        <img src="{{GOOGLE_PLAY_BADGE}}" alt="Get it on Google Play">
+                    </a>
+                </div>
+            </div>
+            
+            <div class="order-options">
+                <a href="#" class="btn btn-primary btn-large">Order for Pickup</a>
+                <a href="#" class="btn btn-secondary btn-large">Order for Delivery</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="locations" id="locations">
+        <div class="container">
+            <h2>Visit Us</h2>
+            <div class="locations-grid">
+                <div class="location">
+                    <h3>{{LOCATION_1_NAME}}</h3>
+                    <p>{{LOCATION_1_ADDRESS}}</p>
+                    <p>{{LOCATION_1_PHONE}}</p>
+                    <div class="location-features">
+                        <span class="feature">☕ Full Menu</span>
+                        <span class="feature">📚 Study Space</span>
+                        <span class="feature">🎵 Live Music</span>
+                        <span class="feature">🌐 Free WiFi</span>
+                    </div>
+                    <div class="location-hours">
+                        <p><strong>Hours:</strong></p>
+                        <p>{{LOCATION_1_HOURS}}</p>
+                    </div>
+                    <div class="location-actions">
+                        <a href="#" class="btn btn-outline">Get Directions</a>
+                        <a href="#order" class="btn btn-primary">Order Now</a>
+                    </div>
+                </div>
+                
+                <div class="location">
+                    <h3>{{LOCATION_2_NAME}}</h3>
+                    <p>{{LOCATION_2_ADDRESS}}</p>
+                    <p>{{LOCATION_2_PHONE}}</p>
+                    <div class="location-features">
+                        <span class="feature">☕ Full Menu</span>
+                        <span class="feature">🚗 Drive-Thru</span>
+                        <span class="feature">🅿️ Parking</span>
+                        <span class="feature">🌐 Free WiFi</span>
+                    </div>
+                    <div class="location-hours">
+                        <p><strong>Hours:</strong></p>
+                        <p>{{LOCATION_2_HOURS}}</p>
+                    </div>
+                    <div class="location-actions">
+                        <a href="#" class="btn btn-outline">Get Directions</a>
+                        <a href="#order" class="btn btn-primary">Order Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>{{RESTAURANT_NAME}}</h3>
+                    <p>Crafting exceptional coffee experiences since {{YEAR_ESTABLISHED}}</p>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}">Instagram</a>
+                        <a href="{{TWITTER_URL}}">Twitter</a>
+                        <a href="{{TIKTOK_URL}}">TikTok</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>{{PHONE}}</p>
+                    <p>{{EMAIL}}</p>
+                    <p>Mobile ordering: {{MOBILE_ORDERING_HOURS}}</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Coffee</h4>
+                    <p>Fresh roasted {{ROASTING_FREQUENCY}}</p>
+                    <p>Bean subscriptions available</p>
+                    <p>Wholesale inquiries welcome</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <p><a href="#events">Events Calendar</a></p>
+                    <p><a href="#">Private Events</a></p>
+                    <p><a href="#">Coffee Education</a></p>
+                    <p><a href="#">Local Partnerships</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; {{CURRENT_YEAR}} {{RESTAURANT_NAME}}. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Nutrition Info</a>
+                    <a href="#">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

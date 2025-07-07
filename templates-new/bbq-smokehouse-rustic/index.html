@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Authentic BBQ Smokehouse</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Rye&family=Roboto+Slab:wght@300;400;600;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="rustic-scheme">
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>{{RESTAURANT_NAME}}</h1>
+                <span class="tagline">Authentic BBQ Smokehouse</span>
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#smokin-daily">Smokin' Daily</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#meat-market">Meat Market</a></li>
+                    <li><a href="#catering">Catering</a></li>
+                    <li><a href="#locations">Locations</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#order" class="btn btn-order">Order BBQ</a>
+                <a href="#catering" class="btn btn-smokehouse">Catering</a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-smoke"></div>
+        <div class="hero-content">
+            <h2>Low & Slow Since {{YEAR_ESTABLISHED}}</h2>
+            <p>Real BBQ takes time. Our pitmasters smoke premium meats for {{SMOKING_HOURS}} hours using {{WOOD_TYPES}} wood, creating the perfect bark and tender, juicy interior that defines authentic barbecue.</p>
+            <div class="hero-features">
+                <div class="feature">
+                    <span class="feature-icon">🔥</span>
+                    <h4>{{SMOKING_HOURS}} Hour Smoke</h4>
+                    <p>Low and slow perfection</p>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">🥩</span>
+                    <h4>{{WOOD_TYPES}} Wood</h4>
+                    <p>Authentic smoky flavor</p>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">👨‍🍳</span>
+                    <h4>Master Pitmasters</h4>
+                    <p>{{PITMASTER_EXPERIENCE}} years experience</p>
+                </div>
+            </div>
+            <div class="hero-buttons">
+                <a href="#smokin-daily" class="btn btn-primary">Today's Smoke</a>
+                <a href="#menu" class="btn btn-secondary">Full Menu</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="{{HERO_BBQ_IMAGE}}" alt="BBQ platter with ribs and brisket">
+        </div>
+    </section>
+
+    <section class="daily-smoke" id="smokin-daily">
+        <div class="container">
+            <h2>What's Smokin' Today</h2>
+            <p class="smoke-subtitle">Fresh off the smoker - check what our pitmasters are serving today</p>
+            <div class="smoke-tracker">
+                <div class="smoke-status">
+                    <h3>Live from the Pit</h3>
+                    <div class="current-smoke">
+                        <div class="smoke-item active">
+                            <h4>Brisket</h4>
+                            <div class="smoke-progress">
+                                <div class="progress-bar" style="width: {{BRISKET_PROGRESS}}%"></div>
+                            </div>
+                            <span class="time-remaining">{{BRISKET_TIME_REMAINING}} hours remaining</span>
+                            <span class="temp">Internal temp: {{BRISKET_TEMP}}°F</span>
+                        </div>
+                        <div class="smoke-item">
+                            <h4>Pork Shoulder</h4>
+                            <div class="smoke-progress">
+                                <div class="progress-bar" style="width: {{PORK_PROGRESS}}%"></div>
+                            </div>
+                            <span class="time-remaining">{{PORK_TIME_REMAINING}} hours remaining</span>
+                            <span class="temp">Internal temp: {{PORK_TEMP}}°F</span>
+                        </div>
+                        <div class="smoke-item">
+                            <h4>St. Louis Ribs</h4>
+                            <div class="smoke-progress">
+                                <div class="progress-bar" style="width: {{RIBS_PROGRESS}}%"></div>
+                            </div>
+                            <span class="time-remaining">{{RIBS_TIME_REMAINING}} hours remaining</span>
+                            <span class="temp">Smoker temp: {{SMOKER_TEMP}}°F</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="todays-availability">
+                    <h3>Available Now</h3>
+                    <div class="available-meats">
+                        <div class="meat-status available">
+                            <h4>Pulled Pork</h4>
+                            <span class="status">Available</span>
+                            <p>Smoked {{PULLED_PORK_HOURS}} hours</p>
+                        </div>
+                        <div class="meat-status available">
+                            <h4>Beef Brisket</h4>
+                            <span class="status">Available</span>
+                            <p>{{BRISKET_SMOKING_METHOD}}</p>
+                        </div>
+                        <div class="meat-status limited">
+                            <h4>Baby Back Ribs</h4>
+                            <span class="status">Limited</span>
+                            <p>{{BABY_BACK_REMAINING}} racks left</p>
+                        </div>
+                        <div class="meat-status sold-out">
+                            <h4>Burnt Ends</h4>
+                            <span class="status">Sold Out</span>
+                            <p>Available tomorrow at {{OPENING_TIME}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="signature-meats" id="menu">
+        <div class="container">
+            <h2>Pitmaster's Selections</h2>
+            <div class="meats-grid">
+                <div class="meat-item signature">
+                    <div class="signature-badge">Pitmaster's Pride</div>
+                    <img src="{{BRISKET_IMAGE}}" alt="Smoked Beef Brisket">
+                    <div class="meat-info">
+                        <h3>Texas-Style Brisket</h3>
+                        <p>{{BRISKET_DESCRIPTION}}</p>
+                        <div class="meat-details">
+                            <span class="smoke-time">{{BRISKET_SMOKE_TIME}} hours</span>
+                            <span class="rub">{{BRISKET_RUB}}</span>
+                            <span class="wood">{{BRISKET_WOOD}} wood</span>
+                        </div>
+                        <div class="meat-pricing">
+                            <span>By the lb {{BRISKET_LB_PRICE}}</span>
+                            <span>Half lb {{BRISKET_HALF_LB_PRICE}}</span>
+                            <span>Sandwich {{BRISKET_SANDWICH_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="meat-item">
+                    <img src="{{PULLED_PORK_IMAGE}}" alt="Pulled Pork">
+                    <div class="meat-info">
+                        <h3>Carolina Pulled Pork</h3>
+                        <p>{{PULLED_PORK_DESCRIPTION}}</p>
+                        <div class="meat-details">
+                            <span class="smoke-time">{{PULLED_PORK_SMOKE_TIME}} hours</span>
+                            <span class="rub">{{PULLED_PORK_RUB}}</span>
+                            <span class="sauce">{{PULLED_PORK_SAUCE}}</span>
+                        </div>
+                        <div class="meat-pricing">
+                            <span>By the lb {{PULLED_PORK_LB_PRICE}}</span>
+                            <span>Half lb {{PULLED_PORK_HALF_LB_PRICE}}</span>
+                            <span>Sandwich {{PULLED_PORK_SANDWICH_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="meat-item signature">
+                    <div class="signature-badge">Fan Favorite</div>
+                    <img src="{{RIBS_IMAGE}}" alt="BBQ Ribs">
+                    <div class="meat-info">
+                        <h3>St. Louis Style Ribs</h3>
+                        <p>{{RIBS_DESCRIPTION}}</p>
+                        <div class="meat-details">
+                            <span class="smoke-time">{{RIBS_SMOKE_TIME}} hours</span>
+                            <span class="method">{{RIBS_METHOD}}</span>
+                            <span class="glaze">{{RIBS_GLAZE}}</span>
+                        </div>
+                        <div class="meat-pricing">
+                            <span>Full rack {{RIBS_FULL_RACK_PRICE}}</span>
+                            <span>Half rack {{RIBS_HALF_RACK_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="meat-item">
+                    <img src="{{BURNT_ENDS_IMAGE}}" alt="Burnt Ends">
+                    <div class="meat-info">
+                        <h3>Kansas City Burnt Ends</h3>
+                        <p>{{BURNT_ENDS_DESCRIPTION}}</p>
+                        <div class="meat-details">
+                            <span class="specialty">Made from brisket point</span>
+                            <span class="method">{{BURNT_ENDS_METHOD}}</span>
+                            <span class="availability">{{BURNT_ENDS_AVAILABILITY}}</span>
+                        </div>
+                        <div class="meat-pricing">
+                            <span>Half lb {{BURNT_ENDS_HALF_LB_PRICE}}</span>
+                            <span>Full lb {{BURNT_ENDS_LB_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="meat-item">
+                    <img src="{{CHICKEN_IMAGE}}" alt="BBQ Chicken">
+                    <div class="meat-info">
+                        <h3>Smoked Chicken</h3>
+                        <p>{{CHICKEN_DESCRIPTION}}</p>
+                        <div class="meat-details">
+                            <span class="smoke-time">{{CHICKEN_SMOKE_TIME}} hours</span>
+                            <span class="style">{{CHICKEN_STYLE}}</span>
+                            <span class="sauce">{{CHICKEN_SAUCE}}</span>
+                        </div>
+                        <div class="meat-pricing">
+                            <span>Half chicken {{CHICKEN_HALF_PRICE}}</span>
+                            <span>Whole chicken {{CHICKEN_WHOLE_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="meat-item">
+                    <img src="{{SAUSAGE_IMAGE}}" alt="Smoked Sausage">
+                    <div class="meat-info">
+                        <h3>House-Made Sausage</h3>
+                        <p>{{SAUSAGE_DESCRIPTION}}</p>
+                        <div class="meat-details">
+                            <span class="type">{{SAUSAGE_TYPE}}</span>
+                            <span class="spice">{{SAUSAGE_SPICE_LEVEL}}</span>
+                            <span class="casing">{{SAUSAGE_CASING}}</span>
+                        </div>
+                        <div class="meat-pricing">
+                            <span>Per link {{SAUSAGE_LINK_PRICE}}</span>
+                            <span>By the lb {{SAUSAGE_LB_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="smoking-process">
+        <div class="container">
+            <div class="process-content">
+                <div class="process-text">
+                    <h2>The Art of BBQ</h2>
+                    <p>True barbecue is an art form passed down through generations. Our pitmasters follow time-honored techniques, starting the fires before dawn and tending them all day to create the perfect smoke.</p>
+                    <div class="process-timeline">
+                        <div class="timeline-item">
+                            <div class="time">4:00 AM</div>
+                            <h4>Fire Up</h4>
+                            <p>Pitmasters start the {{WOOD_TYPES}} wood fires</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="time">5:00 AM</div>
+                            <h4>Meat Goes On</h4>
+                            <p>Fresh meats enter the smoker at {{SMOKER_TEMP}}°F</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="time">11:00 AM</div>
+                            <h4>The Stall</h4>
+                            <p>Temperature monitoring and wood management</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="time">2:00 PM</div>
+                            <h4>Ready to Serve</h4>
+                            <p>Perfect bark, tender interior, ready for your plate</p>
+                        </div>
+                    </div>
+                    <div class="smoking-specs">
+                        <div class="spec">
+                            <h4>{{SMOKER_TEMP}}°F</h4>
+                            <p>Perfect smoking temperature</p>
+                        </div>
+                        <div class="spec">
+                            <h4>{{WOOD_TYPES}}</h4>
+                            <p>Premium smoking woods</p>
+                        </div>
+                        <div class="spec">
+                            <h4>{{SMOKING_HOURS}}+ Hours</h4>
+                            <p>Low and slow process</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="process-image">
+                    <img src="{{SMOKING_PROCESS_IMAGE}}" alt="BBQ smoking process">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sides-sauces">
+        <div class="container">
+            <h2>Sides & Sauces</h2>
+            <div class="menu-categories">
+                <div class="menu-category">
+                    <h3>Classic Sides</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <h4>Mac & Cheese</h4>
+                            <p>Five-cheese blend, crispy breadcrumb topping</p>
+                            <span class="price">{{MAC_CHEESE_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Coleslaw</h4>
+                            <p>{{COLESLAW_STYLE}} with house-made dressing</p>
+                            <span class="price">{{COLESLAW_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Baked Beans</h4>
+                            <p>{{BEANS_STYLE}} with burnt ends and molasses</p>
+                            <span class="price">{{BAKED_BEANS_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Cornbread</h4>
+                            <p>Sweet and savory, baked fresh daily</p>
+                            <span class="price">{{CORNBREAD_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Loaded Potato Salad</h4>
+                            <p>{{POTATO_SALAD_STYLE}} with bacon and chives</p>
+                            <span class="price">{{POTATO_SALAD_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Smoked Wings</h4>
+                            <p>{{WINGS_COUNT}} wings with choice of sauce</p>
+                            <span class="price">{{SMOKED_WINGS_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-category">
+                    <h3>House-Made Sauces</h3>
+                    <div class="sauces-grid">
+                        <div class="sauce-item">
+                            <h4>{{SAUCE_1_NAME}}</h4>
+                            <p>{{SAUCE_1_DESCRIPTION}}</p>
+                            <div class="heat-level">
+                                <span class="heat {{SAUCE_1_HEAT_CLASS}}">{{SAUCE_1_HEAT}}</span>
+                            </div>
+                        </div>
+                        <div class="sauce-item">
+                            <h4>{{SAUCE_2_NAME}}</h4>
+                            <p>{{SAUCE_2_DESCRIPTION}}</p>
+                            <div class="heat-level">
+                                <span class="heat {{SAUCE_2_HEAT_CLASS}}">{{SAUCE_2_HEAT}}</span>
+                            </div>
+                        </div>
+                        <div class="sauce-item">
+                            <h4>{{SAUCE_3_NAME}}</h4>
+                            <p>{{SAUCE_3_DESCRIPTION}}</p>
+                            <div class="heat-level">
+                                <span class="heat {{SAUCE_3_HEAT_CLASS}}">{{SAUCE_3_HEAT}}</span>
+                            </div>
+                        </div>
+                        <div class="sauce-item">
+                            <h4>{{SAUCE_4_NAME}}</h4>
+                            <p>{{SAUCE_4_DESCRIPTION}}</p>
+                            <div class="heat-level">
+                                <span class="heat {{SAUCE_4_HEAT_CLASS}}">{{SAUCE_4_HEAT}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sauce-note">
+                        <p><strong>Take Home:</strong> All our sauces are available by the bottle for {{SAUCE_BOTTLE_PRICE}} each</p>
+                    </div>
+                </div>
+
+                <div class="menu-category">
+                    <h3>BBQ Platters</h3>
+                    <div class="menu-items">
+                        <div class="menu-item signature">
+                            <h4>Pitmaster's Feast</h4>
+                            <p>{{PITMASTER_FEAST_DESCRIPTION}}</p>
+                            <span class="price">{{PITMASTER_FEAST_PRICE}}</span>
+                            <span class="serves">Serves {{PITMASTER_FEAST_SERVES}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <h4>The Sampler</h4>
+                            <p>{{SAMPLER_DESCRIPTION}}</p>
+                            <span class="price">{{SAMPLER_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Meat & Three</h4>
+                            <p>Choice of meat with three classic sides</p>
+                            <span class="price">{{MEAT_THREE_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="meat-market" id="meat-market">
+        <div class="container">
+            <h2>Smokehouse Market</h2>
+            <p class="market-subtitle">Take home our signature smoked meats and house-made sides</p>
+            <div class="market-options">
+                <div class="market-section">
+                    <h3>Bulk Meats</h3>
+                    <div class="bulk-items">
+                        <div class="bulk-item">
+                            <h4>Whole Brisket</h4>
+                            <p>{{WHOLE_BRISKET_WEIGHT}} average, serves {{WHOLE_BRISKET_SERVES}}</p>
+                            <span class="market-price">{{WHOLE_BRISKET_PRICE}}</span>
+                            <span class="notice">{{WHOLE_BRISKET_NOTICE}}</span>
+                        </div>
+                        <div class="bulk-item">
+                            <h4>Whole Pork Shoulder</h4>
+                            <p>{{WHOLE_PORK_WEIGHT}} average, perfect for parties</p>
+                            <span class="market-price">{{WHOLE_PORK_PRICE}}</span>
+                            <span class="notice">{{WHOLE_PORK_NOTICE}}</span>
+                        </div>
+                        <div class="bulk-item">
+                            <h4>Full Rack Ribs</h4>
+                            <p>St. Louis style, ready to serve</p>
+                            <span class="market-price">{{FULL_RACK_PRICE}} each</span>
+                            <span class="notice">Minimum {{RIBS_MINIMUM}} racks</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="market-section">
+                    <h3>Family Packs</h3>
+                    <div class="family-packs">
+                        <div class="pack-item">
+                            <h4>Family Feast</h4>
+                            <p>{{FAMILY_FEAST_CONTENTS}}</p>
+                            <span class="serves">Serves {{FAMILY_FEAST_SERVES}}</span>
+                            <span class="market-price">{{FAMILY_FEAST_PRICE}}</span>
+                        </div>
+                        <div class="pack-item">
+                            <h4>Game Day Special</h4>
+                            <p>{{GAME_DAY_CONTENTS}}</p>
+                            <span class="serves">Serves {{GAME_DAY_SERVES}}</span>
+                            <span class="market-price">{{GAME_DAY_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="market-section">
+                    <h3>House Specialties</h3>
+                    <div class="specialty-items">
+                        <div class="specialty-item">
+                            <h4>BBQ Rub Blend</h4>
+                            <p>Our secret rub recipe for home smoking</p>
+                            <span class="market-price">{{RUB_PRICE}} per jar</span>
+                        </div>
+                        <div class="specialty-item">
+                            <h4>Sauce Variety Pack</h4>
+                            <p>All four house sauces in take-home bottles</p>
+                            <span class="market-price">{{SAUCE_PACK_PRICE}}</span>
+                        </div>
+                        <div class="specialty-item">
+                            <h4>Smoked Salt</h4>
+                            <p>{{SMOKED_SALT_WOOD}} wood smoked finishing salt</p>
+                            <span class="market-price">{{SMOKED_SALT_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="market-ordering">
+                <h3>Market Ordering</h3>
+                <p>{{MARKET_ADVANCE_NOTICE}} advance notice for bulk orders</p>
+                <a href="#contact" class="btn btn-primary">Place Market Order</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="catering-bbq" id="catering">
+        <div class="container">
+            <h2>BBQ Catering</h2>
+            <p class="catering-subtitle">Bring authentic smokehouse BBQ to your next event</p>
+            <div class="catering-packages">
+                <div class="package">
+                    <img src="{{CATERING_CORPORATE_IMAGE}}" alt="Corporate BBQ catering">
+                    <div class="package-info">
+                        <h3>Corporate Events</h3>
+                        <p>Professional BBQ catering for business functions</p>
+                        <div class="package-includes">
+                            <span>• Choice of {{CORPORATE_MEAT_OPTIONS}} meats</span>
+                            <span>• {{CORPORATE_SIDES_COUNT}} classic sides</span>
+                            <span>• Disposable plates and utensils</span>
+                            <span>• Setup and breakdown</span>
+                        </div>
+                        <div class="package-pricing">
+                            <span>{{CORPORATE_MIN}} person minimum</span>
+                            <span>{{CORPORATE_PRICE}} per person</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="package">
+                    <img src="{{CATERING_WEDDING_IMAGE}}" alt="Wedding BBQ catering">
+                    <div class="package-info">
+                        <h3>Weddings & Celebrations</h3>
+                        <p>Elegant BBQ service for special occasions</p>
+                        <div class="package-includes">
+                            <span>• Premium meat selections</span>
+                            <span>• Upgraded sides and salads</span>
+                            <span>• Professional service staff</span>
+                            <span>• Custom menu planning</span>
+                        </div>
+                        <div class="package-pricing">
+                            <span>{{WEDDING_MIN}} person minimum</span>
+                            <span>{{WEDDING_PRICE}} per person</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="package">
+                    <img src="{{CATERING_TAILGATE_IMAGE}}" alt="Tailgate BBQ catering">
+                    <div class="package-info">
+                        <h3>Tailgates & Parties</h3>
+                        <p>Casual BBQ perfect for outdoor gatherings</p>
+                        <div class="package-includes">
+                            <span>• Popular meat combinations</span>
+                            <span>• Traditional BBQ sides</span>
+                            <span>• Casual serving style</span>
+                            <span>• Optional grill service</span>
+                        </div>
+                        <div class="package-pricing">
+                            <span>{{TAILGATE_MIN}} person minimum</span>
+                            <span>{{TAILGATE_PRICE}} per person</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="catering-services">
+                <h3>Full-Service Options</h3>
+                <div class="services-grid">
+                    <div class="service">
+                        <h4>On-Site Smoking</h4>
+                        <p>Bring our mobile smoker to your event</p>
+                        <span class="service-price">{{ONSITE_SMOKING_PRICE}}</span>
+                    </div>
+                    <div class="service">
+                        <h4>Pit Master Service</h4>
+                        <p>Professional pit master and serving staff</p>
+                        <span class="service-price">{{PITMASTER_SERVICE_PRICE}}</span>
+                    </div>
+                    <div class="service">
+                        <h4>Equipment Rental</h4>
+                        <p>Warmers, serving trays, and utensils</p>
+                        <span class="service-price">{{EQUIPMENT_RENTAL_PRICE}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="locations" id="locations">
+        <div class="container">
+            <h2>Visit Our Smokehouse</h2>
+            <div class="locations-grid">
+                <div class="location">
+                    <h3>{{LOCATION_1_NAME}}</h3>
+                    <p>{{LOCATION_1_ADDRESS}}</p>
+                    <p>{{LOCATION_1_PHONE}}</p>
+                    <div class="location-features">
+                        <span class="feature-tag">On-Site Smoker</span>
+                        <span class="feature-tag">Outdoor Seating</span>
+                        <span class="feature-tag">Full Bar</span>
+                        <span class="feature-tag">Live Music</span>
+                    </div>
+                    <div class="location-hours">
+                        <p><strong>Hours:</strong></p>
+                        <p>{{LOCATION_1_HOURS}}</p>
+                    </div>
+                    <div class="location-actions">
+                        <a href="#" class="btn btn-outline">Get Directions</a>
+                        <a href="#order" class="btn btn-primary">Order Now</a>
+                    </div>
+                </div>
+                
+                <div class="location">
+                    <h3>{{LOCATION_2_NAME}}</h3>
+                    <p>{{LOCATION_2_ADDRESS}}</p>
+                    <p>{{LOCATION_2_PHONE}}</p>
+                    <div class="location-features">
+                        <span class="feature-tag">Drive-Thru</span>
+                        <span class="feature-tag">Meat Market</span>
+                        <span class="feature-tag">Catering Pickup</span>
+                        <span class="feature-tag">Takeout</span>
+                    </div>
+                    <div class="location-hours">
+                        <p><strong>Hours:</strong></p>
+                        <p>{{LOCATION_2_HOURS}}</p>
+                    </div>
+                    <div class="location-actions">
+                        <a href="#" class="btn btn-outline">Get Directions</a>
+                        <a href="#order" class="btn btn-primary">Order Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>{{RESTAURANT_NAME}}</h3>
+                    <p>Authentic BBQ smokehouse serving low and slow since {{YEAR_ESTABLISHED}}</p>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}">Instagram</a>
+                        <a href="{{TWITTER_URL}}">Twitter</a>
+                        <a href="{{YOUTUBE_URL}}">YouTube</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Order & Takeout</h4>
+                    <p>{{PHONE}}</p>
+                    <p>{{EMAIL}}</p>
+                    <p>Online ordering: {{ONLINE_HOURS}}</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Catering</h4>
+                    <p>{{CATERING_PHONE}}</p>
+                    <p>{{CATERING_EMAIL}}</p>
+                    <p>{{CATERING_ADVANCE_NOTICE}} advance notice</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Our Process</h4>
+                    <p>{{SMOKING_HOURS}}+ hour smoking</p>
+                    <p>{{WOOD_TYPES}} wood only</p>
+                    <p>{{SMOKER_TEMP}}°F perfect temp</p>
+                    <p>{{PITMASTER_EXPERIENCE}} years experience</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; {{CURRENT_YEAR}} {{RESTAURANT_NAME}}. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Nutrition Info</a>
+                    <a href="#">Allergen Information</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

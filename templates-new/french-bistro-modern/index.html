@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Modern French Bistro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="color-scheme-bistro">
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}}">
+            </div>
+            <nav class="nav">
+                <ul class="nav-menu">
+                    <li><a href="#home">Accueil</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#wine">Wine</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#chef">Chef</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="header-reservation">
+                    <a href="#reservations" class="btn btn-primary">Réservations</a>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">{{RESTAURANT_NAME}}</h1>
+                    <p class="hero-subtitle">Bistro Moderne</p>
+                    <p class="hero-description">Where classic French technique meets contemporary California ingredients. Experience the art of French cuisine reimagined for the modern palate.</p>
+                    <div class="hero-buttons">
+                        <a href="#reservations" class="btn btn-primary btn-large">Make Reservation</a>
+                        <a href="#menu" class="btn btn-secondary btn-large">Explore Menu</a>
+                    </div>
+                    <div class="hero-accolades">
+                        <div class="accolade">
+                            <span class="accolade-icon">⭐</span>
+                            <span>{{MICHELIN_RECOGNITION}}</span>
+                        </div>
+                        <div class="accolade">
+                            <span class="accolade-icon">🍷</span>
+                            <span>Wine Spectator Award</span>
+                        </div>
+                        <div class="accolade">
+                            <span class="accolade-icon">🏆</span>
+                            <span>James Beard Nominated</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-image-composition">
+                        <img src="{{HERO_DISH_IMAGE}}" alt="Signature dish" class="hero-main-image">
+                        <div class="floating-elements">
+                            <img src="{{WINE_GLASS_IMAGE}}" alt="Wine" class="floating-wine">
+                            <img src="{{BREAD_IMAGE}}" alt="Fresh bread" class="floating-bread">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="philosophy-banner">
+            <div class="container">
+                <div class="philosophy-content">
+                    <h2>"La cuisine, c'est l'art de transformer les produits de la terre en moments de bonheur"</h2>
+                    <p class="translation">"Cuisine is the art of transforming the earth's products into moments of happiness"</p>
+                    <cite>— {{CHEF_NAME}}, Chef de Cuisine</cite>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu" class="menu-showcase">
+            <div class="container">
+                <h2 class="section-title">Menu Dégustation</h2>
+                <p class="section-subtitle">Seasonal French cuisine with California soul</p>
+
+                <div class="menu-periods">
+                    <button class="period-btn active" data-period="dinner">Dîner</button>
+                    <button class="period-btn" data-period="lunch">Déjeuner</button>
+                    <button class="period-btn" data-period="brunch">Brunch du Weekend</button>
+                </div>
+
+                <div class="menu-content" data-period="dinner">
+                    <div class="menu-sections">
+                        <div class="menu-section">
+                            <h3>Entrées</h3>
+                            <div class="menu-items">
+                                <div class="menu-item featured">
+                                    <div class="dish-header">
+                                        <h4>Foie Gras Torchon</h4>
+                                        <span class="price">${{FOIE_GRAS_PRICE}}</span>
+                                    </div>
+                                    <p class="description">House-cured foie gras with cherry gastrique and brioche toast</p>
+                                    <div class="dish-tags">
+                                        <span class="tag signature">Signature</span>
+                                        <span class="tag seasonal">Seasonal</span>
+                                    </div>
+                                </div>
+
+                                <div class="menu-item">
+                                    <div class="dish-header">
+                                        <h4>Burrata Provençale</h4>
+                                        <span class="price">${{BURRATA_PRICE}}</span>
+                                    </div>
+                                    <p class="description">Creamy burrata with heirloom tomatoes, basil oil, and olive tapenade</p>
+                                    <div class="dish-tags">
+                                        <span class="tag vegetarian">Vegetarian</span>
+                                        <span class="tag local">Local</span>
+                                    </div>
+                                </div>
+
+                                <div class="menu-item">
+                                    <div class="dish-header">
+                                        <h4>Escargot de Bourgogne</h4>
+                                        <span class="price">${{ESCARGOT_PRICE}}</span>
+                                    </div>
+                                    <p class="description">Classic Burgundy snails with garlic-parsley butter</p>
+                                    <div class="dish-tags">
+                                        <span class="tag traditional">Traditional</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-section">
+                            <h3>Plats Principaux</h3>
+                            <div class="menu-items">
+                                <div class="menu-item featured">
+                                    <div class="dish-header">
+                                        <h4>Duck Confit</h4>
+                                        <span class="price">${{DUCK_CONFIT_PRICE}}</span>
+                                    </div>
+                                    <p class="description">Slow-cooked duck leg with white beans, carrots, and thyme jus</p>
+                                    <div class="dish-tags">
+                                        <span class="tag signature">Signature</span>
+                                        <span class="tag gluten-free">GF</span>
+                                    </div>
+                                </div>
+
+                                <div class="menu-item">
+                                    <div class="dish-header">
+                                        <h4>Bouillabaisse Marseillaise</h4>
+                                        <span class="price">${{BOUILLABAISSE_PRICE}}</span>
+                                    </div>
+                                    <p class="description">Traditional Provençal fish stew with rouille and crusty bread</p>
+                                    <div class="dish-tags">
+                                        <span class="tag seafood">Seafood</span>
+                                        <span class="tag traditional">Traditional</span>
+                                    </div>
+                                </div>
+
+                                <div class="menu-item">
+                                    <div class="dish-header">
+                                        <h4>Côte de Bœuf</h4>
+                                        <span class="price">${{COTE_DE_BOEUF_PRICE}}</span>
+                                    </div>
+                                    <p class="description">Dry-aged ribeye with pommes Anna and red wine reduction</p>
+                                    <div class="dish-tags">
+                                        <span class="tag premium">Premium</span>
+                                        <span class="tag for-sharing">For 2</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-section">
+                            <h3>Fromages & Desserts</h3>
+                            <div class="menu-items">
+                                <div class="menu-item">
+                                    <div class="dish-header">
+                                        <h4>Selection de Fromages</h4>
+                                        <span class="price">${{CHEESE_SELECTION_PRICE}}</span>
+                                    </div>
+                                    <p class="description">Curated selection of French artisanal cheeses with accompaniments</p>
+                                </div>
+
+                                <div class="menu-item">
+                                    <div class="dish-header">
+                                        <h4>Tarte Tatin</h4>
+                                        <span class="price">${{TARTE_TATIN_PRICE}}</span>
+                                    </div>
+                                    <p class="description">Upside-down apple tart with Calvados ice cream</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-content" data-period="brunch" style="display: none;">
+                    <div class="brunch-specialties">
+                        <h3>Weekend Brunch Specials</h3>
+                        <div class="brunch-items">
+                            <div class="menu-item">
+                                <div class="dish-header">
+                                    <h4>Croque Madame</h4>
+                                    <span class="price">${{CROQUE_MADAME_PRICE}}</span>
+                                </div>
+                                <p class="description">Gruyère and ham on brioche with béchamel and fried egg</p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="dish-header">
+                                    <h4>Pain Perdu</h4>
+                                    <span class="price">${{PAIN_PERDU_PRICE}}</span>
+                                </div>
+                                <p class="description">French toast with seasonal fruit and vanilla bean crème anglaise</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="wine" class="wine-program">
+            <div class="container">
+                <div class="wine-content">
+                    <div class="wine-text">
+                        <h2>Cave à Vin</h2>
+                        <p class="wine-intro">Our wine program celebrates both classic French terroir and exciting new world discoveries, curated by our sommelier {{SOMMELIER_NAME}}.</p>
+                        
+                        <div class="wine-stats">
+                            <div class="wine-stat">
+                                <h3>{{WINE_BOTTLE_COUNT}}+</h3>
+                                <p>Bottles in our cellar</p>
+                            </div>
+                            <div class="wine-stat">
+                                <h3>{{WINE_BY_GLASS_COUNT}}</h3>
+                                <p>Wines by the glass</p>
+                            </div>
+                            <div class="wine-stat">
+                                <h3>{{FRENCH_REGIONS_COUNT}}</h3>
+                                <p>French regions represented</p>
+                            </div>
+                        </div>
+
+                        <div class="wine-highlights">
+                            <h3>Featured Selections</h3>
+                            <div class="wine-categories">
+                                <div class="wine-category">
+                                    <h4>Champagne & Sparkling</h4>
+                                    <p>From grower champagnes to natural pét-nats</p>
+                                </div>
+                                <div class="wine-category">
+                                    <h4>Burgundy Collection</h4>
+                                    <p>Exceptional Pinot Noir and Chardonnay</p>
+                                </div>
+                                <div class="wine-category">
+                                    <h4>Natural Wines</h4>
+                                    <p>Biodynamic and minimal intervention wines</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wine-visual">
+                        <img src="{{WINE_CELLAR_IMAGE}}" alt="Wine cellar">
+                        <div class="wine-list-link">
+                            <a href="#" class="btn btn-secondary">View Full Wine List</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="chef" class="chef-story">
+            <div class="container">
+                <div class="chef-content">
+                    <div class="chef-image">
+                        <img src="{{CHEF_PORTRAIT}}" alt="{{CHEF_NAME}}">
+                    </div>
+                    <div class="chef-text">
+                        <h2>Chef {{CHEF_NAME}}</h2>
+                        <p class="chef-title">{{CHEF_TITLE}}</p>
+                        <p class="chef-bio">{{CHEF_BIO}}</p>
+                        
+                        <div class="chef-journey">
+                            <h3>Culinary Journey</h3>
+                            <div class="journey-stops">
+                                <div class="journey-stop">
+                                    <h4>{{TRAINING_LOCATION_1}}</h4>
+                                    <p>{{TRAINING_DESCRIPTION_1}}</p>
+                                </div>
+                                <div class="journey-stop">
+                                    <h4>{{TRAINING_LOCATION_2}}</h4>
+                                    <p>{{TRAINING_DESCRIPTION_2}}</p>
+                                </div>
+                                <div class="journey-stop">
+                                    <h4>{{TRAINING_LOCATION_3}}</h4>
+                                    <p>{{TRAINING_DESCRIPTION_3}}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="chef-philosophy">
+                            <h3>Philosophy</h3>
+                            <blockquote>
+                                "{{CHEF_PHILOSOPHY}}"
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="seasonal-features">
+            <div class="container">
+                <h2 class="section-title">Seasonal Features</h2>
+                <div class="seasons-grid">
+                    <div class="season-card active">
+                        <div class="season-icon">🍂</div>
+                        <h3>Autumn Menu</h3>
+                        <p class="season-dates">{{AUTUMN_DATES}}</p>
+                        <div class="season-highlights">
+                            <p>• Wild mushroom tart with truffle oil</p>
+                            <p>• Braised short ribs with root vegetables</p>
+                            <p>• Pear tarte tatin with cinnamon ice cream</p>
+                        </div>
+                        <p class="season-description">Rich, warming dishes celebrating the harvest season</p>
+                    </div>
+
+                    <div class="season-card">
+                        <div class="season-icon">❄️</div>
+                        <h3>Winter Menu</h3>
+                        <p class="season-dates">{{WINTER_DATES}}</p>
+                        <div class="season-highlights">
+                            <p>• Beef bourguignon with pearl onions</p>
+                            <p>• Duck cassoulet with white beans</p>
+                            <p>• Chocolate soufflé with Grand Marnier</p>
+                        </div>
+                        <p class="season-description">Hearty, soul-warming French classics</p>
+                    </div>
+
+                    <div class="season-card">
+                        <div class="season-icon">🌸</div>
+                        <h3>Spring Menu</h3>
+                        <p class="season-dates">{{SPRING_DATES}}</p>
+                        <div class="season-highlights">
+                            <p>• Asparagus soup with crème fraîche</p>
+                            <p>• Lamb with fresh herbs and vegetables</p>
+                            <p>• Strawberry mille-feuille</p>
+                        </div>
+                        <p class="season-description">Fresh, light dishes with spring vegetables</p>
+                    </div>
+
+                    <div class="season-card">
+                        <div class="season-icon">☀️</div>
+                        <h3>Summer Menu</h3>
+                        <p class="season-dates">{{SUMMER_DATES}}</p>
+                        <div class="season-highlights">
+                            <p>• Tomato tart with herbes de Provence</p>
+                            <p>• Grilled fish with ratatouille</p>
+                            <p>• Lemon tart with lavender honey</p>
+                        </div>
+                        <p class="season-description">Light, bright flavors of Provence</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="events" class="private-events">
+            <div class="container">
+                <div class="events-content">
+                    <div class="events-text">
+                        <h2>Private Events</h2>
+                        <p>Create unforgettable moments in our elegant private dining spaces, perfect for intimate dinners, corporate events, and special celebrations.</p>
+                        
+                        <div class="event-spaces">
+                            <div class="event-space">
+                                <h3>{{PRIVATE_ROOM_1_NAME}}</h3>
+                                <p>Seats {{PRIVATE_ROOM_1_CAPACITY}} guests</p>
+                                <p>{{PRIVATE_ROOM_1_DESCRIPTION}}</p>
+                            </div>
+                            <div class="event-space">
+                                <h3>{{PRIVATE_ROOM_2_NAME}}</h3>
+                                <p>Seats {{PRIVATE_ROOM_2_CAPACITY}} guests</p>
+                                <p>{{PRIVATE_ROOM_2_DESCRIPTION}}</p>
+                            </div>
+                            <div class="event-space">
+                                <h3>{{PRIVATE_ROOM_3_NAME}}</h3>
+                                <p>Seats {{PRIVATE_ROOM_3_CAPACITY}} guests</p>
+                                <p>{{PRIVATE_ROOM_3_DESCRIPTION}}</p>
+                            </div>
+                        </div>
+
+                        <div class="event-services">
+                            <h3>Event Services</h3>
+                            <ul>
+                                <li>Custom menu planning with our chef</li>
+                                <li>Wine pairing consultations</li>
+                                <li>Dedicated event coordinator</li>
+                                <li>Audio/visual equipment</li>
+                                <li>Floral arrangements</li>
+                                <li>Special dietary accommodations</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="events-image">
+                        <img src="{{PRIVATE_DINING_IMAGE}}" alt="Private dining room">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bistro-atmosphere">
+            <div class="container">
+                <h2 class="section-title">L'Ambiance</h2>
+                <div class="atmosphere-gallery">
+                    <div class="atmosphere-item">
+                        <img src="{{DINING_ROOM_IMAGE}}" alt="Main dining room">
+                        <div class="atmosphere-overlay">
+                            <h3>Main Dining Room</h3>
+                            <p>Intimate seating with open kitchen views</p>
+                        </div>
+                    </div>
+                    <div class="atmosphere-item">
+                        <img src="{{BAR_AREA_IMAGE}}" alt="Wine bar">
+                        <div class="atmosphere-overlay">
+                            <h3>Wine Bar</h3>
+                            <p>Perfect for aperitifs and light bites</p>
+                        </div>
+                    </div>
+                    <div class="atmosphere-item">
+                        <img src="{{PATIO_IMAGE}}" alt="Garden patio">
+                        <div class="atmosphere-overlay">
+                            <h3>Garden Patio</h3>
+                            <p>Al fresco dining among olive trees</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="reservations" class="reservations">
+            <div class="container">
+                <div class="reservations-content">
+                    <div class="reservation-info">
+                        <h2>Réservations</h2>
+                        <p>We recommend reservations for all parties. Walk-ins welcome at the bar and patio (subject to availability).</p>
+                        
+                        <div class="reservation-details">
+                            <div class="detail">
+                                <h3>Service Hours</h3>
+                                <p><strong>Lunch:</strong> {{LUNCH_HOURS}}</p>
+                                <p><strong>Dinner:</strong> {{DINNER_HOURS}}</p>
+                                <p><strong>Brunch:</strong> {{BRUNCH_HOURS}} (weekends)</p>
+                            </div>
+                            <div class="detail">
+                                <h3>Dress Code</h3>
+                                <p>{{DRESS_CODE}}</p>
+                            </div>
+                            <div class="detail">
+                                <h3>Policies</h3>
+                                <p>{{CANCELLATION_POLICY}}</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-methods">
+                            <a href="tel:{{PHONE}}" class="contact-method">
+                                <h3>Phone</h3>
+                                <p>{{PHONE}}</p>
+                            </a>
+                            <a href="{{RESERVATION_URL}}" class="contact-method">
+                                <h3>Online</h3>
+                                <p>Reserve through Resy</p>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <form class="reservation-form">
+                        <h3>Request a Table</h3>
+                        <div class="form-row">
+                            <input type="text" placeholder="First Name" required>
+                            <input type="text" placeholder="Last Name" required>
+                        </div>
+                        <div class="form-row">
+                            <input type="email" placeholder="Email Address" required>
+                            <input type="tel" placeholder="Phone Number" required>
+                        </div>
+                        <div class="form-row">
+                            <input type="date" required>
+                            <select required>
+                                <option value="">Preferred Time</option>
+                                <option value="12:00">12:00 PM</option>
+                                <option value="12:30">12:30 PM</option>
+                                <option value="13:00">1:00 PM</option>
+                                <option value="13:30">1:30 PM</option>
+                                <option value="18:00">6:00 PM</option>
+                                <option value="18:30">6:30 PM</option>
+                                <option value="19:00">7:00 PM</option>
+                                <option value="19:30">7:30 PM</option>
+                                <option value="20:00">8:00 PM</option>
+                                <option value="20:30">8:30 PM</option>
+                                <option value="21:00">9:00 PM</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <select required>
+                                <option value="">Party Size</option>
+                                <option value="2">2 guests</option>
+                                <option value="3">3 guests</option>
+                                <option value="4">4 guests</option>
+                                <option value="5">5 guests</option>
+                                <option value="6">6 guests</option>
+                                <option value="7+">7+ guests</option>
+                            </select>
+                            <select>
+                                <option value="">Occasion</option>
+                                <option value="anniversary">Anniversary</option>
+                                <option value="birthday">Birthday</option>
+                                <option value="business">Business Dinner</option>
+                                <option value="date">Date Night</option>
+                                <option value="celebration">Celebration</option>
+                            </select>
+                        </div>
+                        <textarea placeholder="Special requests, dietary restrictions, or seating preferences" rows="3"></textarea>
+                        <button type="submit" class="btn btn-primary btn-large">Request Reservation</button>
+                        <p class="form-note">We will confirm your reservation within 24 hours</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h2>Contact</h2>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <h3>Address</h3>
+                                <p>{{FULL_ADDRESS}}</p>
+                            </div>
+                            <div class="contact-item">
+                                <h3>Phone</h3>
+                                <p>{{PHONE}}</p>
+                            </div>
+                            <div class="contact-item">
+                                <h3>Email</h3>
+                                <p>{{EMAIL}}</p>
+                            </div>
+                        </div>
+                        
+                        <div class="social-section">
+                            <h3>Follow Us</h3>
+                            <div class="social-links">
+                                <a href="{{INSTAGRAM_URL}}">Instagram</a>
+                                <a href="{{FACEBOOK_URL}}">Facebook</a>
+                                <a href="{{TWITTER_URL}}">Twitter</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <h3>Send us a Message</h3>
+                        <form>
+                            <input type="text" placeholder="Your Name" required>
+                            <input type="email" placeholder="Email Address" required>
+                            <select required>
+                                <option value="">Subject</option>
+                                <option value="reservation">Reservation Inquiry</option>
+                                <option value="private">Private Dining</option>
+                                <option value="wine">Wine List Question</option>
+                                <option value="press">Press Inquiry</option>
+                                <option value="general">General Question</option>
+                            </select>
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>{{RESTAURANT_NAME}}</h3>
+                    <p>Modern French Bistro</p>
+                    <p>{{CITY}}, {{STATE}}</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Experience</h4>
+                    <ul>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#wine">Wine Program</a></li>
+                        <li><a href="#events">Private Events</a></li>
+                        <li><a href="#chef">Meet the Chef</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Visit</h4>
+                    <ul>
+                        <li><a href="#reservations">Reservations</a></li>
+                        <li><a href="#">Hours & Location</a></li>
+                        <li><a href="#">Parking</a></li>
+                        <li><a href="#">Gift Cards</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="{{INSTAGRAM_URL}}">Instagram</a>
+                        <a href="{{FACEBOOK_URL}}">Facebook</a>
+                        <a href="{{TWITTER_URL}}">Twitter</a>
+                    </div>
+                    <div class="newsletter">
+                        <h4>Newsletter</h4>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your email">
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

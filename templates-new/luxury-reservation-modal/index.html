@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Fine Dining Experience</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="#home" class="logo-link">
+                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#experiences">Experiences</a></li>
+                <li><a href="#chef">Chef</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>{{RESTAURANT_NAME}}</h1>
+            <p class="hero-subtitle">{{TAGLINE}}</p>
+            <div class="anniversary-badge">
+                <span>{{ANNIVERSARY_YEAR}}</span>
+                <span>Years</span>
+            </div>
+            <button class="btn btn-primary" onclick="openReservationModal()">Book Experience</button>
+        </div>
+        <div class="hero-image">
+            <img src="{{HERO_IMAGE}}" alt="{{RESTAURANT_NAME}} Fine Dining">
+        </div>
+    </section>
+
+    <!-- Dining Experiences Section -->
+    <section id="experiences" class="experiences">
+        <div class="container">
+            <h2>Dining Experiences</h2>
+            <div class="experiences-grid">
+                <div class="experience-card">
+                    <img src="{{EXPERIENCE_1_IMAGE}}" alt="{{EXPERIENCE_1_NAME}}">
+                    <div class="experience-info">
+                        <h3>{{EXPERIENCE_1_NAME}}</h3>
+                        <p>{{EXPERIENCE_1_DESCRIPTION}}</p>
+                        <span class="price">{{EXPERIENCE_1_PRICE}}</span>
+                        <button class="btn btn-outline" onclick="openReservationModal('{{EXPERIENCE_1_NAME}}')">Reserve</button>
+                    </div>
+                </div>
+                <div class="experience-card">
+                    <img src="{{EXPERIENCE_2_IMAGE}}" alt="{{EXPERIENCE_2_NAME}}">
+                    <div class="experience-info">
+                        <h3>{{EXPERIENCE_2_NAME}}</h3>
+                        <p>{{EXPERIENCE_2_DESCRIPTION}}</p>
+                        <span class="price">{{EXPERIENCE_2_PRICE}}</span>
+                        <button class="btn btn-outline" onclick="openReservationModal('{{EXPERIENCE_2_NAME}}')">Reserve</button>
+                    </div>
+                </div>
+                <div class="experience-card">
+                    <img src="{{EXPERIENCE_3_IMAGE}}" alt="{{EXPERIENCE_3_NAME}}">
+                    <div class="experience-info">
+                        <h3>{{EXPERIENCE_3_NAME}}</h3>
+                        <p>{{EXPERIENCE_3_DESCRIPTION}}</p>
+                        <span class="price">{{EXPERIENCE_3_PRICE}}</span>
+                        <button class="btn btn-outline" onclick="openReservationModal('{{EXPERIENCE_3_NAME}}')">Reserve</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chef Section -->
+    <section id="chef" class="chef">
+        <div class="container">
+            <div class="chef-content">
+                <div class="chef-text">
+                    <h2>{{CHEF_NAME}}</h2>
+                    <p class="chef-title">{{CHEF_TITLE}}</p>
+                    <p class="chef-description">{{CHEF_STORY}}</p>
+                    <p class="chef-philosophy">{{CHEF_PHILOSOPHY}}</p>
+                </div>
+                <div class="chef-image">
+                    <img src="{{CHEF_IMAGE}}" alt="{{CHEF_NAME}}">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section class="awards">
+        <div class="container">
+            <h2>Recognition</h2>
+            <div class="awards-grid">
+                <div class="award-item">
+                    <img src="{{AWARD_1_IMAGE}}" alt="{{AWARD_1_NAME}}">
+                    <h3>{{AWARD_1_NAME}}</h3>
+                    <p>{{AWARD_1_YEAR}}</p>
+                </div>
+                <div class="award-item">
+                    <img src="{{AWARD_2_IMAGE}}" alt="{{AWARD_2_NAME}}">
+                    <h3>{{AWARD_2_NAME}}</h3>
+                    <p>{{AWARD_2_YEAR}}</p>
+                </div>
+                <div class="award-item">
+                    <img src="{{AWARD_3_IMAGE}}" alt="{{AWARD_3_NAME}}">
+                    <h3>{{AWARD_3_NAME}}</h3>
+                    <p>{{AWARD_3_YEAR}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <h2>Visit Us</h2>
+                <div class="contact-info">
+                    <p>{{ADDRESS}}</p>
+                    <p>{{PHONE}}</p>
+                    <p>{{EMAIL}}</p>
+                    <p>{{HOURS}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Modal -->
+    <div id="reservationModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Book Your Experience</h2>
+                <span class="close" onclick="closeReservationModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form class="reservation-form">
+                    <div class="form-section">
+                        <h3>Select Experience</h3>
+                        <div class="experience-selector">
+                            <label class="experience-option">
+                                <input type="radio" name="experience" value="{{EXPERIENCE_1_NAME}}">
+                                <span>{{EXPERIENCE_1_NAME}}</span>
+                                <span class="price">{{EXPERIENCE_1_PRICE}}</span>
+                            </label>
+                            <label class="experience-option">
+                                <input type="radio" name="experience" value="{{EXPERIENCE_2_NAME}}">
+                                <span>{{EXPERIENCE_2_NAME}}</span>
+                                <span class="price">{{EXPERIENCE_2_PRICE}}</span>
+                            </label>
+                            <label class="experience-option">
+                                <input type="radio" name="experience" value="{{EXPERIENCE_3_NAME}}">
+                                <span>{{EXPERIENCE_3_NAME}}</span>
+                                <span class="price">{{EXPERIENCE_3_PRICE}}</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3>Date & Time</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="date">Date</label>
+                                <input type="date" id="date" name="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="time">Time</label>
+                                <select id="time" name="time" required>
+                                    <option value="">Select Time</option>
+                                    <option value="17:00">5:00 PM</option>
+                                    <option value="17:30">5:30 PM</option>
+                                    <option value="18:00">6:00 PM</option>
+                                    <option value="18:30">6:30 PM</option>
+                                    <option value="19:00">7:00 PM</option>
+                                    <option value="19:30">7:30 PM</option>
+                                    <option value="20:00">8:00 PM</option>
+                                    <option value="20:30">8:30 PM</option>
+                                    <option value="21:00">9:00 PM</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3>Party Details</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="guests">Number of Guests</label>
+                                <select id="guests" name="guests" required>
+                                    <option value="">Select Guests</option>
+                                    <option value="1">1 Guest</option>
+                                    <option value="2">2 Guests</option>
+                                    <option value="3">3 Guests</option>
+                                    <option value="4">4 Guests</option>
+                                    <option value="5">5 Guests</option>
+                                    <option value="6">6 Guests</option>
+                                    <option value="7">7 Guests</option>
+                                    <option value="8">8 Guests</option>
+                                    <option value="9">9 Guests</option>
+                                    <option value="10">10 Guests</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3>Contact Information</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3>Special Requests</h3>
+                        <div class="form-group">
+                            <label for="dietary">Dietary Restrictions</label>
+                            <input type="text" id="dietary" name="dietary" placeholder="Please specify any dietary restrictions">
+                        </div>
+                        <div class="form-group">
+                            <label for="special-requests">Special Occasion or Requests</label>
+                            <textarea id="special-requests" name="special-requests" rows="3" placeholder="Anniversary, birthday, business dinner, etc."></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" onclick="closeReservationModal()">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Request Reservation</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

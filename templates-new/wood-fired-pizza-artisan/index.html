@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Wood-Fired Artisan Pizza</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Open+Sans:wght@300;400;600;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="warm-scheme">
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>{{RESTAURANT_NAME}}</h1>
+                <span class="tagline">Wood-Fired Artisan Pizza</span>
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#pizza-builder">Pizza Builder</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#oven">Our Oven</a></li>
+                    <li><a href="#catering">Catering</a></li>
+                    <li><a href="#locations">Locations</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#order" class="btn btn-order">Order Online</a>
+                <a href="#reservations" class="btn btn-pizza">Dine In</a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-flames"></div>
+        <div class="hero-content">
+            <h2>Fired by Passion, Crafted by Hand</h2>
+            <p>Experience authentic Neapolitan-style pizza baked in our {{OVEN_TEMPERATURE}}°F wood-fired oven. Fresh ingredients, traditional techniques, and the perfect char in every bite.</p>
+            <div class="hero-features">
+                <div class="feature">
+                    <span class="feature-icon">🔥</span>
+                    <h4>Wood-Fired Oven</h4>
+                    <p>{{OVEN_TEMPERATURE}}° Italian brick oven</p>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">🍕</span>
+                    <h4>90-Second Bake</h4>
+                    <p>Perfectly charred crust</p>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">🌱</span>
+                    <h4>Fresh Daily</h4>
+                    <p>Hand-tossed dough made fresh</p>
+                </div>
+            </div>
+            <div class="hero-buttons">
+                <a href="#pizza-builder" class="btn btn-primary">Build Your Pizza</a>
+                <a href="#menu" class="btn btn-secondary">View Menu</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="{{HERO_PIZZA_IMAGE}}" alt="Wood-fired pizza fresh from oven">
+        </div>
+    </section>
+
+    <section class="pizza-builder" id="pizza-builder">
+        <div class="container">
+            <h2>Build Your Perfect Pizza</h2>
+            <p class="builder-subtitle">Create your custom masterpiece from our premium ingredients</p>
+            <div class="builder-interface">
+                <div class="builder-steps">
+                    <div class="step active" data-step="1">
+                        <div class="step-number">1</div>
+                        <h3>Choose Your Base</h3>
+                        <div class="options-grid">
+                            <div class="option">
+                                <input type="radio" name="base" id="classic-dough" checked>
+                                <label for="classic-dough">
+                                    <h4>Classic Dough</h4>
+                                    <p>Traditional 72-hour fermented</p>
+                                    <span class="price">Included</span>
+                                </label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="base" id="sourdough">
+                                <label for="sourdough">
+                                    <h4>Sourdough</h4>
+                                    <p>Tangy, complex flavor</p>
+                                    <span class="price">+{{SOURDOUGH_UPCHARGE}}</span>
+                                </label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="base" id="gluten-free">
+                                <label for="gluten-free">
+                                    <h4>Gluten-Free</h4>
+                                    <p>Cauliflower and rice flour</p>
+                                    <span class="price">+{{GLUTEN_FREE_UPCHARGE}}</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step" data-step="2">
+                        <div class="step-number">2</div>
+                        <h3>Select Your Sauce</h3>
+                        <div class="options-grid">
+                            <div class="option">
+                                <input type="radio" name="sauce" id="marinara" checked>
+                                <label for="marinara">
+                                    <h4>Classic Marinara</h4>
+                                    <p>San Marzano tomatoes, herbs</p>
+                                </label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="sauce" id="white-sauce">
+                                <label for="white-sauce">
+                                    <h4>Garlic White Sauce</h4>
+                                    <p>Ricotta, garlic, olive oil</p>
+                                </label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="sauce" id="pesto">
+                                <label for="pesto">
+                                    <h4>Basil Pesto</h4>
+                                    <p>Fresh basil, pine nuts</p>
+                                </label>
+                            </div>
+                            <div class="option">
+                                <input type="radio" name="sauce" id="bbq-sauce">
+                                <label for="bbq-sauce">
+                                    <h4>BBQ Sauce</h4>
+                                    <p>House-made smoky BBQ</p>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step" data-step="3">
+                        <div class="step-number">3</div>
+                        <h3>Choose Your Cheese</h3>
+                        <div class="options-grid">
+                            <div class="option">
+                                <input type="checkbox" name="cheese" id="mozzarella" checked>
+                                <label for="mozzarella">
+                                    <h4>Fresh Mozzarella</h4>
+                                    <p>Creamy, authentic Italian</p>
+                                </label>
+                            </div>
+                            <div class="option">
+                                <input type="checkbox" name="cheese" id="parmesan">
+                                <label for="parmesan">
+                                    <h4>Parmigiano-Reggiano</h4>
+                                    <p>Aged, sharp flavor</p>
+                                </label>
+                            </div>
+                            <div class="option">
+                                <input type="checkbox" name="cheese" id="gorgonzola">
+                                <label for="gorgonzola">
+                                    <h4>Gorgonzola</h4>
+                                    <p>Bold, creamy blue cheese</p>
+                                </label>
+                            </div>
+                            <div class="option">
+                                <input type="checkbox" name="cheese" id="goat-cheese">
+                                <label for="goat-cheese">
+                                    <h4>Goat Cheese</h4>
+                                    <p>Tangy, smooth texture</p>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step" data-step="4">
+                        <div class="step-number">4</div>
+                        <h3>Add Your Toppings</h3>
+                        <div class="toppings-categories">
+                            <div class="topping-category">
+                                <h4>Meats</h4>
+                                <div class="toppings-list">
+                                    <label><input type="checkbox" name="toppings" value="pepperoni"> Pepperoni <span>+{{TOPPING_PRICE}}</span></label>
+                                    <label><input type="checkbox" name="toppings" value="italian-sausage"> Italian Sausage <span>+{{TOPPING_PRICE}}</span></label>
+                                    <label><input type="checkbox" name="toppings" value="prosciutto"> Prosciutto <span>+{{PREMIUM_TOPPING_PRICE}}</span></label>
+                                    <label><input type="checkbox" name="toppings" value="pancetta"> Pancetta <span>+{{PREMIUM_TOPPING_PRICE}}</span></label>
+                                    <label><input type="checkbox" name="toppings" value="salami"> Salami <span>+{{TOPPING_PRICE}}</span></label>
+                                </div>
+                            </div>
+                            <div class="topping-category">
+                                <h4>Vegetables</h4>
+                                <div class="toppings-list">
+                                    <label><input type="checkbox" name="toppings" value="mushrooms"> Mushrooms <span>+{{TOPPING_PRICE}}</span></label>
+                                    <label><input type="checkbox" name="toppings" value="bell-peppers"> Bell Peppers <span>+{{TOPPING_PRICE}}</span></label>
+                                    <label><input type="checkbox" name="toppings" value="red-onions"> Red Onions <span>+{{TOPPING_PRICE}}</span></label>
+                                    <label><input type="checkbox" name="toppings" value="arugula"> Fresh Arugula <span>+{{TOPPING_PRICE}}</span></label>
+                                    <label><input type="checkbox" name="toppings" value="sun-dried-tomatoes"> Sun-Dried Tomatoes <span>+{{TOPPING_PRICE}}</span></label>
+                                    <label><input type="checkbox" name="toppings" value="roasted-garlic"> Roasted Garlic <span>+{{TOPPING_PRICE}}</span></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pizza-preview">
+                    <h3>Your Pizza</h3>
+                    <div class="preview-pizza">
+                        <img src="{{PIZZA_BASE_IMAGE}}" alt="Pizza preview">
+                    </div>
+                    <div class="order-summary">
+                        <h4>Order Summary</h4>
+                        <div class="summary-items">
+                            <div class="summary-item">
+                                <span>{{SIZE_SELECTED}} Pizza</span>
+                                <span>{{BASE_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="total">
+                            <strong>Total: {{TOTAL_PRICE}}</strong>
+                        </div>
+                        <button class="btn btn-primary btn-full">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="signature-pizzas" id="menu">
+        <div class="container">
+            <h2>Signature Wood-Fired Pizzas</h2>
+            <div class="pizzas-grid">
+                <div class="pizza-item signature">
+                    <div class="signature-badge">Chef's Choice</div>
+                    <img src="{{MARGHERITA_IMAGE}}" alt="Margherita Pizza">
+                    <div class="pizza-info">
+                        <h3>Margherita Classica</h3>
+                        <p>San Marzano tomatoes, fresh mozzarella, basil, olive oil</p>
+                        <div class="pizza-details">
+                            <span class="origin">Traditional Neapolitan</span>
+                            <span class="bake-time">90 seconds at {{OVEN_TEMPERATURE}}°</span>
+                        </div>
+                        <div class="pizza-pricing">
+                            <span>Personal {{MARGHERITA_PERSONAL_PRICE}}</span>
+                            <span>Large {{MARGHERITA_LARGE_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pizza-item">
+                    <img src="{{QUATTRO_STAGIONI_IMAGE}}" alt="Quattro Stagioni Pizza">
+                    <div class="pizza-info">
+                        <h3>Quattro Stagioni</h3>
+                        <p>Artichokes, mushrooms, ham, olives representing four seasons</p>
+                        <div class="pizza-details">
+                            <span class="origin">Classic Italian</span>
+                            <span class="bake-time">Traditional recipe</span>
+                        </div>
+                        <div class="pizza-pricing">
+                            <span>Personal {{QUATTRO_PERSONAL_PRICE}}</span>
+                            <span>Large {{QUATTRO_LARGE_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pizza-item">
+                    <img src="{{DIAVOLA_IMAGE}}" alt="Diavola Pizza">
+                    <div class="pizza-info">
+                        <h3>Diavola</h3>
+                        <p>Spicy salami, mozzarella, chili oil, fresh basil</p>
+                        <div class="pizza-details">
+                            <span class="origin">Spicy & Bold</span>
+                            <span class="heat-level">🌶️🌶️ Medium Heat</span>
+                        </div>
+                        <div class="pizza-pricing">
+                            <span>Personal {{DIAVOLA_PERSONAL_PRICE}}</span>
+                            <span>Large {{DIAVOLA_LARGE_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pizza-item signature">
+                    <div class="signature-badge">House Special</div>
+                    <img src="{{PROSCIUTTO_ARUGULA_IMAGE}}" alt="Prosciutto Arugula Pizza">
+                    <div class="pizza-info">
+                        <h3>Prosciutto e Rucola</h3>
+                        <p>White sauce, mozzarella, prosciutto, arugula, parmesan</p>
+                        <div class="pizza-details">
+                            <span class="origin">Premium Selection</span>
+                            <span class="special">Imported prosciutto</span>
+                        </div>
+                        <div class="pizza-pricing">
+                            <span>Personal {{PROSCIUTTO_PERSONAL_PRICE}}</span>
+                            <span>Large {{PROSCIUTTO_LARGE_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pizza-item">
+                    <img src="{{FUNGHI_TRUFFLE_IMAGE}}" alt="Mushroom Truffle Pizza">
+                    <div class="pizza-info">
+                        <h3>Funghi al Tartufo</h3>
+                        <p>Mixed mushrooms, truffle oil, mozzarella, thyme</p>
+                        <div class="pizza-details">
+                            <span class="origin">Seasonal Special</span>
+                            <span class="special">Black truffle oil</span>
+                        </div>
+                        <div class="pizza-pricing">
+                            <span>Personal {{FUNGHI_PERSONAL_PRICE}}</span>
+                            <span>Large {{FUNGHI_LARGE_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pizza-item">
+                    <img src="{{QUATTRO_FORMAGGI_IMAGE}}" alt="Four Cheese Pizza">
+                    <div class="pizza-info">
+                        <h3>Quattro Formaggi</h3>
+                        <p>Mozzarella, gorgonzola, parmesan, goat cheese</p>
+                        <div class="pizza-details">
+                            <span class="origin">Cheese Lover's Dream</span>
+                            <span class="special">Four premium cheeses</span>
+                        </div>
+                        <div class="pizza-pricing">
+                            <span>Personal {{FORMAGGI_PERSONAL_PRICE}}</span>
+                            <span>Large {{FORMAGGI_LARGE_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="wood-fired-oven" id="oven">
+        <div class="container">
+            <div class="oven-content">
+                <div class="oven-text">
+                    <h2>Our Authentic Wood-Fired Oven</h2>
+                    <p>At the heart of our pizzeria stands our custom-built brick oven, reaching temperatures of {{OVEN_TEMPERATURE}}°F. This intense heat creates the perfect leopard-spotted crust with a soft, airy interior that defines authentic Neapolitan pizza.</p>
+                    <div class="oven-specs">
+                        <div class="spec">
+                            <h4>{{OVEN_TEMPERATURE}}°F</h4>
+                            <p>Optimal baking temperature</p>
+                        </div>
+                        <div class="spec">
+                            <h4>90 Seconds</h4>
+                            <p>Perfect bake time</p>
+                        </div>
+                        <div class="spec">
+                            <h4>Italian Bricks</h4>
+                            <p>Imported from Naples</p>
+                        </div>
+                        <div class="spec">
+                            <h4>{{WOOD_TYPE}} Wood</h4>
+                            <p>Pure, natural flavor</p>
+                        </div>
+                    </div>
+                    <div class="oven-process">
+                        <h3>The Perfect Process</h3>
+                        <div class="process-steps">
+                            <div class="step">
+                                <span class="step-num">1</span>
+                                <h4>Hand-Stretched Dough</h4>
+                                <p>72-hour fermented dough, never rolled</p>
+                            </div>
+                            <div class="step">
+                                <span class="step-num">2</span>
+                                <h4>Premium Toppings</h4>
+                                <p>Fresh ingredients applied with care</p>
+                            </div>
+                            <div class="step">
+                                <span class="step-num">3</span>
+                                <h4>Into the Fire</h4>
+                                <p>90 seconds of intense wood-fired heat</p>
+                            </div>
+                            <div class="step">
+                                <span class="step-num">4</span>
+                                <p>Perfectly charred, bubbling perfection</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="oven-image">
+                    <img src="{{WOOD_FIRED_OVEN_IMAGE}}" alt="Wood-fired brick oven">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="appetizers-sides">
+        <div class="container">
+            <h2>Starters & Sides</h2>
+            <div class="menu-categories">
+                <div class="menu-category">
+                    <h3>Wood-Fired Appetizers</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <h4>Garlic Bread</h4>
+                            <p>Wood-fired focaccia, roasted garlic, herbs</p>
+                            <span class="price">{{GARLIC_BREAD_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Antipasto Platter</h4>
+                            <p>Cured meats, cheeses, olives, roasted peppers</p>
+                            <span class="price">{{ANTIPASTO_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Bruschetta Trio</h4>
+                            <p>Three varieties on wood-fired bread</p>
+                            <span class="price">{{BRUSCHETTA_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Burrata</h4>
+                            <p>Creamy burrata, heirloom tomatoes, basil oil</p>
+                            <span class="price">{{BURRATA_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-category">
+                    <h3>Fresh Salads</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <h4>Arugula Salad</h4>
+                            <p>Arugula, cherry tomatoes, parmesan, lemon vinaigrette</p>
+                            <span class="price">{{ARUGULA_SALAD_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Caesar Salad</h4>
+                            <p>Romaine, house Caesar, parmesan, croutons</p>
+                            <span class="price">{{CAESAR_SALAD_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Caprese Salad</h4>
+                            <p>Fresh mozzarella, tomatoes, basil, balsamic</p>
+                            <span class="price">{{CAPRESE_SALAD_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-category">
+                    <h3>Desserts</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <h4>Nutella Pizza</h4>
+                            <p>Sweet pizza dough, Nutella, powdered sugar</p>
+                            <span class="price">{{NUTELLA_PIZZA_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Tiramisu</h4>
+                            <p>Classic Italian dessert, house-made</p>
+                            <span class="price">{{TIRAMISU_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <h4>Gelato</h4>
+                            <p>Seasonal flavors, locally made</p>
+                            <span class="price">{{GELATO_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="catering-events" id="catering">
+        <div class="container">
+            <h2>Catering & Events</h2>
+            <div class="catering-options">
+                <div class="catering-option">
+                    <img src="{{CATERING_PIZZA_PARTY_IMAGE}}" alt="Pizza party catering">
+                    <div class="option-info">
+                        <h3>Pizza Parties</h3>
+                        <p>Bring the wood-fired experience to your event</p>
+                        <div class="option-features">
+                            <span>• Mobile wood-fired oven</span>
+                            <span>• Fresh pizzas made on-site</span>
+                            <span>• Professional pizza chefs</span>
+                            <span>• All equipment included</span>
+                        </div>
+                        <div class="pricing-info">
+                            <span>{{PIZZA_PARTY_MIN}} person minimum</span>
+                            <span>{{PIZZA_PARTY_PRICE}} per person</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="catering-option">
+                    <img src="{{CATERING_OFFICE_IMAGE}}" alt="Office catering">
+                    <div class="option-info">
+                        <h3>Office Catering</h3>
+                        <p>Professional lunch delivery for your team</p>
+                        <div class="option-features">
+                            <span>• Pre-made pizzas delivered hot</span>
+                            <span>• Salads and appetizers available</span>
+                            <span>• Setup and cleanup included</span>
+                            <span>• Dietary accommodations</span>
+                        </div>
+                        <div class="pricing-info">
+                            <span>{{OFFICE_CATERING_MIN}} person minimum</span>
+                            <span>{{OFFICE_ADVANCE_NOTICE}} advance notice</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="catering-option">
+                    <img src="{{CATERING_WEDDING_IMAGE}}" alt="Wedding catering">
+                    <div class="option-info">
+                        <h3>Wedding & Events</h3>
+                        <p>Elegant wood-fired dining for special occasions</p>
+                        <div class="option-features">
+                            <span>• Custom menu planning</span>
+                            <span>• Plated service available</span>
+                            <span>• Professional presentation</span>
+                            <span>• Coordination with venues</span>
+                        </div>
+                        <div class="pricing-info">
+                            <span>{{WEDDING_MIN}} guest minimum</span>
+                            <span>{{WEDDING_ADVANCE_NOTICE}} advance planning</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="catering-contact">
+                <h3>Plan Your Event</h3>
+                <p>Let us bring authentic wood-fired pizza to your next gathering</p>
+                <a href="#contact" class="btn btn-primary">Request Catering Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="locations" id="locations">
+        <div class="container">
+            <h2>Visit Our Pizzeria</h2>
+            <div class="locations-grid">
+                <div class="location">
+                    <h3>{{LOCATION_1_NAME}}</h3>
+                    <p>{{LOCATION_1_ADDRESS}}</p>
+                    <p>{{LOCATION_1_PHONE}}</p>
+                    <div class="location-features">
+                        <span class="feature-tag">Wood-Fired Oven</span>
+                        <span class="feature-tag">Outdoor Seating</span>
+                        <span class="feature-tag">Full Bar</span>
+                        <span class="feature-tag">Takeout</span>
+                    </div>
+                    <div class="location-hours">
+                        <p><strong>Hours:</strong></p>
+                        <p>{{LOCATION_1_HOURS}}</p>
+                    </div>
+                    <div class="location-actions">
+                        <a href="#" class="btn btn-outline">Get Directions</a>
+                        <a href="#order" class="btn btn-primary">Order Now</a>
+                    </div>
+                </div>
+                
+                <div class="location">
+                    <h3>{{LOCATION_2_NAME}}</h3>
+                    <p>{{LOCATION_2_ADDRESS}}</p>
+                    <p>{{LOCATION_2_PHONE}}</p>
+                    <div class="location-features">
+                        <span class="feature-tag">Dine-In</span>
+                        <span class="feature-tag">Private Parties</span>
+                        <span class="feature-tag">Wine Selection</span>
+                        <span class="feature-tag">Delivery</span>
+                    </div>
+                    <div class="location-hours">
+                        <p><strong>Hours:</strong></p>
+                        <p>{{LOCATION_2_HOURS}}</p>
+                    </div>
+                    <div class="location-actions">
+                        <a href="#" class="btn btn-outline">Get Directions</a>
+                        <a href="#order" class="btn btn-primary">Order Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>{{RESTAURANT_NAME}}</h3>
+                    <p>Authentic wood-fired pizza made with passion since {{YEAR_ESTABLISHED}}</p>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}">Instagram</a>
+                        <a href="{{TWITTER_URL}}">Twitter</a>
+                        <a href="{{YELP_URL}}">Yelp</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Order & Delivery</h4>
+                    <p>{{PHONE}}</p>
+                    <p>{{EMAIL}}</p>
+                    <p>Online ordering: {{ONLINE_HOURS}}</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Catering</h4>
+                    <p>{{CATERING_PHONE}}</p>
+                    <p>{{CATERING_EMAIL}}</p>
+                    <p>{{CATERING_ADVANCE_NOTICE}} advance notice</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Experience</h4>
+                    <p>Wood-fired at {{OVEN_TEMPERATURE}}°F</p>
+                    <p>90-second bake time</p>
+                    <p>Authentic Neapolitan style</p>
+                    <p>{{WOOD_TYPE}} wood only</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; {{CURRENT_YEAR}} {{RESTAURANT_NAME}}. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Nutrition Info</a>
+                    <a href="#">Allergen Information</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

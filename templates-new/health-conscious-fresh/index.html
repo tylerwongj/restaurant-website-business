@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Fresh, Healthy, Delicious</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="color-scheme-fresh">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>{{RESTAURANT_NAME}}</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#menu" class="nav-link">Menu</a></li>
+                <li><a href="#nutrition" class="nav-link">Nutrition</a></li>
+                <li><a href="#sustainability" class="nav-link">Sustainability</a></li>
+                <li><a href="#locations" class="nav-link">Locations</a></li>
+                <li><a href="#" class="nav-link cta-button" onclick="openOrderModal()">Order Online</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">Fresh. Healthy. <br>Delicious.</h1>
+                <p class="hero-subtitle">Farm-to-table salads, grain bowls, and clean eating made simple</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">100+</span>
+                        <span class="stat-label">Fresh Ingredients</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">500</span>
+                        <span class="stat-label">Calorie Bowls</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">Local</span>
+                        <span class="stat-label">Farm Partners</span>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="openOrderModal()">Order Now</button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('menu')">View Menu</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="{{HERO_IMAGE}}" alt="Fresh healthy salad bowl">
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Menu Items -->
+    <section class="featured-items">
+        <div class="container">
+            <h2 class="section-title">Signature Bowls</h2>
+            <div class="items-grid">
+                <div class="item-card">
+                    <img src="{{SALAD_BOWL_IMAGE}}" alt="Power Greens Bowl">
+                    <div class="item-info">
+                        <h3>Power Greens</h3>
+                        <p>Kale, spinach, quinoa, avocado, hemp seeds</p>
+                        <div class="nutrition-info">
+                            <span class="calories">480 cal</span>
+                            <span class="protein">12g protein</span>
+                        </div>
+                        <span class="price">$12.95</span>
+                    </div>
+                </div>
+                <div class="item-card">
+                    <img src="{{GRAIN_BOWL_IMAGE}}" alt="Mediterranean Bowl">
+                    <div class="item-info">
+                        <h3>Mediterranean</h3>
+                        <p>Quinoa, chickpeas, cucumber, tomato, feta</p>
+                        <div class="nutrition-info">
+                            <span class="calories">520 cal</span>
+                            <span class="protein">18g protein</span>
+                        </div>
+                        <span class="price">$13.95</span>
+                    </div>
+                </div>
+                <div class="item-card">
+                    <img src="{{PROTEIN_BOWL_IMAGE}}" alt="Protein Power Bowl">
+                    <div class="item-info">
+                        <h3>Protein Power</h3>
+                        <p>Grilled chicken, sweet potato, broccoli, quinoa</p>
+                        <div class="nutrition-info">
+                            <span class="calories">590 cal</span>
+                            <span class="protein">35g protein</span>
+                        </div>
+                        <span class="price">$15.95</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu-section">
+        <div class="container">
+            <h2 class="section-title">Build Your Perfect Bowl</h2>
+            <div class="menu-builder">
+                <div class="builder-step">
+                    <h3>1. Choose Your Base</h3>
+                    <div class="options-grid">
+                        <div class="option">
+                            <img src="{{KALE_IMAGE}}" alt="Kale">
+                            <span>Organic Kale</span>
+                        </div>
+                        <div class="option">
+                            <img src="{{SPINACH_IMAGE}}" alt="Spinach">
+                            <span>Baby Spinach</span>
+                        </div>
+                        <div class="option">
+                            <img src="{{QUINOA_IMAGE}}" alt="Quinoa">
+                            <span>Quinoa</span>
+                        </div>
+                        <div class="option">
+                            <img src="{{BROWN_RICE_IMAGE}}" alt="Brown Rice">
+                            <span>Brown Rice</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="builder-step">
+                    <h3>2. Add Protein</h3>
+                    <div class="options-grid">
+                        <div class="option">
+                            <img src="{{CHICKEN_IMAGE}}" alt="Grilled Chicken">
+                            <span>Grilled Chicken</span>
+                        </div>
+                        <div class="option">
+                            <img src="{{SALMON_IMAGE}}" alt="Wild Salmon">
+                            <span>Wild Salmon</span>
+                        </div>
+                        <div class="option">
+                            <img src="{{TOFU_IMAGE}}" alt="Organic Tofu">
+                            <span>Organic Tofu</span>
+                        </div>
+                        <div class="option">
+                            <img src="{{CHICKPEAS_IMAGE}}" alt="Chickpeas">
+                            <span>Roasted Chickpeas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="builder-step">
+                    <h3>3. Fresh Toppings</h3>
+                    <div class="options-grid">
+                        <div class="option">
+                            <img src="{{AVOCADO_IMAGE}}" alt="Avocado">
+                            <span>Fresh Avocado</span>
+                        </div>
+                        <div class="option">
+                            <img src="{{TOMATO_IMAGE}}" alt="Cherry Tomatoes">
+                            <span>Cherry Tomatoes</span>
+                        </div>
+                        <div class="option">
+                            <img src="{{CUCUMBER_IMAGE}}" alt="Cucumber">
+                            <span>Cucumber</span>
+                        </div>
+                        <div class="option">
+                            <img src="{{CARROTS_IMAGE}}" alt="Rainbow Carrots">
+                            <span>Rainbow Carrots</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-cta">
+                <button class="btn btn-primary" onclick="openCustomizeModal()">Customize Your Bowl</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nutrition Section -->
+    <section id="nutrition" class="nutrition-section">
+        <div class="container">
+            <div class="nutrition-content">
+                <div class="nutrition-info">
+                    <h2>Transparency in Every Bite</h2>
+                    <p>We believe you should know exactly what's in your food. That's why we provide complete nutritional information for every ingredient.</p>
+                    
+                    <div class="nutrition-features">
+                        <div class="feature">
+                            <i class="fas fa-calculator"></i>
+                            <div>
+                                <h4>Calorie Counter</h4>
+                                <p>Real-time calorie tracking as you build your bowl</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-leaf"></i>
+                            <div>
+                                <h4>Allergen Info</h4>
+                                <p>Clear labeling for all common allergens</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-seedling"></i>
+                            <div>
+                                <h4>Source Transparency</h4>
+                                <p>Know where every ingredient comes from</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nutrition-visual">
+                    <div class="nutrition-card">
+                        <h4>Power Greens Bowl</h4>
+                        <div class="nutrition-stats">
+                            <div class="stat">
+                                <span class="number">480</span>
+                                <span class="label">Calories</span>
+                            </div>
+                            <div class="stat">
+                                <span class="number">12g</span>
+                                <span class="label">Protein</span>
+                            </div>
+                            <div class="stat">
+                                <span class="number">8g</span>
+                                <span class="label">Fiber</span>
+                            </div>
+                            <div class="stat">
+                                <span class="number">22g</span>
+                                <span class="label">Healthy Fats</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sustainability Section -->
+    <section id="sustainability" class="sustainability-section">
+        <div class="container">
+            <h2 class="section-title">Good for You, Good for the Planet</h2>
+            <div class="impact-grid">
+                <div class="impact-item">
+                    <img src="{{ORGANIC_FARM_IMAGE}}" alt="Organic farming">
+                    <h3>Organic Ingredients</h3>
+                    <p>100% certified organic produce from local farms within 200 miles</p>
+                </div>
+                <div class="impact-item">
+                    <img src="{{COMPOST_IMAGE}}" alt="Composting">
+                    <h3>Zero Waste</h3>
+                    <p>All food scraps composted, compostable packaging only</p>
+                </div>
+                <div class="impact-item">
+                    <img src="{{RENEWABLE_ENERGY_IMAGE}}" alt="Solar panels">
+                    <h3>Clean Energy</h3>
+                    <p>100% renewable energy powers all our locations</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations -->
+    <section id="locations" class="locations-section">
+        <div class="container">
+            <h2 class="section-title">Find Fresh Near You</h2>
+            <div class="location-finder">
+                <input type="text" placeholder="Enter your ZIP code">
+                <button class="btn btn-primary">Find Locations</button>
+            </div>
+            <div class="featured-location">
+                <h4>{{RESTAURANT_ADDRESS}}</h4>
+                <p>{{PHONE_NUMBER}}</p>
+                <p>{{HOURS_OF_OPERATION}}</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>{{RESTAURANT_NAME}}</h3>
+                    <p>Fresh, healthy, delicious</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="#">Signature Bowls</a></li>
+                        <li><a href="#">Build Your Own</a></li>
+                        <li><a href="#">Smoothies</a></li>
+                        <li><a href="#">Nutrition Info</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Order Modal -->
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeOrderModal()">&times;</span>
+            <h2>Order Fresh</h2>
+            <div class="order-options">
+                <div class="order-option">
+                    <h3>Pickup</h3>
+                    <p>Order ahead and skip the line</p>
+                    <button class="btn btn-primary">Order for Pickup</button>
+                </div>
+                <div class="order-option">
+                    <h3>Delivery</h3>
+                    <p>Fresh food delivered to you</p>
+                    <button class="btn btn-primary">Order Delivery</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

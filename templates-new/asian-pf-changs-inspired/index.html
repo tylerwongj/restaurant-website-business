@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Modern Asian Cuisine</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dark-scheme">
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}}" class="logo-img">
+                </div>
+                <nav class="nav">
+                    <a href="#menu" class="nav-link">Menu</a>
+                    <a href="#signature" class="nav-link">Signature Dishes</a>
+                    <a href="#wine" class="nav-link">Wine & Cocktails</a>
+                    <a href="#events" class="nav-link">Private Events</a>
+                    <a href="#locations" class="nav-link">Locations</a>
+                </nav>
+                <div class="header-actions">
+                    <button class="btn btn-primary">Order Online</button>
+                    <button class="btn btn-secondary">Reservations</button>
+                    <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <img src="{{HERO_IMAGE}}" alt="Asian cuisine" class="hero-bg-img">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">Modern Asian Kitchen</h1>
+                <p class="hero-subtitle">Farm to wok cooking with bold flavors and fresh ingredients. Experience authentic Asian cuisine with a contemporary twist.</p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary btn-large">View Menu</button>
+                    <button class="btn btn-secondary btn-large">Make Reservation</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Signature Dishes -->
+    <section id="signature" class="signature-dishes">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Signature Creations</h2>
+                <p class="section-subtitle">Hand-crafted dishes that define our kitchen</p>
+            </div>
+            
+            <div class="dishes-grid">
+                <div class="dish-card featured">
+                    <div class="dish-image">
+                        <img src="{{SIGNATURE_DISH_1}}" alt="Chang's Spicy Chicken" class="dish-img">
+                        <div class="dish-badge">Chef's Choice</div>
+                    </div>
+                    <div class="dish-content">
+                        <h3 class="dish-name">Chang's Spicy Chicken</h3>
+                        <p class="dish-desc">Crispy chicken breast, sweet chili glaze, steamed broccoli</p>
+                        <span class="dish-price">$18.95</span>
+                        <div class="dish-details">
+                            <span class="spice-level">🌶️🌶️🌶️</span>
+                            <span class="dish-type">Gluten-Free Available</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dish-card">
+                    <div class="dish-image">
+                        <img src="{{SIGNATURE_DISH_2}}" alt="Mongolian Beef" class="dish-img">
+                    </div>
+                    <div class="dish-content">
+                        <h3 class="dish-name">Mongolian Beef</h3>
+                        <p class="dish-desc">Wok-seared beef, scallions, garlic, sweet soy glaze</p>
+                        <span class="dish-price">$22.95</span>
+                        <div class="dish-details">
+                            <span class="spice-level">🌶️🌶️</span>
+                            <span class="dish-type">Traditional</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dish-card">
+                    <div class="dish-image">
+                        <img src="{{SIGNATURE_DISH_3}}" alt="Lettuce Wraps" class="dish-img">
+                    </div>
+                    <div class="dish-content">
+                        <h3 class="dish-name">Chicken Lettuce Wraps</h3>
+                        <p class="dish-desc">Minced chicken, mushrooms, water chestnuts, crisp lettuce cups</p>
+                        <span class="dish-price">$14.95</span>
+                        <div class="dish-details">
+                            <span class="spice-level">🌶️</span>
+                            <span class="dish-type">Light & Fresh</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dish-card">
+                    <div class="dish-image">
+                        <img src="{{SIGNATURE_DISH_4}}" alt="Honey Shrimp" class="dish-img">
+                    </div>
+                    <div class="dish-content">
+                        <h3 class="dish-name">Honey Shrimp</h3>
+                        <p class="dish-desc">Crispy shrimp, honey glaze, candied walnuts</p>
+                        <span class="dish-price">$19.95</span>
+                        <div class="dish-details">
+                            <span class="spice-level">🌶️</span>
+                            <span class="dish-type">Sweet & Savory</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Categories -->
+    <section id="menu" class="menu-categories">
+        <div class="container">
+            <h2 class="section-title">Full Menu</h2>
+            
+            <div class="category-nav">
+                <button class="category-btn active" data-category="appetizers">Appetizers</button>
+                <button class="category-btn" data-category="soups">Soups</button>
+                <button class="category-btn" data-category="chicken">Chicken</button>
+                <button class="category-btn" data-category="beef">Beef</button>
+                <button class="category-btn" data-category="pork">Pork</button>
+                <button class="category-btn" data-category="seafood">Seafood</button>
+                <button class="category-btn" data-category="vegetarian">Vegetarian</button>
+                <button class="category-btn" data-category="noodles">Noodles & Rice</button>
+                <button class="category-btn" data-category="desserts">Desserts</button>
+            </div>
+
+            <div class="menu-content">
+                <div class="category-section active" id="appetizers">
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Dynamite Shrimp</h4>
+                                <p>Tempura shrimp, creamy spicy sauce</p>
+                            </div>
+                            <span class="price">$12.95</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Pork Dumplings</h4>
+                                <p>Pan-fried or steamed, ginger soy dipping sauce</p>
+                            </div>
+                            <span class="price">$9.95</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Crispy Green Beans</h4>
+                                <p>Tempura green beans, preserved radish</p>
+                            </div>
+                            <span class="price">$8.95</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category-section" id="chicken">
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Orange Chicken</h4>
+                                <p>Battered chicken, orange glaze, steamed broccoli</p>
+                            </div>
+                            <span class="price">$17.95</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Kung Pao Chicken</h4>
+                                <p>Diced chicken, peanuts, chili peppers</p>
+                            </div>
+                            <span class="price">$16.95</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="menu-footer">
+                <button class="btn btn-primary btn-large">View Complete Menu</button>
+                <p class="allergen-note">Menu items may contain allergens. Please inform your server of any allergies.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wine & Cocktails -->
+    <section id="wine" class="beverages">
+        <div class="container">
+            <div class="beverages-content">
+                <div class="beverages-text">
+                    <h2 class="beverages-title">Wine & Handcrafted Cocktails</h2>
+                    <p class="beverages-desc">Curated selection of wines and signature cocktails that perfectly complement our Asian flavors.</p>
+                    
+                    <div class="beverage-highlights">
+                        <div class="beverage-category">
+                            <h4>Signature Cocktails</h4>
+                            <div class="beverage-item">
+                                <span class="beverage-name">Chang's Mai Tai</span>
+                                <span class="beverage-price">$12</span>
+                            </div>
+                            <div class="beverage-item">
+                                <span class="beverage-name">Asian Pear Martini</span>
+                                <span class="beverage-price">$13</span>
+                            </div>
+                            <div class="beverage-item">
+                                <span class="beverage-name">Ginger Mule</span>
+                                <span class="beverage-price">$11</span>
+                            </div>
+                        </div>
+                        
+                        <div class="beverage-category">
+                            <h4>Wine Selection</h4>
+                            <div class="beverage-item">
+                                <span class="beverage-name">Riesling</span>
+                                <span class="beverage-price">$8-32</span>
+                            </div>
+                            <div class="beverage-item">
+                                <span class="beverage-name">Pinot Noir</span>
+                                <span class="beverage-price">$9-45</span>
+                            </div>
+                            <div class="beverage-item">
+                                <span class="beverage-name">Sake Selection</span>
+                                <span class="beverage-price">$6-18</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-secondary">View Full Wine List</button>
+                </div>
+                <div class="beverages-image">
+                    <img src="{{BEVERAGES_IMAGE}}" alt="Cocktails and wine" class="beverages-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Private Events -->
+    <section id="events" class="private-events">
+        <div class="container">
+            <div class="events-content">
+                <div class="events-image">
+                    <img src="{{EVENTS_IMAGE}}" alt="Private dining room" class="events-img">
+                </div>
+                <div class="events-text">
+                    <h2 class="events-title">Private Events & Catering</h2>
+                    <p class="events-desc">Elegant private dining rooms and comprehensive catering services for your special occasions.</p>
+                    
+                    <div class="event-options">
+                        <div class="event-option">
+                            <h4>Private Dining Rooms</h4>
+                            <p>Intimate spaces for 10-50 guests with dedicated service</p>
+                            <ul>
+                                <li>Customizable menus</li>
+                                <li>Audio/visual equipment</li>
+                                <li>Dedicated event coordinator</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="event-option">
+                            <h4>Off-Site Catering</h4>
+                            <p>Full-service catering for corporate events and celebrations</p>
+                            <ul>
+                                <li>Delivery and setup</li>
+                                <li>Buffet or plated service</li>
+                                <li>Minimum 25 guests</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="events-actions">
+                        <button class="btn btn-primary">Request Event Quote</button>
+                        <button class="btn btn-secondary">Download Catering Menu</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations -->
+    <section id="locations" class="locations">
+        <div class="container">
+            <h2 class="section-title">Visit Our Locations</h2>
+            <div class="locations-grid">
+                <div class="location-card">
+                    <div class="location-image">
+                        <img src="{{LOCATION_IMAGE_1}}" alt="Restaurant interior" class="location-img">
+                    </div>
+                    <div class="location-info">
+                        <h3>{{LOCATION_NAME_1}}</h3>
+                        <p class="location-address">{{LOCATION_ADDRESS_1}}</p>
+                        <p class="location-phone">{{LOCATION_PHONE_1}}</p>
+                        <p class="location-hours">{{LOCATION_HOURS_1}}</p>
+                        <div class="location-features">
+                            <span class="feature-tag">Private Dining</span>
+                            <span class="feature-tag">Full Bar</span>
+                            <span class="feature-tag">Valet Parking</span>
+                        </div>
+                        <div class="location-actions">
+                            <button class="btn btn-primary btn-small">Order Now</button>
+                            <button class="btn btn-secondary btn-small">Directions</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="location-card">
+                    <div class="location-image">
+                        <img src="{{LOCATION_IMAGE_2}}" alt="Restaurant interior" class="location-img">
+                    </div>
+                    <div class="location-info">
+                        <h3>{{LOCATION_NAME_2}}</h3>
+                        <p class="location-address">{{LOCATION_ADDRESS_2}}</p>
+                        <p class="location-phone">{{LOCATION_PHONE_2}}</p>
+                        <p class="location-hours">{{LOCATION_HOURS_2}}</p>
+                        <div class="location-features">
+                            <span class="feature-tag">Outdoor Patio</span>
+                            <span class="feature-tag">Live Music</span>
+                            <span class="feature-tag">Happy Hour</span>
+                        </div>
+                        <div class="location-actions">
+                            <button class="btn btn-primary btn-small">Order Now</button>
+                            <button class="btn btn-secondary btn-small">Directions</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Philosophy -->
+    <section class="philosophy">
+        <div class="container">
+            <div class="philosophy-content">
+                <div class="philosophy-text">
+                    <h2 class="philosophy-title">Our Culinary Philosophy</h2>
+                    <p class="philosophy-desc">{{RESTAURANT_STORY}}</p>
+                    <p>We believe in honoring traditional Asian cooking techniques while embracing modern culinary innovation. Every dish is prepared with the finest ingredients and attention to detail.</p>
+                    
+                    <div class="philosophy-principles">
+                        <div class="principle">
+                            <div class="principle-icon">🥢</div>
+                            <h4>Traditional Techniques</h4>
+                            <p>Time-honored cooking methods passed down through generations</p>
+                        </div>
+                        <div class="principle">
+                            <div class="principle-icon">🌿</div>
+                            <h4>Fresh Ingredients</h4>
+                            <p>Locally sourced produce and highest quality proteins</p>
+                        </div>
+                        <div class="principle">
+                            <div class="principle-icon">🔥</div>
+                            <h4>Wok Mastery</h4>
+                            <p>High-heat cooking for maximum flavor and texture</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="philosophy-image">
+                    <img src="{{PHILOSOPHY_IMAGE}}" alt="Chef preparing food" class="philosophy-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="#appetizers">Appetizers</a></li>
+                        <li><a href="#signature">Signature Dishes</a></li>
+                        <li><a href="#chicken">Chicken</a></li>
+                        <li><a href="#beef">Beef</a></li>
+                        <li><a href="#seafood">Seafood</a></li>
+                        <li><a href="#vegetarian">Vegetarian</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#reservations">Reservations</a></li>
+                        <li><a href="#private-events">Private Events</a></li>
+                        <li><a href="#catering">Catering</a></li>
+                        <li><a href="#wine">Wine List</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#nutrition">Nutrition</a></li>
+                        <li><a href="#gift-cards">Gift Cards</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}" class="social-link">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}" class="social-link">Instagram</a>
+                        <a href="{{TWITTER_URL}}" class="social-link">Twitter</a>
+                    </div>
+                    <div class="contact-info">
+                        <p>{{PHONE}}</p>
+                        <p>{{EMAIL}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

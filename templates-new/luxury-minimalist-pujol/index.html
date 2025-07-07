@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - {{CUISINE_TYPE}}</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="theme-minimalist">
+    <!-- Navigation -->
+    <nav class="nav-minimal">
+        <div class="nav-container">
+            <div class="nav-center">
+                <a href="#" class="nav-link">MENU</a>
+                <a href="#" class="nav-link">RESERVATIONS</a>
+                <a href="#" class="nav-link">PRIVATE DINING</a>
+                <a href="#" class="nav-link">CONTACT</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-minimal">
+        <div class="hero-content">
+            <h1 class="restaurant-name">{{RESTAURANT_NAME}}</h1>
+            <p class="restaurant-tagline">{{RESTAURANT_TAGLINE}}</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-minimal">
+        <div class="container">
+            <div class="about-content">
+                <h2>Philosophy</h2>
+                <p class="philosophy-text">{{RESTAURANT_PHILOSOPHY}}</p>
+                <div class="chef-info">
+                    <h3>{{CHEF_NAME}}</h3>
+                    <p>{{CHEF_TITLE}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience-minimal">
+        <div class="container">
+            <h2>Experience</h2>
+            <div class="experience-grid">
+                <div class="experience-item">
+                    <h3>Tasting Menu</h3>
+                    <p>{{TASTING_MENU_DESCRIPTION}}</p>
+                </div>
+                <div class="experience-item">
+                    <h3>Wine Pairing</h3>
+                    <p>{{WINE_PAIRING_DESCRIPTION}}</p>
+                </div>
+                <div class="experience-item">
+                    <h3>Private Events</h3>
+                    <p>{{PRIVATE_EVENTS_DESCRIPTION}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Modal -->
+    <div id="reservationModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Make a Reservation</h2>
+            <form class="reservation-form">
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input type="date" id="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">Time</label>
+                    <select id="time" required>
+                        <option value="">Select Time</option>
+                        <option value="18:00">6:00 PM</option>
+                        <option value="18:30">6:30 PM</option>
+                        <option value="19:00">7:00 PM</option>
+                        <option value="19:30">7:30 PM</option>
+                        <option value="20:00">8:00 PM</option>
+                        <option value="20:30">8:30 PM</option>
+                        <option value="21:00">9:00 PM</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="guests">Guests</label>
+                    <select id="guests" required>
+                        <option value="">Number of Guests</option>
+                        <option value="1">1 Guest</option>
+                        <option value="2">2 Guests</option>
+                        <option value="3">3 Guests</option>
+                        <option value="4">4 Guests</option>
+                        <option value="5">5 Guests</option>
+                        <option value="6">6 Guests</option>
+                        <option value="7">7 Guests</option>
+                        <option value="8">8 Guests</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="special">Special Requests</label>
+                    <textarea id="special" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn-reserve">Confirm Reservation</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="contact-minimal">
+        <div class="container">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>Location</h3>
+                    <p>{{RESTAURANT_ADDRESS}}</p>
+                </div>
+                <div class="contact-item">
+                    <h3>Hours</h3>
+                    <p>{{RESTAURANT_HOURS}}</p>
+                </div>
+                <div class="contact-item">
+                    <h3>Contact</h3>
+                    <p>{{RESTAURANT_PHONE}}</p>
+                    <p>{{RESTAURANT_EMAIL}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

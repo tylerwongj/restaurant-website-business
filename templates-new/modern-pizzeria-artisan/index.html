@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Artisan Pizza & More</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="color-scheme-pizza">
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}}">
+            </div>
+            <nav class="nav">
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#pizza">Pizza</a></li>
+                    <li><a href="#craft">Our Craft</a></li>
+                    <li><a href="#menu">Full Menu</a></li>
+                    <li><a href="#catering">Catering</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="header-order">
+                    <a href="#order" class="btn btn-primary">Order Online</a>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">{{RESTAURANT_NAME}}</h1>
+                    <p class="hero-subtitle">Artisan Pizza. Crafted Fresh Daily.</p>
+                    <p class="hero-description">Where traditional Neapolitan techniques meet innovative flavors. Our wood-fired ovens and house-made ingredients create pizza perfection, one slice at a time.</p>
+                    <div class="hero-buttons">
+                        <a href="#order" class="btn btn-primary btn-large">Order Now</a>
+                        <a href="#pizza" class="btn btn-secondary btn-large">Explore Menu</a>
+                    </div>
+                    <div class="hero-features">
+                        <div class="feature">
+                            <span class="feature-icon">🔥</span>
+                            <span>Wood-Fired Ovens</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">🍅</span>
+                            <span>San Marzano Tomatoes</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">🧀</span>
+                            <span>Fresh Mozzarella</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">🌿</span>
+                            <span>Local Ingredients</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="pizza-oven-scene">
+                        <img src="{{HERO_PIZZA_IMAGE}}" alt="Fresh pizza from oven" class="hero-pizza">
+                        <div class="oven-flames">
+                            <div class="flame"></div>
+                            <div class="flame"></div>
+                            <div class="flame"></div>
+                        </div>
+                        <div class="ingredients-float">
+                            <img src="{{BASIL_IMAGE}}" alt="Fresh basil" class="ingredient-1">
+                            <img src="{{TOMATO_IMAGE}}" alt="San Marzano tomatoes" class="ingredient-2">
+                            <img src="{{MOZZARELLA_IMAGE}}" alt="Fresh mozzarella" class="ingredient-3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="oven-temperature-banner">
+            <div class="container">
+                <div class="temperature-content">
+                    <h2>🔥 {{OVEN_TEMPERATURE}}°F Wood-Fired Perfection</h2>
+                    <p>Our authentic Neapolitan ovens reach scorching temperatures for that perfect leopard-spotted crust</p>
+                    <div class="cooking-stats">
+                        <div class="stat">
+                            <strong>{{COOKING_TIME}} seconds</strong>
+                            <span>Cooking time</span>
+                        </div>
+                        <div class="stat">
+                            <strong>{{DAILY_PIZZAS}}+</strong>
+                            <span>Pizzas daily</span>
+                        </div>
+                        <div class="stat">
+                            <strong>{{YEARS_EXPERIENCE}}</strong>
+                            <span>Years perfecting</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pizza" class="pizza-menu">
+            <div class="container">
+                <h2 class="section-title">Artisan Pizza Collection</h2>
+                <p class="section-subtitle">Hand-stretched dough, premium ingredients, wood-fired perfection</p>
+
+                <div class="pizza-categories">
+                    <button class="category-btn active" data-category="classics">Classic Favorites</button>
+                    <button class="category-btn" data-category="signature">Signature Creations</button>
+                    <button class="category-btn" data-category="seasonal">Seasonal Specials</button>
+                    <button class="category-btn" data-category="vegan">Plant-Based</button>
+                </div>
+
+                <div class="pizza-grid" data-category="classics">
+                    <div class="pizza-item featured">
+                        <div class="pizza-image">
+                            <img src="{{MARGHERITA_IMAGE}}" alt="Margherita Pizza">
+                            <div class="pizza-badge">👑 The Original</div>
+                        </div>
+                        <div class="pizza-content">
+                            <h3>Margherita</h3>
+                            <p class="pizza-description">San Marzano tomatoes, fresh mozzarella di bufala, basil, extra virgin olive oil</p>
+                            <div class="pizza-details">
+                                <div class="pizza-origin">
+                                    <span class="origin-flag">🇮🇹</span>
+                                    <span>Traditional Neapolitan</span>
+                                </div>
+                                <div class="pizza-indicators">
+                                    <span class="indicator vegetarian">Vegetarian</span>
+                                    <span class="indicator classic">Classic</span>
+                                </div>
+                            </div>
+                            <div class="pizza-sizes">
+                                <div class="size-option">
+                                    <span class="size">10"</span>
+                                    <span class="price">${{MARGHERITA_SMALL_PRICE}}</span>
+                                </div>
+                                <div class="size-option">
+                                    <span class="size">14"</span>
+                                    <span class="price">${{MARGHERITA_LARGE_PRICE}}</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-small btn-primary">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="pizza-item">
+                        <div class="pizza-image">
+                            <img src="{{PEPPERONI_IMAGE}}" alt="Pepperoni Pizza">
+                        </div>
+                        <div class="pizza-content">
+                            <h3>Classic Pepperoni</h3>
+                            <p class="pizza-description">House-made tomato sauce, mozzarella, premium pepperoni, oregano</p>
+                            <div class="pizza-details">
+                                <div class="pizza-origin">
+                                    <span class="origin-flag">🇺🇸</span>
+                                    <span>American Classic</span>
+                                </div>
+                                <div class="pizza-indicators">
+                                    <span class="indicator popular">Most Popular</span>
+                                </div>
+                            </div>
+                            <div class="pizza-sizes">
+                                <div class="size-option">
+                                    <span class="size">10"</span>
+                                    <span class="price">${{PEPPERONI_SMALL_PRICE}}</span>
+                                </div>
+                                <div class="size-option">
+                                    <span class="size">14"</span>
+                                    <span class="price">${{PEPPERONI_LARGE_PRICE}}</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-small btn-primary">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="pizza-item">
+                        <div class="pizza-image">
+                            <img src="{{MUSHROOM_IMAGE}}" alt="Wild Mushroom Pizza">
+                        </div>
+                        <div class="pizza-content">
+                            <h3>Wild Mushroom</h3>
+                            <p class="pizza-description">White sauce, mozzarella, wild mushroom medley, truffle oil, fresh thyme</p>
+                            <div class="pizza-details">
+                                <div class="pizza-origin">
+                                    <span class="origin-flag">🍄</span>
+                                    <span>Seasonal Favorite</span>
+                                </div>
+                                <div class="pizza-indicators">
+                                    <span class="indicator vegetarian">Vegetarian</span>
+                                    <span class="indicator gourmet">Gourmet</span>
+                                </div>
+                            </div>
+                            <div class="pizza-sizes">
+                                <div class="size-option">
+                                    <span class="size">10"</span>
+                                    <span class="price">${{MUSHROOM_SMALL_PRICE}}</span>
+                                </div>
+                                <div class="size-option">
+                                    <span class="size">14"</span>
+                                    <span class="price">${{MUSHROOM_LARGE_PRICE}}</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-small btn-primary">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="pizza-item">
+                        <div class="pizza-image">
+                            <img src="{{PROSCIUTTO_IMAGE}}" alt="Prosciutto e Arugula">
+                        </div>
+                        <div class="pizza-content">
+                            <h3>Prosciutto e Arugula</h3>
+                            <p class="pizza-description">White sauce, mozzarella, prosciutto di Parma, fresh arugula, shaved parmesan</p>
+                            <div class="pizza-details">
+                                <div class="pizza-origin">
+                                    <span class="origin-flag">🇮🇹</span>
+                                    <span>Italian Artisan</span>
+                                </div>
+                                <div class="pizza-indicators">
+                                    <span class="indicator premium">Premium</span>
+                                </div>
+                            </div>
+                            <div class="pizza-sizes">
+                                <div class="size-option">
+                                    <span class="size">10"</span>
+                                    <span class="price">${{PROSCIUTTO_SMALL_PRICE}}</span>
+                                </div>
+                                <div class="size-option">
+                                    <span class="size">14"</span>
+                                    <span class="price">${{PROSCIUTTO_LARGE_PRICE}}</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-small btn-primary">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pizza-grid" data-category="signature" style="display: none;">
+                    <div class="pizza-item featured">
+                        <div class="pizza-image">
+                            <img src="{{SIGNATURE_PIZZA_IMAGE}}" alt="{{SIGNATURE_PIZZA_NAME}}">
+                            <div class="pizza-badge">⭐ Chef's Creation</div>
+                        </div>
+                        <div class="pizza-content">
+                            <h3>{{SIGNATURE_PIZZA_NAME}}</h3>
+                            <p class="pizza-description">{{SIGNATURE_PIZZA_DESCRIPTION}}</p>
+                            <div class="pizza-details">
+                                <div class="pizza-origin">
+                                    <span class="origin-flag">👨‍🍳</span>
+                                    <span>Chef's Special</span>
+                                </div>
+                                <div class="pizza-indicators">
+                                    <span class="indicator signature">House Signature</span>
+                                </div>
+                            </div>
+                            <div class="pizza-sizes">
+                                <div class="size-option">
+                                    <span class="size">10"</span>
+                                    <span class="price">${{SIGNATURE_SMALL_PRICE}}</span>
+                                </div>
+                                <div class="size-option">
+                                    <span class="size">14"</span>
+                                    <span class="price">${{SIGNATURE_LARGE_PRICE}}</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-small btn-primary">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pizza-grid" data-category="vegan" style="display: none;">
+                    <div class="pizza-item">
+                        <div class="pizza-image">
+                            <img src="{{VEGAN_PIZZA_IMAGE}}" alt="Vegan Margherita">
+                        </div>
+                        <div class="pizza-content">
+                            <h3>Vegan Margherita</h3>
+                            <p class="pizza-description">House marinara, cashew mozzarella, fresh basil, balsamic glaze</p>
+                            <div class="pizza-details">
+                                <div class="pizza-origin">
+                                    <span class="origin-flag">🌱</span>
+                                    <span>Plant-Based</span>
+                                </div>
+                                <div class="pizza-indicators">
+                                    <span class="indicator vegan">100% Vegan</span>
+                                </div>
+                            </div>
+                            <div class="pizza-sizes">
+                                <div class="size-option">
+                                    <span class="size">10"</span>
+                                    <span class="price">${{VEGAN_SMALL_PRICE}}</span>
+                                </div>
+                                <div class="size-option">
+                                    <span class="size">14"</span>
+                                    <span class="price">${{VEGAN_LARGE_PRICE}}</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-small btn-primary">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="build-your-own">
+                    <h3>🍕 Build Your Own Pizza</h3>
+                    <p>Start with our house-made dough and create your perfect combination</p>
+                    <div class="build-pricing">
+                        <div class="base-price">
+                            <span>Cheese Pizza: ${{CHEESE_SMALL_PRICE}} (10") / ${{CHEESE_LARGE_PRICE}} (14")</span>
+                        </div>
+                        <div class="topping-categories">
+                            <div class="topping-category">
+                                <h4>Premium Toppings (+${{PREMIUM_TOPPING_PRICE}})</h4>
+                                <p>Prosciutto, truffle oil, burrata, salmon, duck confit</p>
+                            </div>
+                            <div class="topping-category">
+                                <h4>Standard Toppings (+${{STANDARD_TOPPING_PRICE}})</h4>
+                                <p>Pepperoni, sausage, mushrooms, peppers, olives, onions</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-secondary">Start Building</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="craft" class="pizza-craft">
+            <div class="container">
+                <div class="craft-content">
+                    <div class="craft-text">
+                        <h2>The Art of Pizza Making</h2>
+                        <p>Every pizza begins with our signature dough, made fresh daily using a {{FERMENTATION_TIME}}-hour fermentation process. Our wood-fired ovens, imported from Italy, reach {{OVEN_TEMPERATURE}}°F to create the perfect balance of crispy and chewy.</p>
+                        
+                        <div class="craft-process">
+                            <div class="process-step">
+                                <div class="step-number">01</div>
+                                <div class="step-content">
+                                    <h3>Dough Preparation</h3>
+                                    <p>{{FERMENTATION_TIME}}-hour cold fermentation using Italian flour and wild yeast starter</p>
+                                </div>
+                            </div>
+                            <div class="process-step">
+                                <div class="step-number">02</div>
+                                <div class="step-content">
+                                    <h3>Hand Stretching</h3>
+                                    <p>Each pizza hand-stretched to perfection, never rolled, maintaining air bubbles</p>
+                                </div>
+                            </div>
+                            <div class="process-step">
+                                <div class="step-number">03</div>
+                                <div class="step-content">
+                                    <h3>Premium Toppings</h3>
+                                    <p>San Marzano tomatoes, fresh mozzarella, and locally-sourced ingredients</p>
+                                </div>
+                            </div>
+                            <div class="process-step">
+                                <div class="step-number">04</div>
+                                <div class="step-content">
+                                    <h3>Wood-Fired Cooking</h3>
+                                    <p>{{COOKING_TIME}} seconds in our {{OVEN_TEMPERATURE}}°F oven for that perfect leopard crust</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="craft-visual">
+                        <img src="{{PIZZA_MAKING_IMAGE}}" alt="Pizza making process">
+                        <div class="craft-highlights">
+                            <div class="highlight">
+                                <strong>{{DAILY_DOUGH_BATCHES}}</strong>
+                                <span>Fresh dough batches daily</span>
+                            </div>
+                            <div class="highlight">
+                                <strong>{{YEARS_PERFECTING}}</strong>
+                                <span>Years perfecting our craft</span>
+                            </div>
+                            <div class="highlight">
+                                <strong>{{ITALY_TRAINING}}</strong>
+                                <span>Trained in Naples, Italy</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="ingredients-sourcing">
+            <div class="container">
+                <h2 class="section-title">Premium Ingredients</h2>
+                <p class="section-subtitle">We source the finest ingredients from Italy and local partners</p>
+                
+                <div class="ingredients-grid">
+                    <div class="ingredient-card">
+                        <div class="ingredient-image">
+                            <img src="{{SAN_MARZANO_IMAGE}}" alt="San Marzano Tomatoes">
+                        </div>
+                        <h3>San Marzano Tomatoes</h3>
+                        <p class="ingredient-origin">🇮🇹 Campania, Italy</p>
+                        <p>Sweet, low-acid tomatoes grown in volcanic soil for the perfect sauce base</p>
+                    </div>
+                    
+                    <div class="ingredient-card">
+                        <div class="ingredient-image">
+                            <img src="{{MOZZARELLA_DI_BUFALA_IMAGE}}" alt="Mozzarella di Bufala">
+                        </div>
+                        <h3>Mozzarella di Bufala</h3>
+                        <p class="ingredient-origin">🇮🇹 Campania, Italy</p>
+                        <p>Creamy, rich mozzarella made from water buffalo milk</p>
+                    </div>
+                    
+                    <div class="ingredient-card">
+                        <div class="ingredient-image">
+                            <img src="{{FLOUR_00_IMAGE}}" alt="00 Flour">
+                        </div>
+                        <h3>Tipo 00 Flour</h3>
+                        <p class="ingredient-origin">🇮🇹 Molino Caputo</p>
+                        <p>Finely milled Italian flour for light, airy, and digestible crust</p>
+                    </div>
+                    
+                    <div class="ingredient-card">
+                        <div class="ingredient-image">
+                            <img src="{{OLIVE_OIL_IMAGE}}" alt="Extra Virgin Olive Oil">
+                        </div>
+                        <h3>Extra Virgin Olive Oil</h3>
+                        <p class="ingredient-origin">🇮🇹 Tuscany, Italy</p>
+                        <p>Cold-pressed, single-estate olive oil with fruity and peppery notes</p>
+                    </div>
+
+                    <div class="ingredient-card">
+                        <div class="ingredient-image">
+                            <img src="{{LOCAL_PRODUCE_IMAGE}}" alt="Local Produce">
+                        </div>
+                        <h3>Local Produce</h3>
+                        <p class="ingredient-origin">🚚 {{LOCAL_FARMS}}</p>
+                        <p>Fresh vegetables and herbs sourced from local farms within {{SOURCING_RADIUS}} miles</p>
+                    </div>
+
+                    <div class="ingredient-card">
+                        <div class="ingredient-image">
+                            <img src="{{ARTISAN_MEATS_IMAGE}}" alt="Artisan Meats">
+                        </div>
+                        <h3>Artisan Cured Meats</h3>
+                        <p class="ingredient-origin">🥓 Select Purveyors</p>
+                        <p>Premium pepperoni, prosciutto, and Italian sausages from trusted suppliers</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu" class="full-menu">
+            <div class="container">
+                <h2 class="section-title">Beyond Pizza</h2>
+                <p class="section-subtitle">Salads, appetizers, and desserts to complete your meal</p>
+                
+                <div class="menu-sections">
+                    <div class="menu-section">
+                        <h3>Appetizers & Salads</h3>
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="item-header">
+                                    <h4>Burrata & Prosciutto</h4>
+                                    <span class="price">${{BURRATA_PRICE}}</span>
+                                </div>
+                                <p class="description">Creamy burrata with prosciutto di Parma, arugula, and balsamic reduction</p>
+                            </div>
+
+                            <div class="menu-item">
+                                <div class="item-header">
+                                    <h4>Caesar Salad</h4>
+                                    <span class="price">${{CAESAR_PRICE}}</span>
+                                </div>
+                                <p class="description">Romaine hearts, house-made dressing, parmesan, and herb croutons</p>
+                            </div>
+
+                            <div class="menu-item">
+                                <div class="item-header">
+                                    <h4>Antipasto Platter</h4>
+                                    <span class="price">${{ANTIPASTO_PRICE}}</span>
+                                </div>
+                                <p class="description">Selection of Italian meats, cheeses, olives, and roasted vegetables</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-section">
+                        <h3>Calzones & Stromboli</h3>
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="item-header">
+                                    <h4>Classic Calzone</h4>
+                                    <span class="price">${{CALZONE_PRICE}}</span>
+                                </div>
+                                <p class="description">Ricotta, mozzarella, and pepperoni baked in our pizza dough</p>
+                            </div>
+
+                            <div class="menu-item">
+                                <div class="item-header">
+                                    <h4>Veggie Stromboli</h4>
+                                    <span class="price">${{STROMBOLI_PRICE}}</span>
+                                </div>
+                                <p class="description">Rolled pizza dough with peppers, mushrooms, onions, and cheese</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-section">
+                        <h3>Desserts</h3>
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="item-header">
+                                    <h4>Tiramisu</h4>
+                                    <span class="price">${{TIRAMISU_PRICE}}</span>
+                                </div>
+                                <p class="description">Classic Italian dessert with mascarpone and espresso</p>
+                            </div>
+
+                            <div class="menu-item">
+                                <div class="item-header">
+                                    <h4>Nutella Pizza</h4>
+                                    <span class="price">${{NUTELLA_PIZZA_PRICE}}</span>
+                                </div>
+                                <p class="description">Wood-fired pizza dough with Nutella, strawberries, and powdered sugar</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="beverages">
+            <div class="container">
+                <div class="beverages-content">
+                    <div class="beverages-text">
+                        <h2>Craft Beverages</h2>
+                        <p>Italian wines, craft beers, and specialty beverages to complement your pizza experience.</p>
+                        
+                        <div class="beverage-categories">
+                            <div class="beverage-category">
+                                <h3>Italian Wines</h3>
+                                <p>Chianti, Pinot Grigio, Prosecco, and regional selections</p>
+                                <div class="wine-highlights">
+                                    <span class="wine">{{FEATURED_WINE_1}}</span>
+                                    <span class="wine">{{FEATURED_WINE_2}}</span>
+                                    <span class="wine">{{FEATURED_WINE_3}}</span>
+                                </div>
+                            </div>
+                            
+                            <div class="beverage-category">
+                                <h3>Craft Beers</h3>
+                                <p>Local and Italian craft beers on tap and bottled</p>
+                                <div class="beer-types">
+                                    <span class="beer">IPA</span>
+                                    <span class="beer">Lager</span>
+                                    <span class="beer">Italian Pilsner</span>
+                                    <span class="beer">Wheat Beer</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="signature-drinks">
+                            <h3>Signature Drinks</h3>
+                            <div class="drinks">
+                                <div class="drink">
+                                    <h4>{{SIGNATURE_DRINK_1}}</h4>
+                                    <p>{{SIGNATURE_DRINK_1_DESCRIPTION}}</p>
+                                    <span class="drink-price">${{SIGNATURE_DRINK_1_PRICE}}</span>
+                                </div>
+                                <div class="drink">
+                                    <h4>{{SIGNATURE_DRINK_2}}</h4>
+                                    <p>{{SIGNATURE_DRINK_2_DESCRIPTION}}</p>
+                                    <span class="drink-price">${{SIGNATURE_DRINK_2_PRICE}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="beverages-visual">
+                        <img src="{{WINE_SELECTION_IMAGE}}" alt="Wine and beer selection">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="catering" class="catering">
+            <div class="container">
+                <div class="catering-content">
+                    <div class="catering-text">
+                        <h2>Pizza Catering & Events</h2>
+                        <p>Bring our artisan pizzas to your next event with our full-service catering and mobile wood-fired oven experience.</p>
+                        
+                        <div class="catering-options">
+                            <div class="catering-option">
+                                <h3>Office Catering</h3>
+                                <p>Pizza delivery for meetings, lunch events, and team gatherings</p>
+                                <div class="option-features">
+                                    <span class="feature">• Multiple pizza varieties</span>
+                                    <span class="feature">• Salads and appetizers</span>
+                                    <span class="feature">• On-time delivery</span>
+                                </div>
+                            </div>
+                            
+                            <div class="catering-option">
+                                <h3>Private Events</h3>
+                                <p>Full-service catering for parties, weddings, and special occasions</p>
+                                <div class="option-features">
+                                    <span class="feature">• Custom menu planning</span>
+                                    <span class="feature">• Professional service staff</span>
+                                    <span class="feature">• Setup and cleanup included</span>
+                                </div>
+                            </div>
+                            
+                            <div class="catering-option">
+                                <h3>Mobile Wood-Fired Oven</h3>
+                                <p>Bring the authentic experience with our mobile oven and pizza chefs</p>
+                                <div class="option-features">
+                                    <span class="feature">• Live pizza making experience</span>
+                                    <span class="feature">• Fresh pizzas made to order</span>
+                                    <span class="feature">• Interactive entertainment</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catering-packages">
+                            <h3>Popular Packages</h3>
+                            <div class="packages">
+                                <div class="package">
+                                    <h4>Office Lunch Package</h4>
+                                    <p>Perfect for 10-50 people: assorted pizzas, Caesar salad, and soft drinks</p>
+                                    <span class="package-price">Starting at ${{OFFICE_PACKAGE_PRICE}} per person</span>
+                                </div>
+                                <div class="package">
+                                    <h4>Party Package</h4>
+                                    <p>Great for celebrations: premium pizzas, appetizers, salads, and desserts</p>
+                                    <span class="package-price">Starting at ${{PARTY_PACKAGE_PRICE}} per person</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="catering-image">
+                        <img src="{{CATERING_IMAGE}}" alt="Pizza catering setup">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="order" class="order-section">
+            <div class="container">
+                <h2 class="section-title">Order Your Pizza</h2>
+                <div class="order-options">
+                    <div class="order-option">
+                        <div class="option-icon">🚚</div>
+                        <h3>Delivery</h3>
+                        <p>Hot, fresh pizza delivered to your door</p>
+                        <div class="delivery-apps">
+                            <a href="{{DOORDASH_URL}}" class="delivery-btn">DoorDash</a>
+                            <a href="{{UBEREATS_URL}}" class="delivery-btn">Uber Eats</a>
+                            <a href="{{GRUBHUB_URL}}" class="delivery-btn">Grubhub</a>
+                        </div>
+                        <div class="delivery-info">
+                            <span>Delivery radius: {{DELIVERY_RADIUS}} miles</span>
+                            <span>Delivery fee: ${{DELIVERY_FEE}}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="order-option">
+                        <div class="option-icon">🏃‍♀️</div>
+                        <h3>Pickup</h3>
+                        <p>Order ahead and pickup in-store</p>
+                        <a href="{{PICKUP_URL}}" class="btn btn-primary">Order for Pickup</a>
+                        <div class="pickup-info">
+                            <span>Ready in {{PICKUP_TIME}} minutes</span>
+                            <span>Curbside available</span>
+                        </div>
+                    </div>
+                    
+                    <div class="order-option">
+                        <div class="option-icon">🍽️</div>
+                        <h3>Dine In</h3>
+                        <p>Enjoy fresh pizza in our cozy atmosphere</p>
+                        <div class="dine-in-info">
+                            <span>No reservations needed</span>
+                            <span>Family-friendly seating</span>
+                            <span>View our wood-fired ovens</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hours-location">
+                    <div class="hours">
+                        <h3>Hours</h3>
+                        <p>{{OPERATING_HOURS}}</p>
+                    </div>
+                    <div class="location">
+                        <h3>Location</h3>
+                        <p>{{FULL_ADDRESS}}</p>
+                        <p>{{PHONE}}</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h2>Get in Touch</h2>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <h3>Restaurant</h3>
+                                <p>{{FULL_ADDRESS}}</p>
+                                <p>{{PHONE}}</p>
+                                <p>{{EMAIL}}</p>
+                            </div>
+                            <div class="contact-item">
+                                <h3>Catering</h3>
+                                <p>{{CATERING_PHONE}}</p>
+                                <p>{{CATERING_EMAIL}}</p>
+                            </div>
+                            <div class="contact-item">
+                                <h3>Follow Our Craft</h3>
+                                <div class="social-links">
+                                    <a href="{{INSTAGRAM_URL}}">Instagram</a>
+                                    <a href="{{FACEBOOK_URL}}">Facebook</a>
+                                    <a href="{{TWITTER_URL}}">Twitter</a>
+                                    <a href="{{TIKTOK_URL}}">TikTok</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <h3>Send us a Message</h3>
+                        <form>
+                            <input type="text" placeholder="Your Name" required>
+                            <input type="email" placeholder="Email Address" required>
+                            <select required>
+                                <option value="">What can we help with?</option>
+                                <option value="catering">Catering Inquiry</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="franchise">Franchise Opportunities</option>
+                                <option value="private-events">Private Events</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <textarea placeholder="Your Message" rows="4" required></textarea>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>{{RESTAURANT_NAME}}</h3>
+                    <p>Artisan Pizza. Crafted Fresh Daily.</p>
+                    <div class="footer-hours">
+                        <h4>Hours</h4>
+                        <p>{{OPERATING_HOURS}}</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="#pizza">Artisan Pizzas</a></li>
+                        <li><a href="#menu">Full Menu</a></li>
+                        <li><a href="#order">Order Online</a></li>
+                        <li><a href="#catering">Catering</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Our Craft</h4>
+                    <ul>
+                        <li><a href="#craft">Pizza Making Process</a></li>
+                        <li><a href="#">Ingredient Sourcing</a></li>
+                        <li><a href="#">Wood-Fired Ovens</a></li>
+                        <li><a href="#">Our Story</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="{{INSTAGRAM_URL}}">Instagram</a>
+                        <a href="{{FACEBOOK_URL}}">Facebook</a>
+                        <a href="{{TWITTER_URL}}">Twitter</a>
+                        <a href="{{TIKTOK_URL}}">TikTok</a>
+                    </div>
+                    <div class="newsletter">
+                        <h4>Pizza Updates</h4>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your email">
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

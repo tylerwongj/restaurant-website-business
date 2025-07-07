@@ -1,0 +1,706 @@
+/* Authentic Italian Pizza Template */
+
+:root {
+    --italian-primary: #c8102e;         /* Italian Red */
+    --italian-secondary: #009246;       /* Italian Green */
+    --italian-accent: #f4c430;          /* Italian Gold */
+    --italian-cream: #faf5f0;           /* Warm Cream */
+    --italian-terracotta: #d2691e;      /* Terracotta */
+    --italian-white: #ffffff;
+    --italian-dark: #2c1810;
+    --italian-gray: #666666;
+}
+
+.color-pizza-italian {
+    --primary-color: var(--italian-primary);
+    --secondary-color: var(--italian-secondary);
+    --accent-color: var(--italian-accent);
+    --text-color: var(--italian-dark);
+    --background-color: var(--italian-white);
+    --section-bg: var(--italian-cream);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: var(--background-color);
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+
+.header {
+    background: var(--italian-white);
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.logo .tagline {
+    color: var(--italian-gray);
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover { color: var(--primary-color); }
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-family: 'Playfair Display', serif;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #a00d26;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.hero {
+    position: relative;
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    color: white;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(200,16,46,0.8), rgba(0,146,70,0.6));
+    z-index: 2;
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.hero-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+}
+
+.hero-features {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.hero-features span {
+    background: rgba(255,255,255,0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    font-size: 0.9rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.specialties {
+    padding: 4rem 0;
+    background: var(--section-bg);
+}
+
+.specialties h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+.specialties-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.specialty-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.specialty-card:hover {
+    transform: translateY(-5px);
+}
+
+.specialty-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.specialty-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.specialty-card p {
+    color: var(--italian-gray);
+}
+
+.pizza-section {
+    padding: 4rem 0;
+}
+
+.pizza-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.pizza-section > .container > p {
+    text-align: center;
+    color: var(--italian-gray);
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+.pizza-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.pizza-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.pizza-card:hover {
+    transform: translateY(-5px);
+}
+
+.pizza-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.pizza-content {
+    padding: 1.5rem;
+}
+
+.pizza-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.pizza-content p {
+    color: var(--italian-gray);
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.pizza-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pizza-time {
+    background: var(--secondary-color);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.pizza-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.menu-section {
+    padding: 4rem 0;
+    background: var(--section-bg);
+}
+
+.menu-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.menu-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-family: 'Playfair Display', serif;
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.menu-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.menu-item h4 {
+    font-family: 'Playfair Display', serif;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.menu-item p {
+    color: var(--italian-gray);
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.menu-item .price {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+.story-section {
+    padding: 4rem 0;
+}
+
+.story-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.story-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.story-text p {
+    color: var(--italian-gray);
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.chef-signature {
+    margin: 2rem 0;
+    font-style: italic;
+}
+
+.certifications {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.cert-badge {
+    background: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    min-width: 80px;
+}
+
+.cert-badge span {
+    display: block;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.cert-badge p {
+    font-size: 0.8rem;
+    margin: 0;
+}
+
+.story-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.wine-pairing {
+    padding: 4rem 0;
+    background: var(--section-bg);
+}
+
+.wine-pairing h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.wine-pairing > .container > p {
+    text-align: center;
+    color: var(--italian-gray);
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+.wine-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.wine-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem;
+}
+
+.wine-card img {
+    width: 80px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.wine-info {
+    flex: 1;
+}
+
+.wine-info h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.wine-region {
+    color: var(--italian-gray);
+    font-style: italic;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.wine-notes {
+    color: var(--italian-gray);
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.wine-pricing {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.glass-price {
+    font-size: 0.9rem;
+    color: var(--italian-gray);
+}
+
+.bottle-price {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.order-section {
+    padding: 4rem 0;
+}
+
+.order-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.order-info h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.order-info p {
+    color: var(--italian-gray);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.order-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.order-option {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.option-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.order-option h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.order-option p {
+    color: var(--italian-gray);
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.reservation-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.reservation-form h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.reservation-form input,
+.reservation-form select,
+.reservation-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.reservation-form input:focus,
+.reservation-form select:focus,
+.reservation-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.footer {
+    background: var(--italian-dark);
+    color: white;
+    padding: 3rem 0 1rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+
+.footer-section p {
+    opacity: 0.9;
+    margin-bottom: 0.5rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+.social-links a:hover {
+    opacity: 1;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 1rem;
+    text-align: center;
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .hero-content h2 { font-size: 2.5rem; }
+    .specialties-grid { grid-template-columns: 1fr; }
+    .pizza-grid { grid-template-columns: 1fr; }
+    .menu-tabs { flex-direction: column; align-items: center; }
+    .menu-grid { grid-template-columns: 1fr; }
+    .story-content { grid-template-columns: 1fr; }
+    .wine-grid { grid-template-columns: 1fr; }
+    .order-content { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .nav-menu { display: none; }
+    .hero-features { flex-direction: column; align-items: center; }
+    .certifications { flex-direction: column; }
+    .wine-card { flex-direction: column; align-items: center; text-align: center; }
+}

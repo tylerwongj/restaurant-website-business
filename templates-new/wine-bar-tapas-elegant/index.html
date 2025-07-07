@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Wine Bar & Tapas</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700;900&family=Source+Sans+Pro:wght@300;400;600;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="elegant-scheme">
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>{{RESTAURANT_NAME}}</h1>
+                <span class="tagline">Wine Bar & Tapas</span>
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#wine-list">Wine List</a></li>
+                    <li><a href="#tapas">Tapas</a></li>
+                    <li><a href="#tasting">Wine Tastings</a></li>
+                    <li><a href="#events">Private Events</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#reservations" class="btn btn-reservation">Reservations</a>
+                <a href="#wine-club" class="btn btn-wine">Wine Club</a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h2>Curated Wines, Artisan Tapas</h2>
+                <p>Discover exceptional wines from around the world paired with Mediterranean-inspired small plates. Our intimate wine bar offers an sophisticated atmosphere perfect for wine lovers and culinary enthusiasts.</p>
+                <div class="hero-highlights">
+                    <div class="highlight">
+                        <span class="highlight-icon">🍷</span>
+                        <div class="highlight-text">
+                            <h4>{{WINE_SELECTION_COUNT}}+ Wines</h4>
+                            <p>Curated from {{WINE_REGIONS_COUNT}} regions</p>
+                        </div>
+                    </div>
+                    <div class="highlight">
+                        <span class="highlight-icon">🫒</span>
+                        <div class="highlight-text">
+                            <h4>Artisan Tapas</h4>
+                            <p>Mediterranean small plates</p>
+                        </div>
+                    </div>
+                    <div class="highlight">
+                        <span class="highlight-icon">👩‍🍳</span>
+                        <div class="highlight-text">
+                            <h4>Expert Sommeliers</h4>
+                            <p>{{SOMMELIER_EXPERIENCE}} years experience</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#wine-list" class="btn btn-primary">Explore Wines</a>
+                    <a href="#tasting" class="btn btn-secondary">Book Tasting</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="{{HERO_WINE_IMAGE}}" alt="Wine glasses and tapas">
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-wines">
+        <div class="container">
+            <h2>Featured Wine Selection</h2>
+            <p class="wine-subtitle">Handpicked by our sommelier team</p>
+            <div class="featured-wine-carousel">
+                <div class="wine-feature active">
+                    <div class="wine-badge">Sommelier's Choice</div>
+                    <img src="{{FEATURED_WINE_1_IMAGE}}" alt="{{FEATURED_WINE_1_NAME}}">
+                    <div class="wine-details">
+                        <h3>{{FEATURED_WINE_1_NAME}}</h3>
+                        <p class="wine-producer">{{FEATURED_WINE_1_PRODUCER}}</p>
+                        <p class="wine-region">{{FEATURED_WINE_1_REGION}}, {{FEATURED_WINE_1_VINTAGE}}</p>
+                        <p class="wine-description">{{FEATURED_WINE_1_DESCRIPTION}}</p>
+                        <div class="wine-pairing">
+                            <h4>Perfect Pairing</h4>
+                            <p>{{FEATURED_WINE_1_PAIRING}}</p>
+                        </div>
+                        <div class="wine-pricing">
+                            <span class="glass-price">Glass {{FEATURED_WINE_1_GLASS_PRICE}}</span>
+                            <span class="bottle-price">Bottle {{FEATURED_WINE_1_BOTTLE_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="wine-feature">
+                    <div class="wine-badge">New Arrival</div>
+                    <img src="{{FEATURED_WINE_2_IMAGE}}" alt="{{FEATURED_WINE_2_NAME}}">
+                    <div class="wine-details">
+                        <h3>{{FEATURED_WINE_2_NAME}}</h3>
+                        <p class="wine-producer">{{FEATURED_WINE_2_PRODUCER}}</p>
+                        <p class="wine-region">{{FEATURED_WINE_2_REGION}}, {{FEATURED_WINE_2_VINTAGE}}</p>
+                        <p class="wine-description">{{FEATURED_WINE_2_DESCRIPTION}}</p>
+                        <div class="wine-pairing">
+                            <h4>Perfect Pairing</h4>
+                            <p>{{FEATURED_WINE_2_PAIRING}}</p>
+                        </div>
+                        <div class="wine-pricing">
+                            <span class="glass-price">Glass {{FEATURED_WINE_2_GLASS_PRICE}}</span>
+                            <span class="bottle-price">Bottle {{FEATURED_WINE_2_BOTTLE_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="wine-feature">
+                    <div class="wine-badge">Limited Release</div>
+                    <img src="{{FEATURED_WINE_3_IMAGE}}" alt="{{FEATURED_WINE_3_NAME}}">
+                    <div class="wine-details">
+                        <h3>{{FEATURED_WINE_3_NAME}}</h3>
+                        <p class="wine-producer">{{FEATURED_WINE_3_PRODUCER}}</p>
+                        <p class="wine-region">{{FEATURED_WINE_3_REGION}}, {{FEATURED_WINE_3_VINTAGE}}</p>
+                        <p class="wine-description">{{FEATURED_WINE_3_DESCRIPTION}}</p>
+                        <div class="wine-pairing">
+                            <h4>Perfect Pairing</h4>
+                            <p>{{FEATURED_WINE_3_PAIRING}}</p>
+                        </div>
+                        <div class="wine-pricing">
+                            <span class="glass-price">Glass {{FEATURED_WINE_3_GLASS_PRICE}}</span>
+                            <span class="bottle-price">Bottle {{FEATURED_WINE_3_BOTTLE_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="wine-categories" id="wine-list">
+        <div class="container">
+            <h2>Our Wine Collection</h2>
+            <div class="wine-menu">
+                <div class="wine-category">
+                    <h3>Sparkling & Champagne</h3>
+                    <div class="wine-items">
+                        <div class="wine-item">
+                            <div class="wine-info">
+                                <h4>{{CHAMPAGNE_1_NAME}}</h4>
+                                <p class="producer">{{CHAMPAGNE_1_PRODUCER}}</p>
+                                <p class="region">{{CHAMPAGNE_1_REGION}}</p>
+                                <p class="notes">{{CHAMPAGNE_1_NOTES}}</p>
+                            </div>
+                            <div class="wine-prices">
+                                <span class="glass">{{CHAMPAGNE_1_GLASS_PRICE}}</span>
+                                <span class="bottle">{{CHAMPAGNE_1_BOTTLE_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="wine-item">
+                            <div class="wine-info">
+                                <h4>{{PROSECCO_1_NAME}}</h4>
+                                <p class="producer">{{PROSECCO_1_PRODUCER}}</p>
+                                <p class="region">{{PROSECCO_1_REGION}}</p>
+                                <p class="notes">{{PROSECCO_1_NOTES}}</p>
+                            </div>
+                            <div class="wine-prices">
+                                <span class="glass">{{PROSECCO_1_GLASS_PRICE}}</span>
+                                <span class="bottle">{{PROSECCO_1_BOTTLE_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="wine-item">
+                            <div class="wine-info">
+                                <h4>{{CAVA_1_NAME}}</h4>
+                                <p class="producer">{{CAVA_1_PRODUCER}}</p>
+                                <p class="region">{{CAVA_1_REGION}}</p>
+                                <p class="notes">{{CAVA_1_NOTES}}</p>
+                            </div>
+                            <div class="wine-prices">
+                                <span class="glass">{{CAVA_1_GLASS_PRICE}}</span>
+                                <span class="bottle">{{CAVA_1_BOTTLE_PRICE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wine-category">
+                    <h3>White Wines</h3>
+                    <div class="wine-subcategory">
+                        <h4>Crisp & Light</h4>
+                        <div class="wine-items">
+                            <div class="wine-item">
+                                <div class="wine-info">
+                                    <h5>{{WHITE_LIGHT_1_NAME}}</h5>
+                                    <p class="producer">{{WHITE_LIGHT_1_PRODUCER}}</p>
+                                    <p class="region">{{WHITE_LIGHT_1_REGION}}, {{WHITE_LIGHT_1_VINTAGE}}</p>
+                                    <p class="notes">{{WHITE_LIGHT_1_NOTES}}</p>
+                                </div>
+                                <div class="wine-prices">
+                                    <span class="glass">{{WHITE_LIGHT_1_GLASS_PRICE}}</span>
+                                    <span class="bottle">{{WHITE_LIGHT_1_BOTTLE_PRICE}}</span>
+                                </div>
+                            </div>
+                            <div class="wine-item">
+                                <div class="wine-info">
+                                    <h5>{{WHITE_LIGHT_2_NAME}}</h5>
+                                    <p class="producer">{{WHITE_LIGHT_2_PRODUCER}}</p>
+                                    <p class="region">{{WHITE_LIGHT_2_REGION}}, {{WHITE_LIGHT_2_VINTAGE}}</p>
+                                    <p class="notes">{{WHITE_LIGHT_2_NOTES}}</p>
+                                </div>
+                                <div class="wine-prices">
+                                    <span class="glass">{{WHITE_LIGHT_2_GLASS_PRICE}}</span>
+                                    <span class="bottle">{{WHITE_LIGHT_2_BOTTLE_PRICE}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wine-subcategory">
+                        <h4>Rich & Full-Bodied</h4>
+                        <div class="wine-items">
+                            <div class="wine-item">
+                                <div class="wine-info">
+                                    <h5>{{WHITE_RICH_1_NAME}}</h5>
+                                    <p class="producer">{{WHITE_RICH_1_PRODUCER}}</p>
+                                    <p class="region">{{WHITE_RICH_1_REGION}}, {{WHITE_RICH_1_VINTAGE}}</p>
+                                    <p class="notes">{{WHITE_RICH_1_NOTES}}</p>
+                                </div>
+                                <div class="wine-prices">
+                                    <span class="glass">{{WHITE_RICH_1_GLASS_PRICE}}</span>
+                                    <span class="bottle">{{WHITE_RICH_1_BOTTLE_PRICE}}</span>
+                                </div>
+                            </div>
+                            <div class="wine-item">
+                                <div class="wine-info">
+                                    <h5>{{WHITE_RICH_2_NAME}}</h5>
+                                    <p class="producer">{{WHITE_RICH_2_PRODUCER}}</p>
+                                    <p class="region">{{WHITE_RICH_2_REGION}}, {{WHITE_RICH_2_VINTAGE}}</p>
+                                    <p class="notes">{{WHITE_RICH_2_NOTES}}</p>
+                                </div>
+                                <div class="wine-prices">
+                                    <span class="glass">{{WHITE_RICH_2_GLASS_PRICE}}</span>
+                                    <span class="bottle">{{WHITE_RICH_2_BOTTLE_PRICE}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wine-category">
+                    <h3>Red Wines</h3>
+                    <div class="wine-subcategory">
+                        <h4>Light & Medium-Bodied</h4>
+                        <div class="wine-items">
+                            <div class="wine-item">
+                                <div class="wine-info">
+                                    <h5>{{RED_LIGHT_1_NAME}}</h5>
+                                    <p class="producer">{{RED_LIGHT_1_PRODUCER}}</p>
+                                    <p class="region">{{RED_LIGHT_1_REGION}}, {{RED_LIGHT_1_VINTAGE}}</p>
+                                    <p class="notes">{{RED_LIGHT_1_NOTES}}</p>
+                                </div>
+                                <div class="wine-prices">
+                                    <span class="glass">{{RED_LIGHT_1_GLASS_PRICE}}</span>
+                                    <span class="bottle">{{RED_LIGHT_1_BOTTLE_PRICE}}</span>
+                                </div>
+                            </div>
+                            <div class="wine-item">
+                                <div class="wine-info">
+                                    <h5>{{RED_LIGHT_2_NAME}}</h5>
+                                    <p class="producer">{{RED_LIGHT_2_PRODUCER}}</p>
+                                    <p class="region">{{RED_LIGHT_2_REGION}}, {{RED_LIGHT_2_VINTAGE}}</p>
+                                    <p class="notes">{{RED_LIGHT_2_NOTES}}</p>
+                                </div>
+                                <div class="wine-prices">
+                                    <span class="glass">{{RED_LIGHT_2_GLASS_PRICE}}</span>
+                                    <span class="bottle">{{RED_LIGHT_2_BOTTLE_PRICE}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wine-subcategory">
+                        <h4>Full-Bodied & Bold</h4>
+                        <div class="wine-items">
+                            <div class="wine-item">
+                                <div class="wine-info">
+                                    <h5>{{RED_BOLD_1_NAME}}</h5>
+                                    <p class="producer">{{RED_BOLD_1_PRODUCER}}</p>
+                                    <p class="region">{{RED_BOLD_1_REGION}}, {{RED_BOLD_1_VINTAGE}}</p>
+                                    <p class="notes">{{RED_BOLD_1_NOTES}}</p>
+                                </div>
+                                <div class="wine-prices">
+                                    <span class="glass">{{RED_BOLD_1_GLASS_PRICE}}</span>
+                                    <span class="bottle">{{RED_BOLD_1_BOTTLE_PRICE}}</span>
+                                </div>
+                            </div>
+                            <div class="wine-item premium">
+                                <div class="wine-info">
+                                    <h5>{{RED_PREMIUM_1_NAME}}</h5>
+                                    <p class="producer">{{RED_PREMIUM_1_PRODUCER}}</p>
+                                    <p class="region">{{RED_PREMIUM_1_REGION}}, {{RED_PREMIUM_1_VINTAGE}}</p>
+                                    <p class="notes">{{RED_PREMIUM_1_NOTES}}</p>
+                                    <span class="premium-badge">Reserve Selection</span>
+                                </div>
+                                <div class="wine-prices">
+                                    <span class="glass">{{RED_PREMIUM_1_GLASS_PRICE}}</span>
+                                    <span class="bottle">{{RED_PREMIUM_1_BOTTLE_PRICE}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wine-category">
+                    <h3>Dessert & Fortified</h3>
+                    <div class="wine-items">
+                        <div class="wine-item">
+                            <div class="wine-info">
+                                <h4>{{PORT_1_NAME}}</h4>
+                                <p class="producer">{{PORT_1_PRODUCER}}</p>
+                                <p class="region">{{PORT_1_REGION}}</p>
+                                <p class="notes">{{PORT_1_NOTES}}</p>
+                            </div>
+                            <div class="wine-prices">
+                                <span class="glass">{{PORT_1_GLASS_PRICE}}</span>
+                                <span class="bottle">{{PORT_1_BOTTLE_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="wine-item">
+                            <div class="wine-info">
+                                <h4>{{DESSERT_WINE_1_NAME}}</h4>
+                                <p class="producer">{{DESSERT_WINE_1_PRODUCER}}</p>
+                                <p class="region">{{DESSERT_WINE_1_REGION}}</p>
+                                <p class="notes">{{DESSERT_WINE_1_NOTES}}</p>
+                            </div>
+                            <div class="wine-prices">
+                                <span class="glass">{{DESSERT_WINE_1_GLASS_PRICE}}</span>
+                                <span class="bottle">{{DESSERT_WINE_1_BOTTLE_PRICE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="tapas-menu" id="tapas">
+        <div class="container">
+            <h2>Mediterranean Tapas</h2>
+            <p class="tapas-subtitle">Small plates crafted to complement our wine selection</p>
+            <div class="tapas-categories">
+                <div class="tapas-category">
+                    <h3>Charcuterie & Cheese</h3>
+                    <div class="tapas-items">
+                        <div class="tapas-item signature">
+                            <div class="signature-badge">House Specialty</div>
+                            <img src="{{CHARCUTERIE_BOARD_IMAGE}}" alt="{{CHARCUTERIE_BOARD_NAME}}">
+                            <div class="item-info">
+                                <h4>{{CHARCUTERIE_BOARD_NAME}}</h4>
+                                <p>{{CHARCUTERIE_BOARD_DESCRIPTION}}</p>
+                                <div class="item-details">
+                                    <span class="serves">Serves {{CHARCUTERIE_BOARD_SERVES}}</span>
+                                    <span class="pairings">{{CHARCUTERIE_WINE_PAIRINGS}}</span>
+                                </div>
+                                <span class="price">{{CHARCUTERIE_BOARD_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="tapas-item">
+                            <img src="{{CHEESE_PLATE_IMAGE}}" alt="{{CHEESE_PLATE_NAME}}">
+                            <div class="item-info">
+                                <h4>{{CHEESE_PLATE_NAME}}</h4>
+                                <p>{{CHEESE_PLATE_DESCRIPTION}}</p>
+                                <span class="price">{{CHEESE_PLATE_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="tapas-item">
+                            <img src="{{PATE_BOARD_IMAGE}}" alt="{{PATE_BOARD_NAME}}">
+                            <div class="item-info">
+                                <h4>{{PATE_BOARD_NAME}}</h4>
+                                <p>{{PATE_BOARD_DESCRIPTION}}</p>
+                                <span class="price">{{PATE_BOARD_PRICE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tapas-category">
+                    <h3>Spanish Classics</h3>
+                    <div class="tapas-items">
+                        <div class="tapas-item">
+                            <img src="{{PATATAS_BRAVAS_IMAGE}}" alt="Patatas Bravas">
+                            <div class="item-info">
+                                <h4>Patatas Bravas</h4>
+                                <p>{{PATATAS_BRAVAS_DESCRIPTION}}</p>
+                                <span class="price">{{PATATAS_BRAVAS_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="tapas-item">
+                            <img src="{{JAMÓN_IBÉRICO_IMAGE}}" alt="Jamón Ibérico">
+                            <div class="item-info">
+                                <h4>Jamón Ibérico</h4>
+                                <p>{{JAMÓN_IBÉRICO_DESCRIPTION}}</p>
+                                <span class="price">{{JAMÓN_IBÉRICO_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="tapas-item">
+                            <img src="{{ALBONDIGAS_IMAGE}}" alt="Albondigas">
+                            <div class="item-info">
+                                <h4>Albondigas</h4>
+                                <p>{{ALBONDIGAS_DESCRIPTION}}</p>
+                                <span class="price">{{ALBONDIGAS_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="tapas-item">
+                            <img src="{{GAMBAS_AL_AJILLO_IMAGE}}" alt="Gambas al Ajillo">
+                            <div class="item-info">
+                                <h4>Gambas al Ajillo</h4>
+                                <p>{{GAMBAS_AL_AJILLO_DESCRIPTION}}</p>
+                                <span class="price">{{GAMBAS_AL_AJILLO_PRICE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tapas-category">
+                    <h3>Mediterranean Favorites</h3>
+                    <div class="tapas-items">
+                        <div class="tapas-item">
+                            <img src="{{HUMMUS_BOARD_IMAGE}}" alt="{{HUMMUS_BOARD_NAME}}">
+                            <div class="item-info">
+                                <h4>{{HUMMUS_BOARD_NAME}}</h4>
+                                <p>{{HUMMUS_BOARD_DESCRIPTION}}</p>
+                                <span class="price">{{HUMMUS_BOARD_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="tapas-item">
+                            <img src="{{BRUSCHETTA_IMAGE}}" alt="{{BRUSCHETTA_NAME}}">
+                            <div class="item-info">
+                                <h4>{{BRUSCHETTA_NAME}}</h4>
+                                <p>{{BRUSCHETTA_DESCRIPTION}}</p>
+                                <span class="price">{{BRUSCHETTA_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="tapas-item">
+                            <img src="{{OLIVES_IMAGE}}" alt="{{OLIVES_NAME}}">
+                            <div class="item-info">
+                                <h4>{{OLIVES_NAME}}</h4>
+                                <p>{{OLIVES_DESCRIPTION}}</p>
+                                <span class="price">{{OLIVES_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="tapas-item">
+                            <img src="{{STUFFED_DATES_IMAGE}}" alt="{{STUFFED_DATES_NAME}}">
+                            <div class="item-info">
+                                <h4>{{STUFFED_DATES_NAME}}</h4>
+                                <p>{{STUFFED_DATES_DESCRIPTION}}</p>
+                                <span class="price">{{STUFFED_DATES_PRICE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tapas-category">
+                    <h3>Sweet Endings</h3>
+                    <div class="tapas-items">
+                        <div class="tapas-item">
+                            <img src="{{CHOCOLATE_BOARD_IMAGE}}" alt="{{CHOCOLATE_BOARD_NAME}}">
+                            <div class="item-info">
+                                <h4>{{CHOCOLATE_BOARD_NAME}}</h4>
+                                <p>{{CHOCOLATE_BOARD_DESCRIPTION}}</p>
+                                <span class="price">{{CHOCOLATE_BOARD_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="tapas-item">
+                            <img src="{{FLAN_IMAGE}}" alt="{{FLAN_NAME}}">
+                            <div class="item-info">
+                                <h4>{{FLAN_NAME}}</h4>
+                                <p>{{FLAN_DESCRIPTION}}</p>
+                                <span class="price">{{FLAN_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="tapas-item">
+                            <img src="{{CHURROS_IMAGE}}" alt="{{CHURROS_NAME}}">
+                            <div class="item-info">
+                                <h4>{{CHURROS_NAME}}</h4>
+                                <p>{{CHURROS_DESCRIPTION}}</p>
+                                <span class="price">{{CHURROS_PRICE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="wine-tasting-events" id="tasting">
+        <div class="container">
+            <h2>Wine Tastings & Events</h2>
+            <div class="tasting-options">
+                <div class="tasting-option">
+                    <img src="{{GUIDED_TASTING_IMAGE}}" alt="Guided Wine Tasting">
+                    <div class="option-info">
+                        <h3>Guided Wine Tastings</h3>
+                        <p>Expert-led tastings exploring different regions and varietals</p>
+                        <div class="tasting-details">
+                            <span class="schedule">{{GUIDED_TASTING_SCHEDULE}}</span>
+                            <span class="duration">{{GUIDED_TASTING_DURATION}}</span>
+                            <span class="size">{{GUIDED_TASTING_MAX_SIZE}} guests maximum</span>
+                        </div>
+                        <div class="tasting-includes">
+                            <span>• {{GUIDED_TASTING_WINES}} wine samples</span>
+                            <span>• Expert sommelier guidance</span>
+                            <span>• Tasting notes and education</span>
+                            <span>• Paired small bites</span>
+                        </div>
+                        <span class="tasting-price">{{GUIDED_TASTING_PRICE}} per person</span>
+                    </div>
+                </div>
+
+                <div class="tasting-option">
+                    <img src="{{THEMED_TASTING_IMAGE}}" alt="Themed Wine Tasting">
+                    <div class="option-info">
+                        <h3>Themed Tastings</h3>
+                        <p>Monthly themed events exploring specific regions or styles</p>
+                        <div class="upcoming-themes">
+                            <div class="theme">
+                                <h4>{{UPCOMING_THEME_1_NAME}}</h4>
+                                <span class="theme-date">{{UPCOMING_THEME_1_DATE}}</span>
+                            </div>
+                            <div class="theme">
+                                <h4>{{UPCOMING_THEME_2_NAME}}</h4>
+                                <span class="theme-date">{{UPCOMING_THEME_2_DATE}}</span>
+                            </div>
+                            <div class="theme">
+                                <h4>{{UPCOMING_THEME_3_NAME}}</h4>
+                                <span class="theme-date">{{UPCOMING_THEME_3_DATE}}</span>
+                            </div>
+                        </div>
+                        <span class="tasting-price">{{THEMED_TASTING_PRICE}} per person</span>
+                    </div>
+                </div>
+
+                <div class="tasting-option">
+                    <img src="{{PRIVATE_TASTING_IMAGE}}" alt="Private Wine Tasting">
+                    <div class="option-info">
+                        <h3>Private Tastings</h3>
+                        <p>Customized wine experiences for groups and special occasions</p>
+                        <div class="private-options">
+                            <div class="private-package">
+                                <h4>Intimate Group</h4>
+                                <span>{{PRIVATE_INTIMATE_SIZE}} guests</span>
+                                <span>{{PRIVATE_INTIMATE_PRICE}}</span>
+                            </div>
+                            <div class="private-package">
+                                <h4>Corporate Event</h4>
+                                <span>{{PRIVATE_CORPORATE_SIZE}} guests</span>
+                                <span>{{PRIVATE_CORPORATE_PRICE}}</span>
+                            </div>
+                            <div class="private-package">
+                                <h4>Large Celebration</h4>
+                                <span>{{PRIVATE_LARGE_SIZE}} guests</span>
+                                <span>{{PRIVATE_LARGE_PRICE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wine-education">
+                <h3>Wine Education Series</h3>
+                <p>Deepen your wine knowledge with our educational programs</p>
+                <div class="education-courses">
+                    <div class="course">
+                        <h4>{{WINE_COURSE_1_NAME}}</h4>
+                        <p>{{WINE_COURSE_1_DESCRIPTION}}</p>
+                        <span class="course-schedule">{{WINE_COURSE_1_SCHEDULE}}</span>
+                        <span class="course-price">{{WINE_COURSE_1_PRICE}}</span>
+                    </div>
+                    <div class="course">
+                        <h4>{{WINE_COURSE_2_NAME}}</h4>
+                        <p>{{WINE_COURSE_2_DESCRIPTION}}</p>
+                        <span class="course-schedule">{{WINE_COURSE_2_SCHEDULE}}</span>
+                        <span class="course-price">{{WINE_COURSE_2_PRICE}}</span>
+                    </div>
+                    <div class="course">
+                        <h4>{{WINE_COURSE_3_NAME}}</h4>
+                        <p>{{WINE_COURSE_3_DESCRIPTION}}</p>
+                        <span class="course-schedule">{{WINE_COURSE_3_SCHEDULE}}</span>
+                        <span class="course-price">{{WINE_COURSE_3_PRICE}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="private-events" id="events">
+        <div class="container">
+            <h2>Private Events & Celebrations</h2>
+            <p class="events-subtitle">Elegant wine experiences for your special occasions</p>
+            <div class="event-spaces">
+                <div class="event-space">
+                    <img src="{{MAIN_DINING_IMAGE}}" alt="Main Dining Room">
+                    <div class="space-info">
+                        <h3>Main Dining Room</h3>
+                        <p>{{MAIN_DINING_DESCRIPTION}}</p>
+                        <div class="space-specs">
+                            <span class="capacity">{{MAIN_DINING_CAPACITY}} guests</span>
+                            <span class="style">{{MAIN_DINING_STYLE}}</span>
+                            <span class="features">{{MAIN_DINING_FEATURES}}</span>
+                        </div>
+                        <div class="space-amenities">
+                            <span>• {{MAIN_DINING_AMENITY_1}}</span>
+                            <span>• {{MAIN_DINING_AMENITY_2}}</span>
+                            <span>• {{MAIN_DINING_AMENITY_3}}</span>
+                            <span>• {{MAIN_DINING_AMENITY_4}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-space">
+                    <img src="{{WINE_CELLAR_IMAGE}}" alt="Wine Cellar">
+                    <div class="space-info">
+                        <h3>Wine Cellar Room</h3>
+                        <p>{{WINE_CELLAR_DESCRIPTION}}</p>
+                        <div class="space-specs">
+                            <span class="capacity">{{WINE_CELLAR_CAPACITY}} guests</span>
+                            <span class="style">{{WINE_CELLAR_STYLE}}</span>
+                            <span class="features">{{WINE_CELLAR_FEATURES}}</span>
+                        </div>
+                        <div class="space-amenities">
+                            <span>• {{WINE_CELLAR_AMENITY_1}}</span>
+                            <span>• {{WINE_CELLAR_AMENITY_2}}</span>
+                            <span>• {{WINE_CELLAR_AMENITY_3}}</span>
+                            <span>• {{WINE_CELLAR_AMENITY_4}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-space">
+                    <img src="{{TERRACE_IMAGE}}" alt="Outdoor Terrace">
+                    <div class="space-info">
+                        <h3>Outdoor Terrace</h3>
+                        <p>{{TERRACE_DESCRIPTION}}</p>
+                        <div class="space-specs">
+                            <span class="capacity">{{TERRACE_CAPACITY}} guests</span>
+                            <span class="style">{{TERRACE_STYLE}}</span>
+                            <span class="features">{{TERRACE_FEATURES}}</span>
+                        </div>
+                        <div class="space-amenities">
+                            <span>• {{TERRACE_AMENITY_1}}</span>
+                            <span>• {{TERRACE_AMENITY_2}}</span>
+                            <span>• {{TERRACE_AMENITY_3}}</span>
+                            <span>• {{TERRACE_AMENITY_4}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="event-packages">
+                <h3>Event Packages</h3>
+                <div class="packages-grid">
+                    <div class="package">
+                        <h4>{{EVENT_PACKAGE_1_NAME}}</h4>
+                        <p>{{EVENT_PACKAGE_1_DESCRIPTION}}</p>
+                        <span class="package-price">{{EVENT_PACKAGE_1_PRICE}}</span>
+                    </div>
+                    <div class="package">
+                        <h4>{{EVENT_PACKAGE_2_NAME}}</h4>
+                        <p>{{EVENT_PACKAGE_2_DESCRIPTION}}</p>
+                        <span class="package-price">{{EVENT_PACKAGE_2_PRICE}}</span>
+                    </div>
+                    <div class="package">
+                        <h4>{{EVENT_PACKAGE_3_NAME}}</h4>
+                        <p>{{EVENT_PACKAGE_3_DESCRIPTION}}</p>
+                        <span class="package-price">{{EVENT_PACKAGE_3_PRICE}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="wine-club" id="wine-club">
+        <div class="container">
+            <h2>Wine Club Membership</h2>
+            <p class="club-subtitle">Join our exclusive wine community for special perks and access</p>
+            <div class="membership-tiers">
+                <div class="tier">
+                    <h3>{{WINE_CLUB_TIER_1_NAME}}</h3>
+                    <div class="tier-price">{{WINE_CLUB_TIER_1_PRICE}}</div>
+                    <div class="tier-benefits">
+                        <span>• {{WINE_CLUB_TIER_1_BENEFIT_1}}</span>
+                        <span>• {{WINE_CLUB_TIER_1_BENEFIT_2}}</span>
+                        <span>• {{WINE_CLUB_TIER_1_BENEFIT_3}}</span>
+                        <span>• {{WINE_CLUB_TIER_1_BENEFIT_4}}</span>
+                    </div>
+                </div>
+                <div class="tier featured">
+                    <div class="featured-badge">Most Popular</div>
+                    <h3>{{WINE_CLUB_TIER_2_NAME}}</h3>
+                    <div class="tier-price">{{WINE_CLUB_TIER_2_PRICE}}</div>
+                    <div class="tier-benefits">
+                        <span>• {{WINE_CLUB_TIER_2_BENEFIT_1}}</span>
+                        <span>• {{WINE_CLUB_TIER_2_BENEFIT_2}}</span>
+                        <span>• {{WINE_CLUB_TIER_2_BENEFIT_3}}</span>
+                        <span>• {{WINE_CLUB_TIER_2_BENEFIT_4}}</span>
+                        <span>• {{WINE_CLUB_TIER_2_BENEFIT_5}}</span>
+                    </div>
+                </div>
+                <div class="tier premium">
+                    <h3>{{WINE_CLUB_TIER_3_NAME}}</h3>
+                    <div class="tier-price">{{WINE_CLUB_TIER_3_PRICE}}</div>
+                    <div class="tier-benefits">
+                        <span>• {{WINE_CLUB_TIER_3_BENEFIT_1}}</span>
+                        <span>• {{WINE_CLUB_TIER_3_BENEFIT_2}}</span>
+                        <span>• {{WINE_CLUB_TIER_3_BENEFIT_3}}</span>
+                        <span>• {{WINE_CLUB_TIER_3_BENEFIT_4}}</span>
+                        <span>• {{WINE_CLUB_TIER_3_BENEFIT_5}}</span>
+                        <span>• {{WINE_CLUB_TIER_3_BENEFIT_6}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-sommelier" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Our Wine Philosophy</h2>
+                    <p>{{RESTAURANT_PHILOSOPHY}}</p>
+                    <div class="sommelier-team">
+                        <div class="sommelier">
+                            <img src="{{HEAD_SOMMELIER_IMAGE}}" alt="{{HEAD_SOMMELIER_NAME}}">
+                            <div class="sommelier-info">
+                                <h3>{{HEAD_SOMMELIER_NAME}}</h3>
+                                <p class="title">{{HEAD_SOMMELIER_TITLE}}</p>
+                                <p>{{HEAD_SOMMELIER_BIO}}</p>
+                                <div class="certifications">
+                                    <span>{{HEAD_SOMMELIER_CERT_1}}</span>
+                                    <span>{{HEAD_SOMMELIER_CERT_2}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sommelier">
+                            <img src="{{ASSISTANT_SOMMELIER_IMAGE}}" alt="{{ASSISTANT_SOMMELIER_NAME}}">
+                            <div class="sommelier-info">
+                                <h3>{{ASSISTANT_SOMMELIER_NAME}}</h3>
+                                <p class="title">{{ASSISTANT_SOMMELIER_TITLE}}</p>
+                                <p>{{ASSISTANT_SOMMELIER_BIO}}</p>
+                                <div class="certifications">
+                                    <span>{{ASSISTANT_SOMMELIER_CERT_1}}</span>
+                                    <span>{{ASSISTANT_SOMMELIER_CERT_2}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-stats">
+                    <div class="stat">
+                        <h3>{{WINE_SELECTION_COUNT}}+</h3>
+                        <p>Curated Wines</p>
+                    </div>
+                    <div class="stat">
+                        <h3>{{WINE_REGIONS_COUNT}}</h3>
+                        <p>Wine Regions</p>
+                    </div>
+                    <div class="stat">
+                        <h3>{{YEARS_ESTABLISHED}}</h3>
+                        <p>Years Serving</p>
+                    </div>
+                    <div class="stat">
+                        <h3>{{WINE_AWARDS_COUNT}}</h3>
+                        <p>Wine Awards</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="reservations" id="reservations">
+        <div class="container">
+            <div class="reservation-content">
+                <h2>Reserve Your Table</h2>
+                <p>Experience our curated wine selection and artisan tapas in an intimate setting</p>
+                <form class="reservation-form">
+                    <div class="form-row">
+                        <input type="text" placeholder="Name" required>
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="tel" placeholder="Phone" required>
+                        <select required>
+                            <option value="">Party Size</option>
+                            <option value="2">2 Guests</option>
+                            <option value="3">3 Guests</option>
+                            <option value="4">4 Guests</option>
+                            <option value="5">5 Guests</option>
+                            <option value="6">6 Guests</option>
+                            <option value="7">7 Guests</option>
+                            <option value="8">8 Guests</option>
+                            <option value="8+">8+ Guests</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <input type="date" required>
+                        <select required>
+                            <option value="">Preferred Time</option>
+                            <option value="5:00">5:00 PM</option>
+                            <option value="5:30">5:30 PM</option>
+                            <option value="6:00">6:00 PM</option>
+                            <option value="6:30">6:30 PM</option>
+                            <option value="7:00">7:00 PM</option>
+                            <option value="7:30">7:30 PM</option>
+                            <option value="8:00">8:00 PM</option>
+                            <option value="8:30">8:30 PM</option>
+                            <option value="9:00">9:00 PM</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <select>
+                            <option value="">Special Occasion</option>
+                            <option value="anniversary">Anniversary</option>
+                            <option value="birthday">Birthday</option>
+                            <option value="date-night">Date Night</option>
+                            <option value="business">Business Dinner</option>
+                            <option value="wine-tasting">Wine Tasting Interest</option>
+                        </select>
+                        <select>
+                            <option value="">Seating Preference</option>
+                            <option value="wine-bar">Wine Bar</option>
+                            <option value="main-dining">Main Dining</option>
+                            <option value="terrace">Outdoor Terrace</option>
+                            <option value="no-preference">No Preference</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <textarea placeholder="Special requests, wine preferences, or dietary restrictions"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Request Reservation</button>
+                </form>
+                <div class="reservation-note">
+                    <p><strong>Wine Pairing:</strong> Ask about our sommelier-guided wine pairings for your meal</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>{{RESTAURANT_NAME}}</h3>
+                    <p>Sophisticated wine bar experience with Mediterranean tapas since {{YEAR_ESTABLISHED}}</p>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}">Instagram</a>
+                        <a href="{{TWITTER_URL}}">Twitter</a>
+                        <a href="{{WINE_ENTHUSIAST_URL}}">Wine Enthusiast</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Reservations</h4>
+                    <p>{{PHONE}}</p>
+                    <p>{{EMAIL}}</p>
+                    <p>{{RESERVATION_HOURS}}</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Wine Events</h4>
+                    <p>{{EVENTS_PHONE}}</p>
+                    <p>{{EVENTS_EMAIL}}</p>
+                    <p>Tastings {{GUIDED_TASTING_SCHEDULE}}</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Our Selection</h4>
+                    <p>{{WINE_SELECTION_COUNT}}+ curated wines</p>
+                    <p>{{WINE_REGIONS_COUNT}} regions represented</p>
+                    <p>Expert sommelier guidance</p>
+                    <p>Wine club memberships available</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; {{CURRENT_YEAR}} {{RESTAURANT_NAME}}. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Wine List PDF</a>
+                    <a href="#">Gift Cards</a>
+                    <a href="#">Wine Club Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

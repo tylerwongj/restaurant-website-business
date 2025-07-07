@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{FOOD_TRUCK_NAME}} - Mobile Street Food</title>
+    <meta name="description" content="{{FOOD_TRUCK_DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="mobile-theme">
+    <!-- Location Alert Banner -->
+    <div class="location-banner">
+        <div class="banner-content">
+            <span class="banner-icon">📍</span>
+            <span class="banner-text">NOW SERVING: {{CURRENT_LOCATION}} - {{TODAY_HOURS}}</span>
+            <a href="#tracker" class="banner-cta">Track Us</a>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav-truck">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="{{LOGO_URL}}" alt="{{FOOD_TRUCK_NAME}}" class="logo">
+                <div class="logo-text">
+                    <span class="logo-main">{{FOOD_TRUCK_NAME}}</span>
+                    <span class="logo-sub">{{FOOD_TRUCK_TAGLINE}}</span>
+                </div>
+            </div>
+            <div class="nav-menu">
+                <a href="#menu" class="nav-link">Menu</a>
+                <a href="#tracker" class="nav-link">Find Us</a>
+                <a href="#schedule" class="nav-link">Schedule</a>
+                <a href="#events" class="nav-link">Events</a>
+                <a href="#about" class="nav-link">Our Story</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <a href="#order" class="nav-cta">Order Now</a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-truck">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>{{HERO_TITLE}}</h1>
+                <p class="hero-subtitle">{{HERO_SUBTITLE}}</p>
+                <p class="hero-description">{{HERO_DESCRIPTION}}</p>
+                <div class="hero-features">
+                    <div class="feature">
+                        <span class="feature-icon">🚚</span>
+                        <span>{{FEATURE_1}}</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">🍔</span>
+                        <span>{{FEATURE_2}}</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">⚡</span>
+                        <span>{{FEATURE_3}}</span>
+                    </div>
+                </div>
+                <div class="hero-cta">
+                    <button class="btn-find-truck">Find Our Truck</button>
+                    <a href="#menu" class="btn-view-menu">View Menu</a>
+                </div>
+                <div class="current-status">
+                    <div class="status-indicator active"></div>
+                    <span class="status-text">{{CURRENT_STATUS}}</span>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="{{HERO_TRUCK_IMAGE}}" alt="{{FOOD_TRUCK_NAME}} Food Truck" class="truck-hero">
+                <div class="hero-overlay">
+                    <span class="serving-text">Serving Now</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Tracker -->
+    <section id="tracker" class="live-tracker">
+        <div class="container">
+            <h2 class="section-title">Find Our Truck</h2>
+            <div class="tracker-content">
+                <div class="current-location">
+                    <div class="location-card featured">
+                        <div class="location-badge">NOW OPEN</div>
+                        <div class="location-info">
+                            <h3>{{CURRENT_LOCATION_NAME}}</h3>
+                            <p class="location-address">{{CURRENT_LOCATION_ADDRESS}}</p>
+                            <p class="location-hours">{{CURRENT_LOCATION_HOURS}}</p>
+                            <div class="location-details">
+                                <span class="detail-item">{{CURRENT_LOCATION_DETAIL_1}}</span>
+                                <span class="detail-item">{{CURRENT_LOCATION_DETAIL_2}}</span>
+                            </div>
+                        </div>
+                        <div class="location-actions">
+                            <button class="btn-directions">Get Directions</button>
+                            <button class="btn-call-ahead">Call Ahead</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="upcoming-locations">
+                    <h3>Upcoming Stops</h3>
+                    <div class="upcoming-list">
+                        <div class="upcoming-stop">
+                            <div class="stop-time">{{UPCOMING_1_TIME}}</div>
+                            <div class="stop-info">
+                                <h4>{{UPCOMING_1_LOCATION}}</h4>
+                                <p>{{UPCOMING_1_ADDRESS}}</p>
+                                <span class="stop-duration">{{UPCOMING_1_DURATION}}</span>
+                            </div>
+                        </div>
+                        <div class="upcoming-stop">
+                            <div class="stop-time">{{UPCOMING_2_TIME}}</div>
+                            <div class="stop-info">
+                                <h4>{{UPCOMING_2_LOCATION}}</h4>
+                                <p>{{UPCOMING_2_ADDRESS}}</p>
+                                <span class="stop-duration">{{UPCOMING_2_DURATION}}</span>
+                            </div>
+                        </div>
+                        <div class="upcoming-stop">
+                            <div class="stop-time">{{UPCOMING_3_TIME}}</div>
+                            <div class="stop-info">
+                                <h4>{{UPCOMING_3_LOCATION}}</h4>
+                                <p>{{UPCOMING_3_ADDRESS}}</p>
+                                <span class="stop-duration">{{UPCOMING_3_DURATION}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tracker-features">
+                <div class="tracker-feature">
+                    <span class="tracker-icon">📱</span>
+                    <h4>Real-Time Updates</h4>
+                    <p>{{TRACKER_FEATURE_1_DESCRIPTION}}</p>
+                </div>
+                <div class="tracker-feature">
+                    <span class="tracker-icon">🗺️</span>
+                    <h4>GPS Location</h4>
+                    <p>{{TRACKER_FEATURE_2_DESCRIPTION}}</p>
+                </div>
+                <div class="tracker-feature">
+                    <span class="tracker-icon">🔔</span>
+                    <h4>Arrival Alerts</h4>
+                    <p>{{TRACKER_FEATURE_3_DESCRIPTION}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu-section">
+        <div class="container">
+            <h2 class="section-title">Street Food Menu</h2>
+            <div class="menu-categories">
+                <!-- Signature Items -->
+                <div class="menu-category">
+                    <div class="category-header">
+                        <h3>Signature Street Eats</h3>
+                        <p>Our most popular mobile creations</p>
+                    </div>
+                    <div class="menu-items">
+                        <div class="menu-item featured">
+                            <div class="item-badge">Bestseller</div>
+                            <img src="{{SIGNATURE_1_IMAGE}}" alt="{{SIGNATURE_1_NAME}}" class="item-image">
+                            <div class="item-content">
+                                <h4>{{SIGNATURE_1_NAME}}</h4>
+                                <p>{{SIGNATURE_1_DESCRIPTION}}</p>
+                                <div class="item-details">
+                                    <span class="prep-time">{{SIGNATURE_1_PREP_TIME}}</span>
+                                    <span class="spice-level">{{SIGNATURE_1_SPICE}}</span>
+                                    <span class="dietary">{{SIGNATURE_1_DIETARY}}</span>
+                                </div>
+                                <div class="item-pricing">
+                                    <span class="price">{{SIGNATURE_1_PRICE}}</span>
+                                    <button class="btn-add-item">Add to Order</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <img src="{{SIGNATURE_2_IMAGE}}" alt="{{SIGNATURE_2_NAME}}" class="item-image">
+                            <div class="item-content">
+                                <h4>{{SIGNATURE_2_NAME}}</h4>
+                                <p>{{SIGNATURE_2_DESCRIPTION}}</p>
+                                <div class="item-details">
+                                    <span class="prep-time">{{SIGNATURE_2_PREP_TIME}}</span>
+                                    <span class="spice-level">{{SIGNATURE_2_SPICE}}</span>
+                                    <span class="dietary">{{SIGNATURE_2_DIETARY}}</span>
+                                </div>
+                                <div class="item-pricing">
+                                    <span class="price">{{SIGNATURE_2_PRICE}}</span>
+                                    <button class="btn-add-item">Add to Order</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <img src="{{SIGNATURE_3_IMAGE}}" alt="{{SIGNATURE_3_NAME}}" class="item-image">
+                            <div class="item-content">
+                                <h4>{{SIGNATURE_3_NAME}}</h4>
+                                <p>{{SIGNATURE_3_DESCRIPTION}}</p>
+                                <div class="item-details">
+                                    <span class="prep-time">{{SIGNATURE_3_PREP_TIME}}</span>
+                                    <span class="spice-level">{{SIGNATURE_3_SPICE}}</span>
+                                    <span class="dietary">{{SIGNATURE_3_DIETARY}}</span>
+                                </div>
+                                <div class="item-pricing">
+                                    <span class="price">{{SIGNATURE_3_PRICE}}</span>
+                                    <button class="btn-add-item">Add to Order</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Bites -->
+                <div class="menu-category">
+                    <div class="category-header">
+                        <h3>Quick Bites</h3>
+                        <p>Fast and delicious on-the-go options</p>
+                    </div>
+                    <div class="menu-items grid">
+                        <div class="menu-item compact">
+                            <h4>{{QUICK_BITE_1_NAME}}</h4>
+                            <p>{{QUICK_BITE_1_DESCRIPTION}}</p>
+                            <div class="item-pricing compact">
+                                <span class="price">{{QUICK_BITE_1_PRICE}}</span>
+                                <button class="btn-add-item small">Add</button>
+                            </div>
+                        </div>
+                        <div class="menu-item compact">
+                            <h4>{{QUICK_BITE_2_NAME}}</h4>
+                            <p>{{QUICK_BITE_2_DESCRIPTION}}</p>
+                            <div class="item-pricing compact">
+                                <span class="price">{{QUICK_BITE_2_PRICE}}</span>
+                                <button class="btn-add-item small">Add</button>
+                            </div>
+                        </div>
+                        <div class="menu-item compact">
+                            <h4>{{QUICK_BITE_3_NAME}}</h4>
+                            <p>{{QUICK_BITE_3_DESCRIPTION}}</p>
+                            <div class="item-pricing compact">
+                                <span class="price">{{QUICK_BITE_3_PRICE}}</span>
+                                <button class="btn-add-item small">Add</button>
+                            </div>
+                        </div>
+                        <div class="menu-item compact">
+                            <h4>{{QUICK_BITE_4_NAME}}</h4>
+                            <p>{{QUICK_BITE_4_DESCRIPTION}}</p>
+                            <div class="item-pricing compact">
+                                <span class="price">{{QUICK_BITE_4_PRICE}}</span>
+                                <button class="btn-add-item small">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Beverages -->
+                <div class="menu-category">
+                    <div class="category-header">
+                        <h3>Drinks & Refreshments</h3>
+                        <p>Cool drinks and hot beverages</p>
+                    </div>
+                    <div class="menu-items grid">
+                        <div class="menu-item compact beverage">
+                            <h4>{{BEVERAGE_1_NAME}}</h4>
+                            <p>{{BEVERAGE_1_DESCRIPTION}}</p>
+                            <div class="item-pricing compact">
+                                <span class="price">{{BEVERAGE_1_PRICE}}</span>
+                                <button class="btn-add-item small">Add</button>
+                            </div>
+                        </div>
+                        <div class="menu-item compact beverage">
+                            <h4>{{BEVERAGE_2_NAME}}</h4>
+                            <p>{{BEVERAGE_2_DESCRIPTION}}</p>
+                            <div class="item-pricing compact">
+                                <span class="price">{{BEVERAGE_2_PRICE}}</span>
+                                <button class="btn-add-item small">Add</button>
+                            </div>
+                        </div>
+                        <div class="menu-item compact beverage">
+                            <h4>{{BEVERAGE_3_NAME}}</h4>
+                            <p>{{BEVERAGE_3_DESCRIPTION}}</p>
+                            <div class="item-pricing compact">
+                                <span class="price">{{BEVERAGE_3_PRICE}}</span>
+                                <button class="btn-add-item small">Add</button>
+                            </div>
+                        </div>
+                        <div class="menu-item compact beverage">
+                            <h4>{{BEVERAGE_4_NAME}}</h4>
+                            <p>{{BEVERAGE_4_DESCRIPTION}}</p>
+                            <div class="item-pricing compact">
+                                <span class="price">{{BEVERAGE_4_PRICE}}</span>
+                                <button class="btn-add-item small">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Weekly Schedule -->
+    <section id="schedule" class="schedule-section">
+        <div class="container">
+            <h2 class="section-title">Weekly Schedule</h2>
+            <div class="schedule-grid">
+                <div class="schedule-day">
+                    <div class="day-header">
+                        <h3>Monday</h3>
+                        <span class="day-status">{{MONDAY_STATUS}}</span>
+                    </div>
+                    <div class="day-locations">
+                        <div class="location-stop">
+                            <span class="stop-time">{{MONDAY_TIME_1}}</span>
+                            <span class="stop-location">{{MONDAY_LOCATION_1}}</span>
+                        </div>
+                        <div class="location-stop">
+                            <span class="stop-time">{{MONDAY_TIME_2}}</span>
+                            <span class="stop-location">{{MONDAY_LOCATION_2}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="schedule-day">
+                    <div class="day-header">
+                        <h3>Tuesday</h3>
+                        <span class="day-status">{{TUESDAY_STATUS}}</span>
+                    </div>
+                    <div class="day-locations">
+                        <div class="location-stop">
+                            <span class="stop-time">{{TUESDAY_TIME_1}}</span>
+                            <span class="stop-location">{{TUESDAY_LOCATION_1}}</span>
+                        </div>
+                        <div class="location-stop">
+                            <span class="stop-time">{{TUESDAY_TIME_2}}</span>
+                            <span class="stop-location">{{TUESDAY_LOCATION_2}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="schedule-day">
+                    <div class="day-header">
+                        <h3>Wednesday</h3>
+                        <span class="day-status">{{WEDNESDAY_STATUS}}</span>
+                    </div>
+                    <div class="day-locations">
+                        <div class="location-stop">
+                            <span class="stop-time">{{WEDNESDAY_TIME_1}}</span>
+                            <span class="stop-location">{{WEDNESDAY_LOCATION_1}}</span>
+                        </div>
+                        <div class="location-stop">
+                            <span class="stop-time">{{WEDNESDAY_TIME_2}}</span>
+                            <span class="stop-location">{{WEDNESDAY_LOCATION_2}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="schedule-day">
+                    <div class="day-header">
+                        <h3>Thursday</h3>
+                        <span class="day-status">{{THURSDAY_STATUS}}</span>
+                    </div>
+                    <div class="day-locations">
+                        <div class="location-stop">
+                            <span class="stop-time">{{THURSDAY_TIME_1}}</span>
+                            <span class="stop-location">{{THURSDAY_LOCATION_1}}</span>
+                        </div>
+                        <div class="location-stop">
+                            <span class="stop-time">{{THURSDAY_TIME_2}}</span>
+                            <span class="stop-location">{{THURSDAY_LOCATION_2}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="schedule-day">
+                    <div class="day-header">
+                        <h3>Friday</h3>
+                        <span class="day-status">{{FRIDAY_STATUS}}</span>
+                    </div>
+                    <div class="day-locations">
+                        <div class="location-stop">
+                            <span class="stop-time">{{FRIDAY_TIME_1}}</span>
+                            <span class="stop-location">{{FRIDAY_LOCATION_1}}</span>
+                        </div>
+                        <div class="location-stop">
+                            <span class="stop-time">{{FRIDAY_TIME_2}}</span>
+                            <span class="stop-location">{{FRIDAY_LOCATION_2}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="schedule-day weekend">
+                    <div class="day-header">
+                        <h3>Saturday</h3>
+                        <span class="day-status">{{SATURDAY_STATUS}}</span>
+                    </div>
+                    <div class="day-locations">
+                        <div class="location-stop">
+                            <span class="stop-time">{{SATURDAY_TIME_1}}</span>
+                            <span class="stop-location">{{SATURDAY_LOCATION_1}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="schedule-day weekend">
+                    <div class="day-header">
+                        <h3>Sunday</h3>
+                        <span class="day-status">{{SUNDAY_STATUS}}</span>
+                    </div>
+                    <div class="day-locations">
+                        <div class="location-stop">
+                            <span class="stop-time">{{SUNDAY_TIME_1}}</span>
+                            <span class="stop-location">{{SUNDAY_LOCATION_1}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="schedule-note">
+                <p>{{SCHEDULE_NOTE}}</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events & Catering -->
+    <section id="events" class="events-section">
+        <div class="container">
+            <div class="events-content">
+                <div class="events-text">
+                    <h2>Private Events & Catering</h2>
+                    <p class="events-intro">{{EVENTS_INTRO}}</p>
+                    <p>{{EVENTS_DESCRIPTION}}</p>
+                    <div class="event-types">
+                        <div class="event-type">
+                            <h4>{{EVENT_TYPE_1_NAME}}</h4>
+                            <p>{{EVENT_TYPE_1_DESCRIPTION}}</p>
+                            <div class="event-details">
+                                <span class="event-capacity">{{EVENT_TYPE_1_CAPACITY}}</span>
+                                <span class="event-notice">{{EVENT_TYPE_1_NOTICE}}</span>
+                            </div>
+                        </div>
+                        <div class="event-type featured">
+                            <div class="popular-badge">Most Popular</div>
+                            <h4>{{EVENT_TYPE_2_NAME}}</h4>
+                            <p>{{EVENT_TYPE_2_DESCRIPTION}}</p>
+                            <div class="event-details">
+                                <span class="event-capacity">{{EVENT_TYPE_2_CAPACITY}}</span>
+                                <span class="event-notice">{{EVENT_TYPE_2_NOTICE}}</span>
+                            </div>
+                        </div>
+                        <div class="event-type">
+                            <h4>{{EVENT_TYPE_3_NAME}}</h4>
+                            <p>{{EVENT_TYPE_3_DESCRIPTION}}</p>
+                            <div class="event-details">
+                                <span class="event-capacity">{{EVENT_TYPE_3_CAPACITY}}</span>
+                                <span class="event-notice">{{EVENT_TYPE_3_NOTICE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="event-packages">
+                        <h4>Popular Packages</h4>
+                        <div class="package">
+                            <h5>{{EVENT_PACKAGE_1_NAME}}</h5>
+                            <p>{{EVENT_PACKAGE_1_DESCRIPTION}}</p>
+                            <span class="package-price">{{EVENT_PACKAGE_1_PRICE}}</span>
+                        </div>
+                        <div class="package">
+                            <h5>{{EVENT_PACKAGE_2_NAME}}</h5>
+                            <p>{{EVENT_PACKAGE_2_DESCRIPTION}}</p>
+                            <span class="package-price">{{EVENT_PACKAGE_2_PRICE}}</span>
+                        </div>
+                    </div>
+                    <a href="#event-inquiry" class="btn-event-inquiry">Book Event</a>
+                </div>
+                <div class="events-image">
+                    <img src="{{EVENTS_TRUCK_IMAGE}}" alt="Food Truck at Event">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Our Mobile Story</h2>
+                    <p>{{FOOD_TRUCK_STORY}}</p>
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <div class="highlight-icon">🚚</div>
+                            <h4>{{HIGHLIGHT_1_TITLE}}</h4>
+                            <p>{{HIGHLIGHT_1_DESCRIPTION}}</p>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">👨‍🍳</div>
+                            <h4>{{HIGHLIGHT_2_TITLE}}</h4>
+                            <p>{{HIGHLIGHT_2_DESCRIPTION}}</p>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">🌟</div>
+                            <h4>{{HIGHLIGHT_3_TITLE}}</h4>
+                            <p>{{HIGHLIGHT_3_DESCRIPTION}}</p>
+                        </div>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h3>{{MILES_TRAVELED}}+</h3>
+                            <p>Miles Traveled</p>
+                        </div>
+                        <div class="stat">
+                            <h3>{{CUSTOMERS_SERVED}}</h3>
+                            <p>Happy Customers</p>
+                        </div>
+                        <div class="stat">
+                            <h3>{{EVENTS_CATERED}}</h3>
+                            <p>Events Catered</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="{{TRUCK_TEAM_IMAGE}}" alt="Food Truck Team">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Social -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-details">
+                    <h2>Stay Connected</h2>
+                    <div class="contact-info">
+                        <div class="info-item">
+                            <h3>Follow Our Journey</h3>
+                            <p>{{SOCIAL_DESCRIPTION}}</p>
+                            <div class="social-links">
+                                <a href="{{FACEBOOK_URL}}" class="social-link facebook">Facebook</a>
+                                <a href="{{INSTAGRAM_URL}}" class="social-link instagram">Instagram</a>
+                                <a href="{{TWITTER_URL}}" class="social-link twitter">Twitter</a>
+                                <a href="{{TIKTOK_URL}}" class="social-link tiktok">TikTok</a>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <h3>Contact Info</h3>
+                            <p>Phone: <a href="tel:{{FOOD_TRUCK_PHONE}}">{{FOOD_TRUCK_PHONE}}</a></p>
+                            <p>Email: <a href="mailto:{{FOOD_TRUCK_EMAIL}}">{{FOOD_TRUCK_EMAIL}}</a></p>
+                            <p>Text Updates: <a href="sms:{{SMS_NUMBER}}">{{SMS_NUMBER}}</a></p>
+                        </div>
+                        <div class="info-item">
+                            <h3>Notifications</h3>
+                            <p>{{NOTIFICATIONS_DESCRIPTION}}</p>
+                            <button class="btn-notifications">Enable Alerts</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form class="truck-contact-form">
+                        <div class="form-group">
+                            <label for="contact-type">Message Type</label>
+                            <select id="contact-type" name="type" required>
+                                <option value="">Select Type</option>
+                                <option value="general">General Question</option>
+                                <option value="catering">Catering Inquiry</option>
+                                <option value="location">Location Request</option>
+                                <option value="feedback">Feedback</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contact-name">Name</label>
+                                <input type="text" id="contact-name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-phone">Phone</label>
+                                <input type="tel" id="contact-phone" name="phone">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">Email</label>
+                            <input type="email" id="contact-email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-message">Message</label>
+                            <textarea id="contact-message" name="message" placeholder="Tell us what's on your mind..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Section -->
+    <section id="order" class="order-section">
+        <div class="container">
+            <div class="order-content">
+                <div class="order-header">
+                    <h2>Order for Pickup</h2>
+                    <p>{{ORDER_DESCRIPTION}}</p>
+                </div>
+                
+                <div class="order-options">
+                    <div class="order-option">
+                        <div class="option-icon">📱</div>
+                        <h4>Call Ahead</h4>
+                        <p>Call our truck directly for fastest service</p>
+                        <a href="tel:{{FOOD_TRUCK_PHONE}}" class="btn btn-primary">{{FOOD_TRUCK_PHONE}}</a>
+                    </div>
+                    <div class="order-option featured">
+                        <div class="popular-badge">Fastest</div>
+                        <div class="option-icon">💨</div>
+                        <h4>Order at Truck</h4>
+                        <p>Come to our current location and order in person</p>
+                        <button class="btn btn-primary btn-find-location">Find Our Location</button>
+                    </div>
+                    <div class="order-option">
+                        <div class="option-icon">📧</div>
+                        <h4>Pre-Order</h4>
+                        <p>Submit your order for scheduled pickup</p>
+                        <button class="btn btn-outline btn-pre-order">Pre-Order Form</button>
+                    </div>
+                </div>
+                
+                <div class="order-notes">
+                    <h4>Order Guidelines</h4>
+                    <ul>
+                        <li>{{ORDER_GUIDELINE_1}}</li>
+                        <li>{{ORDER_GUIDELINE_2}}</li>
+                        <li>{{ORDER_GUIDELINE_3}}</li>
+                        <li>{{ORDER_GUIDELINE_4}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-truck">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section main">
+                    <h3>{{FOOD_TRUCK_NAME}}</h3>
+                    <p>{{FOOTER_DESCRIPTION}}</p>
+                    <div class="contact-info">
+                        <p>{{FOOD_TRUCK_PHONE}}</p>
+                        <p>{{FOOD_TRUCK_EMAIL}}</p>
+                    </div>
+                    <div class="footer-social">
+                        <a href="{{FACEBOOK_URL}}" target="_blank" aria-label="Facebook">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}" target="_blank" aria-label="Instagram">Instagram</a>
+                        <a href="{{TWITTER_URL}}" target="_blank" aria-label="Twitter">Twitter</a>
+                        <a href="{{TIKTOK_URL}}" target="_blank" aria-label="TikTok">TikTok</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Find Us</h4>
+                    <ul>
+                        <li><a href="#tracker">Live Tracker</a></li>
+                        <li><a href="#schedule">Weekly Schedule</a></li>
+                        <li><a href="#notifications">Location Alerts</a></li>
+                        <li><a href="#map">Route Map</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="#signature">Signature Items</a></li>
+                        <li><a href="#quick-bites">Quick Bites</a></li>
+                        <li><a href="#beverages">Drinks</a></li>
+                        <li><a href="#specials">Daily Specials</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#events">Private Events</a></li>
+                        <li><a href="#catering">Catering</a></li>
+                        <li><a href="#corporate">Corporate Lunch</a></li>
+                        <li><a href="#festivals">Festival Booking</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; {{CURRENT_YEAR}} {{FOOD_TRUCK_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

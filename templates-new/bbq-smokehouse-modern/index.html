@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Modern BBQ Smokehouse</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="bbq-smokehouse-theme">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+                <div class="logo-text">
+                    <h1>{{RESTAURANT_NAME}}</h1>
+                    <span class="tagline">Slow Smoked • Wood Fired • Texas Style</span>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#smoking">The Pit</a></li>
+                <li><a href="#menu">BBQ Menu</a></li>
+                <li><a href="#platters">Platters</a></li>
+                <li><a href="#sides">Sides & Sauces</a></li>
+                <li><a href="#catering">Catering</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#order">Order</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#order" class="btn btn-primary">Order Online</a>
+                <a href="tel:{{PHONE}}" class="phone-link">{{PHONE}}</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <video autoplay muted loop>
+                <source src="{{HERO_VIDEO_URL}}" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h2>Real BBQ. Real Smoke. Real Good.</h2>
+            <p class="hero-subtitle">{{HERO_DESCRIPTION}}</p>
+            <div class="hero-features">
+                <div class="feature">
+                    <span class="feature-icon">🔥</span>
+                    <span>{{SMOKING_HOURS}} Hour Smoke</span>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">🪵</span>
+                    <span>{{WOOD_TYPES}} Wood Varieties</span>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">🥩</span>
+                    <span>{{MEAT_TYPES}}+ Smoked Meats</span>
+                </div>
+            </div>
+            <div class="hero-buttons">
+                <a href="#menu" class="btn btn-hero-primary">View BBQ Menu</a>
+                <a href="#order" class="btn btn-hero-secondary">Order Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Daily Smoke Report -->
+    <section class="daily-smoke">
+        <div class="container">
+            <div class="smoke-content">
+                <div class="smoke-text">
+                    <h3>Today's Smoke Report</h3>
+                    <h4>{{TODAYS_SPECIAL_MEAT}}</h4>
+                    <p>{{SMOKE_REPORT_DESCRIPTION}}</p>
+                </div>
+                <div class="smoke-details">
+                    <div class="smoke-stat">
+                        <span class="stat-number">{{SMOKE_TEMP}}°F</span>
+                        <span class="stat-label">Pit Temperature</span>
+                    </div>
+                    <div class="smoke-stat">
+                        <span class="stat-number">{{HOURS_SMOKING}}</span>
+                        <span class="stat-label">Hours Smoking</span>
+                    </div>
+                    <div class="smoke-stat">
+                        <span class="stat-number">{{WOOD_TYPE_TODAY}}</span>
+                        <span class="stat-label">Wood Type</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Pit Section -->
+    <section id="smoking" class="pit-section">
+        <div class="container">
+            <div class="pit-content">
+                <div class="pit-text">
+                    <h2>The Art of Low & Slow</h2>
+                    <p>{{PIT_DESCRIPTION}}</p>
+                    <div class="pit-process">
+                        <div class="process-step">
+                            <div class="step-number">1</div>
+                            <h4>Season & Rub</h4>
+                            <p>{{STEP_1_DESCRIPTION}}</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">2</div>
+                            <h4>Fire the Pit</h4>
+                            <p>{{STEP_2_DESCRIPTION}}</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">3</div>
+                            <h4>Low & Slow</h4>
+                            <p>{{STEP_3_DESCRIPTION}}</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">4</div>
+                            <h4>Rest & Slice</h4>
+                            <p>{{STEP_4_DESCRIPTION}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pit-image">
+                    <img src="{{PIT_IMAGE}}" alt="BBQ Pit">
+                    <div class="pit-stats">
+                        <div class="stat">
+                            <span class="number">{{PIT_CAPACITY}}</span>
+                            <span class="label">Lbs Capacity</span>
+                        </div>
+                        <div class="stat">
+                            <span class="number">{{YEARS_SEASONED}}</span>
+                            <span class="label">Years Seasoned</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BBQ Menu -->
+    <section id="menu" class="bbq-menu">
+        <div class="container">
+            <div class="menu-header">
+                <h2>Smoked to Perfection</h2>
+                <p>{{MENU_DESCRIPTION}}</p>
+            </div>
+            
+            <div class="menu-sections">
+                <!-- By the Pound -->
+                <div class="menu-section">
+                    <h3>By the Pound</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>{{BRISKET_NAME}}</h4>
+                                <p>{{BRISKET_DESCRIPTION}}</p>
+                                <div class="smoking-info">
+                                    <span class="smoke-time">{{BRISKET_SMOKE_TIME}} hours</span>
+                                    <span class="wood-type">{{BRISKET_WOOD}}</span>
+                                </div>
+                            </div>
+                            <div class="item-pricing">
+                                <span class="price">{{BRISKET_PRICE_LB}}</span>
+                                <span class="unit">per lb</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>{{PULLED_PORK_NAME}}</h4>
+                                <p>{{PULLED_PORK_DESCRIPTION}}</p>
+                                <div class="smoking-info">
+                                    <span class="smoke-time">{{PULLED_PORK_SMOKE_TIME}} hours</span>
+                                    <span class="wood-type">{{PULLED_PORK_WOOD}}</span>
+                                </div>
+                            </div>
+                            <div class="item-pricing">
+                                <span class="price">{{PULLED_PORK_PRICE_LB}}</span>
+                                <span class="unit">per lb</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>{{RIBS_NAME}}</h4>
+                                <p>{{RIBS_DESCRIPTION}}</p>
+                                <div class="smoking-info">
+                                    <span class="smoke-time">{{RIBS_SMOKE_TIME}} hours</span>
+                                    <span class="wood-type">{{RIBS_WOOD}}</span>
+                                </div>
+                            </div>
+                            <div class="item-pricing">
+                                <span class="price">{{RIBS_PRICE_LB}}</span>
+                                <span class="unit">per lb</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>{{CHICKEN_NAME}}</h4>
+                                <p>{{CHICKEN_DESCRIPTION}}</p>
+                                <div class="smoking-info">
+                                    <span class="smoke-time">{{CHICKEN_SMOKE_TIME}} hours</span>
+                                    <span class="wood-type">{{CHICKEN_WOOD}}</span>
+                                </div>
+                            </div>
+                            <div class="item-pricing">
+                                <span class="price">{{CHICKEN_PRICE_LB}}</span>
+                                <span class="unit">per lb</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>{{SAUSAGE_NAME}}</h4>
+                                <p>{{SAUSAGE_DESCRIPTION}}</p>
+                                <div class="smoking-info">
+                                    <span class="smoke-time">{{SAUSAGE_SMOKE_TIME}} hours</span>
+                                    <span class="wood-type">{{SAUSAGE_WOOD}}</span>
+                                </div>
+                            </div>
+                            <div class="item-pricing">
+                                <span class="price">{{SAUSAGE_PRICE_LB}}</span>
+                                <span class="unit">per lb</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sandwiches -->
+                <div class="menu-section">
+                    <h3>BBQ Sandwiches</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>{{BRISKET_SANDWICH_NAME}}</h4>
+                                <p>{{BRISKET_SANDWICH_DESCRIPTION}}</p>
+                            </div>
+                            <span class="item-price">{{BRISKET_SANDWICH_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>{{PULLED_PORK_SANDWICH_NAME}}</h4>
+                                <p>{{PULLED_PORK_SANDWICH_DESCRIPTION}}</p>
+                            </div>
+                            <span class="item-price">{{PULLED_PORK_SANDWICH_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>{{CHICKEN_SANDWICH_NAME}}</h4>
+                                <p>{{CHICKEN_SANDWICH_DESCRIPTION}}</p>
+                            </div>
+                            <span class="item-price">{{CHICKEN_SANDWICH_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Specialty Items -->
+                <div class="menu-section">
+                    <h3>Pit Specialties</h3>
+                    <div class="menu-items">
+                        <div class="menu-item featured">
+                            <div class="item-details">
+                                <h4>{{BEEF_RIB_NAME}}</h4>
+                                <p>{{BEEF_RIB_DESCRIPTION}}</p>
+                                <div class="smoking-info">
+                                    <span class="smoke-time">{{BEEF_RIB_SMOKE_TIME}} hours</span>
+                                    <span class="wood-type">{{BEEF_RIB_WOOD}}</span>
+                                </div>
+                            </div>
+                            <span class="item-price">{{BEEF_RIB_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>{{BURNT_ENDS_NAME}}</h4>
+                                <p>{{BURNT_ENDS_DESCRIPTION}}</p>
+                            </div>
+                            <span class="item-price">{{BURNT_ENDS_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>{{TURKEY_BREAST_NAME}}</h4>
+                                <p>{{TURKEY_BREAST_DESCRIPTION}}</p>
+                            </div>
+                            <span class="item-price">{{TURKEY_BREAST_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BBQ Platters -->
+    <section id="platters" class="platters-section">
+        <div class="container">
+            <div class="platters-header">
+                <h2>BBQ Platters</h2>
+                <p>{{PLATTERS_DESCRIPTION}}</p>
+            </div>
+            
+            <div class="platters-grid">
+                <div class="platter-card">
+                    <div class="platter-image">
+                        <img src="{{PITMASTER_PLATTER_IMAGE}}" alt="Pitmaster Platter">
+                    </div>
+                    <div class="platter-content">
+                        <h3>{{PITMASTER_PLATTER_NAME}}</h3>
+                        <p>{{PITMASTER_PLATTER_DESCRIPTION}}</p>
+                        <div class="platter-includes">
+                            <h4>Includes:</h4>
+                            <ul>
+                                <li>{{PITMASTER_ITEM_1}}</li>
+                                <li>{{PITMASTER_ITEM_2}}</li>
+                                <li>{{PITMASTER_ITEM_3}}</li>
+                                <li>{{PITMASTER_ITEM_4}}</li>
+                                <li>{{PITMASTER_ITEM_5}}</li>
+                            </ul>
+                        </div>
+                        <div class="platter-price">
+                            <span class="price">{{PITMASTER_PLATTER_PRICE}}</span>
+                            <span class="serves">Serves {{PITMASTER_SERVES}} people</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="platter-card">
+                    <div class="platter-image">
+                        <img src="{{FAMILY_PLATTER_IMAGE}}" alt="Family Platter">
+                    </div>
+                    <div class="platter-content">
+                        <h3>{{FAMILY_PLATTER_NAME}}</h3>
+                        <p>{{FAMILY_PLATTER_DESCRIPTION}}</p>
+                        <div class="platter-includes">
+                            <h4>Includes:</h4>
+                            <ul>
+                                <li>{{FAMILY_ITEM_1}}</li>
+                                <li>{{FAMILY_ITEM_2}}</li>
+                                <li>{{FAMILY_ITEM_3}}</li>
+                                <li>{{FAMILY_ITEM_4}}</li>
+                            </ul>
+                        </div>
+                        <div class="platter-price">
+                            <span class="price">{{FAMILY_PLATTER_PRICE}}</span>
+                            <span class="serves">Serves {{FAMILY_SERVES}} people</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="platter-card">
+                    <div class="platter-image">
+                        <img src="{{COUPLES_PLATTER_IMAGE}}" alt="Couples Platter">
+                    </div>
+                    <div class="platter-content">
+                        <h3>{{COUPLES_PLATTER_NAME}}</h3>
+                        <p>{{COUPLES_PLATTER_DESCRIPTION}}</p>
+                        <div class="platter-includes">
+                            <h4>Includes:</h4>
+                            <ul>
+                                <li>{{COUPLES_ITEM_1}}</li>
+                                <li>{{COUPLES_ITEM_2}}</li>
+                                <li>{{COUPLES_ITEM_3}}</li>
+                                <li>{{COUPLES_ITEM_4}}</li>
+                            </ul>
+                        </div>
+                        <div class="platter-price">
+                            <span class="price">{{COUPLES_PLATTER_PRICE}}</span>
+                            <span class="serves">Serves {{COUPLES_SERVES}} people</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sides & Sauces -->
+    <section id="sides" class="sides-section">
+        <div class="container">
+            <div class="sides-content">
+                <div class="sides-menu">
+                    <h2>Classic Sides</h2>
+                    <div class="sides-grid">
+                        <div class="side-item">
+                            <h4>{{SIDE_1_NAME}}</h4>
+                            <p>{{SIDE_1_DESCRIPTION}}</p>
+                            <span class="price">{{SIDE_1_PRICE}}</span>
+                        </div>
+                        <div class="side-item">
+                            <h4>{{SIDE_2_NAME}}</h4>
+                            <p>{{SIDE_2_DESCRIPTION}}</p>
+                            <span class="price">{{SIDE_2_PRICE}}</span>
+                        </div>
+                        <div class="side-item">
+                            <h4>{{SIDE_3_NAME}}</h4>
+                            <p>{{SIDE_3_DESCRIPTION}}</p>
+                            <span class="price">{{SIDE_3_PRICE}}</span>
+                        </div>
+                        <div class="side-item">
+                            <h4>{{SIDE_4_NAME}}</h4>
+                            <p>{{SIDE_4_DESCRIPTION}}</p>
+                            <span class="price">{{SIDE_4_PRICE}}</span>
+                        </div>
+                        <div class="side-item">
+                            <h4>{{SIDE_5_NAME}}</h4>
+                            <p>{{SIDE_5_DESCRIPTION}}</p>
+                            <span class="price">{{SIDE_5_PRICE}}</span>
+                        </div>
+                        <div class="side-item">
+                            <h4>{{SIDE_6_NAME}}</h4>
+                            <p>{{SIDE_6_DESCRIPTION}}</p>
+                            <span class="price">{{SIDE_6_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="sauces-section">
+                    <h2>House-Made Sauces</h2>
+                    <div class="sauces-grid">
+                        <div class="sauce-item">
+                            <img src="{{SAUCE_1_IMAGE}}" alt="{{SAUCE_1_NAME}}">
+                            <h4>{{SAUCE_1_NAME}}</h4>
+                            <p>{{SAUCE_1_DESCRIPTION}}</p>
+                            <div class="heat-level">
+                                <span class="heat">{{SAUCE_1_HEAT}}</span>
+                            </div>
+                        </div>
+                        <div class="sauce-item">
+                            <img src="{{SAUCE_2_IMAGE}}" alt="{{SAUCE_2_NAME}}">
+                            <h4>{{SAUCE_2_NAME}}</h4>
+                            <p>{{SAUCE_2_DESCRIPTION}}</p>
+                            <div class="heat-level">
+                                <span class="heat">{{SAUCE_2_HEAT}}</span>
+                            </div>
+                        </div>
+                        <div class="sauce-item">
+                            <img src="{{SAUCE_3_IMAGE}}" alt="{{SAUCE_3_NAME}}">
+                            <h4>{{SAUCE_3_NAME}}</h4>
+                            <p>{{SAUCE_3_DESCRIPTION}}</p>
+                            <div class="heat-level">
+                                <span class="heat">{{SAUCE_3_HEAT}}</span>
+                            </div>
+                        </div>
+                        <div class="sauce-item">
+                            <img src="{{SAUCE_4_IMAGE}}" alt="{{SAUCE_4_NAME}}">
+                            <h4>{{SAUCE_4_NAME}}</h4>
+                            <p>{{SAUCE_4_DESCRIPTION}}</p>
+                            <div class="heat-level">
+                                <span class="heat">{{SAUCE_4_HEAT}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catering -->
+    <section id="catering" class="catering-section">
+        <div class="container">
+            <div class="catering-header">
+                <h2>BBQ Catering</h2>
+                <p>{{CATERING_DESCRIPTION}}</p>
+            </div>
+            
+            <div class="catering-packages">
+                <div class="package-card">
+                    <h3>{{SMALL_PACKAGE_NAME}}</h3>
+                    <div class="package-size">{{SMALL_PACKAGE_SERVES}} people</div>
+                    <div class="package-includes">
+                        <ul>
+                            <li>{{SMALL_PACKAGE_ITEM_1}}</li>
+                            <li>{{SMALL_PACKAGE_ITEM_2}}</li>
+                            <li>{{SMALL_PACKAGE_ITEM_3}}</li>
+                            <li>{{SMALL_PACKAGE_ITEM_4}}</li>
+                        </ul>
+                    </div>
+                    <div class="package-price">
+                        <span class="price">{{SMALL_PACKAGE_PRICE}}</span>
+                        <span class="per-person">{{SMALL_PACKAGE_PER_PERSON}} per person</span>
+                    </div>
+                </div>
+
+                <div class="package-card featured">
+                    <h3>{{LARGE_PACKAGE_NAME}}</h3>
+                    <div class="package-size">{{LARGE_PACKAGE_SERVES}} people</div>
+                    <div class="package-includes">
+                        <ul>
+                            <li>{{LARGE_PACKAGE_ITEM_1}}</li>
+                            <li>{{LARGE_PACKAGE_ITEM_2}}</li>
+                            <li>{{LARGE_PACKAGE_ITEM_3}}</li>
+                            <li>{{LARGE_PACKAGE_ITEM_4}}</li>
+                            <li>{{LARGE_PACKAGE_ITEM_5}}</li>
+                        </ul>
+                    </div>
+                    <div class="package-price">
+                        <span class="price">{{LARGE_PACKAGE_PRICE}}</span>
+                        <span class="per-person">{{LARGE_PACKAGE_PER_PERSON}} per person</span>
+                    </div>
+                </div>
+
+                <div class="package-card">
+                    <h3>{{CUSTOM_PACKAGE_NAME}}</h3>
+                    <div class="package-size">{{CUSTOM_PACKAGE_SERVES}} people</div>
+                    <div class="package-includes">
+                        <ul>
+                            <li>{{CUSTOM_PACKAGE_ITEM_1}}</li>
+                            <li>{{CUSTOM_PACKAGE_ITEM_2}}</li>
+                            <li>{{CUSTOM_PACKAGE_ITEM_3}}</li>
+                            <li>{{CUSTOM_PACKAGE_ITEM_4}}</li>
+                        </ul>
+                    </div>
+                    <div class="package-price">
+                        <span class="price">{{CUSTOM_PACKAGE_PRICE}}</span>
+                        <span class="per-person">Contact for pricing</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="catering-info">
+                <h3>Catering Information</h3>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <h4>Advance Notice</h4>
+                        <p>{{CATERING_ADVANCE_NOTICE}}</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Delivery</h4>
+                        <p>{{CATERING_DELIVERY_INFO}}</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Setup Service</h4>
+                        <p>{{CATERING_SETUP_INFO}}</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Payment</h4>
+                        <p>{{CATERING_PAYMENT_INFO}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>{{ABOUT_TITLE}}</h2>
+                    <p>{{ABOUT_DESCRIPTION_1}}</p>
+                    <p>{{ABOUT_DESCRIPTION_2}}</p>
+                    <div class="pitmaster-story">
+                        <h3>Meet the Pitmaster</h3>
+                        <blockquote>
+                            "{{PITMASTER_QUOTE}}"
+                        </blockquote>
+                        <div class="pitmaster-signature">
+                            <img src="{{PITMASTER_IMAGE}}" alt="{{PITMASTER_NAME}}">
+                            <div class="signature-details">
+                                <h4>{{PITMASTER_NAME}}</h4>
+                                <p>Head Pitmaster & Owner</p>
+                                <span class="experience">{{PITMASTER_EXPERIENCE}} years experience</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="{{ABOUT_IMAGE}}" alt="BBQ Smokehouse">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards & Recognition -->
+    <section class="awards-section">
+        <div class="container">
+            <h2>Awards & Recognition</h2>
+            <div class="awards-grid">
+                <div class="award">
+                    <div class="award-icon">🏆</div>
+                    <h4>{{AWARD_1_NAME}}</h4>
+                    <p>{{AWARD_1_YEAR}}</p>
+                </div>
+                <div class="award">
+                    <div class="award-icon">🥇</div>
+                    <h4>{{AWARD_2_NAME}}</h4>
+                    <p>{{AWARD_2_YEAR}}</p>
+                </div>
+                <div class="award">
+                    <div class="award-icon">🔥</div>
+                    <h4>{{AWARD_3_NAME}}</h4>
+                    <p>{{AWARD_3_YEAR}}</p>
+                </div>
+                <div class="award">
+                    <div class="award-icon">⭐</div>
+                    <h4>{{AWARD_4_NAME}}</h4>
+                    <p>{{AWARD_4_YEAR}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Order -->
+    <section id="order" class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Get Your BBQ Fix</h2>
+                    <div class="contact-details">
+                        <div class="detail">
+                            <h4>Location</h4>
+                            <p>{{ADDRESS}}</p>
+                        </div>
+                        <div class="detail">
+                            <h4>Phone</h4>
+                            <p><a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+                        </div>
+                        <div class="detail">
+                            <h4>Hours</h4>
+                            <div class="hours">
+                                <p>{{WEEKDAY_HOURS}}</p>
+                                <p>{{WEEKEND_HOURS}}</p>
+                                <p>Closed {{CLOSED_DAYS}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ordering-options">
+                        <a href="{{ONLINE_ORDER_URL}}" class="btn btn-order">Order Online</a>
+                        <a href="tel:{{PHONE}}" class="btn btn-secondary">Call to Order</a>
+                    </div>
+                </div>
+                <div class="order-form">
+                    <h3>Contact Us</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <select>
+                                <option value="">Select Inquiry Type</option>
+                                <option value="catering">Catering Quote</option>
+                                <option value="large-order">Large Order</option>
+                                <option value="general">General Question</option>
+                                <option value="feedback">Feedback</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Message (event details, order size, questions, etc.)" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>{{RESTAURANT_NAME}}</h3>
+                    <p>{{FOOTER_DESCRIPTION}}</p>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}" aria-label="Facebook">📘</a>
+                        <a href="{{INSTAGRAM_URL}}" aria-label="Instagram">📷</a>
+                        <a href="{{TWITTER_URL}}" aria-label="Twitter">🐦</a>
+                        <a href="{{YOUTUBE_URL}}" aria-label="YouTube">📺</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#menu">BBQ Menu</a></li>
+                        <li><a href="#platters">Platters</a></li>
+                        <li><a href="#catering">Catering</a></li>
+                        <li><a href="#order">Order Online</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>{{ADDRESS}}</p>
+                    <p>{{PHONE}}</p>
+                    <p>{{EMAIL}}</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Hours</h4>
+                    <p>{{WEEKDAY_HOURS}}</p>
+                    <p>{{WEEKEND_HOURS}}</p>
+                    <p>Catering: By appointment</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; {{CURRENT_YEAR}} {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

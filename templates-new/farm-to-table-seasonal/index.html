@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Farm to Table</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Source+Sans+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="color-scheme-earth">
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}}">
+            </div>
+            <nav class="nav">
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#farms">Our Farms</a></li>
+                    <li><a href="#sustainability">Sustainability</a></li>
+                    <li><a href="#catering">Catering</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="header-order">
+                    <a href="#order" class="btn btn-primary">Order Online</a>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Fresh from Farm to Your Table</h1>
+                    <p class="hero-subtitle">Seasonal • Local • Sustainable</p>
+                    <p class="hero-description">We partner with local farms to bring you the freshest seasonal ingredients, transformed into nourishing meals that celebrate the earth's bounty.</p>
+                    <div class="hero-buttons">
+                        <a href="#menu" class="btn btn-primary btn-large">Today's Menu</a>
+                        <a href="#farms" class="btn btn-secondary btn-large">Meet Our Farmers</a>
+                    </div>
+                    <div class="hero-mission">
+                        <div class="mission-stat">
+                            <span class="stat-number">{{FARM_PARTNERS}}+</span>
+                            <span class="stat-label">Farm Partners</span>
+                        </div>
+                        <div class="mission-stat">
+                            <span class="stat-number">{{MILES_RADIUS}} mi</span>
+                            <span class="stat-label">Average Distance</span>
+                        </div>
+                        <div class="mission-stat">
+                            <span class="stat-number">{{ORGANIC_PERCENTAGE}}%</span>
+                            <span class="stat-label">Organic</span>
+                        </div>
+                        <div class="mission-stat">
+                            <span class="stat-number">Zero</span>
+                            <span class="stat-label">Food Waste</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-image-stack">
+                        <img src="{{HERO_SALAD_IMAGE}}" alt="Fresh seasonal salad" class="hero-main">
+                        <div class="floating-farm-elements">
+                            <img src="{{FRESH_VEGETABLES_IMAGE}}" alt="Fresh vegetables" class="floating-veggies">
+                            <img src="{{HERBS_IMAGE}}" alt="Fresh herbs" class="floating-herbs">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="seasonal-banner">
+            <div class="container">
+                <div class="seasonal-content">
+                    <h2>🍂 {{CURRENT_SEASON}} Harvest Menu Now Available</h2>
+                    <p>Featuring {{FEATURED_INGREDIENT}} from {{FEATURED_FARM}}</p>
+                    <a href="#menu" class="btn btn-accent">Explore Seasonal Menu</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu" class="menu-showcase">
+            <div class="container">
+                <h2 class="section-title">Today's Harvest</h2>
+                <p class="section-subtitle">Our menu changes with the seasons - today featuring ingredients harvested within {{HARVEST_DAYS}} hours</p>
+
+                <div class="menu-categories">
+                    <button class="category-btn active" data-category="bowls">Signature Bowls</button>
+                    <button class="category-btn" data-category="salads">Market Salads</button>
+                    <button class="category-btn" data-category="sandwiches">Artisan Sandwiches</button>
+                    <button class="category-btn" data-category="seasonal">Seasonal Specials</button>
+                </div>
+
+                <div class="menu-grid" data-category="bowls">
+                    <div class="menu-item featured">
+                        <div class="menu-item-image">
+                            <img src="{{HARVEST_BOWL_IMAGE}}" alt="Harvest Bowl">
+                            <div class="freshness-badge">Harvested Today</div>
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>The Harvest Bowl</h3>
+                            <p class="farm-source">Featuring ingredients from {{MAIN_FARM_NAME}}</p>
+                            <p class="description">Seasonal grains, roasted vegetables, fresh herbs, pickled onions, and tahini dressing</p>
+                            <div class="ingredient-tags">
+                                <span class="ingredient-tag">Quinoa</span>
+                                <span class="ingredient-tag">Roasted Beets</span>
+                                <span class="ingredient-tag">Kale</span>
+                                <span class="ingredient-tag">Avocado</span>
+                            </div>
+                            <div class="nutrition-sustainability">
+                                <div class="nutrition-info">
+                                    <span class="nutrition-item">{{HARVEST_CALORIES}} cal</span>
+                                    <span class="nutrition-item">{{HARVEST_PROTEIN}}g protein</span>
+                                </div>
+                                <div class="sustainability-icons">
+                                    <span class="sustain-icon" title="Organic">🌱</span>
+                                    <span class="sustain-icon" title="Local">📍</span>
+                                    <span class="sustain-icon" title="Seasonal">🍂</span>
+                                </div>
+                            </div>
+                            <div class="menu-item-footer">
+                                <span class="price">${{HARVEST_BOWL_PRICE}}</span>
+                                <button class="btn btn-small btn-primary">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="{{PROTEIN_BOWL_IMAGE}}" alt="Protein Power Bowl">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Protein Power Bowl</h3>
+                            <p class="farm-source">Grass-fed beef from {{BEEF_FARM_NAME}}</p>
+                            <p class="description">Grass-fed beef, sweet potato, Brussels sprouts, and chimichurri</p>
+                            <div class="ingredient-tags">
+                                <span class="ingredient-tag">Grass-Fed Beef</span>
+                                <span class="ingredient-tag">Sweet Potato</span>
+                                <span class="ingredient-tag">Brussels Sprouts</span>
+                            </div>
+                            <div class="nutrition-sustainability">
+                                <div class="nutrition-info">
+                                    <span class="nutrition-item">{{PROTEIN_CALORIES}} cal</span>
+                                    <span class="nutrition-item">{{PROTEIN_PROTEIN}}g protein</span>
+                                </div>
+                                <div class="sustainability-icons">
+                                    <span class="sustain-icon" title="Grass-Fed">🐄</span>
+                                    <span class="sustain-icon" title="Local">📍</span>
+                                    <span class="sustain-icon" title="Pasture-Raised">🌾</span>
+                                </div>
+                            </div>
+                            <div class="menu-item-footer">
+                                <span class="price">${{PROTEIN_BOWL_PRICE}}</span>
+                                <button class="btn btn-small btn-primary">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="{{WELLNESS_BOWL_IMAGE}}" alt="Wellness Bowl">
+                        </div>
+                        <div class="menu-item-content">
+                            <h3>Wellness Bowl</h3>
+                            <p class="farm-source">Organic greens from {{GREENS_FARM_NAME}}</p>
+                            <p class="description">Ancient grains, steamed vegetables, sprouted seeds, and miso dressing</p>
+                            <div class="ingredient-tags">
+                                <span class="ingredient-tag">Sprouted Seeds</span>
+                                <span class="ingredient-tag">Steamed Broccoli</span>
+                                <span class="ingredient-tag">Brown Rice</span>
+                            </div>
+                            <div class="nutrition-sustainability">
+                                <div class="nutrition-info">
+                                    <span class="nutrition-item">{{WELLNESS_CALORIES}} cal</span>
+                                    <span class="nutrition-item">{{WELLNESS_FIBER}}g fiber</span>
+                                </div>
+                                <div class="sustainability-icons">
+                                    <span class="sustain-icon" title="Organic">🌱</span>
+                                    <span class="sustain-icon" title="Raw Elements">🥒</span>
+                                    <span class="sustain-icon" title="Probiotic">🦠</span>
+                                </div>
+                            </div>
+                            <div class="menu-item-footer">
+                                <span class="price">${{WELLNESS_BOWL_PRICE}}</span>
+                                <button class="btn btn-small btn-primary">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-grid" data-category="seasonal" style="display: none;">
+                    <div class="seasonal-menu">
+                        <h3>{{CURRENT_SEASON}} Seasonal Specials</h3>
+                        <div class="seasonal-items">
+                            <div class="menu-item">
+                                <h4>{{SEASONAL_DISH_1_NAME}}</h4>
+                                <p class="farm-source">{{SEASONAL_DISH_1_FARM}}</p>
+                                <p class="description">{{SEASONAL_DISH_1_DESCRIPTION}}</p>
+                                <span class="price">${{SEASONAL_DISH_1_PRICE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-note">
+                    <h3>🌱 Our Promise</h3>
+                    <p>Every ingredient is sourced within {{SOURCING_RADIUS}} miles of our kitchen. We work directly with farmers to ensure the highest quality and freshest produce while supporting our local food system.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="farms" class="farm-partners">
+            <div class="container">
+                <h2 class="section-title">Meet Our Farm Partners</h2>
+                <p class="section-subtitle">The dedicated farmers who make our farm-to-table mission possible</p>
+                
+                <div class="farms-grid">
+                    <div class="farm-card">
+                        <div class="farm-image">
+                            <img src="{{FARM_1_IMAGE}}" alt="{{FARM_1_NAME}}">
+                        </div>
+                        <div class="farm-content">
+                            <h3>{{FARM_1_NAME}}</h3>
+                            <p class="farm-location">{{FARM_1_LOCATION}} • {{FARM_1_DISTANCE}} miles away</p>
+                            <p class="farm-specialty">Specializes in: {{FARM_1_SPECIALTY}}</p>
+                            <p class="farm-description">{{FARM_1_DESCRIPTION}}</p>
+                            <div class="farm-practices">
+                                <span class="practice-tag">Organic Certified</span>
+                                <span class="practice-tag">Regenerative</span>
+                                <span class="practice-tag">{{FARM_1_YEARS}}+ Years</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="farm-card">
+                        <div class="farm-image">
+                            <img src="{{FARM_2_IMAGE}}" alt="{{FARM_2_NAME}}">
+                        </div>
+                        <div class="farm-content">
+                            <h3>{{FARM_2_NAME}}</h3>
+                            <p class="farm-location">{{FARM_2_LOCATION}} • {{FARM_2_DISTANCE}} miles away</p>
+                            <p class="farm-specialty">Specializes in: {{FARM_2_SPECIALTY}}</p>
+                            <p class="farm-description">{{FARM_2_DESCRIPTION}}</p>
+                            <div class="farm-practices">
+                                <span class="practice-tag">Pasture-Raised</span>
+                                <span class="practice-tag">Grass-Fed</span>
+                                <span class="practice-tag">Family Farm</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="farm-card">
+                        <div class="farm-image">
+                            <img src="{{FARM_3_IMAGE}}" alt="{{FARM_3_NAME}}">
+                        </div>
+                        <div class="farm-content">
+                            <h3>{{FARM_3_NAME}}</h3>
+                            <p class="farm-location">{{FARM_3_LOCATION}} • {{FARM_3_DISTANCE}} miles away</p>
+                            <p class="farm-specialty">Specializes in: {{FARM_3_SPECIALTY}}</p>
+                            <p class="farm-description">{{FARM_3_DESCRIPTION}}</p>
+                            <div class="farm-practices">
+                                <span class="practice-tag">Heirloom Varieties</span>
+                                <span class="practice-tag">Biodynamic</span>
+                                <span class="practice-tag">No-Till</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="seasonal-sourcing">
+            <div class="container">
+                <h2 class="section-title">Seasonal Sourcing Calendar</h2>
+                <div class="sourcing-calendar">
+                    <div class="season-column">
+                        <h3>🌸 Spring</h3>
+                        <div class="season-ingredients">
+                            <span class="ingredient">Asparagus</span>
+                            <span class="ingredient">Peas</span>
+                            <span class="ingredient">Spring Onions</span>
+                            <span class="ingredient">Lettuce</span>
+                            <span class="ingredient">Radishes</span>
+                            <span class="ingredient">Strawberries</span>
+                        </div>
+                    </div>
+                    <div class="season-column">
+                        <h3>☀️ Summer</h3>
+                        <div class="season-ingredients">
+                            <span class="ingredient">Tomatoes</span>
+                            <span class="ingredient">Corn</span>
+                            <span class="ingredient">Zucchini</span>
+                            <span class="ingredient">Peaches</span>
+                            <span class="ingredient">Basil</span>
+                            <span class="ingredient">Berries</span>
+                        </div>
+                    </div>
+                    <div class="season-column current">
+                        <h3>🍂 Fall</h3>
+                        <div class="season-ingredients">
+                            <span class="ingredient">Squash</span>
+                            <span class="ingredient">Apples</span>
+                            <span class="ingredient">Brussels Sprouts</span>
+                            <span class="ingredient">Sweet Potatoes</span>
+                            <span class="ingredient">Kale</span>
+                            <span class="ingredient">Pumpkins</span>
+                        </div>
+                    </div>
+                    <div class="season-column">
+                        <h3>❄️ Winter</h3>
+                        <div class="season-ingredients">
+                            <span class="ingredient">Root Vegetables</span>
+                            <span class="ingredient">Citrus</span>
+                            <span class="ingredient">Cabbage</span>
+                            <span class="ingredient">Leeks</span>
+                            <span class="ingredient">Winter Squash</span>
+                            <span class="ingredient">Greens</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="sustainability" class="sustainability">
+            <div class="container">
+                <div class="sustainability-content">
+                    <div class="sustainability-text">
+                        <h2>Our Sustainability Commitment</h2>
+                        <p>We believe great food and environmental responsibility go hand in hand. Every decision we make is guided by our commitment to the planet and future generations.</p>
+                        
+                        <div class="sustainability-pillars">
+                            <div class="pillar">
+                                <div class="pillar-icon">🌱</div>
+                                <h3>Zero Waste Kitchen</h3>
+                                <p>{{ZERO_WASTE_DESCRIPTION}}</p>
+                            </div>
+                            <div class="pillar">
+                                <div class="pillar-icon">♻️</div>
+                                <h3>Circular Economy</h3>
+                                <p>{{CIRCULAR_ECONOMY_DESCRIPTION}}</p>
+                            </div>
+                            <div class="pillar">
+                                <div class="pillar-icon">🚚</div>
+                                <h3>Carbon Neutral Delivery</h3>
+                                <p>{{CARBON_NEUTRAL_DESCRIPTION}}</p>
+                            </div>
+                            <div class="pillar">
+                                <div class="pillar-icon">💧</div>
+                                <h3>Water Conservation</h3>
+                                <p>{{WATER_CONSERVATION_DESCRIPTION}}</p>
+                            </div>
+                        </div>
+
+                        <div class="impact-metrics">
+                            <h3>Our Environmental Impact</h3>
+                            <div class="metrics-grid">
+                                <div class="metric">
+                                    <span class="metric-number">{{WATER_SAVED}}%</span>
+                                    <span class="metric-label">Water Saved</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-number">{{WASTE_DIVERTED}}%</span>
+                                    <span class="metric-label">Waste Diverted</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-number">{{CARBON_REDUCTION}}%</span>
+                                    <span class="metric-label">Carbon Reduction</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sustainability-visual">
+                        <img src="{{SUSTAINABILITY_IMAGE}}" alt="Sustainable practices">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="chef-story">
+            <div class="container">
+                <div class="chef-content">
+                    <div class="chef-text">
+                        <h2>Meet Chef {{CHEF_NAME}}</h2>
+                        <p class="chef-philosophy">"{{CHEF_PHILOSOPHY}}"</p>
+                        <p class="chef-bio">{{CHEF_BIO}}</p>
+                        
+                        <div class="chef-values">
+                            <h3>Culinary Values</h3>
+                            <ul>
+                                <li>Ingredients at their peak of flavor and nutrition</li>
+                                <li>Minimal processing to let natural flavors shine</li>
+                                <li>Supporting local food systems and farmers</li>
+                                <li>Creating nourishing, satisfying meals for every body</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="chef-image">
+                        <img src="{{CHEF_PORTRAIT}}" alt="Chef {{CHEF_NAME}}">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="order" class="order-section">
+            <div class="container">
+                <h2 class="section-title">Order Fresh Today</h2>
+                <div class="order-options">
+                    <div class="order-option">
+                        <div class="option-icon">🚚</div>
+                        <h3>Farm-Fresh Delivery</h3>
+                        <p>Delivered in compostable containers within {{DELIVERY_TIME}} minutes</p>
+                        <a href="{{DELIVERY_URL}}" class="btn btn-primary">Order Delivery</a>
+                        <div class="delivery-note">Carbon-neutral delivery available</div>
+                    </div>
+                    
+                    <div class="order-option">
+                        <div class="option-icon">🏃‍♀️</div>
+                        <h3>Quick Pickup</h3>
+                        <p>Order ahead and pickup in our zero-waste packaging</p>
+                        <a href="{{PICKUP_URL}}" class="btn btn-primary">Order Pickup</a>
+                        <div class="pickup-note">Bring your own container for 10% off</div>
+                    </div>
+                    
+                    <div class="order-option">
+                        <div class="option-icon">📦</div>
+                        <h3>Meal Subscriptions</h3>
+                        <p>Weekly meal plans with seasonal ingredients</p>
+                        <a href="{{SUBSCRIPTION_URL}}" class="btn btn-secondary">Learn More</a>
+                        <div class="subscription-note">{{SUBSCRIPTION_PLANS}} plans available</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="catering" class="catering">
+            <div class="container">
+                <div class="catering-content">
+                    <div class="catering-text">
+                        <h2>Farm-to-Table Catering</h2>
+                        <p>Bring our fresh, seasonal cuisine to your next event with our sustainable catering services.</p>
+                        
+                        <div class="catering-options">
+                            <div class="catering-option">
+                                <h3>Corporate Wellness</h3>
+                                <p>Nourishing meals for office events and meetings</p>
+                                <div class="option-features">
+                                    <span class="feature">• Healthy, energizing options</span>
+                                    <span class="feature">• Dietary restriction friendly</span>
+                                    <span class="feature">• Zero-waste service</span>
+                                </div>
+                            </div>
+                            
+                            <div class="catering-option">
+                                <h3>Private Events</h3>
+                                <p>Elegant farm-to-table dining for special occasions</p>
+                                <div class="option-features">
+                                    <span class="feature">• Custom seasonal menus</span>
+                                    <span class="feature">• Local wine pairings</span>
+                                    <span class="feature">• Professional service staff</span>
+                                </div>
+                            </div>
+                            
+                            <div class="catering-option">
+                                <h3>Educational Events</h3>
+                                <p>Farm-to-table workshops and cooking classes</p>
+                                <div class="option-features">
+                                    <span class="feature">• Meet the farmer experiences</span>
+                                    <span class="feature">• Sustainable cooking classes</span>
+                                    <span class="feature">• Nutrition education</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="catering-image">
+                        <img src="{{CATERING_IMAGE}}" alt="Catering spread">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h2>Get in Touch</h2>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <h3>Restaurant</h3>
+                                <p>{{ADDRESS}}</p>
+                                <p>{{PHONE}}</p>
+                                <p>{{EMAIL}}</p>
+                            </div>
+                            <div class="contact-item">
+                                <h3>Hours</h3>
+                                <p>{{HOURS}}</p>
+                            </div>
+                            <div class="contact-item">
+                                <h3>Catering</h3>
+                                <p>{{CATERING_PHONE}}</p>
+                                <p>{{CATERING_EMAIL}}</p>
+                            </div>
+                        </div>
+                        <div class="social-section">
+                            <h3>Follow Our Farm Journey</h3>
+                            <div class="social-links">
+                                <a href="{{INSTAGRAM_URL}}">Instagram</a>
+                                <a href="{{FACEBOOK_URL}}">Facebook</a>
+                                <a href="{{TWITTER_URL}}">Twitter</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <h3>Send us a Message</h3>
+                        <form>
+                            <input type="text" placeholder="Your Name" required>
+                            <input type="email" placeholder="Email Address" required>
+                            <select required>
+                                <option value="">What can we help with?</option>
+                                <option value="catering">Catering Inquiry</option>
+                                <option value="sustainability">Sustainability Question</option>
+                                <option value="farms">Farm Partnership</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <textarea placeholder="Your Message" rows="4" required></textarea>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>{{RESTAURANT_NAME}}</h3>
+                    <p>Fresh from farm to your table</p>
+                    <div class="sustainability-commitment">
+                        <h4>Our Commitment</h4>
+                        <p>🌱 Carbon neutral • ♻️ Zero waste • 🚚 Local sourcing</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="#menu">Today's Harvest</a></li>
+                        <li><a href="#seasonal">Seasonal Specials</a></li>
+                        <li><a href="#order">Order Online</a></li>
+                        <li><a href="#catering">Catering</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Our Mission</h4>
+                    <ul>
+                        <li><a href="#farms">Farm Partners</a></li>
+                        <li><a href="#sustainability">Sustainability</a></li>
+                        <li><a href="#">Nutrition Info</a></li>
+                        <li><a href="#">Community Impact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="{{INSTAGRAM_URL}}">Instagram</a>
+                        <a href="{{FACEBOOK_URL}}">Facebook</a>
+                        <a href="{{TWITTER_URL}}">Twitter</a>
+                    </div>
+                    <div class="newsletter">
+                        <h4>Seasonal Updates</h4>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your email">
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

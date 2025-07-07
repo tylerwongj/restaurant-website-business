@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Authentic Xi'an Noodles</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="color-scheme-spicy">
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}}">
+            </div>
+            <nav class="nav">
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#noodles">Noodles</a></li>
+                    <li><a href="#spice">Spice Guide</a></li>
+                    <li><a href="#story">Our Story</a></li>
+                    <li><a href="#locations">Locations</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="header-order">
+                    <a href="#order" class="btn btn-primary">Order Online</a>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">{{RESTAURANT_NAME}}</h1>
+                    <p class="hero-chinese">{{CHINESE_NAME}}</p>
+                    <p class="hero-subtitle">Authentic Xi'an Hand-Pulled Noodles</p>
+                    <p class="hero-description">Experience the bold, spicy flavors of Xi'an cuisine with our traditional hand-pulled noodles and authentic recipes passed down through generations.</p>
+                    <div class="hero-buttons">
+                        <a href="#noodles" class="btn btn-primary btn-large">Explore Menu</a>
+                        <a href="#order" class="btn btn-secondary btn-large">Order Now</a>
+                    </div>
+                    <div class="hero-features">
+                        <div class="feature">
+                            <span class="feature-icon">🍜</span>
+                            <span>Hand-Pulled Noodles</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">🌶️</span>
+                            <span>Spice Levels 1-10</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">🥟</span>
+                            <span>Authentic Dumplings</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">⚡</span>
+                            <span>Fast Casual</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-noodle-bowl">
+                        <img src="{{HERO_NOODLES_IMAGE}}" alt="Xi'an noodles" class="hero-bowl">
+                        <div class="steam-animation">
+                            <div class="steam-line"></div>
+                            <div class="steam-line"></div>
+                            <div class="steam-line"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tradition-banner">
+            <div class="container">
+                <div class="tradition-content">
+                    <h2>{{TRADITION_YEARS}} Years of Xi'an Tradition</h2>
+                    <p>From the ancient Silk Road to your bowl - authentic flavors of Xi'an</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="noodles" class="noodles-menu">
+            <div class="container">
+                <h2 class="section-title">Signature Noodles</h2>
+                <p class="section-subtitle">All noodles hand-pulled fresh daily</p>
+
+                <div class="noodle-categories">
+                    <button class="category-btn active" data-category="signature">Signature</button>
+                    <button class="category-btn" data-category="spicy">Spicy Noodles</button>
+                    <button class="category-btn" data-category="soup">Soup Noodles</button>
+                    <button class="category-btn" data-category="dry">Dry Noodles</button>
+                    <button class="category-btn" data-category="dumplings">Dumplings</button>
+                </div>
+
+                <div class="noodles-grid" data-category="signature">
+                    <div class="noodle-item featured">
+                        <div class="noodle-image">
+                            <img src="{{BIANG_BIANG_IMAGE}}" alt="Biang Biang Noodles">
+                            <div class="spice-indicator">
+                                <div class="spice-dots">
+                                    <span class="spice-dot hot"></span>
+                                    <span class="spice-dot hot"></span>
+                                    <span class="spice-dot hot"></span>
+                                </div>
+                                <span class="spice-level">Level 7</span>
+                            </div>
+                            <div class="signature-badge">🔥 Signature</div>
+                        </div>
+                        <div class="noodle-content">
+                            <h3>Biang Biang Noodles</h3>
+                            <p class="chinese-name">{{BIANG_BIANG_CHINESE}}</p>
+                            <p class="description">Wide hand-pulled noodles with chili oil, garlic, scallions, and our secret spice blend</p>
+                            <div class="noodle-tags">
+                                <span class="tag spicy">Spicy</span>
+                                <span class="tag vegetarian">Vegetarian</span>
+                                <span class="tag signature">Most Popular</span>
+                            </div>
+                            <div class="noodle-footer">
+                                <span class="price">${{BIANG_BIANG_PRICE}}</span>
+                                <div class="customization">
+                                    <span class="spice-choice">Choose Spice: 1-10</span>
+                                    <button class="btn btn-small btn-primary">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="noodle-item">
+                        <div class="noodle-image">
+                            <img src="{{CUMIN_LAMB_IMAGE}}" alt="Cumin Lamb Noodles">
+                            <div class="spice-indicator">
+                                <div class="spice-dots">
+                                    <span class="spice-dot medium"></span>
+                                    <span class="spice-dot medium"></span>
+                                </div>
+                                <span class="spice-level">Level 5</span>
+                            </div>
+                        </div>
+                        <div class="noodle-content">
+                            <h3>Cumin Lamb Noodles</h3>
+                            <p class="chinese-name">{{CUMIN_LAMB_CHINESE}}</p>
+                            <p class="description">Hand-pulled noodles with tender cumin lamb, onions, and bell peppers</p>
+                            <div class="noodle-tags">
+                                <span class="tag protein">High Protein</span>
+                                <span class="tag aromatic">Aromatic</span>
+                            </div>
+                            <div class="noodle-footer">
+                                <span class="price">${{CUMIN_LAMB_PRICE}}</span>
+                                <div class="customization">
+                                    <span class="spice-choice">Choose Spice: 1-10</span>
+                                    <button class="btn btn-small btn-primary">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="noodle-item">
+                        <div class="noodle-image">
+                            <img src="{{TOMATO_EGG_IMAGE}}" alt="Tomato Egg Noodles">
+                            <div class="spice-indicator">
+                                <div class="spice-dots">
+                                    <span class="spice-dot mild"></span>
+                                </div>
+                                <span class="spice-level">Level 2</span>
+                            </div>
+                        </div>
+                        <div class="noodle-content">
+                            <h3>Tomato Egg Noodles</h3>
+                            <p class="chinese-name">{{TOMATO_EGG_CHINESE}}</p>
+                            <p class="description">Comfort noodles with fresh tomatoes, scrambled eggs, and scallions</p>
+                            <div class="noodle-tags">
+                                <span class="tag mild">Mild</span>
+                                <span class="tag comfort">Comfort Food</span>
+                                <span class="tag vegetarian">Vegetarian</span>
+                            </div>
+                            <div class="noodle-footer">
+                                <span class="price">${{TOMATO_EGG_PRICE}}</span>
+                                <div class="customization">
+                                    <span class="spice-choice">Choose Spice: 1-10</span>
+                                    <button class="btn btn-small btn-primary">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="noodle-item">
+                        <div class="noodle-image">
+                            <img src="{{PORK_NOODLES_IMAGE}}" alt="Pork & Chive Noodles">
+                            <div class="spice-indicator">
+                                <div class="spice-dots">
+                                    <span class="spice-dot medium"></span>
+                                    <span class="spice-dot medium"></span>
+                                    <span class="spice-dot medium"></span>
+                                </div>
+                                <span class="spice-level">Level 6</span>
+                            </div>
+                        </div>
+                        <div class="noodle-content">
+                            <h3>Pork & Chive Noodles</h3>
+                            <p class="chinese-name">{{PORK_CHIVE_CHINESE}}</p>
+                            <p class="description">Savory ground pork with fresh chives and our signature sauce</p>
+                            <div class="noodle-tags">
+                                <span class="tag protein">Protein Rich</span>
+                                <span class="tag savory">Savory</span>
+                            </div>
+                            <div class="noodle-footer">
+                                <span class="price">${{PORK_CHIVE_PRICE}}</span>
+                                <div class="customization">
+                                    <span class="spice-choice">Choose Spice: 1-10</span>
+                                    <button class="btn btn-small btn-primary">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="noodles-grid" data-category="dumplings" style="display: none;">
+                    <div class="noodle-item">
+                        <div class="noodle-image">
+                            <img src="{{PORK_DUMPLINGS_IMAGE}}" alt="Pork Dumplings">
+                        </div>
+                        <div class="noodle-content">
+                            <h3>Pork & Chive Dumplings</h3>
+                            <p class="chinese-name">{{PORK_DUMPLINGS_CHINESE}}</p>
+                            <p class="description">Handmade dumplings with seasoned pork and chives (8 pieces)</p>
+                            <div class="noodle-tags">
+                                <span class="tag handmade">Handmade</span>
+                                <span class="tag traditional">Traditional</span>
+                            </div>
+                            <div class="noodle-footer">
+                                <span class="price">${{PORK_DUMPLINGS_PRICE}}</span>
+                                <div class="cooking-style">
+                                    <span>Steamed or Pan-Fried</span>
+                                    <button class="btn btn-small btn-primary">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="spice" class="spice-guide">
+            <div class="container">
+                <h2 class="section-title">Spice Level Guide</h2>
+                <p class="section-subtitle">Choose your heat level - from mild to volcanic</p>
+                
+                <div class="spice-scale">
+                    <div class="spice-level-card mild">
+                        <div class="level-number">1-2</div>
+                        <h3>Mild</h3>
+                        <div class="level-dots">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <p>Perfect for beginners - just a hint of warmth</p>
+                        <div class="pepper-icons">🌶️</div>
+                    </div>
+
+                    <div class="spice-level-card medium">
+                        <div class="level-number">3-4</div>
+                        <h3>Medium</h3>
+                        <div class="level-dots">
+                            <span class="dot active"></span>
+                            <span class="dot active"></span>
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <p>Noticeable heat with great flavor balance</p>
+                        <div class="pepper-icons">🌶️🌶️</div>
+                    </div>
+
+                    <div class="spice-level-card hot">
+                        <div class="level-number">5-6</div>
+                        <h3>Hot</h3>
+                        <div class="level-dots">
+                            <span class="dot active"></span>
+                            <span class="dot active"></span>
+                            <span class="dot active"></span>
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <p>Significant heat - brings the sweat</p>
+                        <div class="pepper-icons">🌶️🌶️🌶️</div>
+                    </div>
+
+                    <div class="spice-level-card very-hot">
+                        <div class="level-number">7-8</div>
+                        <h3>Very Hot</h3>
+                        <div class="level-dots">
+                            <span class="dot active"></span>
+                            <span class="dot active"></span>
+                            <span class="dot active"></span>
+                            <span class="dot active"></span>
+                            <span class="dot active"></span>
+                        </div>
+                        <p>Serious heat - for spice lovers only</p>
+                        <div class="pepper-icons">🌶️🌶️🌶️🌶️</div>
+                    </div>
+
+                    <div class="spice-level-card volcanic">
+                        <div class="level-number">9-10</div>
+                        <h3>Volcanic</h3>
+                        <div class="level-dots">
+                            <span class="dot active fire"></span>
+                            <span class="dot active fire"></span>
+                            <span class="dot active fire"></span>
+                            <span class="dot active fire"></span>
+                            <span class="dot active fire"></span>
+                        </div>
+                        <p>Extreme heat - proceed with caution!</p>
+                        <div class="pepper-icons">🔥🔥🔥</div>
+                    </div>
+                </div>
+
+                <div class="spice-challenge">
+                    <h3>🔥 VOLCANIC CHALLENGE 🔥</h3>
+                    <p>Finish a Level 10 Biang Biang Noodles and get your picture on our Wall of Fire!</p>
+                    <button class="btn btn-accent">Accept Challenge</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="noodle-making">
+            <div class="container">
+                <div class="making-content">
+                    <div class="making-text">
+                        <h2>Hand-Pulled Noodle Art</h2>
+                        <p>Watch our noodle masters create fresh noodles using techniques passed down through generations. Each strand is pulled by hand to achieve the perfect texture and thickness.</p>
+                        
+                        <div class="making-process">
+                            <div class="process-step">
+                                <div class="step-number">01</div>
+                                <h3>Dough Preparation</h3>
+                                <p>Special flour mixture with precise water ratios</p>
+                            </div>
+                            <div class="process-step">
+                                <div class="step-number">02</div>
+                                <h3>Resting</h3>
+                                <p>Dough rests for optimal gluten development</p>
+                            </div>
+                            <div class="process-step">
+                                <div class="step-number">03</div>
+                                <h3>Hand-Pulling</h3>
+                                <p>Skilled technique stretches dough into noodles</p>
+                            </div>
+                            <div class="process-step">
+                                <div class="step-number">04</div>
+                                <h3>Fresh Cooking</h3>
+                                <p>Immediately cooked to perfect al dente texture</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="making-visual">
+                        <img src="{{NOODLE_MAKING_IMAGE}}" alt="Hand-pulling noodles">
+                        <div class="making-video-overlay">
+                            <button class="play-btn">▶ Watch Process</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="story" class="story-heritage">
+            <div class="container">
+                <div class="story-content">
+                    <div class="story-text">
+                        <h2>From Xi'an to Your Bowl</h2>
+                        <p class="story-intro">{{FOUNDER_STORY}}</p>
+                        
+                        <div class="heritage-timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-year">Ancient</div>
+                                <div class="timeline-content">
+                                    <h3>Silk Road Origins</h3>
+                                    <p>Xi'an noodles developed along the ancient Silk Road trade routes</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-year">{{FOUNDER_YEAR}}</div>
+                                <div class="timeline-content">
+                                    <h3>Family Tradition</h3>
+                                    <p>{{FOUNDER_NAME}} learned these recipes from {{HIS_HER}} grandmother in Xi'an</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-year">{{OPENING_YEAR}}</div>
+                                <div class="timeline-content">
+                                    <h3>First Location</h3>
+                                    <p>Opened our first location to share authentic Xi'an flavors</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-year">Today</div>
+                                <div class="timeline-content">
+                                    <h3>Growing Family</h3>
+                                    <p>{{LOCATION_COUNT}} locations serving authentic Xi'an cuisine</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="story-images">
+                        <img src="{{XIAN_CITY_IMAGE}}" alt="Xi'an city">
+                        <img src="{{FOUNDER_IMAGE}}" alt="{{FOUNDER_NAME}}">
+                        <img src="{{FIRST_LOCATION_IMAGE}}" alt="First location">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="ingredients-sourcing">
+            <div class="container">
+                <h2 class="section-title">Authentic Ingredients</h2>
+                <div class="ingredients-grid">
+                    <div class="ingredient-card">
+                        <div class="ingredient-image">
+                            <img src="{{CHILI_OIL_IMAGE}}" alt="Chili Oil">
+                        </div>
+                        <h3>House-Made Chili Oil</h3>
+                        <p>Blend of {{CHILI_TYPES}} different chilies, toasted to perfection</p>
+                    </div>
+                    
+                    <div class="ingredient-card">
+                        <div class="ingredient-image">
+                            <img src="{{FLOUR_IMAGE}}" alt="Special Flour">
+                        </div>
+                        <h3>High-Gluten Flour</h3>
+                        <p>Imported flour specifically chosen for hand-pulling noodles</p>
+                    </div>
+                    
+                    <div class="ingredient-card">
+                        <div class="ingredient-image">
+                            <img src="{{SPICES_IMAGE}}" alt="Xi'an Spices">
+                        </div>
+                        <h3>Xi'an Spice Blend</h3>
+                        <p>Secret blend of {{SPICE_COUNT}} spices from Shaanxi province</p>
+                    </div>
+                    
+                    <div class="ingredient-card">
+                        <div class="ingredient-image">
+                            <img src="{{VINEGAR_IMAGE}}" alt="Black Vinegar">
+                        </div>
+                        <h3>Aged Black Vinegar</h3>
+                        <p>Traditional Chinkiang vinegar aged for complex flavor</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="order" class="order-section">
+            <div class="container">
+                <h2 class="section-title">Order Your Noodles</h2>
+                <div class="order-options">
+                    <div class="order-option">
+                        <div class="option-icon">🚚</div>
+                        <h3>Delivery</h3>
+                        <p>Hot noodles delivered fresh in special containers</p>
+                        <div class="delivery-apps">
+                            <a href="{{SEAMLESS_URL}}" class="delivery-btn">Seamless</a>
+                            <a href="{{GRUBHUB_URL}}" class="delivery-btn">Grubhub</a>
+                            <a href="{{DOORDASH_URL}}" class="delivery-btn">DoorDash</a>
+                        </div>
+                    </div>
+                    
+                    <div class="order-option">
+                        <div class="option-icon">🏃‍♀️</div>
+                        <h3>Pickup</h3>
+                        <p>Order ahead and skip the line</p>
+                        <a href="{{PICKUP_URL}}" class="btn btn-primary">Order Pickup</a>
+                        <div class="pickup-time">Ready in 8-12 minutes</div>
+                    </div>
+                    
+                    <div class="order-option">
+                        <div class="option-icon">🍜</div>
+                        <h3>Dine In</h3>
+                        <p>Watch noodles being hand-pulled fresh</p>
+                        <div class="location-links">
+                            <a href="#locations">Find Location</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="locations" class="locations">
+            <div class="container">
+                <h2 class="section-title">Visit Our Noodle Bars</h2>
+                <div class="locations-grid">
+                    <div class="location-card">
+                        <div class="location-image">
+                            <img src="{{LOCATION_1_IMAGE}}" alt="{{LOCATION_1_NAME}}">
+                        </div>
+                        <div class="location-content">
+                            <h3>{{LOCATION_1_NAME}}</h3>
+                            <p class="address">{{LOCATION_1_ADDRESS}}</p>
+                            <p class="hours">{{LOCATION_1_HOURS}}</p>
+                            <p class="phone">{{LOCATION_1_PHONE}}</p>
+                            <div class="location-features">
+                                <span class="feature">Open Kitchen</span>
+                                <span class="feature">Counter Seating</span>
+                                <span class="feature">Quick Service</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="location-card">
+                        <div class="location-image">
+                            <img src="{{LOCATION_2_IMAGE}}" alt="{{LOCATION_2_NAME}}">
+                        </div>
+                        <div class="location-content">
+                            <h3>{{LOCATION_2_NAME}}</h3>
+                            <p class="address">{{LOCATION_2_ADDRESS}}</p>
+                            <p class="hours">{{LOCATION_2_HOURS}}</p>
+                            <p class="phone">{{LOCATION_2_PHONE}}</p>
+                            <div class="location-features">
+                                <span class="feature">Noodle Demos</span>
+                                <span class="feature">Family Tables</span>
+                                <span class="feature">Parking</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="location-card">
+                        <div class="location-image">
+                            <img src="{{LOCATION_3_IMAGE}}" alt="{{LOCATION_3_NAME}}">
+                        </div>
+                        <div class="location-content">
+                            <h3>{{LOCATION_3_NAME}}</h3>
+                            <p class="address">{{LOCATION_3_ADDRESS}}</p>
+                            <p class="hours">{{LOCATION_3_HOURS}}</p>
+                            <p class="phone">{{LOCATION_3_PHONE}}</p>
+                            <div class="location-features">
+                                <span class="feature">Outdoor Seating</span>
+                                <span class="feature">Late Night</span>
+                                <span class="feature">Student Discount</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h2>Get in Touch</h2>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <h3>General Info</h3>
+                                <p>{{PHONE}}</p>
+                                <p>{{EMAIL}}</p>
+                            </div>
+                            <div class="contact-item">
+                                <h3>Catering</h3>
+                                <p>{{CATERING_PHONE}}</p>
+                                <p>Large orders & events</p>
+                            </div>
+                            <div class="contact-item">
+                                <h3>Follow Us</h3>
+                                <div class="social-links">
+                                    <a href="{{INSTAGRAM_URL}}">Instagram</a>
+                                    <a href="{{FACEBOOK_URL}}">Facebook</a>
+                                    <a href="{{YELP_URL}}">Yelp</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <h3>Send us a Message</h3>
+                        <form>
+                            <input type="text" placeholder="Your Name" required>
+                            <input type="email" placeholder="Email Address" required>
+                            <select required>
+                                <option value="">What can we help with?</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="catering">Catering Inquiry</option>
+                                <option value="franchise">Franchise</option>
+                                <option value="spice">Spice Question</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <textarea placeholder="Your Message" rows="4" required></textarea>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>{{RESTAURANT_NAME}}</h3>
+                    <p class="chinese-footer">{{CHINESE_NAME}}</p>
+                    <p>Authentic Xi'an hand-pulled noodles</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="#noodles">Hand-Pulled Noodles</a></li>
+                        <li><a href="#dumplings">Dumplings</a></li>
+                        <li><a href="#spice">Spice Guide</a></li>
+                        <li><a href="#order">Order Online</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#story">Our Story</a></li>
+                        <li><a href="#locations">Locations</a></li>
+                        <li><a href="#">Catering</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="{{INSTAGRAM_URL}}">Instagram</a>
+                        <a href="{{FACEBOOK_URL}}">Facebook</a>
+                        <a href="{{YELP_URL}}">Yelp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

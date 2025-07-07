@@ -1,0 +1,451 @@
+/* Luxury Minimalist Template - Pujol Inspired */
+
+:root {
+    /* Pujol Minimalist Color Scheme */
+    --bg-primary: #f8f6f3;
+    --bg-secondary: #ffffff;
+    --text-primary: #2d3748;
+    --text-secondary: #718096;
+    --text-light: #a0aec0;
+    --accent: #8b7355;
+    --border: #e2e8f0;
+}
+
+/* Alternative Color Schemes */
+.theme-dark {
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2d2d2d;
+    --text-primary: #ffffff;
+    --text-secondary: #a0aec0;
+    --text-light: #718096;
+    --accent: #cd853f;
+    --border: #4a5568;
+}
+
+.theme-warm {
+    --bg-primary: #faf7f2;
+    --bg-secondary: #ffffff;
+    --text-primary: #2d3748;
+    --text-secondary: #8b4513;
+    --text-light: #a0522d;
+    --accent: #d2691e;
+    --border: #e6c2a6;
+}
+
+.theme-cool {
+    --bg-primary: #f7fafc;
+    --bg-secondary: #ffffff;
+    --text-primary: #2d3748;
+    --text-secondary: #4a5568;
+    --text-light: #718096;
+    --accent: #319795;
+    --border: #cbd5e0;
+}
+
+.theme-bold {
+    --bg-primary: #f7fafc;
+    --bg-secondary: #ffffff;
+    --text-primary: #2d3748;
+    --text-secondary: #553c9a;
+    --text-light: #805ad5;
+    --accent: #e53e3e;
+    --border: #d6d3d1;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background: var(--bg-primary);
+    overflow-x: hidden;
+}
+
+/* Navigation */
+.nav-minimal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(248, 246, 243, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 20px 0;
+    transition: all 0.3s ease;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav-center {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-primary);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: var(--accent);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero-minimal {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-primary);
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.restaurant-name {
+    font-size: clamp(3rem, 8vw, 8rem);
+    font-weight: 300;
+    letter-spacing: 8px;
+    color: var(--text-primary);
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.restaurant-tagline {
+    font-size: 16px;
+    letter-spacing: 3px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+/* About Section */
+.about-minimal {
+    padding: 120px 0;
+    background: var(--bg-secondary);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-content h2 {
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: 4px;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+    color: var(--text-primary);
+}
+
+.philosophy-text {
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: 80px;
+    font-weight: 300;
+}
+
+.chef-info h3 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    color: var(--accent);
+}
+
+.chef-info p {
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: var(--text-light);
+    text-transform: uppercase;
+}
+
+/* Experience Section */
+.experience-minimal {
+    padding: 120px 0;
+    background: var(--bg-primary);
+}
+
+.experience-minimal h2 {
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: 4px;
+    margin-bottom: 80px;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--text-primary);
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 60px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.experience-item {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.experience-item h3 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.experience-item p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    font-weight: 300;
+}
+
+/* Reservation Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: var(--bg-secondary);
+    margin: 5% auto;
+    padding: 60px;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 0;
+    position: relative;
+}
+
+.close {
+    color: var(--text-light);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: var(--text-primary);
+}
+
+.modal-content h2 {
+    font-size: 1.8rem;
+    font-weight: 300;
+    letter-spacing: 3px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--text-primary);
+}
+
+.reservation-form {
+    display: grid;
+    gap: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    color: var(--text-secondary);
+    font-weight: 400;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 15px;
+    border: 1px solid var(--border);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 16px;
+    font-weight: 300;
+    border-radius: 0;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--accent);
+}
+
+.btn-reserve {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 20px 40px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    font-weight: 400;
+}
+
+.btn-reserve:hover {
+    background: var(--text-primary);
+    transform: translateY(-2px);
+}
+
+/* Contact Section */
+.contact-minimal {
+    padding: 120px 0;
+    background: var(--bg-secondary);
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 60px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-item h3 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.contact-item p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-center {
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+    
+    .nav-link {
+        font-size: 10px;
+    }
+    
+    .restaurant-name {
+        letter-spacing: 4px;
+        margin-bottom: 20px;
+    }
+    
+    .restaurant-tagline {
+        font-size: 14px;
+        letter-spacing: 2px;
+    }
+    
+    .about-minimal,
+    .experience-minimal,
+    .contact-minimal {
+        padding: 80px 0;
+    }
+    
+    .modal-content {
+        margin: 10% auto;
+        padding: 40px 30px;
+        width: 95%;
+    }
+    
+    .experience-grid {
+        gap: 40px;
+    }
+    
+    .contact-info {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-minimal {
+        padding: 15px 0;
+    }
+    
+    .nav-center {
+        gap: 20px;
+    }
+    
+    .hero-minimal {
+        padding: 0 10px;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+    
+    .modal-content {
+        padding: 30px 20px;
+    }
+}

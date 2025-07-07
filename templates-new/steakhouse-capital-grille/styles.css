@@ -1,0 +1,863 @@
+/* Premium Steakhouse Template - Capital Grille Style */
+
+/* CSS Variables for Color Schemes */
+:root {
+    /* Classic Scheme (Default) */
+    --classic-primary: #1a1a1a;
+    --classic-secondary: #8b4513;
+    --classic-accent: #cd853f;
+    --classic-background: #f8f8f8;
+    --classic-text: #2c2c2c;
+    
+    /* Warm Scheme */
+    --warm-primary: #5d2f17;
+    --warm-secondary: #8b4513;
+    --warm-accent: #d2691e;
+    --warm-background: #faf6f2;
+    --warm-text: #2c1810;
+    
+    /* Cool Scheme */
+    --cool-primary: #2c3e50;
+    --cool-secondary: #34495e;
+    --cool-accent: #3498db;
+    --cool-background: #ecf0f1;
+    --cool-text: #2c3e50;
+    
+    /* Bold Scheme */
+    --bold-primary: #8b0000;
+    --bold-secondary: #a0522d;
+    --bold-accent: #daa520;
+    --bold-background: #fff8f0;
+    --bold-text: #2c1810;
+    
+    /* Business Scheme */
+    --business-primary: #2c3e50;
+    --business-secondary: #34495e;
+    --business-accent: #e74c3c;
+    --business-background: #f8f9fa;
+    --business-text: #2c3e50;
+}
+
+/* Theme Classes */
+.classic-theme {
+    --primary: var(--classic-primary);
+    --secondary: var(--classic-secondary);
+    --accent: var(--classic-accent);
+    --background: var(--classic-background);
+    --text: var(--classic-text);
+}
+
+.warm-theme {
+    --primary: var(--warm-primary);
+    --secondary: var(--warm-secondary);
+    --accent: var(--warm-accent);
+    --background: var(--warm-background);
+    --text: var(--warm-text);
+}
+
+.cool-theme {
+    --primary: var(--cool-primary);
+    --secondary: var(--cool-secondary);
+    --accent: var(--cool-accent);
+    --background: var(--cool-background);
+    --text: var(--cool-text);
+}
+
+.bold-theme {
+    --primary: var(--bold-primary);
+    --secondary: var(--bold-secondary);
+    --accent: var(--bold-accent);
+    --background: var(--bold-background);
+    --text: var(--bold-text);
+}
+
+.business-theme {
+    --primary: var(--business-primary);
+    --secondary: var(--business-secondary);
+    --accent: var(--business-accent);
+    --background: var(--business-background);
+    --text: var(--business-text);
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Times New Roman', serif;
+    line-height: 1.6;
+    color: var(--text);
+    background-color: var(--background);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background: rgba(26, 26, 26, 0.95);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(205, 133, 63, 0.3);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+}
+
+.logo h1 {
+    font-size: 2rem;
+    color: #cd853f;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+    letter-spacing: 0.5px;
+}
+
+.nav-list a:hover {
+    color: #cd853f;
+}
+
+.nav-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.mobile-nav-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.mobile-nav-toggle span {
+    width: 25px;
+    height: 3px;
+    background: #cd853f;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 3px;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.btn-primary {
+    background: #cd853f;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #b8762d;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #cd853f;
+    border: 2px solid #cd853f;
+}
+
+.btn-secondary:hover {
+    background: #cd853f;
+    color: white;
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+.btn-outline:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero-overlay h2 {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.hero-overlay p {
+    font-size: 1.4rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+    font-style: italic;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+/* Premium Features */
+.premium-features {
+    padding: 5rem 0;
+    background: white;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+}
+
+.feature-card {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: var(--background);
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.feature-icon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+}
+
+.feature-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.feature-card p {
+    color: var(--text);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Menu Showcase */
+.menu-showcase {
+    padding: 5rem 0;
+    background: var(--background);
+}
+
+.menu-showcase h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.steaks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.steak-item {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.steak-item:hover {
+    transform: translateY(-10px);
+}
+
+.steak-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.steak-info {
+    padding: 2rem;
+}
+
+.steak-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.steak-info p {
+    color: var(--text);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.steak-info .price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #cd853f;
+}
+
+.menu-actions {
+    text-align: center;
+}
+
+/* Wine Program */
+.wine-program {
+    padding: 5rem 0;
+    background: white;
+}
+
+.wine-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.wine-text h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.wine-text p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--text);
+    line-height: 1.8;
+}
+
+.wine-features {
+    display: grid;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.wine-feature {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.wine-feature strong {
+    color: #cd853f;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.wine-feature span {
+    color: var(--text);
+    font-size: 1.1rem;
+}
+
+.wine-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Private Dining */
+.private-dining {
+    padding: 5rem 0;
+    background: var(--background);
+}
+
+.private-dining h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.3rem;
+    margin-bottom: 3rem;
+    color: var(--text);
+    font-style: italic;
+}
+
+.private-rooms {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.room-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.room-card:hover {
+    transform: translateY(-10px);
+}
+
+.room-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.room-info {
+    padding: 2rem;
+}
+
+.room-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.room-info p {
+    color: var(--text);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.room-info .capacity {
+    color: #cd853f;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.private-actions {
+    text-align: center;
+}
+
+/* About Section */
+.about {
+    padding: 5rem 0;
+    background: white;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-text h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--text);
+    line-height: 1.8;
+}
+
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat strong {
+    display: block;
+    font-size: 1.5rem;
+    color: #cd853f;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.stat span {
+    color: var(--text);
+    font-size: 1.1rem;
+}
+
+.about-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Reviews */
+.reviews {
+    padding: 5rem 0;
+    background: var(--background);
+}
+
+.reviews h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+.review-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.stars {
+    font-size: 1.5rem;
+    color: #cd853f;
+    margin-bottom: 1.5rem;
+}
+
+.review-card p {
+    font-size: 1.1rem;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+.review-card cite {
+    color: var(--primary);
+    font-weight: bold;
+}
+
+/* Contact & Reservations */
+.contact {
+    padding: 5rem 0;
+    background: white;
+}
+
+.contact h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+.contact-info h3 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
+.contact-item strong {
+    color: #cd853f;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.contact-item span {
+    color: var(--text);
+    font-size: 1.1rem;
+}
+
+.reservation-form {
+    background: var(--background);
+    padding: 3rem;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.reservation-form h3 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #cd853f;
+}
+
+/* Footer */
+.footer {
+    background: #1a1a1a;
+    color: white;
+    padding: 3rem 0 1rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    margin-bottom: 1rem;
+    color: #cd853f;
+    font-weight: bold;
+}
+
+.footer-section p {
+    color: rgba(255,255,255,0.8);
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #cd853f;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #cd853f;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.8);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav {
+        display: none;
+    }
+    
+    .mobile-nav-toggle {
+        display: flex;
+    }
+    
+    .hero-overlay h2 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-actions {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .wine-content,
+    .about-content,
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .features-grid,
+    .steaks-grid,
+    .private-rooms,
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-stats {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .hero-overlay h2 {
+        font-size: 2rem;
+    }
+    
+    .btn {
+        padding: 12px 24px;
+        font-size: 0.9rem;
+    }
+    
+    .reservation-form {
+        padding: 2rem;
+    }
+}

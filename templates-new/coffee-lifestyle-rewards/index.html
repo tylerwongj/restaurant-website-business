@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Your Daily Coffee Connection</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="color-scheme-earth">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>{{RESTAURANT_NAME}}</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#menu" class="nav-link">Menu</a></li>
+                <li><a href="#rewards" class="nav-link">Rewards</a></li>
+                <li><a href="#community" class="nav-link">Community</a></li>
+                <li><a href="#locations" class="nav-link">Locations</a></li>
+                <li><a href="#" class="nav-link cta-button" onclick="openAppModal()">Get App</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-split">
+            <div class="hero-content">
+                <h1 class="hero-title">Your Daily Coffee Connection</h1>
+                <p class="hero-subtitle">Start your day with ethically sourced coffee and a community that cares</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="openOrderModal()">Order Now</button>
+                    <button class="btn btn-secondary" onclick="openRewardsModal()">Join Rewards</button>
+                </div>
+                <div class="hero-features">
+                    <div class="feature">
+                        <i class="fas fa-leaf"></i>
+                        <span>Ethically Sourced</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>Mobile Ordering</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-star"></i>
+                        <span>Rewards Program</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="{{HERO_IMAGE}}" alt="Coffee and lifestyle">
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <div class="container">
+            <h2 class="section-title">Featured This Month</h2>
+            <div class="products-grid">
+                <div class="product-card seasonal">
+                    <div class="product-badge">Seasonal</div>
+                    <img src="{{SEASONAL_DRINK_IMAGE}}" alt="Seasonal Drink">
+                    <div class="product-info">
+                        <h3>Autumn Spice Latte</h3>
+                        <p>Warm spices meet our signature espresso</p>
+                        <span class="price">$5.25</span>
+                        <button class="btn btn-small">Order Now</button>
+                    </div>
+                </div>
+                <div class="product-card new">
+                    <div class="product-badge">New</div>
+                    <img src="{{NEW_FOOD_IMAGE}}" alt="New Food Item">
+                    <div class="product-info">
+                        <h3>Protein Power Bowl</h3>
+                        <p>Quinoa, avocado, and fresh vegetables</p>
+                        <span class="price">$9.95</span>
+                        <button class="btn btn-small">Try It</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="{{COFFEE_BAG_IMAGE}}" alt="Coffee Beans">
+                    <div class="product-info">
+                        <h3>House Blend</h3>
+                        <p>Our signature roast, now available to take home</p>
+                        <span class="price">$12.95</span>
+                        <button class="btn btn-small">Shop Beans</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu-section">
+        <div class="container">
+            <h2 class="section-title">Our Menu</h2>
+            <div class="menu-categories">
+                <div class="menu-category">
+                    <div class="category-header">
+                        <img src="{{COFFEE_ICON}}" alt="Coffee">
+                        <h3>Coffee & Espresso</h3>
+                    </div>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Pike Place Roast</h4>
+                                <p>Our signature medium roast</p>
+                            </div>
+                            <span class="item-price">$2.45</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Caffè Americano</h4>
+                                <p>Espresso shots with hot water</p>
+                            </div>
+                            <span class="item-price">$3.25</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Cappuccino</h4>
+                                <p>Espresso with steamed milk foam</p>
+                            </div>
+                            <span class="item-price">$4.45</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-category">
+                    <div class="category-header">
+                        <img src="{{LATTE_ICON}}" alt="Specialty Drinks">
+                        <h3>Specialty Drinks</h3>
+                    </div>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Caramel Macchiato</h4>
+                                <p>Vanilla syrup, steamed milk, espresso, caramel</p>
+                            </div>
+                            <span class="item-price">$5.25</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Green Tea Latte</h4>
+                                <p>Matcha powder with steamed milk</p>
+                            </div>
+                            <span class="item-price">$4.95</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Iced Brown Sugar Oatmilk</h4>
+                                <p>Shaken espresso with brown sugar and oatmilk</p>
+                            </div>
+                            <span class="item-price">$5.45</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-category">
+                    <div class="category-header">
+                        <img src="{{FOOD_ICON}}" alt="Food">
+                        <h3>Food</h3>
+                    </div>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Everything Bagel</h4>
+                                <p>With cream cheese</p>
+                            </div>
+                            <span class="item-price">$3.95</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Spinach Feta Wrap</h4>
+                                <p>Egg whites, spinach, feta, tomato</p>
+                            </div>
+                            <span class="item-price">$5.95</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Lemon Pound Cake</h4>
+                                <p>Moist and citrusy</p>
+                            </div>
+                            <span class="item-price">$2.95</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rewards Section -->
+    <section id="rewards" class="rewards-section">
+        <div class="container">
+            <div class="rewards-content">
+                <div class="rewards-info">
+                    <h2>{{RESTAURANT_NAME}} Rewards</h2>
+                    <p class="rewards-subtitle">Earn Stars with every purchase and unlock free drinks & food</p>
+                    
+                    <div class="rewards-benefits">
+                        <div class="benefit">
+                            <div class="benefit-icon">
+                                <i class="fas fa-gift"></i>
+                            </div>
+                            <div class="benefit-text">
+                                <h4>Free Drinks</h4>
+                                <p>Earn a free drink with 150 Stars</p>
+                            </div>
+                        </div>
+                        <div class="benefit">
+                            <div class="benefit-icon">
+                                <i class="fas fa-birthday-cake"></i>
+                            </div>
+                            <div class="benefit-text">
+                                <h4>Birthday Treat</h4>
+                                <p>Get a free drink on your birthday</p>
+                            </div>
+                        </div>
+                        <div class="benefit">
+                            <div class="benefit-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <div class="benefit-text">
+                                <h4>Mobile Ordering</h4>
+                                <p>Skip the line with mobile order & pay</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-primary" onclick="openRewardsModal()">Join Now - It's Free</button>
+                </div>
+                <div class="rewards-visual">
+                    <div class="phone-mockup">
+                        <img src="{{APP_MOCKUP_IMAGE}}" alt="Mobile App">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="community-section">
+        <div class="container">
+            <h2 class="section-title">Community Impact</h2>
+            <p class="section-subtitle">Together, we're making a difference</p>
+            
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <img src="{{ETHICAL_SOURCING_IMAGE}}" alt="Ethical Sourcing">
+                    <div class="impact-content">
+                        <h3>Ethical Sourcing</h3>
+                        <p>We work directly with coffee farmers to ensure fair wages and sustainable practices</p>
+                    </div>
+                </div>
+                <div class="impact-card">
+                    <img src="{{COMMUNITY_IMAGE}}" alt="Community Support">
+                    <div class="impact-content">
+                        <h3>Community Support</h3>
+                        <p>Supporting local nonprofits and community initiatives in every neighborhood we serve</p>
+                    </div>
+                </div>
+                <div class="impact-card">
+                    <img src="{{ENVIRONMENT_IMAGE}}" alt="Environmental Commitment">
+                    <div class="impact-content">
+                        <h3>Environmental Commitment</h3>
+                        <p>Reducing our environmental footprint through sustainable packaging and energy practices</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations Section -->
+    <section id="locations" class="locations-section">
+        <div class="container">
+            <h2 class="section-title">Find Us</h2>
+            <div class="locations-content">
+                <div class="location-finder">
+                    <div class="finder-form">
+                        <h3>Store Locator</h3>
+                        <div class="search-input">
+                            <input type="text" placeholder="Enter your address or ZIP code">
+                            <button class="btn btn-primary">Find Stores</button>
+                        </div>
+                        <div class="location-features">
+                            <label><input type="checkbox"> Drive-thru</label>
+                            <label><input type="checkbox"> WiFi</label>
+                            <label><input type="checkbox"> Mobile Order & Pay</label>
+                        </div>
+                    </div>
+                    <div class="featured-location">
+                        <h4>Flagship Store</h4>
+                        <p>{{RESTAURANT_ADDRESS}}</p>
+                        <p>{{PHONE_NUMBER}}</p>
+                        <p class="hours">{{HOURS_OF_OPERATION}}</p>
+                        <button class="btn btn-secondary">Get Directions</button>
+                    </div>
+                </div>
+                <div class="location-map">
+                    <!-- Map placeholder -->
+                    <div class="map-placeholder">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Interactive map goes here</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>{{RESTAURANT_NAME}}</h3>
+                    <p>Your daily coffee connection</p>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}"><i class="fab fa-facebook"></i></a>
+                        <a href="{{INSTAGRAM_URL}}"><i class="fab fa-instagram"></i></a>
+                        <a href="{{TWITTER_URL}}"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#rewards">Rewards</a></li>
+                        <li><a href="#locations">Store Locator</a></li>
+                        <li><a href="#">Gift Cards</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Nutritional Info</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Investor Relations</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Order Modal -->
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeOrderModal()">&times;</span>
+            <h2>Order Options</h2>
+            <div class="order-options">
+                <div class="order-option">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Mobile Order & Pay</h3>
+                    <p>Order ahead and skip the line</p>
+                    <button class="btn btn-primary">Download App</button>
+                </div>
+                <div class="order-option">
+                    <i class="fas fa-car"></i>
+                    <h3>Drive-Thru</h3>
+                    <p>Quick and convenient</p>
+                    <button class="btn btn-secondary">Find Drive-Thru</button>
+                </div>
+                <div class="order-option">
+                    <i class="fas fa-truck"></i>
+                    <h3>Delivery</h3>
+                    <p>Delivered to your door</p>
+                    <button class="btn btn-secondary">Order Delivery</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rewards Modal -->
+    <div id="rewardsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeRewardsModal()">&times;</span>
+            <h2>Join {{RESTAURANT_NAME}} Rewards</h2>
+            <form class="rewards-form">
+                <div class="form-group">
+                    <input type="text" placeholder="First Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Last Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Phone Number">
+                </div>
+                <div class="form-group">
+                    <input type="date" placeholder="Birthday" required>
+                </div>
+                <div class="checkbox-group">
+                    <label>
+                        <input type="checkbox" required>
+                        I agree to the <a href="#">Terms & Conditions</a>
+                    </label>
+                </div>
+                <div class="checkbox-group">
+                    <label>
+                        <input type="checkbox">
+                        Send me promotional emails and offers
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary">Join Rewards</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- App Download Modal -->
+    <div id="appModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAppModal()">&times;</span>
+            <h2>Get the {{RESTAURANT_NAME}} App</h2>
+            <div class="app-benefits">
+                <div class="app-benefit">
+                    <i class="fas fa-star"></i>
+                    <span>Earn and track Rewards</span>
+                </div>
+                <div class="app-benefit">
+                    <i class="fas fa-coffee"></i>
+                    <span>Mobile order & pay</span>
+                </div>
+                <div class="app-benefit">
+                    <i class="fas fa-gift"></i>
+                    <span>Exclusive offers</span>
+                </div>
+            </div>
+            <div class="app-download-buttons">
+                <a href="#" class="app-store-btn">
+                    <img src="{{APP_STORE_BADGE}}" alt="Download on App Store">
+                </a>
+                <a href="#" class="app-store-btn">
+                    <img src="{{GOOGLE_PLAY_BADGE}}" alt="Get it on Google Play">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

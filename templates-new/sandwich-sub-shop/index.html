@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Fresh Subs & Sandwiches</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto+Condensed:wght@300;400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="business-scheme">
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>{{RESTAURANT_NAME}}</h1>
+                <span class="tagline">Fresh Subs & Sandwiches</span>
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#subs">Subs</a></li>
+                    <li><a href="#catering">Catering</a></li>
+                    <li><a href="#rewards">Rewards</a></li>
+                    <li><a href="#locations">Locations</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#order" class="btn btn-order">Order Online</a>
+                <a href="#rewards" class="btn btn-rewards">Join Rewards</a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h2>Fresh is What We Do</h2>
+                <p>Hand-sliced meats, fresh-baked bread, and made-to-order subs built just how you like them.</p>
+                <div class="hero-features">
+                    <div class="feature">
+                        <span class="feature-icon">🥖</span>
+                        <span class="feature-text">Fresh Baked Daily</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">🥩</span>
+                        <span class="feature-text">Hand-Sliced Meats</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">⚡</span>
+                        <span class="feature-text">Made to Order</span>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#order" class="btn btn-primary">Order Now</a>
+                    <a href="#subs" class="btn btn-secondary">View Menu</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="{{SIGNATURE_SUB_IMAGE}}" alt="Fresh submarine sandwich">
+            </div>
+        </div>
+    </section>
+
+    <section class="daily-special">
+        <div class="container">
+            <div class="special-banner">
+                <div class="special-day">{{TODAY_DAY}}</div>
+                <div class="special-content">
+                    <h3>Today's Special</h3>
+                    <h4>{{DAILY_SPECIAL_NAME}}</h4>
+                    <p>{{DAILY_SPECIAL_DESCRIPTION}}</p>
+                    <span class="special-price">{{DAILY_SPECIAL_PRICE}}</span>
+                </div>
+                <div class="special-cta">
+                    <a href="#order" class="btn btn-accent">Order Special</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sub-builder" id="subs">
+        <div class="container">
+            <h2>Build Your Perfect Sub</h2>
+            <div class="builder-intro">
+                <p>Choose your size, bread, meats, cheese, and toppings for the ultimate custom sub experience</p>
+            </div>
+            
+            <div class="sub-sizes">
+                <h3>Choose Your Size</h3>
+                <div class="sizes-grid">
+                    <div class="size-option" data-size="mini">
+                        <div class="size-visual">🥪</div>
+                        <h4>Mini Sub</h4>
+                        <span class="size-length">{{MINI_LENGTH}}"</span>
+                        <span class="size-price">Starting at {{MINI_PRICE}}</span>
+                    </div>
+                    <div class="size-option popular" data-size="regular">
+                        <div class="size-visual">🥖</div>
+                        <h4>Regular Sub</h4>
+                        <span class="size-length">{{REGULAR_LENGTH}}"</span>
+                        <span class="size-price">Starting at {{REGULAR_PRICE}}</span>
+                        <span class="popular-badge">Most Popular</span>
+                    </div>
+                    <div class="size-option" data-size="giant">
+                        <div class="size-visual">🍞</div>
+                        <h4>Giant Sub</h4>
+                        <span class="size-length">{{GIANT_LENGTH}}"</span>
+                        <span class="size-price">Starting at {{GIANT_PRICE}}</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="signature-subs">
+                <h3>Signature Subs</h3>
+                <div class="subs-grid">
+                    <div class="sub-item">
+                        <img src="{{ITALIAN_SUB_IMAGE}}" alt="Italian Sub">
+                        <div class="sub-info">
+                            <h4>The Italian</h4>
+                            <p>Salami, pepperoni, capicola, provolone, lettuce, tomato, onion, oil & vinegar</p>
+                            <div class="sub-tags">
+                                <span class="tag">Signature</span>
+                                <span class="tag">Spicy</span>
+                            </div>
+                            <div class="sub-pricing">
+                                <span class="price-size">{{ITALIAN_MINI_PRICE}} / {{ITALIAN_REGULAR_PRICE}} / {{ITALIAN_GIANT_PRICE}}</span>
+                                <button class="btn btn-small">Customize</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="sub-item">
+                        <img src="{{TURKEY_SUB_IMAGE}}" alt="Turkey Club">
+                        <div class="sub-info">
+                            <h4>Turkey Club</h4>
+                            <p>Roasted turkey breast, bacon, swiss cheese, lettuce, tomato, mayo</p>
+                            <div class="sub-tags">
+                                <span class="tag">Popular</span>
+                                <span class="tag">Fresh</span>
+                            </div>
+                            <div class="sub-pricing">
+                                <span class="price-size">{{TURKEY_MINI_PRICE}} / {{TURKEY_REGULAR_PRICE}} / {{TURKEY_GIANT_PRICE}}</span>
+                                <button class="btn btn-small">Customize</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sub-item">
+                        <img src="{{ROAST_BEEF_SUB_IMAGE}}" alt="Roast Beef Sub">
+                        <div class="sub-info">
+                            <h4>Roast Beef Supreme</h4>
+                            <p>Slow-roasted beef, cheddar cheese, lettuce, tomato, horseradish sauce</p>
+                            <div class="sub-tags">
+                                <span class="tag">Premium</span>
+                                <span class="tag">Hearty</span>
+                            </div>
+                            <div class="sub-pricing">
+                                <span class="price-size">{{BEEF_MINI_PRICE}} / {{BEEF_REGULAR_PRICE}} / {{BEEF_GIANT_PRICE}}</span>
+                                <button class="btn btn-small">Customize</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sub-item">
+                        <img src="{{VEGGIE_SUB_IMAGE}}" alt="Veggie Deluxe">
+                        <div class="sub-info">
+                            <h4>Veggie Deluxe</h4>
+                            <p>Provolone, swiss, lettuce, tomato, cucumber, bell peppers, olives, oil & vinegar</p>
+                            <div class="sub-tags">
+                                <span class="tag">Vegetarian</span>
+                                <span class="tag">Fresh</span>
+                            </div>
+                            <div class="sub-pricing">
+                                <span class="price-size">{{VEGGIE_MINI_PRICE}} / {{VEGGIE_REGULAR_PRICE}} / {{VEGGIE_GIANT_PRICE}}</span>
+                                <button class="btn btn-small">Customize</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sub-item">
+                        <img src="{{MEATBALL_SUB_IMAGE}}" alt="Meatball Sub">
+                        <div class="sub-info">
+                            <h4>Meatball Marinara</h4>
+                            <p>Italian meatballs, marinara sauce, provolone cheese, parmesan</p>
+                            <div class="sub-tags">
+                                <span class="tag">Hot Sub</span>
+                                <span class="tag">Comfort</span>
+                            </div>
+                            <div class="sub-pricing">
+                                <span class="price-size">{{MEATBALL_MINI_PRICE}} / {{MEATBALL_REGULAR_PRICE}} / {{MEATBALL_GIANT_PRICE}}</span>
+                                <button class="btn btn-small">Customize</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sub-item">
+                        <img src="{{CHICKEN_SUB_IMAGE}}" alt="Chicken Parm">
+                        <div class="sub-info">
+                            <h4>Chicken Parmigiana</h4>
+                            <p>Breaded chicken cutlet, marinara sauce, mozzarella, parmesan</p>
+                            <div class="sub-tags">
+                                <span class="tag">Hot Sub</span>
+                                <span class="tag">Crispy</span>
+                            </div>
+                            <div class="sub-pricing">
+                                <span class="price-size">{{CHICKEN_MINI_PRICE}} / {{CHICKEN_REGULAR_PRICE}} / {{CHICKEN_GIANT_PRICE}}</span>
+                                <button class="btn btn-small">Customize</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bread-choices">
+                <h3>Fresh Baked Bread</h3>
+                <div class="bread-options">
+                    <div class="bread-option">
+                        <h4>White Roll</h4>
+                        <p>Classic soft white sub roll</p>
+                    </div>
+                    <div class="bread-option">
+                        <h4>Wheat Roll</h4>
+                        <p>Hearty whole wheat option</p>
+                    </div>
+                    <div class="bread-option">
+                        <h4>Italian Herbs</h4>
+                        <p>Seasoned with Italian herbs</p>
+                    </div>
+                    <div class="bread-option">
+                        <h4>Rosemary Parmesan</h4>
+                        <p>Premium artisan option</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="quality-promise">
+        <div class="container">
+            <div class="promise-content">
+                <h2>Our Quality Promise</h2>
+                <div class="promise-grid">
+                    <div class="promise-item">
+                        <div class="promise-icon">🥖</div>
+                        <h3>Fresh Baked Daily</h3>
+                        <p>Our bread is baked fresh in-store every morning before we open</p>
+                    </div>
+                    <div class="promise-item">
+                        <div class="promise-icon">🥩</div>
+                        <h3>Premium Meats</h3>
+                        <p>Hand-sliced deli meats from trusted suppliers, never pre-packaged</p>
+                    </div>
+                    <div class="promise-item">
+                        <div class="promise-icon">🧀</div>
+                        <h3>Real Cheese</h3>
+                        <p>Authentic cheeses, not processed alternatives</p>
+                    </div>
+                    <div class="promise-item">
+                        <div class="promise-icon">🥬</div>
+                        <h3>Fresh Vegetables</h3>
+                        <p>Crisp lettuce, ripe tomatoes, and fresh toppings delivered daily</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="catering-services" id="catering">
+        <div class="container">
+            <div class="catering-hero">
+                <h2>Catering Services</h2>
+                <p>Perfect for office meetings, parties, and events of all sizes</p>
+            </div>
+            
+            <div class="catering-options">
+                <div class="catering-option">
+                    <h3>Sub Platters</h3>
+                    <p>Giant subs cut into individual portions</p>
+                    <div class="option-details">
+                        <span>Serves {{SUB_PLATTER_SERVES}} people</span>
+                        <span>Choice of {{SUB_PLATTER_VARIETIES}} varieties</span>
+                        <span>Includes chips and pickles</span>
+                    </div>
+                    <span class="catering-price">Starting at {{SUB_PLATTER_PRICE}}</span>
+                </div>
+                
+                <div class="catering-option">
+                    <h3>Box Lunches</h3>
+                    <p>Individual meals perfect for meetings</p>
+                    <div class="option-details">
+                        <span>Regular sub, chips, cookie</span>
+                        <span>{{BOX_LUNCH_MIN}} person minimum</span>
+                        <span>Individually wrapped</span>
+                    </div>
+                    <span class="catering-price">{{BOX_LUNCH_PRICE}} per person</span>
+                </div>
+                
+                <div class="catering-option">
+                    <h3>Group Packages</h3>
+                    <p>Complete meal packages for large groups</p>
+                    <div class="option-details">
+                        <span>Subs, salads, sides, desserts</span>
+                        <span>{{GROUP_PACKAGE_MIN}} person minimum</span>
+                        <span>Setup and cleanup included</span>
+                    </div>
+                    <span class="catering-price">{{GROUP_PACKAGE_PRICE}} per person</span>
+                </div>
+            </div>
+            
+            <div class="catering-info">
+                <p><strong>Advance Notice:</strong> {{CATERING_NOTICE}} for all catering orders</p>
+                <p><strong>Delivery:</strong> Available within {{DELIVERY_RADIUS}} miles for orders over {{DELIVERY_MINIMUM}}</p>
+            </div>
+            
+            <a href="#" class="btn btn-primary">Order Catering</a>
+        </div>
+    </section>
+
+    <section class="rewards-program" id="rewards">
+        <div class="rewards-bg">
+            <div class="container">
+                <div class="rewards-content">
+                    <h2>{{REWARDS_PROGRAM_NAME}}</h2>
+                    <p>Earn points on every purchase and get free subs!</p>
+                    
+                    <div class="rewards-tiers">
+                        <div class="tier">
+                            <h3>Join</h3>
+                            <span class="tier-bonus">{{SIGNUP_BONUS}} Bonus Points</span>
+                            <p>Just for signing up</p>
+                        </div>
+                        <div class="tier">
+                            <h3>Earn</h3>
+                            <span class="tier-bonus">{{POINTS_PER_DOLLAR}} Point per $1</span>
+                            <p>On every purchase</p>
+                        </div>
+                        <div class="tier">
+                            <h3>Redeem</h3>
+                            <span class="tier-bonus">{{POINTS_FOR_REWARD}} Points = Free Sub</span>
+                            <p>Your choice of regular sub</p>
+                        </div>
+                    </div>
+                    
+                    <div class="rewards-perks">
+                        <h3>Member Perks</h3>
+                        <div class="perks-list">
+                            <span class="perk">🎂 Birthday reward</span>
+                            <span class="perk">📧 Exclusive offers</span>
+                            <span class="perk">⚡ Skip the line ordering</span>
+                            <span class="perk">🏆 VIP member events</span>
+                        </div>
+                    </div>
+                    
+                    <form class="rewards-signup">
+                        <input type="email" placeholder="Enter your email" required>
+                        <input type="tel" placeholder="Phone number" required>
+                        <button type="submit" class="btn btn-primary">Join Free</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="order-online" id="order">
+        <div class="container">
+            <h2>Order Online</h2>
+            <div class="order-options">
+                <div class="order-option">
+                    <div class="option-icon">🏃‍♂️</div>
+                    <h3>Pickup</h3>
+                    <p>Order ahead and skip the line</p>
+                    <div class="option-details">
+                        <span>Ready in {{PICKUP_TIME}} minutes</span>
+                        <span>No delivery fees</span>
+                        <span>Earn double rewards points</span>
+                    </div>
+                    <a href="#" class="btn btn-primary">Order for Pickup</a>
+                </div>
+                
+                <div class="order-option">
+                    <div class="option-icon">🚗</div>
+                    <h3>Delivery</h3>
+                    <p>Fresh subs delivered to your door</p>
+                    <div class="option-details">
+                        <span>{{DELIVERY_TIME}} average delivery</span>
+                        <span>{{DELIVERY_FEE}} delivery fee</span>
+                        <span>{{DELIVERY_MINIMUM}} minimum order</span>
+                    </div>
+                    <a href="#" class="btn btn-primary">Order for Delivery</a>
+                </div>
+            </div>
+            
+            <div class="app-promotion">
+                <h3>Download Our App</h3>
+                <p>Faster ordering, exclusive deals, and loyalty rewards</p>
+                <div class="app-buttons">
+                    <a href="{{APP_STORE_URL}}" class="app-btn">
+                        <img src="{{APP_STORE_BADGE}}" alt="Download on App Store">
+                    </a>
+                    <a href="{{GOOGLE_PLAY_URL}}" class="app-btn">
+                        <img src="{{GOOGLE_PLAY_BADGE}}" alt="Get it on Google Play">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="locations" id="locations">
+        <div class="container">
+            <h2>Find Your Location</h2>
+            <div class="location-search">
+                <input type="text" placeholder="Enter city, state, or zip">
+                <button class="btn btn-primary">Find Stores</button>
+            </div>
+            
+            <div class="locations-grid">
+                <div class="location">
+                    <h3>{{LOCATION_1_NAME}}</h3>
+                    <p>{{LOCATION_1_ADDRESS}}</p>
+                    <p>{{LOCATION_1_PHONE}}</p>
+                    <div class="location-services">
+                        <span class="service">🥪 Dine-in</span>
+                        <span class="service">🚗 Pickup</span>
+                        <span class="service">🚚 Delivery</span>
+                        <span class="service">🎉 Catering</span>
+                    </div>
+                    <div class="location-hours">
+                        <p><strong>Hours:</strong> {{LOCATION_1_HOURS}}</p>
+                    </div>
+                    <div class="location-actions">
+                        <a href="#" class="btn btn-outline">Get Directions</a>
+                        <a href="#order" class="btn btn-primary">Order Now</a>
+                    </div>
+                </div>
+                
+                <div class="location">
+                    <h3>{{LOCATION_2_NAME}}</h3>
+                    <p>{{LOCATION_2_ADDRESS}}</p>
+                    <p>{{LOCATION_2_PHONE}}</p>
+                    <div class="location-services">
+                        <span class="service">🥪 Dine-in</span>
+                        <span class="service">🚗 Pickup</span>
+                        <span class="service">🚚 Delivery</span>
+                        <span class="service">🎉 Catering</span>
+                    </div>
+                    <div class="location-hours">
+                        <p><strong>Hours:</strong> {{LOCATION_2_HOURS}}</p>
+                    </div>
+                    <div class="location-actions">
+                        <a href="#" class="btn btn-outline">Get Directions</a>
+                        <a href="#order" class="btn btn-primary">Order Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>{{RESTAURANT_NAME}}</h3>
+                    <p>Serving fresh subs and sandwiches since {{YEAR_ESTABLISHED}}</p>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}">Instagram</a>
+                        <a href="{{TWITTER_URL}}">Twitter</a>
+                        <a href="{{YOUTUBE_URL}}">YouTube</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Order</h4>
+                    <p>{{PHONE}}</p>
+                    <p>{{EMAIL}}</p>
+                    <p>Online ordering: {{ONLINE_HOURS}}</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Catering</h4>
+                    <p>{{CATERING_PHONE}}</p>
+                    <p>{{CATERING_EMAIL}}</p>
+                    <p>{{CATERING_NOTICE}} advance notice required</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <p><a href="#">About Us</a></p>
+                    <p><a href="#">Nutrition</a></p>
+                    <p><a href="#">Franchise</a></p>
+                    <p><a href="#">Careers</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; {{CURRENT_YEAR}} {{RESTAURANT_NAME}}. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Nutrition Info</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

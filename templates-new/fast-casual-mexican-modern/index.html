@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Fresh Mexican Kitchen</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="color-scheme-mexican">
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="{{LOGO_IMAGE}}" alt="{{RESTAURANT_NAME}} Logo">
+                    <div class="logo-text">
+                        <h1>{{RESTAURANT_NAME}}</h1>
+                        <span class="tagline">Fresh Mexican Kitchen</span>
+                    </div>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="#build">Build Your Bowl</a></li>
+                    <li><a href="#catering">Catering</a></li>
+                    <li><a href="#rewards">Rewards</a></li>
+                    <li><a href="#locations">Locations</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="#order" class="order-button">Order Online</a>
+                    <a href="#app" class="app-button">Get App</a>
+                </div>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <span class="badge-icon">🌮</span>
+                        <span>{{ESTABLISHED_SINCE}}</span>
+                    </div>
+                    <h2>{{TAGLINE}}</h2>
+                    <p>{{HERO_DESCRIPTION}}</p>
+                    <div class="hero-features">
+                        <div class="feature-pill">
+                            <span class="feature-icon">🥑</span>
+                            <span>Fresh Daily</span>
+                        </div>
+                        <div class="feature-pill">
+                            <span class="feature-icon">🌱</span>
+                            <span>Locally Sourced</span>
+                        </div>
+                        <div class="feature-pill">
+                            <span class="feature-icon">⚡</span>
+                            <span>Made to Order</span>
+                        </div>
+                    </div>
+                    <div class="hero-actions">
+                        <a href="#order" class="cta-button primary">Order Now</a>
+                        <a href="#build" class="cta-button secondary">Build Your Bowl</a>
+                    </div>
+                    <div class="delivery-options">
+                        <span class="delivery-text">Available on:</span>
+                        <div class="delivery-apps">
+                            <img src="{{DOORDASH_LOGO}}" alt="DoorDash">
+                            <img src="{{UBEREATS_LOGO}}" alt="Uber Eats">
+                            <img src="{{GRUBHUB_LOGO}}" alt="Grubhub">
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="{{HERO_IMAGE}}" alt="{{RESTAURANT_NAME}} fresh Mexican food">
+                    <div class="floating-ingredients">
+                        <div class="ingredient-float avocado">🥑</div>
+                        <div class="ingredient-float lime">🟢</div>
+                        <div class="ingredient-float pepper">🌶️</div>
+                        <div class="ingredient-float cilantro">🌿</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="build-your-bowl" id="build">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="section-subtitle">Interactive</span>
+                    <h2>Build Your Perfect Bowl</h2>
+                    <p>{{BUILD_INTRO}}</p>
+                </div>
+                
+                <div class="bowl-builder">
+                    <div class="builder-steps">
+                        <div class="step active" data-step="1">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h3>Choose Your Base</h3>
+                                <div class="options-grid">
+                                    <div class="option-card" data-option="cilantro-lime-rice">
+                                        <img src="{{BASE_IMAGE_1}}" alt="Cilantro Lime Rice">
+                                        <h4>Cilantro Lime Rice</h4>
+                                        <p>Our signature fluffy rice</p>
+                                        <span class="option-price">+$0</span>
+                                    </div>
+                                    <div class="option-card" data-option="brown-rice">
+                                        <img src="{{BASE_IMAGE_2}}" alt="Brown Rice">
+                                        <h4>Brown Rice</h4>
+                                        <p>Healthy whole grain option</p>
+                                        <span class="option-price">+$0</span>
+                                    </div>
+                                    <div class="option-card" data-option="cauliflower-rice">
+                                        <img src="{{BASE_IMAGE_3}}" alt="Cauliflower Rice">
+                                        <h4>Cauliflower Rice</h4>
+                                        <p>Low-carb alternative</p>
+                                        <span class="option-price">+$1</span>
+                                    </div>
+                                    <div class="option-card" data-option="mixed-greens">
+                                        <img src="{{BASE_IMAGE_4}}" alt="Mixed Greens">
+                                        <h4>Mixed Greens</h4>
+                                        <p>Fresh lettuce blend</p>
+                                        <span class="option-price">+$0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="step" data-step="2">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h3>Pick Your Protein</h3>
+                                <div class="options-grid">
+                                    <div class="option-card" data-option="carnitas">
+                                        <img src="{{PROTEIN_IMAGE_1}}" alt="Carnitas">
+                                        <h4>Carnitas</h4>
+                                        <p>Slow-cooked pulled pork</p>
+                                        <span class="option-price">+$0</span>
+                                    </div>
+                                    <div class="option-card" data-option="carne-asada">
+                                        <img src="{{PROTEIN_IMAGE_2}}" alt="Carne Asada">
+                                        <h4>Carne Asada</h4>
+                                        <p>Grilled steak strips</p>
+                                        <span class="option-price">+$1</span>
+                                    </div>
+                                    <div class="option-card" data-option="pollo">
+                                        <img src="{{PROTEIN_IMAGE_3}}" alt="Pollo">
+                                        <h4>Pollo</h4>
+                                        <p>Seasoned grilled chicken</p>
+                                        <span class="option-price">+$0</span>
+                                    </div>
+                                    <div class="option-card" data-option="sofritas">
+                                        <img src="{{PROTEIN_IMAGE_4}}" alt="Sofritas">
+                                        <h4>Sofritas</h4>
+                                        <p>Spiced tofu crumbles</p>
+                                        <span class="option-price">+$0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="step" data-step="3">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h3>Add Toppings</h3>
+                                <div class="options-grid toppings">
+                                    <div class="option-card" data-option="black-beans">
+                                        <img src="{{TOPPING_IMAGE_1}}" alt="Black Beans">
+                                        <h4>Black Beans</h4>
+                                        <span class="option-price">+$0</span>
+                                    </div>
+                                    <div class="option-card" data-option="pinto-beans">
+                                        <img src="{{TOPPING_IMAGE_2}}" alt="Pinto Beans">
+                                        <h4>Pinto Beans</h4>
+                                        <span class="option-price">+$0</span>
+                                    </div>
+                                    <div class="option-card" data-option="corn-salsa">
+                                        <img src="{{TOPPING_IMAGE_3}}" alt="Corn Salsa">
+                                        <h4>Corn Salsa</h4>
+                                        <span class="option-price">+$0</span>
+                                    </div>
+                                    <div class="option-card" data-option="pico-de-gallo">
+                                        <img src="{{TOPPING_IMAGE_4}}" alt="Pico de Gallo">
+                                        <h4>Pico de Gallo</h4>
+                                        <span class="option-price">+$0</span>
+                                    </div>
+                                    <div class="option-card" data-option="guacamole">
+                                        <img src="{{TOPPING_IMAGE_5}}" alt="Guacamole">
+                                        <h4>Guacamole</h4>
+                                        <span class="option-price">+$2</span>
+                                    </div>
+                                    <div class="option-card" data-option="queso">
+                                        <img src="{{TOPPING_IMAGE_6}}" alt="Queso">
+                                        <h4>Queso</h4>
+                                        <span class="option-price">+$1.5</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="step" data-step="4">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h3>Finish & Customize</h3>
+                                <div class="options-grid finishes">
+                                    <div class="option-card" data-option="sour-cream">
+                                        <img src="{{FINISH_IMAGE_1}}" alt="Sour Cream">
+                                        <h4>Sour Cream</h4>
+                                        <span class="option-price">+$0</span>
+                                    </div>
+                                    <div class="option-card" data-option="cheese">
+                                        <img src="{{FINISH_IMAGE_2}}" alt="Cheese">
+                                        <h4>Cheese</h4>
+                                        <span class="option-price">+$0</span>
+                                    </div>
+                                    <div class="option-card" data-option="lettuce">
+                                        <img src="{{FINISH_IMAGE_3}}" alt="Lettuce">
+                                        <h4>Lettuce</h4>
+                                        <span class="option-price">+$0</span>
+                                    </div>
+                                    <div class="option-card" data-option="extra-protein">
+                                        <img src="{{FINISH_IMAGE_4}}" alt="Extra Protein">
+                                        <h4>Extra Protein</h4>
+                                        <span class="option-price">+$3</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bowl-preview">
+                        <div class="bowl-visual">
+                            <img src="{{BOWL_BASE_IMAGE}}" alt="Bowl base" class="bowl-base">
+                            <div class="bowl-layers"></div>
+                        </div>
+                        <div class="bowl-summary">
+                            <h3>Your Bowl</h3>
+                            <div class="selected-ingredients">
+                                <p>Start building your perfect bowl!</p>
+                            </div>
+                            <div class="bowl-total">
+                                <span class="total-label">Total:</span>
+                                <span class="total-price">${{BASE_PRICE}}</span>
+                            </div>
+                            <div class="bowl-actions">
+                                <button class="add-to-cart">Add to Cart</button>
+                                <button class="save-favorite">Save as Favorite</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="builder-navigation">
+                    <button class="nav-btn prev" disabled>Previous</button>
+                    <div class="step-indicators">
+                        <div class="indicator active" data-step="1"></div>
+                        <div class="indicator" data-step="2"></div>
+                        <div class="indicator" data-step="3"></div>
+                        <div class="indicator" data-step="4"></div>
+                    </div>
+                    <button class="nav-btn next">Next</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="signature-menu">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="section-subtitle">Fan Favorites</span>
+                    <h2>Signature Bowls & Burritos</h2>
+                    <p>{{SIGNATURE_INTRO}}</p>
+                </div>
+                
+                <div class="menu-categories">
+                    <div class="category-tabs">
+                        <button class="tab-button active" data-category="bowls">Bowls</button>
+                        <button class="tab-button" data-category="burritos">Burritos</button>
+                        <button class="tab-button" data-category="tacos">Tacos</button>
+                        <button class="tab-button" data-category="salads">Salads</button>
+                    </div>
+
+                    <div class="menu-content">
+                        <div class="menu-category active" id="bowls">
+                            <div class="menu-grid">
+                                <div class="menu-item featured">
+                                    <div class="item-badge">Most Popular</div>
+                                    <img src="{{BOWL_IMAGE_1}}" alt="{{BOWL_NAME_1}}">
+                                    <div class="item-info">
+                                        <h3>{{BOWL_NAME_1}}</h3>
+                                        <p>{{BOWL_DESCRIPTION_1}}</p>
+                                        <div class="item-details">
+                                            <div class="nutrition-info">
+                                                <span class="calories">{{BOWL_CALORIES_1}} cal</span>
+                                                <span class="protein">{{BOWL_PROTEIN_1}}g protein</span>
+                                            </div>
+                                            <div class="item-price">{{BOWL_PRICE_1}}</div>
+                                        </div>
+                                        <div class="item-actions">
+                                            <button class="customize-btn">Customize</button>
+                                            <button class="add-btn">Add to Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="menu-item">
+                                    <img src="{{BOWL_IMAGE_2}}" alt="{{BOWL_NAME_2}}">
+                                    <div class="item-info">
+                                        <h3>{{BOWL_NAME_2}}</h3>
+                                        <p>{{BOWL_DESCRIPTION_2}}</p>
+                                        <div class="item-details">
+                                            <div class="nutrition-info">
+                                                <span class="calories">{{BOWL_CALORIES_2}} cal</span>
+                                                <span class="protein">{{BOWL_PROTEIN_2}}g protein</span>
+                                            </div>
+                                            <div class="item-price">{{BOWL_PRICE_2}}</div>
+                                        </div>
+                                        <div class="item-actions">
+                                            <button class="customize-btn">Customize</button>
+                                            <button class="add-btn">Add to Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="menu-item">
+                                    <img src="{{BOWL_IMAGE_3}}" alt="{{BOWL_NAME_3}}">
+                                    <div class="item-info">
+                                        <h3>{{BOWL_NAME_3}}</h3>
+                                        <p>{{BOWL_DESCRIPTION_3}}</p>
+                                        <div class="item-details">
+                                            <div class="nutrition-info">
+                                                <span class="calories">{{BOWL_CALORIES_3}} cal</span>
+                                                <span class="protein">{{BOWL_PROTEIN_3}}g protein</span>
+                                            </div>
+                                            <div class="item-price">{{BOWL_PRICE_3}}</div>
+                                        </div>
+                                        <div class="item-actions">
+                                            <button class="customize-btn">Customize</button>
+                                            <button class="add-btn">Add to Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-category" id="burritos">
+                            <div class="menu-grid">
+                                <div class="menu-item">
+                                    <img src="{{BURRITO_IMAGE_1}}" alt="{{BURRITO_NAME_1}}">
+                                    <div class="item-info">
+                                        <h3>{{BURRITO_NAME_1}}</h3>
+                                        <p>{{BURRITO_DESCRIPTION_1}}</p>
+                                        <div class="item-details">
+                                            <div class="nutrition-info">
+                                                <span class="calories">{{BURRITO_CALORIES_1}} cal</span>
+                                                <span class="protein">{{BURRITO_PROTEIN_1}}g protein</span>
+                                            </div>
+                                            <div class="item-price">{{BURRITO_PRICE_1}}</div>
+                                        </div>
+                                        <div class="item-actions">
+                                            <button class="customize-btn">Customize</button>
+                                            <button class="add-btn">Add to Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="menu-item">
+                                    <img src="{{BURRITO_IMAGE_2}}" alt="{{BURRITO_NAME_2}}">
+                                    <div class="item-info">
+                                        <h3>{{BURRITO_NAME_2}}</h3>
+                                        <p>{{BURRITO_DESCRIPTION_2}}</p>
+                                        <div class="item-details">
+                                            <div class="nutrition-info">
+                                                <span class="calories">{{BURRITO_CALORIES_2}} cal</span>
+                                                <span class="protein">{{BURRITO_PROTEIN_2}}g protein</span>
+                                            </div>
+                                            <div class="item-price">{{BURRITO_PRICE_2}}</div>
+                                        </div>
+                                        <div class="item-actions">
+                                            <button class="customize-btn">Customize</button>
+                                            <button class="add-btn">Add to Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-category" id="tacos">
+                            <div class="menu-grid">
+                                <div class="menu-item">
+                                    <img src="{{TACO_IMAGE_1}}" alt="{{TACO_NAME_1}}">
+                                    <div class="item-info">
+                                        <h3>{{TACO_NAME_1}}</h3>
+                                        <p>{{TACO_DESCRIPTION_1}}</p>
+                                        <div class="item-details">
+                                            <div class="nutrition-info">
+                                                <span class="calories">{{TACO_CALORIES_1}} cal</span>
+                                                <span class="portion">3 tacos</span>
+                                            </div>
+                                            <div class="item-price">{{TACO_PRICE_1}}</div>
+                                        </div>
+                                        <div class="item-actions">
+                                            <button class="customize-btn">Customize</button>
+                                            <button class="add-btn">Add to Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-category" id="salads">
+                            <div class="menu-grid">
+                                <div class="menu-item">
+                                    <img src="{{SALAD_IMAGE_1}}" alt="{{SALAD_NAME_1}}">
+                                    <div class="item-info">
+                                        <h3>{{SALAD_NAME_1}}</h3>
+                                        <p>{{SALAD_DESCRIPTION_1}}</p>
+                                        <div class="item-details">
+                                            <div class="nutrition-info">
+                                                <span class="calories">{{SALAD_CALORIES_1}} cal</span>
+                                                <span class="protein">{{SALAD_PROTEIN_1}}g protein</span>
+                                            </div>
+                                            <div class="item-price">{{SALAD_PRICE_1}}</div>
+                                        </div>
+                                        <div class="item-actions">
+                                            <button class="customize-btn">Customize</button>
+                                            <button class="add-btn">Add to Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="values-section">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="section-subtitle">Our Promise</span>
+                    <h2>Fresh, Real, Better</h2>
+                    <p>{{VALUES_INTRO}}</p>
+                </div>
+                
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon">🥑</div>
+                        <h3>{{VALUE_1_TITLE}}</h3>
+                        <p>{{VALUE_1_DESCRIPTION}}</p>
+                        <div class="value-stats">
+                            <div class="stat">
+                                <span class="stat-number">{{VALUE_1_STAT_NUMBER}}</span>
+                                <span class="stat-label">{{VALUE_1_STAT_LABEL}}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="value-card">
+                        <div class="value-icon">🌱</div>
+                        <h3>{{VALUE_2_TITLE}}</h3>
+                        <p>{{VALUE_2_DESCRIPTION}}</p>
+                        <div class="value-stats">
+                            <div class="stat">
+                                <span class="stat-number">{{VALUE_2_STAT_NUMBER}}</span>
+                                <span class="stat-label">{{VALUE_2_STAT_LABEL}}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="value-card">
+                        <div class="value-icon">⚡</div>
+                        <h3>{{VALUE_3_TITLE}}</h3>
+                        <p>{{VALUE_3_DESCRIPTION}}</p>
+                        <div class="value-stats">
+                            <div class="stat">
+                                <span class="stat-number">{{VALUE_3_STAT_NUMBER}}</span>
+                                <span class="stat-label">{{VALUE_3_STAT_LABEL}}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="value-card">
+                        <div class="value-icon">🌮</div>
+                        <h3>{{VALUE_4_TITLE}}</h3>
+                        <p>{{VALUE_4_DESCRIPTION}}</p>
+                        <div class="value-stats">
+                            <div class="stat">
+                                <span class="stat-number">{{VALUE_4_STAT_NUMBER}}</span>
+                                <span class="stat-label">{{VALUE_4_STAT_LABEL}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="catering-section" id="catering">
+            <div class="container">
+                <div class="catering-content">
+                    <div class="catering-text">
+                        <div class="section-header">
+                            <span class="section-subtitle">Group Orders</span>
+                            <h2>Catering & Events</h2>
+                        </div>
+                        <p>{{CATERING_DESCRIPTION}}</p>
+                        <div class="catering-features">
+                            <div class="feature-item">
+                                <span class="feature-icon">👥</span>
+                                <div class="feature-content">
+                                    <h4>{{CATERING_FEATURE_1_TITLE}}</h4>
+                                    <p>{{CATERING_FEATURE_1_DESCRIPTION}}</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">📦</span>
+                                <div class="feature-content">
+                                    <h4>{{CATERING_FEATURE_2_TITLE}}</h4>
+                                    <p>{{CATERING_FEATURE_2_DESCRIPTION}}</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">🚚</span>
+                                <div class="feature-content">
+                                    <h4>{{CATERING_FEATURE_3_TITLE}}</h4>
+                                    <p>{{CATERING_FEATURE_3_DESCRIPTION}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="catering-cta">
+                            <a href="#catering-quote" class="catering-button">Get Quote</a>
+                            <a href="#catering-menu" class="catering-menu-link">View Catering Menu</a>
+                        </div>
+                    </div>
+                    <div class="catering-image">
+                        <img src="{{CATERING_IMAGE}}" alt="{{RESTAURANT_NAME}} catering setup">
+                        <div class="catering-stats">
+                            <div class="catering-stat">
+                                <span class="stat-number">{{CATERING_ORDERS}}</span>
+                                <span class="stat-label">Orders Served</span>
+                            </div>
+                            <div class="catering-stat">
+                                <span class="stat-number">{{GROUP_SIZE_MIN}}-{{GROUP_SIZE_MAX}}</span>
+                                <span class="stat-label">Group Size</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="rewards-section" id="rewards">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="section-subtitle">Loyalty Program</span>
+                    <h2>{{REWARDS_PROGRAM_NAME}}</h2>
+                    <p>{{REWARDS_INTRO}}</p>
+                </div>
+                
+                <div class="rewards-content">
+                    <div class="rewards-tiers">
+                        <div class="tier-card">
+                            <div class="tier-header">
+                                <div class="tier-icon">🌮</div>
+                                <h3>{{TIER_1_NAME}}</h3>
+                                <p class="tier-requirement">{{TIER_1_REQUIREMENT}}</p>
+                            </div>
+                            <div class="tier-benefits">
+                                <ul>
+                                    <li>{{TIER_1_BENEFIT_1}}</li>
+                                    <li>{{TIER_1_BENEFIT_2}}</li>
+                                    <li>{{TIER_1_BENEFIT_3}}</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="tier-card featured">
+                            <div class="tier-badge">Most Popular</div>
+                            <div class="tier-header">
+                                <div class="tier-icon">🥑</div>
+                                <h3>{{TIER_2_NAME}}</h3>
+                                <p class="tier-requirement">{{TIER_2_REQUIREMENT}}</p>
+                            </div>
+                            <div class="tier-benefits">
+                                <ul>
+                                    <li>{{TIER_2_BENEFIT_1}}</li>
+                                    <li>{{TIER_2_BENEFIT_2}}</li>
+                                    <li>{{TIER_2_BENEFIT_3}}</li>
+                                    <li>{{TIER_2_BENEFIT_4}}</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="tier-card">
+                            <div class="tier-header">
+                                <div class="tier-icon">🌶️</div>
+                                <h3>{{TIER_3_NAME}}</h3>
+                                <p class="tier-requirement">{{TIER_3_REQUIREMENT}}</p>
+                            </div>
+                            <div class="tier-benefits">
+                                <ul>
+                                    <li>{{TIER_3_BENEFIT_1}}</li>
+                                    <li>{{TIER_3_BENEFIT_2}}</li>
+                                    <li>{{TIER_3_BENEFIT_3}}</li>
+                                    <li>{{TIER_3_BENEFIT_4}}</li>
+                                    <li>{{TIER_3_BENEFIT_5}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="app-promotion">
+                        <div class="app-content">
+                            <h3>Download Our App</h3>
+                            <p>{{APP_DESCRIPTION}}</p>
+                            <div class="app-benefits">
+                                <div class="app-benefit">
+                                    <span class="benefit-icon">🎁</span>
+                                    <span>{{APP_BENEFIT_1}}</span>
+                                </div>
+                                <div class="app-benefit">
+                                    <span class="benefit-icon">⚡</span>
+                                    <span>{{APP_BENEFIT_2}}</span>
+                                </div>
+                                <div class="app-benefit">
+                                    <span class="benefit-icon">📱</span>
+                                    <span>{{APP_BENEFIT_3}}</span>
+                                </div>
+                            </div>
+                            <div class="app-download">
+                                <a href="{{APP_STORE_LINK}}" class="app-store-button">
+                                    <img src="{{APP_STORE_BADGE}}" alt="Download on App Store">
+                                </a>
+                                <a href="{{GOOGLE_PLAY_LINK}}" class="google-play-button">
+                                    <img src="{{GOOGLE_PLAY_BADGE}}" alt="Get it on Google Play">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="app-mockup">
+                            <img src="{{APP_MOCKUP_IMAGE}}" alt="{{RESTAURANT_NAME}} mobile app">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="locations-section" id="locations">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="section-subtitle">Find Us</span>
+                    <h2>Our Locations</h2>
+                    <p>{{LOCATIONS_INTRO}}</p>
+                </div>
+                
+                <div class="location-finder">
+                    <div class="finder-controls">
+                        <input type="text" class="location-search" placeholder="Enter your zip code or city">
+                        <button class="find-locations-btn">Find Locations</button>
+                    </div>
+                </div>
+
+                <div class="locations-grid">
+                    <div class="location-card">
+                        <img src="{{LOCATION_IMAGE_1}}" alt="{{LOCATION_NAME_1}}">
+                        <div class="location-info">
+                            <h3>{{LOCATION_NAME_1}}</h3>
+                            <p class="location-address">{{LOCATION_ADDRESS_1}}</p>
+                            <div class="location-details">
+                                <div class="hours">
+                                    <span class="detail-icon">🕒</span>
+                                    <span>{{LOCATION_HOURS_1}}</span>
+                                </div>
+                                <div class="phone">
+                                    <span class="detail-icon">📞</span>
+                                    <span>{{LOCATION_PHONE_1}}</span>
+                                </div>
+                            </div>
+                            <div class="location-features">
+                                <span class="feature-tag">Drive-Thru</span>
+                                <span class="feature-tag">Delivery</span>
+                                <span class="feature-tag">Catering</span>
+                            </div>
+                            <div class="location-actions">
+                                <a href="#directions-1" class="directions-btn">Get Directions</a>
+                                <a href="#order-1" class="order-btn">Order Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="location-card">
+                        <img src="{{LOCATION_IMAGE_2}}" alt="{{LOCATION_NAME_2}}">
+                        <div class="location-info">
+                            <h3>{{LOCATION_NAME_2}}</h3>
+                            <p class="location-address">{{LOCATION_ADDRESS_2}}</p>
+                            <div class="location-details">
+                                <div class="hours">
+                                    <span class="detail-icon">🕒</span>
+                                    <span>{{LOCATION_HOURS_2}}</span>
+                                </div>
+                                <div class="phone">
+                                    <span class="detail-icon">📞</span>
+                                    <span>{{LOCATION_PHONE_2}}</span>
+                                </div>
+                            </div>
+                            <div class="location-features">
+                                <span class="feature-tag">Outdoor Seating</span>
+                                <span class="feature-tag">Delivery</span>
+                                <span class="feature-tag">Pickup</span>
+                            </div>
+                            <div class="location-actions">
+                                <a href="#directions-2" class="directions-btn">Get Directions</a>
+                                <a href="#order-2" class="order-btn">Order Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="location-card">
+                        <img src="{{LOCATION_IMAGE_3}}" alt="{{LOCATION_NAME_3}}">
+                        <div class="location-info">
+                            <h3>{{LOCATION_NAME_3}}</h3>
+                            <p class="location-address">{{LOCATION_ADDRESS_3}}</p>
+                            <div class="location-details">
+                                <div class="hours">
+                                    <span class="detail-icon">🕒</span>
+                                    <span>{{LOCATION_HOURS_3}}</span>
+                                </div>
+                                <div class="phone">
+                                    <span class="detail-icon">📞</span>
+                                    <span>{{LOCATION_PHONE_3}}</span>
+                                </div>
+                            </div>
+                            <div class="location-features">
+                                <span class="feature-tag">24/7</span>
+                                <span class="feature-tag">Drive-Thru</span>
+                                <span class="feature-tag">Delivery</span>
+                            </div>
+                            <div class="location-actions">
+                                <a href="#directions-3" class="directions-btn">Get Directions</a>
+                                <a href="#order-3" class="order-btn">Order Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="franchise-info">
+                    <h3>Interested in Franchising?</h3>
+                    <p>{{FRANCHISE_DESCRIPTION}}</p>
+                    <a href="#franchise" class="franchise-button">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section" id="contact">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="section-subtitle">Get in Touch</span>
+                    <h2>Contact Us</h2>
+                </div>
+                
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <h3>Customer Service</h3>
+                            <p>{{CUSTOMER_SERVICE_PHONE}}</p>
+                            <p>{{CUSTOMER_SERVICE_EMAIL}}</p>
+                            <div class="contact-hours">
+                                <h4>Hours</h4>
+                                <p>{{CUSTOMER_SERVICE_HOURS}}</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <h3>Catering & Events</h3>
+                            <p>{{CATERING_PHONE}}</p>
+                            <p>{{CATERING_EMAIL}}</p>
+                            <p class="note">{{CATERING_NOTE}}</p>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <h3>Corporate Office</h3>
+                            <p>{{CORPORATE_ADDRESS}}</p>
+                            <p>{{CORPORATE_PHONE}}</p>
+                            <p>{{CORPORATE_EMAIL}}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form">
+                        <h3>Send us a message</h3>
+                        <form>
+                            <div class="form-row">
+                                <input type="text" placeholder="Your Name" required>
+                                <input type="email" placeholder="Your Email" required>
+                            </div>
+                            <div class="form-row">
+                                <input type="tel" placeholder="Your Phone">
+                                <select required>
+                                    <option value="">Select Topic</option>
+                                    <option value="general">General Inquiry</option>
+                                    <option value="catering">Catering Quote</option>
+                                    <option value="feedback">Feedback</option>
+                                    <option value="franchise">Franchise Information</option>
+                                    <option value="nutrition">Nutrition Questions</option>
+                                    <option value="allergies">Allergy Information</option>
+                                    <option value="careers">Careers</option>
+                                </select>
+                            </div>
+                            <select name="location">
+                                <option value="">Select Location (Optional)</option>
+                                <option value="location1">{{LOCATION_NAME_1}}</option>
+                                <option value="location2">{{LOCATION_NAME_2}}</option>
+                                <option value="location3">{{LOCATION_NAME_3}}</option>
+                            </select>
+                            <textarea placeholder="Your Message" required></textarea>
+                            <button type="submit">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>{{RESTAURANT_NAME}}</h3>
+                    <p>{{FOOTER_DESCRIPTION}}</p>
+                    <div class="social-links">
+                        <a href="{{SOCIAL_FACEBOOK}}" aria-label="Facebook">Facebook</a>
+                        <a href="{{SOCIAL_INSTAGRAM}}" aria-label="Instagram">Instagram</a>
+                        <a href="{{SOCIAL_TWITTER}}" aria-label="Twitter">Twitter</a>
+                        <a href="{{SOCIAL_TIKTOK}}" aria-label="TikTok">TikTok</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Menu</h3>
+                    <ul>
+                        <li><a href="menu.html">Full Menu</a></li>
+                        <li><a href="#bowls">Bowls</a></li>
+                        <li><a href="#burritos">Burritos</a></li>
+                        <li><a href="#nutrition">Nutrition Info</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#catering">Catering</a></li>
+                        <li><a href="#delivery">Delivery</a></li>
+                        <li><a href="#rewards">Rewards Program</a></li>
+                        <li><a href="#app">Mobile App</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#franchise">Franchise</a></li>
+                        <li><a href="#press">Press</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; {{CURRENT_YEAR}} {{RESTAURANT_NAME}}. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                    <a href="#accessibility">Accessibility</a>
+                    <a href="#nutrition">Nutrition</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

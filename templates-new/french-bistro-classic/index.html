@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Classic French Bistro</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700;900&family=Lato:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="french-bistro-theme">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+                <div class="logo-text">
+                    <h1>{{RESTAURANT_NAME}}</h1>
+                    <span class="tagline">Bistro Français Authentique</span>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#plats">Plats du Jour</a></li>
+                <li><a href="#wine">Carte des Vins</a></li>
+                <li><a href="#atmosphere">Ambiance</a></li>
+                <li><a href="#about">À Propos</a></li>
+                <li><a href="#reservations">Réservations</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#reservations" class="btn btn-primary">Réserver</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <img src="{{HERO_BACKGROUND_IMAGE}}" alt="French Bistro Interior">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h2>Bienvenue à Notre Bistro</h2>
+            <p class="hero-subtitle">{{HERO_DESCRIPTION}}</p>
+            <div class="hero-features">
+                <div class="feature">
+                    <span class="feature-icon">🥖</span>
+                    <span>Fresh Baguettes Daily</span>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">🍷</span>
+                    <span>{{WINE_COUNT}}+ French Wines</span>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">👨‍🍳</span>
+                    <span>Traditional Recipes</span>
+                </div>
+            </div>
+            <div class="hero-buttons">
+                <a href="#menu" class="btn btn-hero-primary">Voir le Menu</a>
+                <a href="#reservations" class="btn btn-hero-secondary">Réserver</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Daily Specials Banner -->
+    <section class="daily-specials-banner">
+        <div class="container">
+            <div class="specials-content">
+                <div class="specials-text">
+                    <h3>Plat du Jour</h3>
+                    <h4>{{DAILY_SPECIAL_NAME}}</h4>
+                    <p>{{DAILY_SPECIAL_DESCRIPTION}}</p>
+                </div>
+                <div class="specials-pricing">
+                    <span class="special-price">{{DAILY_SPECIAL_PRICE}}</span>
+                    <span class="price-note">avec vin de maison</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- French Menu -->
+    <section id="menu" class="french-menu">
+        <div class="container">
+            <div class="menu-header">
+                <h2>Notre Carte</h2>
+                <p>{{MENU_DESCRIPTION}}</p>
+            </div>
+            
+            <div class="menu-sections">
+                <!-- Hors d'Oeuvres -->
+                <div class="menu-section">
+                    <div class="section-header">
+                        <h3>Hors d'Œuvres</h3>
+                        <p>Traditional French appetizers to begin your meal</p>
+                    </div>
+                    <div class="menu-items">
+                        <div class="menu-item featured">
+                            <div class="featured-badge">Spécialité</div>
+                            <img src="{{APPETIZER_1_IMAGE}}" alt="{{APPETIZER_1_NAME}}">
+                            <div class="item-content">
+                                <h4>{{APPETIZER_1_NAME}}</h4>
+                                <p class="french-name">{{APPETIZER_1_FRENCH}}</p>
+                                <p>{{APPETIZER_1_DESCRIPTION}}</p>
+                                <div class="wine-pairing">
+                                    <span>Accord: {{APPETIZER_1_WINE_PAIRING}}</span>
+                                </div>
+                                <span class="price">{{APPETIZER_1_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="{{APPETIZER_2_IMAGE}}" alt="{{APPETIZER_2_NAME}}">
+                            <div class="item-content">
+                                <h4>{{APPETIZER_2_NAME}}</h4>
+                                <p class="french-name">{{APPETIZER_2_FRENCH}}</p>
+                                <p>{{APPETIZER_2_DESCRIPTION}}</p>
+                                <div class="wine-pairing">
+                                    <span>Accord: {{APPETIZER_2_WINE_PAIRING}}</span>
+                                </div>
+                                <span class="price">{{APPETIZER_2_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="{{APPETIZER_3_IMAGE}}" alt="{{APPETIZER_3_NAME}}">
+                            <div class="item-content">
+                                <h4>{{APPETIZER_3_NAME}}</h4>
+                                <p class="french-name">{{APPETIZER_3_FRENCH}}</p>
+                                <p>{{APPETIZER_3_DESCRIPTION}}</p>
+                                <div class="wine-pairing">
+                                    <span>Accord: {{APPETIZER_3_WINE_PAIRING}}</span>
+                                </div>
+                                <span class="price">{{APPETIZER_3_PRICE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Soupes et Salades -->
+                <div class="menu-section">
+                    <div class="section-header">
+                        <h3>Soupes et Salades</h3>
+                        <p>Fresh soups and salads made daily</p>
+                    </div>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <img src="{{SOUP_1_IMAGE}}" alt="{{SOUP_1_NAME}}">
+                            <div class="item-content">
+                                <h4>{{SOUP_1_NAME}}</h4>
+                                <p class="french-name">{{SOUP_1_FRENCH}}</p>
+                                <p>{{SOUP_1_DESCRIPTION}}</p>
+                                <span class="price">{{SOUP_1_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="{{SALAD_1_IMAGE}}" alt="{{SALAD_1_NAME}}">
+                            <div class="item-content">
+                                <h4>{{SALAD_1_NAME}}</h4>
+                                <p class="french-name">{{SALAD_1_FRENCH}}</p>
+                                <p>{{SALAD_1_DESCRIPTION}}</p>
+                                <span class="price">{{SALAD_1_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="{{SALAD_2_IMAGE}}" alt="{{SALAD_2_NAME}}">
+                            <div class="item-content">
+                                <h4>{{SALAD_2_NAME}}</h4>
+                                <p class="french-name">{{SALAD_2_FRENCH}}</p>
+                                <p>{{SALAD_2_DESCRIPTION}}</p>
+                                <span class="price">{{SALAD_2_PRICE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Plats Principaux -->
+                <div class="menu-section">
+                    <div class="section-header">
+                        <h3>Plats Principaux</h3>
+                        <p>Classic French main courses</p>
+                    </div>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <img src="{{MAIN_1_IMAGE}}" alt="{{MAIN_1_NAME}}">
+                            <div class="item-content">
+                                <h4>{{MAIN_1_NAME}}</h4>
+                                <p class="french-name">{{MAIN_1_FRENCH}}</p>
+                                <p>{{MAIN_1_DESCRIPTION}}</p>
+                                <div class="wine-pairing">
+                                    <span>Accord: {{MAIN_1_WINE_PAIRING}}</span>
+                                </div>
+                                <span class="price">{{MAIN_1_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="{{MAIN_2_IMAGE}}" alt="{{MAIN_2_NAME}}">
+                            <div class="item-content">
+                                <h4>{{MAIN_2_NAME}}</h4>
+                                <p class="french-name">{{MAIN_2_FRENCH}}</p>
+                                <p>{{MAIN_2_DESCRIPTION}}</p>
+                                <div class="wine-pairing">
+                                    <span>Accord: {{MAIN_2_WINE_PAIRING}}</span>
+                                </div>
+                                <span class="price">{{MAIN_2_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="{{MAIN_3_IMAGE}}" alt="{{MAIN_3_NAME}}">
+                            <div class="item-content">
+                                <h4>{{MAIN_3_NAME}}</h4>
+                                <p class="french-name">{{MAIN_3_FRENCH}}</p>
+                                <p>{{MAIN_3_DESCRIPTION}}</p>
+                                <div class="wine-pairing">
+                                    <span>Accord: {{MAIN_3_WINE_PAIRING}}</span>
+                                </div>
+                                <span class="price">{{MAIN_3_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="{{MAIN_4_IMAGE}}" alt="{{MAIN_4_NAME}}">
+                            <div class="item-content">
+                                <h4>{{MAIN_4_NAME}}</h4>
+                                <p class="french-name">{{MAIN_4_FRENCH}}</p>
+                                <p>{{MAIN_4_DESCRIPTION}}</p>
+                                <div class="wine-pairing">
+                                    <span>Accord: {{MAIN_4_WINE_PAIRING}}</span>
+                                </div>
+                                <span class="price">{{MAIN_4_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="{{MAIN_5_IMAGE}}" alt="{{MAIN_5_NAME}}">
+                            <div class="item-content">
+                                <h4>{{MAIN_5_NAME}}</h4>
+                                <p class="french-name">{{MAIN_5_FRENCH}}</p>
+                                <p>{{MAIN_5_DESCRIPTION}}</p>
+                                <div class="wine-pairing">
+                                    <span>Accord: {{MAIN_5_WINE_PAIRING}}</span>
+                                </div>
+                                <span class="price">{{MAIN_5_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="{{MAIN_6_IMAGE}}" alt="{{MAIN_6_NAME}}">
+                            <div class="item-content">
+                                <h4>{{MAIN_6_NAME}}</h4>
+                                <p class="french-name">{{MAIN_6_FRENCH}}</p>
+                                <p>{{MAIN_6_DESCRIPTION}}</p>
+                                <div class="wine-pairing">
+                                    <span>Accord: {{MAIN_6_WINE_PAIRING}}</span>
+                                </div>
+                                <span class="price">{{MAIN_6_PRICE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fromages -->
+                <div class="menu-section">
+                    <div class="section-header">
+                        <h3>Sélection de Fromages</h3>
+                        <p>Artisanal French cheeses</p>
+                    </div>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <img src="{{CHEESE_BOARD_IMAGE}}" alt="{{CHEESE_BOARD_NAME}}">
+                            <div class="item-content">
+                                <h4>{{CHEESE_BOARD_NAME}}</h4>
+                                <p>{{CHEESE_BOARD_DESCRIPTION}}</p>
+                                <div class="cheese-selection">
+                                    <span>{{CHEESE_1}}</span>
+                                    <span>{{CHEESE_2}}</span>
+                                    <span>{{CHEESE_3}}</span>
+                                    <span>{{CHEESE_4}}</span>
+                                </div>
+                                <div class="wine-pairing">
+                                    <span>Accord: {{CHEESE_WINE_PAIRING}}</span>
+                                </div>
+                                <span class="price">{{CHEESE_BOARD_PRICE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Desserts -->
+                <div class="menu-section">
+                    <div class="section-header">
+                        <h3>Desserts</h3>
+                        <p>Classic French sweet endings</p>
+                    </div>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <img src="{{DESSERT_1_IMAGE}}" alt="{{DESSERT_1_NAME}}">
+                            <div class="item-content">
+                                <h4>{{DESSERT_1_NAME}}</h4>
+                                <p class="french-name">{{DESSERT_1_FRENCH}}</p>
+                                <p>{{DESSERT_1_DESCRIPTION}}</p>
+                                <span class="price">{{DESSERT_1_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="{{DESSERT_2_IMAGE}}" alt="{{DESSERT_2_NAME}}">
+                            <div class="item-content">
+                                <h4>{{DESSERT_2_NAME}}</h4>
+                                <p class="french-name">{{DESSERT_2_FRENCH}}</p>
+                                <p>{{DESSERT_2_DESCRIPTION}}</p>
+                                <span class="price">{{DESSERT_2_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="{{DESSERT_3_IMAGE}}" alt="{{DESSERT_3_NAME}}">
+                            <div class="item-content">
+                                <h4>{{DESSERT_3_NAME}}</h4>
+                                <p class="french-name">{{DESSERT_3_FRENCH}}</p>
+                                <p>{{DESSERT_3_DESCRIPTION}}</p>
+                                <span class="price">{{DESSERT_3_PRICE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plats du Jour -->
+    <section id="plats" class="plats-du-jour">
+        <div class="container">
+            <div class="plats-header">
+                <h2>Plats du Jour</h2>
+                <p>{{DAILY_SPECIALS_DESCRIPTION}}</p>
+            </div>
+            <div class="daily-menu">
+                <div class="day-special">
+                    <div class="day-header">Lundi</div>
+                    <h3>{{MONDAY_SPECIAL_NAME}}</h3>
+                    <p class="french-name">{{MONDAY_SPECIAL_FRENCH}}</p>
+                    <p>{{MONDAY_SPECIAL_DESCRIPTION}}</p>
+                    <span class="special-price">{{MONDAY_SPECIAL_PRICE}}</span>
+                </div>
+                <div class="day-special">
+                    <div class="day-header">Mardi</div>
+                    <h3>{{TUESDAY_SPECIAL_NAME}}</h3>
+                    <p class="french-name">{{TUESDAY_SPECIAL_FRENCH}}</p>
+                    <p>{{TUESDAY_SPECIAL_DESCRIPTION}}</p>
+                    <span class="special-price">{{TUESDAY_SPECIAL_PRICE}}</span>
+                </div>
+                <div class="day-special">
+                    <div class="day-header">Mercredi</div>
+                    <h3>{{WEDNESDAY_SPECIAL_NAME}}</h3>
+                    <p class="french-name">{{WEDNESDAY_SPECIAL_FRENCH}}</p>
+                    <p>{{WEDNESDAY_SPECIAL_DESCRIPTION}}</p>
+                    <span class="special-price">{{WEDNESDAY_SPECIAL_PRICE}}</span>
+                </div>
+                <div class="day-special">
+                    <div class="day-header">Jeudi</div>
+                    <h3>{{THURSDAY_SPECIAL_NAME}}</h3>
+                    <p class="french-name">{{THURSDAY_SPECIAL_FRENCH}}</p>
+                    <p>{{THURSDAY_SPECIAL_DESCRIPTION}}</p>
+                    <span class="special-price">{{THURSDAY_SPECIAL_PRICE}}</span>
+                </div>
+                <div class="day-special">
+                    <div class="day-header">Vendredi</div>
+                    <h3>{{FRIDAY_SPECIAL_NAME}}</h3>
+                    <p class="french-name">{{FRIDAY_SPECIAL_FRENCH}}</p>
+                    <p>{{FRIDAY_SPECIAL_DESCRIPTION}}</p>
+                    <span class="special-price">{{FRIDAY_SPECIAL_PRICE}}</span>
+                </div>
+                <div class="day-special">
+                    <div class="day-header">Weekend</div>
+                    <h3>{{WEEKEND_SPECIAL_NAME}}</h3>
+                    <p class="french-name">{{WEEKEND_SPECIAL_FRENCH}}</p>
+                    <p>{{WEEKEND_SPECIAL_DESCRIPTION}}</p>
+                    <span class="special-price">{{WEEKEND_SPECIAL_PRICE}}</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- French Wine Collection -->
+    <section id="wine" class="wine-collection">
+        <div class="container">
+            <div class="wine-content">
+                <div class="wine-text">
+                    <h2>Carte des Vins Français</h2>
+                    <p>{{WINE_COLLECTION_DESCRIPTION}}</p>
+                    <div class="wine-regions">
+                        <div class="wine-region">
+                            <h4>{{WINE_REGION_1_NAME}}</h4>
+                            <p>{{WINE_REGION_1_DESCRIPTION}}</p>
+                            <div class="wine-list">
+                                <div class="wine-item">
+                                    <span class="wine-name">{{WINE_1_NAME}}</span>
+                                    <span class="wine-year">{{WINE_1_YEAR}}</span>
+                                    <span class="wine-price">{{WINE_1_PRICE}}</span>
+                                </div>
+                                <div class="wine-item">
+                                    <span class="wine-name">{{WINE_2_NAME}}</span>
+                                    <span class="wine-year">{{WINE_2_YEAR}}</span>
+                                    <span class="wine-price">{{WINE_2_PRICE}}</span>
+                                </div>
+                                <div class="wine-item">
+                                    <span class="wine-name">{{WINE_3_NAME}}</span>
+                                    <span class="wine-year">{{WINE_3_YEAR}}</span>
+                                    <span class="wine-price">{{WINE_3_PRICE}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wine-region">
+                            <h4>{{WINE_REGION_2_NAME}}</h4>
+                            <p>{{WINE_REGION_2_DESCRIPTION}}</p>
+                            <div class="wine-list">
+                                <div class="wine-item">
+                                    <span class="wine-name">{{WINE_4_NAME}}</span>
+                                    <span class="wine-year">{{WINE_4_YEAR}}</span>
+                                    <span class="wine-price">{{WINE_4_PRICE}}</span>
+                                </div>
+                                <div class="wine-item">
+                                    <span class="wine-name">{{WINE_5_NAME}}</span>
+                                    <span class="wine-year">{{WINE_5_YEAR}}</span>
+                                    <span class="wine-price">{{WINE_5_PRICE}}</span>
+                                </div>
+                                <div class="wine-item">
+                                    <span class="wine-name">{{WINE_6_NAME}}</span>
+                                    <span class="wine-year">{{WINE_6_YEAR}}</span>
+                                    <span class="wine-price">{{WINE_6_PRICE}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wine-region">
+                            <h4>{{WINE_REGION_3_NAME}}</h4>
+                            <p>{{WINE_REGION_3_DESCRIPTION}}</p>
+                            <div class="wine-list">
+                                <div class="wine-item">
+                                    <span class="wine-name">{{WINE_7_NAME}}</span>
+                                    <span class="wine-year">{{WINE_7_YEAR}}</span>
+                                    <span class="wine-price">{{WINE_7_PRICE}}</span>
+                                </div>
+                                <div class="wine-item">
+                                    <span class="wine-name">{{WINE_8_NAME}}</span>
+                                    <span class="wine-year">{{WINE_8_YEAR}}</span>
+                                    <span class="wine-price">{{WINE_8_PRICE}}</span>
+                                </div>
+                                <div class="wine-item">
+                                    <span class="wine-name">{{WINE_9_NAME}}</span>
+                                    <span class="wine-year">{{WINE_9_YEAR}}</span>
+                                    <span class="wine-price">{{WINE_9_PRICE}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wine-service">
+                        <h4>Service du Vin</h4>
+                        <p>{{WINE_SERVICE_DESCRIPTION}}</p>
+                    </div>
+                    <a href="#wine-list" class="btn btn-wine">Carte Complète</a>
+                </div>
+                <div class="wine-image">
+                    <img src="{{WINE_CELLAR_IMAGE}}" alt="Wine Cellar">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bistro Atmosphere -->
+    <section id="atmosphere" class="bistro-atmosphere">
+        <div class="container">
+            <div class="atmosphere-content">
+                <div class="atmosphere-text">
+                    <h2>L'Ambiance du Bistro</h2>
+                    <p>{{ATMOSPHERE_DESCRIPTION}}</p>
+                    <div class="atmosphere-features">
+                        <div class="atmosphere-feature">
+                            <h4>{{FEATURE_1_TITLE}}</h4>
+                            <p>{{FEATURE_1_DESCRIPTION}}</p>
+                        </div>
+                        <div class="atmosphere-feature">
+                            <h4>{{FEATURE_2_TITLE}}</h4>
+                            <p>{{FEATURE_2_DESCRIPTION}}</p>
+                        </div>
+                        <div class="atmosphere-feature">
+                            <h4>{{FEATURE_3_TITLE}}</h4>
+                            <p>{{FEATURE_3_DESCRIPTION}}</p>
+                        </div>
+                    </div>
+                    <div class="seating-areas">
+                        <h4>Espaces de Restauration</h4>
+                        <div class="seating-area">
+                            <h5>{{SEATING_1_NAME}}</h5>
+                            <p>{{SEATING_1_DESCRIPTION}}</p>
+                            <span class="capacity">{{SEATING_1_CAPACITY}} personnes</span>
+                        </div>
+                        <div class="seating-area">
+                            <h5>{{SEATING_2_NAME}}</h5>
+                            <p>{{SEATING_2_DESCRIPTION}}</p>
+                            <span class="capacity">{{SEATING_2_CAPACITY}} personnes</span>
+                        </div>
+                        <div class="seating-area">
+                            <h5>{{SEATING_3_NAME}}</h5>
+                            <p>{{SEATING_3_DESCRIPTION}}</p>
+                            <span class="capacity">{{SEATING_3_CAPACITY}} personnes</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="atmosphere-image">
+                    <img src="{{BISTRO_INTERIOR_IMAGE}}" alt="Bistro Interior">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chef Section -->
+    <section class="chef-section">
+        <div class="container">
+            <div class="chef-content">
+                <div class="chef-image">
+                    <img src="{{CHEF_IMAGE}}" alt="{{CHEF_NAME}}">
+                </div>
+                <div class="chef-text">
+                    <h2>Chef {{CHEF_NAME}}</h2>
+                    <p class="chef-intro">{{CHEF_INTRO}}</p>
+                    <p>{{CHEF_BIOGRAPHY}}</p>
+                    <div class="chef-training">
+                        <h4>Formation Culinaire</h4>
+                        <div class="training-item">
+                            <h5>{{TRAINING_1_TITLE}}</h5>
+                            <p>{{TRAINING_1_DESCRIPTION}}</p>
+                        </div>
+                        <div class="training-item">
+                            <h5>{{TRAINING_2_TITLE}}</h5>
+                            <p>{{TRAINING_2_DESCRIPTION}}</p>
+                        </div>
+                        <div class="training-item">
+                            <h5>{{TRAINING_3_TITLE}}</h5>
+                            <p>{{TRAINING_3_DESCRIPTION}}</p>
+                        </div>
+                    </div>
+                    <div class="chef-philosophy">
+                        <h4>Philosophie Culinaire</h4>
+                        <p>{{CHEF_PHILOSOPHY}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Notre Histoire</h2>
+                    <p>{{BISTRO_STORY}}</p>
+                    <div class="french-traditions">
+                        <div class="tradition">
+                            <h4>{{TRADITION_1_TITLE}}</h4>
+                            <p>{{TRADITION_1_DESCRIPTION}}</p>
+                        </div>
+                        <div class="tradition">
+                            <h4>{{TRADITION_2_TITLE}}</h4>
+                            <p>{{TRADITION_2_DESCRIPTION}}</p>
+                        </div>
+                        <div class="tradition">
+                            <h4>{{TRADITION_3_TITLE}}</h4>
+                            <p>{{TRADITION_3_DESCRIPTION}}</p>
+                        </div>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h3>{{YEARS_SERVING}}+</h3>
+                            <p>Années de Tradition</p>
+                        </div>
+                        <div class="stat">
+                            <h3>{{DISHES_SERVED}}</h3>
+                            <p>Plats Servis</p>
+                        </div>
+                        <div class="stat">
+                            <h3>{{WINE_BOTTLES}}</h3>
+                            <p>Bouteilles en Cave</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="{{BISTRO_EXTERIOR_IMAGE}}" alt="{{RESTAURANT_NAME}} Exterior">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Hours -->
+    <section class="location-section">
+        <div class="container">
+            <div class="location-grid">
+                <div class="location-details">
+                    <h2>Nous Rendre Visite</h2>
+                    <div class="location-info">
+                        <div class="info-item">
+                            <h3>Adresse</h3>
+                            <p>{{RESTAURANT_ADDRESS}}</p>
+                            <p>{{RESTAURANT_NEIGHBORHOOD}}</p>
+                        </div>
+                        <div class="info-item">
+                            <h3>Contact</h3>
+                            <p>Téléphone: <a href="tel:{{RESTAURANT_PHONE}}">{{RESTAURANT_PHONE}}</a></p>
+                            <p>Email: <a href="mailto:{{RESTAURANT_EMAIL}}">{{RESTAURANT_EMAIL}}</a></p>
+                        </div>
+                        <div class="info-item">
+                            <h3>Horaires</h3>
+                            <div class="hours-list">
+                                <div class="hours-item">
+                                    <span>Mardi - Jeudi</span>
+                                    <span>{{HOURS_WEEKDAY}}</span>
+                                </div>
+                                <div class="hours-item">
+                                    <span>Vendredi - Samedi</span>
+                                    <span>{{HOURS_WEEKEND}}</span>
+                                </div>
+                                <div class="hours-item">
+                                    <span>Dimanche</span>
+                                    <span>{{HOURS_SUNDAY}}</span>
+                                </div>
+                                <div class="hours-item closed">
+                                    <span>Lundi</span>
+                                    <span>Fermé</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="location-features">
+                        <span class="feature-tag">Terrasse</span>
+                        <span class="feature-tag">Cave à Vin</span>
+                        <span class="feature-tag">Salle Privée</span>
+                        <span class="feature-tag">Parking</span>
+                    </div>
+                </div>
+                <div class="location-map">
+                    <iframe 
+                        src="{{GOOGLE_MAPS_EMBED}}" 
+                        width="100%" 
+                        height="400" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservations -->
+    <section id="reservations" class="reservations">
+        <div class="container">
+            <div class="reservations-content">
+                <div class="reservations-text">
+                    <h2>Réservations</h2>
+                    <p>{{RESERVATIONS_DESCRIPTION}}</p>
+                    <div class="reservation-options">
+                        <div class="reservation-option">
+                            <h4>Dîner Régulier</h4>
+                            <p>{{REGULAR_DINING_DESCRIPTION}}</p>
+                            <a href="#regular-booking" class="btn btn-primary">Réserver Table</a>
+                        </div>
+                        <div class="reservation-option">
+                            <h4>Menu Dégustation</h4>
+                            <p>{{TASTING_MENU_DESCRIPTION}}</p>
+                            <a href="#tasting-booking" class="btn btn-tasting">Menu Dégustation</a>
+                        </div>
+                        <div class="reservation-option">
+                            <h4>Événement Privé</h4>
+                            <p>{{PRIVATE_EVENT_DESCRIPTION}}</p>
+                            <a href="#private-booking" class="btn btn-outline">Événement Privé</a>
+                        </div>
+                    </div>
+                    <div class="reservation-policies">
+                        <h4>Politique de Réservation</h4>
+                        <ul>
+                            <li>{{RESERVATION_POLICY_1}}</li>
+                            <li>{{RESERVATION_POLICY_2}}</li>
+                            <li>{{RESERVATION_POLICY_3}}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="reservations-form">
+                    <h3>Réserver une Table</h3>
+                    <form class="reservation-form">
+                        <div class="form-group">
+                            <label for="res-type">Type de Réservation</label>
+                            <select id="res-type" name="type" required>
+                                <option value="">Choisir le Type</option>
+                                <option value="regular">Dîner Régulier</option>
+                                <option value="tasting">Menu Dégustation</option>
+                                <option value="private">Événement Privé</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="res-date">Date</label>
+                                <input type="date" id="res-date" name="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="res-time">Heure</label>
+                                <select id="res-time" name="time" required>
+                                    <option value="">Choisir l'Heure</option>
+                                    <option value="18:00">18:00</option>
+                                    <option value="18:30">18:30</option>
+                                    <option value="19:00">19:00</option>
+                                    <option value="19:30">19:30</option>
+                                    <option value="20:00">20:00</option>
+                                    <option value="20:30">20:30</option>
+                                    <option value="21:00">21:00</option>
+                                    <option value="21:30">21:30</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="res-guests">Nombre de Personnes</label>
+                            <select id="res-guests" name="guests" required>
+                                <option value="">Nombre de Personnes</option>
+                                <option value="1">1 Personne</option>
+                                <option value="2">2 Personnes</option>
+                                <option value="3">3 Personnes</option>
+                                <option value="4">4 Personnes</option>
+                                <option value="5">5 Personnes</option>
+                                <option value="6">6 Personnes</option>
+                                <option value="7">7+ Personnes</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="res-name">Nom</label>
+                            <input type="text" id="res-name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="res-phone">Téléphone</label>
+                            <input type="tel" id="res-phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="res-email">Email</label>
+                            <input type="email" id="res-email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="res-requests">Demandes Spéciales</label>
+                            <textarea id="res-requests" name="requests" placeholder="Allergies, occasions spéciales, préférences de vin..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Confirmer la Réservation</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section main">
+                    <h3>{{RESTAURANT_NAME}}</h3>
+                    <p>{{FOOTER_DESCRIPTION}}</p>
+                    <div class="contact-info">
+                        <p>{{RESTAURANT_ADDRESS}}</p>
+                        <p>{{RESTAURANT_PHONE}}</p>
+                        <p>{{RESTAURANT_EMAIL}}</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}" target="_blank" aria-label="Facebook">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}" target="_blank" aria-label="Instagram">Instagram</a>
+                        <a href="{{TWITTER_URL}}" target="_blank" aria-label="Twitter">Twitter</a>
+                        <a href="{{YELP_URL}}" target="_blank" aria-label="Yelp">Yelp</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="#menu">Hors d'Œuvres</a></li>
+                        <li><a href="#menu">Plats Principaux</a></li>
+                        <li><a href="#menu">Fromages</a></li>
+                        <li><a href="#menu">Desserts</a></li>
+                        <li><a href="#plats">Plats du Jour</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Boissons</h4>
+                    <ul>
+                        <li><a href="#wine">Vins Français</a></li>
+                        <li><a href="#wine">Champagne</a></li>
+                        <li><a href="#wine">Accords Mets-Vins</a></li>
+                        <li><a href="#digestifs">Digestifs</a></li>
+                        <li><a href="#wine-list">Carte Complète</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Expérience</h4>
+                    <ul>
+                        <li><a href="#reservations">Réservations</a></li>
+                        <li><a href="#chef">Notre Chef</a></li>
+                        <li><a href="#atmosphere">Ambiance Bistro</a></li>
+                        <li><a href="#private">Événements Privés</a></li>
+                        <li><a href="#gift-cards">Cartes Cadeaux</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; {{CURRENT_YEAR}} {{RESTAURANT_NAME}}. Tous droits réservés.</p>
+                <div class="footer-legal">
+                    <a href="#privacy">Politique de Confidentialité</a>
+                    <a href="#terms">Conditions d'Utilisation</a>
+                    <a href="#accessibility">Accessibilité</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

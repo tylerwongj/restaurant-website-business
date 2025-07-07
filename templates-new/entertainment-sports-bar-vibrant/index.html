@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Eat, Play, Party!</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="color-scheme-vibrant">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>{{RESTAURANT_NAME}}</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#play" class="nav-link">Play</a></li>
+                <li><a href="#eat" class="nav-link">Eat & Drink</a></li>
+                <li><a href="#parties" class="nav-link">Parties</a></li>
+                <li><a href="#events" class="nav-link">Events</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#" class="nav-link cta-button" onclick="openBookingModal()">Book Now</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <video autoplay muted loop>
+                <source src="{{HERO_VIDEO}}" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">EAT. PLAY. PARTY.</h1>
+            <p class="hero-subtitle">The ultimate entertainment destination with games, food, and fun!</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="openBookingModal()">Book Your Fun</button>
+                <button class="btn btn-secondary" onclick="scrollToSection('play')">Explore Games</button>
+            </div>
+        </div>
+        <div class="hero-features">
+            <div class="feature-badge">
+                <i class="fas fa-gamepad"></i>
+                <span>100+ Games</span>
+            </div>
+            <div class="feature-badge">
+                <i class="fas fa-utensils"></i>
+                <span>Full Menu</span>
+            </div>
+            <div class="feature-badge">
+                <i class="fas fa-birthday-cake"></i>
+                <span>Private Parties</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promotional Banners -->
+    <section class="promo-banners">
+        <div class="banner-slider">
+            <div class="banner-slide active">
+                <div class="banner-content">
+                    <h3>Game Card Special</h3>
+                    <p>Buy $20 Game Card, Get $5 FREE!</p>
+                    <button class="btn btn-accent">Claim Offer</button>
+                </div>
+            </div>
+            <div class="banner-slide">
+                <div class="banner-content">
+                    <h3>Happy Hour</h3>
+                    <p>Half Price Apps & Drinks Mon-Fri 3-6pm</p>
+                    <button class="btn btn-accent">View Menu</button>
+                </div>
+            </div>
+            <div class="banner-slide">
+                <div class="banner-content">
+                    <h3>Birthday Parties</h3>
+                    <p>Free Birthday Game Card with Party Package</p>
+                    <button class="btn btn-accent">Learn More</button>
+                </div>
+            </div>
+        </div>
+        <div class="banner-indicators">
+            <span class="indicator active" onclick="showBanner(0)"></span>
+            <span class="indicator" onclick="showBanner(1)"></span>
+            <span class="indicator" onclick="showBanner(2)"></span>
+        </div>
+    </section>
+
+    <!-- Games Section -->
+    <section id="play" class="games-section">
+        <div class="container">
+            <h2 class="section-title">Play All Day</h2>
+            <p class="section-subtitle">Over 100 games for all ages and skill levels</p>
+            
+            <div class="games-categories">
+                <div class="game-category">
+                    <div class="category-image">
+                        <img src="{{ARCADE_IMAGE}}" alt="Arcade Games">
+                        <div class="category-overlay">
+                            <h3>Arcade Games</h3>
+                            <p>Classic and modern arcade favorites</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-category">
+                    <div class="category-image">
+                        <img src="{{SPORTS_IMAGE}}" alt="Sports Games">
+                        <div class="category-overlay">
+                            <h3>Sports Games</h3>
+                            <p>Basketball, football, air hockey & more</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-category">
+                    <div class="category-image">
+                        <img src="{{RACING_IMAGE}}" alt="Racing Games">
+                        <div class="category-overlay">
+                            <h3>Racing Games</h3>
+                            <p>High-speed thrills and competition</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-category">
+                    <div class="category-image">
+                        <img src="{{VR_IMAGE}}" alt="VR Experience">
+                        <div class="category-overlay">
+                            <h3>VR Experience</h3>
+                            <p>Immersive virtual reality adventures</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-cards">
+                <div class="game-card">
+                    <h4>Power Cards</h4>
+                    <p>Load up and play your favorites</p>
+                    <div class="card-options">
+                        <div class="card-option">
+                            <span class="amount">$10</span>
+                            <span class="bonus">+$2 Bonus</span>
+                        </div>
+                        <div class="card-option featured">
+                            <span class="amount">$20</span>
+                            <span class="bonus">+$5 Bonus</span>
+                        </div>
+                        <div class="card-option">
+                            <span class="amount">$50</span>
+                            <span class="bonus">+$15 Bonus</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <h4>All-You-Can-Play</h4>
+                    <p>Unlimited games for 2 hours</p>
+                    <div class="pricing">
+                        <span class="price">$25</span>
+                        <span class="weekday">Weekdays</span>
+                    </div>
+                    <div class="pricing">
+                        <span class="price">$35</span>
+                        <span class="weekend">Weekends</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Food & Drinks Section -->
+    <section id="eat" class="food-section">
+        <div class="container">
+            <h2 class="section-title">Eat & Drink</h2>
+            <p class="section-subtitle">Delicious food and refreshing drinks to fuel your fun</p>
+            
+            <div class="menu-highlights">
+                <div class="menu-category-card">
+                    <img src="{{APPETIZERS_IMAGE}}" alt="Appetizers">
+                    <div class="menu-card-content">
+                        <h3>Shareables</h3>
+                        <p>Perfect for groups and game breaks</p>
+                        <ul>
+                            <li>Loaded Nachos - $12</li>
+                            <li>Buffalo Wings - $14</li>
+                            <li>Mozzarella Sticks - $10</li>
+                            <li>Spinach Artichoke Dip - $11</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="menu-category-card">
+                    <img src="{{BURGERS_IMAGE}}" alt="Burgers">
+                    <div class="menu-card-content">
+                        <h3>Burgers & Sandwiches</h3>
+                        <p>Hearty meals for big appetites</p>
+                        <ul>
+                            <li>Gamer Burger - $15</li>
+                            <li>BBQ Bacon Burger - $16</li>
+                            <li>Buffalo Chicken Sandwich - $14</li>
+                            <li>Fish & Chips - $16</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="menu-category-card">
+                    <img src="{{DRINKS_IMAGE}}" alt="Drinks">
+                    <div class="menu-card-content">
+                        <h3>Drinks & Cocktails</h3>
+                        <p>Refreshing beverages and specialty cocktails</p>
+                        <ul>
+                            <li>Power-Up Punch - $9</li>
+                            <li>Game Over IPA - $6</li>
+                            <li>Victory Smoothie - $7</li>
+                            <li>Arcade Lemonade - $5</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="menu-category-card">
+                    <img src="{{DESSERTS_IMAGE}}" alt="Desserts">
+                    <div class="menu-card-content">
+                        <h3>Sweet Treats</h3>
+                        <p>Perfect endings to your adventure</p>
+                        <ul>
+                            <li>Funnel Cake - $8</li>
+                            <li>Cookie Monster Shake - $7</li>
+                            <li>Victory Sundae - $6</li>
+                            <li>Birthday Cake Slice - $5</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parties Section -->
+    <section id="parties" class="parties-section">
+        <div class="container">
+            <h2 class="section-title">Epic Parties</h2>
+            <p class="section-subtitle">Celebrate in style with our party packages</p>
+            
+            <div class="party-packages">
+                <div class="party-package">
+                    <div class="package-header">
+                        <h3>Birthday Bash</h3>
+                        <span class="package-price">Starting at $199</span>
+                    </div>
+                    <div class="package-content">
+                        <ul>
+                            <li>2-hour private party room</li>
+                            <li>$20 game card per child</li>
+                            <li>Pizza & drinks for 8</li>
+                            <li>Birthday cake</li>
+                            <li>Dedicated party host</li>
+                            <li>Free birthday game card</li>
+                        </ul>
+                        <button class="btn btn-primary">Book Party</button>
+                    </div>
+                </div>
+                <div class="party-package featured">
+                    <div class="package-ribbon">Most Popular</div>
+                    <div class="package-header">
+                        <h3>Ultimate Celebration</h3>
+                        <span class="package-price">Starting at $349</span>
+                    </div>
+                    <div class="package-content">
+                        <ul>
+                            <li>3-hour private party room</li>
+                            <li>$30 game card per person</li>
+                            <li>Full buffet for 12</li>
+                            <li>Custom cake & decorations</li>
+                            <li>VIP party coordinator</li>
+                            <li>Photo package included</li>
+                        </ul>
+                        <button class="btn btn-accent">Book Ultimate</button>
+                    </div>
+                </div>
+                <div class="party-package">
+                    <div class="package-header">
+                        <h3>Corporate Event</h3>
+                        <span class="package-price">Starting at $499</span>
+                    </div>
+                    <div class="package-content">
+                        <ul>
+                            <li>4-hour venue rental</li>
+                            <li>Unlimited games access</li>
+                            <li>Catered meal options</li>
+                            <li>Audio/visual equipment</li>
+                            <li>Event coordinator</li>
+                            <li>Team building activities</li>
+                        </ul>
+                        <button class="btn btn-primary">Plan Event</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="events-section">
+        <div class="container">
+            <h2 class="section-title">Upcoming Events</h2>
+            <div class="events-grid">
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="month">MAR</span>
+                        <span class="day">15</span>
+                    </div>
+                    <div class="event-info">
+                        <h4>Game Tournament Night</h4>
+                        <p>Compete for prizes in our monthly gaming tournament</p>
+                        <span class="event-time">7:00 PM - 10:00 PM</span>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="month">MAR</span>
+                        <span class="day">22</span>
+                    </div>
+                    <div class="event-info">
+                        <h4>Trivia Night</h4>
+                        <p>Test your knowledge and win game cards</p>
+                        <span class="event-time">8:00 PM - 10:00 PM</span>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="month">MAR</span>
+                        <span class="day">29</span>
+                    </div>
+                    <div class="event-info">
+                        <h4>Family Fun Day</h4>
+                        <p>Special family packages and activities</p>
+                        <span class="event-time">12:00 PM - 6:00 PM</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Visit Us Today</h2>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>{{RESTAURANT_ADDRESS}}</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>{{PHONE_NUMBER}}</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Hours</h4>
+                                <p>{{HOURS_OF_OPERATION}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="special-hours">
+                        <h4>Special Hours</h4>
+                        <p>Extended hours on weekends and holidays</p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Plan Your Visit</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <select required>
+                                <option value="">Type of Visit</option>
+                                <option value="casual">Casual Visit</option>
+                                <option value="birthday">Birthday Party</option>
+                                <option value="corporate">Corporate Event</option>
+                                <option value="group">Group Outing</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="date" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Special Requests or Questions" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>{{RESTAURANT_NAME}}</h3>
+                    <p>Where fun meets food!</p>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}"><i class="fab fa-facebook"></i></a>
+                        <a href="{{INSTAGRAM_URL}}"><i class="fab fa-instagram"></i></a>
+                        <a href="{{TWITTER_URL}}"><i class="fab fa-twitter"></i></a>
+                        <a href="{{TIKTOK_URL}}"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#play">Games</a></li>
+                        <li><a href="#eat">Food & Drinks</a></li>
+                        <li><a href="#parties">Parties</a></li>
+                        <li><a href="#events">Events</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Party Planning</h4>
+                    <ul>
+                        <li><a href="#">Birthday Parties</a></li>
+                        <li><a href="#">Corporate Events</a></li>
+                        <li><a href="#">Group Bookings</a></li>
+                        <li><a href="#">Party Packages</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p>{{RESTAURANT_ADDRESS}}</p>
+                    <p>{{PHONE_NUMBER}}</p>
+                    <p>{{EMAIL_ADDRESS}}</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeBookingModal()">&times;</span>
+            <h2>Book Your Experience</h2>
+            <div class="booking-options">
+                <div class="booking-option">
+                    <h3>Walk-In Gaming</h3>
+                    <p>No reservation needed for gaming</p>
+                    <button class="btn btn-primary" onclick="showGameCards()">Buy Game Cards</button>
+                </div>
+                <div class="booking-option">
+                    <h3>Table Reservation</h3>
+                    <p>Reserve a table for dining</p>
+                    <button class="btn btn-primary" onclick="showTableBooking()">Reserve Table</button>
+                </div>
+                <div class="booking-option">
+                    <h3>Private Party</h3>
+                    <p>Book a party package</p>
+                    <button class="btn btn-accent" onclick="showPartyBooking()">Plan Party</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

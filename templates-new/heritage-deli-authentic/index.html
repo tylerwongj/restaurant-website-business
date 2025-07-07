@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - A Tradition Since {{ESTABLISHED_YEAR}}</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="color-scheme-heritage">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>{{RESTAURANT_NAME}}</h2>
+                <span class="established">Est. {{ESTABLISHED_YEAR}}</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#menu" class="nav-link">Menu</a></li>
+                <li><a href="#story" class="nav-link">Our Story</a></li>
+                <li><a href="#catering" class="nav-link">Catering</a></li>
+                <li><a href="#shop" class="nav-link">Ship Nationwide</a></li>
+                <li><a href="#" class="nav-link cta-button" onclick="openOrderModal()">Order Online</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-banner">
+            <div class="banner-content">
+                <h1 class="hero-title">{{RESTAURANT_NAME}}</h1>
+                <p class="hero-subtitle">A {{CITY}} Institution Since {{ESTABLISHED_YEAR}}</p>
+                <p class="hero-description">Home of the world's best pastrami and authentic {{CUISINE_TYPE}} delicacies</p>
+            </div>
+            <div class="hero-badge">
+                <span class="years">{{YEARS_IN_BUSINESS}}+</span>
+                <span class="text">Years of Tradition</span>
+            </div>
+        </div>
+        
+        <div class="signature-items">
+            <div class="container">
+                <h2>Our Famous Specialties</h2>
+                <div class="specialties-grid">
+                    <div class="specialty-card">
+                        <img src="{{PASTRAMI_SANDWICH_IMAGE}}" alt="Pastrami on Rye">
+                        <div class="specialty-info">
+                            <h3>World Famous Pastrami</h3>
+                            <p>Hand-carved pastrami on fresh rye bread</p>
+                            <span class="price">$24.95</span>
+                        </div>
+                    </div>
+                    <div class="specialty-card">
+                        <img src="{{CORNED_BEEF_IMAGE}}" alt="Corned Beef">
+                        <div class="specialty-info">
+                            <h3>Traditional Corned Beef</h3>
+                            <p>Tender, juicy corned beef, sliced to order</p>
+                            <span class="price">$22.95</span>
+                        </div>
+                    </div>
+                    <div class="specialty-card">
+                        <img src="{{KNISH_IMAGE}}" alt="Potato Knish">
+                        <div class="specialty-info">
+                            <h3>Original Potato Knish</h3>
+                            <p>Old-world recipe passed down through generations</p>
+                            <span class="price">$6.95</span>
+                        </div>
+                    </div>
+                    <div class="specialty-card">
+                        <img src="{{PICKLES_IMAGE}}" alt="House Pickles">
+                        <div class="specialty-info">
+                            <h3>House-Made Pickles</h3>
+                            <p>Crisp, tangy pickles made fresh daily</p>
+                            <span class="price">$8.95</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu-section">
+        <div class="container">
+            <h2 class="section-title">Traditional Menu</h2>
+            
+            <div class="menu-categories">
+                <div class="menu-category">
+                    <h3>Signature Sandwiches</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>The Classic Pastrami</h4>
+                                <p>Hand-carved pastrami, mustard, rye bread</p>
+                            </div>
+                            <span class="price">$24.95</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Corned Beef Special</h4>
+                                <p>Lean corned beef, mustard, rye bread</p>
+                            </div>
+                            <span class="price">$22.95</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>The Reuben</h4>
+                                <p>Corned beef, sauerkraut, Swiss, Russian dressing</p>
+                            </div>
+                            <span class="price">$26.95</span>
+                        </div>
+                        <div class="menu-item featured">
+                            <div class="item-info">
+                                <h4>The {{RESTAURANT_NAME}} Combo</h4>
+                                <p>Half pastrami, half corned beef, the best of both</p>
+                            </div>
+                            <span class="price">$28.95</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-category">
+                    <h3>Traditional Sides</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Potato Knish</h4>
+                                <p>Original recipe, made fresh daily</p>
+                            </div>
+                            <span class="price">$6.95</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Matzo Ball Soup</h4>
+                                <p>Homemade chicken broth, fluffy matzo balls</p>
+                            </div>
+                            <span class="price">$12.95</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Potato Latkes</h4>
+                                <p>Crispy potato pancakes, applesauce, sour cream</p>
+                            </div>
+                            <span class="price">$9.95</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>House Pickles</h4>
+                                <p>Barrel-cured, made the old-fashioned way</p>
+                            </div>
+                            <span class="price">$8.95</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-category">
+                    <h3>Beverages</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Dr. Brown's Sodas</h4>
+                                <p>Cream, Black Cherry, Cel-Ray</p>
+                            </div>
+                            <span class="price">$3.95</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Fresh Coffee</h4>
+                                <p>Strong, black coffee, served hot</p>
+                            </div>
+                            <span class="price">$2.95</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Egg Cream</h4>
+                                <p>Brooklyn classic - chocolate syrup, milk, seltzer</p>
+                            </div>
+                            <span class="price">$4.95</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section id="story" class="story-section">
+        <div class="container">
+            <div class="story-content">
+                <div class="story-text">
+                    <h2>Our Heritage Story</h2>
+                    <p class="story-intro">Since {{ESTABLISHED_YEAR}}, {{RESTAURANT_NAME}} has been serving authentic {{CUISINE_TYPE}} delicacies to generations of families.</p>
+                    
+                    <div class="story-timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-year">{{ESTABLISHED_YEAR}}</div>
+                            <div class="timeline-content">
+                                <h4>The Beginning</h4>
+                                <p>{{FOUNDER_NAME}} opened the first {{RESTAURANT_NAME}} with traditional recipes from the old country.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">1950s</div>
+                            <div class="timeline-content">
+                                <h4>Growing Reputation</h4>
+                                <p>Word spread about our authentic pastrami, bringing customers from across the city.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">Today</div>
+                            <div class="timeline-content">
+                                <h4>Living Legacy</h4>
+                                <p>Still family-owned, still using the same traditional methods and recipes.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="heritage-features">
+                        <div class="heritage-feature">
+                            <i class="fas fa-award"></i>
+                            <span>Original Recipes</span>
+                        </div>
+                        <div class="heritage-feature">
+                            <i class="fas fa-users"></i>
+                            <span>Family Owned</span>
+                        </div>
+                        <div class="heritage-feature">
+                            <i class="fas fa-heart"></i>
+                            <span>{{YEARS_IN_BUSINESS}}+ Years of Tradition</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="story-images">
+                    <img src="{{VINTAGE_PHOTO_IMAGE}}" alt="Vintage restaurant photo" class="vintage-photo">
+                    <img src="{{CURRENT_RESTAURANT_IMAGE}}" alt="Current restaurant" class="current-photo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ship Nationwide Section -->
+    <section id="shop" class="shipping-section">
+        <div class="container">
+            <h2 class="section-title">Ship Our Classics Nationwide</h2>
+            <p class="section-subtitle">Bring the authentic taste of {{RESTAURANT_NAME}} to your home</p>
+            
+            <div class="shipping-products">
+                <div class="shipping-item">
+                    <img src="{{PASTRAMI_PACKAGE_IMAGE}}" alt="Pastrami Package">
+                    <h3>Pastrami Package</h3>
+                    <p>2 lbs of our famous hand-carved pastrami</p>
+                    <span class="price">$89.95</span>
+                    <button class="btn btn-primary">Ship Now</button>
+                </div>
+                <div class="shipping-item">
+                    <img src="{{COMBO_PACKAGE_IMAGE}}" alt="Deli Combo">
+                    <h3>The Complete Deli</h3>
+                    <p>Pastrami, corned beef, rye bread, pickles, mustard</p>
+                    <span class="price">$129.95</span>
+                    <button class="btn btn-primary">Ship Now</button>
+                </div>
+                <div class="shipping-item">
+                    <img src="{{GIFT_BOX_IMAGE}}" alt="Gift Box">
+                    <h3>Heritage Gift Box</h3>
+                    <p>Perfect for the deli lover in your life</p>
+                    <span class="price">$149.95</span>
+                    <button class="btn btn-primary">Ship Now</button>
+                </div>
+            </div>
+
+            <div class="shipping-info">
+                <div class="shipping-feature">
+                    <i class="fas fa-snowflake"></i>
+                    <span>Shipped Fresh & Cold</span>
+                </div>
+                <div class="shipping-feature">
+                    <i class="fas fa-truck"></i>
+                    <span>2-Day Shipping</span>
+                </div>
+                <div class="shipping-feature">
+                    <i class="fas fa-gift"></i>
+                    <span>Perfect for Gifts</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catering Section -->
+    <section id="catering" class="catering-section">
+        <div class="container">
+            <div class="catering-content">
+                <div class="catering-info">
+                    <h2>Catering & Events</h2>
+                    <p>Bring the authentic {{RESTAURANT_NAME}} experience to your next event</p>
+                    
+                    <div class="catering-options">
+                        <div class="catering-option">
+                            <h4>Corporate Lunch</h4>
+                            <p>Sandwich platters and sides for office meetings</p>
+                        </div>
+                        <div class="catering-option">
+                            <h4>Family Celebrations</h4>
+                            <p>Traditional favorites for bar mitzvahs and special occasions</p>
+                        </div>
+                        <div class="catering-option">
+                            <h4>Holiday Catering</h4>
+                            <p>Complete holiday meals with all the traditional dishes</p>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-primary" onclick="openCateringModal()">Request Catering Quote</button>
+                </div>
+                <div class="catering-image">
+                    <img src="{{CATERING_SPREAD_IMAGE}}" alt="Catering spread">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Visit Our Historic Location</h2>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Address</h4>
+                                <p>{{RESTAURANT_ADDRESS}}</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>{{PHONE_NUMBER}}</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Hours</h4>
+                                <p>{{HOURS_OF_OPERATION}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="location-note">
+                    <h4>A {{CITY}} Landmark</h4>
+                    <p>Located in the heart of {{NEIGHBORHOOD}}, we've been serving the community for over {{YEARS_IN_BUSINESS}} years. Come experience the history!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>{{RESTAURANT_NAME}}</h3>
+                    <p>Est. {{ESTABLISHED_YEAR}}</p>
+                    <p>A tradition of authentic flavors</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="#menu">Sandwiches</a></li>
+                        <li><a href="#menu">Traditional Sides</a></li>
+                        <li><a href="#shop">Ship Nationwide</a></li>
+                        <li><a href="#catering">Catering</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Our Story</h4>
+                    <ul>
+                        <li><a href="#story">Heritage</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Awards</a></li>
+                        <li><a href="#">Community</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>{{RESTAURANT_ADDRESS}}</p>
+                    <p>{{PHONE_NUMBER}}</p>
+                    <p>{{EMAIL_ADDRESS}}</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. A family tradition since {{ESTABLISHED_YEAR}}.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Order Modal -->
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeOrderModal()">&times;</span>
+            <h2>Order Options</h2>
+            <div class="order-options">
+                <div class="order-option">
+                    <h3>Pickup</h3>
+                    <p>Order ahead and pick up at the counter</p>
+                    <button class="btn btn-primary">Order for Pickup</button>
+                </div>
+                <div class="order-option">
+                    <h3>Catering</h3>
+                    <p>Large orders for events and groups</p>
+                    <button class="btn btn-secondary">Catering Menu</button>
+                </div>
+                <div class="order-option">
+                    <h3>Ship Nationwide</h3>
+                    <p>Send our classics anywhere in the US</p>
+                    <button class="btn btn-secondary">Ship Products</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

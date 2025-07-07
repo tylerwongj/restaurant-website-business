@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Sports Bar & Grill</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="color-scheme-sports">
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}}">
+            </div>
+            <nav class="nav">
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#sports">Sports</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#specials">Specials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="header-cta">
+                    <a href="#order" class="btn btn-primary">Order Online</a>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-background">
+                <video autoplay muted loop>
+                    <source src="{{HERO_VIDEO}}" type="video/mp4">
+                    <img src="{{HERO_IMAGE}}" alt="Sports bar atmosphere">
+                </video>
+            </div>
+            <div class="hero-overlay">
+                <div class="hero-content">
+                    <h1 class="hero-title">Game On!</h1>
+                    <p class="hero-subtitle">The Ultimate Sports Experience</p>
+                    <p class="hero-description">{{SCREEN_COUNT}}+ HD TVs, ice-cold beer, and the best wings in town. This is where sports fans come to play.</p>
+                    <div class="hero-buttons">
+                        <a href="#menu" class="btn btn-primary btn-large">View Menu</a>
+                        <a href="#sports" class="btn btn-secondary btn-large">Watch Sports</a>
+                    </div>
+                    <div class="hero-features">
+                        <div class="feature">
+                            <span class="feature-number">{{SCREEN_COUNT}}</span>
+                            <span class="feature-text">HD TVs</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-number">{{WING_FLAVORS}}</span>
+                            <span class="feature-text">Wing Flavors</span>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-number">{{BEER_TAPS}}</span>
+                            <span class="feature-text">Beers on Tap</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="live-sports-banner">
+            <div class="container">
+                <div class="sports-ticker">
+                    <h2>🏈 LIVE SPORTS TODAY</h2>
+                    <div class="games-scroll">
+                        <div class="game">{{GAME_1_TEAMS}} - {{GAME_1_TIME}}</div>
+                        <div class="game">{{GAME_2_TEAMS}} - {{GAME_2_TIME}}</div>
+                        <div class="game">{{GAME_3_TEAMS}} - {{GAME_3_TIME}}</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu" class="menu-highlights">
+            <div class="container">
+                <h2 class="section-title">Game Day Favorites</h2>
+                <div class="menu-categories">
+                    <button class="category-btn active" data-category="wings">Wings</button>
+                    <button class="category-btn" data-category="burgers">Burgers</button>
+                    <button class="category-btn" data-category="appetizers">Appetizers</button>
+                    <button class="category-btn" data-category="drinks">Drinks</button>
+                </div>
+
+                <div class="menu-grid">
+                    <div class="menu-category" data-category="wings">
+                        <h3>Famous Wings</h3>
+                        <div class="menu-items">
+                            <div class="menu-item featured">
+                                <div class="menu-item-image">
+                                    <img src="{{BUFFALO_WINGS_IMAGE}}" alt="Buffalo Wings">
+                                    <div class="item-badge">🔥 Signature</div>
+                                </div>
+                                <div class="menu-item-content">
+                                    <h4>Buffalo Wings</h4>
+                                    <p>Classic buffalo sauce with celery and blue cheese</p>
+                                    <div class="spice-level">
+                                        <span class="spice-dot medium"></span>
+                                        <span class="spice-dot medium"></span>
+                                        <span class="spice-label">Medium Heat</span>
+                                    </div>
+                                    <div class="menu-item-footer">
+                                        <span class="price">${{BUFFALO_WINGS_PRICE}}</span>
+                                        <div class="sizes">
+                                            <span class="size">10pc</span>
+                                            <span class="size">20pc</span>
+                                            <span class="size">50pc</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="menu-item">
+                                <div class="menu-item-image">
+                                    <img src="{{BBQ_WINGS_IMAGE}}" alt="BBQ Wings">
+                                </div>
+                                <div class="menu-item-content">
+                                    <h4>BBQ Wings</h4>
+                                    <p>Sweet and smoky barbecue sauce</p>
+                                    <div class="spice-level">
+                                        <span class="spice-dot mild"></span>
+                                        <span class="spice-label">Mild</span>
+                                    </div>
+                                    <div class="menu-item-footer">
+                                        <span class="price">${{BBQ_WINGS_PRICE}}</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="menu-item">
+                                <div class="menu-item-image">
+                                    <img src="{{HOT_WINGS_IMAGE}}" alt="Hot Wings">
+                                </div>
+                                <div class="menu-item-content">
+                                    <h4>Blazin' Hot Wings</h4>
+                                    <p>Our hottest sauce - not for the faint of heart!</p>
+                                    <div class="spice-level">
+                                        <span class="spice-dot hot"></span>
+                                        <span class="spice-dot hot"></span>
+                                        <span class="spice-dot hot"></span>
+                                        <span class="spice-label">🔥 HOT</span>
+                                    </div>
+                                    <div class="menu-item-footer">
+                                        <span class="price">${{HOT_WINGS_PRICE}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-category" data-category="burgers" style="display: none;">
+                        <h3>Burgers & Sandwiches</h3>
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="menu-item-image">
+                                    <img src="{{SPORTS_BURGER_IMAGE}}" alt="Sports Burger">
+                                </div>
+                                <div class="menu-item-content">
+                                    <h4>The MVP Burger</h4>
+                                    <p>Double patty, cheese, bacon, onion rings, special sauce</p>
+                                    <div class="menu-item-footer">
+                                        <span class="price">${{MVP_BURGER_PRICE}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wing-challenge">
+                    <div class="challenge-content">
+                        <h3>🔥 BLAZIN' CHALLENGE 🔥</h3>
+                        <p>Finish 12 of our hottest wings in 6 minutes - get your meal free and your photo on the wall!</p>
+                        <button class="btn btn-accent">Accept Challenge</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="sports" class="sports-viewing">
+            <div class="container">
+                <h2 class="section-title">Ultimate Sports Viewing</h2>
+                <div class="sports-features">
+                    <div class="sports-feature">
+                        <div class="feature-icon">📺</div>
+                        <h3>{{SCREEN_COUNT}} HD TVs</h3>
+                        <p>Every seat has the perfect view with our wall-to-wall HD displays</p>
+                    </div>
+                    <div class="sports-feature">
+                        <div class="feature-icon">🎧</div>
+                        <h3>Audio Control</h3>
+                        <p>Choose what you want to hear with our table-side audio system</p>
+                    </div>
+                    <div class="sports-feature">
+                        <div class="feature-icon">🏟️</div>
+                        <h3>All Sports Packages</h3>
+                        <p>NFL RedZone, NBA League Pass, MLB Extra Innings, and more</p>
+                    </div>
+                    <div class="sports-feature">
+                        <div class="feature-icon">🎮</div>
+                        <h3>Gaming Zone</h3>
+                        <p>Pool tables, darts, and arcade games for halftime entertainment</p>
+                    </div>
+                </div>
+
+                <div class="sports-schedule">
+                    <h3>This Week's Big Games</h3>
+                    <div class="games-grid">
+                        <div class="game-card">
+                            <div class="game-date">{{GAME_1_DATE}}</div>
+                            <div class="game-teams">
+                                <div class="team">
+                                    <img src="{{TEAM_1_LOGO}}" alt="{{TEAM_1_NAME}}">
+                                    <span>{{TEAM_1_NAME}}</span>
+                                </div>
+                                <div class="vs">VS</div>
+                                <div class="team">
+                                    <img src="{{TEAM_2_LOGO}}" alt="{{TEAM_2_NAME}}">
+                                    <span>{{TEAM_2_NAME}}</span>
+                                </div>
+                            </div>
+                            <div class="game-time">{{GAME_1_TIME}}</div>
+                        </div>
+                        
+                        <div class="game-card">
+                            <div class="game-date">{{GAME_2_DATE}}</div>
+                            <div class="game-teams">
+                                <div class="team">
+                                    <img src="{{TEAM_3_LOGO}}" alt="{{TEAM_3_NAME}}">
+                                    <span>{{TEAM_3_NAME}}</span>
+                                </div>
+                                <div class="vs">VS</div>
+                                <div class="team">
+                                    <img src="{{TEAM_4_LOGO}}" alt="{{TEAM_4_NAME}}">
+                                    <span>{{TEAM_4_NAME}}</span>
+                                </div>
+                            </div>
+                            <div class="game-time">{{GAME_2_TIME}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="specials" class="daily-specials">
+            <div class="container">
+                <h2 class="section-title">Daily Specials</h2>
+                <div class="specials-grid">
+                    <div class="special-day">
+                        <h3>Monday</h3>
+                        <div class="special-title">Wing Monday</div>
+                        <p>{{WING_MONDAY_DEAL}}</p>
+                        <div class="special-time">All Day</div>
+                    </div>
+                    <div class="special-day">
+                        <h3>Tuesday</h3>
+                        <div class="special-title">Taco Tuesday</div>
+                        <p>{{TACO_TUESDAY_DEAL}}</p>
+                        <div class="special-time">5-10 PM</div>
+                    </div>
+                    <div class="special-day">
+                        <h3>Wednesday</h3>
+                        <div class="special-title">Burger Wednesday</div>
+                        <p>{{BURGER_WEDNESDAY_DEAL}}</p>
+                        <div class="special-time">All Day</div>
+                    </div>
+                    <div class="special-day">
+                        <h3>Thursday</h3>
+                        <div class="special-title">Trivia Night</div>
+                        <p>{{TRIVIA_NIGHT_DEAL}}</p>
+                        <div class="special-time">7-9 PM</div>
+                    </div>
+                    <div class="special-day featured">
+                        <h3>Friday</h3>
+                        <div class="special-title">Happy Hour</div>
+                        <p>{{FRIDAY_HAPPY_HOUR_DEAL}}</p>
+                        <div class="special-time">3-6 PM</div>
+                    </div>
+                    <div class="special-day">
+                        <h3>Weekend</h3>
+                        <div class="special-title">Game Day Specials</div>
+                        <p>{{WEEKEND_GAME_DEAL}}</p>
+                        <div class="special-time">During Games</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="events" class="events-parties">
+            <div class="container">
+                <div class="events-content">
+                    <div class="events-text">
+                        <h2>Private Events & Parties</h2>
+                        <p>Host your next party, corporate event, or watch party with us. We'll make sure your group has the best seats in the house.</p>
+                        
+                        <div class="event-options">
+                            <div class="event-option">
+                                <h3>Watch Parties</h3>
+                                <p>Reserve a section for your team's big game</p>
+                            </div>
+                            <div class="event-option">
+                                <h3>Birthday Parties</h3>
+                                <p>Celebrate with wings, games, and sports</p>
+                            </div>
+                            <div class="event-option">
+                                <h3>Corporate Events</h3>
+                                <p>Team building with a competitive edge</p>
+                            </div>
+                        </div>
+                        
+                        <a href="#contact" class="btn btn-primary btn-large">Plan Your Event</a>
+                    </div>
+                    <div class="events-image">
+                        <img src="{{PARTY_IMAGE}}" alt="Party at sports bar">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="order" class="order-online">
+            <div class="container">
+                <h2 class="section-title">Order for Pickup or Delivery</h2>
+                <div class="order-options">
+                    <div class="order-option">
+                        <div class="option-icon">🏪</div>
+                        <h3>Pickup</h3>
+                        <p>Order ahead and skip the wait</p>
+                        <a href="{{PICKUP_ORDER_URL}}" class="btn btn-primary">Order Pickup</a>
+                    </div>
+                    <div class="order-option">
+                        <div class="option-icon">🚚</div>
+                        <h3>Delivery</h3>
+                        <p>Get wings delivered game-day ready</p>
+                        <div class="delivery-apps">
+                            <a href="{{DOORDASH_URL}}" class="delivery-btn">DoorDash</a>
+                            <a href="{{UBEREATS_URL}}" class="delivery-btn">Uber Eats</a>
+                            <a href="{{GRUBHUB_URL}}" class="delivery-btn">Grubhub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h2>Visit Us</h2>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <h3>Address</h3>
+                                <p>{{ADDRESS}}</p>
+                            </div>
+                            <div class="contact-item">
+                                <h3>Phone</h3>
+                                <p>{{PHONE}}</p>
+                            </div>
+                            <div class="contact-item">
+                                <h3>Hours</h3>
+                                <p>{{HOURS}}</p>
+                            </div>
+                        </div>
+                        <div class="social-section">
+                            <h3>Follow the Action</h3>
+                            <div class="social-links">
+                                <a href="{{FACEBOOK_URL}}">Facebook</a>
+                                <a href="{{INSTAGRAM_URL}}">Instagram</a>
+                                <a href="{{TWITTER_URL}}">Twitter</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <h3>Plan Your Event</h3>
+                        <form>
+                            <input type="text" placeholder="Your Name" required>
+                            <input type="email" placeholder="Your Email" required>
+                            <input type="tel" placeholder="Phone Number" required>
+                            <select required>
+                                <option value="">Event Type</option>
+                                <option value="watch-party">Watch Party</option>
+                                <option value="birthday">Birthday Party</option>
+                                <option value="corporate">Corporate Event</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <input type="date" placeholder="Event Date" required>
+                            <input type="number" placeholder="Number of Guests" min="10" required>
+                            <textarea placeholder="Additional Details" rows="3"></textarea>
+                            <button type="submit" class="btn btn-primary">Submit Request</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>{{RESTAURANT_NAME}}</h3>
+                    <p>The ultimate sports bar experience</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#sports">Sports Schedule</a></li>
+                        <li><a href="#specials">Daily Specials</a></li>
+                        <li><a href="#events">Private Events</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Order</h4>
+                    <ul>
+                        <li><a href="{{PICKUP_ORDER_URL}}">Order Pickup</a></li>
+                        <li><a href="{{DOORDASH_URL}}">Delivery</a></li>
+                        <li><a href="#events">Catering</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}">Instagram</a>
+                        <a href="{{TWITTER_URL}}">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Fresh & Seasonal Dining</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - Seasonally inspired fresh cuisine under 600 calories">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="color-seasonal">
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>{{RESTAURANT_NAME}}</h1>
+                <p class="tagline">{{RESTAURANT_TAGLINE}}</p>
+            </div>
+            <nav class="nav">
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#wines">Wines</a></li>
+                    <li><a href="#seasonal">Seasonal</a></li>
+                    <li><a href="#nutrition">Nutrition</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-cta">
+                <a href="#reservations" class="btn btn-primary">Reserve Table</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h2 class="hero-title">{{HERO_TITLE}}</h2>
+                <p class="hero-subtitle">{{HERO_SUBTITLE}}</p>
+                <div class="hero-features">
+                    <div class="feature">
+                        <span class="feature-icon">🌱</span>
+                        <span>Farm Fresh</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">⚖️</span>
+                        <span>Under 600 Cal</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">🍷</span>
+                        <span>Wine Pairings</span>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#menu" class="btn btn-primary">View Menu</a>
+                    <a href="#seasonal" class="btn btn-secondary">Seasonal Specials</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="{{HERO_IMAGE}}" alt="Fresh seasonal ingredients">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seasonal Highlights -->
+    <section id="seasonal" class="seasonal-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>This Season's Harvest</h2>
+                <p>Featuring the freshest ingredients at their peak flavor</p>
+            </div>
+            <div class="seasonal-grid">
+                <div class="seasonal-card">
+                    <div class="season-badge">{{CURRENT_SEASON}}</div>
+                    <img src="{{SEASONAL_IMAGE_1}}" alt="{{SEASONAL_DISH_1}}">
+                    <div class="seasonal-content">
+                        <h3>{{SEASONAL_DISH_1}}</h3>
+                        <p>{{SEASONAL_DESCRIPTION_1}}</p>
+                        <div class="nutrition-info">
+                            <span class="calories">{{SEASONAL_CALORIES_1}} cal</span>
+                            <span class="dietary">{{SEASONAL_DIETARY_1}}</span>
+                        </div>
+                        <span class="price">{{SEASONAL_PRICE_1}}</span>
+                    </div>
+                </div>
+                <div class="seasonal-card">
+                    <div class="season-badge">{{CURRENT_SEASON}}</div>
+                    <img src="{{SEASONAL_IMAGE_2}}" alt="{{SEASONAL_DISH_2}}">
+                    <div class="seasonal-content">
+                        <h3>{{SEASONAL_DISH_2}}</h3>
+                        <p>{{SEASONAL_DESCRIPTION_2}}</p>
+                        <div class="nutrition-info">
+                            <span class="calories">{{SEASONAL_CALORIES_2}} cal</span>
+                            <span class="dietary">{{SEASONAL_DIETARY_2}}</span>
+                        </div>
+                        <span class="price">{{SEASONAL_PRICE_2}}</span>
+                    </div>
+                </div>
+                <div class="seasonal-card">
+                    <div class="season-badge">{{CURRENT_SEASON}}</div>
+                    <img src="{{SEASONAL_IMAGE_3}}" alt="{{SEASONAL_DISH_3}}">
+                    <div class="seasonal-content">
+                        <h3>{{SEASONAL_DISH_3}}</h3>
+                        <p>{{SEASONAL_DESCRIPTION_3}}</p>
+                        <div class="nutrition-info">
+                            <span class="calories">{{SEASONAL_CALORIES_3}} cal</span>
+                            <span class="dietary">{{SEASONAL_DIETARY_3}}</span>
+                        </div>
+                        <span class="price">{{SEASONAL_PRICE_3}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nutritionally Balanced Menu</h2>
+                <p>Every dish crafted with health and flavor in perfect harmony</p>
+            </div>
+            <div class="menu-categories">
+                <div class="category-filter">
+                    <button class="filter-btn active" data-filter="all">All Items</button>
+                    <button class="filter-btn" data-filter="appetizers">Appetizers</button>
+                    <button class="filter-btn" data-filter="salads">Salads</button>
+                    <button class="filter-btn" data-filter="seafood">Seafood</button>
+                    <button class="filter-btn" data-filter="poultry">Poultry</button>
+                    <button class="filter-btn" data-filter="vegetarian">Vegetarian</button>
+                </div>
+                
+                <div class="menu-grid">
+                    <div class="menu-item" data-category="appetizers">
+                        <img src="{{APPETIZER_IMAGE_1}}" alt="{{APPETIZER_NAME_1}}">
+                        <div class="item-content">
+                            <h4>{{APPETIZER_NAME_1}}</h4>
+                            <p>{{APPETIZER_DESCRIPTION_1}}</p>
+                            <div class="nutrition-details">
+                                <span class="calories">{{APPETIZER_CALORIES_1}} cal</span>
+                                <div class="dietary-tags">
+                                    <span class="tag gluten-free">{{APPETIZER_TAG_1}}</span>
+                                </div>
+                            </div>
+                            <div class="item-footer">
+                                <span class="price">{{APPETIZER_PRICE_1}}</span>
+                                <span class="wine-pair">Pairs with {{APPETIZER_WINE_1}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item" data-category="salads">
+                        <img src="{{SALAD_IMAGE_1}}" alt="{{SALAD_NAME_1}}">
+                        <div class="item-content">
+                            <h4>{{SALAD_NAME_1}}</h4>
+                            <p>{{SALAD_DESCRIPTION_1}}</p>
+                            <div class="nutrition-details">
+                                <span class="calories">{{SALAD_CALORIES_1}} cal</span>
+                                <div class="dietary-tags">
+                                    <span class="tag vegan">{{SALAD_TAG_1}}</span>
+                                </div>
+                            </div>
+                            <div class="item-footer">
+                                <span class="price">{{SALAD_PRICE_1}}</span>
+                                <span class="wine-pair">Pairs with {{SALAD_WINE_1}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item" data-category="seafood">
+                        <img src="{{SEAFOOD_IMAGE_1}}" alt="{{SEAFOOD_NAME_1}}">
+                        <div class="item-content">
+                            <h4>{{SEAFOOD_NAME_1}}</h4>
+                            <p>{{SEAFOOD_DESCRIPTION_1}}</p>
+                            <div class="nutrition-details">
+                                <span class="calories">{{SEAFOOD_CALORIES_1}} cal</span>
+                                <div class="dietary-tags">
+                                    <span class="tag pescatarian">{{SEAFOOD_TAG_1}}</span>
+                                </div>
+                            </div>
+                            <div class="item-footer">
+                                <span class="price">{{SEAFOOD_PRICE_1}}</span>
+                                <span class="wine-pair">Pairs with {{SEAFOOD_WINE_1}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item" data-category="poultry">
+                        <img src="{{POULTRY_IMAGE_1}}" alt="{{POULTRY_NAME_1}}">
+                        <div class="item-content">
+                            <h4>{{POULTRY_NAME_1}}</h4>
+                            <p>{{POULTRY_DESCRIPTION_1}}</p>
+                            <div class="nutrition-details">
+                                <span class="calories">{{POULTRY_CALORIES_1}} cal</span>
+                                <div class="dietary-tags">
+                                    <span class="tag lean">{{POULTRY_TAG_1}}</span>
+                                </div>
+                            </div>
+                            <div class="item-footer">
+                                <span class="price">{{POULTRY_PRICE_1}}</span>
+                                <span class="wine-pair">Pairs with {{POULTRY_WINE_1}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item" data-category="vegetarian">
+                        <img src="{{VEGETARIAN_IMAGE_1}}" alt="{{VEGETARIAN_NAME_1}}">
+                        <div class="item-content">
+                            <h4>{{VEGETARIAN_NAME_1}}</h4>
+                            <p>{{VEGETARIAN_DESCRIPTION_1}}</p>
+                            <div class="nutrition-details">
+                                <span class="calories">{{VEGETARIAN_CALORIES_1}} cal</span>
+                                <div class="dietary-tags">
+                                    <span class="tag vegetarian">{{VEGETARIAN_TAG_1}}</span>
+                                </div>
+                            </div>
+                            <div class="item-footer">
+                                <span class="price">{{VEGETARIAN_PRICE_1}}</span>
+                                <span class="wine-pair">Pairs with {{VEGETARIAN_WINE_1}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item" data-category="salads">
+                        <img src="{{SALAD_IMAGE_2}}" alt="{{SALAD_NAME_2}}">
+                        <div class="item-content">
+                            <h4>{{SALAD_NAME_2}}</h4>
+                            <p>{{SALAD_DESCRIPTION_2}}</p>
+                            <div class="nutrition-details">
+                                <span class="calories">{{SALAD_CALORIES_2}} cal</span>
+                                <div class="dietary-tags">
+                                    <span class="tag keto">{{SALAD_TAG_2}}</span>
+                                </div>
+                            </div>
+                            <div class="item-footer">
+                                <span class="price">{{SALAD_PRICE_2}}</span>
+                                <span class="wine-pair">Pairs with {{SALAD_WINE_2}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-cta">
+                    <a href="menu.html" class="btn btn-primary">View Complete Menu</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wine Section -->
+    <section id="wines" class="wine-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Curated Wine Selection</h2>
+                <p>Perfectly paired wines to complement every healthy dish</p>
+            </div>
+            <div class="wine-showcase">
+                <div class="wine-categories">
+                    <div class="wine-category">
+                        <h3>By the Glass</h3>
+                        <div class="wine-list">
+                            <div class="wine-item">
+                                <div class="wine-info">
+                                    <h4>{{WINE_NAME_1}}</h4>
+                                    <p>{{WINE_REGION_1}} • {{WINE_YEAR_1}}</p>
+                                    <p class="wine-notes">{{WINE_NOTES_1}}</p>
+                                </div>
+                                <span class="wine-price">{{WINE_PRICE_1}}</span>
+                            </div>
+                            <div class="wine-item">
+                                <div class="wine-info">
+                                    <h4>{{WINE_NAME_2}}</h4>
+                                    <p>{{WINE_REGION_2}} • {{WINE_YEAR_2}}</p>
+                                    <p class="wine-notes">{{WINE_NOTES_2}}</p>
+                                </div>
+                                <span class="wine-price">{{WINE_PRICE_2}}</span>
+                            </div>
+                            <div class="wine-item">
+                                <div class="wine-info">
+                                    <h4>{{WINE_NAME_3}}</h4>
+                                    <p>{{WINE_REGION_3}} • {{WINE_YEAR_3}}</p>
+                                    <p class="wine-notes">{{WINE_NOTES_3}}</p>
+                                </div>
+                                <span class="wine-price">{{WINE_PRICE_3}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wine-feature">
+                        <img src="{{WINE_CELLAR_IMAGE}}" alt="Wine selection">
+                        <div class="wine-feature-content">
+                            <h3>Wine Program</h3>
+                            <p>{{WINE_PROGRAM_DESCRIPTION}}</p>
+                            <ul>
+                                <li>{{WINE_FEATURE_1}}</li>
+                                <li>{{WINE_FEATURE_2}}</li>
+                                <li>{{WINE_FEATURE_3}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nutrition Philosophy -->
+    <section id="nutrition" class="nutrition-section">
+        <div class="container">
+            <div class="nutrition-content">
+                <div class="nutrition-text">
+                    <h2>Our Nutrition Philosophy</h2>
+                    <p>{{NUTRITION_PHILOSOPHY}}</p>
+                    <div class="nutrition-principles">
+                        <div class="principle">
+                            <div class="principle-icon">🌿</div>
+                            <div class="principle-content">
+                                <h4>Fresh & Local</h4>
+                                <p>{{FRESH_LOCAL_DESCRIPTION}}</p>
+                            </div>
+                        </div>
+                        <div class="principle">
+                            <div class="principle-icon">⚖️</div>
+                            <div class="principle-content">
+                                <h4>Balanced Nutrition</h4>
+                                <p>{{BALANCED_NUTRITION_DESCRIPTION}}</p>
+                            </div>
+                        </div>
+                        <div class="principle">
+                            <div class="principle-icon">✨</div>
+                            <div class="principle-content">
+                                <h4>Flavor First</h4>
+                                <p>{{FLAVOR_FIRST_DESCRIPTION}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nutrition-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">{{AVERAGE_CALORIES}}</div>
+                        <div class="stat-label">Average Calories</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">{{VEGETARIAN_OPTIONS}}</div>
+                        <div class="stat-label">Vegetarian Options</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">{{GLUTEN_FREE_OPTIONS}}</div>
+                        <div class="stat-label">Gluten-Free Options</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">{{LOCAL_SUPPLIERS}}</div>
+                        <div class="stat-label">Local Suppliers</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="events-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Seasonal Events</h2>
+                <p>Join us for special dinners and wellness events</p>
+            </div>
+            <div class="events-grid">
+                <div class="event-card">
+                    <img src="{{EVENT_IMAGE_1}}" alt="{{EVENT_TITLE_1}}">
+                    <div class="event-content">
+                        <div class="event-date">
+                            <span class="day">{{EVENT_DAY_1}}</span>
+                            <span class="month">{{EVENT_MONTH_1}}</span>
+                        </div>
+                        <h3>{{EVENT_TITLE_1}}</h3>
+                        <p>{{EVENT_DESCRIPTION_1}}</p>
+                        <div class="event-details">
+                            <span class="time">{{EVENT_TIME_1}}</span>
+                            <span class="price">{{EVENT_PRICE_1}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <img src="{{EVENT_IMAGE_2}}" alt="{{EVENT_TITLE_2}}">
+                    <div class="event-content">
+                        <div class="event-date">
+                            <span class="day">{{EVENT_DAY_2}}</span>
+                            <span class="month">{{EVENT_MONTH_2}}</span>
+                        </div>
+                        <h3>{{EVENT_TITLE_2}}</h3>
+                        <p>{{EVENT_DESCRIPTION_2}}</p>
+                        <div class="event-details">
+                            <span class="time">{{EVENT_TIME_2}}</span>
+                            <span class="price">{{EVENT_PRICE_2}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <img src="{{EVENT_IMAGE_3}}" alt="{{EVENT_TITLE_3}}">
+                    <div class="event-content">
+                        <div class="event-date">
+                            <span class="day">{{EVENT_DAY_3}}</span>
+                            <span class="month">{{EVENT_MONTH_3}}</span>
+                        </div>
+                        <h3>{{EVENT_TITLE_3}}</h3>
+                        <p>{{EVENT_DESCRIPTION_3}}</p>
+                        <div class="event-details">
+                            <span class="time">{{EVENT_TIME_3}}</span>
+                            <span class="price">{{EVENT_PRICE_3}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservations -->
+    <section id="reservations" class="reservations-section">
+        <div class="container">
+            <div class="reservation-content">
+                <div class="reservation-info">
+                    <h2>Reserve Your Table</h2>
+                    <p>Experience fresh, seasonal dining in our elegant atmosphere</p>
+                    <div class="dining-options">
+                        <div class="dining-option">
+                            <h4>Main Dining Room</h4>
+                            <p>Elegant atmosphere with seasonal garden views</p>
+                        </div>
+                        <div class="dining-option">
+                            <h4>Wine Bar</h4>
+                            <p>Intimate setting perfect for wine tastings</p>
+                        </div>
+                        <div class="dining-option">
+                            <h4>Chef's Table</h4>
+                            <p>Exclusive experience with custom menu</p>
+                        </div>
+                        <div class="dining-option">
+                            <h4>Private Dining</h4>
+                            <p>Perfect for special occasions and events</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="reservation-form">
+                    <h3>Make a Reservation</h3>
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="date">Date</label>
+                                <input type="date" id="date" name="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="time">Time</label>
+                                <select id="time" name="time" required>
+                                    <option value="">Select Time</option>
+                                    <option value="17:00">5:00 PM</option>
+                                    <option value="17:30">5:30 PM</option>
+                                    <option value="18:00">6:00 PM</option>
+                                    <option value="18:30">6:30 PM</option>
+                                    <option value="19:00">7:00 PM</option>
+                                    <option value="19:30">7:30 PM</option>
+                                    <option value="20:00">8:00 PM</option>
+                                    <option value="20:30">8:30 PM</option>
+                                    <option value="21:00">9:00 PM</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="guests">Party Size</label>
+                                <select id="guests" name="guests" required>
+                                    <option value="">Select Size</option>
+                                    <option value="1">1 Guest</option>
+                                    <option value="2">2 Guests</option>
+                                    <option value="3">3 Guests</option>
+                                    <option value="4">4 Guests</option>
+                                    <option value="5">5 Guests</option>
+                                    <option value="6">6 Guests</option>
+                                    <option value="7">7 Guests</option>
+                                    <option value="8">8+ Guests</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="seating">Dining Area</label>
+                                <select id="seating" name="seating">
+                                    <option value="">No Preference</option>
+                                    <option value="main">Main Dining Room</option>
+                                    <option value="wine-bar">Wine Bar</option>
+                                    <option value="chefs-table">Chef's Table</option>
+                                    <option value="private">Private Dining</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="dietary">Dietary Restrictions</label>
+                            <textarea id="dietary" name="dietary" rows="3" placeholder="Please let us know about any allergies or dietary preferences"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="special">Special Occasion</label>
+                            <select id="special" name="special">
+                                <option value="">Select Occasion</option>
+                                <option value="birthday">Birthday</option>
+                                <option value="anniversary">Anniversary</option>
+                                <option value="business">Business Dinner</option>
+                                <option value="celebration">Celebration</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Request Reservation</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Visit Us</h2>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <h3>Location</h3>
+                            <p>{{RESTAURANT_ADDRESS}}</p>
+                            <p>{{RESTAURANT_CITY}}, {{RESTAURANT_STATE}} {{RESTAURANT_ZIP}}</p>
+                        </div>
+                        <div class="contact-item">
+                            <h3>Hours</h3>
+                            <p>{{RESTAURANT_HOURS}}</p>
+                        </div>
+                        <div class="contact-item">
+                            <h3>Contact</h3>
+                            <p>{{RESTAURANT_PHONE}}</p>
+                            <p>{{RESTAURANT_EMAIL}}</p>
+                        </div>
+                        <div class="contact-item">
+                            <h3>Private Events</h3>
+                            <p>{{PRIVATE_EVENTS_PHONE}}</p>
+                            <p>{{PRIVATE_EVENTS_EMAIL}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Get in Touch</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <select name="subject" required>
+                                <option value="">Select Subject</option>
+                                <option value="reservation">Reservation Question</option>
+                                <option value="nutrition">Nutrition Information</option>
+                                <option value="events">Private Events</option>
+                                <option value="wine">Wine Program</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>{{RESTAURANT_NAME}}</h3>
+                    <p>{{RESTAURANT_DESCRIPTION}}</p>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}" target="_blank" rel="noopener">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}" target="_blank" rel="noopener">Instagram</a>
+                        <a href="{{TWITTER_URL}}" target="_blank" rel="noopener">Twitter</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="#menu">Current Menu</a></li>
+                        <li><a href="#seasonal">Seasonal Specials</a></li>
+                        <li><a href="#wines">Wine List</a></li>
+                        <li><a href="#nutrition">Nutrition Info</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Experience</h4>
+                    <ul>
+                        <li><a href="#events">Events</a></li>
+                        <li><a href="#reservations">Reservations</a></li>
+                        <li><a href="#contact">Private Dining</a></li>
+                        <li><a href="#contact">Gift Cards</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>{{RESTAURANT_PHONE}}</p>
+                    <p>{{RESTAURANT_EMAIL}}</p>
+                    <p>{{RESTAURANT_ADDRESS}}</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+                <p>Nutritional information available upon request.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

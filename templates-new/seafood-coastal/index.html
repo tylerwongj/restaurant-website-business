@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Fresh Seafood & Coastal Cuisine</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;600;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="cool-scheme">
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>{{RESTAURANT_NAME}}</h1>
+                <span class="tagline">Fresh Seafood • Coastal Cuisine</span>
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#fresh-catch">Fresh Catch</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#oyster-bar">Oyster Bar</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#locations">Locations</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#reservations" class="btn btn-reservation">Reservations</a>
+                <a href="#order" class="btn btn-order">Order Takeout</a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-waves"></div>
+        <div class="hero-content">
+            <h2>Fresh from the Sea to Your Table</h2>
+            <p>Experience the finest seafood and coastal cuisine in a relaxed waterfront atmosphere. Daily fresh catches, expertly prepared with coastal flair.</p>
+            <div class="hero-features">
+                <div class="feature">
+                    <span class="feature-icon">🐟</span>
+                    <h4>Daily Fresh Catch</h4>
+                    <p>Delivered fresh every morning</p>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">🦪</span>
+                    <h4>Raw Oyster Bar</h4>
+                    <p>{{OYSTER_VARIETIES}}+ varieties daily</p>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">🌊</span>
+                    <h4>Waterfront Dining</h4>
+                    <p>Beautiful harbor views</p>
+                </div>
+            </div>
+            <div class="hero-buttons">
+                <a href="#fresh-catch" class="btn btn-primary">Today's Fresh Catch</a>
+                <a href="#reservations" class="btn btn-secondary">Make Reservation</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="daily-catch" id="fresh-catch">
+        <div class="container">
+            <h2>Today's Fresh Catch</h2>
+            <p class="catch-subtitle">Delivered fresh this morning from {{SOURCE_LOCATION}}</p>
+            <div class="catch-display">
+                <div class="catch-info">
+                    <h3>{{TODAY_DATE}}</h3>
+                    <div class="catch-items">
+                        <div class="catch-item">
+                            <h4>{{FRESH_FISH_1}}</h4>
+                            <p>{{FRESH_FISH_1_SOURCE}}</p>
+                            <span class="catch-price">Market Price</span>
+                        </div>
+                        <div class="catch-item">
+                            <h4>{{FRESH_FISH_2}}</h4>
+                            <p>{{FRESH_FISH_2_SOURCE}}</p>
+                            <span class="catch-price">Market Price</span>
+                        </div>
+                        <div class="catch-item">
+                            <h4>{{FRESH_FISH_3}}</h4>
+                            <p>{{FRESH_FISH_3_SOURCE}}</p>
+                            <span class="catch-price">Market Price</span>
+                        </div>
+                        <div class="catch-item">
+                            <h4>{{FRESH_SHELLFISH_1}}</h4>
+                            <p>{{FRESH_SHELLFISH_1_SOURCE}}</p>
+                            <span class="catch-price">{{SHELLFISH_1_PRICE}}</span>
+                        </div>
+                    </div>
+                    <div class="preparation-note">
+                        <p><strong>Chef's Preparation:</strong> Our fresh catch can be prepared grilled, blackened, pan-seared, or fried, served with your choice of signature sauces and seasonal sides.</p>
+                    </div>
+                </div>
+                <div class="catch-image">
+                    <img src="{{FRESH_CATCH_IMAGE}}" alt="Today's fresh catch display">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="menu-showcase" id="menu">
+        <div class="container">
+            <h2>Coastal Menu</h2>
+            <div class="menu-categories">
+                <div class="menu-category">
+                    <div class="category-header">
+                        <h3>Appetizers</h3>
+                        <p>Start your coastal journey</p>
+                    </div>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>New England Clam Chowder</h4>
+                                <p>Creamy chowder with tender clams, celery, onions</p>
+                            </div>
+                            <span class="price">{{CLAM_CHOWDER_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Coconut Shrimp</h4>
+                                <p>Jumbo shrimp, coconut breading, sweet chili sauce</p>
+                            </div>
+                            <span class="price">{{COCONUT_SHRIMP_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Seafood Stuffed Mushrooms</h4>
+                                <p>Crab and shrimp stuffing, herb breadcrumbs</p>
+                            </div>
+                            <span class="price">{{STUFFED_MUSHROOMS_PRICE}}</span>
+                        </div>
+                        <div class="menu-item signature">
+                            <div class="item-info">
+                                <h4>Captain's Platter</h4>
+                                <p>Fried clams, scallops, shrimp, fish & chips</p>
+                                <span class="signature-badge">Signature</span>
+                            </div>
+                            <span class="price">{{CAPTAINS_PLATTER_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-category featured">
+                    <div class="category-header">
+                        <h3>Signature Entrees</h3>
+                        <p>Chef's specialties and house favorites</p>
+                    </div>
+                    <div class="menu-items">
+                        <div class="menu-item signature">
+                            <div class="item-info">
+                                <h4>Lobster Roll</h4>
+                                <p>Fresh Maine lobster, mayo or butter, brioche roll</p>
+                                <span class="signature-badge">Maine Style</span>
+                            </div>
+                            <span class="price">{{LOBSTER_ROLL_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Pan-Seared Salmon</h4>
+                                <p>Atlantic salmon, lemon herb butter, seasonal vegetables</p>
+                            </div>
+                            <span class="price">{{SALMON_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Fisherman's Cioppino</h4>
+                                <p>Mixed seafood, tomato saffron broth, sourdough</p>
+                            </div>
+                            <span class="price">{{CIOPPINO_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Blackened Red Snapper</h4>
+                                <p>Cajun spiced, mango salsa, coconut rice</p>
+                            </div>
+                            <span class="price">{{RED_SNAPPER_PRICE}}</span>
+                        </div>
+                        <div class="menu-item signature">
+                            <div class="item-info">
+                                <h4>Surf & Turf</h4>
+                                <p>Lobster tail and filet mignon, drawn butter</p>
+                                <span class="signature-badge">Premium</span>
+                            </div>
+                            <span class="price">{{SURF_TURF_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-category">
+                    <div class="category-header">
+                        <h3>From the Land</h3>
+                        <p>For our non-seafood lovers</p>
+                    </div>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Grilled Chicken Breast</h4>
+                                <p>Herb marinated, seasonal vegetables, rice pilaf</p>
+                            </div>
+                            <span class="price">{{CHICKEN_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Ribeye Steak</h4>
+                                <p>{{RIBEYE_SIZE}} cut, garlic mashed potatoes</p>
+                            </div>
+                            <span class="price">{{RIBEYE_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Vegetarian Pasta</h4>
+                                <p>Seasonal vegetables, olive oil, herbs, parmesan</p>
+                            </div>
+                            <span class="price">{{VEGGIE_PASTA_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="oyster-bar-section" id="oyster-bar">
+        <div class="container">
+            <h2>Raw Oyster Bar</h2>
+            <p class="oyster-subtitle">Fresh oysters shucked to order from premium growing regions</p>
+            <div class="oyster-regions">
+                <div class="region">
+                    <h3>East Coast</h3>
+                    <div class="oyster-varieties">
+                        <div class="oyster">
+                            <h4>{{EAST_OYSTER_1}}</h4>
+                            <p>{{EAST_OYSTER_1_LOCATION}}</p>
+                            <span class="oyster-profile">{{EAST_OYSTER_1_PROFILE}}</span>
+                            <span class="oyster-price">{{EAST_OYSTER_1_PRICE}} each</span>
+                        </div>
+                        <div class="oyster">
+                            <h4>{{EAST_OYSTER_2}}</h4>
+                            <p>{{EAST_OYSTER_2_LOCATION}}</p>
+                            <span class="oyster-profile">{{EAST_OYSTER_2_PROFILE}}</span>
+                            <span class="oyster-price">{{EAST_OYSTER_2_PRICE}} each</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="region">
+                    <h3>West Coast</h3>
+                    <div class="oyster-varieties">
+                        <div class="oyster">
+                            <h4>{{WEST_OYSTER_1}}</h4>
+                            <p>{{WEST_OYSTER_1_LOCATION}}</p>
+                            <span class="oyster-profile">{{WEST_OYSTER_1_PROFILE}}</span>
+                            <span class="oyster-price">{{WEST_OYSTER_1_PRICE}} each</span>
+                        </div>
+                        <div class="oyster">
+                            <h4>{{WEST_OYSTER_2}}</h4>
+                            <p>{{WEST_OYSTER_2_LOCATION}}</p>
+                            <span class="oyster-profile">{{WEST_OYSTER_2_PROFILE}}</span>
+                            <span class="oyster-price">{{WEST_OYSTER_2_PRICE}} each</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="oyster-service">
+                <h3>Oyster Service</h3>
+                <div class="service-options">
+                    <div class="service-option">
+                        <h4>Half Dozen</h4>
+                        <p>Choose any combination</p>
+                        <span class="service-note">Served with cocktail sauce, mignonette, horseradish</span>
+                    </div>
+                    <div class="service-option">
+                        <h4>Dozen</h4>
+                        <p>Mix and match varieties</p>
+                        <span class="service-note">Perfect for sharing</span>
+                    </div>
+                    <div class="service-option">
+                        <h4>Sampler Platter</h4>
+                        <p>{{SAMPLER_COUNT}} oysters, chef's selection</p>
+                        <span class="service-note">Experience different regions</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="happy-hour">
+                <h3>Oyster Happy Hour</h3>
+                <p>{{HAPPY_HOUR_DAYS}} {{HAPPY_HOUR_TIME}}</p>
+                <p class="happy-hour-special">{{HAPPY_HOUR_PRICE}} oysters • {{HAPPY_HOUR_DRINK}} cocktails</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="sustainability">
+        <div class="container">
+            <div class="sustainability-content">
+                <h2>Sustainable Seafood Promise</h2>
+                <p>We're committed to serving only responsibly sourced seafood that supports healthy oceans and fishing communities.</p>
+                <div class="sustainability-features">
+                    <div class="feature">
+                        <div class="feature-icon">🌊</div>
+                        <h3>Ocean Friendly</h3>
+                        <p>{{SUSTAINABILITY_CERTIFICATION}} certified sustainable seafood</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🎣</div>
+                        <h3>Local Partnerships</h3>
+                        <p>Direct relationships with {{LOCAL_FISHERMEN_COUNT}} local fishermen</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">♻️</div>
+                        <h3>Zero Waste</h3>
+                        <p>Shells recycled for reef restoration projects</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">📍</div>
+                        <h3>Traceable Source</h3>
+                        <p>Every dish includes source information</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="events-private-dining" id="events">
+        <div class="container">
+            <div class="events-grid">
+                <div class="events-section">
+                    <h2>Special Events</h2>
+                    <div class="event-list">
+                        <div class="event">
+                            <h3>Lobster Fest</h3>
+                            <p>{{LOBSTER_FEST_DATES}}</p>
+                            <span class="event-details">Special lobster menu, live music, harbor views</span>
+                        </div>
+                        <div class="event">
+                            <h3>Oyster & Wine Pairing</h3>
+                            <p>{{OYSTER_WINE_FREQUENCY}}</p>
+                            <span class="event-details">Guided tastings with sommelier</span>
+                        </div>
+                        <div class="event">
+                            <h3>Fish Market Tours</h3>
+                            <p>{{MARKET_TOUR_SCHEDULE}}</p>
+                            <span class="event-details">Behind-the-scenes seafood sourcing</span>
+                        </div>
+                        <div class="event">
+                            <h3>Sunset Harbor Cruises</h3>
+                            <p>{{CRUISE_SEASON}}</p>
+                            <span class="event-details">Dining cruise with coastal views</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="private-dining-section">
+                    <h2>Private Dining</h2>
+                    <p>Celebrate special occasions with waterfront views and exceptional seafood</p>
+                    <div class="private-options">
+                        <div class="private-option">
+                            <h3>Harbor Room</h3>
+                            <p>{{HARBOR_ROOM_CAPACITY}} guests</p>
+                            <span class="room-features">Panoramic harbor views, private bar</span>
+                        </div>
+                        <div class="private-option">
+                            <h3>Captain's Table</h3>
+                            <p>{{CAPTAINS_TABLE_CAPACITY}} guests</p>
+                            <span class="room-features">Intimate setting, chef's table experience</span>
+                        </div>
+                        <div class="private-option">
+                            <h3>Waterfront Patio</h3>
+                            <p>{{PATIO_CAPACITY}} guests</p>
+                            <span class="room-features">Outdoor dining, sunset views</span>
+                        </div>
+                    </div>
+                    <div class="private-note">
+                        <p><strong>Custom Menus:</strong> Work with our chef to create a personalized seafood experience for your group.</p>
+                    </div>
+                    <a href="#reservations" class="btn btn-primary">Book Private Event</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="reservations" id="reservations">
+        <div class="container">
+            <div class="reservation-content">
+                <h2>Make a Reservation</h2>
+                <p>Secure your waterfront table for the perfect seafood dining experience</p>
+                <form class="reservation-form">
+                    <div class="form-row">
+                        <input type="text" placeholder="Name" required>
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="tel" placeholder="Phone" required>
+                        <select required>
+                            <option value="">Party Size</option>
+                            <option value="2">2 Guests</option>
+                            <option value="3">3 Guests</option>
+                            <option value="4">4 Guests</option>
+                            <option value="5">5 Guests</option>
+                            <option value="6">6 Guests</option>
+                            <option value="7">7 Guests</option>
+                            <option value="8">8 Guests</option>
+                            <option value="8+">8+ Guests</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <input type="date" required>
+                        <select required>
+                            <option value="">Preferred Time</option>
+                            <option value="5:00">5:00 PM</option>
+                            <option value="5:30">5:30 PM</option>
+                            <option value="6:00">6:00 PM</option>
+                            <option value="6:30">6:30 PM</option>
+                            <option value="7:00">7:00 PM</option>
+                            <option value="7:30">7:30 PM</option>
+                            <option value="8:00">8:00 PM</option>
+                            <option value="8:30">8:30 PM</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <select>
+                            <option value="">Seating Preference</option>
+                            <option value="waterfront">Waterfront View</option>
+                            <option value="oyster-bar">Oyster Bar</option>
+                            <option value="indoor">Indoor Dining</option>
+                            <option value="patio">Outdoor Patio</option>
+                            <option value="no-preference">No Preference</option>
+                        </select>
+                        <select>
+                            <option value="">Special Occasion</option>
+                            <option value="anniversary">Anniversary</option>
+                            <option value="birthday">Birthday</option>
+                            <option value="date-night">Date Night</option>
+                            <option value="business">Business Dinner</option>
+                            <option value="celebration">Celebration</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <textarea placeholder="Special requests, dietary restrictions, or allergies"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Request Reservation</button>
+                </form>
+                <div class="reservation-note">
+                    <p><strong>Note:</strong> Reservations for parties of 8+ require a phone call. Please call {{LARGE_PARTY_PHONE}} for assistance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="locations" id="locations">
+        <div class="container">
+            <h2>Waterfront Locations</h2>
+            <div class="locations-grid">
+                <div class="location">
+                    <h3>{{LOCATION_1_NAME}}</h3>
+                    <p>{{LOCATION_1_ADDRESS}}</p>
+                    <p>{{LOCATION_1_PHONE}}</p>
+                    <div class="location-features">
+                        <span class="feature-tag">Waterfront Dining</span>
+                        <span class="feature-tag">Raw Bar</span>
+                        <span class="feature-tag">Private Events</span>
+                        <span class="feature-tag">Valet Parking</span>
+                    </div>
+                    <div class="location-hours">
+                        <p><strong>Hours:</strong></p>
+                        <p>{{LOCATION_1_HOURS}}</p>
+                    </div>
+                    <div class="location-actions">
+                        <a href="#" class="btn btn-outline">Get Directions</a>
+                        <a href="#reservations" class="btn btn-primary">Make Reservation</a>
+                    </div>
+                </div>
+                
+                <div class="location">
+                    <h3>{{LOCATION_2_NAME}}</h3>
+                    <p>{{LOCATION_2_ADDRESS}}</p>
+                    <p>{{LOCATION_2_PHONE}}</p>
+                    <div class="location-features">
+                        <span class="feature-tag">Harbor Views</span>
+                        <span class="feature-tag">Outdoor Patio</span>
+                        <span class="feature-tag">Full Bar</span>
+                        <span class="feature-tag">Takeout Available</span>
+                    </div>
+                    <div class="location-hours">
+                        <p><strong>Hours:</strong></p>
+                        <p>{{LOCATION_2_HOURS}}</p>
+                    </div>
+                    <div class="location-actions">
+                        <a href="#" class="btn btn-outline">Get Directions</a>
+                        <a href="#reservations" class="btn btn-primary">Make Reservation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>{{RESTAURANT_NAME}}</h3>
+                    <p>Fresh seafood and coastal cuisine with stunning waterfront views since {{YEAR_ESTABLISHED}}</p>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}">Instagram</a>
+                        <a href="{{TWITTER_URL}}">Twitter</a>
+                        <a href="{{YELP_URL}}">Yelp</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Reservations</h4>
+                    <p>{{PHONE}}</p>
+                    <p>{{EMAIL}}</p>
+                    <p>{{RESERVATION_HOURS}}</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Private Events</h4>
+                    <p>{{EVENTS_PHONE}}</p>
+                    <p>{{EVENTS_EMAIL}}</p>
+                    <p>Waterfront venues for special occasions</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Fresh Seafood</h4>
+                    <p>Daily deliveries from {{SOURCE_LOCATION}}</p>
+                    <p>{{SUSTAINABILITY_CERTIFICATION}} certified</p>
+                    <p>Market pricing available by phone</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; {{CURRENT_YEAR}} {{RESTAURANT_NAME}}. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Sustainability</a>
+                    <a href="#">Gift Cards</a>
+                    <a href="#">Careers</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

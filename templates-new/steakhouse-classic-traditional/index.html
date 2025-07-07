@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Classic Steakhouse Since {{ESTABLISHED_YEAR}}</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lora:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body class="color-scheme-classic">
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}}">
+            </div>
+            <nav class="nav">
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#story">Our Story</a></li>
+                    <li><a href="#private-dining">Private Dining</a></li>
+                    <li><a href="#gift-certificates">Gift Cards</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="header-reservation">
+                    <a href="#reservations" class="btn btn-primary">Reservations</a>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">{{RESTAURANT_NAME}}</h1>
+                    <p class="hero-subtitle">Since {{ESTABLISHED_YEAR}}</p>
+                    <p class="hero-description">The legendary steakhouse that has been serving the finest dry-aged steaks and classic American fare for over {{YEARS_IN_BUSINESS}} years.</p>
+                    <div class="hero-legacy">
+                        <div class="legacy-item">
+                            <span class="legacy-number">{{YEARS_IN_BUSINESS}}+</span>
+                            <span class="legacy-text">Years of Excellence</span>
+                        </div>
+                        <div class="legacy-item">
+                            <span class="legacy-number">{{DRY_AGING_DAYS}}</span>
+                            <span class="legacy-text">Days Dry-Aged</span>
+                        </div>
+                        <div class="legacy-item">
+                            <span class="legacy-number">{{AWARDS_COUNT}}+</span>
+                            <span class="legacy-text">Awards Won</span>
+                        </div>
+                    </div>
+                    <div class="hero-buttons">
+                        <a href="#reservations" class="btn btn-primary btn-large">Make Reservation</a>
+                        <a href="#menu" class="btn btn-secondary btn-large">View Menu</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="{{HERO_STEAK_IMAGE}}" alt="Signature dry-aged steak">
+                </div>
+            </div>
+        </section>
+
+        <section class="tradition-banner">
+            <div class="container">
+                <div class="tradition-content">
+                    <h2>"The finest steaks in {{CITY}}"</h2>
+                    <p>— {{FAMOUS_REVIEW_SOURCE}}, {{REVIEW_YEAR}}</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu" class="menu-showcase">
+            <div class="container">
+                <h2 class="section-title">Our Legendary Steaks</h2>
+                <p class="section-subtitle">All steaks are dry-aged {{DRY_AGING_DAYS}} days and served with our signature accompaniments</p>
+
+                <div class="steaks-grid">
+                    <div class="steak-item signature">
+                        <div class="steak-image">
+                            <img src="{{PORTERHOUSE_IMAGE}}" alt="Porterhouse Steak">
+                            <div class="signature-badge">🏆 Signature</div>
+                        </div>
+                        <div class="steak-content">
+                            <h3>Porterhouse for Two</h3>
+                            <p class="weight">{{PORTERHOUSE_WEIGHT}} oz</p>
+                            <p class="description">Our legendary dry-aged porterhouse - the king of steaks with both filet and strip portions</p>
+                            <div class="steak-details">
+                                <span class="price">${{PORTERHOUSE_PRICE}}</span>
+                                <span class="serving">Serves 2-3</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="steak-item">
+                        <div class="steak-image">
+                            <img src="{{RIBEYE_IMAGE}}" alt="Ribeye Steak">
+                        </div>
+                        <div class="steak-content">
+                            <h3>Dry-Aged Ribeye</h3>
+                            <p class="weight">{{RIBEYE_WEIGHT}} oz</p>
+                            <p class="description">Rich, marbled ribeye with exceptional flavor and tenderness</p>
+                            <div class="steak-details">
+                                <span class="price">${{RIBEYE_PRICE}}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="steak-item">
+                        <div class="steak-image">
+                            <img src="{{FILET_IMAGE}}" alt="Filet Mignon">
+                        </div>
+                        <div class="steak-content">
+                            <h3>Filet Mignon</h3>
+                            <p class="weight">{{FILET_WEIGHT}} oz</p>
+                            <p class="description">The most tender cut, known for its buttery texture and mild flavor</p>
+                            <div class="steak-details">
+                                <span class="price">${{FILET_PRICE}}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="steak-item">
+                        <div class="steak-image">
+                            <img src="{{STRIP_IMAGE}}" alt="NY Strip">
+                        </div>
+                        <div class="steak-content">
+                            <h3>New York Strip</h3>
+                            <p class="weight">{{STRIP_WEIGHT}} oz</p>
+                            <p class="description">Classic steakhouse cut with perfect balance of flavor and texture</p>
+                            <div class="steak-details">
+                                <span class="price">${{STRIP_PRICE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-sections">
+                    <div class="menu-section">
+                        <h3>Classic Appetizers</h3>
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="item-header">
+                                    <h4>Shrimp Cocktail</h4>
+                                    <span class="price">${{SHRIMP_PRICE}}</span>
+                                </div>
+                                <p>Jumbo shrimp with classic cocktail sauce</p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-header">
+                                    <h4>Oysters Rockefeller</h4>
+                                    <span class="price">${{OYSTERS_PRICE}}</span>
+                                </div>
+                                <p>Fresh oysters with spinach, herbs, and hollandaise</p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-header">
+                                    <h4>Crab Cake</h4>
+                                    <span class="price">${{CRAB_CAKE_PRICE}}</span>
+                                </div>
+                                <p>Jumbo lump crab with old bay and mustard sauce</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-section">
+                        <h3>Traditional Sides</h3>
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="item-header">
+                                    <h4>Lobster Tail</h4>
+                                    <span class="price">${{LOBSTER_PRICE}}</span>
+                                </div>
+                                <p>Cold water lobster tail with drawn butter</p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-header">
+                                    <h4>Creamed Spinach</h4>
+                                    <span class="price">${{SPINACH_PRICE}}</span>
+                                </div>
+                                <p>Our legendary creamed spinach recipe</p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-header">
+                                    <h4>Hash Browns</h4>
+                                    <span class="price">${{HASH_BROWNS_PRICE}}</span>
+                                </div>
+                                <p>Crispy golden hash browns, cooked to perfection</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-note">
+                    <h3>Our Promise</h3>
+                    <p>Every steak is hand-selected, dry-aged in our own aging room, and cooked to your exact specifications. If it's not perfect, we'll make it right.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="dry-aging-process">
+            <div class="container">
+                <div class="aging-content">
+                    <div class="aging-text">
+                        <h2>The Art of Dry-Aging</h2>
+                        <p>Our steaks are dry-aged for {{DRY_AGING_DAYS}} days in our temperature and humidity-controlled aging room, concentrating flavors and ensuring unparalleled tenderness.</p>
+                        
+                        <div class="aging-process">
+                            <div class="process-step">
+                                <h3>Selection</h3>
+                                <p>We hand-select only the finest USDA Prime cuts</p>
+                            </div>
+                            <div class="process-step">
+                                <h3>Aging</h3>
+                                <p>{{DRY_AGING_DAYS}} days in our controlled environment</p>
+                            </div>
+                            <div class="process-step">
+                                <h3>Preparation</h3>
+                                <p>Expert trimming and cutting by our butchers</p>
+                            </div>
+                            <div class="process-step">
+                                <h3>Perfection</h3>
+                                <p>Cooked to your exact specifications</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="aging-image">
+                        <img src="{{AGING_ROOM_IMAGE}}" alt="Dry-aging room">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="story" class="story-heritage">
+            <div class="container">
+                <div class="story-content">
+                    <div class="story-text">
+                        <h2>Our Story</h2>
+                        <p class="story-intro">{{STORY_INTRO}}</p>
+                        
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="year">{{ESTABLISHED_YEAR}}</div>
+                                <div class="event">
+                                    <h3>The Beginning</h3>
+                                    <p>{{FOUNDING_STORY}}</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="year">{{MILESTONE_YEAR_1}}</div>
+                                <div class="event">
+                                    <h3>{{MILESTONE_1_TITLE}}</h3>
+                                    <p>{{MILESTONE_1_DESCRIPTION}}</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="year">{{MILESTONE_YEAR_2}}</div>
+                                <div class="event">
+                                    <h3>{{MILESTONE_2_TITLE}}</h3>
+                                    <p>{{MILESTONE_2_DESCRIPTION}}</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="year">Today</div>
+                                <div class="event">
+                                    <h3>Living Legend</h3>
+                                    <p>Continuing the tradition of excellence for future generations</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="story-images">
+                        <img src="{{HISTORICAL_IMAGE_1}}" alt="Historical photo 1">
+                        <img src="{{HISTORICAL_IMAGE_2}}" alt="Historical photo 2">
+                        <img src="{{CURRENT_IMAGE}}" alt="Current restaurant">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="wall-of-fame">
+            <div class="container">
+                <h2 class="section-title">Wall of Fame</h2>
+                <p class="section-subtitle">Celebrating our famous guests and memorable moments</p>
+                <div class="fame-grid">
+                    <div class="fame-item">
+                        <img src="{{CELEBRITY_1_IMAGE}}" alt="{{CELEBRITY_1_NAME}}">
+                        <h3>{{CELEBRITY_1_NAME}}</h3>
+                        <p>{{CELEBRITY_1_DESCRIPTION}}</p>
+                    </div>
+                    <div class="fame-item">
+                        <img src="{{CELEBRITY_2_IMAGE}}" alt="{{CELEBRITY_2_NAME}}">
+                        <h3>{{CELEBRITY_2_NAME}}</h3>
+                        <p>{{CELEBRITY_2_DESCRIPTION}}</p>
+                    </div>
+                    <div class="fame-item">
+                        <img src="{{CELEBRITY_3_IMAGE}}" alt="{{CELEBRITY_3_NAME}}">
+                        <h3>{{CELEBRITY_3_NAME}}</h3>
+                        <p>{{CELEBRITY_3_DESCRIPTION}}</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="private-dining" class="private-dining">
+            <div class="container">
+                <div class="private-content">
+                    <div class="private-text">
+                        <h2>Private Dining</h2>
+                        <p>Host your special event in our elegant private dining rooms, perfect for business dinners, celebrations, and intimate gatherings.</p>
+                        
+                        <div class="private-rooms">
+                            <div class="room">
+                                <h3>{{ROOM_1_NAME}}</h3>
+                                <p>Seats up to {{ROOM_1_CAPACITY}} guests</p>
+                                <p>{{ROOM_1_DESCRIPTION}}</p>
+                            </div>
+                            <div class="room">
+                                <h3>{{ROOM_2_NAME}}</h3>
+                                <p>Seats up to {{ROOM_2_CAPACITY}} guests</p>
+                                <p>{{ROOM_2_DESCRIPTION}}</p>
+                            </div>
+                        </div>
+                        
+                        <div class="private-features">
+                            <h3>What's Included</h3>
+                            <ul>
+                                <li>Dedicated service staff</li>
+                                <li>Customized menu options</li>
+                                <li>Wine pairing recommendations</li>
+                                <li>Event coordination</li>
+                                <li>Audio/visual equipment</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="private-image">
+                        <img src="{{PRIVATE_DINING_IMAGE}}" alt="Private dining room">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gift-certificates" class="gift-certificates">
+            <div class="container">
+                <div class="gift-content">
+                    <h2>Gift Certificates</h2>
+                    <p>Share the legendary {{RESTAURANT_NAME}} experience with friends and family</p>
+                    
+                    <div class="gift-options">
+                        <div class="gift-option">
+                            <h3>Classic Gift Certificate</h3>
+                            <p>Choose any denomination</p>
+                            <div class="gift-amounts">
+                                <button class="amount-btn">$100</button>
+                                <button class="amount-btn">$250</button>
+                                <button class="amount-btn">$500</button>
+                                <button class="amount-btn">Custom</button>
+                            </div>
+                        </div>
+                        <div class="gift-option">
+                            <h3>Steak Dinner for Two</h3>
+                            <p>Complete dinner experience</p>
+                            <div class="gift-price">${{DINNER_FOR_TWO_PRICE}}</div>
+                        </div>
+                    </div>
+                    
+                    <div class="gift-purchase">
+                        <p>Gift certificates can be purchased in person, by phone, or online</p>
+                        <div class="purchase-methods">
+                            <a href="tel:{{PHONE}}" class="btn btn-secondary">Call to Order</a>
+                            <a href="{{GIFT_CARD_URL}}" class="btn btn-primary">Buy Online</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="reservations" class="reservations">
+            <div class="container">
+                <div class="reservations-content">
+                    <div class="reservation-info">
+                        <h2>Reservations</h2>
+                        <p>Reservations are strongly recommended and can be made by calling or using our online system.</p>
+                        
+                        <div class="reservation-details">
+                            <div class="detail">
+                                <h3>Dinner Service</h3>
+                                <p>{{DINNER_HOURS}}</p>
+                            </div>
+                            <div class="detail">
+                                <h3>Lunch Service</h3>
+                                <p>{{LUNCH_HOURS}}</p>
+                            </div>
+                            <div class="detail">
+                                <h3>Dress Code</h3>
+                                <p>{{DRESS_CODE}}</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-methods">
+                            <a href="tel:{{PHONE}}" class="contact-method">
+                                <h3>Phone</h3>
+                                <p>{{PHONE}}</p>
+                            </a>
+                            <a href="{{RESERVATION_URL}}" class="contact-method">
+                                <h3>Online</h3>
+                                <p>Reserve through OpenTable</p>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <form class="reservation-form">
+                        <h3>Request a Reservation</h3>
+                        <div class="form-row">
+                            <input type="text" placeholder="First Name" required>
+                            <input type="text" placeholder="Last Name" required>
+                        </div>
+                        <div class="form-row">
+                            <input type="email" placeholder="Email" required>
+                            <input type="tel" placeholder="Phone" required>
+                        </div>
+                        <div class="form-row">
+                            <input type="date" required>
+                            <select required>
+                                <option value="">Time</option>
+                                <option value="17:30">5:30 PM</option>
+                                <option value="18:00">6:00 PM</option>
+                                <option value="18:30">6:30 PM</option>
+                                <option value="19:00">7:00 PM</option>
+                                <option value="19:30">7:30 PM</option>
+                                <option value="20:00">8:00 PM</option>
+                                <option value="20:30">8:30 PM</option>
+                                <option value="21:00">9:00 PM</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <select required>
+                                <option value="">Party Size</option>
+                                <option value="2">2 people</option>
+                                <option value="3">3 people</option>
+                                <option value="4">4 people</option>
+                                <option value="5">5 people</option>
+                                <option value="6">6 people</option>
+                                <option value="7+">7+ people</option>
+                            </select>
+                            <select>
+                                <option value="">Occasion</option>
+                                <option value="anniversary">Anniversary</option>
+                                <option value="birthday">Birthday</option>
+                                <option value="business">Business Dinner</option>
+                                <option value="celebration">Celebration</option>
+                            </select>
+                        </div>
+                        <textarea placeholder="Special requests or dietary restrictions" rows="3"></textarea>
+                        <button type="submit" class="btn btn-primary btn-large">Request Reservation</button>
+                        <p class="form-note">We will call to confirm your reservation</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h2>Visit Us</h2>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <h3>Address</h3>
+                                <p>{{FULL_ADDRESS}}</p>
+                            </div>
+                            <div class="contact-item">
+                                <h3>Phone</h3>
+                                <p>{{PHONE}}</p>
+                            </div>
+                            <div class="contact-item">
+                                <h3>Hours</h3>
+                                <p>{{HOURS}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-map">
+                        <img src="{{MAP_IMAGE}}" alt="Restaurant location">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>{{RESTAURANT_NAME}}</h3>
+                    <p>A legendary steakhouse since {{ESTABLISHED_YEAR}}</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#reservations">Reservations</a></li>
+                        <li><a href="#private-dining">Private Dining</a></li>
+                        <li><a href="#gift-certificates">Gift Certificates</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>{{PHONE}}</li>
+                        <li>{{FULL_ADDRESS}}</li>
+                        <li>{{EMAIL}}</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}">Instagram</a>
+                        <a href="{{TWITTER_URL}}">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

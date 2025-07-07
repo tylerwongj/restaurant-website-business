@@ -1,90 +1,141 @@
-// Luxury Minimalist Template JavaScript - Eleven Madison Park Inspired
+// Luxury Minimalist Template - JavaScript functionality
 
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile Navigation Toggle
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
-
+    
     if (hamburger && navMenu) {
         hamburger.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
             hamburger.classList.toggle('active');
-        });
-
-        // Close mobile menu when clicking on links
-        document.querySelectorAll('.nav-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                hamburger.classList.remove('active');
-            });
+            navMenu.classList.toggle('active');
         });
     }
 
-    // Smooth Scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                const navHeight = document.querySelector('.navbar').offsetHeight;
-                const elementPosition = target.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - navHeight;
+    // Close mobile menu when clicking on a nav link
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
 
+    // Smooth scrolling for navigation links
+    const navLinksSmooth = document.querySelectorAll('a[href^="#"]');
+    navLinksSmooth.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+            
+            if (targetSection) {
+                const offsetTop = targetSection.offsetTop - 80; // Account for fixed navbar
                 window.scrollTo({
-                    top: offsetPosition,
+                    top: offsetTop,
                     behavior: 'smooth'
                 });
             }
         });
     });
 
-    // Reservation Form Handling
-    const reservationForm = document.getElementById('reservationForm');
-    if (reservationForm) {
-        reservationForm.addEventListener('submit', function(e) {
+    // Navbar scroll effect
+    const navbar = document.querySelector('.navbar');
+    let lastScrollTop = 0;
+    
+    window.addEventListener('scroll', function() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop > 100) {
+            navbar.style.background = 'rgba(248, 246, 243, 0.98)';
+            navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+        } else {
+            navbar.style.background = 'rgba(248, 246, 243, 0.95)';
+            navbar.style.boxShadow = 'none';
+        }
+        
+        lastScrollTop = scrollTop;
+    });
+
+    // Form validation and submission
+    const forms = document.querySelectorAll('form');
+    forms.forEach(form => {
+        form.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Get form data
-            const formData = new FormData(this);
-            const reservationData = Object.fromEntries(formData.entries());
+            // Basic form validation
+            const requiredFields = form.querySelectorAll('[required]');
+            let isValid = true;
             
-            // Basic validation
-            if (!validateReservationForm(reservationData)) {
-                return;
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    isValid = false;
+                    field.style.borderColor = '#e53e3e';
+                } else {
+                    field.style.borderColor = '#8b7355';
+                }
+            });
+            
+            if (isValid) {
+                // Simulate form submission
+                showNotification('Thank you! We will contact you soon.', 'success');
+                form.reset();
+                
+                // Close modal if it's a reservation form
+                if (form.classList.contains('reservation-form')) {
+                    closeReservationModal();
+                }
+            } else {
+                showNotification('Please fill in all required fields.', 'error');
             }
-            
-            // Simulate form submission
-            submitReservation(reservationData);
         });
-    }
+    });
 
-    // Set minimum date for reservation to today
-    const dateInput = document.getElementById('date');
-    if (dateInput) {
-        const today = new Date().toISOString().split('T')[0];
-        dateInput.setAttribute('min', today);
-    }
+    // Intersection Observer for fade-in animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    // Observe elements for animations
+    const animatedElements = document.querySelectorAll('.menu-item, .award, .experience');
+    animatedElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+    });
 });
 
 // Reservation Modal Functions
-function openReservationModal(experienceType) {
+function openReservationModal(experienceType = '') {
     const modal = document.getElementById('reservationModal');
     const experienceSelect = document.getElementById('experience');
     
-    if (modal && experienceSelect) {
-        // Pre-select the experience type if provided
-        if (experienceType) {
-            experienceSelect.value = experienceType;
-        }
-        
+    if (modal) {
         modal.style.display = 'block';
         document.body.style.overflow = 'hidden';
         
-        // Focus on first input
-        setTimeout(() => {
-            const firstInput = modal.querySelector('input, select');
-            if (firstInput) firstInput.focus();
-        }, 100);
+        // Pre-select experience type if provided
+        if (experienceType && experienceSelect) {
+            experienceSelect.value = experienceType;
+        }
+        
+        // Set minimum date to today
+        const dateInput = document.getElementById('date');
+        if (dateInput) {
+            const today = new Date().toISOString().split('T')[0];
+            dateInput.setAttribute('min', today);
+        }
     }
 }
 
@@ -93,12 +144,6 @@ function closeReservationModal() {
     if (modal) {
         modal.style.display = 'none';
         document.body.style.overflow = 'auto';
-        
-        // Reset form
-        const form = modal.querySelector('.reservation-form');
-        if (form) {
-            form.reset();
-        }
     }
 }
 
@@ -110,174 +155,163 @@ window.addEventListener('click', function(event) {
     }
 });
 
-// Close modal with escape key
+// Close modal with Escape key
 document.addEventListener('keydown', function(event) {
     if (event.key === 'Escape') {
         closeReservationModal();
     }
 });
 
-// Handle reservation form submission
-function handleReservationSubmit() {
-    const form = document.querySelector('.reservation-form');
-    const formData = new FormData(form);
+// Notification system
+function showNotification(message, type = 'info') {
+    // Remove existing notifications
+    const existingNotifications = document.querySelectorAll('.notification');
+    existingNotifications.forEach(notification => notification.remove());
     
-    // Basic form validation
-    const requiredFields = ['date', 'time', 'guests', 'name', 'email', 'phone'];
-    let isValid = true;
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    notification.innerHTML = `
+        <span>${message}</span>
+        <button onclick="this.parentElement.remove()" style="margin-left: 1rem; background: none; border: none; color: inherit; cursor: pointer; font-size: 1.2rem;">&times;</button>
+    `;
     
-    requiredFields.forEach(field => {
-        const input = form.querySelector(`[name="${field}"]`);
-        if (!input.value.trim()) {
-            isValid = false;
-            input.style.borderColor = '#e53e3e';
-        } else {
-            input.style.borderColor = '#e2e8f0';
-        }
-    });
+    // Style the notification
+    notification.style.cssText = `
+        position: fixed;
+        top: 100px;
+        right: 2rem;
+        background: ${type === 'success' ? '#48bb78' : type === 'error' ? '#e53e3e' : '#4299e1'};
+        color: white;
+        padding: 1rem 1.5rem;
+        border-radius: 4px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        z-index: 10000;
+        display: flex;
+        align-items: center;
+        animation: slideIn 0.3s ease;
+        max-width: 400px;
+        font-family: var(--font-secondary, 'Inter', sans-serif);
+    `;
     
-    if (!isValid) {
-        showMessage('Please fill in all required fields.', 'error');
-        return;
-    }
-    
-    // Email validation
-    const email = formData.get('email');
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        showMessage('Please enter a valid email address.', 'error');
-        return;
-    }
-    
-    // Simulate form submission
-    const submitButton = form.querySelector('button[type="submit"]');
-    const originalText = submitButton.textContent;
-    
-    submitButton.textContent = 'Submitting...';
-    submitButton.disabled = true;
-    
-    setTimeout(() => {
-        // Reset button
-        submitButton.textContent = originalText;
-        submitButton.disabled = false;
-        
-        // Show success message
-        showMessage('Reservation request submitted! We will contact you shortly to confirm.', 'success');
-        
-        // Close modal after brief delay
-        setTimeout(() => {
-            closeReservationModal();
-        }, 1500);
-    }, 2000);
-}
-
-// Show messages to user
-function showMessage(message, type = 'info') {
-    // Remove any existing messages
-    const existingMessage = document.querySelector('.message-popup');
-    if (existingMessage) {
-        existingMessage.remove();
-    }
-    
-    // Create message element
-    const messageEl = document.createElement('div');
-    messageEl.className = `message-popup ${type}`;
-    messageEl.textContent = message;
-    
-    // Style the message
-    Object.assign(messageEl.style, {
-        position: 'fixed',
-        top: '20px',
-        right: '20px',
-        padding: '1rem 2rem',
-        borderRadius: '4px',
-        color: 'white',
-        zIndex: '3000',
-        fontFamily: 'Montserrat, sans-serif',
-        fontSize: '0.9rem',
-        fontWeight: '500',
-        maxWidth: '300px',
-        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
-        transform: 'translateX(400px)',
-        transition: 'transform 0.3s ease'
-    });
-    
-    // Set background color based on type
-    if (type === 'success') {
-        messageEl.style.backgroundColor = '#38a169';
-    } else if (type === 'error') {
-        messageEl.style.backgroundColor = '#e53e3e';
-    } else {
-        messageEl.style.backgroundColor = '#3182ce';
-    }
-    
-    // Add to page
-    document.body.appendChild(messageEl);
-    
-    // Animate in
-    setTimeout(() => {
-        messageEl.style.transform = 'translateX(0)';
-    }, 100);
-    
-    // Remove after delay
-    setTimeout(() => {
-        messageEl.style.transform = 'translateX(400px)';
-        setTimeout(() => {
-            if (messageEl.parentNode) {
-                messageEl.remove();
+    // Add animation keyframes
+    if (!document.querySelector('#notification-styles')) {
+        const style = document.createElement('style');
+        style.id = 'notification-styles';
+        style.textContent = `
+            @keyframes slideIn {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
             }
-        }, 300);
-    }, 4000);
+        `;
+        document.head.appendChild(style);
+    }
+    
+    document.body.appendChild(notification);
+    
+    // Auto-remove after 5 seconds
+    setTimeout(() => {
+        if (notification.parentElement) {
+            notification.remove();
+        }
+    }, 5000);
 }
 
-// Intersection Observer for fade-in animations
-const observeElements = () => {
-    const observer = new IntersectionObserver((entries) => {
+// Image loading optimization
+function optimizeImages() {
+    const images = document.querySelectorAll('img');
+    
+    images.forEach(img => {
+        img.addEventListener('load', function() {
+            this.style.opacity = '1';
+        });
+        
+        img.addEventListener('error', function() {
+            this.style.opacity = '0.5';
+            console.warn('Failed to load image:', this.src);
+        });
+        
+        // Set initial opacity for smooth loading
+        img.style.opacity = '0';
+        img.style.transition = 'opacity 0.3s ease';
+    });
+}
+
+// Initialize image optimization when DOM is ready
+document.addEventListener('DOMContentLoaded', optimizeImages);
+
+// Lazy loading for images (modern browser support)
+if ('IntersectionObserver' in window) {
+    const imageObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+                const img = entry.target;
+                img.src = img.dataset.src || img.src;
+                img.classList.remove('lazy');
+                observer.unobserve(img);
             }
         });
-    }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
     });
     
-    // Observe elements for animation
-    document.querySelectorAll('.menu-item, .award-item, .story-content').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
+    document.querySelectorAll('img[data-src]').forEach(img => {
+        imageObserver.observe(img);
     });
-};
+}
 
-// Initialize animations when DOM is loaded
-document.addEventListener('DOMContentLoaded', observeElements);
+// Parallax effect for hero section (optional enhancement)
+function addParallaxEffect() {
+    const heroImage = document.querySelector('.artistic-food');
+    
+    if (heroImage) {
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.5;
+            heroImage.style.transform = `translateY(${rate}px)`;
+        });
+    }
+}
 
-// Handle window resize for responsive adjustments
-window.addEventListener('resize', function() {
-    // Close mobile menu if open when resizing to desktop
-    if (window.innerWidth > 768) {
-        const hamburger = document.querySelector('.hamburger');
-        const navMenu = document.querySelector('.nav-menu');
-        
-        if (hamburger && navMenu) {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
+// Initialize parallax on larger screens only
+if (window.innerWidth > 768) {
+    document.addEventListener('DOMContentLoaded', addParallaxEffect);
+}
+
+// Accessibility improvements
+function enhanceAccessibility() {
+    // Add keyboard navigation for modal
+    const modal = document.getElementById('reservationModal');
+    if (modal) {
+        modal.addEventListener('keydown', function(e) {
+            if (e.key === 'Tab') {
+                const focusableElements = modal.querySelectorAll(
+                    'button, input, select, textarea, [tabindex]:not([tabindex="-1"])'
+                );
+                const firstElement = focusableElements[0];
+                const lastElement = focusableElements[focusableElements.length - 1];
+                
+                if (e.shiftKey && document.activeElement === firstElement) {
+                    e.preventDefault();
+                    lastElement.focus();
+                } else if (!e.shiftKey && document.activeElement === lastElement) {
+                    e.preventDefault();
+                    firstElement.focus();
+                }
+            }
+        });
+    }
+    
+    // Add ARIA labels for better screen reader support
+    const buttons = document.querySelectorAll('button');
+    buttons.forEach(button => {
+        if (!button.getAttribute('aria-label') && !button.textContent.trim()) {
+            button.setAttribute('aria-label', 'Interactive button');
         }
-    }
-});
+    });
+}
 
-// Navbar scroll effect
-window.addEventListener('scroll', function() {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 100) {
-        navbar.style.backgroundColor = 'rgba(248, 246, 243, 0.95)';
-        navbar.style.backdropFilter = 'blur(10px)';
-    } else {
-        navbar.style.backgroundColor = 'var(--background-alt)';
-        navbar.style.backdropFilter = 'none';
-    }
-});
+// Initialize accessibility enhancements
+document.addEventListener('DOMContentLoaded', enhanceAccessibility);
+
+// Export functions for global access
+window.openReservationModal = openReservationModal;
+window.closeReservationModal = closeReservationModal;

@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Authentic Mexican Cantina</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Open+Sans:wght@300;400;600;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="fiesta-scheme">
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>{{RESTAURANT_NAME}}</h1>
+                <span class="tagline">Authentic Mexican Cantina</span>
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#menu">Menú</a></li>
+                    <li><a href="#tacos">Tacos</a></li>
+                    <li><a href="#margaritas">Margaritas</a></li>
+                    <li><a href="#catering">Catering</a></li>
+                    <li><a href="#locations">Ubicaciones</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#order" class="btn btn-order">¡Ordenar!</a>
+                <a href="#happy-hour" class="btn btn-fiesta">Happy Hour</a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-pattern"></div>
+        <div class="hero-content">
+            <h2>¡Bienvenidos a la Familia!</h2>
+            <p class="hero-subtitle">Welcome to the Family!</p>
+            <p>Experience authentic Mexican flavors with family recipes passed down through generations. Fresh ingredients, bold spices, and warm hospitality await you.</p>
+            <div class="hero-features">
+                <div class="feature">
+                    <span class="feature-icon">🌮</span>
+                    <h4>Tacos Auténticos</h4>
+                    <p>{{TACO_VARIETIES}}+ varieties made fresh</p>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">🍹</span>
+                    <h4>Margaritas Famosas</h4>
+                    <p>{{MARGARITA_FLAVORS}} signature flavors</p>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">🎵</span>
+                    <h4>Música en Vivo</h4>
+                    <p>{{LIVE_MUSIC_NIGHTS}} nights a week</p>
+                </div>
+            </div>
+            <div class="hero-buttons">
+                <a href="#menu" class="btn btn-primary">Ver Menú</a>
+                <a href="#margaritas" class="btn btn-secondary">Margaritas</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="{{HERO_MEXICAN_IMAGE}}" alt="Authentic Mexican feast">
+        </div>
+    </section>
+
+    <section class="daily-specials">
+        <div class="container">
+            <h2>Especiales del Día</h2>
+            <div class="specials-carousel">
+                <div class="special-day active">
+                    <div class="day-header">
+                        <h3>Lunes</h3>
+                        <span class="day-english">Monday</span>
+                    </div>
+                    <div class="special-content">
+                        <h4>{{MONDAY_SPECIAL_NAME}}</h4>
+                        <p>{{MONDAY_SPECIAL_DESCRIPTION}}</p>
+                        <span class="special-price">{{MONDAY_SPECIAL_PRICE}}</span>
+                    </div>
+                </div>
+                <div class="special-day">
+                    <div class="day-header">
+                        <h3>Martes</h3>
+                        <span class="day-english">Tuesday</span>
+                    </div>
+                    <div class="special-content">
+                        <h4>Taco Tuesday</h4>
+                        <p>{{TACO_TUESDAY_DESCRIPTION}}</p>
+                        <span class="special-price">{{TACO_TUESDAY_PRICE}}</span>
+                    </div>
+                </div>
+                <div class="special-day">
+                    <div class="day-header">
+                        <h3>Miércoles</h3>
+                        <span class="day-english">Wednesday</span>
+                    </div>
+                    <div class="special-content">
+                        <h4>{{WEDNESDAY_SPECIAL_NAME}}</h4>
+                        <p>{{WEDNESDAY_SPECIAL_DESCRIPTION}}</p>
+                        <span class="special-price">{{WEDNESDAY_SPECIAL_PRICE}}</span>
+                    </div>
+                </div>
+                <div class="special-day">
+                    <div class="day-header">
+                        <h3>Jueves</h3>
+                        <span class="day-english">Thursday</span>
+                    </div>
+                    <div class="special-content">
+                        <h4>{{THURSDAY_SPECIAL_NAME}}</h4>
+                        <p>{{THURSDAY_SPECIAL_DESCRIPTION}}</p>
+                        <span class="special-price">{{THURSDAY_SPECIAL_PRICE}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="authentic-menu" id="menu">
+        <div class="container">
+            <h2>Menú Auténtico</h2>
+            <p class="menu-subtitle">Recetas familiares desde {{FAMILY_RECIPE_YEARS}} años</p>
+            <div class="menu-categories">
+                <div class="menu-category">
+                    <div class="category-header">
+                        <h3>Antojitos</h3>
+                        <p>Traditional appetizers</p>
+                    </div>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Guacamole Fresco</h4>
+                                <p>Made tableside with fresh avocados, lime, cilantro</p>
+                                <span class="spice-level">🌶️</span>
+                            </div>
+                            <span class="price">{{GUACAMOLE_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Queso Fundido</h4>
+                                <p>Melted cheese with chorizo, poblano peppers</p>
+                                <span class="spice-level">🌶️🌶️</span>
+                            </div>
+                            <span class="price">{{QUESO_FUNDIDO_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Elote Mexicano</h4>
+                                <p>Mexican street corn, mayo, cotija cheese, chili powder</p>
+                                <span class="spice-level">🌶️</span>
+                            </div>
+                            <span class="price">{{ELOTE_PRICE}}</span>
+                        </div>
+                        <div class="menu-item signature">
+                            <div class="item-info">
+                                <h4>Nachos de la Casa</h4>
+                                <p>House-made chips, cheese, jalapeños, crema</p>
+                                <span class="signature-badge">Especialidad</span>
+                                <span class="spice-level">🌶️🌶️</span>
+                            </div>
+                            <span class="price">{{NACHOS_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-category featured">
+                    <div class="category-header">
+                        <h3>Tacos Tradicionales</h3>
+                        <p>Served on fresh corn tortillas</p>
+                    </div>
+                    <div class="menu-items">
+                        <div class="menu-item signature">
+                            <div class="item-info">
+                                <h4>Carnitas</h4>
+                                <p>Slow-cooked pork, onions, cilantro, salsa verde</p>
+                                <span class="signature-badge">Favorito</span>
+                                <span class="spice-level">🌶️</span>
+                            </div>
+                            <span class="price">{{CARNITAS_TACO_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Carne Asada</h4>
+                                <p>Grilled steak, white onions, cilantro, lime</p>
+                                <span class="spice-level">🌶️</span>
+                            </div>
+                            <span class="price">{{CARNE_ASADA_TACO_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Pollo Asado</h4>
+                                <p>Marinated grilled chicken, pico de gallo</p>
+                                <span class="spice-level">🌶️</span>
+                            </div>
+                            <span class="price">{{POLLO_TACO_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Al Pastor</h4>
+                                <p>Marinated pork, pineapple, onions, cilantro</p>
+                                <span class="spice-level">🌶️🌶️</span>
+                            </div>
+                            <span class="price">{{AL_PASTOR_TACO_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Pescado</h4>
+                                <p>Beer-battered fish, cabbage slaw, chipotle crema</p>
+                                <span class="spice-level">🌶️🌶️</span>
+                            </div>
+                            <span class="price">{{FISH_TACO_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Vegetariano</h4>
+                                <p>Grilled vegetables, black beans, avocado</p>
+                                <span class="spice-level">🌶️</span>
+                            </div>
+                            <span class="price">{{VEGGIE_TACO_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-category">
+                    <div class="category-header">
+                        <h3>Platos Principales</h3>
+                        <p>Traditional main dishes</p>
+                    </div>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Enchiladas Verdes</h4>
+                                <p>Chicken enchiladas, green sauce, crema, cheese</p>
+                                <span class="spice-level">🌶️🌶️</span>
+                            </div>
+                            <span class="price">{{ENCHILADAS_VERDES_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Chiles Rellenos</h4>
+                                <p>Poblano peppers stuffed with cheese, ranchero sauce</p>
+                                <span class="spice-level">🌶️🌶️🌶️</span>
+                            </div>
+                            <span class="price">{{CHILES_RELLENOS_PRICE}}</span>
+                        </div>
+                        <div class="menu-item signature">
+                            <div class="item-info">
+                                <h4>Mole Poblano</h4>
+                                <p>Chicken with traditional mole sauce, {{MOLE_INGREDIENTS}} ingredients</p>
+                                <span class="signature-badge">Tradicional</span>
+                                <span class="spice-level">🌶️🌶️</span>
+                            </div>
+                            <span class="price">{{MOLE_POBLANO_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Fajitas Sizzling</h4>
+                                <p>Choice of meat, peppers, onions, warm tortillas</p>
+                                <span class="spice-level">🌶️🌶️</span>
+                            </div>
+                            <span class="price">{{FAJITAS_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="taco-bar" id="tacos">
+        <div class="container">
+            <h2>Taco Bar Experience</h2>
+            <p class="taco-subtitle">Build your perfect taco with fresh ingredients</p>
+            <div class="taco-builder">
+                <div class="builder-step">
+                    <h3>1. Elige tu Tortilla</h3>
+                    <div class="tortilla-options">
+                        <div class="tortilla-option">
+                            <img src="{{CORN_TORTILLA_IMAGE}}" alt="Corn tortilla">
+                            <h4>Maíz</h4>
+                            <p>Traditional corn tortillas</p>
+                        </div>
+                        <div class="tortilla-option">
+                            <img src="{{FLOUR_TORTILLA_IMAGE}}" alt="Flour tortilla">
+                            <h4>Harina</h4>
+                            <p>Soft flour tortillas</p>
+                        </div>
+                        <div class="tortilla-option">
+                            <img src="{{CRISPY_SHELL_IMAGE}}" alt="Hard shell">
+                            <h4>Tostada</h4>
+                            <p>Crispy taco shells</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="builder-step">
+                    <h3>2. Selecciona tu Proteína</h3>
+                    <div class="protein-grid">
+                        <div class="protein-option">
+                            <h4>Carnitas</h4>
+                            <span class="protein-price">+{{CARNITAS_PROTEIN_PRICE}}</span>
+                        </div>
+                        <div class="protein-option">
+                            <h4>Carne Asada</h4>
+                            <span class="protein-price">+{{CARNE_ASADA_PROTEIN_PRICE}}</span>
+                        </div>
+                        <div class="protein-option">
+                            <h4>Pollo Asado</h4>
+                            <span class="protein-price">+{{POLLO_PROTEIN_PRICE}}</span>
+                        </div>
+                        <div class="protein-option">
+                            <h4>Al Pastor</h4>
+                            <span class="protein-price">+{{AL_PASTOR_PROTEIN_PRICE}}</span>
+                        </div>
+                        <div class="protein-option">
+                            <h4>Pescado</h4>
+                            <span class="protein-price">+{{FISH_PROTEIN_PRICE}}</span>
+                        </div>
+                        <div class="protein-option">
+                            <h4>Vegetales</h4>
+                            <span class="protein-price">+{{VEGGIE_PROTEIN_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="builder-step">
+                    <h3>3. Añade Toppings</h3>
+                    <div class="toppings-grid">
+                        <span class="topping">Cebolla • Onions</span>
+                        <span class="topping">Cilantro • Cilantro</span>
+                        <span class="topping">Lechuga • Lettuce</span>
+                        <span class="topping">Tomate • Tomato</span>
+                        <span class="topping">Queso • Cheese</span>
+                        <span class="topping">Crema • Sour Cream</span>
+                        <span class="topping">Aguacate • Avocado (+{{AVOCADO_UPCHARGE}})</span>
+                        <span class="topping">Jalapeños • Jalapeños</span>
+                    </div>
+                </div>
+
+                <div class="builder-step">
+                    <h3>4. Elige tu Salsa</h3>
+                    <div class="salsa-options">
+                        <div class="salsa-option mild">
+                            <h4>Salsa Verde</h4>
+                            <p>Mild tomatillo salsa</p>
+                            <span class="heat">🌶️</span>
+                        </div>
+                        <div class="salsa-option medium">
+                            <h4>Pico de Gallo</h4>
+                            <p>Fresh tomato salsa</p>
+                            <span class="heat">🌶️🌶️</span>
+                        </div>
+                        <div class="salsa-option hot">
+                            <h4>Salsa Roja</h4>
+                            <p>Spicy red chile salsa</p>
+                            <span class="heat">🌶️🌶️🌶️</span>
+                        </div>
+                        <div class="salsa-option extra-hot">
+                            <h4>Habanero</h4>
+                            <p>Extra hot habanero</p>
+                            <span class="heat">🌶️🌶️🌶️🌶️</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="taco-pricing">
+                <h3>Taco Pricing</h3>
+                <div class="pricing-options">
+                    <div class="pricing-option">
+                        <span class="quantity">1 Taco</span>
+                        <span class="base-price">{{SINGLE_TACO_BASE_PRICE}}</span>
+                    </div>
+                    <div class="pricing-option popular">
+                        <span class="quantity">3 Tacos</span>
+                        <span class="base-price">{{THREE_TACO_BASE_PRICE}}</span>
+                        <span class="popular-badge">Más Popular</span>
+                    </div>
+                    <div class="pricing-option">
+                        <span class="quantity">5 Tacos</span>
+                        <span class="base-price">{{FIVE_TACO_BASE_PRICE}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="margarita-bar" id="margaritas">
+        <div class="container">
+            <h2>Margaritas & Bebidas</h2>
+            <p class="margarita-subtitle">The best margaritas this side of the border!</p>
+            <div class="drinks-categories">
+                <div class="drinks-category">
+                    <h3>Margaritas Clásicas</h3>
+                    <div class="drink-items">
+                        <div class="drink-item signature">
+                            <div class="drink-info">
+                                <h4>Margarita de la Casa</h4>
+                                <p>{{HOUSE_MARGARITA_INGREDIENTS}}</p>
+                                <span class="signature-badge">Signature</span>
+                            </div>
+                            <div class="drink-sizes">
+                                <span>Regular {{HOUSE_MARGARITA_REGULAR_PRICE}}</span>
+                                <span>Pitcher {{HOUSE_MARGARITA_PITCHER_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="drink-item">
+                            <div class="drink-info">
+                                <h4>Margarita de Fresa</h4>
+                                <p>Fresh strawberry, lime, silver tequila</p>
+                            </div>
+                            <div class="drink-sizes">
+                                <span>Regular {{STRAWBERRY_MARGARITA_REGULAR_PRICE}}</span>
+                                <span>Pitcher {{STRAWBERRY_MARGARITA_PITCHER_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="drink-item">
+                            <div class="drink-info">
+                                <h4>Margarita de Mango</h4>
+                                <p>Fresh mango, Tajín rim, jalapeño</p>
+                            </div>
+                            <div class="drink-sizes">
+                                <span>Regular {{MANGO_MARGARITA_REGULAR_PRICE}}</span>
+                                <span>Pitcher {{MANGO_MARGARITA_PITCHER_PRICE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="drinks-category">
+                    <h3>Premium Margaritas</h3>
+                    <div class="drink-items">
+                        <div class="drink-item premium">
+                            <div class="drink-info">
+                                <h4>Cadillac Margarita</h4>
+                                <p>Top-shelf tequila, Grand Marnier float</p>
+                                <span class="premium-badge">Premium</span>
+                            </div>
+                            <span class="drink-price">{{CADILLAC_MARGARITA_PRICE}}</span>
+                        </div>
+                        <div class="drink-item premium">
+                            <div class="drink-info">
+                                <h4>Skinny Margarita</h4>
+                                <p>Agave nectar, fresh lime, organic tequila</p>
+                                <span class="premium-badge">Organic</span>
+                            </div>
+                            <span class="drink-price">{{SKINNY_MARGARITA_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="drinks-category">
+                    <h3>Otras Bebidas</h3>
+                    <div class="drink-items">
+                        <div class="drink-item">
+                            <div class="drink-info">
+                                <h4>Cerveza Mexicana</h4>
+                                <p>{{BEER_BRANDS}}</p>
+                            </div>
+                            <span class="drink-price">{{BEER_PRICE}}</span>
+                        </div>
+                        <div class="drink-item">
+                            <div class="drink-info">
+                                <h4>Michelada</h4>
+                                <p>Beer, lime, Tajín, hot sauce</p>
+                            </div>
+                            <span class="drink-price">{{MICHELADA_PRICE}}</span>
+                        </div>
+                        <div class="drink-item">
+                            <div class="drink-info">
+                                <h4>Agua Fresca</h4>
+                                <p>{{AGUA_FRESCA_FLAVORS}}</p>
+                            </div>
+                            <span class="drink-price">{{AGUA_FRESCA_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="happy-hour" id="happy-hour">
+                <h3>¡Hora Feliz!</h3>
+                <div class="happy-hour-details">
+                    <div class="happy-hour-time">
+                        <h4>{{HAPPY_HOUR_DAYS}}</h4>
+                        <p>{{HAPPY_HOUR_TIME}}</p>
+                    </div>
+                    <div class="happy-hour-specials">
+                        <span>{{HAPPY_HOUR_MARGARITA_PRICE}} Margaritas</span>
+                        <span>{{HAPPY_HOUR_BEER_PRICE}} Cerveza</span>
+                        <span>{{HAPPY_HOUR_APPETIZER_PRICE}} Select Appetizers</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="family-tradition">
+        <div class="container">
+            <div class="tradition-content">
+                <div class="tradition-text">
+                    <h2>Tradición Familiar</h2>
+                    <p class="tradition-subtitle">Family Tradition Since {{FAMILY_TRADITION_YEAR}}</p>
+                    <p>Our story began in {{ORIGIN_CITY}}, {{ORIGIN_STATE}}, where {{FOUNDER_NAME}} learned the art of traditional Mexican cooking from his abuela. Today, we continue that legacy with authentic recipes and the warmest hospitality.</p>
+                    <div class="tradition-values">
+                        <div class="value">
+                            <h4>🌮 Autenticidad</h4>
+                            <p>Traditional recipes unchanged for generations</p>
+                        </div>
+                        <div class="value">
+                            <h4>🌶️ Ingredientes Frescos</h4>
+                            <p>Daily fresh ingredients, house-made salsas</p>
+                        </div>
+                        <div class="value">
+                            <h4>💚 Hospitalidad</h4>
+                            <p>Every guest treated like family</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tradition-image">
+                    <img src="{{FAMILY_TRADITION_IMAGE}}" alt="Family cooking tradition">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="live-entertainment">
+        <div class="container">
+            <h2>Música en Vivo & Eventos</h2>
+            <div class="entertainment-grid">
+                <div class="entertainment-section">
+                    <h3>Live Music</h3>
+                    <div class="music-schedule">
+                        <div class="music-night">
+                            <h4>{{MARIACHI_NIGHT_DAY}}</h4>
+                            <p>Mariachi Band • {{MARIACHI_TIME}}</p>
+                        </div>
+                        <div class="music-night">
+                            <h4>{{ACOUSTIC_NIGHT_DAY}}</h4>
+                            <p>Acoustic Guitar • {{ACOUSTIC_TIME}}</p>
+                        </div>
+                        <div class="music-night">
+                            <h4>{{SALSA_NIGHT_DAY}}</h4>
+                            <p>Salsa Dancing • {{SALSA_TIME}}</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="entertainment-section">
+                    <h3>Special Events</h3>
+                    <div class="events-list">
+                        <div class="event">
+                            <h4>Cinco de Mayo</h4>
+                            <p>All-day celebration with special menu</p>
+                        </div>
+                        <div class="event">
+                            <h4>Día de los Muertos</h4>
+                            <p>Traditional celebration with altar</p>
+                        </div>
+                        <div class="event">
+                            <h4>Fiestas Patrias</h4>
+                            <p>Mexican Independence Day festivities</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="catering-fiesta" id="catering">
+        <div class="container">
+            <h2>Catering & Fiestas</h2>
+            <p class="catering-subtitle">Bring the fiesta to your event!</p>
+            <div class="catering-packages">
+                <div class="catering-package">
+                    <h3>Taco Bar Package</h3>
+                    <p>Perfect for office parties and casual events</p>
+                    <div class="package-includes">
+                        <span>• {{TACO_BAR_PROTEINS}} protein options</span>
+                        <span>• Fresh tortillas and taco shells</span>
+                        <span>• Full toppings bar</span>
+                        <span>• {{TACO_BAR_SALSAS}} house-made salsas</span>
+                        <span>• Rice and beans</span>
+                        <span>• Chips and guacamole</span>
+                    </div>
+                    <div class="package-pricing">
+                        <span>{{TACO_BAR_PRICE}} per person</span>
+                        <span>{{TACO_BAR_MIN}} person minimum</span>
+                    </div>
+                </div>
+
+                <div class="catering-package featured">
+                    <h3>Fiesta Complete</h3>
+                    <p>Full Mexican feast for special celebrations</p>
+                    <div class="package-includes">
+                        <span>• Taco bar with {{FIESTA_PROTEINS}} proteins</span>
+                        <span>• Enchiladas and quesadillas</span>
+                        <span>• Mexican rice and refried beans</span>
+                        <span>• Fresh guacamole and queso fundido</span>
+                        <span>• Dessert: Tres leches cake</span>
+                        <span>• Margarita mix (non-alcoholic)</span>
+                    </div>
+                    <div class="package-pricing">
+                        <span>{{FIESTA_COMPLETE_PRICE}} per person</span>
+                        <span>{{FIESTA_COMPLETE_MIN}} person minimum</span>
+                    </div>
+                    <span class="featured-badge">Most Popular</span>
+                </div>
+
+                <div class="catering-package">
+                    <h3>Appetizer Platters</h3>
+                    <p>Perfect for cocktail parties and meetings</p>
+                    <div class="package-includes">
+                        <span>• Quesadilla platter</span>
+                        <span>• Mini taquitos</span>
+                        <span>• Chips, guacamole & salsa</span>
+                        <span>• Jalapeño poppers</span>
+                        <span>• Serves {{APPETIZER_PLATTER_SERVES}} people</span>
+                    </div>
+                    <div class="package-pricing">
+                        <span>{{APPETIZER_PLATTER_PRICE}} per platter</span>
+                        <span>{{APPETIZER_PLATTER_MIN}} platter minimum</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="catering-info">
+                <h3>Catering Information</h3>
+                <div class="catering-details">
+                    <div class="detail">
+                        <h4>Advance Notice</h4>
+                        <p>{{CATERING_ADVANCE_NOTICE}} for all catering orders</p>
+                    </div>
+                    <div class="detail">
+                        <h4>Delivery</h4>
+                        <p>Available within {{CATERING_DELIVERY_RADIUS}} miles</p>
+                    </div>
+                    <div class="detail">
+                        <h4>Setup</h4>
+                        <p>Full setup and breakdown service available</p>
+                    </div>
+                    <div class="detail">
+                        <h4>Alcohol</h4>
+                        <p>Licensed bartenders available for events</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="locations" id="locations">
+        <div class="container">
+            <h2>Nuestras Ubicaciones</h2>
+            <div class="locations-grid">
+                <div class="location">
+                    <h3>{{LOCATION_1_NAME}}</h3>
+                    <p>{{LOCATION_1_ADDRESS}}</p>
+                    <p>{{LOCATION_1_PHONE}}</p>
+                    <div class="location-features">
+                        <span class="feature-tag">Patio Dining</span>
+                        <span class="feature-tag">Live Mariachi</span>
+                        <span class="feature-tag">Full Bar</span>
+                        <span class="feature-tag">Private Events</span>
+                    </div>
+                    <div class="location-hours">
+                        <p><strong>Horario:</strong></p>
+                        <p>{{LOCATION_1_HOURS}}</p>
+                    </div>
+                    <div class="location-actions">
+                        <a href="#" class="btn btn-outline">Direcciones</a>
+                        <a href="#order" class="btn btn-primary">Ordenar</a>
+                    </div>
+                </div>
+                
+                <div class="location">
+                    <h3>{{LOCATION_2_NAME}}</h3>
+                    <p>{{LOCATION_2_ADDRESS}}</p>
+                    <p>{{LOCATION_2_PHONE}}</p>
+                    <div class="location-features">
+                        <span class="feature-tag">Drive-Thru</span>
+                        <span class="feature-tag">Family Dining</span>
+                        <span class="feature-tag">Catering Pickup</span>
+                        <span class="feature-tag">Happy Hour</span>
+                    </div>
+                    <div class="location-hours">
+                        <p><strong>Horario:</strong></p>
+                        <p>{{LOCATION_2_HOURS}}</p>
+                    </div>
+                    <div class="location-actions">
+                        <a href="#" class="btn btn-outline">Direcciones</a>
+                        <a href="#order" class="btn btn-primary">Ordenar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="order-online" id="order">
+        <div class="container">
+            <h2>¡Ordena en Línea!</h2>
+            <div class="order-options">
+                <div class="order-option">
+                    <div class="option-icon">🌮</div>
+                    <h3>Pickup</h3>
+                    <p>Order ahead and skip the wait</p>
+                    <span class="order-detail">Ready in {{PICKUP_TIME}} minutes</span>
+                    <a href="#" class="btn btn-primary">Order for Pickup</a>
+                </div>
+                <div class="order-option">
+                    <div class="option-icon">🚗</div>
+                    <h3>Delivery</h3>
+                    <p>Fresh Mexican food delivered hot</p>
+                    <span class="order-detail">{{DELIVERY_FEE}} delivery • {{DELIVERY_TIME}} avg</span>
+                    <a href="#" class="btn btn-primary">Order Delivery</a>
+                </div>
+                <div class="order-option">
+                    <div class="option-icon">🎉</div>
+                    <h3>Catering</h3>
+                    <p>Fiesta packages for your event</p>
+                    <span class="order-detail">{{CATERING_ADVANCE_NOTICE}} advance notice</span>
+                    <a href="#catering" class="btn btn-secondary">Catering Menu</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>{{RESTAURANT_NAME}}</h3>
+                    <p>Authentic Mexican cuisine and warm hospitality since {{YEAR_ESTABLISHED}}</p>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}">Instagram</a>
+                        <a href="{{TWITTER_URL}}">Twitter</a>
+                        <a href="{{YELP_URL}}">Yelp</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact • Contacto</h4>
+                    <p>{{PHONE}}</p>
+                    <p>{{EMAIL}}</p>
+                    <p>Online ordering: {{ONLINE_HOURS}}</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Catering • Eventos</h4>
+                    <p>{{CATERING_PHONE}}</p>
+                    <p>{{CATERING_EMAIL}}</p>
+                    <p>{{CATERING_ADVANCE_NOTICE}} advance notice</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Horarios • Hours</h4>
+                    <p>{{HOURS_WEEKDAY}}</p>
+                    <p>{{HOURS_WEEKEND}}</p>
+                    <p>Happy Hour: {{HAPPY_HOUR_TIME}}</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; {{CURRENT_YEAR}} {{RESTAURANT_NAME}}. Todos los derechos reservados.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Nutrition Info</a>
+                    <a href="#">Gift Cards</a>
+                    <a href="#">Careers</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

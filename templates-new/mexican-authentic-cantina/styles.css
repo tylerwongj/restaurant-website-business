@@ -1,0 +1,962 @@
+/* Mexican Authentic Cantina Template */
+
+:root {
+    --mexican-red: #c8102e;           /* Mexican Flag Red */
+    --mexican-green: #006847;         /* Mexican Flag Green */
+    --mexican-white: #ffffff;         /* Mexican Flag White */
+    --fiesta-orange: #ff6b35;         /* Vibrant Orange */
+    --fiesta-yellow: #ffd700;         /* Golden Yellow */
+    --earth-brown: #8b4513;           /* Earthy Brown */
+    --warm-cream: #faf5f0;            /* Warm Cream */
+    --dark-charcoal: #2c2c2c;         /* Dark Text */
+    --medium-gray: #666666;           /* Medium Gray */
+}
+
+.fiesta-scheme {
+    --primary-color: var(--mexican-red);
+    --secondary-color: var(--mexican-green);
+    --accent-color: var(--fiesta-orange);
+    --text-color: var(--dark-charcoal);
+    --background-color: var(--mexican-white);
+    --section-bg: var(--warm-cream);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: var(--background-color);
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+
+.header {
+    background: var(--mexican-white);
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    font-weight: 400;
+}
+
+.logo .tagline {
+    color: var(--medium-gray);
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-list a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-list a:hover { color: var(--primary-color); }
+
+.header-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 1px;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #a00d26;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-order {
+    background: var(--fiesta-orange);
+    color: white;
+}
+
+.btn-fiesta {
+    background: var(--fiesta-yellow);
+    color: var(--text-color);
+}
+
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.mobile-menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: var(--text-color);
+    transition: 0.3s;
+}
+
+.hero {
+    position: relative;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, var(--mexican-red), var(--fiesta-orange));
+    color: white;
+    overflow: hidden;
+}
+
+.hero-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='m0 40l40-40h-40v40z'/%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.3;
+}
+
+.hero-content {
+    flex: 1;
+    z-index: 2;
+    padding: 2rem;
+}
+
+.hero-content h2 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+}
+
+.hero-subtitle {
+    font-style: italic;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+.hero-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.feature {
+    background: rgba(255,255,255,0.1);
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+.feature-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.feature h4 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.hero-image {
+    flex: 1;
+    z-index: 2;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.daily-specials {
+    padding: 4rem 0;
+    background: var(--section-bg);
+}
+
+.daily-specials h2 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 3rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.specials-carousel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.special-day {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.special-day:hover {
+    transform: translateY(-5px);
+}
+
+.day-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 1rem;
+}
+
+.day-header h3 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+}
+
+.day-english {
+    font-style: italic;
+    color: var(--medium-gray);
+}
+
+.special-content h4 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.special-price {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.5rem;
+    color: var(--fiesta-orange);
+    font-weight: 600;
+}
+
+.authentic-menu {
+    padding: 4rem 0;
+}
+
+.authentic-menu h2 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 3rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.menu-subtitle {
+    text-align: center;
+    color: var(--medium-gray);
+    margin-bottom: 3rem;
+    font-style: italic;
+}
+
+.menu-categories {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.menu-category {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.menu-category.featured {
+    border: 3px solid var(--fiesta-orange);
+}
+
+.category-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 1rem;
+}
+
+.category-header h3 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.category-header p {
+    color: var(--medium-gray);
+    font-style: italic;
+}
+
+.menu-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    padding: 1rem;
+    border-radius: 10px;
+    transition: background 0.3s ease;
+    position: relative;
+}
+
+.menu-item:hover {
+    background: var(--section-bg);
+}
+
+.menu-item.signature {
+    border-left: 4px solid var(--fiesta-orange);
+}
+
+.item-info {
+    flex: 1;
+}
+
+.item-info h4 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.3rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.item-info p {
+    color: var(--medium-gray);
+    margin-bottom: 0.5rem;
+}
+
+.spice-level {
+    font-size: 0.9rem;
+}
+
+.signature-badge {
+    background: var(--fiesta-orange);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-right: 0.5rem;
+}
+
+.price {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.taco-bar {
+    padding: 4rem 0;
+    background: var(--section-bg);
+}
+
+.taco-bar h2 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 3rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.taco-subtitle {
+    text-align: center;
+    color: var(--medium-gray);
+    margin-bottom: 3rem;
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+.taco-builder {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.builder-step {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.builder-step h3 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.tortilla-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.tortilla-option {
+    text-align: center;
+    padding: 1rem;
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+
+.tortilla-option:hover {
+    background: var(--section-bg);
+}
+
+.tortilla-option img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.tortilla-option h4 {
+    font-family: 'Bebas Neue', cursive;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.protein-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+}
+
+.protein-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: var(--section-bg);
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+
+.protein-option:hover {
+    background: var(--fiesta-yellow);
+}
+
+.protein-option h4 {
+    font-family: 'Bebas Neue', cursive;
+    color: var(--text-color);
+}
+
+.protein-price {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.toppings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.topping {
+    padding: 0.75rem;
+    background: var(--section-bg);
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.topping:hover {
+    background: var(--fiesta-yellow);
+}
+
+.salsa-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.salsa-option {
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.salsa-option.mild {
+    background: #e8f5e8;
+}
+
+.salsa-option.medium {
+    background: #fff3cd;
+}
+
+.salsa-option.hot {
+    background: #f8d7da;
+}
+
+.salsa-option.extra-hot {
+    background: #721c24;
+    color: white;
+}
+
+.salsa-option:hover {
+    transform: scale(1.05);
+}
+
+.salsa-option h4 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.heat {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+.taco-pricing {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.taco-pricing h3 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.pricing-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.pricing-option {
+    text-align: center;
+    padding: 1.5rem;
+    border: 2px solid var(--section-bg);
+    border-radius: 10px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.pricing-option:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+}
+
+.pricing-option.popular {
+    border-color: var(--fiesta-orange);
+    background: linear-gradient(135deg, #fff, #fafafa);
+}
+
+.quantity {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.base-price {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.popular-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: var(--fiesta-orange);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.margarita-bar {
+    padding: 4rem 0;
+}
+
+.margarita-bar h2 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 3rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.margarita-subtitle {
+    text-align: center;
+    color: var(--medium-gray);
+    margin-bottom: 3rem;
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+.drinks-categories {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.drinks-category {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.drinks-category h3 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 1rem;
+}
+
+.drink-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.drink-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    padding: 1rem;
+    border-radius: 10px;
+    transition: background 0.3s ease;
+    position: relative;
+}
+
+.drink-item:hover {
+    background: var(--section-bg);
+}
+
+.drink-item.signature {
+    border-left: 4px solid var(--fiesta-orange);
+}
+
+.drink-item.premium {
+    border-left: 4px solid var(--fiesta-yellow);
+}
+
+.drink-info {
+    flex: 1;
+}
+
+.drink-info h4 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.3rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.drink-info p {
+    color: var(--medium-gray);
+    margin-bottom: 0.5rem;
+}
+
+.drink-sizes {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    text-align: right;
+}
+
+.drink-sizes span {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.drink-price {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.premium-badge {
+    background: var(--fiesta-yellow);
+    color: var(--text-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-right: 0.5rem;
+}
+
+.happy-hour {
+    background: var(--fiesta-orange);
+    color: white;
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+}
+
+.happy-hour h3 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.happy-hour-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.happy-hour-time h4 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.happy-hour-specials {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.happy-hour-specials span {
+    background: rgba(255,255,255,0.2);
+    padding: 0.75rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+}
+
+.family-tradition {
+    padding: 4rem 0;
+    background: var(--section-bg);
+}
+
+.tradition-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.tradition-text h2 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.tradition-subtitle {
+    font-style: italic;
+    color: var(--medium-gray);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.tradition-text p {
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.tradition-values {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.value {
+    background: white;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.value h4 {
+    font-family: 'Bebas Neue', cursive;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.tradition-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.footer {
+    background: var(--dark-charcoal);
+    color: white;
+    padding: 3rem 0 1rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    font-family: 'Bebas Neue', cursive;
+    margin-bottom: 1rem;
+    color: var(--fiesta-orange);
+}
+
+.footer-section p {
+    opacity: 0.9;
+    margin-bottom: 0.5rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+.social-links a:hover {
+    opacity: 1;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .nav-list {
+        display: none;
+    }
+    
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 0;
+    }
+    
+    .hero-content h2 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-features {
+        grid-template-columns: 1fr;
+    }
+    
+    .tradition-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .happy-hour-details {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+}

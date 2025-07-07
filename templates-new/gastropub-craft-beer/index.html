@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{PUB_NAME}} - Craft Beer & Gastropub</title>
+    <meta name="description" content="{{PUB_NAME}} - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="gastropub-theme">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{PUB_NAME}} Logo">
+                <div class="logo-text">
+                    <h1>{{PUB_NAME}}</h1>
+                    <span class="est-date">Est. {{ESTABLISHED_YEAR}}</span>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#beer">Beer</a></li>
+                <li><a href="#food">Food</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn btn-primary">Reserve Table</button>
+                <button class="btn btn-secondary">Order Takeout</button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <img src="{{HERO_IMAGE}}" alt="{{PUB_NAME}} Interior">
+        </div>
+        <div class="hero-content">
+            <h1>{{HERO_TITLE}}</h1>
+            <p class="hero-subtitle">{{HERO_SUBTITLE}}</p>
+            <div class="hero-features">
+                <div class="feature">
+                    <span class="feature-number">{{BEER_COUNT}}</span>
+                    <span class="feature-text">Craft Beers on Tap</span>
+                </div>
+                <div class="feature">
+                    <span class="feature-number">{{WHISKEY_COUNT}}</span>
+                    <span class="feature-text">Premium Whiskeys</span>
+                </div>
+                <div class="feature">
+                    <span class="feature-number">{{FOOD_ITEMS_COUNT}}</span>
+                    <span class="feature-text">Gastropub Favorites</span>
+                </div>
+            </div>
+            <div class="hero-buttons">
+                <button class="btn btn-primary btn-large">View Beer Menu</button>
+                <button class="btn btn-outline btn-large">See Food Menu</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Now Pouring Section -->
+    <section class="now-pouring">
+        <div class="container">
+            <h2>Now Pouring</h2>
+            <div class="beer-carousel">
+                <div class="beer-slide">
+                    <img src="{{FEATURED_BEER_1_IMAGE}}" alt="{{FEATURED_BEER_1}}">
+                    <div class="beer-info">
+                        <h3>{{FEATURED_BEER_1}}</h3>
+                        <p class="brewery">{{FEATURED_BEER_1_BREWERY}}</p>
+                        <p class="beer-style">{{FEATURED_BEER_1_STYLE}}</p>
+                        <div class="beer-stats">
+                            <span class="abv">{{FEATURED_BEER_1_ABV}}% ABV</span>
+                            <span class="ibu">{{FEATURED_BEER_1_IBU}} IBU</span>
+                        </div>
+                        <p class="beer-desc">{{FEATURED_BEER_1_DESC}}</p>
+                    </div>
+                </div>
+                <div class="beer-slide">
+                    <img src="{{FEATURED_BEER_2_IMAGE}}" alt="{{FEATURED_BEER_2}}">
+                    <div class="beer-info">
+                        <h3>{{FEATURED_BEER_2}}</h3>
+                        <p class="brewery">{{FEATURED_BEER_2_BREWERY}}</p>
+                        <p class="beer-style">{{FEATURED_BEER_2_STYLE}}</p>
+                        <div class="beer-stats">
+                            <span class="abv">{{FEATURED_BEER_2_ABV}}% ABV</span>
+                            <span class="ibu">{{FEATURED_BEER_2_IBU}} IBU</span>
+                        </div>
+                        <p class="beer-desc">{{FEATURED_BEER_2_DESC}}</p>
+                    </div>
+                </div>
+                <div class="beer-slide">
+                    <img src="{{FEATURED_BEER_3_IMAGE}}" alt="{{FEATURED_BEER_3}}">
+                    <div class="beer-info">
+                        <h3>{{FEATURED_BEER_3}}</h3>
+                        <p class="brewery">{{FEATURED_BEER_3_BREWERY}}</p>
+                        <p class="beer-style">{{FEATURED_BEER_3_STYLE}}</p>
+                        <div class="beer-stats">
+                            <span class="abv">{{FEATURED_BEER_3_ABV}}% ABV</span>
+                            <span class="ibu">{{FEATURED_BEER_3_IBU}} IBU</span>
+                        </div>
+                        <p class="beer-desc">{{FEATURED_BEER_3_DESC}}</p>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-secondary">View Full Beer Menu</button>
+        </div>
+    </section>
+
+    <!-- Beer Menu -->
+    <section id="beer" class="beer-menu">
+        <div class="container">
+            <h2>Craft Beer Selection</h2>
+            <div class="beer-categories">
+                <button class="beer-tab active" data-category="on-tap">On Tap</button>
+                <button class="beer-tab" data-category="bottles">Bottles & Cans</button>
+                <button class="beer-tab" data-category="flights">Flights</button>
+                <button class="beer-tab" data-category="seasonal">Seasonal</button>
+            </div>
+            
+            <div class="beer-content">
+                <div class="beer-category active" id="on-tap">
+                    <div class="beer-grid">
+                        <div class="beer-item">
+                            <div class="beer-header">
+                                <h3>{{TAP_BEER_1}}</h3>
+                                <span class="beer-price">{{TAP_BEER_1_PRICE}}</span>
+                            </div>
+                            <p class="brewery">{{TAP_BEER_1_BREWERY}}</p>
+                            <p class="beer-style">{{TAP_BEER_1_STYLE}}</p>
+                            <div class="beer-stats">
+                                <span>{{TAP_BEER_1_ABV}}% ABV</span>
+                                <span>{{TAP_BEER_1_IBU}} IBU</span>
+                            </div>
+                            <p class="beer-description">{{TAP_BEER_1_DESC}}</p>
+                        </div>
+                        <div class="beer-item">
+                            <div class="beer-header">
+                                <h3>{{TAP_BEER_2}}</h3>
+                                <span class="beer-price">{{TAP_BEER_2_PRICE}}</span>
+                            </div>
+                            <p class="brewery">{{TAP_BEER_2_BREWERY}}</p>
+                            <p class="beer-style">{{TAP_BEER_2_STYLE}}</p>
+                            <div class="beer-stats">
+                                <span>{{TAP_BEER_2_ABV}}% ABV</span>
+                                <span>{{TAP_BEER_2_IBU}} IBU</span>
+                            </div>
+                            <p class="beer-description">{{TAP_BEER_2_DESC}}</p>
+                        </div>
+                        <div class="beer-item">
+                            <div class="beer-header">
+                                <h3>{{TAP_BEER_3}}</h3>
+                                <span class="beer-price">{{TAP_BEER_3_PRICE}}</span>
+                            </div>
+                            <p class="brewery">{{TAP_BEER_3_BREWERY}}</p>
+                            <p class="beer-style">{{TAP_BEER_3_STYLE}}</p>
+                            <div class="beer-stats">
+                                <span>{{TAP_BEER_3_ABV}}% ABV</span>
+                                <span>{{TAP_BEER_3_IBU}} IBU</span>
+                            </div>
+                            <p class="beer-description">{{TAP_BEER_3_DESC}}</p>
+                        </div>
+                        <div class="beer-item">
+                            <div class="beer-header">
+                                <h3>{{TAP_BEER_4}}</h3>
+                                <span class="beer-price">{{TAP_BEER_4_PRICE}}</span>
+                            </div>
+                            <p class="brewery">{{TAP_BEER_4_BREWERY}}</p>
+                            <p class="beer-style">{{TAP_BEER_4_STYLE}}</p>
+                            <div class="beer-stats">
+                                <span>{{TAP_BEER_4_ABV}}% ABV</span>
+                                <span>{{TAP_BEER_4_IBU}} IBU</span>
+                            </div>
+                            <p class="beer-description">{{TAP_BEER_4_DESC}}</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="beer-category" id="bottles">
+                    <div class="beer-grid">
+                        <div class="beer-item">
+                            <div class="beer-header">
+                                <h3>{{BOTTLE_BEER_1}}</h3>
+                                <span class="beer-price">{{BOTTLE_BEER_1_PRICE}}</span>
+                            </div>
+                            <p class="brewery">{{BOTTLE_BEER_1_BREWERY}}</p>
+                            <p class="beer-style">{{BOTTLE_BEER_1_STYLE}}</p>
+                        </div>
+                        <div class="beer-item">
+                            <div class="beer-header">
+                                <h3>{{BOTTLE_BEER_2}}</h3>
+                                <span class="beer-price">{{BOTTLE_BEER_2_PRICE}}</span>
+                            </div>
+                            <p class="brewery">{{BOTTLE_BEER_2_BREWERY}}</p>
+                            <p class="beer-style">{{BOTTLE_BEER_2_STYLE}}</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="beer-category" id="flights">
+                    <div class="flight-options">
+                        <div class="flight-item">
+                            <h3>{{FLIGHT_1_NAME}}</h3>
+                            <p>{{FLIGHT_1_DESC}}</p>
+                            <span class="flight-price">{{FLIGHT_1_PRICE}}</span>
+                        </div>
+                        <div class="flight-item">
+                            <h3>{{FLIGHT_2_NAME}}</h3>
+                            <p>{{FLIGHT_2_DESC}}</p>
+                            <span class="flight-price">{{FLIGHT_2_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="beer-category" id="seasonal">
+                    <div class="seasonal-note">
+                        <h3>{{SEASONAL_TITLE}}</h3>
+                        <p>{{SEASONAL_DESC}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Food Menu -->
+    <section id="food" class="food-menu">
+        <div class="container">
+            <h2>Gastropub Menu</h2>
+            <div class="food-categories">
+                <button class="food-tab active" data-category="starters">Starters</button>
+                <button class="food-tab" data-category="mains">Mains</button>
+                <button class="food-tab" data-category="burgers">Burgers</button>
+                <button class="food-tab" data-category="desserts">Desserts</button>
+            </div>
+            
+            <div class="food-content">
+                <div class="food-category active" id="starters">
+                    <div class="food-items">
+                        <div class="food-item">
+                            <img src="{{STARTER_1_IMAGE}}" alt="{{STARTER_1_NAME}}">
+                            <div class="food-details">
+                                <div class="food-header">
+                                    <h3>{{STARTER_1_NAME}}</h3>
+                                    <span class="food-price">{{STARTER_1_PRICE}}</span>
+                                </div>
+                                <p>{{STARTER_1_DESC}}</p>
+                                <div class="food-tags">
+                                    <span class="tag">{{STARTER_1_TAG_1}}</span>
+                                    <span class="tag">{{STARTER_1_TAG_2}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="food-item">
+                            <img src="{{STARTER_2_IMAGE}}" alt="{{STARTER_2_NAME}}">
+                            <div class="food-details">
+                                <div class="food-header">
+                                    <h3>{{STARTER_2_NAME}}</h3>
+                                    <span class="food-price">{{STARTER_2_PRICE}}</span>
+                                </div>
+                                <p>{{STARTER_2_DESC}}</p>
+                                <div class="food-tags">
+                                    <span class="tag">{{STARTER_2_TAG_1}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="food-item">
+                            <img src="{{STARTER_3_IMAGE}}" alt="{{STARTER_3_NAME}}">
+                            <div class="food-details">
+                                <div class="food-header">
+                                    <h3>{{STARTER_3_NAME}}</h3>
+                                    <span class="food-price">{{STARTER_3_PRICE}}</span>
+                                </div>
+                                <p>{{STARTER_3_DESC}}</p>
+                                <div class="food-tags">
+                                    <span class="tag">{{STARTER_3_TAG_1}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="food-category" id="mains">
+                    <div class="food-items">
+                        <div class="food-item">
+                            <img src="{{MAIN_1_IMAGE}}" alt="{{MAIN_1_NAME}}">
+                            <div class="food-details">
+                                <div class="food-header">
+                                    <h3>{{MAIN_1_NAME}}</h3>
+                                    <span class="food-price">{{MAIN_1_PRICE}}</span>
+                                </div>
+                                <p>{{MAIN_1_DESC}}</p>
+                                <div class="food-tags">
+                                    <span class="tag">{{MAIN_1_TAG_1}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="food-item">
+                            <img src="{{MAIN_2_IMAGE}}" alt="{{MAIN_2_NAME}}">
+                            <div class="food-details">
+                                <div class="food-header">
+                                    <h3>{{MAIN_2_NAME}}</h3>
+                                    <span class="food-price">{{MAIN_2_PRICE}}</span>
+                                </div>
+                                <p>{{MAIN_2_DESC}}</p>
+                                <div class="food-tags">
+                                    <span class="tag">{{MAIN_2_TAG_1}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="food-category" id="burgers">
+                    <div class="food-items">
+                        <div class="food-item">
+                            <img src="{{BURGER_1_IMAGE}}" alt="{{BURGER_1_NAME}}">
+                            <div class="food-details">
+                                <div class="food-header">
+                                    <h3>{{BURGER_1_NAME}}</h3>
+                                    <span class="food-price">{{BURGER_1_PRICE}}</span>
+                                </div>
+                                <p>{{BURGER_1_DESC}}</p>
+                                <div class="food-tags">
+                                    <span class="tag">{{BURGER_1_TAG_1}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="food-item">
+                            <img src="{{BURGER_2_IMAGE}}" alt="{{BURGER_2_NAME}}">
+                            <div class="food-details">
+                                <div class="food-header">
+                                    <h3>{{BURGER_2_NAME}}</h3>
+                                    <span class="food-price">{{BURGER_2_PRICE}}</span>
+                                </div>
+                                <p>{{BURGER_2_DESC}}</p>
+                                <div class="food-tags">
+                                    <span class="tag">{{BURGER_2_TAG_1}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="food-category" id="desserts">
+                    <div class="food-items">
+                        <div class="food-item">
+                            <img src="{{DESSERT_1_IMAGE}}" alt="{{DESSERT_1_NAME}}">
+                            <div class="food-details">
+                                <div class="food-header">
+                                    <h3>{{DESSERT_1_NAME}}</h3>
+                                    <span class="food-price">{{DESSERT_1_PRICE}}</span>
+                                </div>
+                                <p>{{DESSERT_1_DESC}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Happy Hour -->
+    <section class="happy-hour">
+        <div class="container">
+            <h2>Happy Hour</h2>
+            <div class="happy-hour-content">
+                <div class="happy-hour-info">
+                    <h3>{{HAPPY_HOUR_TITLE}}</h3>
+                    <p class="happy-hour-time">{{HAPPY_HOUR_TIME}}</p>
+                    <p>{{HAPPY_HOUR_DESC}}</p>
+                    <div class="happy-hour-specials">
+                        <div class="special">
+                            <h4>{{HAPPY_HOUR_SPECIAL_1}}</h4>
+                            <p>{{HAPPY_HOUR_SPECIAL_1_PRICE}}</p>
+                        </div>
+                        <div class="special">
+                            <h4>{{HAPPY_HOUR_SPECIAL_2}}</h4>
+                            <p>{{HAPPY_HOUR_SPECIAL_2_PRICE}}</p>
+                        </div>
+                        <div class="special">
+                            <h4>{{HAPPY_HOUR_SPECIAL_3}}</h4>
+                            <p>{{HAPPY_HOUR_SPECIAL_3_PRICE}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="happy-hour-image">
+                    <img src="{{HAPPY_HOUR_IMAGE}}" alt="Happy Hour">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events -->
+    <section id="events" class="events">
+        <div class="container">
+            <h2>Events & Entertainment</h2>
+            <div class="events-grid">
+                <div class="event">
+                    <img src="{{EVENT_1_IMAGE}}" alt="{{EVENT_1_TITLE}}">
+                    <div class="event-details">
+                        <h3>{{EVENT_1_TITLE}}</h3>
+                        <p class="event-date">{{EVENT_1_DATE}}</p>
+                        <p>{{EVENT_1_DESC}}</p>
+                        <button class="btn btn-secondary">Learn More</button>
+                    </div>
+                </div>
+                <div class="event">
+                    <img src="{{EVENT_2_IMAGE}}" alt="{{EVENT_2_TITLE}}">
+                    <div class="event-details">
+                        <h3>{{EVENT_2_TITLE}}</h3>
+                        <p class="event-date">{{EVENT_2_DATE}}</p>
+                        <p>{{EVENT_2_DESC}}</p>
+                        <button class="btn btn-secondary">Learn More</button>
+                    </div>
+                </div>
+                <div class="event">
+                    <img src="{{EVENT_3_IMAGE}}" alt="{{EVENT_3_TITLE}}">
+                    <div class="event-details">
+                        <h3>{{EVENT_3_TITLE}}</h3>
+                        <p class="event-date">{{EVENT_3_DATE}}</p>
+                        <p>{{EVENT_3_DESC}}</p>
+                        <button class="btn btn-secondary">Learn More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>{{ABOUT_TITLE}}</h2>
+                    <p>{{ABOUT_DESCRIPTION}}</p>
+                    <div class="pub-features">
+                        <div class="feature">
+                            <h4>{{PUB_FEATURE_1_TITLE}}</h4>
+                            <p>{{PUB_FEATURE_1_DESC}}</p>
+                        </div>
+                        <div class="feature">
+                            <h4>{{PUB_FEATURE_2_TITLE}}</h4>
+                            <p>{{PUB_FEATURE_2_DESC}}</p>
+                        </div>
+                        <div class="feature">
+                            <h4>{{PUB_FEATURE_3_TITLE}}</h4>
+                            <p>{{PUB_FEATURE_3_DESC}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="{{ABOUT_IMAGE}}" alt="{{PUB_NAME}} Interior">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Visit Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <h3>Address</h3>
+                        <p>{{ADDRESS}}</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>Phone</h3>
+                        <p><a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+                    </div>
+                    <div class="info-item">
+                        <h3>Hours</h3>
+                        <p>{{HOURS}}</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>Email</h3>
+                        <p><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
+                    </div>
+                </div>
+                <div class="reservation-form">
+                    <h3>Reserve a Table</h3>
+                    <form>
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Email" required>
+                        <input type="tel" name="phone" placeholder="Phone" required>
+                        <div class="form-row">
+                            <input type="date" name="date" required>
+                            <input type="time" name="time" required>
+                            <select name="party_size" required>
+                                <option value="">Party Size</option>
+                                <option value="2">2 People</option>
+                                <option value="3">3 People</option>
+                                <option value="4">4 People</option>
+                                <option value="5">5 People</option>
+                                <option value="6">6 People</option>
+                                <option value="7">7+ People</option>
+                            </select>
+                        </div>
+                        <textarea name="requests" placeholder="Special requests"></textarea>
+                        <button type="submit" class="btn btn-primary">Reserve Table</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>{{PUB_NAME}}</h3>
+                    <p>{{FOOTER_DESCRIPTION}}</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="#beer">Beer Menu</a></li>
+                        <li><a href="#food">Food Menu</a></li>
+                        <li><a href="#">Wine List</a></li>
+                        <li><a href="#">Cocktails</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Events</h4>
+                    <ul>
+                        <li><a href="#events">Upcoming Events</a></li>
+                        <li><a href="#">Private Parties</a></li>
+                        <li><a href="#">Live Music</a></li>
+                        <li><a href="#">Sports Viewing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}">Instagram</a>
+                        <a href="{{TWITTER_URL}}">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{PUB_NAME}}. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Age Verification</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

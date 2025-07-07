@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Fresh Coastal Seafood</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="coastal-seafood-theme">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+                <div class="logo-text">
+                    <h1>{{RESTAURANT_NAME}}</h1>
+                    <span class="tagline">Fresh from the Ocean</span>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#fresh">Daily Catch</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#raw-bar">Raw Bar</a></li>
+                <li><a href="#dock">Dock to Table</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#reservations">Reservations</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#reservations" class="btn btn-primary">Reserve Table</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <video autoplay muted loop>
+                <source src="{{HERO_VIDEO_URL}}" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h2>Ocean to Table</h2>
+            <p class="hero-subtitle">{{HERO_DESCRIPTION}}</p>
+            <div class="hero-highlights">
+                <div class="highlight">
+                    <span class="highlight-number">{{BOATS_COUNT}}</span>
+                    <span class="highlight-text">Local Fishing Boats</span>
+                </div>
+                <div class="highlight">
+                    <span class="highlight-number">{{DAILY_VARIETIES}}</span>
+                    <span class="highlight-text">Fresh Varieties Daily</span>
+                </div>
+                <div class="highlight">
+                    <span class="highlight-number">{{MILES_FROM_DOCK}}</span>
+                    <span class="highlight-text">Miles from the Dock</span>
+                </div>
+            </div>
+            <div class="hero-buttons">
+                <a href="#fresh" class="btn btn-hero-primary">Today's Catch</a>
+                <a href="#raw-bar" class="btn btn-hero-secondary">Raw Bar</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Daily Catch Banner -->
+    <section class="daily-catch-banner">
+        <div class="container">
+            <div class="catch-content">
+                <div class="catch-text">
+                    <h3>Fresh Off the Boat</h3>
+                    <p>{{DAILY_CATCH_DESCRIPTION}}</p>
+                </div>
+                <div class="catch-time">
+                    <span class="time-label">Today's Delivery:</span>
+                    <span class="time-value">{{DELIVERY_TIME}}</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fresh Daily Section -->
+    <section id="fresh" class="fresh-catch">
+        <div class="container">
+            <div class="fresh-header">
+                <h2>Today's Fresh Catch</h2>
+                <p>{{FRESH_CATCH_INTRO}}</p>
+                <div class="market-price-note">
+                    <span>*Market prices updated daily based on availability</span>
+                </div>
+            </div>
+            <div class="fresh-grid">
+                <div class="catch-item">
+                    <img src="{{CATCH_1_IMAGE}}" alt="{{CATCH_1_NAME}}">
+                    <div class="catch-content">
+                        <h3>{{CATCH_1_NAME}}</h3>
+                        <p class="catch-description">{{CATCH_1_DESCRIPTION}}</p>
+                        <div class="catch-details">
+                            <span class="origin">{{CATCH_1_ORIGIN}}</span>
+                            <span class="method">{{CATCH_1_METHOD}}</span>
+                        </div>
+                        <div class="catch-price">
+                            <span class="price-label">Market Price</span>
+                            <span class="price-value">{{CATCH_1_PRICE}}</span>
+                        </div>
+                        <div class="preparation-options">
+                            <span>{{CATCH_1_PREP_1}}</span>
+                            <span>{{CATCH_1_PREP_2}}</span>
+                            <span>{{CATCH_1_PREP_3}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="catch-item">
+                    <img src="{{CATCH_2_IMAGE}}" alt="{{CATCH_2_NAME}}">
+                    <div class="catch-content">
+                        <h3>{{CATCH_2_NAME}}</h3>
+                        <p class="catch-description">{{CATCH_2_DESCRIPTION}}</p>
+                        <div class="catch-details">
+                            <span class="origin">{{CATCH_2_ORIGIN}}</span>
+                            <span class="method">{{CATCH_2_METHOD}}</span>
+                        </div>
+                        <div class="catch-price">
+                            <span class="price-label">Market Price</span>
+                            <span class="price-value">{{CATCH_2_PRICE}}</span>
+                        </div>
+                        <div class="preparation-options">
+                            <span>{{CATCH_2_PREP_1}}</span>
+                            <span>{{CATCH_2_PREP_2}}</span>
+                            <span>{{CATCH_2_PREP_3}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="catch-item">
+                    <img src="{{CATCH_3_IMAGE}}" alt="{{CATCH_3_NAME}}">
+                    <div class="catch-content">
+                        <h3>{{CATCH_3_NAME}}</h3>
+                        <p class="catch-description">{{CATCH_3_DESCRIPTION}}</p>
+                        <div class="catch-details">
+                            <span class="origin">{{CATCH_3_ORIGIN}}</span>
+                            <span class="method">{{CATCH_3_METHOD}}</span>
+                        </div>
+                        <div class="catch-price">
+                            <span class="price-label">Market Price</span>
+                            <span class="price-value">{{CATCH_3_PRICE}}</span>
+                        </div>
+                        <div class="preparation-options">
+                            <span>{{CATCH_3_PREP_1}}</span>
+                            <span>{{CATCH_3_PREP_2}}</span>
+                            <span>{{CATCH_3_PREP_3}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="catch-item">
+                    <img src="{{CATCH_4_IMAGE}}" alt="{{CATCH_4_NAME}}">
+                    <div class="catch-content">
+                        <h3>{{CATCH_4_NAME}}</h3>
+                        <p class="catch-description">{{CATCH_4_DESCRIPTION}}</p>
+                        <div class="catch-details">
+                            <span class="origin">{{CATCH_4_ORIGIN}}</span>
+                            <span class="method">{{CATCH_4_METHOD}}</span>
+                        </div>
+                        <div class="catch-price">
+                            <span class="price-label">Market Price</span>
+                            <span class="price-value">{{CATCH_4_PRICE}}</span>
+                        </div>
+                        <div class="preparation-options">
+                            <span>{{CATCH_4_PREP_1}}</span>
+                            <span>{{CATCH_4_PREP_2}}</span>
+                            <span>{{CATCH_4_PREP_3}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Raw Bar Section -->
+    <section id="raw-bar" class="raw-bar">
+        <div class="container">
+            <div class="raw-bar-content">
+                <div class="raw-bar-text">
+                    <h2>Fresh Raw Bar</h2>
+                    <p>{{RAW_BAR_DESCRIPTION}}</p>
+                    <div class="raw-bar-features">
+                        <div class="feature">
+                            <h4>{{RAW_BAR_FEATURE_1_TITLE}}</h4>
+                            <p>{{RAW_BAR_FEATURE_1_DESCRIPTION}}</p>
+                        </div>
+                        <div class="feature">
+                            <h4>{{RAW_BAR_FEATURE_2_TITLE}}</h4>
+                            <p>{{RAW_BAR_FEATURE_2_DESCRIPTION}}</p>
+                        </div>
+                        <div class="feature">
+                            <h4>{{RAW_BAR_FEATURE_3_TITLE}}</h4>
+                            <p>{{RAW_BAR_FEATURE_3_DESCRIPTION}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="raw-bar-menu">
+                    <h3>Oysters</h3>
+                    <div class="oyster-selection">
+                        <div class="oyster-type">
+                            <h4>{{OYSTER_1_NAME}}</h4>
+                            <p>{{OYSTER_1_ORIGIN}}</p>
+                            <span class="oyster-profile">{{OYSTER_1_PROFILE}}</span>
+                            <span class="oyster-price">{{OYSTER_1_PRICE}}</span>
+                        </div>
+                        <div class="oyster-type">
+                            <h4>{{OYSTER_2_NAME}}</h4>
+                            <p>{{OYSTER_2_ORIGIN}}</p>
+                            <span class="oyster-profile">{{OYSTER_2_PROFILE}}</span>
+                            <span class="oyster-price">{{OYSTER_2_PRICE}}</span>
+                        </div>
+                        <div class="oyster-type">
+                            <h4>{{OYSTER_3_NAME}}</h4>
+                            <p>{{OYSTER_3_ORIGIN}}</p>
+                            <span class="oyster-profile">{{OYSTER_3_PROFILE}}</span>
+                            <span class="oyster-price">{{OYSTER_3_PRICE}}</span>
+                        </div>
+                        <div class="oyster-type">
+                            <h4>{{OYSTER_4_NAME}}</h4>
+                            <p>{{OYSTER_4_ORIGIN}}</p>
+                            <span class="oyster-profile">{{OYSTER_4_PROFILE}}</span>
+                            <span class="oyster-price">{{OYSTER_4_PRICE}}</span>
+                        </div>
+                    </div>
+                    <div class="shellfish-section">
+                        <h4>Shellfish & Crudo</h4>
+                        <div class="shellfish-items">
+                            <div class="shellfish-item">
+                                <span class="item-name">{{SHELLFISH_1_NAME}}</span>
+                                <span class="item-price">{{SHELLFISH_1_PRICE}}</span>
+                            </div>
+                            <div class="shellfish-item">
+                                <span class="item-name">{{SHELLFISH_2_NAME}}</span>
+                                <span class="item-price">{{SHELLFISH_2_PRICE}}</span>
+                            </div>
+                            <div class="shellfish-item">
+                                <span class="item-name">{{SHELLFISH_3_NAME}}</span>
+                                <span class="item-price">{{SHELLFISH_3_PRICE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Highlights -->
+    <section id="menu" class="menu-highlights">
+        <div class="container">
+            <div class="menu-header">
+                <h2>Signature Preparations</h2>
+                <p>{{MENU_DESCRIPTION}}</p>
+            </div>
+            
+            <div class="menu-sections">
+                <!-- Appetizers -->
+                <div class="menu-section">
+                    <div class="section-header">
+                        <h3>Ocean Appetizers</h3>
+                        <p>Start your coastal journey</p>
+                    </div>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <img src="{{APPETIZER_1_IMAGE}}" alt="{{APPETIZER_1_NAME}}">
+                            <div class="item-content">
+                                <h4>{{APPETIZER_1_NAME}}</h4>
+                                <p>{{APPETIZER_1_DESCRIPTION}}</p>
+                                <span class="price">{{APPETIZER_1_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="{{APPETIZER_2_IMAGE}}" alt="{{APPETIZER_2_NAME}}">
+                            <div class="item-content">
+                                <h4>{{APPETIZER_2_NAME}}</h4>
+                                <p>{{APPETIZER_2_DESCRIPTION}}</p>
+                                <span class="price">{{APPETIZER_2_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="{{APPETIZER_3_IMAGE}}" alt="{{APPETIZER_3_NAME}}">
+                            <div class="item-content">
+                                <h4>{{APPETIZER_3_NAME}}</h4>
+                                <p>{{APPETIZER_3_DESCRIPTION}}</p>
+                                <span class="price">{{APPETIZER_3_PRICE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Signature Dishes -->
+                <div class="menu-section">
+                    <div class="section-header">
+                        <h3>Signature Seafood</h3>
+                        <p>Our chef's specialty preparations</p>
+                    </div>
+                    <div class="menu-items">
+                        <div class="menu-item featured">
+                            <div class="featured-badge">Chef's Special</div>
+                            <img src="{{SIGNATURE_1_IMAGE}}" alt="{{SIGNATURE_1_NAME}}">
+                            <div class="item-content">
+                                <h4>{{SIGNATURE_1_NAME}}</h4>
+                                <p>{{SIGNATURE_1_DESCRIPTION}}</p>
+                                <span class="price">{{SIGNATURE_1_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="{{SIGNATURE_2_IMAGE}}" alt="{{SIGNATURE_2_NAME}}">
+                            <div class="item-content">
+                                <h4>{{SIGNATURE_2_NAME}}</h4>
+                                <p>{{SIGNATURE_2_DESCRIPTION}}</p>
+                                <span class="price">{{SIGNATURE_2_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="{{SIGNATURE_3_IMAGE}}" alt="{{SIGNATURE_3_NAME}}">
+                            <div class="item-content">
+                                <h4>{{SIGNATURE_3_NAME}}</h4>
+                                <p>{{SIGNATURE_3_DESCRIPTION}}</p>
+                                <span class="price">{{SIGNATURE_3_PRICE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lobster & Crab -->
+                <div class="menu-section">
+                    <div class="section-header">
+                        <h3>Lobster & Crab</h3>
+                        <p>Premium shellfish selections</p>
+                    </div>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <img src="{{LOBSTER_1_IMAGE}}" alt="{{LOBSTER_1_NAME}}">
+                            <div class="item-content">
+                                <h4>{{LOBSTER_1_NAME}}</h4>
+                                <p>{{LOBSTER_1_DESCRIPTION}}</p>
+                                <span class="price">{{LOBSTER_1_PRICE}}</span>
+                                <div class="weight-note">{{LOBSTER_1_WEIGHT}}</div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="{{CRAB_1_IMAGE}}" alt="{{CRAB_1_NAME}}">
+                            <div class="item-content">
+                                <h4>{{CRAB_1_NAME}}</h4>
+                                <p>{{CRAB_1_DESCRIPTION}}</p>
+                                <span class="price">{{CRAB_1_PRICE}}</span>
+                                <div class="seasonal-note">{{CRAB_1_SEASON}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Land Options -->
+                <div class="menu-section">
+                    <div class="section-header">
+                        <h3>From the Land</h3>
+                        <p>For non-seafood lovers</p>
+                    </div>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <img src="{{LAND_1_IMAGE}}" alt="{{LAND_1_NAME}}">
+                            <div class="item-content">
+                                <h4>{{LAND_1_NAME}}</h4>
+                                <p>{{LAND_1_DESCRIPTION}}</p>
+                                <span class="price">{{LAND_1_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="{{LAND_2_IMAGE}}" alt="{{LAND_2_NAME}}">
+                            <div class="item-content">
+                                <h4>{{LAND_2_NAME}}</h4>
+                                <p>{{LAND_2_DESCRIPTION}}</p>
+                                <span class="price">{{LAND_2_PRICE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="menu-cta">
+                <a href="menu.html" class="btn btn-outline">Full Menu</a>
+                <a href="#wine" class="btn btn-wine">Wine Pairings</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dock to Table Section -->
+    <section id="dock" class="dock-to-table">
+        <div class="container">
+            <div class="dock-content">
+                <div class="dock-text">
+                    <h2>Dock to Table Promise</h2>
+                    <p>{{DOCK_TO_TABLE_DESCRIPTION}}</p>
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <div class="step-number">1</div>
+                            <h4>{{STEP_1_TITLE}}</h4>
+                            <p>{{STEP_1_DESCRIPTION}}</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">2</div>
+                            <h4>{{STEP_2_TITLE}}</h4>
+                            <p>{{STEP_2_DESCRIPTION}}</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">3</div>
+                            <h4>{{STEP_3_TITLE}}</h4>
+                            <p>{{STEP_3_DESCRIPTION}}</p>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">4</div>
+                            <h4>{{STEP_4_TITLE}}</h4>
+                            <p>{{STEP_4_DESCRIPTION}}</p>
+                        </div>
+                    </div>
+                    <div class="sustainability-note">
+                        <h4>Sustainable Fishing</h4>
+                        <p>{{SUSTAINABILITY_DESCRIPTION}}</p>
+                    </div>
+                </div>
+                <div class="dock-image">
+                    <img src="{{DOCK_IMAGE}}" alt="Fishing Boat at Dock">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chef Section -->
+    <section class="chef-section">
+        <div class="container">
+            <div class="chef-content">
+                <div class="chef-image">
+                    <img src="{{CHEF_IMAGE}}" alt="{{CHEF_NAME}}">
+                </div>
+                <div class="chef-text">
+                    <h2>{{CHEF_TITLE}} {{CHEF_NAME}}</h2>
+                    <p class="chef-intro">{{CHEF_INTRO}}</p>
+                    <p>{{CHEF_BIOGRAPHY}}</p>
+                    <div class="chef-philosophy">
+                        <h4>Culinary Philosophy</h4>
+                        <p>{{CHEF_PHILOSOPHY}}</p>
+                    </div>
+                    <div class="chef-credentials">
+                        <div class="credential">
+                            <h5>{{CREDENTIAL_1_TITLE}}</h5>
+                            <p>{{CREDENTIAL_1_DESCRIPTION}}</p>
+                        </div>
+                        <div class="credential">
+                            <h5>{{CREDENTIAL_2_TITLE}}</h5>
+                            <p>{{CREDENTIAL_2_DESCRIPTION}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wine & Pairings -->
+    <section class="wine-section">
+        <div class="container">
+            <div class="wine-content">
+                <div class="wine-text">
+                    <h2>Coastal Wine Selection</h2>
+                    <p>{{WINE_SELECTION_DESCRIPTION}}</p>
+                    <div class="wine-categories">
+                        <div class="wine-category">
+                            <h4>{{WINE_CATEGORY_1_TITLE}}</h4>
+                            <p>{{WINE_CATEGORY_1_DESCRIPTION}}</p>
+                            <div class="wine-examples">
+                                <span>{{WINE_1_NAME}} - {{WINE_1_PRICE}}</span>
+                                <span>{{WINE_2_NAME}} - {{WINE_2_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="wine-category">
+                            <h4>{{WINE_CATEGORY_2_TITLE}}</h4>
+                            <p>{{WINE_CATEGORY_2_DESCRIPTION}}</p>
+                            <div class="wine-examples">
+                                <span>{{WINE_3_NAME}} - {{WINE_3_PRICE}}</span>
+                                <span>{{WINE_4_NAME}} - {{WINE_4_PRICE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sommelier-service">
+                        <h4>Sommelier Service</h4>
+                        <p>{{SOMMELIER_DESCRIPTION}}</p>
+                    </div>
+                    <a href="#wine-list" class="btn btn-wine">View Wine List</a>
+                </div>
+                <div class="wine-image">
+                    <img src="{{WINE_CELLAR_IMAGE}}" alt="Wine Selection">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="events-section">
+        <div class="container">
+            <div class="events-content">
+                <div class="events-text">
+                    <h2>Waterfront Events</h2>
+                    <p>{{EVENTS_DESCRIPTION}}</p>
+                    <div class="event-spaces">
+                        <div class="event-space">
+                            <h4>{{EVENT_SPACE_1_NAME}}</h4>
+                            <p>{{EVENT_SPACE_1_DESCRIPTION}}</p>
+                            <div class="space-features">
+                                <span>{{EVENT_SPACE_1_CAPACITY}} guests</span>
+                                <span>{{EVENT_SPACE_1_VIEW}}</span>
+                                <span>{{EVENT_SPACE_1_FEATURES}}</span>
+                            </div>
+                        </div>
+                        <div class="event-space">
+                            <h4>{{EVENT_SPACE_2_NAME}}</h4>
+                            <p>{{EVENT_SPACE_2_DESCRIPTION}}</p>
+                            <div class="space-features">
+                                <span>{{EVENT_SPACE_2_CAPACITY}} guests</span>
+                                <span>{{EVENT_SPACE_2_VIEW}}</span>
+                                <span>{{EVENT_SPACE_2_FEATURES}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="event-packages">
+                        <h4>Event Packages</h4>
+                        <div class="package">
+                            <h5>{{EVENT_PACKAGE_1_NAME}}</h5>
+                            <p>{{EVENT_PACKAGE_1_DESCRIPTION}}</p>
+                            <span class="package-price">{{EVENT_PACKAGE_1_PRICE}}</span>
+                        </div>
+                        <div class="package">
+                            <h5>{{EVENT_PACKAGE_2_NAME}}</h5>
+                            <p>{{EVENT_PACKAGE_2_DESCRIPTION}}</p>
+                            <span class="package-price">{{EVENT_PACKAGE_2_PRICE}}</span>
+                        </div>
+                    </div>
+                    <a href="#events-inquiry" class="btn btn-events">Plan Your Event</a>
+                </div>
+                <div class="events-image">
+                    <img src="{{WATERFRONT_EVENT_IMAGE}}" alt="Waterfront Event Space">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="location-section">
+        <div class="container">
+            <div class="location-grid">
+                <div class="location-details">
+                    <h2>Waterfront Location</h2>
+                    <div class="location-info">
+                        <div class="info-item">
+                            <h3>Address</h3>
+                            <p>{{RESTAURANT_ADDRESS}}</p>
+                            <p>{{RESTAURANT_WATERFRONT_LOCATION}}</p>
+                        </div>
+                        <div class="info-item">
+                            <h3>Contact</h3>
+                            <p>Phone: <a href="tel:{{RESTAURANT_PHONE}}">{{RESTAURANT_PHONE}}</a></p>
+                            <p>Email: <a href="mailto:{{RESTAURANT_EMAIL}}">{{RESTAURANT_EMAIL}}</a></p>
+                        </div>
+                        <div class="info-item">
+                            <h3>Hours</h3>
+                            <div class="hours-list">
+                                <div class="hours-item">
+                                    <span>Monday - Thursday</span>
+                                    <span>{{HOURS_WEEKDAY}}</span>
+                                </div>
+                                <div class="hours-item">
+                                    <span>Friday - Saturday</span>
+                                    <span>{{HOURS_WEEKEND}}</span>
+                                </div>
+                                <div class="hours-item">
+                                    <span>Sunday</span>
+                                    <span>{{HOURS_SUNDAY}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="location-features">
+                        <span class="feature-tag">Waterfront Dining</span>
+                        <span class="feature-tag">Dock Access</span>
+                        <span class="feature-tag">Outdoor Seating</span>
+                        <span class="feature-tag">Valet Parking</span>
+                    </div>
+                </div>
+                <div class="location-map">
+                    <iframe 
+                        src="{{GOOGLE_MAPS_EMBED}}" 
+                        width="100%" 
+                        height="400" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservations -->
+    <section id="reservations" class="reservations">
+        <div class="container">
+            <div class="reservations-content">
+                <div class="reservations-text">
+                    <h2>Reserve Your Waterfront Table</h2>
+                    <p>{{RESERVATIONS_DESCRIPTION}}</p>
+                    <div class="seating-options">
+                        <div class="seating-option">
+                            <h4>Waterfront Patio</h4>
+                            <p>{{PATIO_DESCRIPTION}}</p>
+                            <span class="seating-note">{{PATIO_NOTE}}</span>
+                        </div>
+                        <div class="seating-option">
+                            <h4>Main Dining Room</h4>
+                            <p>{{DINING_ROOM_DESCRIPTION}}</p>
+                            <span class="seating-note">{{DINING_ROOM_NOTE}}</span>
+                        </div>
+                        <div class="seating-option">
+                            <h4>Raw Bar Counter</h4>
+                            <p>{{RAW_BAR_SEATING_DESCRIPTION}}</p>
+                            <span class="seating-note">{{RAW_BAR_NOTE}}</span>
+                        </div>
+                    </div>
+                    <div class="reservation-policies">
+                        <h4>Reservation Policy</h4>
+                        <ul>
+                            <li>{{RESERVATION_POLICY_1}}</li>
+                            <li>{{RESERVATION_POLICY_2}}</li>
+                            <li>{{RESERVATION_POLICY_3}}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="reservations-form">
+                    <h3>Make Reservation</h3>
+                    <form class="reservation-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="date">Date</label>
+                                <input type="date" id="date" name="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="time">Time</label>
+                                <select id="time" name="time" required>
+                                    <option value="">Select Time</option>
+                                    <option value="5:00 PM">5:00 PM</option>
+                                    <option value="5:30 PM">5:30 PM</option>
+                                    <option value="6:00 PM">6:00 PM</option>
+                                    <option value="6:30 PM">6:30 PM</option>
+                                    <option value="7:00 PM">7:00 PM</option>
+                                    <option value="7:30 PM">7:30 PM</option>
+                                    <option value="8:00 PM">8:00 PM</option>
+                                    <option value="8:30 PM">8:30 PM</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="guests">Party Size</label>
+                            <select id="guests" name="guests" required>
+                                <option value="">Number of Guests</option>
+                                <option value="1">1 Guest</option>
+                                <option value="2">2 Guests</option>
+                                <option value="3">3 Guests</option>
+                                <option value="4">4 Guests</option>
+                                <option value="5">5 Guests</option>
+                                <option value="6">6 Guests</option>
+                                <option value="7">7+ Guests</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="seating">Seating Preference</label>
+                            <select id="seating" name="seating">
+                                <option value="">No Preference</option>
+                                <option value="patio">Waterfront Patio</option>
+                                <option value="dining-room">Main Dining Room</option>
+                                <option value="raw-bar">Raw Bar Counter</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="requests">Special Requests</label>
+                            <textarea id="requests" name="requests" placeholder="Allergies, special occasions, accessibility needs..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Confirm Reservation</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section main">
+                    <h3>{{RESTAURANT_NAME}}</h3>
+                    <p>{{FOOTER_DESCRIPTION}}</p>
+                    <div class="contact-info">
+                        <p>{{RESTAURANT_ADDRESS}}</p>
+                        <p>{{RESTAURANT_PHONE}}</p>
+                        <p>{{RESTAURANT_EMAIL}}</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}" target="_blank" aria-label="Facebook">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}" target="_blank" aria-label="Instagram">Instagram</a>
+                        <a href="{{TWITTER_URL}}" target="_blank" aria-label="Twitter">Twitter</a>
+                        <a href="{{YELP_URL}}" target="_blank" aria-label="Yelp">Yelp</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Fresh Seafood</h4>
+                    <ul>
+                        <li><a href="#fresh">Daily Catch</a></li>
+                        <li><a href="#raw-bar">Raw Bar</a></li>
+                        <li><a href="menu.html#lobster">Lobster & Crab</a></li>
+                        <li><a href="menu.html#oysters">Oyster Selection</a></li>
+                        <li><a href="#dock">Dock to Table</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Dining</h4>
+                    <ul>
+                        <li><a href="#reservations">Reservations</a></li>
+                        <li><a href="menu.html">Full Menu</a></li>
+                        <li><a href="#wine">Wine List</a></li>
+                        <li><a href="#events">Private Events</a></li>
+                        <li><a href="#gift-cards">Gift Cards</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Information</h4>
+                    <ul>
+                        <li><a href="#chef">Meet the Chef</a></li>
+                        <li><a href="#sustainability">Sustainability</a></li>
+                        <li><a href="#press">Press</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; {{CURRENT_YEAR}} {{RESTAURANT_NAME}}. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                    <a href="#accessibility">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

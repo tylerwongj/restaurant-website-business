@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Prime Steakhouse</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="color-scheme-steakhouse">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>{{RESTAURANT_NAME}}</h2>
+                <span class="tagline">Prime Steakhouse</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#menu" class="nav-link">Menu</a></li>
+                <li><a href="#wine" class="nav-link">Wine</a></li>
+                <li><a href="#private" class="nav-link">Private Dining</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#" class="nav-link cta-button" onclick="openReservationModal()">Reserve</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <img src="{{HERO_IMAGE}}" alt="Premium steakhouse interior">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">The Art of Prime</h1>
+            <p class="hero-subtitle">USDA Prime steaks, dry-aged to perfection in our on-site aging room</p>
+            <div class="hero-features">
+                <div class="feature">
+                    <span class="feature-text">28-Day Dry Aged</span>
+                </div>
+                <div class="feature">
+                    <span class="feature-text">USDA Prime</span>
+                </div>
+                <div class="feature">
+                    <span class="feature-text">Award-Winning Wine List</span>
+                </div>
+            </div>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="openReservationModal()">Make Reservation</button>
+                <button class="btn btn-secondary" onclick="scrollToSection('menu')">View Menu</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prime Cuts Section -->
+    <section class="prime-cuts">
+        <div class="container">
+            <h2 class="section-title">Prime Cuts</h2>
+            <p class="section-subtitle">Hand-selected, dry-aged USDA Prime beef</p>
+            
+            <div class="cuts-grid">
+                <div class="cut-card">
+                    <img src="{{RIBEYE_IMAGE}}" alt="Dry-Aged Ribeye">
+                    <div class="cut-info">
+                        <h3>28-Day Dry-Aged Ribeye</h3>
+                        <p>Richly marbled, intensely flavored</p>
+                        <div class="cut-sizes">
+                            <div class="size-option">
+                                <span class="size">16 oz</span>
+                                <span class="price">$68</span>
+                            </div>
+                            <div class="size-option">
+                                <span class="size">20 oz</span>
+                                <span class="price">$82</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cut-card featured">
+                    <div class="premium-badge">Chef's Choice</div>
+                    <img src="{{TOMAHAWK_IMAGE}}" alt="Tomahawk Steak">
+                    <div class="cut-info">
+                        <h3>Tomahawk Ribeye</h3>
+                        <p>Impressive 32 oz bone-in ribeye</p>
+                        <div class="cut-sizes">
+                            <div class="size-option">
+                                <span class="size">32 oz</span>
+                                <span class="price">$125</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cut-card">
+                    <img src="{{FILET_IMAGE}}" alt="Filet Mignon">
+                    <div class="cut-info">
+                        <h3>Filet Mignon</h3>
+                        <p>The most tender cut, buttery texture</p>
+                        <div class="cut-sizes">
+                            <div class="size-option">
+                                <span class="size">8 oz</span>
+                                <span class="price">$58</span>
+                            </div>
+                            <div class="size-option">
+                                <span class="size">12 oz</span>
+                                <span class="price">$76</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cut-card">
+                    <img src="{{NY_STRIP_IMAGE}}" alt="New York Strip">
+                    <div class="cut-info">
+                        <h3>New York Strip</h3>
+                        <p>Classic steakhouse cut with robust flavor</p>
+                        <div class="cut-sizes">
+                            <div class="size-option">
+                                <span class="size">14 oz</span>
+                                <span class="price">$54</span>
+                            </div>
+                            <div class="size-option">
+                                <span class="size">18 oz</span>
+                                <span class="price">$68</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu-section">
+        <div class="container">
+            <h2 class="section-title">Menu</h2>
+            
+            <div class="menu-categories">
+                <div class="menu-category">
+                    <h3>Appetizers</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Oysters Rockefeller</h4>
+                                <p>Fresh oysters, spinach, herbs, hollandaise</p>
+                            </div>
+                            <span class="price">$18</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Wagyu Beef Tartare</h4>
+                                <p>Hand-cut A5 Wagyu, quail egg, brioche</p>
+                            </div>
+                            <span class="price">$28</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Lobster Cocktail</h4>
+                                <p>Chilled Maine lobster, traditional cocktail sauce</p>
+                            </div>
+                            <span class="price">$22</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Bone Marrow</h4>
+                                <p>Roasted bone marrow, herbs, grilled bread</p>
+                            </div>
+                            <span class="price">$16</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-category">
+                    <h3>Seafood</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Maine Lobster</h4>
+                                <p>Twin lobster tails, drawn butter</p>
+                            </div>
+                            <span class="price">Market Price</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Chilean Sea Bass</h4>
+                                <p>Miso-glazed, shiitake mushrooms</p>
+                            </div>
+                            <span class="price">$42</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Alaskan King Crab</h4>
+                                <p>Steamed legs, clarified butter</p>
+                            </div>
+                            <span class="price">Market Price</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-category">
+                    <h3>Sides</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Truffle Mac & Cheese</h4>
+                                <p>Aged cheeses, black truffle</p>
+                            </div>
+                            <span class="price">$18</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Lobster Mashed Potatoes</h4>
+                                <p>Yukon Gold, Maine lobster, chives</p>
+                            </div>
+                            <span class="price">$22</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Grilled Asparagus</h4>
+                                <p>Lemon oil, sea salt</p>
+                            </div>
+                            <span class="price">$14</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-info">
+                                <h4>Wild Mushroom Risotto</h4>
+                                <p>Porcini, shiitake, truffle oil</p>
+                            </div>
+                            <span class="price">$16</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wine Section -->
+    <section id="wine" class="wine-section">
+        <div class="container">
+            <div class="wine-content">
+                <div class="wine-info">
+                    <h2>Award-Winning Wine Program</h2>
+                    <p class="wine-subtitle">Over 1,200 selections from the world's finest wine regions</p>
+                    
+                    <div class="wine-features">
+                        <div class="wine-feature">
+                            <i class="fas fa-award"></i>
+                            <div>
+                                <h4>Wine Spectator Award</h4>
+                                <p>Grand Award recipient for exceptional wine program</p>
+                            </div>
+                        </div>
+                        <div class="wine-feature">
+                            <i class="fas fa-wine-bottle"></i>
+                            <div>
+                                <h4>Temperature-Controlled Cellar</h4>
+                                <p>Optimal storage for our extensive collection</p>
+                            </div>
+                        </div>
+                        <div class="wine-feature">
+                            <i class="fas fa-user-tie"></i>
+                            <div>
+                                <h4>Master Sommelier</h4>
+                                <p>Expert guidance for perfect wine pairings</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-secondary" onclick="openWineModal()">View Wine List</button>
+                </div>
+                <div class="wine-visual">
+                    <img src="{{WINE_CELLAR_IMAGE}}" alt="Wine cellar">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Private Dining Section -->
+    <section id="private" class="private-dining">
+        <div class="container">
+            <h2 class="section-title">Private Dining</h2>
+            <p class="section-subtitle">Exclusive venues for your special occasions</p>
+            
+            <div class="private-rooms">
+                <div class="room-card">
+                    <img src="{{WINE_ROOM_IMAGE}}" alt="Wine Room">
+                    <div class="room-info">
+                        <h3>The Wine Room</h3>
+                        <p>Intimate dining surrounded by our wine collection</p>
+                        <div class="room-capacity">
+                            <span>Up to 12 guests</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="room-card">
+                    <img src="{{BOARDROOM_IMAGE}}" alt="Executive Boardroom">
+                    <div class="room-info">
+                        <h3>Executive Boardroom</h3>
+                        <p>Perfect for business dinners and corporate events</p>
+                        <div class="room-capacity">
+                            <span>Up to 20 guests</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="room-card">
+                    <img src="{{CHEF_TABLE_IMAGE}}" alt="Chef's Table">
+                    <div class="room-info">
+                        <h3>Chef's Table</h3>
+                        <p>Experience our kitchen with an exclusive tasting menu</p>
+                        <div class="room-capacity">
+                            <span>Up to 8 guests</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="private-cta">
+                <button class="btn btn-primary" onclick="openPrivateModal()">Inquire About Private Dining</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>The Steakhouse Experience</h2>
+                    <p>{{RESTAURANT_DESCRIPTION}}</p>
+                    <p>Our commitment to excellence begins with sourcing the finest USDA Prime beef, which we dry-age in our on-site aging room for a minimum of 28 days. This process concentrates the flavors and creates the tender, richly marbled steaks that have made us a destination for discerning diners.</p>
+                    
+                    <div class="credentials">
+                        <div class="credential">
+                            <i class="fas fa-star"></i>
+                            <span>AAA Five Diamond Award</span>
+                        </div>
+                        <div class="credential">
+                            <i class="fas fa-wine-glass"></i>
+                            <span>Wine Spectator Grand Award</span>
+                        </div>
+                        <div class="credential">
+                            <i class="fas fa-utensils"></i>
+                            <span>James Beard Nominated</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="{{AGING_ROOM_IMAGE}}" alt="Dry aging room">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Visit Us</h2>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>{{RESTAURANT_ADDRESS}}</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Reservations</h4>
+                                <p>{{PHONE_NUMBER}}</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Hours</h4>
+                                <p>{{HOURS_OF_OPERATION}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="dress-code">
+                        <h4>Dress Code</h4>
+                        <p>Business casual required. Jackets preferred for gentlemen.</p>
+                    </div>
+                </div>
+                
+                <div class="reservation-form">
+                    <h3>Make a Reservation</h3>
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <select required>
+                                    <option value="">Party Size</option>
+                                    <option value="2">2 Guests</option>
+                                    <option value="3">3 Guests</option>
+                                    <option value="4">4 Guests</option>
+                                    <option value="5">5 Guests</option>
+                                    <option value="6">6 Guests</option>
+                                    <option value="7">7+ Guests</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <input type="date" required>
+                            </div>
+                            <div class="form-group">
+                                <select required>
+                                    <option value="">Time</option>
+                                    <option value="17:00">5:00 PM</option>
+                                    <option value="17:30">5:30 PM</option>
+                                    <option value="18:00">6:00 PM</option>
+                                    <option value="18:30">6:30 PM</option>
+                                    <option value="19:00">7:00 PM</option>
+                                    <option value="19:30">7:30 PM</option>
+                                    <option value="20:00">8:00 PM</option>
+                                    <option value="20:30">8:30 PM</option>
+                                    <option value="21:00">9:00 PM</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Special requests or dietary restrictions" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Confirm Reservation</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>{{RESTAURANT_NAME}}</h3>
+                    <p>The finest in prime steakhouse dining</p>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}"><i class="fab fa-facebook"></i></a>
+                        <a href="{{INSTAGRAM_URL}}"><i class="fab fa-instagram"></i></a>
+                        <a href="{{TWITTER_URL}}"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Dining</h4>
+                    <ul>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#wine">Wine List</a></li>
+                        <li><a href="#private">Private Dining</a></li>
+                        <li><a href="#">Gift Cards</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Information</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>{{RESTAURANT_ADDRESS}}</p>
+                    <p>{{PHONE_NUMBER}}</p>
+                    <p>{{EMAIL_ADDRESS}}</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Reservation Modal -->
+    <div id="reservationModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeReservationModal()">&times;</span>
+            <h2>Reserve Your Table</h2>
+            <form class="reservation-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Date</label>
+                        <input type="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Time</label>
+                        <select required>
+                            <option value="">Select Time</option>
+                            <option value="17:00">5:00 PM</option>
+                            <option value="17:30">5:30 PM</option>
+                            <option value="18:00">6:00 PM</option>
+                            <option value="18:30">6:30 PM</option>
+                            <option value="19:00">7:00 PM</option>
+                            <option value="19:30">7:30 PM</option>
+                            <option value="20:00">8:00 PM</option>
+                            <option value="20:30">8:30 PM</option>
+                            <option value="21:00">9:00 PM</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Party Size</label>
+                        <select required>
+                            <option value="">Select Size</option>
+                            <option value="2">2 Guests</option>
+                            <option value="3">3 Guests</option>
+                            <option value="4">4 Guests</option>
+                            <option value="5">5 Guests</option>
+                            <option value="6">6 Guests</option>
+                            <option value="7">7+ Guests</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone</label>
+                    <input type="tel" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Special Requests</label>
+                    <textarea rows="3" placeholder="Dietary restrictions, special occasions, etc."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Confirm Reservation</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1291 @@
+/* Steakhouse Upscale Template */
+
+:root {
+    /* Classic Steakhouse Color Scheme */
+    --rich-burgundy: #722F37;
+    --deep-mahogany: #3C1810;
+    --luxury-cream: #F7F3E9;
+    --elegant-gold: #D4AF37;
+    --charcoal-black: #2C2C2C;
+    --text-dark: #1A1A1A;
+    --text-warm: #8B4513;
+    --text-light: #6D6D6D;
+    --bg-white: #FFFFFF;
+    --bg-light: #FAFAFA;
+    --border-light: #E5E5E5;
+    --shadow: rgba(0, 0, 0, 0.15);
+}
+
+/* Alternative Color Schemes */
+.theme-modern {
+    --rich-burgundy: #B71C1C;
+    --deep-mahogany: #424242;
+    --luxury-cream: #FAFAFA;
+    --elegant-gold: #FFC107;
+    --charcoal-black: #212121;
+    --text-dark: #212121;
+    --text-warm: #D84315;
+    --text-light: #757575;
+    --bg-white: #FFFFFF;
+    --bg-light: #F5F5F5;
+    --border-light: #E0E0E0;
+}
+
+.theme-classic {
+    --rich-burgundy: #8B0000;
+    --deep-mahogany: #654321;
+    --luxury-cream: #FDF5E6;
+    --elegant-gold: #FFD700;
+    --charcoal-black: #2F2F2F;
+    --text-dark: #2F2F2F;
+    --text-warm: #8B4513;
+    --text-light: #696969;
+    --bg-white: #FFFFFF;
+    --bg-light: #F8F8FF;
+    --border-light: #DCDCDC;
+}
+
+.theme-sophisticated {
+    --rich-burgundy: #5D1A1D;
+    --deep-mahogany: #3E2723;
+    --luxury-cream: #F3E5AB;
+    --elegant-gold: #B8860B;
+    --charcoal-black: #263238;
+    --text-dark: #263238;
+    --text-warm: #6D4C41;
+    --text-light: #546E7A;
+    --bg-white: #FFFFFF;
+    --bg-light: #ECEFF1;
+    --border-light: #CFD8DC;
+}
+
+.theme-elegant {
+    --rich-burgundy: #4A148C;
+    --deep-mahogany: #1A237E;
+    --luxury-cream: #F1F8E9;
+    --elegant-gold: #827717;
+    --charcoal-black: #37474F;
+    --text-dark: #37474F;
+    --text-warm: #5D4037;
+    --text-light: #78909C;
+    --bg-white: #FFFFFF;
+    --bg-light: #FAFAFA;
+    --border-light: #E0E0E0;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background: var(--bg-white);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Luxury Banner */
+.luxury-banner {
+    background: var(--rich-burgundy);
+    color: var(--bg-white);
+    padding: 12px 0;
+    text-align: center;
+    font-weight: 600;
+    position: relative;
+    z-index: 1001;
+}
+
+.banner-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.banner-text {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.banner-cta {
+    background: var(--elegant-gold);
+    color: var(--text-dark);
+    padding: 8px 16px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.banner-cta:hover {
+    background: var(--bg-white);
+    transform: scale(1.05);
+}
+
+/* Navigation */
+.nav-steakhouse {
+    background: var(--luxury-cream);
+    box-shadow: 0 2px 15px var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 0;
+    border-bottom: 3px solid var(--rich-burgundy);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+    border-radius: 50%;
+}
+
+.logo-main {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--rich-burgundy);
+    text-decoration: none;
+    font-family: 'Georgia', serif;
+}
+
+.logo-sub {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-warm);
+    font-style: italic;
+    margin-top: -5px;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: var(--rich-burgundy);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--rich-burgundy);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-cta {
+    background: var(--rich-burgundy);
+    color: var(--bg-white);
+    padding: 12px 24px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(114, 47, 55, 0.3);
+}
+
+.nav-cta:hover {
+    background: var(--deep-mahogany);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(114, 47, 55, 0.4);
+}
+
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.mobile-menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: var(--text-dark);
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+/* Hero Section */
+.hero-steakhouse {
+    background: linear-gradient(135deg, var(--luxury-cream), var(--bg-light));
+    padding: 80px 0;
+    border-bottom: 5px solid var(--rich-burgundy);
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.hero-text h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: bold;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: var(--rich-burgundy);
+    font-family: 'Georgia', serif;
+}
+
+.hero-subtitle {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-warm);
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.hero-description {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--text-light);
+    margin-bottom: 30px;
+}
+
+.hero-awards {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 35px;
+    flex-wrap: wrap;
+}
+
+.award-badge {
+    background: var(--elegant-gold);
+    color: var(--text-dark);
+    padding: 8px 16px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+}
+
+.hero-cta {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.btn-reserve {
+    background: var(--rich-burgundy);
+    color: var(--bg-white);
+    border: none;
+    padding: 16px 32px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(114, 47, 55, 0.3);
+}
+
+.btn-reserve:hover {
+    background: var(--deep-mahogany);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(114, 47, 55, 0.4);
+}
+
+.btn-view-menu {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    border-bottom: 2px solid var(--elegant-gold);
+    transition: color 0.3s ease;
+}
+
+.btn-view-menu:hover {
+    color: var(--rich-burgundy);
+}
+
+.hero-image {
+    position: relative;
+}
+
+.steak-hero {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px var(--shadow);
+}
+
+.hero-overlay {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: var(--rich-burgundy);
+    color: var(--bg-white);
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Featured Steaks */
+.featured-steaks {
+    padding: 100px 0;
+    background: var(--bg-white);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--text-dark);
+    margin-bottom: 60px;
+    font-family: 'Georgia', serif;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--rich-burgundy), var(--elegant-gold));
+    border-radius: 2px;
+}
+
+.steaks-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+}
+
+.steak-card {
+    background: var(--bg-white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px var(--shadow);
+    transition: all 0.3s ease;
+    position: relative;
+    border: 2px solid var(--border-light);
+}
+
+.steak-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.steak-card.premium {
+    border-color: var(--elegant-gold);
+    border-width: 3px;
+}
+
+.steak-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: var(--elegant-gold);
+    color: var(--text-dark);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    z-index: 10;
+    letter-spacing: 0.5px;
+}
+
+.steak-badge.prime {
+    background: var(--rich-burgundy);
+    color: var(--bg-white);
+}
+
+.steak-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.steak-content {
+    padding: 25px;
+}
+
+.steak-content h3 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 12px;
+    color: var(--text-dark);
+    font-family: 'Georgia', serif;
+}
+
+.steak-description {
+    color: var(--text-light);
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.steak-specs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.cut-type,
+.aging,
+.grade {
+    background: var(--bg-light);
+    color: var(--text-dark);
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 10px;
+    border: 1px solid var(--border-light);
+}
+
+.steak-sizes {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: var(--bg-light);
+    border-radius: 8px;
+}
+
+.size-option {
+    text-align: center;
+}
+
+.size-name {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+}
+
+.size-price {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--rich-burgundy);
+}
+
+.pairing-suggestion {
+    padding: 15px;
+    background: var(--luxury-cream);
+    border-radius: 8px;
+    border-left: 4px solid var(--elegant-gold);
+}
+
+.pairing-label {
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--text-warm);
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.wine-pairing {
+    color: var(--text-dark);
+    font-weight: 600;
+    font-style: italic;
+}
+
+/* Menu Categories */
+.menu-categories {
+    padding: 100px 0;
+    background: var(--luxury-cream);
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.category-tile {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    height: 300px;
+    box-shadow: 0 8px 25px var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.category-tile:hover {
+    transform: scale(1.05);
+}
+
+.category-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.category-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(114, 47, 55, 0.8), rgba(212, 175, 55, 0.8));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--bg-white);
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.category-tile:hover .category-overlay {
+    opacity: 1;
+}
+
+.category-overlay h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: 'Georgia', serif;
+}
+
+.category-overlay p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.btn-category {
+    background: var(--elegant-gold);
+    color: var(--text-dark);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-category:hover {
+    background: var(--bg-white);
+    transform: scale(1.05);
+}
+
+/* Wine Selection */
+.wine-selection {
+    padding: 100px 0;
+    background: var(--bg-white);
+}
+
+.wine-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.wine-category {
+    background: var(--bg-light);
+    padding: 40px 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 25px var(--shadow);
+    border: 2px solid var(--border-light);
+    transition: transform 0.3s ease;
+}
+
+.wine-category:hover {
+    transform: translateY(-5px);
+}
+
+.wine-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.wine-category h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: var(--rich-burgundy);
+    font-family: 'Georgia', serif;
+}
+
+.wine-category > p {
+    color: var(--text-light);
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.wine-highlights {
+    display: grid;
+    gap: 15px;
+}
+
+.wine-item {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 15px;
+    align-items: center;
+    padding: 15px;
+    background: var(--bg-white);
+    border-radius: 8px;
+    border-left: 3px solid var(--elegant-gold);
+}
+
+.wine-name {
+    font-weight: bold;
+    color: var(--text-dark);
+    text-align: left;
+}
+
+.wine-vintage {
+    color: var(--text-warm);
+    font-style: italic;
+    font-size: 14px;
+}
+
+.wine-price {
+    font-weight: bold;
+    color: var(--rich-burgundy);
+    font-size: 1.1rem;
+}
+
+.btn-wine-list {
+    background: var(--rich-burgundy);
+    color: var(--bg-white);
+    border: none;
+    padding: 16px 32px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 4px 15px rgba(114, 47, 55, 0.3);
+}
+
+.btn-wine-list:hover {
+    background: var(--deep-mahogany);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(114, 47, 55, 0.4);
+}
+
+/* Chef's Story */
+.chef-story {
+    padding: 100px 0;
+    background: var(--luxury-cream);
+}
+
+.story-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.story-text h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: var(--text-dark);
+    font-family: 'Georgia', serif;
+}
+
+.story-intro {
+    font-size: 18px;
+    color: var(--text-light);
+    margin-bottom: 40px;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+.chef-highlights {
+    display: grid;
+    gap: 25px;
+}
+
+.highlight-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.highlight-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+}
+
+.highlight-item h4 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: var(--rich-burgundy);
+    font-family: 'Georgia', serif;
+}
+
+.highlight-item p {
+    color: var(--text-light);
+    line-height: 1.5;
+}
+
+.story-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px var(--shadow);
+}
+
+/* Private Dining */
+.private-dining {
+    padding: 100px 0;
+    background: var(--bg-white);
+}
+
+.private-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.private-info h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: var(--text-dark);
+    font-family: 'Georgia', serif;
+}
+
+.private-info > p {
+    font-size: 18px;
+    color: var(--text-light);
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.private-options {
+    display: grid;
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.private-option {
+    padding: 25px;
+    background: var(--bg-light);
+    border-radius: 10px;
+    border-left: 4px solid var(--rich-burgundy);
+}
+
+.private-option h4 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--rich-burgundy);
+    font-family: 'Georgia', serif;
+}
+
+.private-option p {
+    color: var(--text-light);
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.room-specs {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.capacity,
+.occasion {
+    background: var(--elegant-gold);
+    color: var(--text-dark);
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 10px;
+}
+
+.btn-private-inquiry {
+    background: var(--rich-burgundy);
+    color: var(--bg-white);
+    border: none;
+    padding: 16px 32px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(114, 47, 55, 0.3);
+}
+
+.btn-private-inquiry:hover {
+    background: var(--deep-mahogany);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(114, 47, 55, 0.4);
+}
+
+.private-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px var(--shadow);
+}
+
+/* Reservations & Hours */
+.reservations-hours {
+    padding: 100px 0;
+    background: var(--luxury-cream);
+}
+
+.location-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+.location-info {
+    display: grid;
+    gap: 40px;
+}
+
+.info-section h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: var(--rich-burgundy);
+    font-family: 'Georgia', serif;
+}
+
+.address {
+    font-size: 18px;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.neighborhood {
+    color: var(--text-light);
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.btn-directions {
+    background: var(--elegant-gold);
+    color: var(--text-dark);
+    border: none;
+    padding: 12px 24px;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-directions:hover {
+    background: var(--rich-burgundy);
+    color: var(--bg-white);
+    transform: translateY(-2px);
+}
+
+.hours-list {
+    display: grid;
+    gap: 12px;
+}
+
+.hours-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.day {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.time {
+    color: var(--text-light);
+}
+
+.phone,
+.email {
+    color: var(--text-dark);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.reservation-options {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.btn-reserve-online,
+.btn-call-reserve {
+    background: var(--rich-burgundy);
+    color: var(--bg-white);
+    border: none;
+    padding: 12px 20px;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.btn-call-reserve {
+    background: var(--deep-mahogany);
+}
+
+.btn-reserve-online:hover,
+.btn-call-reserve:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.reservation-note {
+    font-size: 14px;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+.location-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.map-container {
+    width: 100%;
+    max-width: 500px;
+}
+
+.map-placeholder {
+    background: var(--bg-white);
+    border: 2px solid var(--border-light);
+    border-radius: 15px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 8px 25px var(--shadow);
+}
+
+.map-placeholder p {
+    font-size: 18px;
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+.btn-view-map {
+    background: var(--rich-burgundy);
+    color: var(--bg-white);
+    border: none;
+    padding: 12px 24px;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-view-map:hover {
+    background: var(--deep-mahogany);
+    transform: translateY(-2px);
+}
+
+/* Footer */
+.footer-steakhouse {
+    background: var(--text-dark);
+    color: var(--bg-white);
+    padding: 60px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h4 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: var(--elegant-gold);
+    font-family: 'Georgia', serif;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: var(--bg-white);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: var(--rich-burgundy);
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.social-link {
+    color: var(--bg-white);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: var(--rich-burgundy);
+}
+
+.newsletter p {
+    margin-bottom: 15px;
+    color: var(--bg-white);
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 10px;
+}
+
+.email-input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+.btn-subscribe {
+    background: var(--rich-burgundy);
+    color: var(--bg-white);
+    border: none;
+    padding: 10px 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-subscribe:hover {
+    background: var(--deep-mahogany);
+}
+
+.footer-bottom {
+    border-top: 1px solid #444;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-bottom p {
+    color: var(--bg-white);
+    font-size: 14px;
+}
+
+.footer-legal {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-legal a {
+    color: var(--bg-white);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-legal a:hover {
+    color: var(--rich-burgundy);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+    
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .story-content {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    
+    .private-content {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    
+    .location-content {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    
+    .steaks-showcase {
+        grid-template-columns: 1fr;
+    }
+    
+    .categories-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    
+    .wine-showcase {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .hero-cta {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .hero-awards {
+        justify-content: center;
+    }
+    
+    .reservation-options {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .featured-steaks,
+    .menu-categories,
+    .wine-selection,
+    .chef-story,
+    .private-dining,
+    .reservations-hours {
+        padding: 80px 0;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+    
+    .highlight-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .newsletter-form {
+        flex-direction: column;
+    }
+    
+    .map-placeholder {
+        height: 300px;
+    }
+    
+    .banner-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .steak-sizes {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .wine-item {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        text-align: center;
+    }
+    
+    .room-specs {
+        justify-content: center;
+    }
+}

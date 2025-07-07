@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{KITCHEN_NAME}} - Delivery & Takeout Only</title>
+    <meta name="description" content="{{KITCHEN_NAME}} - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="ghost-kitchen-theme">
+    <!-- Header Banner -->
+    <div class="delivery-banner">
+        <div class="container">
+            <div class="banner-content">
+                <span class="delivery-icon">🚚</span>
+                <span class="banner-text">FREE DELIVERY on orders over {{FREE_DELIVERY_MINIMUM}} • Average delivery time: {{AVERAGE_DELIVERY_TIME}}</span>
+                <button class="btn btn-small btn-primary">Order Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h1>{{KITCHEN_NAME}}</h1>
+                <span class="delivery-only">Delivery & Takeout Only</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#delivery">Delivery Areas</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn btn-primary">Order Online</button>
+                <button class="btn btn-secondary">Track Order</button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>{{HERO_TITLE}}</h1>
+                <p class="hero-subtitle">{{HERO_SUBTITLE}}</p>
+                <div class="delivery-features">
+                    <div class="feature">
+                        <span class="feature-icon">🚚</span>
+                        <div class="feature-text">
+                            <h4>Fast Delivery</h4>
+                            <p>{{DELIVERY_TIME}} average</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">📱</span>
+                        <div class="feature-text">
+                            <h4>Easy Ordering</h4>
+                            <p>Order online or by phone</p>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">🍴</span>
+                        <div class="feature-text">
+                            <h4>Fresh Quality</h4>
+                            <p>Made to order, delivered hot</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary btn-large">Start Your Order</button>
+                    <button class="btn btn-outline btn-large">View Menu</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="{{HERO_IMAGE}}" alt="{{KITCHEN_NAME}} Food">
+                <div class="delivery-apps">
+                    <h4>Order through:</h4>
+                    <div class="app-icons">
+                        <img src="{{UBER_EATS_LOGO}}" alt="Uber Eats">
+                        <img src="{{DOORDASH_LOGO}}" alt="DoorDash">
+                        <img src="{{GRUBHUB_LOGO}}" alt="Grubhub">
+                        <img src="{{POSTMATES_LOGO}}" alt="Postmates">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Process -->
+    <section class="order-process">
+        <div class="container">
+            <h2>How to Order</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>{{STEP_1_TITLE}}</h3>
+                        <p>{{STEP_1_DESC}}</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>{{STEP_2_TITLE}}</h3>
+                        <p>{{STEP_2_DESC}}</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>{{STEP_3_TITLE}}</h3>
+                        <p>{{STEP_3_DESC}}</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>{{STEP_4_TITLE}}</h3>
+                        <p>{{STEP_4_DESC}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <h2>Our Menu</h2>
+            <div class="menu-categories">
+                <button class="menu-tab active" data-category="popular">Most Popular</button>
+                <button class="menu-tab" data-category="appetizers">Appetizers</button>
+                <button class="menu-tab" data-category="mains">Main Dishes</button>
+                <button class="menu-tab" data-category="combos">Combo Deals</button>
+                <button class="menu-tab" data-category="desserts">Desserts</button>
+            </div>
+            
+            <div class="menu-content">
+                <div class="menu-category active" id="popular">
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <img src="{{POPULAR_1_IMAGE}}" alt="{{POPULAR_1_NAME}}">
+                            <div class="item-details">
+                                <div class="item-header">
+                                    <h3>{{POPULAR_1_NAME}}</h3>
+                                    <span class="item-price">{{POPULAR_1_PRICE}}</span>
+                                </div>
+                                <p>{{POPULAR_1_DESC}}</p>
+                                <div class="item-meta">
+                                    <span class="prep-time">🕒 {{POPULAR_1_PREP_TIME}}</span>
+                                    <span class="rating">⭐ {{POPULAR_1_RATING}}</span>
+                                    <span class="orders">{{POPULAR_1_ORDERS}} orders this week</span>
+                                </div>
+                                <div class="item-actions">
+                                    <button class="btn btn-secondary">Customize</button>
+                                    <button class="btn btn-primary">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="{{POPULAR_2_IMAGE}}" alt="{{POPULAR_2_NAME}}">
+                            <div class="item-details">
+                                <div class="item-header">
+                                    <h3>{{POPULAR_2_NAME}}</h3>
+                                    <span class="item-price">{{POPULAR_2_PRICE}}</span>
+                                </div>
+                                <p>{{POPULAR_2_DESC}}</p>
+                                <div class="item-meta">
+                                    <span class="prep-time">🕒 {{POPULAR_2_PREP_TIME}}</span>
+                                    <span class="rating">⭐ {{POPULAR_2_RATING}}</span>
+                                    <span class="orders">{{POPULAR_2_ORDERS}} orders this week</span>
+                                </div>
+                                <div class="item-actions">
+                                    <button class="btn btn-secondary">Customize</button>
+                                    <button class="btn btn-primary">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="{{POPULAR_3_IMAGE}}" alt="{{POPULAR_3_NAME}}">
+                            <div class="item-details">
+                                <div class="item-header">
+                                    <h3>{{POPULAR_3_NAME}}</h3>
+                                    <span class="item-price">{{POPULAR_3_PRICE}}</span>
+                                </div>
+                                <p>{{POPULAR_3_DESC}}</p>
+                                <div class="item-meta">
+                                    <span class="prep-time">🕒 {{POPULAR_3_PREP_TIME}}</span>
+                                    <span class="rating">⭐ {{POPULAR_3_RATING}}</span>
+                                    <span class="orders">{{POPULAR_3_ORDERS}} orders this week</span>
+                                </div>
+                                <div class="item-actions">
+                                    <button class="btn btn-secondary">Customize</button>
+                                    <button class="btn btn-primary">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-category" id="appetizers">
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <img src="{{APPETIZER_1_IMAGE}}" alt="{{APPETIZER_1_NAME}}">
+                            <div class="item-details">
+                                <div class="item-header">
+                                    <h3>{{APPETIZER_1_NAME}}</h3>
+                                    <span class="item-price">{{APPETIZER_1_PRICE}}</span>
+                                </div>
+                                <p>{{APPETIZER_1_DESC}}</p>
+                                <div class="item-meta">
+                                    <span class="prep-time">🕒 {{APPETIZER_1_PREP_TIME}}</span>
+                                </div>
+                                <div class="item-actions">
+                                    <button class="btn btn-primary">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="{{APPETIZER_2_IMAGE}}" alt="{{APPETIZER_2_NAME}}">
+                            <div class="item-details">
+                                <div class="item-header">
+                                    <h3>{{APPETIZER_2_NAME}}</h3>
+                                    <span class="item-price">{{APPETIZER_2_PRICE}}</span>
+                                </div>
+                                <p>{{APPETIZER_2_DESC}}</p>
+                                <div class="item-meta">
+                                    <span class="prep-time">🕒 {{APPETIZER_2_PREP_TIME}}</span>
+                                </div>
+                                <div class="item-actions">
+                                    <button class="btn btn-primary">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-category" id="mains">
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <img src="{{MAIN_1_IMAGE}}" alt="{{MAIN_1_NAME}}">
+                            <div class="item-details">
+                                <div class="item-header">
+                                    <h3>{{MAIN_1_NAME}}</h3>
+                                    <span class="item-price">{{MAIN_1_PRICE}}</span>
+                                </div>
+                                <p>{{MAIN_1_DESC}}</p>
+                                <div class="item-meta">
+                                    <span class="prep-time">🕒 {{MAIN_1_PREP_TIME}}</span>
+                                    <span class="spice-level">🌶️ {{MAIN_1_SPICE}}</span>
+                                </div>
+                                <div class="item-actions">
+                                    <button class="btn btn-secondary">Customize</button>
+                                    <button class="btn btn-primary">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="{{MAIN_2_IMAGE}}" alt="{{MAIN_2_NAME}}">
+                            <div class="item-details">
+                                <div class="item-header">
+                                    <h3>{{MAIN_2_NAME}}</h3>
+                                    <span class="item-price">{{MAIN_2_PRICE}}</span>
+                                </div>
+                                <p>{{MAIN_2_DESC}}</p>
+                                <div class="item-meta">
+                                    <span class="prep-time">🕒 {{MAIN_2_PREP_TIME}}</span>
+                                </div>
+                                <div class="item-actions">
+                                    <button class="btn btn-secondary">Customize</button>
+                                    <button class="btn btn-primary">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-category" id="combos">
+                    <div class="combo-deals">
+                        <div class="combo-item">
+                            <div class="combo-badge">Best Value</div>
+                            <img src="{{COMBO_1_IMAGE}}" alt="{{COMBO_1_NAME}}">
+                            <div class="combo-details">
+                                <h3>{{COMBO_1_NAME}}</h3>
+                                <p>{{COMBO_1_DESC}}</p>
+                                <div class="combo-includes">
+                                    <h4>Includes:</h4>
+                                    <ul>
+                                        <li>{{COMBO_1_ITEM_1}}</li>
+                                        <li>{{COMBO_1_ITEM_2}}</li>
+                                        <li>{{COMBO_1_ITEM_3}}</li>
+                                    </ul>
+                                </div>
+                                <div class="combo-pricing">
+                                    <span class="original-price">{{COMBO_1_ORIGINAL_PRICE}}</span>
+                                    <span class="combo-price">{{COMBO_1_COMBO_PRICE}}</span>
+                                    <span class="savings">Save {{COMBO_1_SAVINGS}}</span>
+                                </div>
+                                <button class="btn btn-primary">Order Combo</button>
+                            </div>
+                        </div>
+                        <div class="combo-item">
+                            <img src="{{COMBO_2_IMAGE}}" alt="{{COMBO_2_NAME}}">
+                            <div class="combo-details">
+                                <h3>{{COMBO_2_NAME}}</h3>
+                                <p>{{COMBO_2_DESC}}</p>
+                                <div class="combo-includes">
+                                    <h4>Includes:</h4>
+                                    <ul>
+                                        <li>{{COMBO_2_ITEM_1}}</li>
+                                        <li>{{COMBO_2_ITEM_2}}</li>
+                                    </ul>
+                                </div>
+                                <div class="combo-pricing">
+                                    <span class="original-price">{{COMBO_2_ORIGINAL_PRICE}}</span>
+                                    <span class="combo-price">{{COMBO_2_COMBO_PRICE}}</span>
+                                    <span class="savings">Save {{COMBO_2_SAVINGS}}</span>
+                                </div>
+                                <button class="btn btn-primary">Order Combo</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-category" id="desserts">
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <img src="{{DESSERT_1_IMAGE}}" alt="{{DESSERT_1_NAME}}">
+                            <div class="item-details">
+                                <div class="item-header">
+                                    <h3>{{DESSERT_1_NAME}}</h3>
+                                    <span class="item-price">{{DESSERT_1_PRICE}}</span>
+                                </div>
+                                <p>{{DESSERT_1_DESC}}</p>
+                                <div class="item-actions">
+                                    <button class="btn btn-primary">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Delivery Areas -->
+    <section id="delivery" class="delivery-areas">
+        <div class="container">
+            <h2>Delivery Areas</h2>
+            <div class="delivery-content">
+                <div class="delivery-map">
+                    <img src="{{DELIVERY_MAP_IMAGE}}" alt="Delivery Areas Map">
+                </div>
+                <div class="delivery-info">
+                    <h3>We Deliver To:</h3>
+                    <div class="delivery-zones">
+                        <div class="zone">
+                            <h4>{{ZONE_1_NAME}}</h4>
+                            <p class="delivery-fee">{{ZONE_1_FEE}}</p>
+                            <p class="delivery-time">{{ZONE_1_TIME}}</p>
+                            <ul class="zone-areas">
+                                <li>{{ZONE_1_AREA_1}}</li>
+                                <li>{{ZONE_1_AREA_2}}</li>
+                                <li>{{ZONE_1_AREA_3}}</li>
+                            </ul>
+                        </div>
+                        <div class="zone">
+                            <h4>{{ZONE_2_NAME}}</h4>
+                            <p class="delivery-fee">{{ZONE_2_FEE}}</p>
+                            <p class="delivery-time">{{ZONE_2_TIME}}</p>
+                            <ul class="zone-areas">
+                                <li>{{ZONE_2_AREA_1}}</li>
+                                <li>{{ZONE_2_AREA_2}}</li>
+                                <li>{{ZONE_2_AREA_3}}</li>
+                            </ul>
+                        </div>
+                        <div class="zone">
+                            <h4>{{ZONE_3_NAME}}</h4>
+                            <p class="delivery-fee">{{ZONE_3_FEE}}</p>
+                            <p class="delivery-time">{{ZONE_3_TIME}}</p>
+                            <ul class="zone-areas">
+                                <li>{{ZONE_3_AREA_1}}</li>
+                                <li>{{ZONE_3_AREA_2}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="address-checker">
+                        <h4>Check if we deliver to you:</h4>
+                        <form class="address-form">
+                            <input type="text" placeholder="Enter your address" required>
+                            <button type="submit" class="btn btn-secondary">Check</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews -->
+    <section class="reviews">
+        <div class="container">
+            <h2>What Customers Say</h2>
+            <div class="reviews-grid">
+                <div class="review">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <img src="{{REVIEW_1_PHOTO}}" alt="{{REVIEW_1_NAME}}">
+                            <div>
+                                <h4>{{REVIEW_1_NAME}}</h4>
+                                <div class="rating">{{REVIEW_1_RATING}}</div>
+                            </div>
+                        </div>
+                        <span class="review-date">{{REVIEW_1_DATE}}</span>
+                    </div>
+                    <p>"{{REVIEW_1_TEXT}}"</p>
+                    <div class="review-platform">via {{REVIEW_1_PLATFORM}}</div>
+                </div>
+                <div class="review">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <img src="{{REVIEW_2_PHOTO}}" alt="{{REVIEW_2_NAME}}">
+                            <div>
+                                <h4>{{REVIEW_2_NAME}}</h4>
+                                <div class="rating">{{REVIEW_2_RATING}}</div>
+                            </div>
+                        </div>
+                        <span class="review-date">{{REVIEW_2_DATE}}</span>
+                    </div>
+                    <p>"{{REVIEW_2_TEXT}}"</p>
+                    <div class="review-platform">via {{REVIEW_2_PLATFORM}}</div>
+                </div>
+                <div class="review">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <img src="{{REVIEW_3_PHOTO}}" alt="{{REVIEW_3_NAME}}">
+                            <div>
+                                <h4>{{REVIEW_3_NAME}}</h4>
+                                <div class="rating">{{REVIEW_3_RATING}}</div>
+                            </div>
+                        </div>
+                        <span class="review-date">{{REVIEW_3_DATE}}</span>
+                    </div>
+                    <p>"{{REVIEW_3_TEXT}}"</p>
+                    <div class="review-platform">via {{REVIEW_3_PLATFORM}}</div>
+                </div>
+            </div>
+            <div class="overall-rating">
+                <div class="rating-summary">
+                    <span class="rating-number">{{OVERALL_RATING}}</span>
+                    <div class="rating-stars">{{OVERALL_RATING_STARS}}</div>
+                    <span class="rating-count">Based on {{TOTAL_REVIEWS}} reviews</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>{{ABOUT_TITLE}}</h2>
+                    <p>{{ABOUT_DESCRIPTION}}</p>
+                    <div class="kitchen-stats">
+                        <div class="stat">
+                            <span class="stat-number">{{STAT_1_NUMBER}}</span>
+                            <span class="stat-label">{{STAT_1_LABEL}}</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">{{STAT_2_NUMBER}}</span>
+                            <span class="stat-label">{{STAT_2_LABEL}}</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">{{STAT_3_NUMBER}}</span>
+                            <span class="stat-label">{{STAT_3_LABEL}}</span>
+                        </div>
+                    </div>
+                    <div class="kitchen-certifications">
+                        <h3>Quality Certifications</h3>
+                        <div class="cert-badges">
+                            <img src="{{CERT_1_BADGE}}" alt="{{CERT_1_NAME}}">
+                            <img src="{{CERT_2_BADGE}}" alt="{{CERT_2_NAME}}">
+                            <img src="{{CERT_3_BADGE}}" alt="{{CERT_3_NAME}}">
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="{{KITCHEN_IMAGE}}" alt="{{KITCHEN_NAME}} Kitchen">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Order -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Order Information</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <h3>Phone Orders</h3>
+                        <p><a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+                        <p class="info-note">Call to place your order</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>Operating Hours</h3>
+                        <div class="hours-list">
+                            <div class="hours-day">
+                                <span>Monday - Thursday</span>
+                                <span>{{WEEKDAY_HOURS}}</span>
+                            </div>
+                            <div class="hours-day">
+                                <span>Friday - Saturday</span>
+                                <span>{{WEEKEND_HOURS}}</span>
+                            </div>
+                            <div class="hours-day">
+                                <span>Sunday</span>
+                                <span>{{SUNDAY_HOURS}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <h3>Kitchen Location</h3>
+                        <p>{{KITCHEN_ADDRESS}}</p>
+                        <p class="info-note">For pickup orders only</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>Email</h3>
+                        <p><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
+                        <p class="info-note">For inquiries and feedback</p>
+                    </div>
+                </div>
+                <div class="order-methods">
+                    <h3>Ways to Order</h3>
+                    <div class="order-options">
+                        <div class="order-option">
+                            <div class="option-icon">📱</div>
+                            <h4>Online Ordering</h4>
+                            <p>Order directly through our website</p>
+                            <button class="btn btn-primary">Order Now</button>
+                        </div>
+                        <div class="order-option">
+                            <div class="option-icon">📞</div>
+                            <h4>Phone Orders</h4>
+                            <p>Call us to place your order</p>
+                            <button class="btn btn-secondary">Call {{PHONE}}</button>
+                        </div>
+                        <div class="order-option">
+                            <div class="option-icon">🚚</div>
+                            <h4>Delivery Apps</h4>
+                            <p>Order through third-party apps</p>
+                            <div class="app-links">
+                                <a href="{{UBER_EATS_URL}}">Uber Eats</a>
+                                <a href="{{DOORDASH_URL}}">DoorDash</a>
+                                <a href="{{GRUBHUB_URL}}">Grubhub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>{{KITCHEN_NAME}}</h3>
+                    <p>{{FOOTER_DESCRIPTION}}</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Order</h4>
+                    <ul>
+                        <li><a href="#menu">Full Menu</a></li>
+                        <li><a href="#delivery">Delivery Areas</a></li>
+                        <li><a href="#">Track Order</a></li>
+                        <li><a href="#">Nutrition Info</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                        <li><a href="#">Allergen Info</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}">Instagram</a>
+                        <a href="{{TWITTER_URL}}">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{KITCHEN_NAME}}. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Delivery Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

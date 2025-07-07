@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Farm-to-Table Sustainable Dining</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;500;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="farm-to-table-theme">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+                <div class="logo-text">
+                    <h1>{{RESTAURANT_NAME}}</h1>
+                    <span class="tagline">Farm Fresh • Locally Sourced • Sustainably Grown</span>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#harvest">Today's Harvest</a></li>
+                <li><a href="#menu">Seasonal Menu</a></li>
+                <li><a href="#farms">Our Farms</a></li>
+                <li><a href="#sustainability">Sustainability</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#reservations">Reservations</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#reservations" class="btn btn-primary">Reserve Table</a>
+                <a href="tel:{{PHONE}}" class="phone-link">{{PHONE}}</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <img src="{{HERO_BACKGROUND_IMAGE}}" alt="Farm Field">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h2>From Farm to Your Table</h2>
+            <p class="hero-subtitle">{{HERO_DESCRIPTION}}</p>
+            <div class="hero-features">
+                <div class="feature">
+                    <span class="feature-icon">🌱</span>
+                    <span>{{MILES_RADIUS}} Mile Radius</span>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">🚜</span>
+                    <span>{{PARTNER_FARMS}}+ Local Farms</span>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">♻️</span>
+                    <span>Zero Waste Kitchen</span>
+                </div>
+            </div>
+            <div class="hero-buttons">
+                <a href="#harvest" class="btn btn-hero-primary">Today's Harvest</a>
+                <a href="#menu" class="btn btn-hero-secondary">Seasonal Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Daily Harvest Banner -->
+    <section class="daily-harvest">
+        <div class="container">
+            <div class="harvest-content">
+                <div class="harvest-text">
+                    <h3>Fresh Harvest Today</h3>
+                    <h4>{{TODAYS_HARVEST_SPECIAL}}</h4>
+                    <p>{{HARVEST_DESCRIPTION}}</p>
+                </div>
+                <div class="harvest-details">
+                    <div class="harvest-source">
+                        <span class="farm-name">{{HARVEST_FARM_NAME}}</span>
+                        <span class="farm-distance">{{HARVEST_FARM_DISTANCE}} miles away</span>
+                    </div>
+                    <div class="harvest-time">
+                        <span class="time">{{HARVEST_TIME}}</span>
+                        <span class="label">Picked this morning</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Today's Fresh Selections -->
+    <section id="harvest" class="fresh-selections">
+        <div class="container">
+            <div class="selections-header">
+                <h2>Today's Farm Fresh Selections</h2>
+                <p>{{FRESH_SELECTIONS_DESCRIPTION}}</p>
+            </div>
+            
+            <div class="selections-grid">
+                <!-- Vegetables -->
+                <div class="selection-category">
+                    <div class="category-image">
+                        <img src="{{VEGETABLES_IMAGE}}" alt="Fresh Vegetables">
+                    </div>
+                    <div class="category-content">
+                        <h3>Garden Vegetables</h3>
+                        <div class="fresh-items">
+                            <div class="fresh-item">
+                                <span class="item-name">{{VEGETABLE_1_NAME}}</span>
+                                <span class="source">{{VEGETABLE_1_FARM}}</span>
+                            </div>
+                            <div class="fresh-item">
+                                <span class="item-name">{{VEGETABLE_2_NAME}}</span>
+                                <span class="source">{{VEGETABLE_2_FARM}}</span>
+                            </div>
+                            <div class="fresh-item">
+                                <span class="item-name">{{VEGETABLE_3_NAME}}</span>
+                                <span class="source">{{VEGETABLE_3_FARM}}</span>
+                            </div>
+                            <div class="fresh-item">
+                                <span class="item-name">{{VEGETABLE_4_NAME}}</span>
+                                <span class="source">{{VEGETABLE_4_FARM}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proteins -->
+                <div class="selection-category">
+                    <div class="category-image">
+                        <img src="{{PROTEINS_IMAGE}}" alt="Farm Proteins">
+                    </div>
+                    <div class="category-content">
+                        <h3>Farm Proteins</h3>
+                        <div class="fresh-items">
+                            <div class="fresh-item">
+                                <span class="item-name">{{PROTEIN_1_NAME}}</span>
+                                <span class="source">{{PROTEIN_1_FARM}}</span>
+                            </div>
+                            <div class="fresh-item">
+                                <span class="item-name">{{PROTEIN_2_NAME}}</span>
+                                <span class="source">{{PROTEIN_2_FARM}}</span>
+                            </div>
+                            <div class="fresh-item">
+                                <span class="item-name">{{PROTEIN_3_NAME}}</span>
+                                <span class="source">{{PROTEIN_3_FARM}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dairy & Eggs -->
+                <div class="selection-category">
+                    <div class="category-image">
+                        <img src="{{DAIRY_IMAGE}}" alt="Farm Dairy">
+                    </div>
+                    <div class="category-content">
+                        <h3>Dairy & Eggs</h3>
+                        <div class="fresh-items">
+                            <div class="fresh-item">
+                                <span class="item-name">{{DAIRY_1_NAME}}</span>
+                                <span class="source">{{DAIRY_1_FARM}}</span>
+                            </div>
+                            <div class="fresh-item">
+                                <span class="item-name">{{DAIRY_2_NAME}}</span>
+                                <span class="source">{{DAIRY_2_FARM}}</span>
+                            </div>
+                            <div class="fresh-item">
+                                <span class="item-name">{{DAIRY_3_NAME}}</span>
+                                <span class="source">{{DAIRY_3_FARM}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fruits & Herbs -->
+                <div class="selection-category">
+                    <div class="category-image">
+                        <img src="{{FRUITS_HERBS_IMAGE}}" alt="Fresh Fruits and Herbs">
+                    </div>
+                    <div class="category-content">
+                        <h3>Fruits & Herbs</h3>
+                        <div class="fresh-items">
+                            <div class="fresh-item">
+                                <span class="item-name">{{FRUIT_1_NAME}}</span>
+                                <span class="source">{{FRUIT_1_FARM}}</span>
+                            </div>
+                            <div class="fresh-item">
+                                <span class="item-name">{{HERB_1_NAME}}</span>
+                                <span class="source">{{HERB_1_FARM}}</span>
+                            </div>
+                            <div class="fresh-item">
+                                <span class="item-name">{{HERB_2_NAME}}</span>
+                                <span class="source">{{HERB_2_FARM}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seasonal Menu -->
+    <section id="menu" class="seasonal-menu">
+        <div class="container">
+            <div class="menu-header">
+                <h2>{{CURRENT_SEASON}} Seasonal Menu</h2>
+                <p>{{SEASONAL_MENU_DESCRIPTION}}</p>
+                <div class="menu-update">
+                    <span>Menu updated {{MENU_UPDATE_DATE}} with fresh seasonal ingredients</span>
+                </div>
+            </div>
+            
+            <div class="menu-sections">
+                <!-- Starters -->
+                <div class="menu-section">
+                    <h3>Garden Fresh Starters</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>{{STARTER_1_NAME}}</h4>
+                                <span class="item-price">{{STARTER_1_PRICE}}</span>
+                            </div>
+                            <p class="item-description">{{STARTER_1_DESCRIPTION}}</p>
+                            <div class="item-source">
+                                <span class="source-label">Featuring:</span>
+                                <span class="source-detail">{{STARTER_1_SOURCE}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>{{STARTER_2_NAME}}</h4>
+                                <span class="item-price">{{STARTER_2_PRICE}}</span>
+                            </div>
+                            <p class="item-description">{{STARTER_2_DESCRIPTION}}</p>
+                            <div class="item-source">
+                                <span class="source-label">Featuring:</span>
+                                <span class="source-detail">{{STARTER_2_SOURCE}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>{{STARTER_3_NAME}}</h4>
+                                <span class="item-price">{{STARTER_3_PRICE}}</span>
+                            </div>
+                            <p class="item-description">{{STARTER_3_DESCRIPTION}}</p>
+                            <div class="item-source">
+                                <span class="source-label">Featuring:</span>
+                                <span class="source-detail">{{STARTER_3_SOURCE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Courses -->
+                <div class="menu-section">
+                    <h3>Farm-to-Table Mains</h3>
+                    <div class="menu-items">
+                        <div class="menu-item featured">
+                            <div class="item-header">
+                                <h4>{{MAIN_1_NAME}}</h4>
+                                <span class="item-price">{{MAIN_1_PRICE}}</span>
+                            </div>
+                            <p class="item-description">{{MAIN_1_DESCRIPTION}}</p>
+                            <div class="item-source">
+                                <span class="source-label">Featuring:</span>
+                                <span class="source-detail">{{MAIN_1_SOURCE}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>{{MAIN_2_NAME}}</h4>
+                                <span class="item-price">{{MAIN_2_PRICE}}</span>
+                            </div>
+                            <p class="item-description">{{MAIN_2_DESCRIPTION}}</p>
+                            <div class="item-source">
+                                <span class="source-label">Featuring:</span>
+                                <span class="source-detail">{{MAIN_2_SOURCE}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>{{MAIN_3_NAME}}</h4>
+                                <span class="item-price">{{MAIN_3_PRICE}}</span>
+                            </div>
+                            <p class="item-description">{{MAIN_3_DESCRIPTION}}</p>
+                            <div class="item-source">
+                                <span class="source-label">Featuring:</span>
+                                <span class="source-detail">{{MAIN_3_SOURCE}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>{{MAIN_4_NAME}}</h4>
+                                <span class="item-price">{{MAIN_4_PRICE}}</span>
+                            </div>
+                            <p class="item-description">{{MAIN_4_DESCRIPTION}}</p>
+                            <div class="item-source">
+                                <span class="source-label">Featuring:</span>
+                                <span class="source-detail">{{MAIN_4_SOURCE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Seasonal Desserts -->
+                <div class="menu-section">
+                    <h3>Seasonal Sweet Endings</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>{{DESSERT_1_NAME}}</h4>
+                                <span class="item-price">{{DESSERT_1_PRICE}}</span>
+                            </div>
+                            <p class="item-description">{{DESSERT_1_DESCRIPTION}}</p>
+                            <div class="item-source">
+                                <span class="source-label">Featuring:</span>
+                                <span class="source-detail">{{DESSERT_1_SOURCE}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>{{DESSERT_2_NAME}}</h4>
+                                <span class="item-price">{{DESSERT_2_PRICE}}</span>
+                            </div>
+                            <p class="item-description">{{DESSERT_2_DESCRIPTION}}</p>
+                            <div class="item-source">
+                                <span class="source-label">Featuring:</span>
+                                <span class="source-detail">{{DESSERT_2_SOURCE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partner Farms -->
+    <section id="farms" class="partner-farms">
+        <div class="container">
+            <div class="farms-header">
+                <h2>Our Partner Farms</h2>
+                <p>{{PARTNER_FARMS_DESCRIPTION}}</p>
+            </div>
+            
+            <div class="farms-grid">
+                <div class="farm-card">
+                    <div class="farm-image">
+                        <img src="{{FARM_1_IMAGE}}" alt="{{FARM_1_NAME}}">
+                    </div>
+                    <div class="farm-content">
+                        <h3>{{FARM_1_NAME}}</h3>
+                        <div class="farm-location">
+                            <span class="distance">{{FARM_1_DISTANCE}} miles away</span>
+                            <span class="location">{{FARM_1_LOCATION}}</span>
+                        </div>
+                        <p>{{FARM_1_DESCRIPTION}}</p>
+                        <div class="farm-specialties">
+                            <h4>Specializes in:</h4>
+                            <div class="specialties">
+                                <span class="specialty">{{FARM_1_SPECIALTY_1}}</span>
+                                <span class="specialty">{{FARM_1_SPECIALTY_2}}</span>
+                                <span class="specialty">{{FARM_1_SPECIALTY_3}}</span>
+                            </div>
+                        </div>
+                        <div class="farm-practices">
+                            <span class="practice organic">{{FARM_1_PRACTICE_1}}</span>
+                            <span class="practice sustainable">{{FARM_1_PRACTICE_2}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="farm-card">
+                    <div class="farm-image">
+                        <img src="{{FARM_2_IMAGE}}" alt="{{FARM_2_NAME}}">
+                    </div>
+                    <div class="farm-content">
+                        <h3>{{FARM_2_NAME}}</h3>
+                        <div class="farm-location">
+                            <span class="distance">{{FARM_2_DISTANCE}} miles away</span>
+                            <span class="location">{{FARM_2_LOCATION}}</span>
+                        </div>
+                        <p>{{FARM_2_DESCRIPTION}}</p>
+                        <div class="farm-specialties">
+                            <h4>Specializes in:</h4>
+                            <div class="specialties">
+                                <span class="specialty">{{FARM_2_SPECIALTY_1}}</span>
+                                <span class="specialty">{{FARM_2_SPECIALTY_2}}</span>
+                                <span class="specialty">{{FARM_2_SPECIALTY_3}}</span>
+                            </div>
+                        </div>
+                        <div class="farm-practices">
+                            <span class="practice grass-fed">{{FARM_2_PRACTICE_1}}</span>
+                            <span class="practice humane">{{FARM_2_PRACTICE_2}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="farm-card">
+                    <div class="farm-image">
+                        <img src="{{FARM_3_IMAGE}}" alt="{{FARM_3_NAME}}">
+                    </div>
+                    <div class="farm-content">
+                        <h3>{{FARM_3_NAME}}</h3>
+                        <div class="farm-location">
+                            <span class="distance">{{FARM_3_DISTANCE}} miles away</span>
+                            <span class="location">{{FARM_3_LOCATION}}</span>
+                        </div>
+                        <p>{{FARM_3_DESCRIPTION}}</p>
+                        <div class="farm-specialties">
+                            <h4>Specializes in:</h4>
+                            <div class="specialties">
+                                <span class="specialty">{{FARM_3_SPECIALTY_1}}</span>
+                                <span class="specialty">{{FARM_3_SPECIALTY_2}}</span>
+                                <span class="specialty">{{FARM_3_SPECIALTY_3}}</span>
+                            </div>
+                        </div>
+                        <div class="farm-practices">
+                            <span class="practice artisan">{{FARM_3_PRACTICE_1}}</span>
+                            <span class="practice traditional">{{FARM_3_PRACTICE_2}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sustainability Practices -->
+    <section id="sustainability" class="sustainability">
+        <div class="container">
+            <div class="sustainability-header">
+                <h2>Our Sustainability Commitment</h2>
+                <p>{{SUSTAINABILITY_DESCRIPTION}}</p>
+            </div>
+            
+            <div class="sustainability-practices">
+                <div class="practice-category">
+                    <div class="category-icon">♻️</div>
+                    <h3>Zero Waste Kitchen</h3>
+                    <p>{{ZERO_WASTE_DESCRIPTION}}</p>
+                    <div class="practice-stats">
+                        <div class="stat">
+                            <span class="number">{{WASTE_REDUCTION_PERCENT}}%</span>
+                            <span class="label">Waste Reduction</span>
+                        </div>
+                        <div class="stat">
+                            <span class="number">{{COMPOST_POUNDS}}</span>
+                            <span class="label">Pounds Composted Monthly</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="practice-category">
+                    <div class="category-icon">🌱</div>
+                    <h3>Regenerative Agriculture</h3>
+                    <p>{{REGENERATIVE_DESCRIPTION}}</p>
+                    <div class="practice-stats">
+                        <div class="stat">
+                            <span class="number">{{CARBON_OFFSET}}</span>
+                            <span class="label">Carbon Neutral Kitchen</span>
+                        </div>
+                        <div class="stat">
+                            <span class="number">{{SOIL_HEALTH_PERCENT}}%</span>
+                            <span class="label">Soil Health Improvement</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="practice-category">
+                    <div class="category-icon">💚</div>
+                    <h3>Local Community</h3>
+                    <p>{{COMMUNITY_DESCRIPTION}}</p>
+                    <div class="practice-stats">
+                        <div class="stat">
+                            <span class="number">{{LOCAL_SPEND_PERCENT}}%</span>
+                            <span class="label">Local Spending</span>
+                        </div>
+                        <div class="stat">
+                            <span class="number">{{JOBS_SUPPORTED}}</span>
+                            <span class="label">Local Jobs Supported</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="practice-category">
+                    <div class="category-icon">💧</div>
+                    <h3>Water Conservation</h3>
+                    <p>{{WATER_CONSERVATION_DESCRIPTION}}</p>
+                    <div class="practice-stats">
+                        <div class="stat">
+                            <span class="number">{{WATER_SAVINGS_PERCENT}}%</span>
+                            <span class="label">Water Usage Reduction</span>
+                        </div>
+                        <div class="stat">
+                            <span class="number">{{RAINWATER_GALLONS}}</span>
+                            <span class="label">Gallons Rainwater Harvested</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>{{ABOUT_TITLE}}</h2>
+                    <p>{{ABOUT_DESCRIPTION_1}}</p>
+                    <p>{{ABOUT_DESCRIPTION_2}}</p>
+                    <div class="chef-philosophy">
+                        <h3>Chef's Philosophy</h3>
+                        <blockquote>
+                            "{{CHEF_PHILOSOPHY_QUOTE}}"
+                        </blockquote>
+                        <div class="chef-signature">
+                            <img src="{{CHEF_IMAGE}}" alt="{{CHEF_NAME}}">
+                            <div class="signature-details">
+                                <h4>{{CHEF_NAME}}</h4>
+                                <p>Executive Chef & Owner</p>
+                                <span class="chef-credentials">{{CHEF_CREDENTIALS}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="{{ABOUT_IMAGE}}" alt="Restaurant Kitchen">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seasonal Calendar -->
+    <section class="seasonal-calendar">
+        <div class="container">
+            <h2>What's in Season</h2>
+            <div class="calendar-tabs">
+                <button class="tab-button active" data-season="spring">Spring</button>
+                <button class="tab-button" data-season="summer">Summer</button>
+                <button class="tab-button" data-season="fall">Fall</button>
+                <button class="tab-button" data-season="winter">Winter</button>
+            </div>
+            <div class="calendar-content">
+                <div class="season-content active" data-season="spring">
+                    <div class="season-items">
+                        <span class="season-item">{{SPRING_ITEM_1}}</span>
+                        <span class="season-item">{{SPRING_ITEM_2}}</span>
+                        <span class="season-item">{{SPRING_ITEM_3}}</span>
+                        <span class="season-item">{{SPRING_ITEM_4}}</span>
+                        <span class="season-item">{{SPRING_ITEM_5}}</span>
+                        <span class="season-item">{{SPRING_ITEM_6}}</span>
+                    </div>
+                </div>
+                <div class="season-content" data-season="summer">
+                    <div class="season-items">
+                        <span class="season-item">{{SUMMER_ITEM_1}}</span>
+                        <span class="season-item">{{SUMMER_ITEM_2}}</span>
+                        <span class="season-item">{{SUMMER_ITEM_3}}</span>
+                        <span class="season-item">{{SUMMER_ITEM_4}}</span>
+                        <span class="season-item">{{SUMMER_ITEM_5}}</span>
+                        <span class="season-item">{{SUMMER_ITEM_6}}</span>
+                    </div>
+                </div>
+                <div class="season-content" data-season="fall">
+                    <div class="season-items">
+                        <span class="season-item">{{FALL_ITEM_1}}</span>
+                        <span class="season-item">{{FALL_ITEM_2}}</span>
+                        <span class="season-item">{{FALL_ITEM_3}}</span>
+                        <span class="season-item">{{FALL_ITEM_4}}</span>
+                        <span class="season-item">{{FALL_ITEM_5}}</span>
+                        <span class="season-item">{{FALL_ITEM_6}}</span>
+                    </div>
+                </div>
+                <div class="season-content" data-season="winter">
+                    <div class="season-items">
+                        <span class="season-item">{{WINTER_ITEM_1}}</span>
+                        <span class="season-item">{{WINTER_ITEM_2}}</span>
+                        <span class="season-item">{{WINTER_ITEM_3}}</span>
+                        <span class="season-item">{{WINTER_ITEM_4}}</span>
+                        <span class="season-item">{{WINTER_ITEM_5}}</span>
+                        <span class="season-item">{{WINTER_ITEM_6}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Reservations -->
+    <section id="reservations" class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Visit Our Farm-to-Table Restaurant</h2>
+                    <div class="contact-details">
+                        <div class="detail">
+                            <h4>Location</h4>
+                            <p>{{ADDRESS}}</p>
+                        </div>
+                        <div class="detail">
+                            <h4>Phone</h4>
+                            <p><a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+                        </div>
+                        <div class="detail">
+                            <h4>Hours</h4>
+                            <div class="hours">
+                                <p>{{DINNER_HOURS}}</p>
+                                <p>{{WEEKEND_BRUNCH_HOURS}}</p>
+                                <p>Closed {{CLOSED_DAYS}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="farm-visit-info">
+                        <h4>Farm Tours Available</h4>
+                        <p>{{FARM_TOUR_DESCRIPTION}}</p>
+                        <p><strong>{{FARM_TOUR_SCHEDULE}}</strong></p>
+                    </div>
+                </div>
+                <div class="reservation-form">
+                    <h3>Reserve Your Table</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Phone Number" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="date" required>
+                            </div>
+                            <div class="form-group">
+                                <select required>
+                                    <option value="">Select Time</option>
+                                    <option value="17:00">5:00 PM</option>
+                                    <option value="17:30">5:30 PM</option>
+                                    <option value="18:00">6:00 PM</option>
+                                    <option value="18:30">6:30 PM</option>
+                                    <option value="19:00">7:00 PM</option>
+                                    <option value="19:30">7:30 PM</option>
+                                    <option value="20:00">8:00 PM</option>
+                                    <option value="20:30">8:30 PM</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <select required>
+                                <option value="">Party Size</option>
+                                <option value="2">2 people</option>
+                                <option value="3">3 people</option>
+                                <option value="4">4 people</option>
+                                <option value="5">5 people</option>
+                                <option value="6">6 people</option>
+                                <option value="8">8 people</option>
+                                <option value="10+">Large party (10+)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Dietary restrictions, allergies, special occasions, or farm tour interest"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Reserve Table</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>{{RESTAURANT_NAME}}</h3>
+                    <p>{{FOOTER_DESCRIPTION}}</p>
+                    <div class="certifications">
+                        <span class="cert">{{CERTIFICATION_1}}</span>
+                        <span class="cert">{{CERTIFICATION_2}}</span>
+                        <span class="cert">{{CERTIFICATION_3}}</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}" aria-label="Facebook">📘</a>
+                        <a href="{{INSTAGRAM_URL}}" aria-label="Instagram">📷</a>
+                        <a href="{{TWITTER_URL}}" aria-label="Twitter">🐦</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#menu">Seasonal Menu</a></li>
+                        <li><a href="#farms">Our Farms</a></li>
+                        <li><a href="#sustainability">Sustainability</a></li>
+                        <li><a href="#reservations">Reservations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>{{ADDRESS}}</p>
+                    <p>{{PHONE}}</p>
+                    <p>{{EMAIL}}</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Hours</h4>
+                    <p>{{DINNER_HOURS}}</p>
+                    <p>{{WEEKEND_BRUNCH_HOURS}}</p>
+                    <p>Farm Tours: {{FARM_TOUR_SCHEDULE}}</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; {{CURRENT_YEAR}} {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Nourish Your Soul</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body class="color-scheme-wellness">
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}}">
+            </div>
+            <nav class="nav">
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#bowls">Bowls</a></li>
+                    <li><a href="#wellness">Wellness</a></li>
+                    <li><a href="#ingredients">Ingredients</a></li>
+                    <li><a href="#locations">Locations</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="header-order">
+                    <a href="#order" class="btn btn-primary">Order Now</a>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Nourish Your Soul</h1>
+                    <p class="hero-subtitle">Fresh • Healthy • Delicious</p>
+                    <p class="hero-description">Vibrant bowls packed with superfoods, organic ingredients, and love. Every bite is designed to fuel your body and brighten your day.</p>
+                    <div class="hero-buttons">
+                        <a href="#order" class="btn btn-primary btn-large">Order Your Bowl</a>
+                        <a href="#bowls" class="btn btn-secondary btn-large">Explore Menu</a>
+                    </div>
+                    <div class="hero-wellness-stats">
+                        <div class="wellness-stat">
+                            <span class="stat-number">{{CALORIES_RANGE}}</span>
+                            <span class="stat-label">Calories</span>
+                        </div>
+                        <div class="wellness-stat">
+                            <span class="stat-number">{{PROTEIN_RANGE}}g</span>
+                            <span class="stat-label">Protein</span>
+                        </div>
+                        <div class="wellness-stat">
+                            <span class="stat-number">{{INGREDIENTS_COUNT}}+</span>
+                            <span class="stat-label">Superfoods</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-bowl-stack">
+                        <img src="{{HERO_BOWL_IMAGE}}" alt="Signature wellness bowl" class="hero-bowl main">
+                        <div class="floating-ingredients">
+                            <img src="{{AVOCADO_IMAGE}}" alt="Avocado" class="ingredient floating-1">
+                            <img src="{{BERRIES_IMAGE}}" alt="Berries" class="ingredient floating-2">
+                            <img src="{{QUINOA_IMAGE}}" alt="Quinoa" class="ingredient floating-3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="wellness-promise">
+            <div class="container">
+                <div class="promise-content">
+                    <h2>Our Wellness Promise</h2>
+                    <div class="promise-pillars">
+                        <div class="pillar">
+                            <div class="pillar-icon">🌱</div>
+                            <h3>Organic First</h3>
+                            <p>{{ORGANIC_PERCENTAGE}}% organic ingredients sourced from local farms</p>
+                        </div>
+                        <div class="pillar">
+                            <div class="pillar-icon">💚</div>
+                            <h3>No Compromises</h3>
+                            <p>No artificial preservatives, additives, or processed sugars</p>
+                        </div>
+                        <div class="pillar">
+                            <div class="pillar-icon">🌟</div>
+                            <h3>Nutrient Dense</h3>
+                            <p>Every bowl packed with vitamins, minerals, and superfoods</p>
+                        </div>
+                        <div class="pillar">
+                            <div class="pillar-icon">🎯</div>
+                            <h3>Goal Focused</h3>
+                            <p>Bowls designed for energy, recovery, weight management, and more</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="bowls" class="bowls-menu">
+            <div class="container">
+                <h2 class="section-title">Signature Wellness Bowls</h2>
+                <p class="section-subtitle">Each bowl is carefully crafted to support your wellness goals</p>
+
+                <div class="bowl-categories">
+                    <button class="category-btn active" data-category="signature">Signature Bowls</button>
+                    <button class="category-btn" data-category="energy">Energy Boost</button>
+                    <button class="category-btn" data-category="recovery">Recovery</button>
+                    <button class="category-btn" data-category="detox">Detox</button>
+                    <button class="category-btn" data-category="build">Build Your Own</button>
+                </div>
+
+                <div class="bowls-grid" data-category="signature">
+                    <div class="bowl-item featured">
+                        <div class="bowl-image">
+                            <img src="{{GLOW_BOWL_IMAGE}}" alt="Glow Bowl">
+                            <div class="bowl-badge">🌟 Best Seller</div>
+                        </div>
+                        <div class="bowl-content">
+                            <h3>The Glow Bowl</h3>
+                            <p class="bowl-purpose">✨ Radiant Skin & Energy</p>
+                            <p class="bowl-description">Quinoa, roasted sweet potato, avocado, kale, pomegranate seeds, hemp hearts with tahini glow dressing</p>
+                            <div class="nutrition-highlights">
+                                <span class="nutrition-item">{{GLOW_CALORIES}} cal</span>
+                                <span class="nutrition-item">{{GLOW_PROTEIN}}g protein</span>
+                                <span class="nutrition-item">{{GLOW_FIBER}}g fiber</span>
+                            </div>
+                            <div class="dietary-badges">
+                                <span class="badge vegan">Vegan</span>
+                                <span class="badge gluten-free">GF</span>
+                                <span class="badge high-protein">High Protein</span>
+                            </div>
+                            <div class="bowl-footer">
+                                <span class="price">${{GLOW_BOWL_PRICE}}</span>
+                                <button class="btn btn-small btn-primary">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bowl-item">
+                        <div class="bowl-image">
+                            <img src="{{POWER_BOWL_IMAGE}}" alt="Power Bowl">
+                        </div>
+                        <div class="bowl-content">
+                            <h3>The Power Bowl</h3>
+                            <p class="bowl-purpose">💪 Muscle Building</p>
+                            <p class="bowl-description">Brown rice, grilled chicken, black beans, corn, salsa verde, avocado with cilantro lime dressing</p>
+                            <div class="nutrition-highlights">
+                                <span class="nutrition-item">{{POWER_CALORIES}} cal</span>
+                                <span class="nutrition-item">{{POWER_PROTEIN}}g protein</span>
+                                <span class="nutrition-item">{{POWER_CARBS}}g carbs</span>
+                            </div>
+                            <div class="dietary-badges">
+                                <span class="badge high-protein">High Protein</span>
+                                <span class="badge gluten-free">GF</span>
+                            </div>
+                            <div class="bowl-footer">
+                                <span class="price">${{POWER_BOWL_PRICE}}</span>
+                                <button class="btn btn-small btn-primary">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bowl-item">
+                        <div class="bowl-image">
+                            <img src="{{DETOX_BOWL_IMAGE}}" alt="Green Goddess Bowl">
+                        </div>
+                        <div class="bowl-content">
+                            <h3>Green Goddess Bowl</h3>
+                            <p class="bowl-purpose">🌿 Detox & Cleanse</p>
+                            <p class="bowl-description">Spiralized zucchini, spinach, cucumber, celery, green apple, sprouts with green goddess dressing</p>
+                            <div class="nutrition-highlights">
+                                <span class="nutrition-item">{{DETOX_CALORIES}} cal</span>
+                                <span class="nutrition-item">{{DETOX_VITAMINS}} vitamins</span>
+                                <span class="nutrition-item">{{DETOX_ANTIOXIDANTS}} antioxidants</span>
+                            </div>
+                            <div class="dietary-badges">
+                                <span class="badge vegan">Vegan</span>
+                                <span class="badge raw">Raw</span>
+                                <span class="badge low-calorie">Low Cal</span>
+                            </div>
+                            <div class="bowl-footer">
+                                <span class="price">${{DETOX_BOWL_PRICE}}</span>
+                                <button class="btn btn-small btn-primary">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bowl-item">
+                        <div class="bowl-image">
+                            <img src="{{RECOVERY_BOWL_IMAGE}}" alt="Recovery Bowl">
+                        </div>
+                        <div class="bowl-content">
+                            <h3>Recovery Bowl</h3>
+                            <p class="bowl-purpose">🏃‍♀️ Post-Workout</p>
+                            <p class="bowl-description">Quinoa, grilled salmon, edamame, carrots, beets, walnuts with miso ginger dressing</p>
+                            <div class="nutrition-highlights">
+                                <span class="nutrition-item">{{RECOVERY_CALORIES}} cal</span>
+                                <span class="nutrition-item">{{RECOVERY_PROTEIN}}g protein</span>
+                                <span class="nutrition-item">{{RECOVERY_OMEGA}} omega-3</span>
+                            </div>
+                            <div class="dietary-badges">
+                                <span class="badge high-protein">High Protein</span>
+                                <span class="badge omega">Omega-3</span>
+                                <span class="badge anti-inflammatory">Anti-Inflammatory</span>
+                            </div>
+                            <div class="bowl-footer">
+                                <span class="price">${{RECOVERY_BOWL_PRICE}}</span>
+                                <button class="btn btn-small btn-primary">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bowls-grid" data-category="build" style="display: none;">
+                    <div class="build-your-bowl">
+                        <h3>Build Your Perfect Bowl</h3>
+                        <div class="bowl-builder">
+                            <div class="builder-section">
+                                <h4>Step 1: Choose Your Base</h4>
+                                <div class="builder-options">
+                                    <label class="builder-option">
+                                        <input type="radio" name="base" value="quinoa">
+                                        <span>Quinoa <span class="extra-info">+5g protein</span></span>
+                                    </label>
+                                    <label class="builder-option">
+                                        <input type="radio" name="base" value="brown-rice">
+                                        <span>Brown Rice <span class="extra-info">+fiber</span></span>
+                                    </label>
+                                    <label class="builder-option">
+                                        <input type="radio" name="base" value="greens">
+                                        <span>Mixed Greens <span class="extra-info">low cal</span></span>
+                                    </label>
+                                    <label class="builder-option">
+                                        <input type="radio" name="base" value="cauliflower">
+                                        <span>Cauliflower Rice <span class="extra-info">keto</span></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="builder-section">
+                                <h4>Step 2: Add Protein</h4>
+                                <div class="builder-options">
+                                    <label class="builder-option">
+                                        <input type="radio" name="protein" value="chicken">
+                                        <span>Grilled Chicken <span class="extra-info">+$3</span></span>
+                                    </label>
+                                    <label class="builder-option">
+                                        <input type="radio" name="protein" value="salmon">
+                                        <span>Wild Salmon <span class="extra-info">+$5</span></span>
+                                    </label>
+                                    <label class="builder-option">
+                                        <input type="radio" name="protein" value="tofu">
+                                        <span>Organic Tofu <span class="extra-info">+$2</span></span>
+                                    </label>
+                                    <label class="builder-option">
+                                        <input type="radio" name="protein" value="tempeh">
+                                        <span>Tempeh <span class="extra-info">+$3</span></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="estimated-nutrition">
+                                <h4>Estimated Nutrition</h4>
+                                <div class="nutrition-display">
+                                    <span class="nutrition-calc" id="calc-calories">-- cal</span>
+                                    <span class="nutrition-calc" id="calc-protein">-- protein</span>
+                                    <span class="nutrition-calc" id="calc-price">$--</span>
+                                </div>
+                            </div>
+
+                            <button class="btn btn-primary btn-large">Build My Bowl - $<span id="total-price">12</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="wellness" class="wellness-goals">
+            <div class="container">
+                <h2 class="section-title">Wellness Goals</h2>
+                <p class="section-subtitle">Find bowls that align with your health and fitness goals</p>
+                
+                <div class="goals-grid">
+                    <div class="goal-card">
+                        <div class="goal-icon">⚡</div>
+                        <h3>Energy Boost</h3>
+                        <p>Complex carbs and B-vitamins to fuel your day</p>
+                        <div class="goal-ingredients">
+                            <span class="ingredient-tag">Quinoa</span>
+                            <span class="ingredient-tag">Sweet Potato</span>
+                            <span class="ingredient-tag">Spinach</span>
+                        </div>
+                        <a href="#" class="goal-link">View Energy Bowls →</a>
+                    </div>
+
+                    <div class="goal-card">
+                        <div class="goal-icon">💪</div>
+                        <h3>Muscle Building</h3>
+                        <p>High-protein options for strength and recovery</p>
+                        <div class="goal-ingredients">
+                            <span class="ingredient-tag">Grilled Chicken</span>
+                            <span class="ingredient-tag">Hemp Hearts</span>
+                            <span class="ingredient-tag">Black Beans</span>
+                        </div>
+                        <a href="#" class="goal-link">View Protein Bowls →</a>
+                    </div>
+
+                    <div class="goal-card">
+                        <div class="goal-icon">🌿</div>
+                        <h3>Detox & Cleanse</h3>
+                        <p>Antioxidant-rich ingredients to reset your system</p>
+                        <div class="goal-ingredients">
+                            <span class="ingredient-tag">Kale</span>
+                            <span class="ingredient-tag">Beets</span>
+                            <span class="ingredient-tag">Ginger</span>
+                        </div>
+                        <a href="#" class="goal-link">View Detox Bowls →</a>
+                    </div>
+
+                    <div class="goal-card">
+                        <div class="goal-icon">🧘‍♀️</div>
+                        <h3>Mind & Mood</h3>
+                        <p>Brain-boosting foods for focus and mental clarity</p>
+                        <div class="goal-ingredients">
+                            <span class="ingredient-tag">Blueberries</span>
+                            <span class="ingredient-tag">Walnuts</span>
+                            <span class="ingredient-tag">Avocado</span>
+                        </div>
+                        <a href="#" class="goal-link">View Brain Bowls →</a>
+                    </div>
+
+                    <div class="goal-card">
+                        <div class="goal-icon">🔥</div>
+                        <h3>Weight Management</h3>
+                        <p>Metabolism-boosting ingredients that satisfy</p>
+                        <div class="goal-ingredients">
+                            <span class="ingredient-tag">Cauliflower</span>
+                            <span class="ingredient-tag">Protein</span>
+                            <span class="ingredient-tag">Fiber</span>
+                        </div>
+                        <a href="#" class="goal-link">View Weight Loss Bowls →</a>
+                    </div>
+
+                    <div class="goal-card">
+                        <div class="goal-icon">❤️</div>
+                        <h3>Heart Health</h3>
+                        <p>Omega-3 rich foods for cardiovascular wellness</p>
+                        <div class="goal-ingredients">
+                            <span class="ingredient-tag">Salmon</span>
+                            <span class="ingredient-tag">Chia Seeds</span>
+                            <span class="ingredient-tag">Olive Oil</span>
+                        </div>
+                        <a href="#" class="goal-link">View Heart Healthy Bowls →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ingredients" class="ingredients-story">
+            <div class="container">
+                <div class="ingredients-content">
+                    <div class="ingredients-text">
+                        <h2>Our Ingredient Story</h2>
+                        <p>We source the highest quality organic and locally-grown ingredients from trusted farms and suppliers who share our commitment to sustainability and wellness.</p>
+                        
+                        <div class="sourcing-stats">
+                            <div class="sourcing-stat">
+                                <h3>{{LOCAL_PERCENTAGE}}%</h3>
+                                <p>Locally Sourced</p>
+                            </div>
+                            <div class="sourcing-stat">
+                                <h3>{{ORGANIC_PERCENTAGE}}%</h3>
+                                <p>Certified Organic</p>
+                            </div>
+                            <div class="sourcing-stat">
+                                <h3>{{FARM_COUNT}}+</h3>
+                                <p>Partner Farms</p>
+                            </div>
+                        </div>
+
+                        <div class="ingredient-highlights">
+                            <h3>Superfood Highlights</h3>
+                            <div class="superfoods-grid">
+                                <div class="superfood">
+                                    <img src="{{QUINOA_ICON}}" alt="Quinoa">
+                                    <h4>Quinoa</h4>
+                                    <p>Complete protein with all 9 essential amino acids</p>
+                                </div>
+                                <div class="superfood">
+                                    <img src="{{CHIA_ICON}}" alt="Chia Seeds">
+                                    <h4>Chia Seeds</h4>
+                                    <p>Omega-3 powerhouse with 5g fiber per serving</p>
+                                </div>
+                                <div class="superfood">
+                                    <img src="{{KALE_ICON}}" alt="Kale">
+                                    <h4>Organic Kale</h4>
+                                    <p>Vitamin K, C, and antioxidants for immune support</p>
+                                </div>
+                                <div class="superfood">
+                                    <img src="{{AVOCADO_ICON}}" alt="Avocado">
+                                    <h4>Avocado</h4>
+                                    <p>Healthy fats that help nutrient absorption</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ingredients-visual">
+                        <img src="{{FARM_TO_TABLE_IMAGE}}" alt="Farm to table ingredients">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="nutrition-transparency">
+            <div class="container">
+                <h2 class="section-title">Nutrition Transparency</h2>
+                <p class="section-subtitle">Full nutritional information for every bowl, because you deserve to know</p>
+                
+                <div class="nutrition-features">
+                    <div class="nutrition-feature">
+                        <div class="feature-icon">📊</div>
+                        <h3>Complete Breakdown</h3>
+                        <p>Calories, macros, vitamins, and minerals for every ingredient</p>
+                    </div>
+                    <div class="nutrition-feature">
+                        <div class="feature-icon">🏷️</div>
+                        <h3>Clear Labeling</h3>
+                        <p>Dietary restrictions and allergens clearly marked</p>
+                    </div>
+                    <div class="nutrition-feature">
+                        <div class="feature-icon">🔬</div>
+                        <h3>Third-Party Tested</h3>
+                        <p>All nutritional claims verified by independent labs</p>
+                    </div>
+                </div>
+
+                <div class="dietary-options">
+                    <h3>We Support Every Diet</h3>
+                    <div class="diet-grid">
+                        <div class="diet-option">
+                            <span class="diet-icon">🌱</span>
+                            <span class="diet-name">Vegan</span>
+                            <span class="diet-count">{{VEGAN_COUNT}} options</span>
+                        </div>
+                        <div class="diet-option">
+                            <span class="diet-icon">🌾</span>
+                            <span class="diet-name">Gluten-Free</span>
+                            <span class="diet-count">{{GF_COUNT}} options</span>
+                        </div>
+                        <div class="diet-option">
+                            <span class="diet-icon">🥑</span>
+                            <span class="diet-name">Keto</span>
+                            <span class="diet-count">{{KETO_COUNT}} options</span>
+                        </div>
+                        <div class="diet-option">
+                            <span class="diet-icon">🥩</span>
+                            <span class="diet-name">Paleo</span>
+                            <span class="diet-count">{{PALEO_COUNT}} options</span>
+                        </div>
+                        <div class="diet-option">
+                            <span class="diet-icon">🔥</span>
+                            <span class="diet-name">Low-Carb</span>
+                            <span class="diet-count">{{LOW_CARB_COUNT}} options</span>
+                        </div>
+                        <div class="diet-option">
+                            <span class="diet-icon">💪</span>
+                            <span class="diet-name">High-Protein</span>
+                            <span class="diet-count">{{HIGH_PROTEIN_COUNT}} options</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="order" class="order-section">
+            <div class="container">
+                <h2 class="section-title">Fuel Your Day</h2>
+                <div class="order-options">
+                    <div class="order-option">
+                        <div class="option-icon">🚚</div>
+                        <h3>Delivery</h3>
+                        <p>Fresh bowls delivered in 30-45 minutes</p>
+                        <a href="{{DELIVERY_URL}}" class="btn btn-primary">Order Delivery</a>
+                        <div class="delivery-partners">
+                            <span>Available on:</span>
+                            <a href="{{DOORDASH_URL}}">DoorDash</a>
+                            <a href="{{UBEREATS_URL}}">Uber Eats</a>
+                            <a href="{{GRUBHUB_URL}}">Grubhub</a>
+                        </div>
+                    </div>
+                    
+                    <div class="order-option">
+                        <div class="option-icon">🏃‍♀️</div>
+                        <h3>Pickup</h3>
+                        <p>Order ahead and skip the line</p>
+                        <a href="{{PICKUP_URL}}" class="btn btn-primary">Order Pickup</a>
+                        <div class="pickup-info">
+                            <span>Ready in 10-15 minutes</span>
+                        </div>
+                    </div>
+                    
+                    <div class="order-option">
+                        <div class="option-icon">📱</div>
+                        <h3>Mobile App</h3>
+                        <p>Fastest ordering + exclusive rewards</p>
+                        <div class="app-downloads">
+                            <a href="{{APP_STORE_URL}}" class="app-btn">
+                                <img src="{{APP_STORE_BADGE}}" alt="Download on App Store">
+                            </a>
+                            <a href="{{GOOGLE_PLAY_URL}}" class="app-btn">
+                                <img src="{{GOOGLE_PLAY_BADGE}}" alt="Get it on Google Play">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="locations" class="locations">
+            <div class="container">
+                <h2 class="section-title">Find Your Wellness</h2>
+                <div class="locations-grid">
+                    <div class="location-card">
+                        <div class="location-image">
+                            <img src="{{LOCATION_1_IMAGE}}" alt="{{LOCATION_1_NAME}}">
+                        </div>
+                        <div class="location-content">
+                            <h3>{{LOCATION_1_NAME}}</h3>
+                            <p class="address">{{LOCATION_1_ADDRESS}}</p>
+                            <p class="hours">{{LOCATION_1_HOURS}}</p>
+                            <p class="phone">{{LOCATION_1_PHONE}}</p>
+                            <div class="location-features">
+                                <span class="feature">Juice Bar</span>
+                                <span class="feature">WiFi</span>
+                                <span class="feature">Outdoor Seating</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="location-card">
+                        <div class="location-image">
+                            <img src="{{LOCATION_2_IMAGE}}" alt="{{LOCATION_2_NAME}}">
+                        </div>
+                        <div class="location-content">
+                            <h3>{{LOCATION_2_NAME}}</h3>
+                            <p class="address">{{LOCATION_2_ADDRESS}}</p>
+                            <p class="hours">{{LOCATION_2_HOURS}}</p>
+                            <p class="phone">{{LOCATION_2_PHONE}}</p>
+                            <div class="location-features">
+                                <span class="feature">Smoothie Bar</span>
+                                <span class="feature">Parking</span>
+                                <span class="feature">Catering</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h2>Connect With Us</h2>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <h3>General</h3>
+                                <p>{{PHONE}}</p>
+                                <p>{{EMAIL}}</p>
+                            </div>
+                            <div class="contact-item">
+                                <h3>Catering</h3>
+                                <p>{{CATERING_PHONE}}</p>
+                                <p>{{CATERING_EMAIL}}</p>
+                            </div>
+                            <div class="contact-item">
+                                <h3>Follow Our Journey</h3>
+                                <div class="social-links">
+                                    <a href="{{INSTAGRAM_URL}}">Instagram</a>
+                                    <a href="{{FACEBOOK_URL}}">Facebook</a>
+                                    <a href="{{TWITTER_URL}}">Twitter</a>
+                                    <a href="{{TIKTOK_URL}}">TikTok</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <h3>Send us a Message</h3>
+                        <form>
+                            <input type="text" placeholder="Your Name" required>
+                            <input type="email" placeholder="Email Address" required>
+                            <select required>
+                                <option value="">How can we help?</option>
+                                <option value="nutrition">Nutrition Question</option>
+                                <option value="catering">Catering</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="partnership">Partnership</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <textarea placeholder="Your Message" rows="4" required></textarea>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>{{RESTAURANT_NAME}}</h3>
+                    <p>Nourish your soul with every bowl</p>
+                    <div class="wellness-newsletter">
+                        <h4>Wellness Tips & Updates</h4>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Enter your email">
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="#bowls">Signature Bowls</a></li>
+                        <li><a href="#build">Build Your Own</a></li>
+                        <li><a href="#wellness">Wellness Goals</a></li>
+                        <li><a href="#ingredients">Ingredients</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Nutrition Info</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="{{INSTAGRAM_URL}}">Instagram</a>
+                        <a href="{{FACEBOOK_URL}}">Facebook</a>
+                        <a href="{{TWITTER_URL}}">Twitter</a>
+                        <a href="{{TIKTOK_URL}}">TikTok</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

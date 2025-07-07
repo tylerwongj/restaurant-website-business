@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{CAFE_NAME}} - Artisan Desserts & Pastries</title>
+    <meta name="description" content="{{CAFE_NAME}} - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dessert-cafe-theme">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h1>{{CAFE_NAME}}</h1>
+                <span class="subtitle">{{CAFE_SUBTITLE}}</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#desserts">Desserts</a></li>
+                <li><a href="#pastries">Pastries</a></li>
+                <li><a href="#custom">Custom Orders</a></li>
+                <li><a href="#classes">Classes</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn btn-primary">Order Online</button>
+                <button class="btn btn-secondary">Custom Cake</button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>{{HERO_TITLE}}</h1>
+                <p class="hero-subtitle">{{HERO_SUBTITLE}}</p>
+                <div class="hero-features">
+                    <div class="feature">
+                        <span class="feature-icon">🧁</span>
+                        <span>Handcrafted Daily</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">🌱</span>
+                        <span>Organic Ingredients</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">🎂</span>
+                        <span>Custom Cakes</span>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary btn-large">View Menu</button>
+                    <button class="btn btn-outline btn-large">Order Custom Cake</button>
+                </div>
+            </div>
+            <div class="hero-gallery">
+                <div class="gallery-item">
+                    <img src="{{HERO_IMAGE_1}}" alt="{{HERO_ITEM_1}}">
+                </div>
+                <div class="gallery-item">
+                    <img src="{{HERO_IMAGE_2}}" alt="{{HERO_ITEM_2}}">
+                </div>
+                <div class="gallery-item">
+                    <img src="{{HERO_IMAGE_3}}" alt="{{HERO_ITEM_3}}">
+                </div>
+                <div class="gallery-item">
+                    <img src="{{HERO_IMAGE_4}}" alt="{{HERO_ITEM_4}}">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Daily Specials -->
+    <section class="daily-specials">
+        <div class="container">
+            <h2>Today's Fresh Creations</h2>
+            <div class="specials-carousel">
+                <div class="special-item">
+                    <img src="{{DAILY_SPECIAL_1_IMAGE}}" alt="{{DAILY_SPECIAL_1}}">
+                    <div class="special-info">
+                        <h3>{{DAILY_SPECIAL_1}}</h3>
+                        <p>{{DAILY_SPECIAL_1_DESC}}</p>
+                        <div class="special-details">
+                            <span class="price">{{DAILY_SPECIAL_1_PRICE}}</span>
+                            <span class="quantity">{{DAILY_SPECIAL_1_QUANTITY}} available</span>
+                        </div>
+                        <button class="btn btn-secondary">Pre-Order</button>
+                    </div>
+                </div>
+                <div class="special-item">
+                    <img src="{{DAILY_SPECIAL_2_IMAGE}}" alt="{{DAILY_SPECIAL_2}}">
+                    <div class="special-info">
+                        <h3>{{DAILY_SPECIAL_2}}</h3>
+                        <p>{{DAILY_SPECIAL_2_DESC}}</p>
+                        <div class="special-details">
+                            <span class="price">{{DAILY_SPECIAL_2_PRICE}}</span>
+                            <span class="quantity">{{DAILY_SPECIAL_2_QUANTITY}} available</span>
+                        </div>
+                        <button class="btn btn-secondary">Pre-Order</button>
+                    </div>
+                </div>
+                <div class="special-item">
+                    <img src="{{DAILY_SPECIAL_3_IMAGE}}" alt="{{DAILY_SPECIAL_3}}">
+                    <div class="special-info">
+                        <h3>{{DAILY_SPECIAL_3}}</h3>
+                        <p>{{DAILY_SPECIAL_3_DESC}}</p>
+                        <div class="special-details">
+                            <span class="price">{{DAILY_SPECIAL_3_PRICE}}</span>
+                            <span class="quantity">{{DAILY_SPECIAL_3_QUANTITY}} available</span>
+                        </div>
+                        <button class="btn btn-secondary">Pre-Order</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Desserts Menu -->
+    <section id="desserts" class="desserts-menu">
+        <div class="container">
+            <h2>Signature Desserts</h2>
+            <div class="dessert-categories">
+                <button class="dessert-tab active" data-category="cakes">Cakes</button>
+                <button class="dessert-tab" data-category="tarts">Tarts & Pies</button>
+                <button class="dessert-tab" data-category="chocolate">Chocolate</button>
+                <button class="dessert-tab" data-category="seasonal">Seasonal</button>
+            </div>
+            
+            <div class="dessert-content">
+                <div class="dessert-category active" id="cakes">
+                    <div class="dessert-grid">
+                        <div class="dessert-item">
+                            <img src="{{CAKE_1_IMAGE}}" alt="{{CAKE_1_NAME}}">
+                            <div class="dessert-details">
+                                <h3>{{CAKE_1_NAME}}</h3>
+                                <p>{{CAKE_1_DESC}}</p>
+                                <div class="dessert-info">
+                                    <span class="price">{{CAKE_1_PRICE}}</span>
+                                    <div class="dietary-tags">
+                                        <span class="tag">{{CAKE_1_TAG_1}}</span>
+                                        <span class="tag">{{CAKE_1_TAG_2}}</span>
+                                    </div>
+                                </div>
+                                <div class="item-actions">
+                                    <button class="btn btn-small btn-primary">Order Slice</button>
+                                    <button class="btn btn-small btn-outline">Whole Cake</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dessert-item">
+                            <img src="{{CAKE_2_IMAGE}}" alt="{{CAKE_2_NAME}}">
+                            <div class="dessert-details">
+                                <h3>{{CAKE_2_NAME}}</h3>
+                                <p>{{CAKE_2_DESC}}</p>
+                                <div class="dessert-info">
+                                    <span class="price">{{CAKE_2_PRICE}}</span>
+                                    <div class="dietary-tags">
+                                        <span class="tag">{{CAKE_2_TAG_1}}</span>
+                                    </div>
+                                </div>
+                                <div class="item-actions">
+                                    <button class="btn btn-small btn-primary">Order Slice</button>
+                                    <button class="btn btn-small btn-outline">Whole Cake</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dessert-item">
+                            <img src="{{CAKE_3_IMAGE}}" alt="{{CAKE_3_NAME}}">
+                            <div class="dessert-details">
+                                <h3>{{CAKE_3_NAME}}</h3>
+                                <p>{{CAKE_3_DESC}}</p>
+                                <div class="dessert-info">
+                                    <span class="price">{{CAKE_3_PRICE}}</span>
+                                    <div class="dietary-tags">
+                                        <span class="tag">{{CAKE_3_TAG_1}}</span>
+                                    </div>
+                                </div>
+                                <div class="item-actions">
+                                    <button class="btn btn-small btn-primary">Order Slice</button>
+                                    <button class="btn btn-small btn-outline">Whole Cake</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="dessert-category" id="tarts">
+                    <div class="dessert-grid">
+                        <div class="dessert-item">
+                            <img src="{{TART_1_IMAGE}}" alt="{{TART_1_NAME}}">
+                            <div class="dessert-details">
+                                <h3>{{TART_1_NAME}}</h3>
+                                <p>{{TART_1_DESC}}</p>
+                                <div class="dessert-info">
+                                    <span class="price">{{TART_1_PRICE}}</span>
+                                    <div class="dietary-tags">
+                                        <span class="tag">{{TART_1_TAG_1}}</span>
+                                    </div>
+                                </div>
+                                <div class="item-actions">
+                                    <button class="btn btn-small btn-primary">Order Now</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dessert-item">
+                            <img src="{{TART_2_IMAGE}}" alt="{{TART_2_NAME}}">
+                            <div class="dessert-details">
+                                <h3>{{TART_2_NAME}}</h3>
+                                <p>{{TART_2_DESC}}</p>
+                                <div class="dessert-info">
+                                    <span class="price">{{TART_2_PRICE}}</span>
+                                    <div class="dietary-tags">
+                                        <span class="tag">{{TART_2_TAG_1}}</span>
+                                    </div>
+                                </div>
+                                <div class="item-actions">
+                                    <button class="btn btn-small btn-primary">Order Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="dessert-category" id="chocolate">
+                    <div class="dessert-grid">
+                        <div class="dessert-item">
+                            <img src="{{CHOCOLATE_1_IMAGE}}" alt="{{CHOCOLATE_1_NAME}}">
+                            <div class="dessert-details">
+                                <h3>{{CHOCOLATE_1_NAME}}</h3>
+                                <p>{{CHOCOLATE_1_DESC}}</p>
+                                <div class="dessert-info">
+                                    <span class="price">{{CHOCOLATE_1_PRICE}}</span>
+                                    <div class="dietary-tags">
+                                        <span class="tag">{{CHOCOLATE_1_TAG_1}}</span>
+                                    </div>
+                                </div>
+                                <div class="item-actions">
+                                    <button class="btn btn-small btn-primary">Order Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="dessert-category" id="seasonal">
+                    <div class="seasonal-note">
+                        <h3>{{SEASONAL_TITLE}}</h3>
+                        <p>{{SEASONAL_DESC}}</p>
+                    </div>
+                    <div class="dessert-grid">
+                        <div class="dessert-item">
+                            <img src="{{SEASONAL_1_IMAGE}}" alt="{{SEASONAL_1_NAME}}">
+                            <div class="dessert-details">
+                                <h3>{{SEASONAL_1_NAME}}</h3>
+                                <p>{{SEASONAL_1_DESC}}</p>
+                                <div class="dessert-info">
+                                    <span class="price">{{SEASONAL_1_PRICE}}</span>
+                                    <span class="availability">{{SEASONAL_1_AVAILABILITY}}</span>
+                                </div>
+                                <div class="item-actions">
+                                    <button class="btn btn-small btn-primary">Order Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pastries Section -->
+    <section id="pastries" class="pastries-menu">
+        <div class="container">
+            <h2>Fresh Pastries & Breads</h2>
+            <div class="pastries-grid">
+                <div class="pastry-item">
+                    <img src="{{PASTRY_1_IMAGE}}" alt="{{PASTRY_1_NAME}}">
+                    <div class="pastry-details">
+                        <h3>{{PASTRY_1_NAME}}</h3>
+                        <p>{{PASTRY_1_DESC}}</p>
+                        <div class="pastry-info">
+                            <span class="price">{{PASTRY_1_PRICE}}</span>
+                            <span class="baked-time">{{PASTRY_1_BAKED_TIME}}</span>
+                        </div>
+                        <button class="btn btn-secondary">Add to Order</button>
+                    </div>
+                </div>
+                <div class="pastry-item">
+                    <img src="{{PASTRY_2_IMAGE}}" alt="{{PASTRY_2_NAME}}">
+                    <div class="pastry-details">
+                        <h3>{{PASTRY_2_NAME}}</h3>
+                        <p>{{PASTRY_2_DESC}}</p>
+                        <div class="pastry-info">
+                            <span class="price">{{PASTRY_2_PRICE}}</span>
+                            <span class="baked-time">{{PASTRY_2_BAKED_TIME}}</span>
+                        </div>
+                        <button class="btn btn-secondary">Add to Order</button>
+                    </div>
+                </div>
+                <div class="pastry-item">
+                    <img src="{{PASTRY_3_IMAGE}}" alt="{{PASTRY_3_NAME}}">
+                    <div class="pastry-details">
+                        <h3>{{PASTRY_3_NAME}}</h3>
+                        <p>{{PASTRY_3_DESC}}</p>
+                        <div class="pastry-info">
+                            <span class="price">{{PASTRY_3_PRICE}}</span>
+                            <span class="baked-time">{{PASTRY_3_BAKED_TIME}}</span>
+                        </div>
+                        <button class="btn btn-secondary">Add to Order</button>
+                    </div>
+                </div>
+                <div class="pastry-item">
+                    <img src="{{PASTRY_4_IMAGE}}" alt="{{PASTRY_4_NAME}}">
+                    <div class="pastry-details">
+                        <h3>{{PASTRY_4_NAME}}</h3>
+                        <p>{{PASTRY_4_DESC}}</p>
+                        <div class="pastry-info">
+                            <span class="price">{{PASTRY_4_PRICE}}</span>
+                            <span class="baked-time">{{PASTRY_4_BAKED_TIME}}</span>
+                        </div>
+                        <button class="btn btn-secondary">Add to Order</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Orders -->
+    <section id="custom" class="custom-orders">
+        <div class="container">
+            <h2>Custom Cakes & Special Orders</h2>
+            <div class="custom-content">
+                <div class="custom-info">
+                    <p>{{CUSTOM_DESCRIPTION}}</p>
+                    <div class="custom-options">
+                        <div class="option">
+                            <h4>{{CUSTOM_OPTION_1_TITLE}}</h4>
+                            <p>{{CUSTOM_OPTION_1_DESC}}</p>
+                            <span class="option-price">{{CUSTOM_OPTION_1_PRICE}}</span>
+                        </div>
+                        <div class="option">
+                            <h4>{{CUSTOM_OPTION_2_TITLE}}</h4>
+                            <p>{{CUSTOM_OPTION_2_DESC}}</p>
+                            <span class="option-price">{{CUSTOM_OPTION_2_PRICE}}</span>
+                        </div>
+                        <div class="option">
+                            <h4>{{CUSTOM_OPTION_3_TITLE}}</h4>
+                            <p>{{CUSTOM_OPTION_3_DESC}}</p>
+                            <span class="option-price">{{CUSTOM_OPTION_3_PRICE}}</span>
+                        </div>
+                    </div>
+                    <div class="lead-time">
+                        <h4>Lead Times:</h4>
+                        <ul>
+                            <li>{{LEAD_TIME_1}}</li>
+                            <li>{{LEAD_TIME_2}}</li>
+                            <li>{{LEAD_TIME_3}}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="custom-form">
+                    <h3>Request Custom Order</h3>
+                    <form>
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Email" required>
+                        <input type="tel" name="phone" placeholder="Phone" required>
+                        <input type="date" name="needed_date" placeholder="Date Needed" required>
+                        <select name="order_type" required>
+                            <option value="">Order Type</option>
+                            <option value="birthday_cake">Birthday Cake</option>
+                            <option value="wedding_cake">Wedding Cake</option>
+                            <option value="celebration_cake">Celebration Cake</option>
+                            <option value="dessert_table">Dessert Table</option>
+                            <option value="corporate_order">Corporate Order</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <input type="number" name="serves" placeholder="Number of Servings" required>
+                        <textarea name="design_description" placeholder="Describe your vision, colors, themes, dietary restrictions, etc." required></textarea>
+                        <input type="number" name="budget" placeholder="Budget Range (optional)">
+                        <button type="submit" class="btn btn-primary">Submit Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Baking Classes -->
+    <section id="classes" class="baking-classes">
+        <div class="container">
+            <h2>Hands-On Baking Classes</h2>
+            <div class="classes-grid">
+                <div class="class-item">
+                    <img src="{{CLASS_1_IMAGE}}" alt="{{CLASS_1_NAME}}">
+                    <div class="class-details">
+                        <h3>{{CLASS_1_NAME}}</h3>
+                        <p>{{CLASS_1_DESC}}</p>
+                        <div class="class-info">
+                            <div class="class-meta">
+                                <span class="duration">{{CLASS_1_DURATION}}</span>
+                                <span class="skill-level">{{CLASS_1_SKILL_LEVEL}}</span>
+                                <span class="class-size">{{CLASS_1_SIZE}}</span>
+                            </div>
+                            <span class="class-price">{{CLASS_1_PRICE}}</span>
+                        </div>
+                        <div class="class-schedule">
+                            <h4>Upcoming Dates:</h4>
+                            <ul>
+                                <li>{{CLASS_1_DATE_1}}</li>
+                                <li>{{CLASS_1_DATE_2}}</li>
+                                <li>{{CLASS_1_DATE_3}}</li>
+                            </ul>
+                        </div>
+                        <button class="btn btn-secondary">Book Class</button>
+                    </div>
+                </div>
+                <div class="class-item">
+                    <img src="{{CLASS_2_IMAGE}}" alt="{{CLASS_2_NAME}}">
+                    <div class="class-details">
+                        <h3>{{CLASS_2_NAME}}</h3>
+                        <p>{{CLASS_2_DESC}}</p>
+                        <div class="class-info">
+                            <div class="class-meta">
+                                <span class="duration">{{CLASS_2_DURATION}}</span>
+                                <span class="skill-level">{{CLASS_2_SKILL_LEVEL}}</span>
+                                <span class="class-size">{{CLASS_2_SIZE}}</span>
+                            </div>
+                            <span class="class-price">{{CLASS_2_PRICE}}</span>
+                        </div>
+                        <div class="class-schedule">
+                            <h4>Upcoming Dates:</h4>
+                            <ul>
+                                <li>{{CLASS_2_DATE_1}}</li>
+                                <li>{{CLASS_2_DATE_2}}</li>
+                            </ul>
+                        </div>
+                        <button class="btn btn-secondary">Book Class</button>
+                    </div>
+                </div>
+                <div class="class-item">
+                    <img src="{{CLASS_3_IMAGE}}" alt="{{CLASS_3_NAME}}">
+                    <div class="class-details">
+                        <h3>{{CLASS_3_NAME}}</h3>
+                        <p>{{CLASS_3_DESC}}</p>
+                        <div class="class-info">
+                            <div class="class-meta">
+                                <span class="duration">{{CLASS_3_DURATION}}</span>
+                                <span class="skill-level">{{CLASS_3_SKILL_LEVEL}}</span>
+                                <span class="class-size">{{CLASS_3_SIZE}}</span>
+                            </div>
+                            <span class="class-price">{{CLASS_3_PRICE}}</span>
+                        </div>
+                        <div class="class-schedule">
+                            <h4>Upcoming Dates:</h4>
+                            <ul>
+                                <li>{{CLASS_3_DATE_1}}</li>
+                                <li>{{CLASS_3_DATE_2}}</li>
+                            </ul>
+                        </div>
+                        <button class="btn btn-secondary">Book Class</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>{{ABOUT_TITLE}}</h2>
+                    <p>{{ABOUT_DESCRIPTION}}</p>
+                    <div class="chef-story">
+                        <h3>{{CHEF_NAME}}</h3>
+                        <p class="chef-title">{{CHEF_TITLE}}</p>
+                        <p>{{CHEF_STORY}}</p>
+                        <div class="chef-achievements">
+                            <div class="achievement">
+                                <h4>{{ACHIEVEMENT_1_TITLE}}</h4>
+                                <p>{{ACHIEVEMENT_1_DESC}}</p>
+                            </div>
+                            <div class="achievement">
+                                <h4>{{ACHIEVEMENT_2_TITLE}}</h4>
+                                <p>{{ACHIEVEMENT_2_DESC}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-images">
+                    <img src="{{CHEF_IMAGE}}" alt="{{CHEF_NAME}}" class="chef-photo">
+                    <div class="kitchen-photos">
+                        <img src="{{KITCHEN_IMAGE_1}}" alt="Kitchen">
+                        <img src="{{KITCHEN_IMAGE_2}}" alt="Baking Process">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"{{TESTIMONIAL_1_TEXT}}"</p>
+                        <div class="testimonial-author">
+                            <img src="{{TESTIMONIAL_1_PHOTO}}" alt="{{TESTIMONIAL_1_NAME}}">
+                            <div>
+                                <h4>{{TESTIMONIAL_1_NAME}}</h4>
+                                <span>{{TESTIMONIAL_1_OCCASION}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"{{TESTIMONIAL_2_TEXT}}"</p>
+                        <div class="testimonial-author">
+                            <img src="{{TESTIMONIAL_2_PHOTO}}" alt="{{TESTIMONIAL_2_NAME}}">
+                            <div>
+                                <h4>{{TESTIMONIAL_2_NAME}}</h4>
+                                <span>{{TESTIMONIAL_2_OCCASION}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"{{TESTIMONIAL_3_TEXT}}"</p>
+                        <div class="testimonial-author">
+                            <img src="{{TESTIMONIAL_3_PHOTO}}" alt="{{TESTIMONIAL_3_NAME}}">
+                            <div>
+                                <h4>{{TESTIMONIAL_3_NAME}}</h4>
+                                <span>{{TESTIMONIAL_3_OCCASION}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Hours -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Visit Our Cafe</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <h3>Location</h3>
+                        <p>{{ADDRESS}}</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>Phone</h3>
+                        <p><a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+                    </div>
+                    <div class="info-item">
+                        <h3>Hours</h3>
+                        <div class="hours-list">
+                            <div class="hours-day">
+                                <span>Monday - Friday</span>
+                                <span>{{WEEKDAY_HOURS}}</span>
+                            </div>
+                            <div class="hours-day">
+                                <span>Saturday</span>
+                                <span>{{SATURDAY_HOURS}}</span>
+                            </div>
+                            <div class="hours-day">
+                                <span>Sunday</span>
+                                <span>{{SUNDAY_HOURS}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <h3>Email</h3>
+                        <p><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Get In Touch</h3>
+                    <form>
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Email" required>
+                        <select name="inquiry_type">
+                            <option value="">Inquiry Type</option>
+                            <option value="custom_order">Custom Order</option>
+                            <option value="class_booking">Class Booking</option>
+                            <option value="catering">Catering</option>
+                            <option value="general">General Question</option>
+                        </select>
+                        <textarea name="message" placeholder="Your Message" required></textarea>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>{{CAFE_NAME}}</h3>
+                    <p>{{FOOTER_DESCRIPTION}}</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="#desserts">Desserts</a></li>
+                        <li><a href="#pastries">Pastries</a></li>
+                        <li><a href="#custom">Custom Orders</a></li>
+                        <li><a href="#">Catering</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#classes">Baking Classes</a></li>
+                        <li><a href="#">Private Events</a></li>
+                        <li><a href="#">Wedding Cakes</a></li>
+                        <li><a href="#">Corporate Orders</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}">Instagram</a>
+                        <a href="{{PINTEREST_URL}}">Pinterest</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{CAFE_NAME}}. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Allergen Information</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
