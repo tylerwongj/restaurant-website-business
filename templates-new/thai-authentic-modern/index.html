@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Authentic Thai Cuisine</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&family=Sarabun:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="color-thai-modern">
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>{{RESTAURANT_NAME}}</h1>
+                <span class="tagline">อาหารไทยแท้ - Authentic Thai Flavors</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="#home">Home</a>
+                <a href="#menu">Menu</a>
+                <a href="#specials">Thai Specialties</a>
+                <a href="#about">Our Story</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <div class="spice-meter">
+                    <span class="label">Spice Level:</span>
+                    <div class="spice-icons">
+                        <span class="chili">🌶️</span>
+                        <span class="chili">🌶️</span>
+                        <span class="chili">🌶️</span>
+                    </div>
+                </div>
+                <a href="#order" class="btn btn-primary">Order Online</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <img src="{{THAI_HERO_IMAGE}}" alt="Authentic Thai restaurant">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="container">
+                <div class="hero-text">
+                    <div class="hero-badge">From Thailand Since {{ESTABLISHED_YEAR}}</div>
+                    <h2><span class="thai-text">สวัสดี</span><br><span class="accent">Authentic Thai</span> Flavors</h2>
+                    <p>Experience the true taste of Thailand with our family recipes passed down through generations. From mild and aromatic to authentically spicy, we bring the vibrant flavors of Bangkok, Phuket, and Chiang Mai to your table.</p>
+                    
+                    <div class="thai-highlights">
+                        <div class="highlight">
+                            <span class="icon">🌶️</span>
+                            <div class="highlight-content">
+                                <span class="label">Adjustable Spice</span>
+                                <span class="detail">Mild to Thai Hot</span>
+                            </div>
+                        </div>
+                        <div class="highlight">
+                            <span class="icon">🌿</span>
+                            <div class="highlight-content">
+                                <span class="label">Fresh Herbs</span>
+                                <span class="detail">Daily Import</span>
+                            </div>
+                        </div>
+                        <div class="highlight">
+                            <span class="icon">👨‍🍳</span>
+                            <div class="highlight-content">
+                                <span class="label">Thai Chef</span>
+                                <span class="detail">{{CHEF_EXPERIENCE}} Years</span>
+                            </div>
+                        </div>
+                        <div class="highlight">
+                            <span class="icon">🥥</span>
+                            <div class="highlight-content">
+                                <span class="label">Coconut Fresh</span>
+                                <span class="detail">Daily Pressed</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-buttons">
+                        <a href="#menu" class="btn btn-primary">View Menu</a>
+                        <a href="#order" class="btn btn-outline">Order Takeout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu-section" id="menu">
+        <div class="container">
+            <div class="section-header">
+                <h2>Authentic Thai Menu</h2>
+                <p>Fresh ingredients and traditional recipes from different regions of Thailand</p>
+            </div>
+            
+            <div class="spice-guide">
+                <h3>Spice Level Guide</h3>
+                <div class="spice-levels">
+                    <div class="spice-level">
+                        <span class="icon">🟢</span>
+                        <span class="name">Mild</span>
+                        <span class="description">Perfect for everyone</span>
+                    </div>
+                    <div class="spice-level">
+                        <span class="icon">🟡</span>
+                        <span class="name">Medium</span>
+                        <span class="description">A little kick</span>
+                    </div>
+                    <div class="spice-level">
+                        <span class="icon">🟠</span>
+                        <span class="name">Spicy</span>
+                        <span class="description">Traditional heat</span>
+                    </div>
+                    <div class="spice-level">
+                        <span class="icon">🔴</span>
+                        <span class="name">Thai Hot</span>
+                        <span class="description">Authentic fire!</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="menu-categories">
+                <div class="menu-tabs">
+                    <button class="tab-btn active" data-menu="appetizers">Appetizers</button>
+                    <button class="tab-btn" data-menu="soups">Soups & Salads</button>
+                    <button class="tab-btn" data-menu="curries">Thai Curries</button>
+                    <button class="tab-btn" data-menu="noodles">Noodles & Rice</button>
+                    <button class="tab-btn" data-menu="wok">Wok Dishes</button>
+                </div>
+                
+                <!-- Appetizers -->
+                <div class="menu-content active" id="appetizers">
+                    <div class="menu-grid">
+                        <div class="menu-item featured">
+                            <div class="item-image">
+                                <img src="{{SPRING_ROLLS_IMAGE}}" alt="Fresh Spring Rolls">
+                                <div class="spice-indicator mild">🟢</div>
+                            </div>
+                            <div class="item-content">
+                                <h3>Fresh Spring Rolls</h3>
+                                <p class="thai-name">ปอเปี๊ยะสด (Por Pia Sod)</p>
+                                <p class="description">Fresh vegetables, herbs, and shrimp wrapped in rice paper, served with sweet and sour dipping sauce.</p>
+                                <div class="item-details">
+                                    <div class="ingredients">
+                                        <span class="ingredient">Shrimp</span>
+                                        <span class="ingredient">Fresh Herbs</span>
+                                        <span class="ingredient">Rice Noodles</span>
+                                    </div>
+                                    <span class="price">${{SPRING_ROLLS_PRICE}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="{{SATAY_IMAGE}}" alt="Chicken Satay">
+                                <div class="spice-indicator medium">🟡</div>
+                            </div>
+                            <div class="item-content">
+                                <h3>Chicken Satay</h3>
+                                <p class="thai-name">สะเต๊ะไก่ (Satay Gai)</p>
+                                <p class="description">Grilled marinated chicken skewers with peanut sauce and cucumber relish.</p>
+                                <div class="item-details">
+                                    <div class="ingredients">
+                                        <span class="ingredient">Turmeric</span>
+                                        <span class="ingredient">Lemongrass</span>
+                                        <span class="ingredient">Peanut Sauce</span>
+                                    </div>
+                                    <span class="price">${{SATAY_PRICE}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="{{TOD_MAN_IMAGE}}" alt="Fish Cakes">
+                                <div class="spice-indicator spicy">🟠</div>
+                            </div>
+                            <div class="item-content">
+                                <h3>Thai Fish Cakes</h3>
+                                <p class="thai-name">ทอดมันปลา (Tod Man Pla)</p>
+                                <p class="description">Deep-fried fish patties with red curry paste, served with sweet chili sauce.</p>
+                                <div class="item-details">
+                                    <div class="ingredients">
+                                        <span class="ingredient">Red Curry Paste</span>
+                                        <span class="ingredient">Kaffir Lime</span>
+                                        <span class="ingredient">Green Beans</span>
+                                    </div>
+                                    <span class="price">${{FISH_CAKES_PRICE}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Soups & Salads -->
+                <div class="menu-content" id="soups">
+                    <div class="menu-grid">
+                        <div class="menu-item featured">
+                            <div class="item-image">
+                                <img src="{{TOM_YUM_IMAGE}}" alt="Tom Yum Goong">
+                                <div class="spice-indicator spicy">🟠</div>
+                            </div>
+                            <div class="item-content">
+                                <h3>Tom Yum Goong</h3>
+                                <p class="thai-name">ต้มยำกุ้ง</p>
+                                <p class="description">Iconic hot and sour soup with shrimp, mushrooms, lemongrass, and lime leaves.</p>
+                                <div class="item-details">
+                                    <div class="ingredients">
+                                        <span class="ingredient">Galangal</span>
+                                        <span class="ingredient">Lime Leaves</span>
+                                        <span class="ingredient">Thai Chilies</span>
+                                    </div>
+                                    <span class="price">${{TOM_YUM_PRICE}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="{{TOM_KHA_IMAGE}}" alt="Tom Kha Gai">
+                                <div class="spice-indicator medium">🟡</div>
+                            </div>
+                            <div class="item-content">
+                                <h3>Tom Kha Gai</h3>
+                                <p class="thai-name">ต้มข่าไก่</p>
+                                <p class="description">Creamy coconut soup with chicken, galangal, and aromatic herbs.</p>
+                                <div class="item-details">
+                                    <div class="ingredients">
+                                        <span class="ingredient">Coconut Milk</span>
+                                        <span class="ingredient">Galangal</span>
+                                        <span class="ingredient">Mushrooms</span>
+                                    </div>
+                                    <span class="price">${{TOM_KHA_PRICE}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="{{SOM_TAM_IMAGE}}" alt="Som Tam">
+                                <div class="spice-indicator hot">🔴</div>
+                            </div>
+                            <div class="item-content">
+                                <h3>Som Tam (Papaya Salad)</h3>
+                                <p class="thai-name">ส้มตำ</p>
+                                <p class="description">Fresh green papaya salad with tomatoes, green beans, and lime dressing.</p>
+                                <div class="item-details">
+                                    <div class="ingredients">
+                                        <span class="ingredient">Green Papaya</span>
+                                        <span class="ingredient">Thai Chilies</span>
+                                        <span class="ingredient">Fish Sauce</span>
+                                    </div>
+                                    <span class="price">${{SOM_TAM_PRICE}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Curries -->
+                <div class="menu-content" id="curries">
+                    <div class="curry-intro">
+                        <p>All curries served with jasmine rice and made with fresh coconut milk</p>
+                    </div>
+                    <div class="menu-grid">
+                        <div class="menu-item featured">
+                            <div class="item-image">
+                                <img src="{{GREEN_CURRY_IMAGE}}" alt="Green Curry">
+                                <div class="spice-indicator hot">🔴</div>
+                            </div>
+                            <div class="item-content">
+                                <h3>Green Curry</h3>
+                                <p class="thai-name">แกงเขียวหวาน (Gaeng Keow Wan)</p>
+                                <p class="description">The spiciest Thai curry with fresh green chilies, Thai basil, and bamboo shoots.</p>
+                                <div class="protein-options">
+                                    <span class="protein">Chicken +${{CHICKEN_PRICE}}</span>
+                                    <span class="protein">Beef +${{BEEF_PRICE}}</span>
+                                    <span class="protein">Pork +${{PORK_PRICE}}</span>
+                                    <span class="protein">Tofu +${{TOFU_PRICE}}</span>
+                                </div>
+                                <div class="item-details">
+                                    <span class="base-price">Base: ${{GREEN_CURRY_BASE}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="{{RED_CURRY_IMAGE}}" alt="Red Curry">
+                                <div class="spice-indicator spicy">🟠</div>
+                            </div>
+                            <div class="item-content">
+                                <h3>Red Curry</h3>
+                                <p class="thai-name">แกงเผ็ด (Gaeng Phed)</p>
+                                <p class="description">Rich and aromatic curry with red chilies, Thai eggplant, and fresh basil.</p>
+                                <div class="protein-options">
+                                    <span class="protein">Chicken +${{CHICKEN_PRICE}}</span>
+                                    <span class="protein">Beef +${{BEEF_PRICE}}</span>
+                                    <span class="protein">Duck +${{DUCK_PRICE}}</span>
+                                </div>
+                                <div class="item-details">
+                                    <span class="base-price">Base: ${{RED_CURRY_BASE}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="{{MASSAMAN_IMAGE}}" alt="Massaman Curry">
+                                <div class="spice-indicator medium">🟡</div>
+                            </div>
+                            <div class="item-content">
+                                <h3>Massaman Curry</h3>
+                                <p class="thai-name">แกงมัสมั่น</p>
+                                <p class="description">Sweet and mild curry with potatoes, peanuts, and warming spices.</p>
+                                <div class="protein-options">
+                                    <span class="protein">Beef +${{BEEF_PRICE}}</span>
+                                    <span class="protein">Lamb +${{LAMB_PRICE}}</span>
+                                    <span class="protein">Chicken +${{CHICKEN_PRICE}}</span>
+                                </div>
+                                <div class="item-details">
+                                    <span class="base-price">Base: ${{MASSAMAN_BASE}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Noodles & Rice -->
+                <div class="menu-content" id="noodles">
+                    <div class="menu-grid">
+                        <div class="menu-item featured">
+                            <div class="item-image">
+                                <img src="{{PAD_THAI_IMAGE}}" alt="Pad Thai">
+                                <div class="spice-indicator medium">🟡</div>
+                            </div>
+                            <div class="item-content">
+                                <h3>Pad Thai</h3>
+                                <p class="thai-name">ผัดไทย</p>
+                                <p class="description">Thailand's national dish with rice noodles, tamarind sauce, bean sprouts, and peanuts.</p>
+                                <div class="protein-options">
+                                    <span class="protein">Shrimp +${{SHRIMP_PRICE}}</span>
+                                    <span class="protein">Chicken +${{CHICKEN_PRICE}}</span>
+                                    <span class="protein">Tofu +${{TOFU_PRICE}}</span>
+                                </div>
+                                <div class="item-details">
+                                    <span class="base-price">Base: ${{PAD_THAI_BASE}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="{{DRUNKEN_NOODLES_IMAGE}}" alt="Drunken Noodles">
+                                <div class="spice-indicator spicy">🟠</div>
+                            </div>
+                            <div class="item-content">
+                                <h3>Drunken Noodles</h3>
+                                <p class="thai-name">ผัดขี้เมา (Pad Kee Mao)</p>
+                                <p class="description">Wide rice noodles stir-fried with Thai basil, chilies, and vegetables.</p>
+                                <div class="item-details">
+                                    <span class="price">${{DRUNKEN_NOODLES_PRICE}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="{{PINEAPPLE_RICE_IMAGE}}" alt="Pineapple Fried Rice">
+                                <div class="spice-indicator mild">🟢</div>
+                            </div>
+                            <div class="item-content">
+                                <h3>Pineapple Fried Rice</h3>
+                                <p class="thai-name">ข้าวผัดสับปะรด</p>
+                                <p class="description">Fragrant fried rice with pineapple, cashews, and raisins served in a pineapple.</p>
+                                <div class="item-details">
+                                    <span class="price">${{PINEAPPLE_RICE_PRICE}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Wok Dishes -->
+                <div class="menu-content" id="wok">
+                    <div class="menu-grid">
+                        <div class="menu-item featured">
+                            <div class="item-image">
+                                <img src="{{BASIL_STIR_FRY_IMAGE}}" alt="Thai Basil Stir Fry">
+                                <div class="spice-indicator spicy">🟠</div>
+                            </div>
+                            <div class="item-content">
+                                <h3>Thai Basil Stir Fry</h3>
+                                <p class="thai-name">ผัดกะเพรา (Pad Kra Pao)</p>
+                                <p class="description">Stir-fried with Thai holy basil, chilies, and garlic. Served with fried egg on rice.</p>
+                                <div class="protein-options">
+                                    <span class="protein">Ground Pork +${{PORK_PRICE}}</span>
+                                    <span class="protein">Chicken +${{CHICKEN_PRICE}}</span>
+                                    <span class="protein">Seafood +${{SEAFOOD_PRICE}}</span>
+                                </div>
+                                <div class="item-details">
+                                    <span class="base-price">Base: ${{BASIL_STIR_FRY_BASE}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="{{CASHEW_CHICKEN_IMAGE}}" alt="Cashew Chicken">
+                                <div class="spice-indicator medium">🟡</div>
+                            </div>
+                            <div class="item-content">
+                                <h3>Cashew Chicken</h3>
+                                <p class="thai-name">ไก่ผัดเม็ดมะม่วง</p>
+                                <p class="description">Stir-fried chicken with roasted cashews, onions, and dried chilies.</p>
+                                <div class="item-details">
+                                    <span class="price">${{CASHEW_CHICKEN_PRICE}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Thai Specialties -->
+    <section class="specials-section" id="specials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Chef's Thai Specialties</h2>
+                <p>Authentic regional dishes from different provinces of Thailand</p>
+            </div>
+            
+            <div class="specialties-grid">
+                <div class="specialty-item">
+                    <div class="specialty-image">
+                        <img src="{{MANGO_STICKY_RICE_IMAGE}}" alt="Mango Sticky Rice">
+                        <div class="region-badge">Bangkok</div>
+                    </div>
+                    <div class="specialty-content">
+                        <h3>Mango Sticky Rice</h3>
+                        <p class="thai-name">ข้าวเหนียวมะม่วง (Khao Niao Mamuang)</p>
+                        <p class="description">Sweet sticky rice with fresh mango slices and coconut cream - Thailand's most beloved dessert.</p>
+                        <div class="specialty-price">${{MANGO_STICKY_RICE_PRICE}}</div>
+                    </div>
+                </div>
+                
+                <div class="specialty-item">
+                    <div class="specialty-image">
+                        <img src="{{LARB_IMAGE}}" alt="Larb Gai">
+                        <div class="region-badge">Isaan</div>
+                    </div>
+                    <div class="specialty-content">
+                        <h3>Larb Gai (Chicken Salad)</h3>
+                        <p class="thai-name">ลาบไก่</p>
+                        <p class="description">Northeastern Thai meat salad with mint, cilantro, lime juice, and roasted rice powder.</p>
+                        <div class="specialty-price">${{LARB_PRICE}}</div>
+                    </div>
+                </div>
+                
+                <div class="specialty-item">
+                    <div class="specialty-image">
+                        <img src="{{KHAO_SOI_IMAGE}}" alt="Khao Soi">
+                        <div class="region-badge">Chiang Mai</div>
+                    </div>
+                    <div class="specialty-content">
+                        <h3>Khao Soi</h3>
+                        <p class="thai-name">ข้าวซอย</p>
+                        <p class="description">Northern Thai curry noodle soup with crispy noodles, pickled cabbage, and lime.</p>
+                        <div class="specialty-price">${{KHAO_SOI_PRICE}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Our Thai Story</h2>
+                    <p class="lead">From the bustling streets of Bangkok to your neighborhood, we bring authentic Thai flavors with traditional recipes passed down through generations.</p>
+                    
+                    <p>Chef {{CHEF_NAME}} grew up in {{CHEF_HOMETOWN}}, Thailand, where she learned to cook from her grandmother using fresh herbs from their garden. After {{CHEF_EXPERIENCE}} years of culinary experience in Thailand's finest restaurants, she brings that same passion and authenticity to every dish we serve.</p>
+                    
+                    <div class="thai-values">
+                        <div class="value">
+                            <h4>ความสด (Freshness)</h4>
+                            <p>We import fresh Thai herbs and spices weekly to ensure authentic flavors in every dish.</p>
+                        </div>
+                        <div class="value">
+                            <h4>สูตรดั้งเดิม (Traditional Recipes)</h4>
+                            <p>Every curry paste is made from scratch using traditional methods and premium ingredients.</p>
+                        </div>
+                        <div class="value">
+                            <h4>ความเผ็ด (Spice Level)</h4>
+                            <p>Adjustable spice levels ensure everyone can enjoy authentic Thai flavors their way.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-images">
+                    <div class="chef-image">
+                        <img src="{{CHEF_IMAGE}}" alt="Chef {{CHEF_NAME}}">
+                        <div class="chef-info">
+                            <h4>Chef {{CHEF_NAME}}</h4>
+                            <p>{{CHEF_HOMETOWN}}, Thailand</p>
+                        </div>
+                    </div>
+                    <div class="restaurant-images">
+                        <img src="{{KITCHEN_IMAGE}}" alt="Thai kitchen">
+                        <img src="{{HERBS_IMAGE}}" alt="Fresh Thai herbs">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Visit Our Thai Restaurant</h2>
+                    <p>Experience authentic Thai cuisine in a warm, welcoming atmosphere that transports you to Thailand.</p>
+                    
+                    <div class="restaurant-details">
+                        <div class="detail-item">
+                            <span class="icon">📍</span>
+                            <div>
+                                <h4>Location</h4>
+                                <p>{{RESTAURANT_ADDRESS}}<br>{{CITY}}, {{STATE}} {{ZIP_CODE}}</p>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <span class="icon">🕐</span>
+                            <div>
+                                <h4>Hours</h4>
+                                <div class="hours-list">
+                                    <p>Monday - Thursday: {{WEEKDAY_HOURS}}</p>
+                                    <p>Friday - Saturday: {{WEEKEND_HOURS}}</p>
+                                    <p>Sunday: {{SUNDAY_HOURS}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <span class="icon">📞</span>
+                            <div>
+                                <h4>Contact</h4>
+                                <p>Phone: <a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+                                <p>Email: <a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <span class="icon">🍲</span>
+                            <div>
+                                <h4>Delivery</h4>
+                                <p>{{DELIVERY_AREA}} area</p>
+                                <p>Order: <a href="{{DELIVERY_URL}}">{{DELIVERY_PLATFORM}}</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-online">
+                    <h3>Order Online</h3>
+                    <p>Get your favorite Thai dishes delivered or ready for pickup</p>
+                    
+                    <div class="order-options">
+                        <a href="{{DELIVERY_URL}}" class="order-btn delivery">
+                            <span class="icon">🚚</span>
+                            <div>
+                                <h4>Delivery</h4>
+                                <p>{{DELIVERY_TIME}} minutes</p>
+                            </div>
+                        </a>
+                        
+                        <a href="{{PICKUP_URL}}" class="order-btn pickup">
+                            <span class="icon">🍜</span>
+                            <div>
+                                <h4>Pickup</h4>
+                                <p>{{PICKUP_TIME}} minutes</p>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="order-features">
+                        <div class="feature">✓ Real-time order tracking</div>
+                        <div class="feature">✓ Custom spice levels</div>
+                        <div class="feature">✓ Special dietary options</div>
+                        <div class="feature">✓ Family meal packages</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>{{RESTAURANT_NAME}}</h3>
+                    <p>Authentic Thai cuisine crafted with love using traditional recipes and the freshest ingredients imported from Thailand.</p>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}">Instagram</a>
+                        <a href="{{YELP_URL}}">Yelp</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Restaurant Info</h4>
+                    <p>{{RESTAURANT_ADDRESS}}</p>
+                    <p>{{CITY}}, {{STATE}} {{ZIP_CODE}}</p>
+                    <p>Phone: <a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+                    <p>Email: <a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Hours</h4>
+                    <p>Monday - Thursday: {{WEEKDAY_HOURS}}</p>
+                    <p>Friday - Saturday: {{WEEKEND_HOURS}}</p>
+                    <p>Sunday: {{SUNDAY_HOURS}}</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Order Online</h4>
+                    <ul>
+                        <li><a href="{{DELIVERY_URL}}">{{DELIVERY_PLATFORM}} Delivery</a></li>
+                        <li><a href="{{PICKUP_URL}}">Online Pickup Orders</a></li>
+                        <li><a href="#menu">View Full Menu</a></li>
+                        <li><a href="{{CATERING_URL}}">Catering Services</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; {{CURRENT_YEAR}} {{RESTAURANT_NAME}}. All rights reserved. | <a href="{{PRIVACY_POLICY}}">Privacy Policy</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

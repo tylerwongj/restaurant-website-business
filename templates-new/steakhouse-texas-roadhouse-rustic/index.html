@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Legendary Steaks & Country Hospitality</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Open+Sans:wght@400;600;700&family=Rye&display=swap" rel="stylesheet">
+</head>
+<body class="rustic-scheme">
+    <!-- Peanut Notice Banner -->
+    <div class="peanut-notice">
+        <div class="container">
+            <div class="notice-content">
+                <span class="notice-icon">🥜</span>
+                <span class="notice-text">We serve peanuts! Please inform us of any allergies.</span>
+                <button class="notice-close">&times;</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}}" class="logo-img">
+                </div>
+                <nav class="nav">
+                    <a href="#menu" class="nav-link">Menu</a>
+                    <a href="#call-ahead" class="nav-link">Call Ahead</a>
+                    <a href="#atmosphere" class="nav-link">Our Atmosphere</a>
+                    <a href="#locations" class="nav-link">Locations</a>
+                    <a href="#rewards" class="nav-link">VIP Club</a>
+                </nav>
+                <div class="header-actions">
+                    <button class="btn btn-primary">Call Ahead Seating</button>
+                    <button class="btn btn-secondary">Order To-Go</button>
+                    <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">Legendary Steaks<br>& Country Hospitality</h1>
+                <p class="hero-subtitle">Hand-cut steaks, fall-off-the-bone ribs, and made-from-scratch sides served with our famous warm bread and cinnamon butter.</p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary btn-large">View Menu</button>
+                    <button class="btn btn-secondary btn-large">Call Ahead Seating</button>
+                </div>
+                <div class="hero-features">
+                    <div class="feature">
+                        <span class="feature-icon">🥩</span>
+                        <span>Hand-Cut Steaks</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">🍖</span>
+                        <span>Fall-Off-The-Bone Ribs</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">🍞</span>
+                        <span>Fresh-Baked Bread</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="{{HERO_IMAGE}}" alt="Legendary steak dinner" class="hero-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Legendary Favorites -->
+    <section class="legendary-favorites">
+        <div class="container">
+            <h2 class="section-title">Legendary Favorites</h2>
+            <div class="favorites-grid">
+                <div class="favorite-card featured">
+                    <div class="favorite-image">
+                        <img src="{{SIGNATURE_STEAK}}" alt="Signature steak" class="favorite-img">
+                        <div class="favorite-badge">Legendary</div>
+                    </div>
+                    <div class="favorite-content">
+                        <h3 class="favorite-name">{{SIGNATURE_STEAK_NAME}}</h3>
+                        <p class="favorite-desc">{{SIGNATURE_STEAK_DESC}}</p>
+                        <div class="favorite-price">Starting at ${{SIGNATURE_STEAK_PRICE}}</div>
+                        <button class="btn btn-primary">Order Now</button>
+                    </div>
+                </div>
+
+                <div class="favorite-card">
+                    <div class="favorite-image">
+                        <img src="{{RIBS_IMAGE}}" alt="BBQ Ribs" class="favorite-img">
+                    </div>
+                    <div class="favorite-content">
+                        <h3 class="favorite-name">{{RIBS_NAME}}</h3>
+                        <p class="favorite-desc">{{RIBS_DESC}}</p>
+                        <div class="favorite-price">${{RIBS_PRICE}}</div>
+                        <button class="btn btn-secondary">Try It</button>
+                    </div>
+                </div>
+
+                <div class="favorite-card">
+                    <div class="favorite-image">
+                        <img src="{{COMBO_IMAGE}}" alt="Steak and ribs combo" class="favorite-img">
+                    </div>
+                    <div class="favorite-content">
+                        <h3 class="favorite-name">{{COMBO_NAME}}</h3>
+                        <p class="favorite-desc">{{COMBO_DESC}}</p>
+                        <div class="favorite-price">${{COMBO_PRICE}}</div>
+                        <button class="btn btn-secondary">Get Combo</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Categories -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <h2 class="section-title">Menu</h2>
+            <div class="menu-categories">
+                <div class="category-nav">
+                    <button class="category-btn active" data-category="all">All Items</button>
+                    <button class="category-btn" data-category="steaks">Steaks</button>
+                    <button class="category-btn" data-category="ribs">Ribs</button>
+                    <button class="category-btn" data-category="chicken">Chicken</button>
+                    <button class="category-btn" data-category="appetizers">Appetizers</button>
+                    <button class="category-btn" data-category="sides">Sides</button>
+                </div>
+
+                <div class="menu-items">
+                    <!-- Steaks Section -->
+                    <div class="menu-section" data-category="steaks">
+                        <h3 class="menu-section-title">Hand-Cut Steaks</h3>
+                        <div class="items-grid">
+                            <div class="menu-item">
+                                <img src="{{STEAK_1}}" alt="Ribeye" class="menu-item-img">
+                                <div class="menu-item-content">
+                                    <h4 class="menu-item-name">{{RIBEYE_NAME}}</h4>
+                                    <p class="menu-item-desc">{{RIBEYE_DESC}}</p>
+                                    <div class="menu-item-sizes">
+                                        <span class="size-option">10 oz - ${{RIBEYE_10_PRICE}}</span>
+                                        <span class="size-option">14 oz - ${{RIBEYE_14_PRICE}}</span>
+                                        <span class="size-option">20 oz - ${{RIBEYE_20_PRICE}}</span>
+                                    </div>
+                                    <button class="btn btn-small">Add to Order</button>
+                                </div>
+                            </div>
+
+                            <div class="menu-item">
+                                <img src="{{STEAK_2}}" alt="Sirloin" class="menu-item-img">
+                                <div class="menu-item-content">
+                                    <h4 class="menu-item-name">{{SIRLOIN_NAME}}</h4>
+                                    <p class="menu-item-desc">{{SIRLOIN_DESC}}</p>
+                                    <div class="menu-item-sizes">
+                                        <span class="size-option">6 oz - ${{SIRLOIN_6_PRICE}}</span>
+                                        <span class="size-option">8 oz - ${{SIRLOIN_8_PRICE}}</span>
+                                        <span class="size-option">11 oz - ${{SIRLOIN_11_PRICE}}</span>
+                                    </div>
+                                    <button class="btn btn-small">Add to Order</button>
+                                </div>
+                            </div>
+
+                            <div class="menu-item">
+                                <img src="{{STEAK_3}}" alt="Filet" class="menu-item-img">
+                                <div class="menu-item-content">
+                                    <h4 class="menu-item-name">{{FILET_NAME}}</h4>
+                                    <p class="menu-item-desc">{{FILET_DESC}}</p>
+                                    <div class="menu-item-sizes">
+                                        <span class="size-option">6 oz - ${{FILET_6_PRICE}}</span>
+                                        <span class="size-option">9 oz - ${{FILET_9_PRICE}}</span>
+                                    </div>
+                                    <button class="btn btn-small">Add to Order</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ribs Section -->
+                    <div class="menu-section" data-category="ribs">
+                        <h3 class="menu-section-title">Fall-Off-The-Bone Ribs</h3>
+                        <div class="items-grid">
+                            <div class="menu-item">
+                                <img src="{{RIBS_FULL}}" alt="Full Rack Ribs" class="menu-item-img">
+                                <div class="menu-item-content">
+                                    <h4 class="menu-item-name">Full Rack BBQ Ribs</h4>
+                                    <p class="menu-item-desc">A full rack of our legendary fall-off-the-bone ribs</p>
+                                    <div class="menu-item-price">${{FULL_RIBS_PRICE}}</div>
+                                    <button class="btn btn-small">Add to Order</button>
+                                </div>
+                            </div>
+
+                            <div class="menu-item">
+                                <img src="{{RIBS_HALF}}" alt="Half Rack Ribs" class="menu-item-img">
+                                <div class="menu-item-content">
+                                    <h4 class="menu-item-name">Half Rack BBQ Ribs</h4>
+                                    <p class="menu-item-desc">Half rack of tender, smoky ribs with our signature sauce</p>
+                                    <div class="menu-item-price">${{HALF_RIBS_PRICE}}</div>
+                                    <button class="btn btn-small">Add to Order</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chicken Section -->
+                    <div class="menu-section" data-category="chicken">
+                        <h3 class="menu-section-title">Country Fresh Chicken</h3>
+                        <div class="items-grid">
+                            <div class="menu-item">
+                                <img src="{{CHICKEN_1}}" alt="Grilled Chicken" class="menu-item-img">
+                                <div class="menu-item-content">
+                                    <h4 class="menu-item-name">{{GRILLED_CHICKEN_NAME}}</h4>
+                                    <p class="menu-item-desc">{{GRILLED_CHICKEN_DESC}}</p>
+                                    <div class="menu-item-price">${{GRILLED_CHICKEN_PRICE}}</div>
+                                    <button class="btn btn-small">Add to Order</button>
+                                </div>
+                            </div>
+
+                            <div class="menu-item">
+                                <img src="{{CHICKEN_2}}" alt="Fried Chicken" class="menu-item-img">
+                                <div class="menu-item-content">
+                                    <h4 class="menu-item-name">{{FRIED_CHICKEN_NAME}}</h4>
+                                    <p class="menu-item-desc">{{FRIED_CHICKEN_DESC}}</p>
+                                    <div class="menu-item-price">${{FRIED_CHICKEN_PRICE}}</div>
+                                    <button class="btn btn-small">Add to Order</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Appetizers Section -->
+                    <div class="menu-section" data-category="appetizers">
+                        <h3 class="menu-section-title">Kickin' Appetizers</h3>
+                        <div class="items-grid">
+                            <div class="menu-item">
+                                <img src="{{APPETIZER_1}}" alt="Cactus Blossom" class="menu-item-img">
+                                <div class="menu-item-content">
+                                    <h4 class="menu-item-name">{{SIGNATURE_APPETIZER_NAME}}</h4>
+                                    <p class="menu-item-desc">{{SIGNATURE_APPETIZER_DESC}}</p>
+                                    <div class="menu-item-price">${{SIGNATURE_APPETIZER_PRICE}}</div>
+                                    <button class="btn btn-small">Add to Order</button>
+                                </div>
+                            </div>
+
+                            <div class="menu-item">
+                                <img src="{{APPETIZER_2}}" alt="Rattlesnake Bites" class="menu-item-img">
+                                <div class="menu-item-content">
+                                    <h4 class="menu-item-name">{{APPETIZER_2_NAME}}</h4>
+                                    <p class="menu-item-desc">{{APPETIZER_2_DESC}}</p>
+                                    <div class="menu-item-price">${{APPETIZER_2_PRICE}}</div>
+                                    <button class="btn btn-small">Add to Order</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sides Section -->
+                    <div class="menu-section" data-category="sides">
+                        <h3 class="menu-section-title">Made-From-Scratch Sides</h3>
+                        <div class="items-grid">
+                            <div class="menu-item">
+                                <img src="{{SIDE_1}}" alt="Seasoned Rice" class="menu-item-img">
+                                <div class="menu-item-content">
+                                    <h4 class="menu-item-name">{{SIDE_1_NAME}}</h4>
+                                    <p class="menu-item-desc">{{SIDE_1_DESC}}</p>
+                                    <div class="menu-item-price">${{SIDE_1_PRICE}}</div>
+                                    <button class="btn btn-small">Add to Order</button>
+                                </div>
+                            </div>
+
+                            <div class="menu-item">
+                                <img src="{{SIDE_2}}" alt="Mashed Sweet Potatoes" class="menu-item-img">
+                                <div class="menu-item-content">
+                                    <h4 class="menu-item-name">{{SIDE_2_NAME}}</h4>
+                                    <p class="menu-item-desc">{{SIDE_2_DESC}}</p>
+                                    <div class="menu-item-price">${{SIDE_2_PRICE}}</div>
+                                    <button class="btn btn-small">Add to Order</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fresh Bread & Atmosphere -->
+    <section id="atmosphere" class="atmosphere">
+        <div class="container">
+            <div class="atmosphere-content">
+                <div class="atmosphere-text">
+                    <h2 class="atmosphere-title">More Than Just Great Food</h2>
+                    <p class="atmosphere-desc">From our famous warm bread and cinnamon butter to our lively atmosphere with country music and line dancing, we're all about creating an experience you'll never forget.</p>
+                    
+                    <div class="atmosphere-features">
+                        <div class="atmosphere-feature">
+                            <div class="feature-icon">🍞</div>
+                            <div class="feature-content">
+                                <h4>Fresh-Baked Bread</h4>
+                                <p>Warm bread and cinnamon butter served to every table, made fresh daily</p>
+                            </div>
+                        </div>
+                        
+                        <div class="atmosphere-feature">
+                            <div class="feature-icon">🎵</div>
+                            <div class="feature-content">
+                                <h4>Country Music & Line Dancing</h4>
+                                <p>Live country music and line dancing create an authentic roadhouse experience</p>
+                            </div>
+                        </div>
+                        
+                        <div class="atmosphere-feature">
+                            <div class="feature-icon">🥜</div>
+                            <div class="feature-content">
+                                <h4>Peanuts on the Floor</h4>
+                                <p>Part of our tradition - complimentary peanuts to enjoy while you wait</p>
+                            </div>
+                        </div>
+                        
+                        <div class="atmosphere-feature">
+                            <div class="feature-icon">👨‍👩‍👧‍👦</div>
+                            <div class="feature-content">
+                                <h4>Family-Friendly Fun</h4>
+                                <p>A warm, welcoming environment where families can create lasting memories</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="atmosphere-image">
+                    <img src="{{ATMOSPHERE_IMAGE}}" alt="Restaurant atmosphere" class="atmosphere-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call Ahead Seating -->
+    <section id="call-ahead" class="call-ahead">
+        <div class="container">
+            <div class="call-ahead-content">
+                <div class="call-ahead-image">
+                    <img src="{{CALL_AHEAD_IMAGE}}" alt="Call ahead seating" class="call-ahead-img">
+                </div>
+                <div class="call-ahead-text">
+                    <h2 class="call-ahead-title">Call Ahead Seating</h2>
+                    <p class="call-ahead-desc">Skip the wait! Call ahead to get on our waitlist and we'll have your table ready when you arrive.</p>
+                    
+                    <div class="call-ahead-steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Call Your Location</h4>
+                                <p>Call your local {{RESTAURANT_NAME}} up to 30 minutes before arrival</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Get On The List</h4>
+                                <p>We'll add you to our waitlist and give you an estimated time</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Arrive & Be Seated</h4>
+                                <p>Check in when you arrive and we'll seat you as quickly as possible</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="call-ahead-note">
+                        <p><strong>Note:</strong> Call ahead seating is not a reservation. It simply adds you to our current waitlist.</p>
+                    </div>
+                    
+                    <button class="btn btn-primary">Find Your Location</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations -->
+    <section id="locations" class="locations">
+        <div class="container">
+            <h2 class="section-title">Find Your Roadhouse</h2>
+            <div class="location-finder">
+                <div class="finder-search">
+                    <input type="text" placeholder="Enter city, state, or ZIP code" class="location-input">
+                    <button class="btn btn-primary">Search Locations</button>
+                </div>
+            </div>
+            
+            <div class="location-results">
+                <div class="location-card">
+                    <div class="location-info">
+                        <h3>{{LOCATION_NAME_1}}</h3>
+                        <p class="location-address">{{LOCATION_ADDRESS_1}}</p>
+                        <p class="location-phone">{{LOCATION_PHONE_1}}</p>
+                        <p class="location-hours">{{LOCATION_HOURS_1}}</p>
+                        <div class="location-features">
+                            <span class="feature">Call Ahead Seating</span>
+                            <span class="feature">To-Go Orders</span>
+                            <span class="feature">Party Rooms</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="btn btn-primary">Call This Location</button>
+                        <button class="btn btn-secondary">Get Directions</button>
+                    </div>
+                </div>
+                
+                <div class="location-card">
+                    <div class="location-info">
+                        <h3>{{LOCATION_NAME_2}}</h3>
+                        <p class="location-address">{{LOCATION_ADDRESS_2}}</p>
+                        <p class="location-phone">{{LOCATION_PHONE_2}}</p>
+                        <p class="location-hours">{{LOCATION_HOURS_2}}</p>
+                        <div class="location-features">
+                            <span class="feature">Call Ahead Seating</span>
+                            <span class="feature">To-Go Orders</span>
+                            <span class="feature">Patio Seating</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="btn btn-primary">Call This Location</button>
+                        <button class="btn btn-secondary">Get Directions</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIP Club -->
+    <section id="rewards" class="vip-club">
+        <div class="container">
+            <div class="vip-content">
+                <div class="vip-text">
+                    <h2 class="vip-title">Join The VIP Club</h2>
+                    <p class="vip-desc">Get exclusive offers, birthday rewards, and be the first to know about new menu items and special events.</p>
+                    
+                    <div class="vip-benefits">
+                        <div class="benefit">
+                            <div class="benefit-icon">🎁</div>
+                            <div class="benefit-content">
+                                <h4>Birthday Rewards</h4>
+                                <p>Free appetizer on your birthday month</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit">
+                            <div class="benefit-icon">📧</div>
+                            <div class="benefit-content">
+                                <h4>Exclusive Offers</h4>
+                                <p>Special deals sent directly to your inbox</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit">
+                            <div class="benefit-icon">🍽️</div>
+                            <div class="benefit-content">
+                                <h4>New Menu Previews</h4>
+                                <p>Be first to try new legendary items</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-primary">Join VIP Club</button>
+                </div>
+                <div class="vip-image">
+                    <img src="{{VIP_IMAGE}}" alt="VIP Club" class="vip-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="#steaks">Steaks</a></li>
+                        <li><a href="#ribs">Ribs</a></li>
+                        <li><a href="#chicken">Chicken</a></li>
+                        <li><a href="#appetizers">Appetizers</a></li>
+                        <li><a href="#sides">Sides</a></li>
+                        <li><a href="#desserts">Desserts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#call-ahead">Call Ahead Seating</a></li>
+                        <li><a href="#to-go">To-Go Orders</a></li>
+                        <li><a href="#catering">Catering</a></li>
+                        <li><a href="#gift-cards">Gift Cards</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#news">News</a></li>
+                        <li><a href="#franchising">Franchising</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}" class="social-link">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}" class="social-link">Instagram</a>
+                        <a href="{{TWITTER_URL}}" class="social-link">Twitter</a>
+                    </div>
+                    <div class="contact-info">
+                        <p>{{PHONE}}</p>
+                        <p>{{EMAIL}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Use</a>
+                    <a href="#nutrition">Nutrition Info</a>
+                    <a href="#allergens">Allergen Info</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

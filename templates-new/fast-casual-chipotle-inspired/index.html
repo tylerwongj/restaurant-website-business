@@ -3,30 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{RESTAURANT_NAME}} - Fresh Fast Food</title>
+    <title>{{RESTAURANT_NAME}} - Fresh, Fast & Real Food</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
-<body class="color-scheme-fresh">
+<body class="scheme-modern">
+    <!-- Order Online Banner -->
+    <div class="order-banner">
+        <div class="container">
+            <div class="banner-content">
+                <span class="banner-text">🚀 Order Online for Pickup or Delivery - Skip the Line!</span>
+                <a href="#order" class="banner-cta">Order Now</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
     <header class="header">
         <nav class="nav">
-            <div class="nav-container">
-                <div class="logo">
-                    <img src="{{LOGO_IMAGE}}" alt="{{RESTAURANT_NAME}} Logo">
+            <div class="container">
+                <div class="nav-logo">
                     <h1>{{RESTAURANT_NAME}}</h1>
+                    <span class="tagline">Real Food. Fast.</span>
                 </div>
                 <ul class="nav-menu">
                     <li><a href="#menu">Menu</a></li>
-                    <li><a href="#locations">Locations</a></li>
+                    <li><a href="#build">Build Your Bowl</a></li>
                     <li><a href="#catering">Catering</a></li>
                     <li><a href="#nutrition">Nutrition</a></li>
-                    <li><a href="#about">Our Story</a></li>
+                    <li><a href="#locations">Locations</a></li>
                 </ul>
                 <div class="nav-actions">
-                    <a href="#order" class="order-button">Order Now</a>
-                    <a href="#app" class="app-button">Get App</a>
+                    <a href="#rewards" class="btn-rewards">Join Rewards</a>
+                    <a href="#order" class="btn-order">Order Online</a>
                 </div>
-                <div class="nav-toggle">
+                <div class="mobile-menu-toggle">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -35,396 +46,509 @@
         </nav>
     </header>
 
-    <main>
-        <section class="hero">
-            <div class="hero-content">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="container">
                 <div class="hero-text">
-                    <h2>{{HERO_TITLE}}</h2>
-                    <p>{{HERO_SUBTITLE}}</p>
+                    <h2 class="hero-title">Real Food.<br>Real Fast.</h2>
+                    <p class="hero-subtitle">Fresh ingredients, bold flavors, and customizable bowls made exactly how you want them.</p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">53</span>
+                            <span class="stat-label">Real Ingredients</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">0</span>
+                            <span class="stat-label">Artificial Flavors</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">∞</span>
+                            <span class="stat-label">Combinations</span>
+                        </div>
+                    </div>
                     <div class="hero-actions">
-                        <a href="#order" class="cta-button primary">Order for Pickup</a>
-                        <a href="#delivery" class="cta-button secondary">Get Delivery</a>
-                    </div>
-                    <div class="hero-features">
-                        <div class="feature">
-                            <span class="feature-icon">🌱</span>
-                            <span>{{FEATURE_1}}</span>
-                        </div>
-                        <div class="feature">
-                            <span class="feature-icon">⚡</span>
-                            <span>{{FEATURE_2}}</span>
-                        </div>
-                        <div class="feature">
-                            <span class="feature-icon">🏆</span>
-                            <span>{{FEATURE_3}}</span>
-                        </div>
+                        <a href="#build" class="btn-primary">Build Your Bowl</a>
+                        <a href="#menu" class="btn-secondary">View Full Menu</a>
                     </div>
                 </div>
-                <div class="hero-image">
-                    <img src="{{HERO_IMAGE}}" alt="{{RESTAURANT_NAME}} fresh food">
+                <div class="hero-visual">
+                    <div class="bowl-builder">
+                        <img src="{{HERO_BOWL_IMAGE}}" alt="Custom bowl with fresh ingredients" />
+                        <div class="ingredient-highlights">
+                            <div class="ingredient">🥑 Fresh Avocado</div>
+                            <div class="ingredient">🌶️ Responsibly Sourced</div>
+                            <div class="ingredient">🌱 Real Ingredients</div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="menu-preview" id="menu">
-            <div class="container">
-                <h2>Build Your Perfect Meal</h2>
-                <p class="menu-description">{{MENU_DESCRIPTION}}</p>
-                
-                <div class="menu-builder">
-                    <div class="menu-step">
-                        <div class="step-number">1</div>
+    <!-- Build Your Bowl -->
+    <section id="build" class="build-section">
+        <div class="container">
+            <div class="build-header">
+                <h2>Build Your Perfect Bowl</h2>
+                <p>Start with a base, add protein, and customize with your favorite toppings</p>
+            </div>
+            <div class="build-steps">
+                <div class="build-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
                         <h3>Choose Your Base</h3>
-                        <div class="menu-options">
-                            <div class="menu-option">
-                                <img src="{{BASE_1_IMAGE}}" alt="{{BASE_1_NAME}}">
-                                <h4>{{BASE_1_NAME}}</h4>
-                                <p>{{BASE_1_DESCRIPTION}}</p>
+                        <div class="options-grid">
+                            <div class="option">
+                                <img src="{{CILANTRO_RICE_IMAGE}}" alt="Cilantro Lime Rice" />
+                                <span>Cilantro Lime Rice</span>
                             </div>
-                            <div class="menu-option">
-                                <img src="{{BASE_2_IMAGE}}" alt="{{BASE_2_NAME}}">
-                                <h4>{{BASE_2_NAME}}</h4>
-                                <p>{{BASE_2_DESCRIPTION}}</p>
+                            <div class="option">
+                                <img src="{{BROWN_RICE_IMAGE}}" alt="Brown Rice" />
+                                <span>Brown Rice</span>
                             </div>
-                            <div class="menu-option">
-                                <img src="{{BASE_3_IMAGE}}" alt="{{BASE_3_NAME}}">
-                                <h4>{{BASE_3_NAME}}</h4>
-                                <p>{{BASE_3_DESCRIPTION}}</p>
+                            <div class="option">
+                                <img src="{{ROMAINE_IMAGE}}" alt="Romaine Lettuce" />
+                                <span>Romaine Lettuce</span>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="menu-step">
-                        <div class="step-number">2</div>
-                        <h3>Pick Your Protein</h3>
-                        <div class="menu-options">
-                            <div class="menu-option">
-                                <img src="{{PROTEIN_1_IMAGE}}" alt="{{PROTEIN_1_NAME}}">
-                                <h4>{{PROTEIN_1_NAME}}</h4>
-                                <p>{{PROTEIN_1_DESCRIPTION}}</p>
+                            <div class="option">
+                                <img src="{{BOWL_BASE_IMAGE}}" alt="Half & Half" />
+                                <span>Half & Half</span>
                             </div>
-                            <div class="menu-option">
-                                <img src="{{PROTEIN_2_IMAGE}}" alt="{{PROTEIN_2_NAME}}">
-                                <h4>{{PROTEIN_2_NAME}}</h4>
-                                <p>{{PROTEIN_2_DESCRIPTION}}</p>
-                            </div>
-                            <div class="menu-option">
-                                <img src="{{PROTEIN_3_IMAGE}}" alt="{{PROTEIN_3_NAME}}">
-                                <h4>{{PROTEIN_3_NAME}}</h4>
-                                <p>{{PROTEIN_3_DESCRIPTION}}</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="menu-step">
-                        <div class="step-number">3</div>
-                        <h3>Add Fresh Toppings</h3>
-                        <div class="toppings-grid">
-                            <div class="topping-item">{{TOPPING_1}}</div>
-                            <div class="topping-item">{{TOPPING_2}}</div>
-                            <div class="topping-item">{{TOPPING_3}}</div>
-                            <div class="topping-item">{{TOPPING_4}}</div>
-                            <div class="topping-item">{{TOPPING_5}}</div>
-                            <div class="topping-item">{{TOPPING_6}}</div>
-                            <div class="topping-item">{{TOPPING_7}}</div>
-                            <div class="topping-item">{{TOPPING_8}}</div>
                         </div>
                     </div>
                 </div>
-
-                <div class="menu-cta">
-                    <a href="menu.html" class="view-full-menu">View Full Menu & Prices</a>
-                    <a href="#order" class="start-order">Start Your Order</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="app-promotion">
-            <div class="container">
-                <div class="app-content">
-                    <div class="app-text">
-                        <h2>Order Faster with Our App</h2>
-                        <p>{{APP_DESCRIPTION}}</p>
-                        <ul class="app-benefits">
-                            <li>{{APP_BENEFIT_1}}</li>
-                            <li>{{APP_BENEFIT_2}}</li>
-                            <li>{{APP_BENEFIT_3}}</li>
-                            <li>{{APP_BENEFIT_4}}</li>
-                        </ul>
-                        <div class="app-download">
-                            <a href="{{APP_STORE_LINK}}" class="app-store-button">
-                                <img src="{{APP_STORE_BADGE}}" alt="Download on App Store">
-                            </a>
-                            <a href="{{GOOGLE_PLAY_LINK}}" class="google-play-button">
-                                <img src="{{GOOGLE_PLAY_BADGE}}" alt="Get it on Google Play">
-                            </a>
+                <div class="build-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Add Protein</h3>
+                        <div class="options-grid">
+                            <div class="option">
+                                <img src="{{CHICKEN_IMAGE}}" alt="Grilled Chicken" />
+                                <span>Grilled Chicken</span>
+                            </div>
+                            <div class="option">
+                                <img src="{{STEAK_IMAGE}}" alt="Carne Asada" />
+                                <span>Carne Asada</span>
+                            </div>
+                            <div class="option">
+                                <img src="{{PORK_IMAGE}}" alt="Carnitas" />
+                                <span>Carnitas</span>
+                            </div>
+                            <div class="option">
+                                <img src="{{SOFRITAS_IMAGE}}" alt="Sofritas" />
+                                <span>Sofritas (Plant-Based)</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="app-image">
-                        <img src="{{APP_MOCKUP_IMAGE}}" alt="{{RESTAURANT_NAME}} mobile app">
+                </div>
+                <div class="build-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Customize Toppings</h3>
+                        <div class="toppings-list">
+                            <div class="topping-category">
+                                <h4>Beans & Veggies</h4>
+                                <div class="topping-items">
+                                    <span>Black Beans</span>
+                                    <span>Pinto Beans</span>
+                                    <span>Fajita Veggies</span>
+                                    <span>Fresh Tomato Salsa</span>
+                                </div>
+                            </div>
+                            <div class="topping-category">
+                                <h4>Premium Toppings</h4>
+                                <div class="topping-items">
+                                    <span>Guacamole (+$2.50)</span>
+                                    <span>Queso Blanco (+$1.50)</span>
+                                    <span>Extra Meat (+$4.50)</span>
+                                </div>
+                            </div>
+                            <div class="topping-category">
+                                <h4>Finishers</h4>
+                                <div class="topping-items">
+                                    <span>Cheese</span>
+                                    <span>Sour Cream</span>
+                                    <span>Lettuce</span>
+                                    <span>Cilantro</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <section class="locations-section" id="locations">
-            <div class="container">
-                <h2>Find a Location Near You</h2>
-                <div class="location-finder">
-                    <input type="text" placeholder="Enter your address or zip code" class="location-input">
-                    <button type="button" class="find-button">Find Locations</button>
-                </div>
-                
-                <div class="locations-grid">
-                    <div class="location-card">
-                        <div class="location-info">
-                            <h3>{{LOCATION_1_NAME}}</h3>
-                            <p class="location-address">{{LOCATION_1_ADDRESS}}</p>
-                            <p class="location-hours">{{LOCATION_1_HOURS}}</p>
-                            <p class="location-phone">{{LOCATION_1_PHONE}}</p>
-                        </div>
-                        <div class="location-actions">
-                            <a href="{{LOCATION_1_DIRECTIONS}}" class="directions-button">Get Directions</a>
-                            <a href="#order" class="order-here-button">Order Here</a>
-                        </div>
-                    </div>
-                    
-                    <div class="location-card">
-                        <div class="location-info">
-                            <h3>{{LOCATION_2_NAME}}</h3>
-                            <p class="location-address">{{LOCATION_2_ADDRESS}}</p>
-                            <p class="location-hours">{{LOCATION_2_HOURS}}</p>
-                            <p class="location-phone">{{LOCATION_2_PHONE}}</p>
-                        </div>
-                        <div class="location-actions">
-                            <a href="{{LOCATION_2_DIRECTIONS}}" class="directions-button">Get Directions</a>
-                            <a href="#order" class="order-here-button">Order Here</a>
-                        </div>
-                    </div>
-                    
-                    <div class="location-card">
-                        <div class="location-info">
-                            <h3>{{LOCATION_3_NAME}}</h3>
-                            <p class="location-address">{{LOCATION_3_ADDRESS}}</p>
-                            <p class="location-hours">{{LOCATION_3_HOURS}}</p>
-                            <p class="location-phone">{{LOCATION_3_PHONE}}</p>
-                        </div>
-                        <div class="location-actions">
-                            <a href="{{LOCATION_3_DIRECTIONS}}" class="directions-button">Get Directions</a>
-                            <a href="#order" class="order-here-button">Order Here</a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="view-all-locations">
-                    <a href="#all-locations" class="view-all-button">View All {{TOTAL_LOCATIONS}} Locations</a>
-                </div>
+            <div class="build-cta">
+                <a href="#order" class="btn-primary">Start Building</a>
+                <p class="build-note">Bowls start at $8.95 • Burritos start at $8.95 • Unlimited toppings included</p>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="catering-section" id="catering">
-            <div class="container">
-                <div class="catering-content">
-                    <div class="catering-text">
-                        <h2>Catering for Any Event</h2>
-                        <p>{{CATERING_DESCRIPTION}}</p>
-                        <div class="catering-options">
-                            <div class="catering-option">
-                                <h3>{{CATERING_OPTION_1_TITLE}}</h3>
-                                <p>{{CATERING_OPTION_1_DESCRIPTION}}</p>
-                                <span class="catering-price">{{CATERING_OPTION_1_PRICE}}</span>
-                            </div>
-                            <div class="catering-option">
-                                <h3>{{CATERING_OPTION_2_TITLE}}</h3>
-                                <p>{{CATERING_OPTION_2_DESCRIPTION}}</p>
-                                <span class="catering-price">{{CATERING_OPTION_2_PRICE}}</span>
-                            </div>
-                        </div>
-                        <a href="#catering-order" class="catering-button">Order Catering</a>
+    <!-- Menu Highlights -->
+    <section id="menu" class="menu-highlights">
+        <div class="container">
+            <h2>Menu Favorites</h2>
+            <div class="menu-grid">
+                <div class="menu-card signature">
+                    <div class="menu-image">
+                        <img src="{{SIGNATURE_BOWL_IMAGE}}" alt="Signature Bowl" />
+                        <div class="menu-badge">Most Popular</div>
                     </div>
-                    <div class="catering-image">
-                        <img src="{{CATERING_IMAGE}}" alt="{{RESTAURANT_NAME}} catering">
+                    <div class="menu-content">
+                        <h3>{{SIGNATURE_BOWL_NAME}}</h3>
+                        <p>{{SIGNATURE_BOWL_DESCRIPTION}}</p>
+                        <div class="menu-details">
+                            <span class="price">${{SIGNATURE_BOWL_PRICE}}</span>
+                            <span class="calories">{{SIGNATURE_BOWL_CALORIES}} cal</span>
+                        </div>
+                        <a href="#order" class="btn-menu">Order Now</a>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="menu-image">
+                        <img src="{{BURRITO_IMAGE}}" alt="Classic Burrito" />
+                    </div>
+                    <div class="menu-content">
+                        <h3>Classic Burrito</h3>
+                        <p>Your choice of protein and toppings wrapped in a warm flour tortilla</p>
+                        <div class="menu-details">
+                            <span class="price">$8.95</span>
+                            <span class="calories">320-1180 cal</span>
+                        </div>
+                        <a href="#order" class="btn-menu">Customize</a>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="menu-image">
+                        <img src="{{SALAD_IMAGE}}" alt="Fresh Salad Bowl" />
+                    </div>
+                    <div class="menu-content">
+                        <h3>Fresh Salad Bowl</h3>
+                        <p>Crisp romaine lettuce with your choice of protein and fresh toppings</p>
+                        <div class="menu-details">
+                            <span class="price">$8.95</span>
+                            <span class="calories">180-970 cal</span>
+                        </div>
+                        <a href="#order" class="btn-menu">Build Salad</a>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <div class="menu-image">
+                        <img src="{{QUESADILLA_IMAGE}}" alt="Loaded Quesadilla" />
+                    </div>
+                    <div class="menu-content">
+                        <h3>Loaded Quesadilla</h3>
+                        <p>Melted cheese and your choice of protein in a grilled flour tortilla</p>
+                        <div class="menu-details">
+                            <span class="price">$9.95</span>
+                            <span class="calories">510-1200 cal</span>
+                        </div>
+                        <a href="#order" class="btn-menu">Add to Order</a>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="nutrition-section" id="nutrition">
-            <div class="container">
-                <h2>Nutrition & Ingredients</h2>
-                <p class="nutrition-intro">{{NUTRITION_INTRO}}</p>
-                
-                <div class="nutrition-highlights">
-                    <div class="nutrition-card">
-                        <div class="nutrition-icon">🥗</div>
-                        <h3>{{NUTRITION_HIGHLIGHT_1_TITLE}}</h3>
-                        <p>{{NUTRITION_HIGHLIGHT_1_DESCRIPTION}}</p>
-                    </div>
-                    <div class="nutrition-card">
-                        <div class="nutrition-icon">🌽</div>
-                        <h3>{{NUTRITION_HIGHLIGHT_2_TITLE}}</h3>
-                        <p>{{NUTRITION_HIGHLIGHT_2_DESCRIPTION}}</p>
-                    </div>
-                    <div class="nutrition-card">
-                        <div class="nutrition-icon">🥑</div>
-                        <h3>{{NUTRITION_HIGHLIGHT_3_TITLE}}</h3>
-                        <p>{{NUTRITION_HIGHLIGHT_3_DESCRIPTION}}</p>
-                    </div>
-                    <div class="nutrition-card">
-                        <div class="nutrition-icon">🌶️</div>
-                        <h3>{{NUTRITION_HIGHLIGHT_4_TITLE}}</h3>
-                        <p>{{NUTRITION_HIGHLIGHT_4_DESCRIPTION}}</p>
-                    </div>
-                </div>
-                
-                <div class="nutrition-cta">
-                    <a href="#nutrition-calculator" class="nutrition-button">Nutrition Calculator</a>
-                    <a href="#allergen-info" class="allergen-button">Allergen Information</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="story-section" id="about">
-            <div class="container">
-                <div class="story-content">
-                    <div class="story-text">
-                        <h2>Our Story</h2>
-                        <p class="story-intro">{{STORY_INTRO}}</p>
-                        <p>{{STORY_DESCRIPTION}}</p>
-                        
-                        <div class="story-stats">
-                            <div class="stat">
-                                <h3>{{FOUNDED_YEAR}}</h3>
-                                <p>Founded</p>
-                            </div>
-                            <div class="stat">
-                                <h3>{{LOCATIONS_COUNT}}</h3>
-                                <p>Locations</p>
-                            </div>
-                            <div class="stat">
-                                <h3>{{DAILY_CUSTOMERS}}</h3>
-                                <p>Daily Customers</p>
+    <!-- Real Ingredients -->
+    <section class="real-ingredients">
+        <div class="container">
+            <div class="ingredients-content">
+                <div class="ingredients-text">
+                    <h2>Real Ingredients, Real Difference</h2>
+                    <p class="lead">We source the highest quality ingredients and prepare them fresh daily in our kitchens.</p>
+                    <div class="ingredient-commitments">
+                        <div class="commitment">
+                            <div class="commitment-icon">🌱</div>
+                            <div class="commitment-text">
+                                <h4>No Artificial Flavors</h4>
+                                <p>Zero artificial flavors, colors, or preservatives in any of our ingredients</p>
                             </div>
                         </div>
-                        
-                        <div class="values">
-                            <h3>Our Values</h3>
-                            <ul>
-                                <li>{{VALUE_1}}</li>
-                                <li>{{VALUE_2}}</li>
-                                <li>{{VALUE_3}}</li>
-                            </ul>
+                        <div class="commitment">
+                            <div class="commitment-icon">🐄</div>
+                            <div class="commitment-text">
+                                <h4>Responsibly Raised</h4>
+                                <p>All our meat comes from animals raised without antibiotics or added hormones</p>
+                            </div>
+                        </div>
+                        <div class="commitment">
+                            <div class="commitment-icon">🥑</div>
+                            <div class="commitment-text">
+                                <h4>Hand-Mashed Guac</h4>
+                                <p>Fresh avocados hand-mashed daily with lime, cilantro, and jalapeños</p>
+                            </div>
+                        </div>
+                        <div class="commitment">
+                            <div class="commitment-icon">🌶️</div>
+                            <div class="commitment-text">
+                                <h4>Fresh Salsas</h4>
+                                <p>Made fresh daily from whole tomatoes, onions, and peppers</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="story-image">
-                        <img src="{{STORY_IMAGE}}" alt="{{RESTAURANT_NAME}} story">
+                </div>
+                <div class="ingredients-visual">
+                    <div class="ingredient-showcase">
+                        <img src="{{FRESH_INGREDIENTS_IMAGE}}" alt="Fresh ingredients being prepared" />
+                        <div class="showcase-badges">
+                            <div class="badge">53 Real Ingredients</div>
+                            <div class="badge">0 Artificial Flavors</div>
+                            <div class="badge">Prepared Fresh Daily</div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="contact-section">
-            <div class="container">
-                <h2>Get in Touch</h2>
-                <div class="contact-content">
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <h3>Customer Service</h3>
-                            <p>{{CUSTOMER_SERVICE_PHONE}}</p>
-                            <p>{{CUSTOMER_SERVICE_EMAIL}}</p>
-                            <p>{{CUSTOMER_SERVICE_HOURS}}</p>
-                        </div>
-                        <div class="contact-item">
-                            <h3>Corporate Office</h3>
-                            <p>{{CORPORATE_ADDRESS}}</p>
-                        </div>
-                        <div class="contact-item">
-                            <h3>Press Inquiries</h3>
-                            <p>{{PRESS_EMAIL}}</p>
-                        </div>
+    <!-- Nutrition & Lifestyle -->
+    <section id="nutrition" class="nutrition-section">
+        <div class="container">
+            <div class="nutrition-header">
+                <h2>Built for Your Lifestyle</h2>
+                <p>Nutritious options that fit your dietary preferences and goals</p>
+            </div>
+            <div class="lifestyle-options">
+                <div class="lifestyle-card">
+                    <div class="lifestyle-icon">🌱</div>
+                    <h3>Plant-Based</h3>
+                    <p>Sofritas, beans, veggies, and fresh salsas create satisfying plant-based meals</p>
+                    <div class="lifestyle-example">
+                        <strong>Try:</strong> Sofritas Bowl with brown rice, black beans, and guac
                     </div>
-                    <div class="contact-form">
-                        <h3>Send us a message</h3>
-                        <form>
-                            <div class="form-group">
-                                <input type="text" placeholder="Your Name" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="email" placeholder="Your Email" required>
-                            </div>
-                            <div class="form-group">
-                                <select required>
-                                    <option value="">Select Topic</option>
-                                    <option value="feedback">General Feedback</option>
-                                    <option value="complaint">Complaint</option>
-                                    <option value="catering">Catering Inquiry</option>
-                                    <option value="franchise">Franchise Information</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <textarea placeholder="Your Message" required></textarea>
-                            </div>
-                            <button type="submit" class="submit-button">Send Message</button>
-                        </form>
+                </div>
+                <div class="lifestyle-card">
+                    <div class="lifestyle-icon">🥗</div>
+                    <h3>Low-Carb</h3>
+                    <p>Salad bowls and lifestyle bowls with fresh greens instead of rice</p>
+                    <div class="lifestyle-example">
+                        <strong>Try:</strong> Chicken Salad Bowl with fajita veggies and salsa
+                    </div>
+                </div>
+                <div class="lifestyle-card">
+                    <div class="lifestyle-icon">💪</div>
+                    <h3>High-Protein</h3>
+                    <p>Double protein options with beans for extra fuel for your day</p>
+                    <div class="lifestyle-example">
+                        <strong>Try:</strong> Double Chicken Bowl with black beans and cheese
+                    </div>
+                </div>
+                <div class="lifestyle-card">
+                    <div class="lifestyle-icon">🌾</div>
+                    <h3>Whole30® Approved</h3>
+                    <p>Compliant options available with approved ingredients</p>
+                    <div class="lifestyle-example">
+                        <strong>Try:</strong> Carnitas Salad Bowl with fajita veggies
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
+            <div class="nutrition-cta">
+                <a href="#calculator" class="btn-secondary">Nutrition Calculator</a>
+                <a href="#order" class="btn-primary">Order Your Lifestyle Bowl</a>
+            </div>
+        </div>
+    </section>
 
+    <!-- Catering -->
+    <section id="catering" class="catering-section">
+        <div class="container">
+            <div class="catering-content">
+                <div class="catering-text">
+                    <h2>Catering That Delivers</h2>
+                    <p class="lead">Perfect for office meetings, parties, or any gathering. Real food that everyone will love.</p>
+                    <div class="catering-options">
+                        <div class="catering-option">
+                            <h4>🍽️ Group Orders</h4>
+                            <p>Individual meals for 5+ people</p>
+                            <span class="price-range">Starting at $8.95 per person</span>
+                        </div>
+                        <div class="catering-option">
+                            <h4>🥙 Burritos by the Box</h4>
+                            <p>Assorted burritos for easy serving</p>
+                            <span class="price-range">$11.95 per burrito</span>
+                        </div>
+                        <div class="catering-option">
+                            <h4>🎉 Taco Bar Setup</h4>
+                            <p>Full taco bar with all the fixings</p>
+                            <span class="price-range">$12.95 per person</span>
+                        </div>
+                    </div>
+                    <div class="catering-benefits">
+                        <div class="benefit">✓ Free delivery on orders $75+</div>
+                        <div class="benefit">✓ Eco-friendly packaging</div>
+                        <div class="benefit">✓ 24-hour advance ordering</div>
+                        <div class="benefit">✓ Dedicated catering team</div>
+                    </div>
+                    <a href="#catering-order" class="btn-primary">Order Catering</a>
+                </div>
+                <div class="catering-image">
+                    <img src="{{CATERING_SPREAD_IMAGE}}" alt="Catering spread with multiple bowls and burritos" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rewards Program -->
+    <section id="rewards" class="rewards-section">
+        <div class="container">
+            <div class="rewards-content">
+                <div class="rewards-header">
+                    <h2>Join {{RESTAURANT_NAME}} Rewards</h2>
+                    <p>Earn points, get free food, and unlock exclusive perks</p>
+                </div>
+                <div class="rewards-benefits">
+                    <div class="rewards-visual">
+                        <div class="phone-mockup">
+                            <img src="{{REWARDS_APP_IMAGE}}" alt="Rewards app interface" />
+                        </div>
+                    </div>
+                    <div class="rewards-details">
+                        <div class="reward-benefit">
+                            <div class="benefit-icon">🎁</div>
+                            <div class="benefit-text">
+                                <h4>Welcome Reward</h4>
+                                <p>Free entrée after your first purchase</p>
+                            </div>
+                        </div>
+                        <div class="reward-benefit">
+                            <div class="benefit-icon">⭐</div>
+                            <div class="benefit-text">
+                                <h4>Earn Points</h4>
+                                <p>10 points for every $1 spent</p>
+                            </div>
+                        </div>
+                        <div class="reward-benefit">
+                            <div class="benefit-icon">🍽️</div>
+                            <div class="benefit-text">
+                                <h4>Free Food</h4>
+                                <p>1,625 points = free entrée</p>
+                            </div>
+                        </div>
+                        <div class="reward-benefit">
+                            <div class="benefit-icon">🚀</div>
+                            <div class="benefit-text">
+                                <h4>Exclusive Perks</h4>
+                                <p>Early access to new menu items</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="rewards-cta">
+                    <a href="#app-download" class="btn-primary">Download App & Join</a>
+                    <p class="rewards-note">Available on iOS and Android • Join in-store or online</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations -->
+    <section id="locations" class="locations-section">
+        <div class="container">
+            <h2>Find Your {{RESTAURANT_NAME}}</h2>
+            <div class="location-finder">
+                <div class="finder-form">
+                    <input type="text" placeholder="Enter ZIP code or city" id="location-input">
+                    <button class="btn-search">Find Locations</button>
+                </div>
+                <div class="location-options">
+                    <a href="#dine-in" class="location-option">
+                        <span class="option-icon">🍽️</span>
+                        <span>Dine In</span>
+                    </a>
+                    <a href="#pickup" class="location-option">
+                        <span class="option-icon">🚶</span>
+                        <span>Pickup</span>
+                    </a>
+                    <a href="#delivery" class="location-option">
+                        <span class="option-icon">🚚</span>
+                        <span>Delivery</span>
+                    </a>
+                </div>
+            </div>
+            <div class="featured-locations">
+                <div class="location-card">
+                    <h3>{{LOCATION_1_NAME}}</h3>
+                    <p>{{LOCATION_1_ADDRESS}}</p>
+                    <div class="location-details">
+                        <span class="hours">{{LOCATION_1_HOURS}}</span>
+                        <span class="phone">{{LOCATION_1_PHONE}}</span>
+                    </div>
+                    <div class="location-services">
+                        <span class="service">Dine-In</span>
+                        <span class="service">Pickup</span>
+                        <span class="service">Delivery</span>
+                    </div>
+                    <div class="location-actions">
+                        <a href="#directions" class="btn-secondary">Directions</a>
+                        <a href="#order" class="btn-primary">Order Now</a>
+                    </div>
+                </div>
+                <div class="location-card">
+                    <h3>{{LOCATION_2_NAME}}</h3>
+                    <p>{{LOCATION_2_ADDRESS}}</p>
+                    <div class="location-details">
+                        <span class="hours">{{LOCATION_2_HOURS}}</span>
+                        <span class="phone">{{LOCATION_2_PHONE}}</span>
+                    </div>
+                    <div class="location-services">
+                        <span class="service">Dine-In</span>
+                        <span class="service">Pickup</span>
+                        <span class="service">Drive-Thru</span>
+                    </div>
+                    <div class="location-actions">
+                        <a href="#directions" class="btn-secondary">Directions</a>
+                        <a href="#order" class="btn-primary">Order Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
+                <div class="footer-brand">
                     <h3>{{RESTAURANT_NAME}}</h3>
-                    <p>{{FOOTER_DESCRIPTION}}</p>
+                    <p>Real Food. Real Fast. Real Good.</p>
                     <div class="social-links">
-                        <a href="{{SOCIAL_FACEBOOK}}" aria-label="Facebook">Facebook</a>
-                        <a href="{{SOCIAL_INSTAGRAM}}" aria-label="Instagram">Instagram</a>
-                        <a href="{{SOCIAL_TWITTER}}" aria-label="Twitter">Twitter</a>
-                        <a href="{{SOCIAL_YOUTUBE}}" aria-label="YouTube">YouTube</a>
+                        <a href="{{INSTAGRAM_URL}}" target="_blank">📷</a>
+                        <a href="{{TWITTER_URL}}" target="_blank">🐦</a>
+                        <a href="{{FACEBOOK_URL}}" target="_blank">📘</a>
+                        <a href="{{TIKTOK_URL}}" target="_blank">🎵</a>
                     </div>
                 </div>
-                <div class="footer-section">
-                    <h3>Order & Locations</h3>
-                    <ul>
-                        <li><a href="#order">Order Online</a></li>
-                        <li><a href="#locations">Find Locations</a></li>
-                        <li><a href="#app">Mobile App</a></li>
-                        <li><a href="#gift-cards">Gift Cards</a></li>
-                        <li><a href="#catering">Catering</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="#about">Our Story</a></li>
-                        <li><a href="#careers">Careers</a></li>
-                        <li><a href="#press">Press</a></li>
-                        <li><a href="#investors">Investors</a></li>
-                        <li><a href="#franchise">Franchise</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Support</h3>
-                    <ul>
-                        <li><a href="#contact">Contact Us</a></li>
-                        <li><a href="#faq">FAQ</a></li>
-                        <li><a href="#nutrition">Nutrition</a></li>
-                        <li><a href="#allergens">Allergen Info</a></li>
-                        <li><a href="#accessibility">Accessibility</a></li>
-                    </ul>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Order</h4>
+                        <a href="#order">Order Online</a>
+                        <a href="#catering">Catering</a>
+                        <a href="#rewards">Rewards</a>
+                        <a href="#gift-cards">Gift Cards</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>About</h4>
+                        <a href="#ingredients">Our Ingredients</a>
+                        <a href="#nutrition">Nutrition</a>
+                        <a href="#sustainability">Sustainability</a>
+                        <a href="#careers">Careers</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Support</h4>
+                        <a href="#help">Help Center</a>
+                        <a href="#contact">Contact Us</a>
+                        <a href="#accessibility">Accessibility</a>
+                        <a href="#feedback">Feedback</a>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
                 <div class="footer-legal">
-                    <p>&copy; {{CURRENT_YEAR}} {{RESTAURANT_NAME}}. All rights reserved.</p>
-                    <div class="legal-links">
-                        <a href="#privacy">Privacy Policy</a>
-                        <a href="#terms">Terms of Service</a>
-                        <a href="#california-privacy">CA Privacy Rights</a>
-                    </div>
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms</a>
+                    <a href="#allergens">Allergen Info</a>
                 </div>
             </div>
         </div>

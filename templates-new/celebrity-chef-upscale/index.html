@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{CHEF_NAME}} - {{RESTAURANT_GROUP_NAME}}</title>
+    <meta name="description" content="{{CHEF_NAME}}'s acclaimed restaurant group featuring world-class dining experiences across multiple locations">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body class="luxury-scheme">
+    <header class="header">
+        <div class="awards-banner">
+            <div class="banner-scroll">
+                <span>⭐ {{MICHELIN_STARS}} Michelin Stars • 🏆 {{JAMES_BEARD_AWARDS}} James Beard Awards • 📺 {{TV_SHOWS}} TV Shows • 📚 {{COOKBOOK_COUNT}} Bestselling Cookbooks</span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="logo">
+                <h1>{{CHEF_NAME}}</h1>
+                <span class="chef-title">{{CHEF_TITLE}}</span>
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#restaurants">Restaurants</a></li>
+                    <li><a href="#chef">The Chef</a></li>
+                    <li><a href="#experiences">Experiences</a></li>
+                    <li><a href="#events">Private Events</a></li>
+                    <li><a href="#shop">Shop</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#reservations" class="btn btn-reservation">Reserve</a>
+                <a href="#gift-cards" class="btn btn-gift">Gift Cards</a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <video autoplay muted loop>
+                <source src="{{HERO_VIDEO_URL}}" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="chef-intro">
+                <h2>{{CHEF_TAGLINE}}</h2>
+                <p>{{CHEF_INTRODUCTION}}</p>
+                <div class="accolades">
+                    <div class="accolade">
+                        <span class="accolade-number">{{MICHELIN_STARS}}</span>
+                        <span class="accolade-label">Michelin Stars</span>
+                    </div>
+                    <div class="accolade">
+                        <span class="accolade-number">{{RESTAURANT_COUNT}}</span>
+                        <span class="accolade-label">Restaurants Worldwide</span>
+                    </div>
+                    <div class="accolade">
+                        <span class="accolade-number">{{YEARS_EXPERIENCE}}</span>
+                        <span class="accolade-label">Years of Excellence</span>
+                    </div>
+                    <div class="accolade">
+                        <span class="accolade-number">{{COUNTRIES}}</span>
+                        <span class="accolade-label">Countries</span>
+                    </div>
+                </div>
+                <div class="hero-cta">
+                    <a href="#restaurants" class="btn btn-primary">Explore Restaurants</a>
+                    <a href="#chef" class="btn btn-secondary">Meet the Chef</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="restaurant-portfolio" id="restaurants">
+        <div class="container">
+            <h2>World-Class Dining Experiences</h2>
+            <p class="portfolio-subtitle">From intimate fine dining to innovative casual concepts, discover our portfolio of acclaimed restaurants</p>
+            
+            <div class="restaurant-categories">
+                <button class="category-filter active" data-category="all">All Restaurants</button>
+                <button class="category-filter" data-category="fine-dining">Fine Dining</button>
+                <button class="category-filter" data-category="casual">Casual Dining</button>
+                <button class="category-filter" data-category="bars">Bars & Lounges</button>
+                <button class="category-filter" data-category="international">International</button>
+            </div>
+
+            <div class="restaurants-grid">
+                <div class="restaurant-card fine-dining flagship" data-category="fine-dining">
+                    <img src="{{FLAGSHIP_RESTAURANT_IMAGE}}" alt="{{FLAGSHIP_RESTAURANT_NAME}}">
+                    <div class="restaurant-overlay">
+                        <div class="restaurant-info">
+                            <h3>{{FLAGSHIP_RESTAURANT_NAME}}</h3>
+                            <div class="restaurant-location">{{FLAGSHIP_LOCATION}}</div>
+                            <p>{{FLAGSHIP_DESCRIPTION}}</p>
+                            <div class="restaurant-awards">
+                                <span class="award">{{FLAGSHIP_MICHELIN_STARS}} Michelin Stars</span>
+                                <span class="award">{{FLAGSHIP_RATING}} AAA Rating</span>
+                            </div>
+                            <div class="restaurant-features">
+                                <span>{{FLAGSHIP_CUISINE}}</span>
+                                <span>$$$$</span>
+                                <span>{{FLAGSHIP_DRESS_CODE}}</span>
+                            </div>
+                            <div class="restaurant-actions">
+                                <a href="#reservations" class="btn btn-primary">Reserve</a>
+                                <a href="#menu" class="btn btn-outline">View Menu</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="restaurant-card fine-dining" data-category="fine-dining">
+                    <img src="{{RESTAURANT_2_IMAGE}}" alt="{{RESTAURANT_2_NAME}}">
+                    <div class="restaurant-overlay">
+                        <div class="restaurant-info">
+                            <h3>{{RESTAURANT_2_NAME}}</h3>
+                            <div class="restaurant-location">{{RESTAURANT_2_LOCATION}}</div>
+                            <p>{{RESTAURANT_2_DESCRIPTION}}</p>
+                            <div class="restaurant-awards">
+                                <span class="award">{{RESTAURANT_2_STARS}} Michelin Stars</span>
+                                <span class="award">{{RESTAURANT_2_AWARD}}</span>
+                            </div>
+                            <div class="restaurant-features">
+                                <span>{{RESTAURANT_2_CUISINE}}</span>
+                                <span>$$$$</span>
+                                <span>{{RESTAURANT_2_STYLE}}</span>
+                            </div>
+                            <div class="restaurant-actions">
+                                <a href="#reservations" class="btn btn-primary">Reserve</a>
+                                <a href="#menu" class="btn btn-outline">View Menu</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="restaurant-card casual" data-category="casual">
+                    <img src="{{RESTAURANT_3_IMAGE}}" alt="{{RESTAURANT_3_NAME}}">
+                    <div class="restaurant-overlay">
+                        <div class="restaurant-info">
+                            <h3>{{RESTAURANT_3_NAME}}</h3>
+                            <div class="restaurant-location">{{RESTAURANT_3_LOCATION}}</div>
+                            <p>{{RESTAURANT_3_DESCRIPTION}}</p>
+                            <div class="restaurant-awards">
+                                <span class="award">{{RESTAURANT_3_AWARD_1}}</span>
+                                <span class="award">{{RESTAURANT_3_AWARD_2}}</span>
+                            </div>
+                            <div class="restaurant-features">
+                                <span>{{RESTAURANT_3_CUISINE}}</span>
+                                <span>$$$</span>
+                                <span>{{RESTAURANT_3_STYLE}}</span>
+                            </div>
+                            <div class="restaurant-actions">
+                                <a href="#reservations" class="btn btn-primary">Reserve</a>
+                                <a href="#menu" class="btn btn-outline">View Menu</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="restaurant-card bars" data-category="bars">
+                    <img src="{{RESTAURANT_4_IMAGE}}" alt="{{RESTAURANT_4_NAME}}">
+                    <div class="restaurant-overlay">
+                        <div class="restaurant-info">
+                            <h3>{{RESTAURANT_4_NAME}}</h3>
+                            <div class="restaurant-location">{{RESTAURANT_4_LOCATION}}</div>
+                            <p>{{RESTAURANT_4_DESCRIPTION}}</p>
+                            <div class="restaurant-awards">
+                                <span class="award">{{RESTAURANT_4_AWARD_1}}</span>
+                                <span class="award">{{RESTAURANT_4_AWARD_2}}</span>
+                            </div>
+                            <div class="restaurant-features">
+                                <span>{{RESTAURANT_4_TYPE}}</span>
+                                <span>$$$</span>
+                                <span>{{RESTAURANT_4_ATMOSPHERE}}</span>
+                            </div>
+                            <div class="restaurant-actions">
+                                <a href="#reservations" class="btn btn-primary">Reserve</a>
+                                <a href="#menu" class="btn btn-outline">View Menu</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="restaurant-card international" data-category="international">
+                    <img src="{{RESTAURANT_5_IMAGE}}" alt="{{RESTAURANT_5_NAME}}">
+                    <div class="restaurant-overlay">
+                        <div class="restaurant-info">
+                            <h3>{{RESTAURANT_5_NAME}}</h3>
+                            <div class="restaurant-location">{{RESTAURANT_5_LOCATION}}</div>
+                            <p>{{RESTAURANT_5_DESCRIPTION}}</p>
+                            <div class="restaurant-awards">
+                                <span class="award">{{RESTAURANT_5_STARS}} Michelin Stars</span>
+                                <span class="award">{{RESTAURANT_5_AWARD}}</span>
+                            </div>
+                            <div class="restaurant-features">
+                                <span>{{RESTAURANT_5_CUISINE}}</span>
+                                <span>$$$$</span>
+                                <span>{{RESTAURANT_5_STYLE}}</span>
+                            </div>
+                            <div class="restaurant-actions">
+                                <a href="#reservations" class="btn btn-primary">Reserve</a>
+                                <a href="#menu" class="btn btn-outline">View Menu</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="restaurant-card casual" data-category="casual">
+                    <img src="{{RESTAURANT_6_IMAGE}}" alt="{{RESTAURANT_6_NAME}}">
+                    <div class="restaurant-overlay">
+                        <div class="restaurant-info">
+                            <h3>{{RESTAURANT_6_NAME}}</h3>
+                            <div class="restaurant-location">{{RESTAURANT_6_LOCATION}}</div>
+                            <p>{{RESTAURANT_6_DESCRIPTION}}</p>
+                            <div class="restaurant-awards">
+                                <span class="award">{{RESTAURANT_6_AWARD_1}}</span>
+                                <span class="award">{{RESTAURANT_6_AWARD_2}}</span>
+                            </div>
+                            <div class="restaurant-features">
+                                <span>{{RESTAURANT_6_CUISINE}}</span>
+                                <span>$$$</span>
+                                <span>{{RESTAURANT_6_STYLE}}</span>
+                            </div>
+                            <div class="restaurant-actions">
+                                <a href="#reservations" class="btn btn-primary">Reserve</a>
+                                <a href="#menu" class="btn btn-outline">View Menu</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="global-presence">
+                <h3>Global Presence</h3>
+                <div class="location-stats">
+                    <div class="location-stat">
+                        <span class="stat-number">{{CITIES_COUNT}}</span>
+                        <span class="stat-label">Cities</span>
+                    </div>
+                    <div class="location-stat">
+                        <span class="stat-number">{{COUNTRIES}}</span>
+                        <span class="stat-label">Countries</span>
+                    </div>
+                    <div class="location-stat">
+                        <span class="stat-number">{{TOTAL_RESTAURANTS}}</span>
+                        <span class="stat-label">Total Restaurants</span>
+                    </div>
+                </div>
+                <a href="#locations" class="btn btn-outline">View All Locations</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="chef-profile" id="chef">
+        <div class="container">
+            <div class="chef-content">
+                <div class="chef-image">
+                    <img src="{{CHEF_PORTRAIT}}" alt="{{CHEF_NAME}}">
+                    <div class="chef-quote">
+                        <blockquote>"{{CHEF_SIGNATURE_QUOTE}}"</blockquote>
+                        <cite>— {{CHEF_NAME}}</cite>
+                    </div>
+                </div>
+                <div class="chef-biography">
+                    <h2>Meet {{CHEF_FIRST_NAME}}</h2>
+                    <p class="chef-intro">{{CHEF_BIO_INTRO}}</p>
+                    <p>{{CHEF_BIO_PARAGRAPH_1}}</p>
+                    <p>{{CHEF_BIO_PARAGRAPH_2}}</p>
+                    
+                    <div class="chef-achievements">
+                        <h3>Achievements & Recognition</h3>
+                        <div class="achievements-grid">
+                            <div class="achievement">
+                                <h4>{{ACHIEVEMENT_1_TITLE}}</h4>
+                                <p>{{ACHIEVEMENT_1_DESCRIPTION}}</p>
+                                <span class="achievement-year">{{ACHIEVEMENT_1_YEAR}}</span>
+                            </div>
+                            <div class="achievement">
+                                <h4>{{ACHIEVEMENT_2_TITLE}}</h4>
+                                <p>{{ACHIEVEMENT_2_DESCRIPTION}}</p>
+                                <span class="achievement-year">{{ACHIEVEMENT_2_YEAR}}</span>
+                            </div>
+                            <div class="achievement">
+                                <h4>{{ACHIEVEMENT_3_TITLE}}</h4>
+                                <p>{{ACHIEVEMENT_3_DESCRIPTION}}</p>
+                                <span class="achievement-year">{{ACHIEVEMENT_3_YEAR}}</span>
+                            </div>
+                            <div class="achievement">
+                                <h4>{{ACHIEVEMENT_4_TITLE}}</h4>
+                                <p>{{ACHIEVEMENT_4_DESCRIPTION}}</p>
+                                <span class="achievement-year">{{ACHIEVEMENT_4_YEAR}}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chef-philosophy">
+                        <h3>Culinary Philosophy</h3>
+                        <p>{{CHEF_PHILOSOPHY}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="media-empire">
+                <h3>Media & Publishing</h3>
+                <div class="media-grid">
+                    <div class="media-section">
+                        <h4>Television Shows</h4>
+                        <div class="media-items">
+                            <div class="media-item">
+                                <img src="{{TV_SHOW_1_IMAGE}}" alt="{{TV_SHOW_1_NAME}}">
+                                <h5>{{TV_SHOW_1_NAME}}</h5>
+                                <p>{{TV_SHOW_1_NETWORK}} • {{TV_SHOW_1_SEASONS}} seasons</p>
+                            </div>
+                            <div class="media-item">
+                                <img src="{{TV_SHOW_2_IMAGE}}" alt="{{TV_SHOW_2_NAME}}">
+                                <h5>{{TV_SHOW_2_NAME}}</h5>
+                                <p>{{TV_SHOW_2_NETWORK}} • {{TV_SHOW_2_SEASONS}} seasons</p>
+                            </div>
+                            <div class="media-item">
+                                <img src="{{TV_SHOW_3_IMAGE}}" alt="{{TV_SHOW_3_NAME}}">
+                                <h5>{{TV_SHOW_3_NAME}}</h5>
+                                <p>{{TV_SHOW_3_NETWORK}} • {{TV_SHOW_3_SEASONS}} seasons</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="media-section">
+                        <h4>Bestselling Cookbooks</h4>
+                        <div class="media-items">
+                            <div class="media-item">
+                                <img src="{{COOKBOOK_1_IMAGE}}" alt="{{COOKBOOK_1_NAME}}">
+                                <h5>{{COOKBOOK_1_NAME}}</h5>
+                                <p>{{COOKBOOK_1_YEAR}} • {{COOKBOOK_1_DESCRIPTION}}</p>
+                            </div>
+                            <div class="media-item">
+                                <img src="{{COOKBOOK_2_IMAGE}}" alt="{{COOKBOOK_2_NAME}}">
+                                <h5>{{COOKBOOK_2_NAME}}</h5>
+                                <p>{{COOKBOOK_2_YEAR}} • {{COOKBOOK_2_DESCRIPTION}}</p>
+                            </div>
+                            <div class="media-item">
+                                <img src="{{COOKBOOK_3_IMAGE}}" alt="{{COOKBOOK_3_NAME}}">
+                                <h5>{{COOKBOOK_3_NAME}}</h5>
+                                <p>{{COOKBOOK_3_YEAR}} • {{COOKBOOK_3_DESCRIPTION}}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="media-section">
+                        <h4>Digital Presence</h4>
+                        <div class="digital-stats">
+                            <div class="digital-stat">
+                                <span class="stat-number">{{YOUTUBE_SUBSCRIBERS}}</span>
+                                <span class="stat-label">YouTube Subscribers</span>
+                            </div>
+                            <div class="digital-stat">
+                                <span class="stat-number">{{INSTAGRAM_FOLLOWERS}}</span>
+                                <span class="stat-label">Instagram Followers</span>
+                            </div>
+                            <div class="digital-stat">
+                                <span class="stat-number">{{MASTERCLASS_STUDENTS}}</span>
+                                <span class="stat-label">MasterClass Students</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="signature-experiences" id="experiences">
+        <div class="container">
+            <h2>Exclusive Experiences</h2>
+            <p class="experiences-subtitle">Limited access culinary experiences available only through our restaurant group</p>
+            
+            <div class="experiences-grid">
+                <div class="experience-card premium">
+                    <img src="{{EXPERIENCE_1_IMAGE}}" alt="{{EXPERIENCE_1_NAME}}">
+                    <div class="experience-content">
+                        <div class="experience-badge">Signature Experience</div>
+                        <h3>{{EXPERIENCE_1_NAME}}</h3>
+                        <p>{{EXPERIENCE_1_DESCRIPTION}}</p>
+                        <div class="experience-details">
+                            <div class="detail">
+                                <span class="detail-label">Duration:</span>
+                                <span class="detail-value">{{EXPERIENCE_1_DURATION}}</span>
+                            </div>
+                            <div class="detail">
+                                <span class="detail-label">Group Size:</span>
+                                <span class="detail-value">{{EXPERIENCE_1_GROUP_SIZE}}</span>
+                            </div>
+                            <div class="detail">
+                                <span class="detail-label">Price:</span>
+                                <span class="detail-value">{{EXPERIENCE_1_PRICE}} per person</span>
+                            </div>
+                        </div>
+                        <div class="experience-includes">
+                            <h4>Includes:</h4>
+                            <ul>
+                                <li>{{EXPERIENCE_1_INCLUDE_1}}</li>
+                                <li>{{EXPERIENCE_1_INCLUDE_2}}</li>
+                                <li>{{EXPERIENCE_1_INCLUDE_3}}</li>
+                                <li>{{EXPERIENCE_1_INCLUDE_4}}</li>
+                            </ul>
+                        </div>
+                        <a href="#book-experience" class="btn btn-primary">Book Experience</a>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <img src="{{EXPERIENCE_2_IMAGE}}" alt="{{EXPERIENCE_2_NAME}}">
+                    <div class="experience-content">
+                        <div class="experience-badge">Chef's Table</div>
+                        <h3>{{EXPERIENCE_2_NAME}}</h3>
+                        <p>{{EXPERIENCE_2_DESCRIPTION}}</p>
+                        <div class="experience-details">
+                            <div class="detail">
+                                <span class="detail-label">Duration:</span>
+                                <span class="detail-value">{{EXPERIENCE_2_DURATION}}</span>
+                            </div>
+                            <div class="detail">
+                                <span class="detail-label">Group Size:</span>
+                                <span class="detail-value">{{EXPERIENCE_2_GROUP_SIZE}}</span>
+                            </div>
+                            <div class="detail">
+                                <span class="detail-label">Price:</span>
+                                <span class="detail-value">{{EXPERIENCE_2_PRICE}} per person</span>
+                            </div>
+                        </div>
+                        <div class="experience-includes">
+                            <h4>Includes:</h4>
+                            <ul>
+                                <li>{{EXPERIENCE_2_INCLUDE_1}}</li>
+                                <li>{{EXPERIENCE_2_INCLUDE_2}}</li>
+                                <li>{{EXPERIENCE_2_INCLUDE_3}}</li>
+                                <li>{{EXPERIENCE_2_INCLUDE_4}}</li>
+                            </ul>
+                        </div>
+                        <a href="#book-experience" class="btn btn-outline">Book Experience</a>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <img src="{{EXPERIENCE_3_IMAGE}}" alt="{{EXPERIENCE_3_NAME}}">
+                    <div class="experience-content">
+                        <div class="experience-badge">Culinary Class</div>
+                        <h3>{{EXPERIENCE_3_NAME}}</h3>
+                        <p>{{EXPERIENCE_3_DESCRIPTION}}</p>
+                        <div class="experience-details">
+                            <div class="detail">
+                                <span class="detail-label">Duration:</span>
+                                <span class="detail-value">{{EXPERIENCE_3_DURATION}}</span>
+                            </div>
+                            <div class="detail">
+                                <span class="detail-label">Class Size:</span>
+                                <span class="detail-value">{{EXPERIENCE_3_GROUP_SIZE}}</span>
+                            </div>
+                            <div class="detail">
+                                <span class="detail-label">Price:</span>
+                                <span class="detail-value">{{EXPERIENCE_3_PRICE}} per person</span>
+                            </div>
+                        </div>
+                        <div class="experience-includes">
+                            <h4>Includes:</h4>
+                            <ul>
+                                <li>{{EXPERIENCE_3_INCLUDE_1}}</li>
+                                <li>{{EXPERIENCE_3_INCLUDE_2}}</li>
+                                <li>{{EXPERIENCE_3_INCLUDE_3}}</li>
+                                <li>{{EXPERIENCE_3_INCLUDE_4}}</li>
+                            </ul>
+                        </div>
+                        <a href="#book-experience" class="btn btn-outline">Book Experience</a>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <img src="{{EXPERIENCE_4_IMAGE}}" alt="{{EXPERIENCE_4_NAME}}">
+                    <div class="experience-content">
+                        <div class="experience-badge">Wine Experience</div>
+                        <h3>{{EXPERIENCE_4_NAME}}</h3>
+                        <p>{{EXPERIENCE_4_DESCRIPTION}}</p>
+                        <div class="experience-details">
+                            <div class="detail">
+                                <span class="detail-label">Duration:</span>
+                                <span class="detail-value">{{EXPERIENCE_4_DURATION}}</span>
+                            </div>
+                            <div class="detail">
+                                <span class="detail-label">Group Size:</span>
+                                <span class="detail-value">{{EXPERIENCE_4_GROUP_SIZE}}</span>
+                            </div>
+                            <div class="detail">
+                                <span class="detail-label">Price:</span>
+                                <span class="detail-value">{{EXPERIENCE_4_PRICE}} per person</span>
+                            </div>
+                        </div>
+                        <div class="experience-includes">
+                            <h4>Includes:</h4>
+                            <ul>
+                                <li>{{EXPERIENCE_4_INCLUDE_1}}</li>
+                                <li>{{EXPERIENCE_4_INCLUDE_2}}</li>
+                                <li>{{EXPERIENCE_4_INCLUDE_3}}</li>
+                                <li>{{EXPERIENCE_4_INCLUDE_4}}</li>
+                            </ul>
+                        </div>
+                        <a href="#book-experience" class="btn btn-outline">Book Experience</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="private-events" id="events">
+        <div class="container">
+            <h2>Private Events & Corporate Dining</h2>
+            <p class="events-subtitle">Create unforgettable moments with bespoke events at our acclaimed venues</p>
+            
+            <div class="event-types">
+                <div class="event-type">
+                    <img src="{{PRIVATE_DINING_IMAGE}}" alt="Private dining room">
+                    <div class="event-content">
+                        <h3>Private Dining Rooms</h3>
+                        <p>{{PRIVATE_DINING_DESCRIPTION}}</p>
+                        <div class="event-features">
+                            <span>• Capacity: {{PRIVATE_DINING_CAPACITY}} guests</span>
+                            <span>• Custom menus by {{CHEF_NAME}}</span>
+                            <span>• Dedicated event coordinator</span>
+                            <span>• Wine pairing available</span>
+                        </div>
+                        <div class="event-pricing">
+                            <span>Starting at {{PRIVATE_DINING_STARTING_PRICE}} per person</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-type">
+                    <img src="{{BUYOUT_IMAGE}}" alt="Restaurant buyout">
+                    <div class="event-content">
+                        <h3>Full Restaurant Buyouts</h3>
+                        <p>{{BUYOUT_DESCRIPTION}}</p>
+                        <div class="event-features">
+                            <span>• Exclusive access to entire restaurant</span>
+                            <span>• Capacity: {{BUYOUT_CAPACITY}} guests</span>
+                            <span>• Complete customization available</span>
+                            <span>• Entertainment and AV setup</span>
+                        </div>
+                        <div class="event-pricing">
+                            <span>Starting at {{BUYOUT_STARTING_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-type">
+                    <img src="{{CORPORATE_IMAGE}}" alt="Corporate event">
+                    <div class="event-content">
+                        <h3>Corporate Events</h3>
+                        <p>{{CORPORATE_DESCRIPTION}}</p>
+                        <div class="event-features">
+                            <span>• Business lunch and dinner packages</span>
+                            <span>• Conference and meeting facilities</span>
+                            <span>• Team building culinary experiences</span>
+                            <span>• Corporate catering services</span>
+                        </div>
+                        <div class="event-pricing">
+                            <span>Custom packages available</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-type">
+                    <img src="{{CELEBRATION_IMAGE}}" alt="Special celebration">
+                    <div class="event-content">
+                        <h3>Special Celebrations</h3>
+                        <p>{{CELEBRATION_DESCRIPTION}}</p>
+                        <div class="event-features">
+                            <span>• Weddings and anniversaries</span>
+                            <span>• Birthday and milestone celebrations</span>
+                            <span>• Holiday parties and gatherings</span>
+                            <span>• Customized experiences</span>
+                        </div>
+                        <div class="event-pricing">
+                            <span>Packages from {{CELEBRATION_STARTING_PRICE}} per person</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="event-planning">
+                <h3>Event Planning Services</h3>
+                <div class="planning-features">
+                    <div class="planning-feature">
+                        <h4>Menu Curation</h4>
+                        <p>{{CHEF_NAME}}'s team creates bespoke menus tailored to your event and dietary requirements</p>
+                    </div>
+                    <div class="planning-feature">
+                        <h4>Wine & Beverage Selection</h4>
+                        <p>Our sommelier curates the perfect wine pairings and beverage programs for your event</p>
+                    </div>
+                    <div class="planning-feature">
+                        <h4>Event Coordination</h4>
+                        <p>Dedicated event managers ensure every detail is perfectly executed from planning to service</p>
+                    </div>
+                    <div class="planning-feature">
+                        <h4>Venue Styling</h4>
+                        <p>Transform our spaces with custom décor, lighting, and table settings to match your vision</p>
+                    </div>
+                </div>
+                <a href="#event-inquiry" class="btn btn-primary">Plan Your Event</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="chef-shop" id="shop">
+        <div class="container">
+            <h2>{{CHEF_NAME}} Shop</h2>
+            <p class="shop-subtitle">Bring the flavors and techniques home with our curated collection of products and experiences</p>
+            
+            <div class="shop-categories">
+                <div class="shop-category">
+                    <h3>Cookbooks & Publications</h3>
+                    <div class="products-grid">
+                        <div class="product">
+                            <img src="{{PRODUCT_COOKBOOK_1_IMAGE}}" alt="{{PRODUCT_COOKBOOK_1_NAME}}">
+                            <h4>{{PRODUCT_COOKBOOK_1_NAME}}</h4>
+                            <p>{{PRODUCT_COOKBOOK_1_DESCRIPTION}}</p>
+                            <div class="product-price">{{PRODUCT_COOKBOOK_1_PRICE}}</div>
+                            <a href="#buy" class="btn btn-outline">Buy Now</a>
+                        </div>
+                        <div class="product">
+                            <img src="{{PRODUCT_COOKBOOK_2_IMAGE}}" alt="{{PRODUCT_COOKBOOK_2_NAME}}">
+                            <h4>{{PRODUCT_COOKBOOK_2_NAME}}</h4>
+                            <p>{{PRODUCT_COOKBOOK_2_DESCRIPTION}}</p>
+                            <div class="product-price">{{PRODUCT_COOKBOOK_2_PRICE}}</div>
+                            <a href="#buy" class="btn btn-outline">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shop-category">
+                    <h3>Kitchen Essentials</h3>
+                    <div class="products-grid">
+                        <div class="product">
+                            <img src="{{PRODUCT_KNIFE_SET_IMAGE}}" alt="{{PRODUCT_KNIFE_SET_NAME}}">
+                            <h4>{{PRODUCT_KNIFE_SET_NAME}}</h4>
+                            <p>{{PRODUCT_KNIFE_SET_DESCRIPTION}}</p>
+                            <div class="product-price">{{PRODUCT_KNIFE_SET_PRICE}}</div>
+                            <a href="#buy" class="btn btn-outline">Buy Now</a>
+                        </div>
+                        <div class="product">
+                            <img src="{{PRODUCT_COOKWARE_IMAGE}}" alt="{{PRODUCT_COOKWARE_NAME}}">
+                            <h4>{{PRODUCT_COOKWARE_NAME}}</h4>
+                            <p>{{PRODUCT_COOKWARE_DESCRIPTION}}</p>
+                            <div class="product-price">{{PRODUCT_COOKWARE_PRICE}}</div>
+                            <a href="#buy" class="btn btn-outline">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shop-category">
+                    <h3>Gourmet Ingredients</h3>
+                    <div class="products-grid">
+                        <div class="product">
+                            <img src="{{PRODUCT_SPICE_SET_IMAGE}}" alt="{{PRODUCT_SPICE_SET_NAME}}">
+                            <h4>{{PRODUCT_SPICE_SET_NAME}}</h4>
+                            <p>{{PRODUCT_SPICE_SET_DESCRIPTION}}</p>
+                            <div class="product-price">{{PRODUCT_SPICE_SET_PRICE}}</div>
+                            <a href="#buy" class="btn btn-outline">Buy Now</a>
+                        </div>
+                        <div class="product">
+                            <img src="{{PRODUCT_SAUCE_SET_IMAGE}}" alt="{{PRODUCT_SAUCE_SET_NAME}}">
+                            <h4>{{PRODUCT_SAUCE_SET_NAME}}</h4>
+                            <p>{{PRODUCT_SAUCE_SET_DESCRIPTION}}</p>
+                            <div class="product-price">{{PRODUCT_SAUCE_SET_PRICE}}</div>
+                            <a href="#buy" class="btn btn-outline">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shop-category">
+                    <h3>Digital Experiences</h3>
+                    <div class="products-grid">
+                        <div class="product digital">
+                            <img src="{{MASTERCLASS_IMAGE}}" alt="{{MASTERCLASS_NAME}}">
+                            <h4>{{MASTERCLASS_NAME}}</h4>
+                            <p>{{MASTERCLASS_DESCRIPTION}}</p>
+                            <div class="product-features">
+                                <span>{{MASTERCLASS_LESSONS}} video lessons</span>
+                                <span>{{MASTERCLASS_DURATION}} of content</span>
+                                <span>Downloadable workbook</span>
+                            </div>
+                            <div class="product-price">{{MASTERCLASS_PRICE}}</div>
+                            <a href="#masterclass" class="btn btn-outline">Learn More</a>
+                        </div>
+                        <div class="product digital">
+                            <img src="{{VIRTUAL_COOKING_IMAGE}}" alt="{{VIRTUAL_COOKING_NAME}}">
+                            <h4>{{VIRTUAL_COOKING_NAME}}</h4>
+                            <p>{{VIRTUAL_COOKING_DESCRIPTION}}</p>
+                            <div class="product-features">
+                                <span>Live interactive sessions</span>
+                                <span>Ingredient kit included</span>
+                                <span>Limited class sizes</span>
+                            </div>
+                            <div class="product-price">{{VIRTUAL_COOKING_PRICE}}</div>
+                            <a href="#virtual-class" class="btn btn-outline">Book Class</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gift-cards-section">
+                <h3>Gift Cards</h3>
+                <p>Give the gift of exceptional dining experiences at any of our restaurant locations</p>
+                <div class="gift-card-options">
+                    <div class="gift-card">
+                        <h4>Digital Gift Card</h4>
+                        <p>Instantly delivered via email</p>
+                        <div class="gift-amounts">
+                            <button class="amount-btn">$100</button>
+                            <button class="amount-btn">$250</button>
+                            <button class="amount-btn">$500</button>
+                            <button class="amount-btn">Custom</button>
+                        </div>
+                        <a href="#digital-gift" class="btn btn-primary">Purchase Digital</a>
+                    </div>
+                    <div class="gift-card">
+                        <h4>Physical Gift Card</h4>
+                        <p>Beautifully packaged for special occasions</p>
+                        <div class="gift-amounts">
+                            <button class="amount-btn">$100</button>
+                            <button class="amount-btn">$250</button>
+                            <button class="amount-btn">$500</button>
+                            <button class="amount-btn">Custom</button>
+                        </div>
+                        <a href="#physical-gift" class="btn btn-outline">Order Physical</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="reservations-contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="reservation-section">
+                    <h2>Make a Reservation</h2>
+                    <p>Experience world-class dining at any of our locations</p>
+                    <form class="reservation-form">
+                        <div class="form-row">
+                            <select required>
+                                <option value="">Select Restaurant</option>
+                                <option value="flagship">{{FLAGSHIP_RESTAURANT_NAME}} - {{FLAGSHIP_LOCATION}}</option>
+                                <option value="restaurant2">{{RESTAURANT_2_NAME}} - {{RESTAURANT_2_LOCATION}}</option>
+                                <option value="restaurant3">{{RESTAURANT_3_NAME}} - {{RESTAURANT_3_LOCATION}}</option>
+                                <option value="restaurant4">{{RESTAURANT_4_NAME}} - {{RESTAURANT_4_LOCATION}}</option>
+                                <option value="restaurant5">{{RESTAURANT_5_NAME}} - {{RESTAURANT_5_LOCATION}}</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <input type="text" placeholder="First Name" required>
+                            <input type="text" placeholder="Last Name" required>
+                        </div>
+                        <div class="form-row">
+                            <input type="email" placeholder="Email Address" required>
+                            <input type="tel" placeholder="Phone Number" required>
+                        </div>
+                        <div class="form-row">
+                            <input type="date" required>
+                            <select required>
+                                <option value="">Preferred Time</option>
+                                <option value="17:30">5:30 PM</option>
+                                <option value="18:00">6:00 PM</option>
+                                <option value="18:30">6:30 PM</option>
+                                <option value="19:00">7:00 PM</option>
+                                <option value="19:30">7:30 PM</option>
+                                <option value="20:00">8:00 PM</option>
+                                <option value="20:30">8:30 PM</option>
+                                <option value="21:00">9:00 PM</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <select required>
+                                <option value="">Party Size</option>
+                                <option value="2">2 Guests</option>
+                                <option value="3">3 Guests</option>
+                                <option value="4">4 Guests</option>
+                                <option value="5">5 Guests</option>
+                                <option value="6">6 Guests</option>
+                                <option value="7">7 Guests</option>
+                                <option value="8">8 Guests</option>
+                                <option value="8+">8+ Guests (Special Request)</option>
+                            </select>
+                            <select>
+                                <option value="">Special Occasion</option>
+                                <option value="anniversary">Anniversary</option>
+                                <option value="birthday">Birthday</option>
+                                <option value="business">Business Dinner</option>
+                                <option value="celebration">Celebration</option>
+                                <option value="romantic">Romantic Dinner</option>
+                            </select>
+                        </div>
+                        <textarea placeholder="Special requests, dietary restrictions, or preferences" rows="3"></textarea>
+                        <button type="submit" class="btn btn-primary">Request Reservation</button>
+                    </form>
+                    <div class="reservation-note">
+                        <p><strong>Note:</strong> For parties of 8+ guests or same-day reservations, please call the restaurant directly.</p>
+                    </div>
+                </div>
+
+                <div class="contact-section">
+                    <h2>Contact Information</h2>
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <h3>General Inquiries</h3>
+                            <p>Email: {{GENERAL_EMAIL}}</p>
+                            <p>Phone: {{GENERAL_PHONE}}</p>
+                        </div>
+                        <div class="contact-method">
+                            <h3>Private Events</h3>
+                            <p>Email: {{EVENTS_EMAIL}}</p>
+                            <p>Phone: {{EVENTS_PHONE}}</p>
+                        </div>
+                        <div class="contact-method">
+                            <h3>Media Inquiries</h3>
+                            <p>Email: {{MEDIA_EMAIL}}</p>
+                            <p>Phone: {{MEDIA_PHONE}}</p>
+                        </div>
+                        <div class="contact-method">
+                            <h3>Corporate Partnerships</h3>
+                            <p>Email: {{CORPORATE_EMAIL}}</p>
+                            <p>Phone: {{CORPORATE_PHONE}}</p>
+                        </div>
+                    </div>
+
+                    <div class="restaurant-hours">
+                        <h3>General Restaurant Hours</h3>
+                        <p><strong>Note:</strong> Hours vary by location. Please check individual restaurant pages for specific hours and availability.</p>
+                        <div class="hours-typical">
+                            <p><strong>Typical Dinner Service:</strong> {{TYPICAL_DINNER_HOURS}}</p>
+                            <p><strong>Lunch Service:</strong> {{TYPICAL_LUNCH_HOURS}} (select locations)</p>
+                            <p><strong>Reservations:</strong> {{RESERVATION_POLICY}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section main">
+                    <h3>{{CHEF_NAME}}</h3>
+                    <p>{{FOOTER_DESCRIPTION}}</p>
+                    <div class="social-links">
+                        <a href="{{INSTAGRAM_URL}}" aria-label="Instagram">📷</a>
+                        <a href="{{FACEBOOK_URL}}" aria-label="Facebook">📘</a>
+                        <a href="{{TWITTER_URL}}" aria-label="Twitter">🐦</a>
+                        <a href="{{YOUTUBE_URL}}" aria-label="YouTube">📺</a>
+                        <a href="{{LINKEDIN_URL}}" aria-label="LinkedIn">💼</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Restaurants</h4>
+                    <a href="#flagship">{{FLAGSHIP_RESTAURANT_NAME}}</a>
+                    <a href="#restaurant2">{{RESTAURANT_2_NAME}}</a>
+                    <a href="#restaurant3">{{RESTAURANT_3_NAME}}</a>
+                    <a href="#restaurant4">{{RESTAURANT_4_NAME}}</a>
+                    <a href="#all-locations">All Locations</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Experiences</h4>
+                    <a href="#chefs-table">Chef's Table</a>
+                    <a href="#culinary-classes">Culinary Classes</a>
+                    <a href="#private-events">Private Events</a>
+                    <a href="#wine-experiences">Wine Experiences</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Shop</h4>
+                    <a href="#cookbooks">Cookbooks</a>
+                    <a href="#kitchen-tools">Kitchen Tools</a>
+                    <a href="#ingredients">Gourmet Ingredients</a>
+                    <a href="#gift-cards">Gift Cards</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Media</h4>
+                    <a href="#tv-shows">TV Shows</a>
+                    <a href="#masterclass">MasterClass</a>
+                    <a href="#press">Press</a>
+                    <a href="#news">News</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <p>&copy; {{CURRENT_YEAR}} {{CHEF_NAME}} Restaurant Group. All rights reserved.</p>
+                    <div class="legal-links">
+                        <a href="#privacy">Privacy Policy</a>
+                        <a href="#terms">Terms of Service</a>
+                        <a href="#accessibility">Accessibility</a>
+                        <a href="#careers">Careers</a>
+                    </div>
+                </div>
+                <div class="footer-awards">
+                    <span>{{MICHELIN_STARS}} Michelin Stars</span>
+                    <span>{{JAMES_BEARD_AWARDS}} James Beard Awards</span>
+                    <span>{{AAA_DIAMONDS}} AAA Five Diamond</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Fresh, Local, Sustainable</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="color-scheme-wellness">
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="{{LOGO_IMAGE}}" alt="{{RESTAURANT_NAME}} Logo">
+                    <div class="logo-text">
+                        <h1>{{RESTAURANT_NAME}}</h1>
+                        <span class="tagline">Fresh • Local • Sustainable</span>
+                    </div>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="#ingredients">Ingredients</a></li>
+                    <li><a href="#nutrition">Nutrition</a></li>
+                    <li><a href="#sustainability">Impact</a></li>
+                    <li><a href="#locations">Locations</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="#order" class="order-button">Order Now</a>
+                    <a href="#rewards" class="rewards-button">Join Rewards</a>
+                </div>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="seasonal-banner">
+            <div class="banner-container">
+                <span class="season-indicator">🍂 {{CURRENT_SEASON}}</span>
+                <span class="seasonal-message">{{SEASONAL_MESSAGE}}</span>
+                <a href="#seasonal-menu" class="seasonal-link">See Seasonal Menu</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <span class="badge-icon">🌱</span>
+                        <span>{{MISSION_STATEMENT}}</span>
+                    </div>
+                    <h2>{{TAGLINE}}</h2>
+                    <p>{{HERO_DESCRIPTION}}</p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">{{FARMS_PARTNERED}}</span>
+                            <span class="stat-label">Local Farms</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">{{MILES_RADIUS}}</span>
+                            <span class="stat-label">Mile Radius</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">{{ORGANIC_PERCENTAGE}}%</span>
+                            <span class="stat-label">Organic</span>
+                        </div>
+                    </div>
+                    <div class="hero-actions">
+                        <a href="#order" class="cta-button primary">Order for Pickup</a>
+                        <a href="#ingredients" class="cta-button secondary">Our Ingredients</a>
+                    </div>
+                    <div class="certifications">
+                        <span class="cert-label">Certified:</span>
+                        <div class="cert-badges">
+                            <img src="{{ORGANIC_CERT}}" alt="USDA Organic">
+                            <img src="{{LOCAL_CERT}}" alt="Local First">
+                            <img src="{{SUSTAINABLE_CERT}}" alt="Sustainable">
+                            <img src="{{FAIR_TRADE_CERT}}" alt="Fair Trade">
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="{{HERO_IMAGE}}" alt="{{RESTAURANT_NAME}} fresh healthy bowls">
+                    <div class="ingredient-carousel">
+                        <div class="ingredient-slide active">
+                            <img src="{{INGREDIENT_IMAGE_1}}" alt="{{INGREDIENT_NAME_1}}">
+                            <span class="ingredient-name">{{INGREDIENT_NAME_1}}</span>
+                            <span class="ingredient-source">{{INGREDIENT_SOURCE_1}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="ingredient-transparency" id="ingredients">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="section-subtitle">Full Transparency</span>
+                    <h2>Know Your Ingredients</h2>
+                    <p>{{INGREDIENTS_INTRO}}</p>
+                </div>
+                
+                <div class="ingredient-explorer">
+                    <div class="explorer-controls">
+                        <div class="filter-buttons">
+                            <button class="filter-btn active" data-filter="all">All Ingredients</button>
+                            <button class="filter-btn" data-filter="vegetables">Vegetables</button>
+                            <button class="filter-btn" data-filter="proteins">Proteins</button>
+                            <button class="filter-btn" data-filter="grains">Grains</button>
+                            <button class="filter-btn" data-filter="dressings">Dressings</button>
+                        </div>
+                        <div class="search-container">
+                            <input type="text" class="ingredient-search" placeholder="Search ingredients...">
+                            <button class="search-btn">🔍</button>
+                        </div>
+                    </div>
+
+                    <div class="ingredients-grid">
+                        <div class="ingredient-card" data-category="vegetables">
+                            <img src="{{VEG_IMAGE_1}}" alt="{{VEG_NAME_1}}">
+                            <div class="ingredient-info">
+                                <h3>{{VEG_NAME_1}}</h3>
+                                <div class="source-info">
+                                    <span class="farm-name">{{VEG_FARM_1}}</span>
+                                    <span class="distance">{{VEG_DISTANCE_1}} miles away</span>
+                                </div>
+                                <div class="ingredient-badges">
+                                    <span class="badge organic">Organic</span>
+                                    <span class="badge seasonal">Seasonal</span>
+                                </div>
+                                <div class="nutrition-preview">
+                                    <div class="nutrition-item">
+                                        <span class="nutrient">Vitamin C</span>
+                                        <span class="amount">{{VEG_VIT_C_1}}</span>
+                                    </div>
+                                    <div class="nutrition-item">
+                                        <span class="nutrient">Fiber</span>
+                                        <span class="amount">{{VEG_FIBER_1}}</span>
+                                    </div>
+                                </div>
+                                <button class="learn-more-btn" data-ingredient="{{VEG_NAME_1}}">Learn More</button>
+                            </div>
+                        </div>
+
+                        <div class="ingredient-card" data-category="proteins">
+                            <img src="{{PROTEIN_IMAGE_1}}" alt="{{PROTEIN_NAME_1}}">
+                            <div class="ingredient-info">
+                                <h3>{{PROTEIN_NAME_1}}</h3>
+                                <div class="source-info">
+                                    <span class="farm-name">{{PROTEIN_FARM_1}}</span>
+                                    <span class="distance">{{PROTEIN_DISTANCE_1}} miles away</span>
+                                </div>
+                                <div class="ingredient-badges">
+                                    <span class="badge grass-fed">Grass-Fed</span>
+                                    <span class="badge antibiotic-free">Antibiotic Free</span>
+                                </div>
+                                <div class="nutrition-preview">
+                                    <div class="nutrition-item">
+                                        <span class="nutrient">Protein</span>
+                                        <span class="amount">{{PROTEIN_AMOUNT_1}}</span>
+                                    </div>
+                                    <div class="nutrition-item">
+                                        <span class="nutrient">Iron</span>
+                                        <span class="amount">{{PROTEIN_IRON_1}}</span>
+                                    </div>
+                                </div>
+                                <button class="learn-more-btn" data-ingredient="{{PROTEIN_NAME_1}}">Learn More</button>
+                            </div>
+                        </div>
+
+                        <div class="ingredient-card" data-category="grains">
+                            <img src="{{GRAIN_IMAGE_1}}" alt="{{GRAIN_NAME_1}}">
+                            <div class="ingredient-info">
+                                <h3>{{GRAIN_NAME_1}}</h3>
+                                <div class="source-info">
+                                    <span class="farm-name">{{GRAIN_FARM_1}}</span>
+                                    <span class="distance">{{GRAIN_DISTANCE_1}} miles away</span>
+                                </div>
+                                <div class="ingredient-badges">
+                                    <span class="badge whole-grain">Whole Grain</span>
+                                    <span class="badge gluten-free">Gluten Free</span>
+                                </div>
+                                <div class="nutrition-preview">
+                                    <div class="nutrition-item">
+                                        <span class="nutrient">Fiber</span>
+                                        <span class="amount">{{GRAIN_FIBER_1}}</span>
+                                    </div>
+                                    <div class="nutrition-item">
+                                        <span class="nutrient">B Vitamins</span>
+                                        <span class="amount">{{GRAIN_VITAMINS_1}}</span>
+                                    </div>
+                                </div>
+                                <button class="learn-more-btn" data-ingredient="{{GRAIN_NAME_1}}">Learn More</button>
+                            </div>
+                        </div>
+
+                        <div class="ingredient-card" data-category="vegetables">
+                            <img src="{{VEG_IMAGE_2}}" alt="{{VEG_NAME_2}}">
+                            <div class="ingredient-info">
+                                <h3>{{VEG_NAME_2}}</h3>
+                                <div class="source-info">
+                                    <span class="farm-name">{{VEG_FARM_2}}</span>
+                                    <span class="distance">{{VEG_DISTANCE_2}} miles away</span>
+                                </div>
+                                <div class="ingredient-badges">
+                                    <span class="badge organic">Organic</span>
+                                    <span class="badge local">Local</span>
+                                </div>
+                                <div class="nutrition-preview">
+                                    <div class="nutrition-item">
+                                        <span class="nutrient">Antioxidants</span>
+                                        <span class="amount">{{VEG_ANTIOXIDANTS_2}}</span>
+                                    </div>
+                                    <div class="nutrition-item">
+                                        <span class="nutrient">Folate</span>
+                                        <span class="amount">{{VEG_FOLATE_2}}</span>
+                                    </div>
+                                </div>
+                                <button class="learn-more-btn" data-ingredient="{{VEG_NAME_2}}">Learn More</button>
+                            </div>
+                        </div>
+
+                        <div class="ingredient-card" data-category="dressings">
+                            <img src="{{DRESSING_IMAGE_1}}" alt="{{DRESSING_NAME_1}}">
+                            <div class="ingredient-info">
+                                <h3>{{DRESSING_NAME_1}}</h3>
+                                <div class="source-info">
+                                    <span class="farm-name">Made In-House</span>
+                                    <span class="distance">Daily Fresh</span>
+                                </div>
+                                <div class="ingredient-badges">
+                                    <span class="badge house-made">House Made</span>
+                                    <span class="badge no-preservatives">No Preservatives</span>
+                                </div>
+                                <div class="nutrition-preview">
+                                    <div class="nutrition-item">
+                                        <span class="nutrient">Healthy Fats</span>
+                                        <span class="amount">{{DRESSING_FATS_1}}</span>
+                                    </div>
+                                    <div class="nutrition-item">
+                                        <span class="nutrient">Sodium</span>
+                                        <span class="amount">{{DRESSING_SODIUM_1}}</span>
+                                    </div>
+                                </div>
+                                <button class="learn-more-btn" data-ingredient="{{DRESSING_NAME_1}}">Learn More</button>
+                            </div>
+                        </div>
+
+                        <div class="ingredient-card" data-category="proteins">
+                            <img src="{{PROTEIN_IMAGE_2}}" alt="{{PROTEIN_NAME_2}}">
+                            <div class="ingredient-info">
+                                <h3>{{PROTEIN_NAME_2}}</h3>
+                                <div class="source-info">
+                                    <span class="farm-name">{{PROTEIN_FARM_2}}</span>
+                                    <span class="distance">{{PROTEIN_DISTANCE_2}} miles away</span>
+                                </div>
+                                <div class="ingredient-badges">
+                                    <span class="badge wild-caught">Wild Caught</span>
+                                    <span class="badge sustainable">Sustainable</span>
+                                </div>
+                                <div class="nutrition-preview">
+                                    <div class="nutrition-item">
+                                        <span class="nutrient">Omega-3</span>
+                                        <span class="amount">{{PROTEIN_OMEGA_2}}</span>
+                                    </div>
+                                    <div class="nutrition-item">
+                                        <span class="nutrient">Protein</span>
+                                        <span class="amount">{{PROTEIN_AMOUNT_2}}</span>
+                                    </div>
+                                </div>
+                                <button class="learn-more-btn" data-ingredient="{{PROTEIN_NAME_2}}">Learn More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sourcing-map">
+                    <h3>Our Local Network</h3>
+                    <div class="map-container">
+                        <img src="{{SOURCING_MAP_IMAGE}}" alt="Local sourcing map">
+                        <div class="map-stats">
+                            <div class="map-stat">
+                                <span class="stat-number">{{TOTAL_FARMS}}</span>
+                                <span class="stat-label">Partner Farms</span>
+                            </div>
+                            <div class="map-stat">
+                                <span class="stat-number">{{AVG_DISTANCE}}</span>
+                                <span class="stat-label">Avg Distance</span>
+                            </div>
+                            <div class="map-stat">
+                                <span class="stat-number">{{HARVEST_TO_PLATE}}</span>
+                                <span class="stat-label">Harvest to Plate</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="nutrition-calculator" id="nutrition">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="section-subtitle">Personalized Nutrition</span>
+                    <h2>Build Your Perfect Meal</h2>
+                    <p>{{NUTRITION_INTRO}}</p>
+                </div>
+                
+                <div class="calculator-interface">
+                    <div class="meal-builder">
+                        <div class="builder-steps">
+                            <div class="step-header">
+                                <div class="step-indicator active" data-step="1">1</div>
+                                <div class="step-indicator" data-step="2">2</div>
+                                <div class="step-indicator" data-step="3">3</div>
+                                <div class="step-indicator" data-step="4">4</div>
+                            </div>
+                            
+                            <div class="step-content active" data-step="1">
+                                <h3>Choose Your Base</h3>
+                                <div class="options-grid">
+                                    <div class="nutrition-option" data-calories="150" data-protein="5" data-carbs="30" data-fat="3">
+                                        <img src="{{BASE_IMAGE_1}}" alt="{{BASE_NAME_1}}">
+                                        <div class="option-info">
+                                            <h4>{{BASE_NAME_1}}</h4>
+                                            <div class="nutrition-mini">
+                                                <span>{{BASE_CALORIES_1}} cal</span>
+                                                <span>{{BASE_PROTEIN_1}}g protein</span>
+                                            </div>
+                                        </div>
+                                        <div class="dietary-tags">
+                                            <span class="tag gluten-free">GF</span>
+                                            <span class="tag vegan">V</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="nutrition-option" data-calories="120" data-protein="3" data-carbs="25" data-fat="2">
+                                        <img src="{{BASE_IMAGE_2}}" alt="{{BASE_NAME_2}}">
+                                        <div class="option-info">
+                                            <h4>{{BASE_NAME_2}}</h4>
+                                            <div class="nutrition-mini">
+                                                <span>{{BASE_CALORIES_2}} cal</span>
+                                                <span>{{BASE_PROTEIN_2}}g protein</span>
+                                            </div>
+                                        </div>
+                                        <div class="dietary-tags">
+                                            <span class="tag organic">ORG</span>
+                                            <span class="tag vegan">V</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="nutrition-option" data-calories="25" data-protein="3" data-carbs="5" data-fat="0">
+                                        <img src="{{BASE_IMAGE_3}}" alt="{{BASE_NAME_3}}">
+                                        <div class="option-info">
+                                            <h4>{{BASE_NAME_3}}</h4>
+                                            <div class="nutrition-mini">
+                                                <span>{{BASE_CALORIES_3}} cal</span>
+                                                <span>{{BASE_PROTEIN_3}}g protein</span>
+                                            </div>
+                                        </div>
+                                        <div class="dietary-tags">
+                                            <span class="tag keto">KETO</span>
+                                            <span class="tag vegan">V</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="step-content" data-step="2">
+                                <h3>Add Your Protein</h3>
+                                <div class="options-grid">
+                                    <div class="nutrition-option" data-calories="200" data-protein="25" data-carbs="0" data-fat="8">
+                                        <img src="{{PROTEIN_CALC_IMAGE_1}}" alt="{{PROTEIN_CALC_NAME_1}}">
+                                        <div class="option-info">
+                                            <h4>{{PROTEIN_CALC_NAME_1}}</h4>
+                                            <div class="nutrition-mini">
+                                                <span>{{PROTEIN_CALC_CALORIES_1}} cal</span>
+                                                <span>{{PROTEIN_CALC_PROTEIN_1}}g protein</span>
+                                            </div>
+                                        </div>
+                                        <div class="dietary-tags">
+                                            <span class="tag grass-fed">GRASS-FED</span>
+                                            <span class="tag local">LOCAL</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="nutrition-option" data-calories="180" data-protein="22" data-carbs="0" data-fat="9">
+                                        <img src="{{PROTEIN_CALC_IMAGE_2}}" alt="{{PROTEIN_CALC_NAME_2}}">
+                                        <div class="option-info">
+                                            <h4>{{PROTEIN_CALC_NAME_2}}</h4>
+                                            <div class="nutrition-mini">
+                                                <span>{{PROTEIN_CALC_CALORIES_2}} cal</span>
+                                                <span>{{PROTEIN_CALC_PROTEIN_2}}g protein</span>
+                                            </div>
+                                        </div>
+                                        <div class="dietary-tags">
+                                            <span class="tag wild-caught">WILD</span>
+                                            <span class="tag omega-3">Ω3</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="nutrition-option" data-calories="150" data-protein="15" data-carbs="8" data-fat="6">
+                                        <img src="{{PROTEIN_CALC_IMAGE_3}}" alt="{{PROTEIN_CALC_NAME_3}}">
+                                        <div class="option-info">
+                                            <h4>{{PROTEIN_CALC_NAME_3}}</h4>
+                                            <div class="nutrition-mini">
+                                                <span>{{PROTEIN_CALC_CALORIES_3}} cal</span>
+                                                <span>{{PROTEIN_CALC_PROTEIN_3}}g protein</span>
+                                            </div>
+                                        </div>
+                                        <div class="dietary-tags">
+                                            <span class="tag plant-based">PLANT</span>
+                                            <span class="tag vegan">V</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="step-content" data-step="3">
+                                <h3>Choose Vegetables</h3>
+                                <div class="options-grid multi-select">
+                                    <div class="nutrition-option" data-calories="30" data-protein="2" data-carbs="6" data-fat="0">
+                                        <img src="{{VEG_CALC_IMAGE_1}}" alt="{{VEG_CALC_NAME_1}}">
+                                        <div class="option-info">
+                                            <h4>{{VEG_CALC_NAME_1}}</h4>
+                                            <div class="nutrition-mini">
+                                                <span>{{VEG_CALC_CALORIES_1}} cal</span>
+                                                <span>Vitamin C</span>
+                                            </div>
+                                        </div>
+                                        <div class="dietary-tags">
+                                            <span class="tag seasonal">SEASONAL</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="nutrition-option" data-calories="25" data-protein="1" data-carbs="5" data-fat="0">
+                                        <img src="{{VEG_CALC_IMAGE_2}}" alt="{{VEG_CALC_NAME_2}}">
+                                        <div class="option-info">
+                                            <h4>{{VEG_CALC_NAME_2}}</h4>
+                                            <div class="nutrition-mini">
+                                                <span>{{VEG_CALC_CALORIES_2}} cal</span>
+                                                <span>Antioxidants</span>
+                                            </div>
+                                        </div>
+                                        <div class="dietary-tags">
+                                            <span class="tag organic">ORG</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="nutrition-option" data-calories="35" data-protein="3" data-carbs="7" data-fat="0">
+                                        <img src="{{VEG_CALC_IMAGE_3}}" alt="{{VEG_CALC_NAME_3}}">
+                                        <div class="option-info">
+                                            <h4>{{VEG_CALC_NAME_3}}</h4>
+                                            <div class="nutrition-mini">
+                                                <span>{{VEG_CALC_CALORIES_3}} cal</span>
+                                                <span>Iron & Folate</span>
+                                            </div>
+                                        </div>
+                                        <div class="dietary-tags">
+                                            <span class="tag superfood">SUPER</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="step-content" data-step="4">
+                                <h3>Finish with Dressing</h3>
+                                <div class="options-grid">
+                                    <div class="nutrition-option" data-calories="120" data-protein="1" data-carbs="2" data-fat="12">
+                                        <img src="{{DRESSING_CALC_IMAGE_1}}" alt="{{DRESSING_CALC_NAME_1}}">
+                                        <div class="option-info">
+                                            <h4>{{DRESSING_CALC_NAME_1}}</h4>
+                                            <div class="nutrition-mini">
+                                                <span>{{DRESSING_CALC_CALORIES_1}} cal</span>
+                                                <span>Healthy Fats</span>
+                                            </div>
+                                        </div>
+                                        <div class="dietary-tags">
+                                            <span class="tag house-made">HOUSE</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="nutrition-option" data-calories="80" data-protein="0" data-carbs="3" data-fat="8">
+                                        <img src="{{DRESSING_CALC_IMAGE_2}}" alt="{{DRESSING_CALC_NAME_2}}">
+                                        <div class="option-info">
+                                            <h4>{{DRESSING_CALC_NAME_2}}</h4>
+                                            <div class="nutrition-mini">
+                                                <span>{{DRESSING_CALC_CALORIES_2}} cal</span>
+                                                <span>Light & Fresh</span>
+                                            </div>
+                                        </div>
+                                        <div class="dietary-tags">
+                                            <span class="tag low-cal">LOW-CAL</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="navigation-controls">
+                            <button class="nav-btn prev" disabled>Previous</button>
+                            <button class="nav-btn next">Next</button>
+                            <button class="nav-btn finish" style="display: none;">Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <div class="nutrition-summary">
+                        <h3>Your Meal Nutrition</h3>
+                        <div class="nutrition-circle">
+                            <div class="total-calories">
+                                <span class="calories-number">0</span>
+                                <span class="calories-label">calories</span>
+                            </div>
+                        </div>
+                        
+                        <div class="macros-breakdown">
+                            <div class="macro">
+                                <div class="macro-bar">
+                                    <div class="macro-fill protein-fill" style="width: 0%"></div>
+                                </div>
+                                <div class="macro-info">
+                                    <span class="macro-name">Protein</span>
+                                    <span class="macro-amount">0g</span>
+                                </div>
+                            </div>
+                            
+                            <div class="macro">
+                                <div class="macro-bar">
+                                    <div class="macro-fill carbs-fill" style="width: 0%"></div>
+                                </div>
+                                <div class="macro-info">
+                                    <span class="macro-name">Carbs</span>
+                                    <span class="macro-amount">0g</span>
+                                </div>
+                            </div>
+                            
+                            <div class="macro">
+                                <div class="macro-bar">
+                                    <div class="macro-fill fat-fill" style="width: 0%"></div>
+                                </div>
+                                <div class="macro-info">
+                                    <span class="macro-name">Fat</span>
+                                    <span class="macro-amount">0g</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dietary-compliance">
+                            <h4>Dietary Compatibility</h4>
+                            <div class="compliance-badges">
+                                <span class="compliance-badge keto">Keto Friendly</span>
+                                <span class="compliance-badge paleo">Paleo</span>
+                                <span class="compliance-badge vegan">Vegan</span>
+                                <span class="compliance-badge gluten-free">Gluten Free</span>
+                            </div>
+                        </div>
+
+                        <div class="meal-score">
+                            <h4>Wellness Score</h4>
+                            <div class="score-circle">
+                                <span class="score-number">0</span>
+                                <span class="score-max">/100</span>
+                            </div>
+                            <div class="score-factors">
+                                <div class="factor">
+                                    <span class="factor-icon">🌱</span>
+                                    <span class="factor-text">Organic Ingredients</span>
+                                    <span class="factor-points">+15</span>
+                                </div>
+                                <div class="factor">
+                                    <span class="factor-icon">📍</span>
+                                    <span class="factor-text">Local Sourcing</span>
+                                    <span class="factor-points">+10</span>
+                                </div>
+                                <div class="factor">
+                                    <span class="factor-icon">🥗</span>
+                                    <span class="factor-text">Nutrient Density</span>
+                                    <span class="factor-points">+20</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="sustainability-impact" id="sustainability">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="section-subtitle">Environmental Impact</span>
+                    <h2>Eating for the Planet</h2>
+                    <p>{{SUSTAINABILITY_INTRO}}</p>
+                </div>
+                
+                <div class="impact-dashboard">
+                    <div class="impact-metrics">
+                        <div class="metric-card">
+                            <div class="metric-icon">🌍</div>
+                            <div class="metric-content">
+                                <h3>{{CARBON_SAVED}} lbs</h3>
+                                <p>CO2 Saved This Year</p>
+                                <span class="metric-detail">vs conventional sourcing</span>
+                            </div>
+                        </div>
+                        
+                        <div class="metric-card">
+                            <div class="metric-icon">💧</div>
+                            <div class="metric-content">
+                                <h3>{{WATER_SAVED}} gals</h3>
+                                <p>Water Conserved</p>
+                                <span class="metric-detail">through efficient farming</span>
+                            </div>
+                        </div>
+                        
+                        <div class="metric-card">
+                            <div class="metric-icon">🚚</div>
+                            <div class="metric-content">
+                                <h3>{{MILES_REDUCED}}</h3>
+                                <p>Food Miles Reduced</p>
+                                <span class="metric-detail">local sourcing avg</span>
+                            </div>
+                        </div>
+                        
+                        <div class="metric-card">
+                            <div class="metric-icon">🌱</div>
+                            <div class="metric-content">
+                                <h3>{{FARMS_SUPPORTED}}</h3>
+                                <p>Local Farms Supported</p>
+                                <span class="metric-detail">in our community</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sustainability-initiatives">
+                        <h3>Our Commitments</h3>
+                        <div class="initiatives-grid">
+                            <div class="initiative-card">
+                                <div class="initiative-progress">
+                                    <div class="progress-ring">
+                                        <svg width="80" height="80">
+                                            <circle cx="40" cy="40" r="35" stroke="var(--green-light)" stroke-width="6" fill="transparent"/>
+                                            <circle cx="40" cy="40" r="35" stroke="var(--green-primary)" stroke-width="6" fill="transparent" 
+                                                    stroke-dasharray="220" stroke-dashoffset="44" stroke-linecap="round"/>
+                                        </svg>
+                                        <span class="progress-text">80%</span>
+                                    </div>
+                                </div>
+                                <div class="initiative-info">
+                                    <h4>{{INITIATIVE_1_TITLE}}</h4>
+                                    <p>{{INITIATIVE_1_DESCRIPTION}}</p>
+                                    <span class="initiative-target">Target: {{INITIATIVE_1_TARGET}}</span>
+                                </div>
+                            </div>
+
+                            <div class="initiative-card">
+                                <div class="initiative-progress">
+                                    <div class="progress-ring">
+                                        <svg width="80" height="80">
+                                            <circle cx="40" cy="40" r="35" stroke="var(--green-light)" stroke-width="6" fill="transparent"/>
+                                            <circle cx="40" cy="40" r="35" stroke="var(--green-primary)" stroke-width="6" fill="transparent" 
+                                                    stroke-dasharray="220" stroke-dashoffset="66" stroke-linecap="round"/>
+                                        </svg>
+                                        <span class="progress-text">70%</span>
+                                    </div>
+                                </div>
+                                <div class="initiative-info">
+                                    <h4>{{INITIATIVE_2_TITLE}}</h4>
+                                    <p>{{INITIATIVE_2_DESCRIPTION}}</p>
+                                    <span class="initiative-target">Target: {{INITIATIVE_2_TARGET}}</span>
+                                </div>
+                            </div>
+
+                            <div class="initiative-card">
+                                <div class="initiative-progress">
+                                    <div class="progress-ring">
+                                        <svg width="80" height="80">
+                                            <circle cx="40" cy="40" r="35" stroke="var(--green-light)" stroke-width="6" fill="transparent"/>
+                                            <circle cx="40" cy="40" r="35" stroke="var(--green-primary)" stroke-width="6" fill="transparent" 
+                                                    stroke-dasharray="220" stroke-dashoffset="22" stroke-linecap="round"/>
+                                        </svg>
+                                        <span class="progress-text">90%</span>
+                                    </div>
+                                </div>
+                                <div class="initiative-info">
+                                    <h4>{{INITIATIVE_3_TITLE}}</h4>
+                                    <p>{{INITIATIVE_3_DESCRIPTION}}</p>
+                                    <span class="initiative-target">Target: {{INITIATIVE_3_TARGET}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="farm-spotlight">
+                    <h3>Featured Farm</h3>
+                    <div class="farm-feature">
+                        <div class="farm-image">
+                            <img src="{{FEATURED_FARM_IMAGE}}" alt="{{FEATURED_FARM_NAME}}">
+                            <div class="farm-distance">{{FEATURED_FARM_DISTANCE}} miles away</div>
+                        </div>
+                        <div class="farm-info">
+                            <h4>{{FEATURED_FARM_NAME}}</h4>
+                            <p class="farm-location">{{FEATURED_FARM_LOCATION}}</p>
+                            <p>{{FEATURED_FARM_DESCRIPTION}}</p>
+                            <div class="farm-specialties">
+                                <h5>They Grow:</h5>
+                                <div class="specialty-tags">
+                                    <span class="specialty-tag">{{FARM_SPECIALTY_1}}</span>
+                                    <span class="specialty-tag">{{FARM_SPECIALTY_2}}</span>
+                                    <span class="specialty-tag">{{FARM_SPECIALTY_3}}</span>
+                                    <span class="specialty-tag">{{FARM_SPECIALTY_4}}</span>
+                                </div>
+                            </div>
+                            <div class="farm-stats">
+                                <div class="farm-stat">
+                                    <span class="stat-number">{{FARM_ACRES}}</span>
+                                    <span class="stat-label">Acres</span>
+                                </div>
+                                <div class="farm-stat">
+                                    <span class="stat-number">{{FARM_YEARS}}</span>
+                                    <span class="stat-label">Years Organic</span>
+                                </div>
+                                <div class="farm-stat">
+                                    <span class="stat-number">{{FARM_FAMILY_SIZE}}</span>
+                                    <span class="stat-label">Family Members</span>
+                                </div>
+                            </div>
+                            <a href="#farm-visit" class="farm-visit-btn">Schedule Farm Visit</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="seasonal-menu">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="section-subtitle">{{CURRENT_SEASON}} Menu</span>
+                    <h2>Seasonal Selections</h2>
+                    <p>{{SEASONAL_MENU_INTRO}}</p>
+                </div>
+                
+                <div class="seasonal-items">
+                    <div class="seasonal-card">
+                        <div class="seasonal-badge">Limited Time</div>
+                        <img src="{{SEASONAL_ITEM_IMAGE_1}}" alt="{{SEASONAL_ITEM_NAME_1}}">
+                        <div class="seasonal-info">
+                            <h3>{{SEASONAL_ITEM_NAME_1}}</h3>
+                            <p>{{SEASONAL_ITEM_DESCRIPTION_1}}</p>
+                            <div class="seasonal-ingredients">
+                                <span class="ingredient-highlight">{{SEASONAL_INGREDIENT_1}}</span>
+                                <span class="ingredient-highlight">{{SEASONAL_INGREDIENT_2}}</span>
+                                <span class="ingredient-highlight">{{SEASONAL_INGREDIENT_3}}</span>
+                            </div>
+                            <div class="seasonal-details">
+                                <div class="availability">Available until {{SEASONAL_END_DATE_1}}</div>
+                                <div class="price">{{SEASONAL_PRICE_1}}</div>
+                            </div>
+                            <button class="order-seasonal">Order Now</button>
+                        </div>
+                    </div>
+
+                    <div class="seasonal-card">
+                        <div class="seasonal-badge">New</div>
+                        <img src="{{SEASONAL_ITEM_IMAGE_2}}" alt="{{SEASONAL_ITEM_NAME_2}}">
+                        <div class="seasonal-info">
+                            <h3>{{SEASONAL_ITEM_NAME_2}}</h3>
+                            <p>{{SEASONAL_ITEM_DESCRIPTION_2}}</p>
+                            <div class="seasonal-ingredients">
+                                <span class="ingredient-highlight">{{SEASONAL_INGREDIENT_4}}</span>
+                                <span class="ingredient-highlight">{{SEASONAL_INGREDIENT_5}}</span>
+                                <span class="ingredient-highlight">{{SEASONAL_INGREDIENT_6}}</span>
+                            </div>
+                            <div class="seasonal-details">
+                                <div class="availability">Available until {{SEASONAL_END_DATE_2}}</div>
+                                <div class="price">{{SEASONAL_PRICE_2}}</div>
+                            </div>
+                            <button class="order-seasonal">Order Now</button>
+                        </div>
+                    </div>
+
+                    <div class="seasonal-card">
+                        <div class="seasonal-badge">Chef's Pick</div>
+                        <img src="{{SEASONAL_ITEM_IMAGE_3}}" alt="{{SEASONAL_ITEM_NAME_3}}">
+                        <div class="seasonal-info">
+                            <h3>{{SEASONAL_ITEM_NAME_3}}</h3>
+                            <p>{{SEASONAL_ITEM_DESCRIPTION_3}}</p>
+                            <div class="seasonal-ingredients">
+                                <span class="ingredient-highlight">{{SEASONAL_INGREDIENT_7}}</span>
+                                <span class="ingredient-highlight">{{SEASONAL_INGREDIENT_8}}</span>
+                                <span class="ingredient-highlight">{{SEASONAL_INGREDIENT_9}}</span>
+                            </div>
+                            <div class="seasonal-details">
+                                <div class="availability">Available until {{SEASONAL_END_DATE_3}}</div>
+                                <div class="price">{{SEASONAL_PRICE_3}}</div>
+                            </div>
+                            <button class="order-seasonal">Order Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="seasonal-calendar">
+                    <h3>What's Coming Next</h3>
+                    <div class="calendar-preview">
+                        <div class="month-preview">
+                            <div class="month-name">{{NEXT_MONTH}}</div>
+                            <div class="preview-items">
+                                <span class="preview-item">{{NEXT_MONTH_ITEM_1}}</span>
+                                <span class="preview-item">{{NEXT_MONTH_ITEM_2}}</span>
+                                <span class="preview-item">{{NEXT_MONTH_ITEM_3}}</span>
+                            </div>
+                        </div>
+                        <div class="month-preview">
+                            <div class="month-name">{{NEXT_SEASON}}</div>
+                            <div class="preview-items">
+                                <span class="preview-item">{{NEXT_SEASON_ITEM_1}}</span>
+                                <span class="preview-item">{{NEXT_SEASON_ITEM_2}}</span>
+                                <span class="preview-item">{{NEXT_SEASON_ITEM_3}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="locations-section" id="locations">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="section-subtitle">Find Us</span>
+                    <h2>Our Locations</h2>
+                    <p>{{LOCATIONS_INTRO}}</p>
+                </div>
+                
+                <div class="location-finder">
+                    <div class="finder-interface">
+                        <input type="text" class="location-input" placeholder="Enter zip code or address">
+                        <button class="find-btn">Find Nearest Location</button>
+                    </div>
+                    <div class="quick-cities">
+                        <span class="quick-city" data-city="{{CITY_1}}">{{CITY_1}}</span>
+                        <span class="quick-city" data-city="{{CITY_2}}">{{CITY_2}}</span>
+                        <span class="quick-city" data-city="{{CITY_3}}">{{CITY_3}}</span>
+                        <span class="quick-city" data-city="{{CITY_4}}">{{CITY_4}}</span>
+                    </div>
+                </div>
+
+                <div class="locations-grid">
+                    <div class="location-card">
+                        <img src="{{LOCATION_IMAGE_1}}" alt="{{LOCATION_NAME_1}}">
+                        <div class="location-info">
+                            <h3>{{LOCATION_NAME_1}}</h3>
+                            <p class="location-address">{{LOCATION_ADDRESS_1}}</p>
+                            <div class="location-features">
+                                <span class="feature-tag">Outdoor Seating</span>
+                                <span class="feature-tag">Pickup</span>
+                                <span class="feature-tag">Catering</span>
+                            </div>
+                            <div class="location-details">
+                                <div class="hours">🕒 {{LOCATION_HOURS_1}}</div>
+                                <div class="phone">📞 {{LOCATION_PHONE_1}}</div>
+                            </div>
+                            <div class="local-sourcing">
+                                <h4>Local Partners</h4>
+                                <div class="local-farms">
+                                    <span class="farm-name">{{LOCAL_FARM_1}}</span>
+                                    <span class="farm-name">{{LOCAL_FARM_2}}</span>
+                                    <span class="farm-name">{{LOCAL_FARM_3}}</span>
+                                </div>
+                            </div>
+                            <div class="location-actions">
+                                <a href="#directions-1" class="directions-btn">Get Directions</a>
+                                <a href="#order-1" class="order-location-btn">Order Here</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="location-card">
+                        <img src="{{LOCATION_IMAGE_2}}" alt="{{LOCATION_NAME_2}}">
+                        <div class="location-info">
+                            <h3>{{LOCATION_NAME_2}}</h3>
+                            <p class="location-address">{{LOCATION_ADDRESS_2}}</p>
+                            <div class="location-features">
+                                <span class="feature-tag">Drive-Thru</span>
+                                <span class="feature-tag">Delivery</span>
+                                <span class="feature-tag">Events</span>
+                            </div>
+                            <div class="location-details">
+                                <div class="hours">🕒 {{LOCATION_HOURS_2}}</div>
+                                <div class="phone">📞 {{LOCATION_PHONE_2}}</div>
+                            </div>
+                            <div class="local-sourcing">
+                                <h4>Local Partners</h4>
+                                <div class="local-farms">
+                                    <span class="farm-name">{{LOCAL_FARM_4}}</span>
+                                    <span class="farm-name">{{LOCAL_FARM_5}}</span>
+                                    <span class="farm-name">{{LOCAL_FARM_6}}</span>
+                                </div>
+                            </div>
+                            <div class="location-actions">
+                                <a href="#directions-2" class="directions-btn">Get Directions</a>
+                                <a href="#order-2" class="order-location-btn">Order Here</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="location-card">
+                        <img src="{{LOCATION_IMAGE_3}}" alt="{{LOCATION_NAME_3}}">
+                        <div class="location-info">
+                            <h3>{{LOCATION_NAME_3}}</h3>
+                            <p class="location-address">{{LOCATION_ADDRESS_3}}</p>
+                            <div class="location-features">
+                                <span class="feature-tag">Rooftop</span>
+                                <span class="feature-tag">Events</span>
+                                <span class="feature-tag">Cooking Classes</span>
+                            </div>
+                            <div class="location-details">
+                                <div class="hours">🕒 {{LOCATION_HOURS_3}}</div>
+                                <div class="phone">📞 {{LOCATION_PHONE_3}}</div>
+                            </div>
+                            <div class="local-sourcing">
+                                <h4>Local Partners</h4>
+                                <div class="local-farms">
+                                    <span class="farm-name">{{LOCAL_FARM_7}}</span>
+                                    <span class="farm-name">{{LOCAL_FARM_8}}</span>
+                                    <span class="farm-name">{{LOCAL_FARM_9}}</span>
+                                </div>
+                            </div>
+                            <div class="location-actions">
+                                <a href="#directions-3" class="directions-btn">Get Directions</a>
+                                <a href="#order-3" class="order-location-btn">Order Here</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section" id="contact">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="section-subtitle">Get in Touch</span>
+                    <h2>Contact Us</h2>
+                </div>
+                
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <h3>Customer Care</h3>
+                            <p>{{CUSTOMER_PHONE}}</p>
+                            <p>{{CUSTOMER_EMAIL}}</p>
+                            <div class="contact-hours">
+                                <h4>Support Hours</h4>
+                                <p>{{SUPPORT_HOURS}}</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <h3>Partnerships</h3>
+                            <p>{{PARTNERSHIPS_EMAIL}}</p>
+                            <p class="note">{{PARTNERSHIPS_NOTE}}</p>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <h3>Press & Media</h3>
+                            <p>{{PRESS_EMAIL}}</p>
+                            <p>{{PRESS_PHONE}}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form">
+                        <h3>Send us a message</h3>
+                        <form>
+                            <div class="form-row">
+                                <input type="text" placeholder="Your Name" required>
+                                <input type="email" placeholder="Your Email" required>
+                            </div>
+                            <div class="form-row">
+                                <select required>
+                                    <option value="">Select Topic</option>
+                                    <option value="general">General Question</option>
+                                    <option value="nutrition">Nutrition Information</option>
+                                    <option value="allergens">Allergen Information</option>
+                                    <option value="sourcing">Ingredient Sourcing</option>
+                                    <option value="catering">Catering Services</option>
+                                    <option value="partnerships">Farm Partnerships</option>
+                                    <option value="feedback">Feedback</option>
+                                    <option value="careers">Careers</option>
+                                </select>
+                                <select name="location">
+                                    <option value="">Select Location (Optional)</option>
+                                    <option value="location1">{{LOCATION_NAME_1}}</option>
+                                    <option value="location2">{{LOCATION_NAME_2}}</option>
+                                    <option value="location3">{{LOCATION_NAME_3}}</option>
+                                </select>
+                            </div>
+                            <textarea placeholder="Your Message" required></textarea>
+                            <button type="submit">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>{{RESTAURANT_NAME}}</h3>
+                    <p>{{FOOTER_DESCRIPTION}}</p>
+                    <div class="social-links">
+                        <a href="{{SOCIAL_FACEBOOK}}" aria-label="Facebook">Facebook</a>
+                        <a href="{{SOCIAL_INSTAGRAM}}" aria-label="Instagram">Instagram</a>
+                        <a href="{{SOCIAL_TWITTER}}" aria-label="Twitter">Twitter</a>
+                        <a href="{{SOCIAL_TIKTOK}}" aria-label="TikTok">TikTok</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Menu</h3>
+                    <ul>
+                        <li><a href="menu.html">Full Menu</a></li>
+                        <li><a href="#nutrition">Nutrition Calculator</a></li>
+                        <li><a href="#seasonal">Seasonal Items</a></li>
+                        <li><a href="#allergens">Allergen Info</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Values</h3>
+                    <ul>
+                        <li><a href="#ingredients">Ingredient Sourcing</a></li>
+                        <li><a href="#sustainability">Sustainability</a></li>
+                        <li><a href="#farms">Farm Partners</a></li>
+                        <li><a href="#certifications">Certifications</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#press">Press</a></li>
+                        <li><a href="#impact">Impact Report</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; {{CURRENT_YEAR}} {{RESTAURANT_NAME}}. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                    <a href="#accessibility">Accessibility</a>
+                    <a href="#transparency">Transparency Report</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

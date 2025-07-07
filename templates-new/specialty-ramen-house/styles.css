@@ -1,0 +1,637 @@
+/* Specialty Ramen House Template */
+
+:root {
+    --ramen-primary: #c8102e;           /* Deep Red */
+    --ramen-secondary: #1a1a1a;         /* Deep Black */
+    --ramen-accent: #ff6b35;            /* Orange Red */
+    --ramen-gold: #d4af37;              /* Gold */
+    --ramen-cream: #f5f5f0;             /* Warm Cream */
+    --ramen-white: #ffffff;
+    --ramen-dark: #2c2c2c;
+    --ramen-gray: #666666;
+}
+
+.color-ramen-house {
+    --primary-color: var(--ramen-primary);
+    --secondary-color: var(--ramen-secondary);
+    --accent-color: var(--ramen-accent);
+    --text-color: var(--ramen-dark);
+    --background-color: var(--ramen-white);
+    --section-bg: var(--ramen-cream);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: var(--background-color);
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+
+.header {
+    background: var(--ramen-white);
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.logo .tagline {
+    color: var(--ramen-gray);
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.nav-menu a:hover { color: var(--primary-color); }
+
+.fresh-badge {
+    background: var(--accent-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #a00d26;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.hero {
+    position: relative;
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    color: white;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(200,16,46,0.9), rgba(26,26,26,0.7));
+    z-index: 2;
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.hero-content h2 {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+}
+
+.hero-features {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.hero-features span {
+    background: rgba(255,255,255,0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    font-size: 0.9rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.brewing-process {
+    padding: 4rem 0;
+    background: var(--section-bg);
+}
+
+.brewing-process h2 {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.step {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.step:hover {
+    transform: translateY(-5px);
+}
+
+.step-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.step h3 {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 1.3rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.step p {
+    color: var(--ramen-gray);
+}
+
+.ramen-section {
+    padding: 4rem 0;
+}
+
+.ramen-section h2 {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.ramen-section > .container > p {
+    text-align: center;
+    color: var(--ramen-gray);
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+.ramen-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.ramen-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.ramen-card:hover {
+    transform: translateY(-5px);
+}
+
+.ramen-card.signature {
+    border: 3px solid var(--ramen-gold);
+}
+
+.ramen-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--ramen-gold);
+    color: var(--ramen-secondary);
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    z-index: 2;
+}
+
+.ramen-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.ramen-content {
+    padding: 1.5rem;
+}
+
+.ramen-content h3 {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 1.3rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.ramen-japanese {
+    color: var(--ramen-gray);
+    font-style: italic;
+    margin-bottom: 0.5rem;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.ramen-content p {
+    color: var(--ramen-gray);
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.ramen-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.spice-level {
+    background: var(--section-bg);
+    color: var(--text-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.ramen-price {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.noodles-section {
+    padding: 4rem 0;
+    background: var(--section-bg);
+}
+
+.noodles-section h2 {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+.noodles-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.noodles-info h3 {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.noodles-info p {
+    color: var(--ramen-gray);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.noodle-types {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.noodle-type {
+    background: white;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.noodle-type h4 {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.noodle-type p {
+    color: var(--ramen-gray);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.noodles-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.toppings-bar {
+    padding: 4rem 0;
+}
+
+.toppings-bar h2 {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+.toppings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.topping-item {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.topping-item:hover {
+    transform: translateY(-5px);
+}
+
+.topping-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.topping-item h4 {
+    font-family: 'Noto Sans JP', sans-serif;
+    padding: 1rem 1rem 0.5rem;
+    color: var(--text-color);
+}
+
+.topping-item p {
+    padding: 0 1rem;
+    color: var(--ramen-gray);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.topping-price {
+    padding: 0 1rem 1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.story-section {
+    padding: 4rem 0;
+    background: var(--section-bg);
+}
+
+.story-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.story-text h2 {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.story-text p {
+    color: var(--ramen-gray);
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.chef-quote {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-left: 4px solid var(--primary-color);
+}
+
+.chef-quote blockquote {
+    font-style: italic;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.chef-quote cite {
+    color: var(--ramen-gray);
+    font-size: 0.9rem;
+}
+
+.story-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.order-online {
+    padding: 4rem 0;
+}
+
+.order-online h2 {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+.order-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.order-option {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.option-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.order-option h3 {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.order-option p {
+    color: var(--ramen-gray);
+    margin-bottom: 1.5rem;
+}
+
+.footer {
+    background: var(--ramen-secondary);
+    color: white;
+    padding: 3rem 0 1rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    font-family: 'Noto Sans JP', sans-serif;
+    margin-bottom: 1rem;
+    color: var(--ramen-gold);
+}
+
+.footer-section p {
+    opacity: 0.9;
+    margin-bottom: 0.5rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+.social-links a:hover {
+    opacity: 1;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 1rem;
+    text-align: center;
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .hero-content h2 { font-size: 2.5rem; }
+    .process-steps { grid-template-columns: 1fr; }
+    .ramen-grid { grid-template-columns: 1fr; }
+    .noodles-content { grid-template-columns: 1fr; }
+    .toppings-grid { grid-template-columns: 1fr; }
+    .story-content { grid-template-columns: 1fr; }
+    .order-options { grid-template-columns: 1fr; }
+    .nav-menu { display: none; }
+    .hero-features { flex-direction: column; align-items: center; }
+}

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{BREWERY_NAME}} - Craft Brewery & Taproom</title>
+    <meta name="description" content="{{BREWERY_NAME}} - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Age Verification Modal -->
+    <div id="age-verification" class="age-verification-modal">
+        <div class="age-verification-content">
+            <div class="brewery-logo">
+                <img src="{{LOGO_URL}}" alt="{{BREWERY_NAME}} Logo">
+            </div>
+            <h2>Welcome to {{BREWERY_NAME}}</h2>
+            <p>You must be 21 or older to enter this site.</p>
+            <div class="age-verification-buttons">
+                <button onclick="confirmAge()" class="btn btn-primary">I'm 21 or Older</button>
+                <button onclick="rejectAge()" class="btn btn-secondary">Under 21</button>
+            </div>
+            <p class="age-disclaimer">Please drink responsibly</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="#home" class="logo-link">
+                    <img src="{{LOGO_URL}}" alt="{{BREWERY_NAME}} Logo">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#beers">Beers</a></li>
+                <li><a href="#taproom">Taproom</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#finder">Beer Finder</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>{{BREWERY_NAME}}</h1>
+            <p class="hero-subtitle">{{TAGLINE}}</p>
+            <div class="hero-buttons">
+                <a href="#beers" class="btn btn-primary">Explore Our Beers</a>
+                <a href="#events" class="btn btn-secondary">Upcoming Events</a>
+            </div>
+        </div>
+        <div class="hero-video">
+            <img src="{{HERO_IMAGE}}" alt="{{BREWERY_NAME}} Brewery">
+        </div>
+    </section>
+
+    <!-- Brewing Heritage Section -->
+    <section id="heritage" class="heritage">
+        <div class="container">
+            <div class="heritage-content">
+                <div class="heritage-text">
+                    <h2>Our Brewing Heritage</h2>
+                    <p class="heritage-year">Established {{ESTABLISHED_YEAR}}</p>
+                    <p>{{BREWERY_STORY}}</p>
+                    <div class="brewing-stats">
+                        <div class="stat">
+                            <div class="stat-number">{{YEARS_BREWING}}</div>
+                            <div class="stat-label">Years Brewing</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">{{BEER_VARIETIES}}</div>
+                            <div class="stat-label">Beer Varieties</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">{{AWARDS_WON}}</div>
+                            <div class="stat-label">Awards Won</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="heritage-image">
+                    <img src="{{BREWING_IMAGE}}" alt="{{BREWERY_NAME}} Brewing Process">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beer Selection Section -->
+    <section id="beers" class="beer-selection">
+        <div class="container">
+            <h2>Our Craft Beer Selection</h2>
+            <div class="beer-categories">
+                <button class="beer-filter active" data-category="all">All Beers</button>
+                <button class="beer-filter" data-category="ipa">IPAs</button>
+                <button class="beer-filter" data-category="lager">Lagers</button>
+                <button class="beer-filter" data-category="stout">Stouts</button>
+                <button class="beer-filter" data-category="seasonal">Seasonal</button>
+            </div>
+            <div class="beer-grid">
+                <div class="beer-card" data-category="ipa">
+                    <img src="{{BEER_IMAGE_1}}" alt="{{BEER_NAME_1}}">
+                    <div class="beer-content">
+                        <h3>{{BEER_NAME_1}}</h3>
+                        <p class="beer-type">{{BEER_TYPE_1}}</p>
+                        <p class="beer-abv">ABV: {{BEER_ABV_1}}%</p>
+                        <p class="beer-description">{{BEER_DESCRIPTION_1}}</p>
+                        <div class="beer-notes">
+                            <span class="note">{{BEER_NOTE_1_1}}</span>
+                            <span class="note">{{BEER_NOTE_1_2}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="beer-card" data-category="lager">
+                    <img src="{{BEER_IMAGE_2}}" alt="{{BEER_NAME_2}}">
+                    <div class="beer-content">
+                        <h3>{{BEER_NAME_2}}</h3>
+                        <p class="beer-type">{{BEER_TYPE_2}}</p>
+                        <p class="beer-abv">ABV: {{BEER_ABV_2}}%</p>
+                        <p class="beer-description">{{BEER_DESCRIPTION_2}}</p>
+                        <div class="beer-notes">
+                            <span class="note">{{BEER_NOTE_2_1}}</span>
+                            <span class="note">{{BEER_NOTE_2_2}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="beer-card" data-category="stout">
+                    <img src="{{BEER_IMAGE_3}}" alt="{{BEER_NAME_3}}">
+                    <div class="beer-content">
+                        <h3>{{BEER_NAME_3}}</h3>
+                        <p class="beer-type">{{BEER_TYPE_3}}</p>
+                        <p class="beer-abv">ABV: {{BEER_ABV_3}}%</p>
+                        <p class="beer-description">{{BEER_DESCRIPTION_3}}</p>
+                        <div class="beer-notes">
+                            <span class="note">{{BEER_NOTE_3_1}}</span>
+                            <span class="note">{{BEER_NOTE_3_2}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="beer-card" data-category="seasonal">
+                    <img src="{{BEER_IMAGE_4}}" alt="{{BEER_NAME_4}}">
+                    <div class="beer-content">
+                        <h3>{{BEER_NAME_4}}</h3>
+                        <p class="beer-type">{{BEER_TYPE_4}}</p>
+                        <p class="beer-abv">ABV: {{BEER_ABV_4}}%</p>
+                        <p class="beer-description">{{BEER_DESCRIPTION_4}}</p>
+                        <div class="beer-notes">
+                            <span class="note">{{BEER_NOTE_4_1}}</span>
+                            <span class="note">{{BEER_NOTE_4_2}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Taproom Section -->
+    <section id="taproom" class="taproom">
+        <div class="container">
+            <div class="taproom-content">
+                <div class="taproom-info">
+                    <h2>Visit Our Taproom</h2>
+                    <p>{{TAPROOM_DESCRIPTION}}</p>
+                    <div class="taproom-features">
+                        <div class="feature">
+                            <div class="feature-icon">🍺</div>
+                            <h3>{{TAP_COUNT}} Rotating Taps</h3>
+                            <p>Always fresh, always changing selection</p>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">🍕</div>
+                            <h3>Food Trucks</h3>
+                            <p>{{FOOD_TRUCK_SCHEDULE}}</p>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">🎵</div>
+                            <h3>Live Music</h3>
+                            <p>{{LIVE_MUSIC_SCHEDULE}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="taproom-gallery">
+                    <img src="{{TAPROOM_IMAGE_1}}" alt="{{BREWERY_NAME}} Taproom">
+                    <img src="{{TAPROOM_IMAGE_2}}" alt="{{BREWERY_NAME}} Bar">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="events">
+        <div class="container">
+            <h2>Upcoming Events</h2>
+            <div class="events-grid">
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="month">{{EVENT_1_MONTH}}</span>
+                        <span class="day">{{EVENT_1_DAY}}</span>
+                    </div>
+                    <div class="event-info">
+                        <h3>{{EVENT_1_NAME}}</h3>
+                        <p class="event-time">{{EVENT_1_TIME}}</p>
+                        <p>{{EVENT_1_DESCRIPTION}}</p>
+                        <a href="{{EVENT_1_LINK}}" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="month">{{EVENT_2_MONTH}}</span>
+                        <span class="day">{{EVENT_2_DAY}}</span>
+                    </div>
+                    <div class="event-info">
+                        <h3>{{EVENT_2_NAME}}</h3>
+                        <p class="event-time">{{EVENT_2_TIME}}</p>
+                        <p>{{EVENT_2_DESCRIPTION}}</p>
+                        <a href="{{EVENT_2_LINK}}" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="month">{{EVENT_3_MONTH}}</span>
+                        <span class="day">{{EVENT_3_DAY}}</span>
+                    </div>
+                    <div class="event-info">
+                        <h3>{{EVENT_3_NAME}}</h3>
+                        <p class="event-time">{{EVENT_3_TIME}}</p>
+                        <p>{{EVENT_3_DESCRIPTION}}</p>
+                        <a href="{{EVENT_3_LINK}}" class="btn btn-outline">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beer Finder Section -->
+    <section id="finder" class="beer-finder">
+        <div class="container">
+            <h2>Find Our Beer</h2>
+            <p>Discover where you can enjoy {{BREWERY_NAME}} beers near you</p>
+            <div class="finder-content">
+                <div class="finder-form">
+                    <input type="text" placeholder="Enter your zip code" id="zip-input">
+                    <button onclick="findBeer()" class="btn btn-primary">Find Locations</button>
+                </div>
+                <div class="distribution-info">
+                    <h3>Distribution Areas</h3>
+                    <ul class="distribution-list">
+                        <li>{{DISTRIBUTION_AREA_1}}</li>
+                        <li>{{DISTRIBUTION_AREA_2}}</li>
+                        <li>{{DISTRIBUTION_AREA_3}}</li>
+                        <li>{{DISTRIBUTION_AREA_4}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hours & Location -->
+    <section class="hours-location">
+        <div class="container">
+            <div class="hours-location-grid">
+                <div class="hours">
+                    <h3>Taproom Hours</h3>
+                    <div class="hours-list">
+                        <div class="hours-item">
+                            <span>Monday</span>
+                            <span>{{HOURS_MON}}</span>
+                        </div>
+                        <div class="hours-item">
+                            <span>Tuesday</span>
+                            <span>{{HOURS_TUE}}</span>
+                        </div>
+                        <div class="hours-item">
+                            <span>Wednesday</span>
+                            <span>{{HOURS_WED}}</span>
+                        </div>
+                        <div class="hours-item">
+                            <span>Thursday</span>
+                            <span>{{HOURS_THU}}</span>
+                        </div>
+                        <div class="hours-item">
+                            <span>Friday</span>
+                            <span>{{HOURS_FRI}}</span>
+                        </div>
+                        <div class="hours-item">
+                            <span>Saturday</span>
+                            <span>{{HOURS_SAT}}</span>
+                        </div>
+                        <div class="hours-item">
+                            <span>Sunday</span>
+                            <span>{{HOURS_SUN}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="location">
+                    <h3>Visit Our Brewery</h3>
+                    <div class="location-info">
+                        <p>{{FULL_ADDRESS}}</p>
+                        <p>Phone: <a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+                        <p>Email: <a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
+                        <div class="directions">
+                            <a href="{{GOOGLE_MAPS_URL}}" target="_blank" class="btn btn-outline">Get Directions</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-form">
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" name="phone" placeholder="Your Phone">
+                        </div>
+                        <div class="form-group">
+                            <select name="inquiry-type">
+                                <option value="">Select Inquiry Type</option>
+                                <option value="general">General Question</option>
+                                <option value="events">Private Events</option>
+                                <option value="distribution">Distribution</option>
+                                <option value="tours">Brewery Tours</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-map">
+                    <iframe 
+                        src="{{GOOGLE_MAPS_EMBED}}" 
+                        width="100%" 
+                        height="300" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <img src="{{LOGO_URL}}" alt="{{BREWERY_NAME}} Logo" class="footer-logo">
+                    <p>{{BREWERY_NAME}} - Craft Brewery & Taproom</p>
+                    <p>{{FULL_ADDRESS}}</p>
+                    <p>Phone: {{PHONE}}</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}" target="_blank">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}" target="_blank">Instagram</a>
+                        <a href="{{TWITTER_URL}}" target="_blank">Twitter</a>
+                        <a href="{{UNTAPPD_URL}}" target="_blank">Untappd</a>
+                    </div>
+                </div>
+                <div class="footer-hours">
+                    <h4>Taproom Hours</h4>
+                    <p>Mon-Thu: {{WEEKDAY_HOURS}}</p>
+                    <p>Fri-Sat: {{WEEKEND_HOURS}}</p>
+                    <p>Sunday: {{SUNDAY_HOURS}}</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{BREWERY_NAME}}. All rights reserved. | Please drink responsibly.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

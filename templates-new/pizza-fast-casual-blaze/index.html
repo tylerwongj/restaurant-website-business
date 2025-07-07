@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Build Your Own Artisan Pizza</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - Fast-fired artisan pizzas made fresh to order. Build your own pizza with premium ingredients in under 3 minutes.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="pizza-theme">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="images/logo.png" alt="{{RESTAURANT_NAME}} Logo">
+                <span class="logo-text">{{RESTAURANT_NAME}}</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#build">Build Pizza</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#locations">Locations</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="#order" class="btn btn-primary">Order Now</a>
+                <a href="#app" class="btn btn-app">Get App</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-badge">🔥 FAST-FIRED IN {{COOKING_TIME}} MINUTES</div>
+                <h1>BUILD YOUR OWN ARTISAN PIZZA</h1>
+                <p class="hero-subtitle">Fresh ingredients, endless possibilities, blazing fast</p>
+                <p class="hero-description">Create your perfect pizza from scratch with premium ingredients, cooked fresh in our blazing hot ovens in under {{COOKING_TIME}} minutes.</p>
+                <div class="hero-buttons">
+                    <a href="#build" class="btn btn-primary btn-large">Start Building</a>
+                    <a href="#menu" class="btn btn-secondary btn-large">View Menu</a>
+                </div>
+                <div class="hero-features">
+                    <span class="feature">✨ {{INGREDIENT_COUNT}}+ Fresh Ingredients</span>
+                    <span class="feature">🔥 {{OVEN_TEMP}}° Blazing Ovens</span>
+                    <span class="feature">⚡ Ready in {{COOKING_TIME}} Minutes</span>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/pizza-building.jpg" alt="Fresh pizza being made">
+                <div class="pizza-timer">
+                    <span class="timer-number">{{COOKING_TIME}}</span>
+                    <span class="timer-text">Minutes<br>Fresh & Hot</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pizza Builder Showcase -->
+    <section id="build" class="pizza-builder">
+        <div class="container">
+            <div class="builder-header">
+                <h2>BUILD YOUR PERFECT PIZZA</h2>
+                <p>Start with fresh dough and create your masterpiece</p>
+            </div>
+            <div class="builder-steps">
+                <div class="build-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Choose Your Dough</h3>
+                        <div class="options-grid">
+                            <div class="option-card">
+                                <img src="images/classic-dough.jpg" alt="Classic Dough">
+                                <h4>Classic</h4>
+                                <p>Traditional pizza dough</p>
+                            </div>
+                            <div class="option-card">
+                                <img src="images/gluten-free-dough.jpg" alt="Gluten-Free Dough">
+                                <h4>Gluten-Free</h4>
+                                <p>Cauliflower crust</p>
+                            </div>
+                            <div class="option-card">
+                                <img src="images/high-rise-dough.jpg" alt="High-Rise Dough">
+                                <h4>High-Rise</h4>
+                                <p>Thick & fluffy</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="build-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Select Your Sauce</h3>
+                        <div class="options-grid">
+                            <div class="option-card">
+                                <img src="images/classic-tomato.jpg" alt="Classic Tomato">
+                                <h4>Classic Tomato</h4>
+                                <p>House-made marinara</p>
+                            </div>
+                            <div class="option-card">
+                                <img src="images/white-cream.jpg" alt="White Cream">
+                                <h4>White Cream</h4>
+                                <p>Garlic cream sauce</p>
+                            </div>
+                            <div class="option-card">
+                                <img src="images/pesto.jpg" alt="Pesto">
+                                <h4>Pesto</h4>
+                                <p>Fresh basil pesto</p>
+                            </div>
+                            <div class="option-card">
+                                <img src="images/bbq-sauce.jpg" alt="BBQ Sauce">
+                                <h4>BBQ</h4>
+                                <p>Sweet & tangy</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="build-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Add Your Cheese</h3>
+                        <div class="options-grid">
+                            <div class="option-card">
+                                <img src="images/mozzarella.jpg" alt="Mozzarella">
+                                <h4>Mozzarella</h4>
+                                <p>Classic melted cheese</p>
+                            </div>
+                            <div class="option-card">
+                                <img src="images/vegan-cheese.jpg" alt="Vegan Cheese">
+                                <h4>Vegan Cheese</h4>
+                                <p>Plant-based option</p>
+                            </div>
+                            <div class="option-card">
+                                <img src="images/cheese-blend.jpg" alt="Cheese Blend">
+                                <h4>Cheese Blend</h4>
+                                <p>Mix of premium cheeses</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="build-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Load Up Your Toppings</h3>
+                        <div class="toppings-categories">
+                            <div class="topping-category">
+                                <h4>🥩 Meats</h4>
+                                <div class="topping-list">
+                                    <span class="topping">Pepperoni</span>
+                                    <span class="topping">Italian Sausage</span>
+                                    <span class="topping">Grilled Chicken</span>
+                                    <span class="topping">Applewood Bacon</span>
+                                    <span class="topping">Salami</span>
+                                    <span class="topping">Chorizo</span>
+                                </div>
+                            </div>
+                            <div class="topping-category">
+                                <h4>🥬 Veggies</h4>
+                                <div class="topping-list">
+                                    <span class="topping">Fresh Basil</span>
+                                    <span class="topping">Roasted Red Peppers</span>
+                                    <span class="topping">Caramelized Onions</span>
+                                    <span class="topping">Mushrooms</span>
+                                    <span class="topping">Cherry Tomatoes</span>
+                                    <span class="topping">Arugula</span>
+                                    <span class="topping">Jalapeños</span>
+                                    <span class="topping">Black Olives</span>
+                                </div>
+                            </div>
+                            <div class="topping-category">
+                                <h4>🧄 Finishing Touches</h4>
+                                <div class="topping-list">
+                                    <span class="topping">Fresh Garlic</span>
+                                    <span class="topping">Parmesan</span>
+                                    <span class="topping">Balsamic Glaze</span>
+                                    <span class="topping">Olive Oil Drizzle</span>
+                                    <span class="topping">Sea Salt</span>
+                                    <span class="topping">Red Pepper Flakes</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="builder-cta">
+                <button class="btn btn-primary btn-large">Start Your Pizza - ${{BASE_PRICE}}</button>
+                <p class="pricing-note">Each additional topping +${{TOPPING_PRICE}}</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Signature Pizzas -->
+    <section id="menu" class="signature-pizzas">
+        <div class="container">
+            <div class="section-header">
+                <h2>SIGNATURE PIZZAS</h2>
+                <p>Chef-crafted combinations ready in {{COOKING_TIME}} minutes</p>
+            </div>
+            <div class="pizza-grid">
+                <div class="pizza-card">
+                    <img src="images/margherita-pizza.jpg" alt="Margherita Pizza">
+                    <div class="pizza-content">
+                        <h3>{{PIZZA_1_NAME}}</h3>
+                        <p class="pizza-description">{{PIZZA_1_INGREDIENTS}}</p>
+                        <div class="pizza-price">${{PIZZA_1_PRICE}}</div>
+                        <button class="btn btn-secondary">Add to Order</button>
+                    </div>
+                </div>
+                <div class="pizza-card">
+                    <img src="images/meat-lovers-pizza.jpg" alt="Meat Lovers Pizza">
+                    <div class="pizza-content">
+                        <h3>{{PIZZA_2_NAME}}</h3>
+                        <p class="pizza-description">{{PIZZA_2_INGREDIENTS}}</p>
+                        <div class="pizza-price">${{PIZZA_2_PRICE}}</div>
+                        <button class="btn btn-secondary">Add to Order</button>
+                    </div>
+                </div>
+                <div class="pizza-card">
+                    <img src="images/veggie-pizza.jpg" alt="Veggie Pizza">
+                    <div class="pizza-content">
+                        <h3>{{PIZZA_3_NAME}}</h3>
+                        <p class="pizza-description">{{PIZZA_3_INGREDIENTS}}</p>
+                        <div class="pizza-price">${{PIZZA_3_PRICE}}</div>
+                        <button class="btn btn-secondary">Add to Order</button>
+                    </div>
+                </div>
+                <div class="pizza-card">
+                    <img src="images/bbq-chicken-pizza.jpg" alt="BBQ Chicken Pizza">
+                    <div class="pizza-content">
+                        <h3>{{PIZZA_4_NAME}}</h3>
+                        <p class="pizza-description">{{PIZZA_4_INGREDIENTS}}</p>
+                        <div class="pizza-price">${{PIZZA_4_PRICE}}</div>
+                        <button class="btn btn-secondary">Add to Order</button>
+                    </div>
+                </div>
+                <div class="pizza-card">
+                    <img src="images/pepperoni-pizza.jpg" alt="Pepperoni Pizza">
+                    <div class="pizza-content">
+                        <h3>{{PIZZA_5_NAME}}</h3>
+                        <p class="pizza-description">{{PIZZA_5_INGREDIENTS}}</p>
+                        <div class="pizza-price">${{PIZZA_5_PRICE}}</div>
+                        <button class="btn btn-secondary">Add to Order</button>
+                    </div>
+                </div>
+                <div class="pizza-card">
+                    <img src="images/white-pizza.jpg" alt="White Pizza">
+                    <div class="pizza-content">
+                        <h3>{{PIZZA_6_NAME}}</h3>
+                        <p class="pizza-description">{{PIZZA_6_INGREDIENTS}}</p>
+                        <div class="pizza-price">${{PIZZA_6_PRICE}}</div>
+                        <button class="btn btn-secondary">Add to Order</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sides & Drinks -->
+    <section class="sides-drinks">
+        <div class="container">
+            <h2>COMPLETE YOUR MEAL</h2>
+            <div class="menu-categories">
+                <div class="category">
+                    <h3>🥗 Salads & Sides</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <img src="images/caesar-salad.jpg" alt="Caesar Salad">
+                            <div class="item-details">
+                                <h4>{{SALAD_1_NAME}}</h4>
+                                <p>{{SALAD_1_DESCRIPTION}}</p>
+                                <span class="price">${{SALAD_1_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="images/garlic-knots.jpg" alt="Garlic Knots">
+                            <div class="item-details">
+                                <h4>{{SIDE_1_NAME}}</h4>
+                                <p>{{SIDE_1_DESCRIPTION}}</p>
+                                <span class="price">${{SIDE_1_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="images/chicken-wings.jpg" alt="Wings">
+                            <div class="item-details">
+                                <h4>{{SIDE_2_NAME}}</h4>
+                                <p>{{SIDE_2_DESCRIPTION}}</p>
+                                <span class="price">${{SIDE_2_PRICE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="category">
+                    <h3>🥤 Drinks & Desserts</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <img src="images/craft-sodas.jpg" alt="Craft Sodas">
+                            <div class="item-details">
+                                <h4>{{DRINK_1_NAME}}</h4>
+                                <p>{{DRINK_1_DESCRIPTION}}</p>
+                                <span class="price">${{DRINK_1_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="images/beer-selection.jpg" alt="Beer">
+                            <div class="item-details">
+                                <h4>{{DRINK_2_NAME}}</h4>
+                                <p>{{DRINK_2_DESCRIPTION}}</p>
+                                <span class="price">${{DRINK_2_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <img src="images/s-mores-pizza.jpg" alt="S'mores Pizza">
+                            <div class="item-details">
+                                <h4>{{DESSERT_1_NAME}}</h4>
+                                <p>{{DESSERT_1_DESCRIPTION}}</p>
+                                <span class="price">${{DESSERT_1_PRICE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>FAST-FIRED PASSION</h2>
+                    <p class="about-intro">{{RESTAURANT_DESCRIPTION}}</p>
+                    <p>We believe pizza should be personal. That's why we let you build your perfect pizza from scratch with the freshest ingredients, then fire it in our blazing {{OVEN_TEMP}}° ovens for the perfect crispy-yet-chewy texture in just {{COOKING_TIME}} minutes.</p>
+                    
+                    <div class="about-stats">
+                        <div class="stat">
+                            <div class="stat-number">{{OVEN_TEMP}}°</div>
+                            <div class="stat-label">Blazing Hot Ovens</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">{{COOKING_TIME}}</div>
+                            <div class="stat-label">Minutes Fresh</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">{{INGREDIENT_COUNT}}+</div>
+                            <div class="stat-label">Fresh Ingredients</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">{{LOCATION_COUNT}}</div>
+                            <div class="stat-label">Locations</div>
+                        </div>
+                    </div>
+
+                    <div class="values">
+                        <div class="value">
+                            <span class="value-icon">🌱</span>
+                            <h4>Fresh Ingredients</h4>
+                            <p>Quality starts with fresh, responsibly sourced ingredients</p>
+                        </div>
+                        <div class="value">
+                            <span class="value-icon">⚡</span>
+                            <h4>Lightning Fast</h4>
+                            <p>Your custom pizza ready in under {{COOKING_TIME}} minutes</p>
+                        </div>
+                        <div class="value">
+                            <span class="value-icon">🎨</span>
+                            <h4>Your Creation</h4>
+                            <p>Endless combinations to build your perfect pizza</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="images/pizza-oven-action.jpg" alt="Pizza being made in oven">
+                    <div class="image-overlay">
+                        <span class="overlay-text">🔥 {{OVEN_TEMP}}° BLAZING OVENS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Download -->
+    <section id="app" class="app-section">
+        <div class="container">
+            <div class="app-content">
+                <div class="app-info">
+                    <h2>PIZZA IN YOUR POCKET</h2>
+                    <p>Skip the line and get rewards with our mobile app</p>
+                    <ul class="app-features">
+                        <li>✅ Quick reorder your favorites</li>
+                        <li>✅ Earn points with every purchase</li>
+                        <li>✅ Exclusive app-only offers</li>
+                        <li>✅ Track your pizza in real-time</li>
+                        <li>✅ Save your custom creations</li>
+                    </ul>
+                    <div class="app-downloads">
+                        <a href="{{APP_STORE_URL}}" class="app-badge">
+                            <img src="images/app-store-badge.png" alt="Download on App Store">
+                        </a>
+                        <a href="{{GOOGLE_PLAY_URL}}" class="app-badge">
+                            <img src="images/google-play-badge.png" alt="Get it on Google Play">
+                        </a>
+                    </div>
+                </div>
+                <div class="app-visual">
+                    <img src="images/app-mockup.png" alt="{{RESTAURANT_NAME}} Mobile App">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations -->
+    <section id="locations" class="locations">
+        <div class="container">
+            <h2>FIND YOUR NEAREST LOCATION</h2>
+            <div class="location-finder">
+                <div class="finder-input">
+                    <input type="text" placeholder="Enter ZIP code or city">
+                    <button class="btn btn-primary">Find Locations</button>
+                </div>
+            </div>
+            <div class="locations-grid">
+                <div class="location-card">
+                    <h3>{{LOCATION_1_NAME}}</h3>
+                    <p>{{LOCATION_1_ADDRESS}}</p>
+                    <p>{{LOCATION_1_PHONE}}</p>
+                    <div class="location-hours">
+                        <strong>Hours:</strong> {{LOCATION_1_HOURS}}
+                    </div>
+                    <div class="location-features">
+                        <span class="feature">🚗 Drive-Thru</span>
+                        <span class="feature">🚚 Delivery</span>
+                        <span class="feature">📱 Online Order</span>
+                    </div>
+                    <button class="btn btn-secondary">Order from This Location</button>
+                </div>
+                <div class="location-card">
+                    <h3>{{LOCATION_2_NAME}}</h3>
+                    <p>{{LOCATION_2_ADDRESS}}</p>
+                    <p>{{LOCATION_2_PHONE}}</p>
+                    <div class="location-hours">
+                        <strong>Hours:</strong> {{LOCATION_2_HOURS}}
+                    </div>
+                    <div class="location-features">
+                        <span class="feature">🍽️ Dine-In</span>
+                        <span class="feature">🚚 Delivery</span>
+                        <span class="feature">📱 Online Order</span>
+                    </div>
+                    <button class="btn btn-secondary">Order from This Location</button>
+                </div>
+                <div class="location-card">
+                    <h3>{{LOCATION_3_NAME}}</h3>
+                    <p>{{LOCATION_3_ADDRESS}}</p>
+                    <p>{{LOCATION_3_PHONE}}</p>
+                    <div class="location-hours">
+                        <strong>Hours:</strong> {{LOCATION_3_HOURS}}
+                    </div>
+                    <div class="location-features">
+                        <span class="feature">🚗 Drive-Thru</span>
+                        <span class="feature">🏢 Catering</span>
+                        <span class="feature">📱 Online Order</span>
+                    </div>
+                    <button class="btn btn-secondary">Order from This Location</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>GET IN TOUCH</h2>
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <h3>Customer Service</h3>
+                            <p>{{CUSTOMER_SERVICE_PHONE}}</p>
+                            <p>{{CUSTOMER_SERVICE_EMAIL}}</p>
+                        </div>
+                        <div class="contact-method">
+                            <h3>Catering Inquiries</h3>
+                            <p>{{CATERING_PHONE}}</p>
+                            <p>{{CATERING_EMAIL}}</p>
+                        </div>
+                        <div class="contact-method">
+                            <h3>Franchise Opportunities</h3>
+                            <p>{{FRANCHISE_PHONE}}</p>
+                            <p>{{FRANCHISE_EMAIL}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <select required>
+                                <option value="">Select Topic</option>
+                                <option value="general">General Question</option>
+                                <option value="catering">Catering Inquiry</option>
+                                <option value="franchise">Franchise Info</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="complaint">Complaint</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>{{RESTAURANT_NAME}}</h4>
+                    <p>Fast-fired artisan pizzas made fresh to order</p>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}">Instagram</a>
+                        <a href="{{TWITTER_URL}}">Twitter</a>
+                        <a href="{{TIKTOK_URL}}">TikTok</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Order</h4>
+                    <ul>
+                        <li><a href="#build">Build Your Pizza</a></li>
+                        <li><a href="#menu">Signature Pizzas</a></li>
+                        <li><a href="#app">Mobile App</a></li>
+                        <li><a href="#catering">Catering</a></li>
+                        <li><a href="#gift-cards">Gift Cards</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">Our Story</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#franchise">Franchise</a></li>
+                        <li><a href="#press">Press</a></li>
+                        <li><a href="#investors">Investors</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#nutrition">Nutrition</a></li>
+                        <li><a href="#allergens">Allergen Info</a></li>
+                        <li><a href="#accessibility">Accessibility</a></li>
+                        <li><a href="#feedback">Feedback</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; {{CURRENT_YEAR}} {{RESTAURANT_NAME}}. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                    <a href="#cookies">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

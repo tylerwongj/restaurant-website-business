@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Premium Coffee & More</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="premium-scheme">
+    <!-- Seasonal Banner -->
+    <div class="seasonal-banner">
+        <div class="container">
+            <div class="banner-content">
+                <span class="banner-text">🍂 {{SEASONAL_DRINK_NAME}} is back! Limited time seasonal favorite.</span>
+                <button class="banner-btn">Order Now</button>
+                <button class="banner-close">&times;</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}}" class="logo-img">
+                </div>
+                <nav class="nav">
+                    <a href="#menu" class="nav-link">Menu</a>
+                    <a href="#rewards" class="nav-link">Rewards</a>
+                    <a href="#gift-cards" class="nav-link">Gift Cards</a>
+                    <a href="#stores" class="nav-link">Find a Store</a>
+                </nav>
+                <div class="header-actions">
+                    <button class="btn btn-secondary">Sign In</button>
+                    <button class="btn btn-primary">Order Ahead</button>
+                    <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">More Than Coffee</h1>
+                <p class="hero-subtitle">Discover our handcrafted beverages, fresh food, and premium coffee experience that brings people together.</p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary btn-large">Order Now</button>
+                    <button class="btn btn-secondary btn-large">Join Rewards</button>
+                </div>
+                <div class="hero-features">
+                    <div class="feature">
+                        <span class="feature-icon">☕</span>
+                        <span>Handcrafted</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">🌱</span>
+                        <span>Ethically Sourced</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">⭐</span>
+                        <span>Premium Quality</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="{{HERO_IMAGE}}" alt="Premium coffee cup" class="hero-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seasonal Highlights -->
+    <section class="seasonal">
+        <div class="container">
+            <div class="seasonal-header">
+                <h2 class="section-title">Seasonal Favorites</h2>
+                <p class="seasonal-subtitle">Limited-time handcrafted beverages celebrating the season</p>
+            </div>
+            
+            <div class="seasonal-grid">
+                <div class="seasonal-card featured">
+                    <div class="seasonal-image">
+                        <img src="{{SEASONAL_1}}" alt="Seasonal drink 1" class="seasonal-img">
+                        <div class="seasonal-badge">New</div>
+                    </div>
+                    <div class="seasonal-content">
+                        <h3 class="seasonal-name">{{SEASONAL_DRINK_1_NAME}}</h3>
+                        <p class="seasonal-desc">{{SEASONAL_DRINK_1_DESC}}</p>
+                        <div class="seasonal-price">Starting at $4.95</div>
+                        <button class="btn btn-primary">Order Now</button>
+                        <p class="seasonal-availability">Available {{SEASONAL_1_DATES}}</p>
+                    </div>
+                </div>
+
+                <div class="seasonal-card">
+                    <div class="seasonal-image">
+                        <img src="{{SEASONAL_2}}" alt="Seasonal drink 2" class="seasonal-img">
+                    </div>
+                    <div class="seasonal-content">
+                        <h3 class="seasonal-name">{{SEASONAL_DRINK_2_NAME}}</h3>
+                        <p class="seasonal-desc">{{SEASONAL_DRINK_2_DESC}}</p>
+                        <div class="seasonal-price">Starting at $5.45</div>
+                        <button class="btn btn-secondary">Try It</button>
+                        <p class="seasonal-availability">Available {{SEASONAL_2_DATES}}</p>
+                    </div>
+                </div>
+
+                <div class="seasonal-card">
+                    <div class="seasonal-image">
+                        <img src="{{SEASONAL_3}}" alt="Seasonal food" class="seasonal-img">
+                    </div>
+                    <div class="seasonal-content">
+                        <h3 class="seasonal-name">{{SEASONAL_FOOD_NAME}}</h3>
+                        <p class="seasonal-desc">{{SEASONAL_FOOD_DESC}}</p>
+                        <div class="seasonal-price">$3.95</div>
+                        <button class="btn btn-secondary">Order</button>
+                        <p class="seasonal-availability">Limited time</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Categories -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <h2 class="section-title">Menu</h2>
+            <div class="menu-categories">
+                <div class="category-nav">
+                    <button class="category-btn active" data-category="all">All</button>
+                    <button class="category-btn" data-category="hot-coffees">Hot Coffees</button>
+                    <button class="category-btn" data-category="cold-coffees">Cold Coffees</button>
+                    <button class="category-btn" data-category="frappuccino">Frappuccino®</button>
+                    <button class="category-btn" data-category="tea">Tea</button>
+                    <button class="category-btn" data-category="food">Food</button>
+                </div>
+
+                <div class="menu-items">
+                    <!-- Hot Coffees -->
+                    <div class="menu-section" data-category="hot-coffees">
+                        <h3 class="menu-section-title">Hot Coffees</h3>
+                        <div class="items-grid">
+                            <div class="menu-item">
+                                <img src="{{COFFEE_1}}" alt="Pike Place Roast" class="menu-item-img">
+                                <div class="menu-item-content">
+                                    <h4 class="menu-item-name">{{SIGNATURE_ROAST_NAME}}</h4>
+                                    <p class="menu-item-desc">{{SIGNATURE_ROAST_DESC}}</p>
+                                    <div class="menu-item-pricing">
+                                        <span class="size-price">Short $1.85</span>
+                                        <span class="size-price">Tall $2.15</span>
+                                        <span class="size-price">Grande $2.45</span>
+                                        <span class="size-price">Venti $2.65</span>
+                                    </div>
+                                    <button class="btn btn-small">Add to Order</button>
+                                </div>
+                            </div>
+
+                            <div class="menu-item">
+                                <img src="{{COFFEE_2}}" alt="Caffè Americano" class="menu-item-img">
+                                <div class="menu-item-content">
+                                    <h4 class="menu-item-name">Caffè Americano</h4>
+                                    <p class="menu-item-desc">Rich espresso shots topped with hot water</p>
+                                    <div class="menu-item-pricing">
+                                        <span class="size-price">Tall $2.65</span>
+                                        <span class="size-price">Grande $3.15</span>
+                                        <span class="size-price">Venti $3.65</span>
+                                    </div>
+                                    <button class="btn btn-small">Add to Order</button>
+                                </div>
+                            </div>
+
+                            <div class="menu-item">
+                                <img src="{{COFFEE_3}}" alt="Caffe Latte" class="menu-item-img">
+                                <div class="menu-item-content">
+                                    <h4 class="menu-item-name">Caffè Latte</h4>
+                                    <p class="menu-item-desc">Rich espresso balanced with steamed milk</p>
+                                    <div class="menu-item-pricing">
+                                        <span class="size-price">Tall $4.45</span>
+                                        <span class="size-price">Grande $5.25</span>
+                                        <span class="size-price">Venti $5.95</span>
+                                    </div>
+                                    <button class="btn btn-small">Add to Order</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cold Coffees -->
+                    <div class="menu-section" data-category="cold-coffees">
+                        <h3 class="menu-section-title">Cold Coffees</h3>
+                        <div class="items-grid">
+                            <div class="menu-item">
+                                <img src="{{COLD_BREW}}" alt="Cold Brew" class="menu-item-img">
+                                <div class="menu-item-content">
+                                    <h4 class="menu-item-name">Cold Brew Coffee</h4>
+                                    <p class="menu-item-desc">Slow-steeped, small-batch cold brew</p>
+                                    <div class="menu-item-pricing">
+                                        <span class="size-price">Tall $2.95</span>
+                                        <span class="size-price">Grande $3.45</span>
+                                        <span class="size-price">Venti $3.95</span>
+                                    </div>
+                                    <button class="btn btn-small">Add to Order</button>
+                                </div>
+                            </div>
+
+                            <div class="menu-item">
+                                <img src="{{ICED_COFFEE}}" alt="Iced Coffee" class="menu-item-img">
+                                <div class="menu-item-content">
+                                    <h4 class="menu-item-name">Iced Coffee</h4>
+                                    <p class="menu-item-desc">Refreshing coffee served over ice</p>
+                                    <div class="menu-item-pricing">
+                                        <span class="size-price">Tall $2.25</span>
+                                        <span class="size-price">Grande $2.65</span>
+                                        <span class="size-price">Venti $2.95</span>
+                                    </div>
+                                    <button class="btn btn-small">Add to Order</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Food Section -->
+                    <div class="menu-section" data-category="food">
+                        <h3 class="menu-section-title">Food</h3>
+                        <div class="items-grid">
+                            <div class="menu-item">
+                                <img src="{{FOOD_1}}" alt="Breakfast sandwich" class="menu-item-img">
+                                <div class="menu-item-content">
+                                    <h4 class="menu-item-name">{{BREAKFAST_SANDWICH_NAME}}</h4>
+                                    <p class="menu-item-desc">{{BREAKFAST_SANDWICH_DESC}}</p>
+                                    <div class="menu-item-price">$4.95</div>
+                                    <button class="btn btn-small">Add to Order</button>
+                                </div>
+                            </div>
+
+                            <div class="menu-item">
+                                <img src="{{FOOD_2}}" alt="Pastry" class="menu-item-img">
+                                <div class="menu-item-content">
+                                    <h4 class="menu-item-name">{{PASTRY_NAME}}</h4>
+                                    <p class="menu-item-desc">{{PASTRY_DESC}}</p>
+                                    <div class="menu-item-price">$2.95</div>
+                                    <button class="btn btn-small">Add to Order</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rewards Program -->
+    <section id="rewards" class="rewards">
+        <div class="container">
+            <div class="rewards-content">
+                <div class="rewards-text">
+                    <h2 class="rewards-title">{{RESTAURANT_NAME}} Rewards</h2>
+                    <p class="rewards-desc">Join {{RESTAURANT_NAME}} Rewards to earn Stars and unlock free drinks, food, and more.</p>
+                    
+                    <div class="rewards-tiers">
+                        <div class="tier-card">
+                            <div class="tier-stars">25★</div>
+                            <h4>Customize Your Drink</h4>
+                            <p>Extra espresso shot, dairy alternative, or extra hot</p>
+                        </div>
+                        
+                        <div class="tier-card">
+                            <div class="tier-stars">50★</div>
+                            <h4>Brewed Hot Coffee or Tea</h4>
+                            <p>Freshly brewed coffee or select hot teas</p>
+                        </div>
+                        
+                        <div class="tier-card">
+                            <div class="tier-stars">150★</div>
+                            <h4>Handcrafted Drink or Food</h4>
+                            <p>Any handcrafted beverage or breakfast item</p>
+                        </div>
+                        
+                        <div class="tier-card">
+                            <div class="tier-stars">200★</div>
+                            <h4>Lunch Sandwich or Salad</h4>
+                            <p>Select lunch sandwiches, salads, or protein boxes</p>
+                        </div>
+                    </div>
+                    
+                    <div class="rewards-benefits">
+                        <div class="benefit">
+                            <div class="benefit-icon">⭐</div>
+                            <span>Earn 2 Stars per $1 spent</span>
+                        </div>
+                        <div class="benefit">
+                            <div class="benefit-icon">🎂</div>
+                            <span>Free drink on your birthday</span>
+                        </div>
+                        <div class="benefit">
+                            <div class="benefit-icon">🔔</div>
+                            <span>Member-exclusive offers</span>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-primary btn-large">Join {{RESTAURANT_NAME}} Rewards</button>
+                </div>
+                <div class="rewards-image">
+                    <img src="{{REWARDS_IMAGE}}" alt="Rewards program" class="rewards-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gift Cards -->
+    <section id="gift-cards" class="gift-cards">
+        <div class="container">
+            <div class="gift-cards-content">
+                <div class="gift-cards-image">
+                    <img src="{{GIFT_CARD_IMAGE}}" alt="Gift cards" class="gift-cards-img">
+                </div>
+                <div class="gift-cards-text">
+                    <h2 class="gift-cards-title">Share the {{RESTAURANT_NAME}} Experience</h2>
+                    <p class="gift-cards-desc">Give the gift of coffee, food, and good times with {{RESTAURANT_NAME}} gift cards.</p>
+                    
+                    <div class="gift-card-options">
+                        <div class="gift-option">
+                            <h4>🎁 Physical Gift Cards</h4>
+                            <p>Beautiful cards delivered to you or your recipient</p>
+                            <ul>
+                                <li>Classic and seasonal designs</li>
+                                <li>Any amount from $5-$500</li>
+                                <li>Free standard shipping</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="gift-option">
+                            <h4>📱 eGift Cards</h4>
+                            <p>Instant digital delivery via email or text</p>
+                            <ul>
+                                <li>Send immediately or schedule</li>
+                                <li>Personalized messages</li>
+                                <li>Easy to redeem in-store or app</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="gift-card-amounts">
+                        <span class="amount-btn">$25</span>
+                        <span class="amount-btn">$50</span>
+                        <span class="amount-btn">$100</span>
+                        <span class="amount-btn">Other Amount</span>
+                    </div>
+                    
+                    <button class="btn btn-primary">Send a Gift Card</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coffee Culture -->
+    <section class="coffee-culture">
+        <div class="container">
+            <div class="culture-content">
+                <div class="culture-text">
+                    <h2 class="culture-title">Our Coffee</h2>
+                    <p class="culture-desc">{{RESTAURANT_STORY}}</p>
+                    <p>Every cup tells the story of our journey to source the finest coffee beans from around the world, expertly roasted and carefully crafted for you.</p>
+                    
+                    <div class="coffee-values">
+                        <div class="coffee-value">
+                            <div class="value-icon">🌍</div>
+                            <h4>Ethically Sourced</h4>
+                            <p>Working directly with farmers to ensure quality and sustainability</p>
+                        </div>
+                        
+                        <div class="coffee-value">
+                            <div class="value-icon">🔥</div>
+                            <h4>Expertly Roasted</h4>
+                            <p>Small-batch roasting brings out unique flavors in every bean</p>
+                        </div>
+                        
+                        <div class="coffee-value">
+                            <div class="value-icon">☕</div>
+                            <h4>Handcrafted</h4>
+                            <p>Each beverage is carefully prepared by our skilled baristas</p>
+                        </div>
+                        
+                        <div class="coffee-value">
+                            <div class="value-icon">🏪</div>
+                            <h4>Community Focused</h4>
+                            <p>Creating connections in every neighborhood we serve</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="culture-image">
+                    <img src="{{COFFEE_CULTURE_IMAGE}}" alt="Coffee preparation" class="culture-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Store Locator -->
+    <section id="stores" class="stores">
+        <div class="container">
+            <h2 class="section-title">Find Your {{RESTAURANT_NAME}}</h2>
+            <div class="store-finder">
+                <div class="finder-search">
+                    <input type="text" placeholder="Find a store near you..." class="store-input">
+                    <button class="btn btn-primary">Find Stores</button>
+                </div>
+                
+                <div class="store-filters">
+                    <button class="filter-btn active" data-filter="all">All Stores</button>
+                    <button class="filter-btn" data-filter="drive-thru">Drive-Thru</button>
+                    <button class="filter-btn" data-filter="mobile-order">Mobile Order</button>
+                    <button class="filter-btn" data-filter="wifi">Free WiFi</button>
+                    <button class="filter-btn" data-filter="reserve">{{RESTAURANT_NAME}} Reserve</button>
+                </div>
+            </div>
+            
+            <div class="store-results">
+                <div class="store-card">
+                    <div class="store-info">
+                        <h3>{{LOCATION_NAME_1}}</h3>
+                        <p class="store-address">{{LOCATION_ADDRESS_1}}</p>
+                        <p class="store-hours">{{LOCATION_HOURS_1}}</p>
+                        <div class="store-amenities">
+                            <span class="amenity">Drive-Thru</span>
+                            <span class="amenity">Mobile Order</span>
+                            <span class="amenity">WiFi</span>
+                            <span class="amenity">Seating</span>
+                        </div>
+                    </div>
+                    <div class="store-actions">
+                        <button class="btn btn-primary">Order Here</button>
+                        <button class="btn btn-secondary">Directions</button>
+                    </div>
+                </div>
+                
+                <div class="store-card">
+                    <div class="store-info">
+                        <h3>{{LOCATION_NAME_2}}</h3>
+                        <p class="store-address">{{LOCATION_ADDRESS_2}}</p>
+                        <p class="store-hours">{{LOCATION_HOURS_2}}</p>
+                        <div class="store-amenities">
+                            <span class="amenity">{{RESTAURANT_NAME}} Reserve</span>
+                            <span class="amenity">Nitro Cold Brew</span>
+                            <span class="amenity">WiFi</span>
+                            <span class="amenity">Outdoor Seating</span>
+                        </div>
+                    </div>
+                    <div class="store-actions">
+                        <button class="btn btn-primary">Order Here</button>
+                        <button class="btn btn-secondary">Directions</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About Us</h4>
+                    <ul>
+                        <li><a href="#coffee">Our Coffee</a></li>
+                        <li><a href="#stories">Stories & News</a></li>
+                        <li><a href="#investors">Investor Relations</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#company">Company Information</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Careers</h4>
+                    <ul>
+                        <li><a href="#culture">Culture and Values</a></li>
+                        <li><a href="#inclusion">Inclusion & Diversity</a></li>
+                        <li><a href="#benefits">Benefits</a></li>
+                        <li><a href="#locations">Retail Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Social Impact</h4>
+                    <ul>
+                        <li><a href="#people">People</a></li>
+                        <li><a href="#planet">Planet</a></li>
+                        <li><a href="#communities">Strengthening Communities</a></li>
+                        <li><a href="#global-impact">Global Social Impact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#faqs">FAQs</a></li>
+                        <li><a href="#accessibility">Accessibility</a></li>
+                        <li><a href="#policies">Policies</a></li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}" class="social-link">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}" class="social-link">Instagram</a>
+                        <a href="{{TWITTER_URL}}" class="social-link">Twitter</a>
+                        <a href="{{YOUTUBE_URL}}" class="social-link">YouTube</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-links">
+                    <a href="#privacy">Privacy Notice</a>
+                    <a href="#terms">Terms of Use</a>
+                    <a href="#ca-privacy">CA Privacy Rights</a>
+                    <a href="#cookies">Cookie Preferences</a>
+                </div>
+                <p class="copyright">&copy; 2024 {{RESTAURANT_NAME}} Coffee Company. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

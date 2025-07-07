@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Wings, Sports & Good Times</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;600;700&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="sports-scheme">
+    <!-- Game Day Banner -->
+    <div class="game-day-banner">
+        <div class="container">
+            <div class="banner-content">
+                <span class="banner-icon">🏈</span>
+                <span class="banner-text">{{GAME_DAY_SPECIAL}} | Watch all the games with us!</span>
+                <button class="banner-btn">View Schedule</button>
+                <button class="banner-close">&times;</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}}" class="logo-img">
+                </div>
+                <nav class="nav">
+                    <a href="#menu" class="nav-link">Menu</a>
+                    <a href="#wings" class="nav-link">Wings</a>
+                    <a href="#sports" class="nav-link">Sports</a>
+                    <a href="#specials" class="nav-link">Daily Specials</a>
+                    <a href="#locations" class="nav-link">Locations</a>
+                </nav>
+                <div class="header-actions">
+                    <button class="btn btn-primary">Order Takeout</button>
+                    <button class="btn btn-secondary">Delivery</button>
+                    <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">Wings, Sports<br>& Good Times</h1>
+                <p class="hero-subtitle">Experience the ultimate sports bar with unbeatable wings, ice-cold beer, and every game on our big screens.</p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary btn-large">Order Wings Now</button>
+                    <button class="btn btn-secondary btn-large">Find Your Game</button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">{{SAUCE_COUNT}}</span>
+                        <span class="stat-label">Wing Sauces</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">{{SCREEN_COUNT}}</span>
+                        <span class="stat-label">Big Screens</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">{{BEER_COUNT}}</span>
+                        <span class="stat-label">Beers on Tap</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="{{HERO_IMAGE}}" alt="Wings and sports atmosphere" class="hero-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Wing Sauce Heat Scale -->
+    <section class="heat-scale">
+        <div class="container">
+            <h2 class="section-title">Find Your Heat Level</h2>
+            <div class="heat-meter">
+                <div class="heat-levels">
+                    <div class="heat-level mild" data-heat="1">
+                        <div class="heat-icon">😊</div>
+                        <h4>Mild</h4>
+                        <p>Perfect for everyone</p>
+                        <div class="sauce-examples">
+                            <span>{{MILD_SAUCE_1}}</span>
+                            <span>{{MILD_SAUCE_2}}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="heat-level medium" data-heat="2">
+                        <div class="heat-icon">😋</div>
+                        <h4>Medium</h4>
+                        <p>A little kick</p>
+                        <div class="sauce-examples">
+                            <span>{{MEDIUM_SAUCE_1}}</span>
+                            <span>{{MEDIUM_SAUCE_2}}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="heat-level hot" data-heat="3">
+                        <div class="heat-icon">🔥</div>
+                        <h4>Hot</h4>
+                        <p>Serious heat</p>
+                        <div class="sauce-examples">
+                            <span>{{HOT_SAUCE_1}}</span>
+                            <span>{{HOT_SAUCE_2}}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="heat-level blazin" data-heat="4">
+                        <div class="heat-icon">💀</div>
+                        <h4>Blazin'</h4>
+                        <p>Only for the brave</p>
+                        <div class="sauce-examples">
+                            <span>{{BLAZIN_SAUCE_1}}</span>
+                            <span>{{BLAZIN_SAUCE_2}}</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="heat-challenge">
+                    <h3>{{CHALLENGE_NAME}}</h3>
+                    <p>{{CHALLENGE_DESC}}</p>
+                    <button class="btn btn-blazin">Take the Challenge</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Categories -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <h2 class="section-title">Game Day Menu</h2>
+            <div class="menu-categories">
+                <div class="category-nav">
+                    <button class="category-btn active" data-category="all">All Menu</button>
+                    <button class="category-btn" data-category="wings">Wings</button>
+                    <button class="category-btn" data-category="appetizers">Shareables</button>
+                    <button class="category-btn" data-category="burgers">Burgers</button>
+                    <button class="category-btn" data-category="salads">Salads</button>
+                    <button class="category-btn" data-category="drinks">Drinks</button>
+                </div>
+
+                <div class="menu-items">
+                    <!-- Wings Section -->
+                    <div class="menu-section" data-category="wings">
+                        <h3 class="menu-section-title">Legendary Wings</h3>
+                        <div class="items-grid">
+                            <div class="menu-item featured">
+                                <img src="{{WINGS_TRADITIONAL}}" alt="Traditional Wings" class="menu-item-img">
+                                <div class="menu-item-content">
+                                    <h4 class="menu-item-name">Traditional Wings</h4>
+                                    <p class="menu-item-desc">Our signature wings tossed in your choice of sauce</p>
+                                    <div class="wing-sizes">
+                                        <div class="size-option">
+                                            <span class="size">6 Wings</span>
+                                            <span class="price">${{WINGS_6_PRICE}}</span>
+                                        </div>
+                                        <div class="size-option">
+                                            <span class="size">12 Wings</span>
+                                            <span class="price">${{WINGS_12_PRICE}}</span>
+                                        </div>
+                                        <div class="size-option">
+                                            <span class="size">18 Wings</span>
+                                            <span class="price">${{WINGS_18_PRICE}}</span>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-primary">Customize Wings</button>
+                                </div>
+                            </div>
+
+                            <div class="menu-item">
+                                <img src="{{WINGS_BONELESS}}" alt="Boneless Wings" class="menu-item-img">
+                                <div class="menu-item-content">
+                                    <h4 class="menu-item-name">Boneless Wings</h4>
+                                    <p class="menu-item-desc">All-white meat chicken tossed in your favorite sauce</p>
+                                    <div class="wing-sizes">
+                                        <div class="size-option">
+                                            <span class="size">8 Pieces</span>
+                                            <span class="price">${{BONELESS_8_PRICE}}</span>
+                                        </div>
+                                        <div class="size-option">
+                                            <span class="size">15 Pieces</span>
+                                            <span class="price">${{BONELESS_15_PRICE}}</span>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-secondary">Order Now</button>
+                                </div>
+                            </div>
+
+                            <div class="menu-item">
+                                <img src="{{WINGS_CAULIFLOWER}}" alt="Cauliflower Wings" class="menu-item-img">
+                                <div class="menu-item-content">
+                                    <h4 class="menu-item-name">Cauliflower Wings</h4>
+                                    <p class="menu-item-desc">Crispy cauliflower with all your favorite wing sauces</p>
+                                    <div class="menu-item-price">${{CAULIFLOWER_PRICE}}</div>
+                                    <button class="btn btn-secondary">Try It</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Shareables Section -->
+                    <div class="menu-section" data-category="appetizers">
+                        <h3 class="menu-section-title">Game Day Shareables</h3>
+                        <div class="items-grid">
+                            <div class="menu-item">
+                                <img src="{{APPETIZER_1}}" alt="Loaded Nachos" class="menu-item-img">
+                                <div class="menu-item-content">
+                                    <h4 class="menu-item-name">{{APPETIZER_1_NAME}}</h4>
+                                    <p class="menu-item-desc">{{APPETIZER_1_DESC}}</p>
+                                    <div class="menu-item-price">${{APPETIZER_1_PRICE}}</div>
+                                    <button class="btn btn-small">Add to Order</button>
+                                </div>
+                            </div>
+
+                            <div class="menu-item">
+                                <img src="{{APPETIZER_2}}" alt="Mozzarella Sticks" class="menu-item-img">
+                                <div class="menu-item-content">
+                                    <h4 class="menu-item-name">{{APPETIZER_2_NAME}}</h4>
+                                    <p class="menu-item-desc">{{APPETIZER_2_DESC}}</p>
+                                    <div class="menu-item-price">${{APPETIZER_2_PRICE}}</div>
+                                    <button class="btn btn-small">Add to Order</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Burgers Section -->
+                    <div class="menu-section" data-category="burgers">
+                        <h3 class="menu-section-title">Big Game Burgers</h3>
+                        <div class="items-grid">
+                            <div class="menu-item">
+                                <img src="{{BURGER_1}}" alt="BBQ Burger" class="menu-item-img">
+                                <div class="menu-item-content">
+                                    <h4 class="menu-item-name">{{BURGER_1_NAME}}</h4>
+                                    <p class="menu-item-desc">{{BURGER_1_DESC}}</p>
+                                    <div class="menu-item-price">${{BURGER_1_PRICE}}</div>
+                                    <button class="btn btn-small">Add to Order</button>
+                                </div>
+                            </div>
+
+                            <div class="menu-item">
+                                <img src="{{BURGER_2}}" alt="Buffalo Chicken Burger" class="menu-item-img">
+                                <div class="menu-item-content">
+                                    <h4 class="menu-item-name">{{BURGER_2_NAME}}</h4>
+                                    <p class="menu-item-desc">{{BURGER_2_DESC}}</p>
+                                    <div class="menu-item-price">${{BURGER_2_PRICE}}</div>
+                                    <button class="btn btn-small">Add to Order</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Drinks Section -->
+                    <div class="menu-section" data-category="drinks">
+                        <h3 class="menu-section-title">Cold Drinks & Brews</h3>
+                        <div class="drinks-grid">
+                            <div class="drink-category">
+                                <h4>On Tap</h4>
+                                <div class="drink-list">
+                                    <div class="drink-item">
+                                        <span class="drink-name">{{BEER_TAP_1}}</span>
+                                        <span class="drink-price">${{BEER_TAP_1_PRICE}}</span>
+                                    </div>
+                                    <div class="drink-item">
+                                        <span class="drink-name">{{BEER_TAP_2}}</span>
+                                        <span class="drink-price">${{BEER_TAP_2_PRICE}}</span>
+                                    </div>
+                                    <div class="drink-item">
+                                        <span class="drink-name">{{BEER_TAP_3}}</span>
+                                        <span class="drink-price">${{BEER_TAP_3_PRICE}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="drink-category">
+                                <h4>Signature Cocktails</h4>
+                                <div class="drink-list">
+                                    <div class="drink-item">
+                                        <span class="drink-name">{{COCKTAIL_1}}</span>
+                                        <span class="drink-price">${{COCKTAIL_1_PRICE}}</span>
+                                    </div>
+                                    <div class="drink-item">
+                                        <span class="drink-name">{{COCKTAIL_2}}</span>
+                                        <span class="drink-price">${{COCKTAIL_2_PRICE}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sports Experience -->
+    <section id="sports" class="sports-experience">
+        <div class="container">
+            <div class="sports-content">
+                <div class="sports-text">
+                    <h2 class="sports-title">The Ultimate Sports Experience</h2>
+                    <p class="sports-desc">From NFL to NCAA, UFC to NBA - we've got every game on our massive screens with premium sound and the best seats in the house.</p>
+                    
+                    <div class="sports-features">
+                        <div class="sports-feature">
+                            <div class="feature-icon">📺</div>
+                            <div class="feature-content">
+                                <h4>{{SCREEN_COUNT}}+ Big Screens</h4>
+                                <p>Never miss a play with our wall-to-wall HD displays</p>
+                            </div>
+                        </div>
+                        
+                        <div class="sports-feature">
+                            <div class="feature-icon">🔊</div>
+                            <div class="feature-content">
+                                <h4>Premium Sound System</h4>
+                                <p>Hear every hit, every cheer, every moment</p>
+                            </div>
+                        </div>
+                        
+                        <div class="sports-feature">
+                            <div class="feature-icon">🏈</div>
+                            <div class="feature-content">
+                                <h4>All Sports Packages</h4>
+                                <p>NFL, NBA, MLB, NHL, UFC, College Sports & more</p>
+                            </div>
+                        </div>
+                        
+                        <div class="sports-feature">
+                            <div class="feature-icon">🎮</div>
+                            <div class="feature-content">
+                                <h4>Interactive Games</h4>
+                                <p>Trivia, fantasy sports, and in-game competitions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sports-image">
+                    <img src="{{SPORTS_IMAGE}}" alt="Sports viewing experience" class="sports-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Daily Specials -->
+    <section id="specials" class="daily-specials">
+        <div class="container">
+            <h2 class="section-title">Daily Specials</h2>
+            <div class="specials-grid">
+                <div class="special-day">
+                    <div class="day-header">
+                        <h3>Monday</h3>
+                        <div class="day-icon">🍗</div>
+                    </div>
+                    <div class="special-content">
+                        <h4>{{MONDAY_SPECIAL}}</h4>
+                        <p>{{MONDAY_DESC}}</p>
+                        <div class="special-price">{{MONDAY_PRICE}}</div>
+                    </div>
+                </div>
+
+                <div class="special-day">
+                    <div class="day-header">
+                        <h3>Tuesday</h3>
+                        <div class="day-icon">🌮</div>
+                    </div>
+                    <div class="special-content">
+                        <h4>{{TUESDAY_SPECIAL}}</h4>
+                        <p>{{TUESDAY_DESC}}</p>
+                        <div class="special-price">{{TUESDAY_PRICE}}</div>
+                    </div>
+                </div>
+
+                <div class="special-day">
+                    <div class="day-header">
+                        <h3>Wednesday</h3>
+                        <div class="day-icon">🍻</div>
+                    </div>
+                    <div class="special-content">
+                        <h4>{{WEDNESDAY_SPECIAL}}</h4>
+                        <p>{{WEDNESDAY_DESC}}</p>
+                        <div class="special-price">{{WEDNESDAY_PRICE}}</div>
+                    </div>
+                </div>
+
+                <div class="special-day">
+                    <div class="day-header">
+                        <h3>Thursday</h3>
+                        <div class="day-icon">🍗</div>
+                    </div>
+                    <div class="special-content">
+                        <h4>{{THURSDAY_SPECIAL}}</h4>
+                        <p>{{THURSDAY_DESC}}</p>
+                        <div class="special-price">{{THURSDAY_PRICE}}</div>
+                    </div>
+                </div>
+
+                <div class="special-day">
+                    <div class="day-header">
+                        <h3>Friday</h3>
+                        <div class="day-icon">🍤</div>
+                    </div>
+                    <div class="special-content">
+                        <h4>{{FRIDAY_SPECIAL}}</h4>
+                        <p>{{FRIDAY_DESC}}</p>
+                        <div class="special-price">{{FRIDAY_PRICE}}</div>
+                    </div>
+                </div>
+
+                <div class="special-day">
+                    <div class="day-header">
+                        <h3>Weekend</h3>
+                        <div class="day-icon">🥞</div>
+                    </div>
+                    <div class="special-content">
+                        <h4>{{WEEKEND_SPECIAL}}</h4>
+                        <p>{{WEEKEND_DESC}}</p>
+                        <div class="special-price">{{WEEKEND_PRICE}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Schedule Widget -->
+    <section class="game-schedule">
+        <div class="container">
+            <h2 class="section-title">Today's Games</h2>
+            <div class="schedule-grid">
+                <div class="game-card">
+                    <div class="game-time">{{GAME_1_TIME}}</div>
+                    <div class="game-matchup">
+                        <div class="team">
+                            <img src="{{TEAM_1_LOGO}}" alt="{{TEAM_1_NAME}}" class="team-logo">
+                            <span class="team-name">{{TEAM_1_NAME}}</span>
+                        </div>
+                        <div class="vs">VS</div>
+                        <div class="team">
+                            <img src="{{TEAM_2_LOGO}}" alt="{{TEAM_2_NAME}}" class="team-logo">
+                            <span class="team-name">{{TEAM_2_NAME}}</span>
+                        </div>
+                    </div>
+                    <div class="game-network">{{GAME_1_NETWORK}}</div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-time">{{GAME_2_TIME}}</div>
+                    <div class="game-matchup">
+                        <div class="team">
+                            <img src="{{TEAM_3_LOGO}}" alt="{{TEAM_3_NAME}}" class="team-logo">
+                            <span class="team-name">{{TEAM_3_NAME}}</span>
+                        </div>
+                        <div class="vs">VS</div>
+                        <div class="team">
+                            <img src="{{TEAM_4_LOGO}}" alt="{{TEAM_4_NAME}}" class="team-logo">
+                            <span class="team-name">{{TEAM_4_NAME}}</span>
+                        </div>
+                    </div>
+                    <div class="game-network">{{GAME_2_NETWORK}}</div>
+                </div>
+
+                <div class="game-card">
+                    <div class="game-time">{{GAME_3_TIME}}</div>
+                    <div class="game-matchup">
+                        <div class="team">
+                            <img src="{{TEAM_5_LOGO}}" alt="{{TEAM_5_NAME}}" class="team-logo">
+                            <span class="team-name">{{TEAM_5_NAME}}</span>
+                        </div>
+                        <div class="vs">VS</div>
+                        <div class="team">
+                            <img src="{{TEAM_6_LOGO}}" alt="{{TEAM_6_NAME}}" class="team-logo">
+                            <span class="team-name">{{TEAM_6_NAME}}</span>
+                        </div>
+                    </div>
+                    <div class="game-network">{{GAME_3_NETWORK}}</div>
+                </div>
+            </div>
+            <button class="btn btn-secondary">View Full Schedule</button>
+        </div>
+    </section>
+
+    <!-- Locations -->
+    <section id="locations" class="locations">
+        <div class="container">
+            <h2 class="section-title">Find Your Sports Bar</h2>
+            <div class="location-finder">
+                <div class="finder-search">
+                    <input type="text" placeholder="Enter city, state, or ZIP code" class="location-input">
+                    <button class="btn btn-primary">Find Locations</button>
+                </div>
+            </div>
+            
+            <div class="location-results">
+                <div class="location-card">
+                    <div class="location-image">
+                        <img src="{{LOCATION_1_IMAGE}}" alt="Restaurant location" class="location-img">
+                    </div>
+                    <div class="location-info">
+                        <h3>{{LOCATION_NAME_1}}</h3>
+                        <p class="location-address">{{LOCATION_ADDRESS_1}}</p>
+                        <p class="location-phone">{{LOCATION_PHONE_1}}</p>
+                        <p class="location-hours">{{LOCATION_HOURS_1}}</p>
+                        <div class="location-features">
+                            <span class="feature">{{SCREEN_COUNT}} TVs</span>
+                            <span class="feature">Sports Packages</span>
+                            <span class="feature">Happy Hour</span>
+                            <span class="feature">Private Parties</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="btn btn-primary">Order Pickup</button>
+                        <button class="btn btn-secondary">Get Directions</button>
+                    </div>
+                </div>
+                
+                <div class="location-card">
+                    <div class="location-image">
+                        <img src="{{LOCATION_2_IMAGE}}" alt="Restaurant location" class="location-img">
+                    </div>
+                    <div class="location-info">
+                        <h3>{{LOCATION_NAME_2}}</h3>
+                        <p class="location-address">{{LOCATION_ADDRESS_2}}</p>
+                        <p class="location-phone">{{LOCATION_PHONE_2}}</p>
+                        <p class="location-hours">{{LOCATION_HOURS_2}}</p>
+                        <div class="location-features">
+                            <span class="feature">Patio Seating</span>
+                            <span class="feature">Live Music</span>
+                            <span class="feature">Trivia Nights</span>
+                            <span class="feature">Group Events</span>
+                        </div>
+                    </div>
+                    <div class="location-actions">
+                        <button class="btn btn-primary">Order Pickup</button>
+                        <button class="btn btn-secondary">Get Directions</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="#wings">Wings</a></li>
+                        <li><a href="#shareables">Shareables</a></li>
+                        <li><a href="#burgers">Burgers</a></li>
+                        <li><a href="#salads">Salads</a></li>
+                        <li><a href="#drinks">Drinks</a></li>
+                        <li><a href="#desserts">Desserts</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Sports</h4>
+                    <ul>
+                        <li><a href="#schedule">Game Schedule</a></li>
+                        <li><a href="#packages">Sports Packages</a></li>
+                        <li><a href="#events">Special Events</a></li>
+                        <li><a href="#trivia">Trivia Nights</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#takeout">Takeout</a></li>
+                        <li><a href="#delivery">Delivery</a></li>
+                        <li><a href="#catering">Catering</a></li>
+                        <li><a href="#parties">Private Parties</a></li>
+                        <li><a href="#gift-cards">Gift Cards</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}" class="social-link">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}" class="social-link">Instagram</a>
+                        <a href="{{TWITTER_URL}}" class="social-link">Twitter</a>
+                        <a href="{{YOUTUBE_URL}}" class="social-link">YouTube</a>
+                    </div>
+                    <div class="contact-info">
+                        <p>{{PHONE}}</p>
+                        <p>{{EMAIL}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                    <a href="#nutrition">Nutrition Info</a>
+                    <a href="#allergens">Allergen Info</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

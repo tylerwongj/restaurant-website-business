@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Authentic NY Pizza</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="color-scheme-nyc">
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}}">
+            </div>
+            <nav class="nav">
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#pizza">Pizza</a></li>
+                    <li><a href="#locations">Locations</a></li>
+                    <li><a href="#catering">Catering</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="header-order">
+                    <a href="#order" class="btn btn-primary">Order Now</a>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">{{RESTAURANT_NAME}}</h1>
+                    <p class="hero-subtitle">Authentic New York Pizza Since {{ESTABLISHED_YEAR}}</p>
+                    <p class="hero-description">Real New York pizza made the way it should be - thin crust, quality ingredients, and that perfect fold. No shortcuts, no substitutes, just authentic NYC slice.</p>
+                    <div class="hero-buttons">
+                        <a href="#order" class="btn btn-primary btn-large">Order Delivery</a>
+                        <a href="#locations" class="btn btn-secondary btn-large">Find Location</a>
+                    </div>
+                    <div class="nyc-credentials">
+                        <div class="credential">
+                            <span class="credential-icon">🗽</span>
+                            <span>Born in NYC</span>
+                        </div>
+                        <div class="credential">
+                            <span class="credential-icon">🍕</span>
+                            <span>{{SLICES_DAILY}}+ Slices Daily</span>
+                        </div>
+                        <div class="credential">
+                            <span class="credential-icon">🏪</span>
+                            <span>{{LOCATION_COUNT}} Locations</span>
+                        </div>
+                        <div class="credential">
+                            <span class="credential-icon">⭐</span>
+                            <span>NYC Institution</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="pizza-slice-stack">
+                        <img src="{{HERO_SLICE_IMAGE}}" alt="Classic NY pizza slice" class="hero-slice">
+                        <div class="steam-lines">
+                            <div class="steam"></div>
+                            <div class="steam"></div>
+                            <div class="steam"></div>
+                        </div>
+                        <div class="nyc-elements">
+                            <img src="{{BRICK_OVEN_IMAGE}}" alt="Brick oven" class="oven-element">
+                            <img src="{{DOUGH_TOSS_IMAGE}}" alt="Dough tossing" class="dough-element">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="nyc-banner">
+            <div class="container">
+                <div class="banner-content">
+                    <h2>🗽 The Real Deal Since {{ESTABLISHED_YEAR}}</h2>
+                    <p>{{YEARS_SERVING}} years of serving authentic New York pizza to locals and tourists alike</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="pizza" class="pizza-menu">
+            <div class="container">
+                <h2 class="section-title">Classic NY Pizza</h2>
+                <p class="section-subtitle">Thin crust, fresh ingredients, perfect every time</p>
+
+                <div class="pizza-options">
+                    <div class="pizza-section">
+                        <h3>Pizza by the Slice</h3>
+                        <div class="slice-menu">
+                            <div class="slice-item featured">
+                                <div class="slice-image">
+                                    <img src="{{CHEESE_SLICE_IMAGE}}" alt="Cheese slice">
+                                    <div class="slice-badge">🏆 Classic</div>
+                                </div>
+                                <div class="slice-content">
+                                    <h4>Cheese Slice</h4>
+                                    <p class="slice-description">The foundation of NY pizza - our signature sauce and mozzarella on thin crust</p>
+                                    <div class="slice-price">
+                                        <span class="price">${{CHEESE_SLICE_PRICE}}</span>
+                                        <button class="btn btn-small btn-primary">Add Slice</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="slice-item">
+                                <div class="slice-image">
+                                    <img src="{{PEPPERONI_SLICE_IMAGE}}" alt="Pepperoni slice">
+                                </div>
+                                <div class="slice-content">
+                                    <h4>Pepperoni Slice</h4>
+                                    <p class="slice-description">Classic cheese with premium pepperoni that cups and crisps perfectly</p>
+                                    <div class="slice-price">
+                                        <span class="price">${{PEPPERONI_SLICE_PRICE}}</span>
+                                        <button class="btn btn-small btn-primary">Add Slice</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="slice-item">
+                                <div class="slice-image">
+                                    <img src="{{SAUSAGE_SLICE_IMAGE}}" alt="Sausage slice">
+                                </div>
+                                <div class="slice-content">
+                                    <h4>Sausage Slice</h4>
+                                    <p class="slice-description">House-made Italian sausage with our signature cheese blend</p>
+                                    <div class="slice-price">
+                                        <span class="price">${{SAUSAGE_SLICE_PRICE}}</span>
+                                        <button class="btn btn-small btn-primary">Add Slice</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="slice-item">
+                                <div class="slice-image">
+                                    <img src="{{SICILIAN_SLICE_IMAGE}}" alt="Sicilian slice">
+                                </div>
+                                <div class="slice-content">
+                                    <h4>Sicilian Slice</h4>
+                                    <p class="slice-description">Thick, square slice with our signature sauce on top</p>
+                                    <div class="slice-price">
+                                        <span class="price">${{SICILIAN_SLICE_PRICE}}</span>
+                                        <button class="btn btn-small btn-primary">Add Slice</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pizza-section">
+                        <h3>Whole Pies</h3>
+                        <div class="pie-menu">
+                            <div class="pie-item">
+                                <div class="pie-header">
+                                    <h4>Cheese Pie</h4>
+                                    <div class="pie-sizes">
+                                        <span class="size">Small (14"): ${{CHEESE_PIE_SMALL}}</span>
+                                        <span class="size">Large (18"): ${{CHEESE_PIE_LARGE}}</span>
+                                    </div>
+                                </div>
+                                <p class="pie-description">Our classic NY style pizza with house sauce and mozzarella</p>
+                            </div>
+
+                            <div class="pie-item">
+                                <div class="pie-header">
+                                    <h4>Pepperoni Pie</h4>
+                                    <div class="pie-sizes">
+                                        <span class="size">Small (14"): ${{PEPPERONI_PIE_SMALL}}</span>
+                                        <span class="size">Large (18"): ${{PEPPERONI_PIE_LARGE}}</span>
+                                    </div>
+                                </div>
+                                <p class="pie-description">Cheese pie topped with premium pepperoni</p>
+                            </div>
+
+                            <div class="pie-item">
+                                <div class="pie-header">
+                                    <h4>Supreme Pie</h4>
+                                    <div class="pie-sizes">
+                                        <span class="size">Small (14"): ${{SUPREME_PIE_SMALL}}</span>
+                                        <span class="size">Large (18"): ${{SUPREME_PIE_LARGE}}</span>
+                                    </div>
+                                </div>
+                                <p class="pie-description">Pepperoni, sausage, peppers, onions, and mushrooms</p>
+                            </div>
+
+                            <div class="pie-item">
+                                <div class="pie-header">
+                                    <h4>White Pie</h4>
+                                    <div class="pie-sizes">
+                                        <span class="size">Small (14"): ${{WHITE_PIE_SMALL}}</span>
+                                        <span class="size">Large (18"): ${{WHITE_PIE_LARGE}}</span>
+                                    </div>
+                                </div>
+                                <p class="pie-description">Ricotta, mozzarella, and garlic with olive oil base</p>
+                            </div>
+                        </div>
+
+                        <div class="toppings-section">
+                            <h4>Additional Toppings</h4>
+                            <div class="toppings-grid">
+                                <div class="topping-category">
+                                    <h5>Meats (+${{MEAT_TOPPING_PRICE}})</h5>
+                                    <p>Pepperoni, sausage, meatballs, bacon, ham</p>
+                                </div>
+                                <div class="topping-category">
+                                    <h5>Vegetables (+${{VEGGIE_TOPPING_PRICE}})</h5>
+                                    <p>Mushrooms, peppers, onions, olives, tomatoes</p>
+                                </div>
+                                <div class="topping-category">
+                                    <h5>Premium (+${{PREMIUM_TOPPING_PRICE}})</h5>
+                                    <p>Extra cheese, fresh basil, anchovies</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="other-menu">
+                    <h3>More Than Pizza</h3>
+                    <div class="other-items">
+                        <div class="item">
+                            <h4>Garlic Knots</h4>
+                            <span class="price">${{GARLIC_KNOTS_PRICE}}</span>
+                            <p>Fresh baked knots with garlic and parmesan</p>
+                        </div>
+                        <div class="item">
+                            <h4>Caesar Salad</h4>
+                            <span class="price">${{CAESAR_SALAD_PRICE}}</span>
+                            <p>Crisp romaine with classic Caesar dressing</p>
+                        </div>
+                        <div class="item">
+                            <h4>Italian Hero</h4>
+                            <span class="price">${{ITALIAN_HERO_PRICE}}</span>
+                            <p>Ham, salami, pepperoni, and provolone</p>
+                        </div>
+                        <div class="item">
+                            <h4>Chicken Parm Hero</h4>
+                            <span class="price">${{CHICKEN_PARM_PRICE}}</span>
+                            <p>Breaded chicken cutlet with sauce and mozzarella</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="pizza-making">
+            <div class="container">
+                <div class="making-content">
+                    <div class="making-text">
+                        <h2>How We Make Real NY Pizza</h2>
+                        <p>There's a right way to make New York pizza, and we've been doing it that way since day one. No corners cut, no modern shortcuts.</p>
+                        
+                        <div class="making-steps">
+                            <div class="step">
+                                <div class="step-number">01</div>
+                                <h3>Daily Fresh Dough</h3>
+                                <p>Made fresh every morning using our time-tested recipe</p>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">02</div>
+                                <h3>Hand Tossed</h3>
+                                <p>Each pie hand-stretched to achieve that perfect NY thin crust</p>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">03</div>
+                                <h3>Signature Sauce</h3>
+                                <p>Our secret recipe sauce made from San Marzano tomatoes</p>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">04</div>
+                                <h3>Perfect Bake</h3>
+                                <p>{{OVEN_TEMPERATURE}}°F ovens create that perfect crispy-chewy texture</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="making-visual">
+                        <img src="{{PIZZA_MAKING_IMAGE}}" alt="Making pizza">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="locations" class="locations">
+            <div class="container">
+                <h2 class="section-title">NYC Locations</h2>
+                <div class="locations-grid">
+                    <div class="location-card">
+                        <div class="location-image">
+                            <img src="{{LOCATION_1_IMAGE}}" alt="{{LOCATION_1_NAME}}">
+                        </div>
+                        <div class="location-content">
+                            <h3>{{LOCATION_1_NAME}}</h3>
+                            <p class="address">{{LOCATION_1_ADDRESS}}</p>
+                            <p class="hours">{{LOCATION_1_HOURS}}</p>
+                            <p class="phone">{{LOCATION_1_PHONE}}</p>
+                            <div class="location-features">
+                                <span class="feature">Original Location</span>
+                                <span class="feature">Dine-In</span>
+                                <span class="feature">Quick Slice</span>
+                            </div>
+                            <div class="location-actions">
+                                <a href="{{LOCATION_1_DIRECTIONS}}" class="btn btn-secondary">Get Directions</a>
+                                <button class="btn btn-primary" onclick="orderFromLocation('{{LOCATION_1_NAME}}')">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="location-card">
+                        <div class="location-image">
+                            <img src="{{LOCATION_2_IMAGE}}" alt="{{LOCATION_2_NAME}}">
+                        </div>
+                        <div class="location-content">
+                            <h3>{{LOCATION_2_NAME}}</h3>
+                            <p class="address">{{LOCATION_2_ADDRESS}}</p>
+                            <p class="hours">{{LOCATION_2_HOURS}}</p>
+                            <p class="phone">{{LOCATION_2_PHONE}}</p>
+                            <div class="location-features">
+                                <span class="feature">Tourist Friendly</span>
+                                <span class="feature">Late Night</span>
+                                <span class="feature">Quick Service</span>
+                            </div>
+                            <div class="location-actions">
+                                <a href="{{LOCATION_2_DIRECTIONS}}" class="btn btn-secondary">Get Directions</a>
+                                <button class="btn btn-primary" onclick="orderFromLocation('{{LOCATION_2_NAME}}')">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="location-card">
+                        <div class="location-image">
+                            <img src="{{LOCATION_3_IMAGE}}" alt="{{LOCATION_3_NAME}}">
+                        </div>
+                        <div class="location-content">
+                            <h3>{{LOCATION_3_NAME}}</h3>
+                            <p class="address">{{LOCATION_3_ADDRESS}}</p>
+                            <p class="hours">{{LOCATION_3_HOURS}}</p>
+                            <p class="phone">{{LOCATION_3_PHONE}}</p>
+                            <div class="location-features">
+                                <span class="feature">Family Seating</span>
+                                <span class="feature">Full Menu</span>
+                                <span class="feature">Catering</span>
+                            </div>
+                            <div class="location-actions">
+                                <a href="{{LOCATION_3_DIRECTIONS}}" class="btn btn-secondary">Get Directions</a>
+                                <button class="btn btn-primary" onclick="orderFromLocation('{{LOCATION_3_NAME}}')">Order Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="nyc-story">
+            <div class="container">
+                <div class="story-content">
+                    <div class="story-text">
+                        <h2>A New York Story</h2>
+                        <p class="story-intro">{{FOUNDER_STORY}}</p>
+                        
+                        <div class="story-highlights">
+                            <div class="highlight">
+                                <h3>{{ESTABLISHED_YEAR}}</h3>
+                                <p>Opened our first location in {{ORIGINAL_NEIGHBORHOOD}}</p>
+                            </div>
+                            <div class="highlight">
+                                <h3>{{EXPANSION_YEAR}}</h3>
+                                <p>Expanded to serve more neighborhoods across NYC</p>
+                            </div>
+                            <div class="highlight">
+                                <h3>Today</h3>
+                                <p>{{LOCATION_COUNT}} locations serving {{SLICES_DAILY}}+ slices daily</p>
+                            </div>
+                        </div>
+
+                        <div class="nyc-pride">
+                            <h3>Born and Raised in NYC</h3>
+                            <p>We're not just inspired by New York pizza - we are New York pizza. Every slice tells the story of this great city.</p>
+                        </div>
+                    </div>
+                    <div class="story-images">
+                        <img src="{{VINTAGE_SHOP_IMAGE}}" alt="Vintage shop photo">
+                        <img src="{{NYC_STREET_IMAGE}}" alt="NYC street scene">
+                        <img src="{{CLASSIC_INTERIOR_IMAGE}}" alt="Classic pizzeria interior">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="catering" class="catering">
+            <div class="container">
+                <div class="catering-content">
+                    <div class="catering-text">
+                        <h2>Pizza Catering</h2>
+                        <p>Bring authentic New York pizza to your next event. Perfect for offices, parties, and any gathering that needs real NYC flavor.</p>
+                        
+                        <div class="catering-options">
+                            <div class="catering-option">
+                                <h3>Office Lunch</h3>
+                                <p>Quick delivery for business meetings and office events</p>
+                                <div class="option-features">
+                                    <span class="feature">• Whole pies or pre-cut slices</span>
+                                    <span class="feature">• Variety of toppings</span>
+                                    <span class="feature">• Garlic knots and salads</span>
+                                </div>
+                            </div>
+                            
+                            <div class="catering-option">
+                                <h3>Party Packages</h3>
+                                <p>Complete packages for birthdays, celebrations, and events</p>
+                                <div class="option-features">
+                                    <span class="feature">• Multiple pizza varieties</span>
+                                    <span class="feature">• Appetizers and sides</span>
+                                    <span class="feature">• Plates and napkins included</span>
+                                </div>
+                            </div>
+                            
+                            <div class="catering-option">
+                                <h3>Large Events</h3>
+                                <p>Serving events of all sizes with NYC's best pizza</p>
+                                <div class="option-features">
+                                    <span class="feature">• Custom menu planning</span>
+                                    <span class="feature">• Volume discounts available</span>
+                                    <span class="feature">• Setup service available</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catering-info">
+                            <h3>Catering Details</h3>
+                            <p><strong>Minimum Order:</strong> ${{CATERING_MINIMUM}} (varies by location)</p>
+                            <p><strong>Notice Required:</strong> {{CATERING_NOTICE}} hours advance notice</p>
+                            <p><strong>Delivery:</strong> Available within delivery zones</p>
+                        </div>
+                    </div>
+                    <div class="catering-image">
+                        <img src="{{CATERING_SETUP_IMAGE}}" alt="Pizza catering setup">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="order" class="order-section">
+            <div class="container">
+                <h2 class="section-title">Order Your Pizza</h2>
+                <div class="order-options">
+                    <div class="order-option">
+                        <div class="option-icon">🚚</div>
+                        <h3>Delivery</h3>
+                        <p>Hot, fresh pizza delivered fast</p>
+                        <div class="delivery-apps">
+                            <a href="{{SEAMLESS_URL}}" class="delivery-btn">Seamless</a>
+                            <a href="{{GRUBHUB_URL}}" class="delivery-btn">Grubhub</a>
+                            <a href="{{DOORDASH_URL}}" class="delivery-btn">DoorDash</a>
+                        </div>
+                        <div class="delivery-info">
+                            <span>Delivered in {{DELIVERY_TIME}} minutes</span>
+                            <span>${{DELIVERY_FEE}} delivery fee</span>
+                        </div>
+                    </div>
+                    
+                    <div class="order-option">
+                        <div class="option-icon">🏃‍♀️</div>
+                        <h3>Pickup</h3>
+                        <p>Order ahead and skip the line</p>
+                        <a href="{{PICKUP_URL}}" class="btn btn-primary">Order for Pickup</a>
+                        <div class="pickup-info">
+                            <span>Ready in {{PICKUP_TIME}} minutes</span>
+                            <span>Call ahead for large orders</span>
+                        </div>
+                    </div>
+                    
+                    <div class="order-option">
+                        <div class="option-icon">🍕</div>
+                        <h3>Walk-In</h3>
+                        <p>Grab a quick slice or stay and dine</p>
+                        <div class="walkin-info">
+                            <span>Slices ready all day</span>
+                            <span>Fresh pies every {{PIE_FREQUENCY}} minutes</span>
+                            <span>Classic NYC experience</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h2>Get in Touch</h2>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <h3>Main Office</h3>
+                                <p>{{MAIN_ADDRESS}}</p>
+                                <p>{{MAIN_PHONE}}</p>
+                                <p>{{EMAIL}}</p>
+                            </div>
+                            <div class="contact-item">
+                                <h3>Catering</h3>
+                                <p>{{CATERING_PHONE}}</p>
+                                <p>{{CATERING_EMAIL}}</p>
+                            </div>
+                            <div class="contact-item">
+                                <h3>Follow the Slice</h3>
+                                <div class="social-links">
+                                    <a href="{{INSTAGRAM_URL}}">Instagram</a>
+                                    <a href="{{FACEBOOK_URL}}">Facebook</a>
+                                    <a href="{{TWITTER_URL}}">Twitter</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <h3>Send us a Message</h3>
+                        <form>
+                            <input type="text" placeholder="Your Name" required>
+                            <input type="email" placeholder="Email Address" required>
+                            <select required>
+                                <option value="">What can we help with?</option>
+                                <option value="catering">Catering Inquiry</option>
+                                <option value="franchise">Franchise Information</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="media">Press/Media</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <textarea placeholder="Your Message" rows="4" required></textarea>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>{{RESTAURANT_NAME}}</h3>
+                    <p>Authentic New York Pizza Since {{ESTABLISHED_YEAR}}</p>
+                    <div class="nyc-pride">
+                        <h4>Born in NYC</h4>
+                        <p>{{YEARS_SERVING}} years of serving real New York pizza</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Order</h4>
+                    <ul>
+                        <li><a href="#order">Online Ordering</a></li>
+                        <li><a href="#locations">Find Location</a></li>
+                        <li><a href="#catering">Catering</a></li>
+                        <li><a href="#pizza">Menu</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">Our Story</a></li>
+                        <li><a href="#">Franchise</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="{{INSTAGRAM_URL}}">Instagram</a>
+                        <a href="{{FACEBOOK_URL}}">Facebook</a>
+                        <a href="{{TWITTER_URL}}">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

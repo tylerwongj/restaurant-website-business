@@ -3,57 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{RESTAURANT_NAME}} - Culinary Artistry</title>
-    <meta name="description" content="{{RESTAURANT_NAME}} - {{DESCRIPTION}}">
+    <title>{{RESTAURANT_NAME}} - Fine Dining Excellence</title>
+    <meta name="description" content="{{RESTAURANT_DESCRIPTION}}">
     <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
-<body class="color-minimalist">
+<body class="luxury-minimal">
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="nav-minimal">
         <div class="nav-container">
-            <div class="logo">
-                <div class="logo-icons">
-                    <span class="icon">✧</span>
-                    <span class="icon">◊</span>
-                    <span class="icon">✿</span>
-                    <span class="icon">❀</span>
+            <div class="nav-logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}}" class="logo">
+                <div class="logo-text">
+                    <span class="logo-main">{{RESTAURANT_NAME}}</span>
+                    <span class="logo-location">{{RESTAURANT_LOCATION}}</span>
                 </div>
-                <h1 class="logo-text">{{RESTAURANT_NAME}}</h1>
             </div>
-            <ul class="nav-menu">
-                <li><a href="#reservations">Reservations</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#events">Events</a></li>
-                <li><a href="#stories">Stories</a></li>
-                <li><a href="#shop">Shop</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="nav-menu">
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#menu" class="nav-link">Menu</a>
+                <a href="#about" class="nav-link">Philosophy</a>
+                <a href="#reservations" class="nav-link">Contact</a>
+                <button class="reserve-btn">Reserve</button>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
+    <section class="hero-minimal">
         <div class="hero-content">
             <div class="hero-image">
-                <img src="{{HERO_IMAGE}}" alt="Artistic culinary presentation" class="artistic-food">
+                <img src="{{HERO_ARTISTIC_IMAGE}}" alt="{{HERO_ALT_TEXT}}" class="main-hero">
+                <div class="hero-overlay">
+                    <div class="hero-text">
+                        <h1>{{HERO_TITLE}}</h1>
+                        <p class="hero-subtitle">{{HERO_SUBTITLE}}</p>
+                        <div class="hero-cta">
+                            <button class="btn-reserve-experience">Reserve Experience</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about-section">
+    <!-- Dining Experiences -->
+    <section id="experience" class="dining-experiences">
         <div class="container">
-            <div class="about-content">
-                <h2>{{CHEF_NAME}}'s Vision</h2>
-                <p class="chef-story">{{CHEF_STORY}}</p>
-                <p class="restaurant-philosophy">{{PHILOSOPHY}}</p>
+            <div class="section-header">
+                <h2>Dining Experiences</h2>
+                <p>Each experience crafted to create lasting memories</p>
+            </div>
+            <div class="experiences-grid">
+                <div class="experience-card featured">
+                    <div class="experience-image">
+                        <img src="{{EXPERIENCE_1_IMAGE}}" alt="{{EXPERIENCE_1_NAME}}">
+                    </div>
+                    <div class="experience-content">
+                        <h3>{{EXPERIENCE_1_NAME}}</h3>
+                        <p class="experience-description">{{EXPERIENCE_1_DESCRIPTION}}</p>
+                        <div class="experience-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Duration</span>
+                                <span class="detail-value">{{EXPERIENCE_1_DURATION}}</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Courses</span>
+                                <span class="detail-value">{{EXPERIENCE_1_COURSES}}</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Price</span>
+                                <span class="detail-value">{{EXPERIENCE_1_PRICE}}</span>
+                            </div>
+                        </div>
+                        <button class="btn-book-experience">Book Experience</button>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="experience-image">
+                        <img src="{{EXPERIENCE_2_IMAGE}}" alt="{{EXPERIENCE_2_NAME}}">
+                    </div>
+                    <div class="experience-content">
+                        <h3>{{EXPERIENCE_2_NAME}}</h3>
+                        <p class="experience-description">{{EXPERIENCE_2_DESCRIPTION}}</p>
+                        <div class="experience-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Duration</span>
+                                <span class="detail-value">{{EXPERIENCE_2_DURATION}}</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Courses</span>
+                                <span class="detail-value">{{EXPERIENCE_2_COURSES}}</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Price</span>
+                                <span class="detail-value">{{EXPERIENCE_2_PRICE}}</span>
+                            </div>
+                        </div>
+                        <button class="btn-book-experience">Book Experience</button>
+                    </div>
+                </div>
+
+                <div class="experience-card">
+                    <div class="experience-image">
+                        <img src="{{EXPERIENCE_3_IMAGE}}" alt="{{EXPERIENCE_3_NAME}}">
+                    </div>
+                    <div class="experience-content">
+                        <h3>{{EXPERIENCE_3_NAME}}</h3>
+                        <p class="experience-description">{{EXPERIENCE_3_DESCRIPTION}}</p>
+                        <div class="experience-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Duration</span>
+                                <span class="detail-value">{{EXPERIENCE_3_DURATION}}</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Courses</span>
+                                <span class="detail-value">{{EXPERIENCE_3_COURSES}}</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Price</span>
+                                <span class="detail-value">{{EXPERIENCE_3_PRICE}}</span>
+                            </div>
+                        </div>
+                        <button class="btn-book-experience">Book Experience</button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -61,179 +136,277 @@
     <!-- Seasonal Menu Highlights -->
     <section id="menu" class="seasonal-menu">
         <div class="container">
-            <h2>Seasonal Offerings</h2>
-            <div class="menu-highlights">
-                <div class="menu-item">
-                    <div class="dish-image">
-                        <img src="{{MENU_IMAGE_1}}" alt="{{MENU_ITEM_1}}">
+            <div class="menu-content">
+                <div class="menu-text">
+                    <div class="season-badge">{{CURRENT_SEASON}} {{CURRENT_YEAR}}</div>
+                    <h2>Seasonal Tasting Menu</h2>
+                    <p class="menu-philosophy">{{MENU_PHILOSOPHY}}</p>
+                    <p class="menu-description">{{SEASONAL_MENU_DESCRIPTION}}</p>
+                    
+                    <div class="menu-highlights">
+                        <div class="course-preview">
+                            <h4>{{COURSE_1_NAME}}</h4>
+                            <p>{{COURSE_1_INGREDIENTS}}</p>
+                        </div>
+                        <div class="course-preview">
+                            <h4>{{COURSE_2_NAME}}</h4>
+                            <p>{{COURSE_2_INGREDIENTS}}</p>
+                        </div>
+                        <div class="course-preview">
+                            <h4>{{COURSE_3_NAME}}</h4>
+                            <p>{{COURSE_3_INGREDIENTS}}</p>
+                        </div>
+                        <div class="course-preview">
+                            <h4>{{COURSE_4_NAME}}</h4>
+                            <p>{{COURSE_4_INGREDIENTS}}</p>
+                        </div>
                     </div>
-                    <h3>{{MENU_ITEM_1}}</h3>
-                    <p>{{MENU_DESCRIPTION_1}}</p>
+                    
+                    <div class="menu-pricing">
+                        <div class="price-option">
+                            <span class="price-label">Tasting Menu</span>
+                            <span class="price-value">{{TASTING_MENU_PRICE}}</span>
+                        </div>
+                        <div class="price-option">
+                            <span class="price-label">Wine Pairing</span>
+                            <span class="price-value">{{WINE_PAIRING_PRICE}}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-cta">
+                        <button class="btn-view-full-menu">View Complete Menu</button>
+                        <button class="btn-dietary-options">Dietary Accommodations</button>
+                    </div>
                 </div>
-                <div class="menu-item">
-                    <div class="dish-image">
-                        <img src="{{MENU_IMAGE_2}}" alt="{{MENU_ITEM_2}}">
+                <div class="menu-image">
+                    <img src="{{SEASONAL_DISH_IMAGE}}" alt="Seasonal Signature Dish">
+                    <div class="image-caption">
+                        <span>{{FEATURED_DISH_NAME}}</span>
                     </div>
-                    <h3>{{MENU_ITEM_2}}</h3>
-                    <p>{{MENU_DESCRIPTION_2}}</p>
-                </div>
-                <div class="menu-item">
-                    <div class="dish-image">
-                        <img src="{{MENU_IMAGE_3}}" alt="{{MENU_ITEM_3}}">
-                    </div>
-                    <h3>{{MENU_ITEM_3}}</h3>
-                    <p>{{MENU_DESCRIPTION_3}}</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Awards Section -->
-    <section id="awards" class="awards-section">
+    <!-- Chef's Philosophy -->
+    <section id="about" class="chef-philosophy">
         <div class="container">
-            <h2>Recognition</h2>
-            <div class="awards-grid">
-                <div class="award">
-                    <span class="award-icon">⭐</span>
-                    <h3>Michelin Three Stars</h3>
-                    <p>{{AWARD_YEAR_1}}</p>
+            <div class="philosophy-content">
+                <div class="chef-portrait">
+                    <img src="{{CHEF_PORTRAIT_IMAGE}}" alt="{{CHEF_NAME}}">
+                    <div class="chef-credentials">
+                        <h3>{{CHEF_NAME}}</h3>
+                        <p class="chef-title">{{CHEF_TITLE}}</p>
+                        <div class="awards">
+                            <span class="award">{{AWARD_1}}</span>
+                            <span class="award">{{AWARD_2}}</span>
+                            <span class="award">{{AWARD_3}}</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="award">
-                    <span class="award-icon">🏆</span>
-                    <h3>James Beard Award</h3>
-                    <p>{{AWARD_YEAR_2}}</p>
-                </div>
-                <div class="award">
-                    <span class="award-icon">🌟</span>
-                    <h3>World's 50 Best</h3>
-                    <p>{{AWARD_YEAR_3}}</p>
+                <div class="philosophy-text">
+                    <h2>Culinary Philosophy</h2>
+                    <p class="philosophy-intro">{{CHEF_PHILOSOPHY_INTRO}}</p>
+                    <blockquote class="chef-quote">
+                        "{{CHEF_QUOTE}}"
+                        <cite>{{CHEF_NAME}}</cite>
+                    </blockquote>
+                    <p class="philosophy-description">{{DETAILED_PHILOSOPHY}}</p>
+                    
+                    <div class="philosophy-pillars">
+                        <div class="pillar">
+                            <h4>{{PILLAR_1_TITLE}}</h4>
+                            <p>{{PILLAR_1_DESCRIPTION}}</p>
+                        </div>
+                        <div class="pillar">
+                            <h4>{{PILLAR_2_TITLE}}</h4>
+                            <p>{{PILLAR_2_DESCRIPTION}}</p>
+                        </div>
+                        <div class="pillar">
+                            <h4>{{PILLAR_3_TITLE}}</h4>
+                            <p>{{PILLAR_3_DESCRIPTION}}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Reservations Section -->
-    <section id="reservations" class="reservations-section">
+    <!-- Contact & Reservations -->
+    <section id="reservations" class="contact-reservations">
         <div class="container">
-            <h2>Reservations</h2>
-            <div class="dining-experiences">
-                <div class="experience">
-                    <h3>Dining Room</h3>
-                    <p>Our signature tasting menu experience</p>
-                    <button class="btn btn-primary" onclick="openReservationModal('dining')">Reserve Table</button>
-                </div>
-                <div class="experience">
-                    <h3>Chef's Counter</h3>
-                    <p>Intimate interaction with our culinary team</p>
-                    <button class="btn btn-primary" onclick="openReservationModal('counter')">Reserve Counter</button>
-                </div>
-                <div class="experience">
-                    <h3>Private Dining</h3>
-                    <p>Exclusive experiences for special occasions</p>
-                    <button class="btn btn-primary" onclick="openReservationModal('private')">Inquire Now</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <div class="contact-content">
+            <div class="contact-grid">
                 <div class="contact-info">
                     <h2>Visit Us</h2>
-                    <div class="address">
-                        <p>{{ADDRESS}}</p>
-                        <p>{{CITY}}, {{STATE}} {{ZIP}}</p>
+                    <div class="info-section">
+                        <h4>Location</h4>
+                        <p>{{RESTAURANT_ADDRESS}}</p>
+                        <p>{{RESTAURANT_NEIGHBORHOOD}}</p>
                     </div>
-                    <div class="contact-details">
-                        <p>Phone: {{PHONE}}</p>
-                        <p>Email: {{EMAIL}}</p>
+                    <div class="info-section">
+                        <h4>Hours</h4>
+                        <div class="hours-list">
+                            <div class="hours-item">
+                                <span>Tuesday - Thursday</span>
+                                <span>{{HOURS_WEEKDAY}}</span>
+                            </div>
+                            <div class="hours-item">
+                                <span>Friday - Saturday</span>
+                                <span>{{HOURS_WEEKEND}}</span>
+                            </div>
+                            <div class="hours-item closed">
+                                <span>Sunday - Monday</span>
+                                <span>Closed</span>
+                            </div>
+                        </div>
                     </div>
+                    <div class="info-section">
+                        <h4>Contact</h4>
+                        <p>Reservations: <a href="tel:{{RESERVATION_PHONE}}">{{RESERVATION_PHONE}}</a></p>
+                        <p>Events: <a href="mailto:{{EVENTS_EMAIL}}">{{EVENTS_EMAIL}}</a></p>
+                        <p>General: <a href="mailto:{{GENERAL_EMAIL}}">{{GENERAL_EMAIL}}</a></p>
+                    </div>
+                    <div class="info-section">
+                        <h4>Dress Code</h4>
+                        <p>{{DRESS_CODE}}</p>
+                    </div>
+                </div>
+                <div class="reservation-form">
+                    <h3>Make a Reservation</h3>
+                    <p class="reservation-note">{{RESERVATION_POLICY}}</p>
+                    <form class="booking-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="booking-date">Date</label>
+                                <input type="date" id="booking-date" name="date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="booking-time">Time</label>
+                                <select id="booking-time" name="time" required>
+                                    <option value="">Select Time</option>
+                                    <option value="17:30">5:30 PM</option>
+                                    <option value="18:00">6:00 PM</option>
+                                    <option value="18:30">6:30 PM</option>
+                                    <option value="19:00">7:00 PM</option>
+                                    <option value="19:30">7:30 PM</option>
+                                    <option value="20:00">8:00 PM</option>
+                                    <option value="20:30">8:30 PM</option>
+                                    <option value="21:00">9:00 PM</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="booking-guests">Guests</label>
+                                <select id="booking-guests" name="guests" required>
+                                    <option value="">Party Size</option>
+                                    <option value="1">1 Guest</option>
+                                    <option value="2">2 Guests</option>
+                                    <option value="3">3 Guests</option>
+                                    <option value="4">4 Guests</option>
+                                    <option value="5">5 Guests</option>
+                                    <option value="6">6 Guests</option>
+                                    <option value="7">7 Guests</option>
+                                    <option value="8">8 Guests</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="booking-experience">Experience</label>
+                                <select id="booking-experience" name="experience" required>
+                                    <option value="">Select Experience</option>
+                                    <option value="tasting">Tasting Menu</option>
+                                    <option value="chef-table">Chef's Table</option>
+                                    <option value="bar">Bar Seating</option>
+                                    <option value="private">Private Dining</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="booking-name">Name</label>
+                            <input type="text" id="booking-name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="booking-phone">Phone</label>
+                            <input type="tel" id="booking-phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="booking-email">Email</label>
+                            <input type="email" id="booking-email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="booking-occasion">Special Occasion</label>
+                            <select id="booking-occasion" name="occasion">
+                                <option value="">None</option>
+                                <option value="anniversary">Anniversary</option>
+                                <option value="birthday">Birthday</option>
+                                <option value="business">Business Dinner</option>
+                                <option value="celebration">Celebration</option>
+                                <option value="romantic">Romantic Dinner</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="booking-requests">Special Requests</label>
+                            <textarea id="booking-requests" name="requests" placeholder="Dietary restrictions, allergies, seating preferences..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Request Reservation</button>
+                    </form>
+                    <p class="booking-confirmation">{{BOOKING_CONFIRMATION_MESSAGE}}</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer-minimal">
         <div class="container">
             <div class="footer-content">
-                <div class="logo-icons">
-                    <span class="icon">✧</span>
-                    <span class="icon">◊</span>
-                    <span class="icon">✿</span>
-                    <span class="icon">❀</span>
+                <div class="footer-main">
+                    <h3>{{RESTAURANT_NAME}}</h3>
+                    <p>{{FOOTER_TAGLINE}}</p>
+                    <div class="footer-contact">
+                        <p>{{RESTAURANT_ADDRESS}}</p>
+                        <p>{{RESERVATION_PHONE}}</p>
+                    </div>
                 </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Experiences</h4>
+                        <ul>
+                            <li><a href="#tasting-menu">Tasting Menu</a></li>
+                            <li><a href="#chef-table">Chef's Table</a></li>
+                            <li><a href="#bar">Bar Program</a></li>
+                            <li><a href="#private">Private Dining</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Information</h4>
+                        <ul>
+                            <li><a href="#about">Philosophy</a></li>
+                            <li><a href="#chef">Chef {{CHEF_FIRST_NAME}}</a></li>
+                            <li><a href="#wine">Wine Program</a></li>
+                            <li><a href="#press">Press</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Policies</h4>
+                        <ul>
+                            <li><a href="#dress-code">Dress Code</a></li>
+                            <li><a href="#cancellation">Cancellation</a></li>
+                            <li><a href="#accessibility">Accessibility</a></li>
+                            <li><a href="#gift-cards">Gift Cards</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
                 <p>&copy; {{CURRENT_YEAR}} {{RESTAURANT_NAME}}. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="{{INSTAGRAM_URL}}" target="_blank" aria-label="Instagram">Instagram</a>
+                    <a href="{{FACEBOOK_URL}}" target="_blank" aria-label="Facebook">Facebook</a>
+                </div>
             </div>
         </div>
     </footer>
-
-    <!-- Reservation Modal -->
-    <div id="reservationModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeReservationModal()">&times;</span>
-            <h2>Make a Reservation</h2>
-            <form id="reservationForm">
-                <div class="form-group">
-                    <label for="experience">Experience</label>
-                    <select id="experience" name="experience" required>
-                        <option value="">Select Experience</option>
-                        <option value="dining">Dining Room</option>
-                        <option value="counter">Chef's Counter</option>
-                        <option value="private">Private Dining</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="date">Date</label>
-                    <input type="date" id="date" name="date" required>
-                </div>
-                <div class="form-group">
-                    <label for="time">Time</label>
-                    <select id="time" name="time" required>
-                        <option value="">Select Time</option>
-                        <option value="17:30">5:30 PM</option>
-                        <option value="18:00">6:00 PM</option>
-                        <option value="18:30">6:30 PM</option>
-                        <option value="19:00">7:00 PM</option>
-                        <option value="19:30">7:30 PM</option>
-                        <option value="20:00">8:00 PM</option>
-                        <option value="20:30">8:30 PM</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="guests">Number of Guests</label>
-                    <select id="guests" name="guests" required>
-                        <option value="">Select Guests</option>
-                        <option value="1">1 Guest</option>
-                        <option value="2">2 Guests</option>
-                        <option value="3">3 Guests</option>
-                        <option value="4">4 Guests</option>
-                        <option value="5">5 Guests</option>
-                        <option value="6">6 Guests</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-                <div class="form-group">
-                    <label for="special">Special Requests</label>
-                    <textarea id="special" name="special" rows="3" placeholder="Dietary restrictions, celebrations, etc."></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit Reservation</button>
-            </form>
-        </div>
-    </div>
 
     <script src="script.js"></script>
 </body>

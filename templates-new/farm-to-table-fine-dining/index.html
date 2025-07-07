@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Farm to Table Fine Dining</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - Seasonal fine dining featuring locally sourced ingredients from our partner farms">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&family=Crimson+Text:wght@300;400;600&family=Lora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="farm-to-table-scheme">
+    <header class="header">
+        <div class="seasonal-banner">
+            <div class="banner-content">
+                <span>🌱 Now Featuring: {{SEASONAL_HIGHLIGHT}} • 🚜 Fresh from {{FEATURED_FARM}} • 📅 {{HARVEST_DATE}} Harvest</span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="logo">
+                <h1>{{RESTAURANT_NAME}}</h1>
+                <span class="tagline">{{RESTAURANT_TAGLINE}}</span>
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#seasonal-menu">Seasonal Menu</a></li>
+                    <li><a href="#chef">Chef</a></li>
+                    <li><a href="#farms">Our Farms</a></li>
+                    <li><a href="#wine">Wine Program</a></li>
+                    <li><a href="#events">Private Events</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#reservations" class="btn btn-reservation">Reserve Table</a>
+                <a href="#wine-club" class="btn btn-wine">Wine Club</a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <img src="{{HERO_FARM_IMAGE}}" alt="{{RESTAURANT_NAME}} partner farm">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h2>From Seed to Plate</h2>
+                <p>Celebrating the seasons with a menu that changes daily, showcasing the finest ingredients from our trusted network of local farmers and artisans.</p>
+                <div class="farm-stats">
+                    <div class="stat">
+                        <span class="stat-number">{{PARTNER_FARMS}}</span>
+                        <span class="stat-label">Partner Farms</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">{{MILES_RADIUS}}</span>
+                        <span class="stat-label">Mile Radius</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">{{HARVEST_TO_PLATE}}</span>
+                        <span class="stat-label">Hours Harvest to Plate</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">{{SEASONAL_INGREDIENTS}}</span>
+                        <span class="stat-label">Seasonal Ingredients</span>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#seasonal-menu" class="btn btn-primary">Today's Menu</a>
+                    <a href="#reservations" class="btn btn-secondary">Reserve Table</a>
+                </div>
+            </div>
+            <div class="today-harvest">
+                <h3>Today's Harvest</h3>
+                <div class="harvest-items">
+                    <div class="harvest-item">
+                        <span class="ingredient">{{TODAY_INGREDIENT_1}}</span>
+                        <span class="farm">{{TODAY_FARM_1}}</span>
+                    </div>
+                    <div class="harvest-item">
+                        <span class="ingredient">{{TODAY_INGREDIENT_2}}</span>
+                        <span class="farm">{{TODAY_FARM_2}}</span>
+                    </div>
+                    <div class="harvest-item">
+                        <span class="ingredient">{{TODAY_INGREDIENT_3}}</span>
+                        <span class="farm">{{TODAY_FARM_3}}</span>
+                    </div>
+                    <div class="harvest-item">
+                        <span class="ingredient">{{TODAY_INGREDIENT_4}}</span>
+                        <span class="farm">{{TODAY_FARM_4}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="seasonal-philosophy">
+        <div class="container">
+            <div class="philosophy-content">
+                <div class="philosophy-text">
+                    <h2>Our Philosophy</h2>
+                    <p class="philosophy-intro">{{PHILOSOPHY_QUOTE}}</p>
+                    <p>{{PHILOSOPHY_DESCRIPTION}}</p>
+                    <div class="philosophy-principles">
+                        <div class="principle">
+                            <h4>{{PRINCIPLE_1_TITLE}}</h4>
+                            <p>{{PRINCIPLE_1_DESCRIPTION}}</p>
+                        </div>
+                        <div class="principle">
+                            <h4>{{PRINCIPLE_2_TITLE}}</h4>
+                            <p>{{PRINCIPLE_2_DESCRIPTION}}</p>
+                        </div>
+                        <div class="principle">
+                            <h4>{{PRINCIPLE_3_TITLE}}</h4>
+                            <p>{{PRINCIPLE_3_DESCRIPTION}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="philosophy-visual">
+                    <img src="{{CHEF_GARDEN_IMAGE}}" alt="Chef in the garden">
+                    <div class="visual-caption">Chef {{CHEF_NAME}} selecting ingredients in our garden</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="seasonal-menu" id="seasonal-menu">
+        <div class="container">
+            <div class="menu-header">
+                <h2>{{CURRENT_SEASON}} Menu</h2>
+                <p class="menu-subtitle">{{MENU_SUBTITLE}}</p>
+                <div class="menu-date">Menu for {{CURRENT_DATE}}</div>
+            </div>
+
+            <div class="menu-format-selector">
+                <button class="format-btn active" data-format="tasting">Tasting Menu</button>
+                <button class="format-btn" data-format="prix-fixe">Prix Fixe</button>
+                <button class="format-btn" data-format="a-la-carte">À La Carte</button>
+            </div>
+
+            <div class="menu-content">
+                <div class="menu-format active" id="tasting">
+                    <div class="tasting-menu">
+                        <div class="menu-description">
+                            <h3>Chef's {{COURSE_COUNT}}-Course Tasting Menu</h3>
+                            <p>{{TASTING_MENU_DESCRIPTION}}</p>
+                            <div class="menu-pricing">
+                                <span class="price">{{TASTING_MENU_PRICE}} per person</span>
+                                <span class="wine-pairing">Wine pairing: {{WINE_PAIRING_PRICE}}</span>
+                            </div>
+                        </div>
+
+                        <div class="tasting-courses">
+                            <div class="course">
+                                <div class="course-number">First</div>
+                                <div class="course-content">
+                                    <h4>{{COURSE_1_NAME}}</h4>
+                                    <p class="course-description">{{COURSE_1_DESCRIPTION}}</p>
+                                    <div class="course-ingredients">
+                                        <span class="ingredient">{{COURSE_1_INGREDIENT_1}}</span>
+                                        <span class="ingredient">{{COURSE_1_INGREDIENT_2}}</span>
+                                        <span class="ingredient">{{COURSE_1_INGREDIENT_3}}</span>
+                                    </div>
+                                    <div class="course-sourcing">
+                                        <span class="farm-source">{{COURSE_1_FARM_1}}</span>
+                                        <span class="farm-source">{{COURSE_1_FARM_2}}</span>
+                                    </div>
+                                    <div class="wine-pairing-note">
+                                        <strong>Paired with:</strong> {{COURSE_1_WINE}}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="course">
+                                <div class="course-number">Second</div>
+                                <div class="course-content">
+                                    <h4>{{COURSE_2_NAME}}</h4>
+                                    <p class="course-description">{{COURSE_2_DESCRIPTION}}</p>
+                                    <div class="course-ingredients">
+                                        <span class="ingredient">{{COURSE_2_INGREDIENT_1}}</span>
+                                        <span class="ingredient">{{COURSE_2_INGREDIENT_2}}</span>
+                                        <span class="ingredient">{{COURSE_2_INGREDIENT_3}}</span>
+                                    </div>
+                                    <div class="course-sourcing">
+                                        <span class="farm-source">{{COURSE_2_FARM_1}}</span>
+                                        <span class="farm-source">{{COURSE_2_FARM_2}}</span>
+                                    </div>
+                                    <div class="wine-pairing-note">
+                                        <strong>Paired with:</strong> {{COURSE_2_WINE}}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="course">
+                                <div class="course-number">Third</div>
+                                <div class="course-content">
+                                    <h4>{{COURSE_3_NAME}}</h4>
+                                    <p class="course-description">{{COURSE_3_DESCRIPTION}}</p>
+                                    <div class="course-ingredients">
+                                        <span class="ingredient">{{COURSE_3_INGREDIENT_1}}</span>
+                                        <span class="ingredient">{{COURSE_3_INGREDIENT_2}}</span>
+                                        <span class="ingredient">{{COURSE_3_INGREDIENT_3}}</span>
+                                    </div>
+                                    <div class="course-sourcing">
+                                        <span class="farm-source">{{COURSE_3_FARM_1}}</span>
+                                        <span class="farm-source">{{COURSE_3_FARM_2}}</span>
+                                    </div>
+                                    <div class="wine-pairing-note">
+                                        <strong>Paired with:</strong> {{COURSE_3_WINE}}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="course">
+                                <div class="course-number">Fourth</div>
+                                <div class="course-content">
+                                    <h4>{{COURSE_4_NAME}}</h4>
+                                    <p class="course-description">{{COURSE_4_DESCRIPTION}}</p>
+                                    <div class="course-ingredients">
+                                        <span class="ingredient">{{COURSE_4_INGREDIENT_1}}</span>
+                                        <span class="ingredient">{{COURSE_4_INGREDIENT_2}}</span>
+                                        <span class="ingredient">{{COURSE_4_INGREDIENT_3}}</span>
+                                    </div>
+                                    <div class="course-sourcing">
+                                        <span class="farm-source">{{COURSE_4_FARM_1}}</span>
+                                        <span class="farm-source">{{COURSE_4_FARM_2}}</span>
+                                    </div>
+                                    <div class="wine-pairing-note">
+                                        <strong>Paired with:</strong> {{COURSE_4_WINE}}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="course">
+                                <div class="course-number">Fifth</div>
+                                <div class="course-content">
+                                    <h4>{{COURSE_5_NAME}}</h4>
+                                    <p class="course-description">{{COURSE_5_DESCRIPTION}}</p>
+                                    <div class="course-ingredients">
+                                        <span class="ingredient">{{COURSE_5_INGREDIENT_1}}</span>
+                                        <span class="ingredient">{{COURSE_5_INGREDIENT_2}}</span>
+                                        <span class="ingredient">{{COURSE_5_INGREDIENT_3}}</span>
+                                    </div>
+                                    <div class="course-sourcing">
+                                        <span class="farm-source">{{COURSE_5_FARM_1}}</span>
+                                        <span class="farm-source">{{COURSE_5_FARM_2}}</span>
+                                    </div>
+                                    <div class="wine-pairing-note">
+                                        <strong>Paired with:</strong> {{COURSE_5_WINE}}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="course dessert">
+                                <div class="course-number">Dessert</div>
+                                <div class="course-content">
+                                    <h4>{{DESSERT_NAME}}</h4>
+                                    <p class="course-description">{{DESSERT_DESCRIPTION}}</p>
+                                    <div class="course-ingredients">
+                                        <span class="ingredient">{{DESSERT_INGREDIENT_1}}</span>
+                                        <span class="ingredient">{{DESSERT_INGREDIENT_2}}</span>
+                                        <span class="ingredient">{{DESSERT_INGREDIENT_3}}</span>
+                                    </div>
+                                    <div class="course-sourcing">
+                                        <span class="farm-source">{{DESSERT_FARM_1}}</span>
+                                        <span class="farm-source">{{DESSERT_FARM_2}}</span>
+                                    </div>
+                                    <div class="wine-pairing-note">
+                                        <strong>Paired with:</strong> {{DESSERT_WINE}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-format" id="prix-fixe">
+                    <div class="prix-fixe-menu">
+                        <div class="menu-description">
+                            <h3>Three-Course Prix Fixe</h3>
+                            <p>{{PRIX_FIXE_DESCRIPTION}}</p>
+                            <div class="menu-pricing">
+                                <span class="price">{{PRIX_FIXE_PRICE}} per person</span>
+                            </div>
+                        </div>
+
+                        <div class="prix-fixe-courses">
+                            <div class="course-category">
+                                <h4>First Course (Choose One)</h4>
+                                <div class="course-options">
+                                    <div class="course-option">
+                                        <h5>{{PRIX_FIRST_1_NAME}}</h5>
+                                        <p>{{PRIX_FIRST_1_DESCRIPTION}}</p>
+                                        <div class="sourcing">{{PRIX_FIRST_1_FARM}}</div>
+                                    </div>
+                                    <div class="course-option">
+                                        <h5>{{PRIX_FIRST_2_NAME}}</h5>
+                                        <p>{{PRIX_FIRST_2_DESCRIPTION}}</p>
+                                        <div class="sourcing">{{PRIX_FIRST_2_FARM}}</div>
+                                    </div>
+                                    <div class="course-option">
+                                        <h5>{{PRIX_FIRST_3_NAME}}</h5>
+                                        <p>{{PRIX_FIRST_3_DESCRIPTION}}</p>
+                                        <div class="sourcing">{{PRIX_FIRST_3_FARM}}</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="course-category">
+                                <h4>Main Course (Choose One)</h4>
+                                <div class="course-options">
+                                    <div class="course-option">
+                                        <h5>{{PRIX_MAIN_1_NAME}}</h5>
+                                        <p>{{PRIX_MAIN_1_DESCRIPTION}}</p>
+                                        <div class="sourcing">{{PRIX_MAIN_1_FARM}}</div>
+                                    </div>
+                                    <div class="course-option">
+                                        <h5>{{PRIX_MAIN_2_NAME}}</h5>
+                                        <p>{{PRIX_MAIN_2_DESCRIPTION}}</p>
+                                        <div class="sourcing">{{PRIX_MAIN_2_FARM}}</div>
+                                    </div>
+                                    <div class="course-option">
+                                        <h5>{{PRIX_MAIN_3_NAME}}</h5>
+                                        <p>{{PRIX_MAIN_3_DESCRIPTION}}</p>
+                                        <div class="sourcing">{{PRIX_MAIN_3_FARM}}</div>
+                                    </div>
+                                    <div class="course-option">
+                                        <h5>{{PRIX_MAIN_4_NAME}}</h5>
+                                        <p>{{PRIX_MAIN_4_DESCRIPTION}}</p>
+                                        <div class="sourcing">{{PRIX_MAIN_4_FARM}}</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="course-category">
+                                <h4>Dessert (Choose One)</h4>
+                                <div class="course-options">
+                                    <div class="course-option">
+                                        <h5>{{PRIX_DESSERT_1_NAME}}</h5>
+                                        <p>{{PRIX_DESSERT_1_DESCRIPTION}}</p>
+                                        <div class="sourcing">{{PRIX_DESSERT_1_FARM}}</div>
+                                    </div>
+                                    <div class="course-option">
+                                        <h5>{{PRIX_DESSERT_2_NAME}}</h5>
+                                        <p>{{PRIX_DESSERT_2_DESCRIPTION}}</p>
+                                        <div class="sourcing">{{PRIX_DESSERT_2_FARM}}</div>
+                                    </div>
+                                    <div class="course-option">
+                                        <h5>{{PRIX_DESSERT_3_NAME}}</h5>
+                                        <p>{{PRIX_DESSERT_3_DESCRIPTION}}</p>
+                                        <div class="sourcing">{{PRIX_DESSERT_3_FARM}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-format" id="a-la-carte">
+                    <div class="a-la-carte-menu">
+                        <div class="menu-categories">
+                            <div class="menu-category">
+                                <h3>Small Plates</h3>
+                                <div class="menu-items">
+                                    <div class="menu-item">
+                                        <div class="item-header">
+                                            <h4>{{ALC_SMALL_1_NAME}}</h4>
+                                            <span class="price">{{ALC_SMALL_1_PRICE}}</span>
+                                        </div>
+                                        <p>{{ALC_SMALL_1_DESCRIPTION}}</p>
+                                        <div class="sourcing">{{ALC_SMALL_1_FARM}}</div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <div class="item-header">
+                                            <h4>{{ALC_SMALL_2_NAME}}</h4>
+                                            <span class="price">{{ALC_SMALL_2_PRICE}}</span>
+                                        </div>
+                                        <p>{{ALC_SMALL_2_DESCRIPTION}}</p>
+                                        <div class="sourcing">{{ALC_SMALL_2_FARM}}</div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <div class="item-header">
+                                            <h4>{{ALC_SMALL_3_NAME}}</h4>
+                                            <span class="price">{{ALC_SMALL_3_PRICE}}</span>
+                                        </div>
+                                        <p>{{ALC_SMALL_3_DESCRIPTION}}</p>
+                                        <div class="sourcing">{{ALC_SMALL_3_FARM}}</div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <div class="item-header">
+                                            <h4>{{ALC_SMALL_4_NAME}}</h4>
+                                            <span class="price">{{ALC_SMALL_4_PRICE}}</span>
+                                        </div>
+                                        <p>{{ALC_SMALL_4_DESCRIPTION}}</p>
+                                        <div class="sourcing">{{ALC_SMALL_4_FARM}}</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="menu-category">
+                                <h3>Main Courses</h3>
+                                <div class="menu-items">
+                                    <div class="menu-item">
+                                        <div class="item-header">
+                                            <h4>{{ALC_MAIN_1_NAME}}</h4>
+                                            <span class="price">{{ALC_MAIN_1_PRICE}}</span>
+                                        </div>
+                                        <p>{{ALC_MAIN_1_DESCRIPTION}}</p>
+                                        <div class="sourcing">{{ALC_MAIN_1_FARM}}</div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <div class="item-header">
+                                            <h4>{{ALC_MAIN_2_NAME}}</h4>
+                                            <span class="price">{{ALC_MAIN_2_PRICE}}</span>
+                                        </div>
+                                        <p>{{ALC_MAIN_2_DESCRIPTION}}</p>
+                                        <div class="sourcing">{{ALC_MAIN_2_FARM}}</div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <div class="item-header">
+                                            <h4>{{ALC_MAIN_3_NAME}}</h4>
+                                            <span class="price">{{ALC_MAIN_3_PRICE}}</span>
+                                        </div>
+                                        <p>{{ALC_MAIN_3_DESCRIPTION}}</p>
+                                        <div class="sourcing">{{ALC_MAIN_3_FARM}}</div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <div class="item-header">
+                                            <h4>{{ALC_MAIN_4_NAME}}</h4>
+                                            <span class="price">{{ALC_MAIN_4_PRICE}}</span>
+                                        </div>
+                                        <p>{{ALC_MAIN_4_DESCRIPTION}}</p>
+                                        <div class="sourcing">{{ALC_MAIN_4_FARM}}</div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <div class="item-header">
+                                            <h4>{{ALC_MAIN_5_NAME}}</h4>
+                                            <span class="price">{{ALC_MAIN_5_PRICE}}</span>
+                                        </div>
+                                        <p>{{ALC_MAIN_5_DESCRIPTION}}</p>
+                                        <div class="sourcing">{{ALC_MAIN_5_FARM}}</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="menu-category">
+                                <h3>Desserts</h3>
+                                <div class="menu-items">
+                                    <div class="menu-item">
+                                        <div class="item-header">
+                                            <h4>{{ALC_DESSERT_1_NAME}}</h4>
+                                            <span class="price">{{ALC_DESSERT_1_PRICE}}</span>
+                                        </div>
+                                        <p>{{ALC_DESSERT_1_DESCRIPTION}}</p>
+                                        <div class="sourcing">{{ALC_DESSERT_1_FARM}}</div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <div class="item-header">
+                                            <h4>{{ALC_DESSERT_2_NAME}}</h4>
+                                            <span class="price">{{ALC_DESSERT_2_PRICE}}</span>
+                                        </div>
+                                        <p>{{ALC_DESSERT_2_DESCRIPTION}}</p>
+                                        <div class="sourcing">{{ALC_DESSERT_2_FARM}}</div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <div class="item-header">
+                                            <h4>{{ALC_DESSERT_3_NAME}}</h4>
+                                            <span class="price">{{ALC_DESSERT_3_PRICE}}</span>
+                                        </div>
+                                        <p>{{ALC_DESSERT_3_DESCRIPTION}}</p>
+                                        <div class="sourcing">{{ALC_DESSERT_3_FARM}}</div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <div class="item-header">
+                                            <h4>{{ALC_DESSERT_4_NAME}}</h4>
+                                            <span class="price">{{ALC_DESSERT_4_PRICE}}</span>
+                                        </div>
+                                        <p>{{ALC_DESSERT_4_DESCRIPTION}}</p>
+                                        <div class="sourcing">{{ALC_DESSERT_4_FARM}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-notes">
+                <h3>Menu Notes</h3>
+                <div class="notes-grid">
+                    <div class="note">
+                        <h4>Seasonal Changes</h4>
+                        <p>{{SEASONAL_CHANGE_NOTE}}</p>
+                    </div>
+                    <div class="note">
+                        <h4>Dietary Accommodations</h4>
+                        <p>{{DIETARY_NOTE}}</p>
+                    </div>
+                    <div class="note">
+                        <h4>Farm Sourcing</h4>
+                        <p>{{SOURCING_NOTE}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="chef-profile" id="chef">
+        <div class="container">
+            <div class="chef-content">
+                <div class="chef-image">
+                    <img src="{{CHEF_PORTRAIT}}" alt="Chef {{CHEF_NAME}}">
+                </div>
+                <div class="chef-bio">
+                    <h2>Chef {{CHEF_NAME}}</h2>
+                    <h3>{{CHEF_TITLE}}</h3>
+                    <p class="chef-intro">{{CHEF_INTRO}}</p>
+                    <p>{{CHEF_BACKGROUND}}</p>
+                    <p>{{CHEF_PHILOSOPHY_PERSONAL}}</p>
+                    
+                    <div class="chef-achievements">
+                        <h4>Recognition & Awards</h4>
+                        <div class="achievements">
+                            <div class="achievement">
+                                <span class="award-year">{{AWARD_1_YEAR}}</span>
+                                <span class="award-title">{{AWARD_1_TITLE}}</span>
+                            </div>
+                            <div class="achievement">
+                                <span class="award-year">{{AWARD_2_YEAR}}</span>
+                                <span class="award-title">{{AWARD_2_TITLE}}</span>
+                            </div>
+                            <div class="achievement">
+                                <span class="award-year">{{AWARD_3_YEAR}}</span>
+                                <span class="award-title">{{AWARD_3_TITLE}}</span>
+                            </div>
+                            <div class="achievement">
+                                <span class="award-year">{{AWARD_4_YEAR}}</span>
+                                <span class="award-title">{{AWARD_4_TITLE}}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chef-training">
+                        <h4>Culinary Journey</h4>
+                        <div class="training-timeline">
+                            <div class="training-item">
+                                <span class="training-years">{{TRAINING_1_YEARS}}</span>
+                                <div class="training-details">
+                                    <h5>{{TRAINING_1_RESTAURANT}}</h5>
+                                    <p>{{TRAINING_1_LOCATION}} • {{TRAINING_1_ROLE}}</p>
+                                </div>
+                            </div>
+                            <div class="training-item">
+                                <span class="training-years">{{TRAINING_2_YEARS}}</span>
+                                <div class="training-details">
+                                    <h5>{{TRAINING_2_RESTAURANT}}</h5>
+                                    <p>{{TRAINING_2_LOCATION}} • {{TRAINING_2_ROLE}}</p>
+                                </div>
+                            </div>
+                            <div class="training-item">
+                                <span class="training-years">{{TRAINING_3_YEARS}}</span>
+                                <div class="training-details">
+                                    <h5>{{TRAINING_3_RESTAURANT}}</h5>
+                                    <p>{{TRAINING_3_LOCATION}} • {{TRAINING_3_ROLE}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="farm-partnerships" id="farms">
+        <div class="container">
+            <h2>Our Farm Partners</h2>
+            <p class="farms-subtitle">{{FARMS_SUBTITLE}}</p>
+            
+            <div class="farms-map">
+                <img src="{{FARMS_MAP_IMAGE}}" alt="Map of local farm partners">
+                <div class="map-markers">
+                    <div class="farm-marker marker-1" data-farm="farm1">
+                        <span class="marker-icon">🚜</span>
+                        <div class="marker-info">
+                            <h4>{{FARM_1_NAME}}</h4>
+                            <p>{{FARM_1_DISTANCE}} miles</p>
+                        </div>
+                    </div>
+                    <div class="farm-marker marker-2" data-farm="farm2">
+                        <span class="marker-icon">🌿</span>
+                        <div class="marker-info">
+                            <h4>{{FARM_2_NAME}}</h4>
+                            <p>{{FARM_2_DISTANCE}} miles</p>
+                        </div>
+                    </div>
+                    <div class="farm-marker marker-3" data-farm="farm3">
+                        <span class="marker-icon">🐄</span>
+                        <div class="marker-info">
+                            <h4>{{FARM_3_NAME}}</h4>
+                            <p>{{FARM_3_DISTANCE}} miles</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="farms-grid">
+                <div class="farm-profile" id="farm1">
+                    <img src="{{FARM_1_IMAGE}}" alt="{{FARM_1_NAME}}">
+                    <div class="farm-content">
+                        <h3>{{FARM_1_NAME}}</h3>
+                        <div class="farm-location">{{FARM_1_LOCATION}} • {{FARM_1_DISTANCE}} miles from restaurant</div>
+                        <p>{{FARM_1_DESCRIPTION}}</p>
+                        <div class="farm-specialties">
+                            <h4>What We Source:</h4>
+                            <div class="specialties">
+                                <span class="specialty">{{FARM_1_SPECIALTY_1}}</span>
+                                <span class="specialty">{{FARM_1_SPECIALTY_2}}</span>
+                                <span class="specialty">{{FARM_1_SPECIALTY_3}}</span>
+                                <span class="specialty">{{FARM_1_SPECIALTY_4}}</span>
+                            </div>
+                        </div>
+                        <div class="farm-practices">
+                            <span class="practice">{{FARM_1_PRACTICE_1}}</span>
+                            <span class="practice">{{FARM_1_PRACTICE_2}}</span>
+                            <span class="practice">{{FARM_1_PRACTICE_3}}</span>
+                        </div>
+                        <div class="farm-family">
+                            <strong>Farm Family:</strong> {{FARM_1_FAMILY}}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="farm-profile" id="farm2">
+                    <img src="{{FARM_2_IMAGE}}" alt="{{FARM_2_NAME}}">
+                    <div class="farm-content">
+                        <h3>{{FARM_2_NAME}}</h3>
+                        <div class="farm-location">{{FARM_2_LOCATION}} • {{FARM_2_DISTANCE}} miles from restaurant</div>
+                        <p>{{FARM_2_DESCRIPTION}}</p>
+                        <div class="farm-specialties">
+                            <h4>What We Source:</h4>
+                            <div class="specialties">
+                                <span class="specialty">{{FARM_2_SPECIALTY_1}}</span>
+                                <span class="specialty">{{FARM_2_SPECIALTY_2}}</span>
+                                <span class="specialty">{{FARM_2_SPECIALTY_3}}</span>
+                                <span class="specialty">{{FARM_2_SPECIALTY_4}}</span>
+                            </div>
+                        </div>
+                        <div class="farm-practices">
+                            <span class="practice">{{FARM_2_PRACTICE_1}}</span>
+                            <span class="practice">{{FARM_2_PRACTICE_2}}</span>
+                            <span class="practice">{{FARM_2_PRACTICE_3}}</span>
+                        </div>
+                        <div class="farm-family">
+                            <strong>Farm Family:</strong> {{FARM_2_FAMILY}}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="farm-profile" id="farm3">
+                    <img src="{{FARM_3_IMAGE}}" alt="{{FARM_3_NAME}}">
+                    <div class="farm-content">
+                        <h3>{{FARM_3_NAME}}</h3>
+                        <div class="farm-location">{{FARM_3_LOCATION}} • {{FARM_3_DISTANCE}} miles from restaurant</div>
+                        <p>{{FARM_3_DESCRIPTION}}</p>
+                        <div class="farm-specialties">
+                            <h4>What We Source:</h4>
+                            <div class="specialties">
+                                <span class="specialty">{{FARM_3_SPECIALTY_1}}</span>
+                                <span class="specialty">{{FARM_3_SPECIALTY_2}}</span>
+                                <span class="specialty">{{FARM_3_SPECIALTY_3}}</span>
+                                <span class="specialty">{{FARM_3_SPECIALTY_4}}</span>
+                            </div>
+                        </div>
+                        <div class="farm-practices">
+                            <span class="practice">{{FARM_3_PRACTICE_1}}</span>
+                            <span class="practice">{{FARM_3_PRACTICE_2}}</span>
+                            <span class="practice">{{FARM_3_PRACTICE_3}}</span>
+                        </div>
+                        <div class="farm-family">
+                            <strong>Farm Family:</strong> {{FARM_3_FAMILY}}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="farm-profile" id="farm4">
+                    <img src="{{FARM_4_IMAGE}}" alt="{{FARM_4_NAME}}">
+                    <div class="farm-content">
+                        <h3>{{FARM_4_NAME}}</h3>
+                        <div class="farm-location">{{FARM_4_LOCATION}} • {{FARM_4_DISTANCE}} miles from restaurant</div>
+                        <p>{{FARM_4_DESCRIPTION}}</p>
+                        <div class="farm-specialties">
+                            <h4>What We Source:</h4>
+                            <div class="specialties">
+                                <span class="specialty">{{FARM_4_SPECIALTY_1}}</span>
+                                <span class="specialty">{{FARM_4_SPECIALTY_2}}</span>
+                                <span class="specialty">{{FARM_4_SPECIALTY_3}}</span>
+                                <span class="specialty">{{FARM_4_SPECIALTY_4}}</span>
+                            </div>
+                        </div>
+                        <div class="farm-practices">
+                            <span class="practice">{{FARM_4_PRACTICE_1}}</span>
+                            <span class="practice">{{FARM_4_PRACTICE_2}}</span>
+                            <span class="practice">{{FARM_4_PRACTICE_3}}</span>
+                        </div>
+                        <div class="farm-family">
+                            <strong>Farm Family:</strong> {{FARM_4_FAMILY}}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="farm-profile" id="farm5">
+                    <img src="{{FARM_5_IMAGE}}" alt="{{FARM_5_NAME}}">
+                    <div class="farm-content">
+                        <h3>{{FARM_5_NAME}}</h3>
+                        <div class="farm-location">{{FARM_5_LOCATION}} • {{FARM_5_DISTANCE}} miles from restaurant</div>
+                        <p>{{FARM_5_DESCRIPTION}}</p>
+                        <div class="farm-specialties">
+                            <h4>What We Source:</h4>
+                            <div class="specialties">
+                                <span class="specialty">{{FARM_5_SPECIALTY_1}}</span>
+                                <span class="specialty">{{FARM_5_SPECIALTY_2}}</span>
+                                <span class="specialty">{{FARM_5_SPECIALTY_3}}</span>
+                                <span class="specialty">{{FARM_5_SPECIALTY_4}}</span>
+                            </div>
+                        </div>
+                        <div class="farm-practices">
+                            <span class="practice">{{FARM_5_PRACTICE_1}}</span>
+                            <span class="practice">{{FARM_5_PRACTICE_2}}</span>
+                            <span class="practice">{{FARM_5_PRACTICE_3}}</span>
+                        </div>
+                        <div class="farm-family">
+                            <strong>Farm Family:</strong> {{FARM_5_FAMILY}}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="farm-profile" id="farm6">
+                    <img src="{{FARM_6_IMAGE}}" alt="{{FARM_6_NAME}}">
+                    <div class="farm-content">
+                        <h3>{{FARM_6_NAME}}</h3>
+                        <div class="farm-location">{{FARM_6_LOCATION}} • {{FARM_6_DISTANCE}} miles from restaurant</div>
+                        <p>{{FARM_6_DESCRIPTION}}</p>
+                        <div class="farm-specialties">
+                            <h4>What We Source:</h4>
+                            <div class="specialties">
+                                <span class="specialty">{{FARM_6_SPECIALTY_1}}</span>
+                                <span class="specialty">{{FARM_6_SPECIALTY_2}}</span>
+                                <span class="specialty">{{FARM_6_SPECIALTY_3}}</span>
+                                <span class="specialty">{{FARM_6_SPECIALTY_4}}</span>
+                            </div>
+                        </div>
+                        <div class="farm-practices">
+                            <span class="practice">{{FARM_6_PRACTICE_1}}</span>
+                            <span class="practice">{{FARM_6_PRACTICE_2}}</span>
+                            <span class="practice">{{FARM_6_PRACTICE_3}}</span>
+                        </div>
+                        <div class="farm-family">
+                            <strong>Farm Family:</strong> {{FARM_6_FAMILY}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sustainability-commitment">
+                <h3>Our Sustainability Commitment</h3>
+                <div class="commitment-stats">
+                    <div class="stat">
+                        <span class="stat-number">{{ORGANIC_PERCENTAGE}}%</span>
+                        <span class="stat-label">Organic Ingredients</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">{{ZERO_WASTE_GOAL}}%</span>
+                        <span class="stat-label">Zero Waste Goal</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">{{CARBON_REDUCTION}}%</span>
+                        <span class="stat-label">Carbon Footprint Reduction</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">{{COMPOSTING_PERCENTAGE}}%</span>
+                        <span class="stat-label">Composting Program</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="wine-program" id="wine">
+        <div class="container">
+            <h2>Wine Program</h2>
+            <p class="wine-subtitle">{{WINE_PROGRAM_SUBTITLE}}</p>
+            
+            <div class="sommelier-profile">
+                <div class="sommelier-image">
+                    <img src="{{SOMMELIER_PORTRAIT}}" alt="{{SOMMELIER_NAME}}">
+                </div>
+                <div class="sommelier-bio">
+                    <h3>{{SOMMELIER_NAME}}</h3>
+                    <h4>{{SOMMELIER_TITLE}}</h4>
+                    <p>{{SOMMELIER_BIO}}</p>
+                    <div class="sommelier-credentials">
+                        <span class="credential">{{SOMMELIER_CREDENTIAL_1}}</span>
+                        <span class="credential">{{SOMMELIER_CREDENTIAL_2}}</span>
+                        <span class="credential">{{SOMMELIER_CREDENTIAL_3}}</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wine-categories">
+                <div class="wine-category">
+                    <h3>Natural & Biodynamic Wines</h3>
+                    <p>{{NATURAL_WINE_DESCRIPTION}}</p>
+                    <div class="wine-highlights">
+                        <div class="wine-item">
+                            <h4>{{NATURAL_WINE_1_NAME}}</h4>
+                            <p>{{NATURAL_WINE_1_PRODUCER}} • {{NATURAL_WINE_1_REGION}}</p>
+                            <div class="wine-pairing">Pairs with: {{NATURAL_WINE_1_PAIRING}}</div>
+                            <div class="wine-price">{{NATURAL_WINE_1_PRICE}}</div>
+                        </div>
+                        <div class="wine-item">
+                            <h4>{{NATURAL_WINE_2_NAME}}</h4>
+                            <p>{{NATURAL_WINE_2_PRODUCER}} • {{NATURAL_WINE_2_REGION}}</p>
+                            <div class="wine-pairing">Pairs with: {{NATURAL_WINE_2_PAIRING}}</div>
+                            <div class="wine-price">{{NATURAL_WINE_2_PRICE}}</div>
+                        </div>
+                        <div class="wine-item">
+                            <h4>{{NATURAL_WINE_3_NAME}}</h4>
+                            <p>{{NATURAL_WINE_3_PRODUCER}} • {{NATURAL_WINE_3_REGION}}</p>
+                            <div class="wine-pairing">Pairs with: {{NATURAL_WINE_3_PAIRING}}</div>
+                            <div class="wine-price">{{NATURAL_WINE_3_PRICE}}</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wine-category">
+                    <h3>Local & Regional Selections</h3>
+                    <p>{{LOCAL_WINE_DESCRIPTION}}</p>
+                    <div class="wine-highlights">
+                        <div class="wine-item">
+                            <h4>{{LOCAL_WINE_1_NAME}}</h4>
+                            <p>{{LOCAL_WINE_1_PRODUCER}} • {{LOCAL_WINE_1_DISTANCE}} miles away</p>
+                            <div class="wine-pairing">Pairs with: {{LOCAL_WINE_1_PAIRING}}</div>
+                            <div class="wine-price">{{LOCAL_WINE_1_PRICE}}</div>
+                        </div>
+                        <div class="wine-item">
+                            <h4>{{LOCAL_WINE_2_NAME}}</h4>
+                            <p>{{LOCAL_WINE_2_PRODUCER}} • {{LOCAL_WINE_2_DISTANCE}} miles away</p>
+                            <div class="wine-pairing">Pairs with: {{LOCAL_WINE_2_PAIRING}}</div>
+                            <div class="wine-price">{{LOCAL_WINE_2_PRICE}}</div>
+                        </div>
+                        <div class="wine-item">
+                            <h4>{{LOCAL_WINE_3_NAME}}</h4>
+                            <p>{{LOCAL_WINE_3_PRODUCER}} • {{LOCAL_WINE_3_DISTANCE}} miles away</p>
+                            <div class="wine-pairing">Pairs with: {{LOCAL_WINE_3_PAIRING}}</div>
+                            <div class="wine-price">{{LOCAL_WINE_3_PRICE}}</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wine-category">
+                    <h3>Seasonal Selections</h3>
+                    <p>{{SEASONAL_WINE_DESCRIPTION}}</p>
+                    <div class="wine-highlights">
+                        <div class="wine-item">
+                            <h4>{{SEASONAL_WINE_1_NAME}}</h4>
+                            <p>{{SEASONAL_WINE_1_PRODUCER}} • {{SEASONAL_WINE_1_REGION}}</p>
+                            <div class="wine-pairing">Perfect for: {{SEASONAL_WINE_1_SEASON}}</div>
+                            <div class="wine-price">{{SEASONAL_WINE_1_PRICE}}</div>
+                        </div>
+                        <div class="wine-item">
+                            <h4>{{SEASONAL_WINE_2_NAME}}</h4>
+                            <p>{{SEASONAL_WINE_2_PRODUCER}} • {{SEASONAL_WINE_2_REGION}}</p>
+                            <div class="wine-pairing">Perfect for: {{SEASONAL_WINE_2_SEASON}}</div>
+                            <div class="wine-price">{{SEASONAL_WINE_2_PRICE}}</div>
+                        </div>
+                        <div class="wine-item">
+                            <h4>{{SEASONAL_WINE_3_NAME}}</h4>
+                            <p>{{SEASONAL_WINE_3_PRODUCER}} • {{SEASONAL_WINE_3_REGION}}</p>
+                            <div class="wine-pairing">Perfect for: {{SEASONAL_WINE_3_SEASON}}</div>
+                            <div class="wine-price">{{SEASONAL_WINE_3_PRICE}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wine-experiences">
+                <h3>Wine Experiences</h3>
+                <div class="experiences-grid">
+                    <div class="wine-experience">
+                        <h4>{{WINE_EXPERIENCE_1_NAME}}</h4>
+                        <p>{{WINE_EXPERIENCE_1_DESCRIPTION}}</p>
+                        <div class="experience-details">
+                            <span>{{WINE_EXPERIENCE_1_DURATION}}</span>
+                            <span>{{WINE_EXPERIENCE_1_PRICE}} per person</span>
+                        </div>
+                    </div>
+                    <div class="wine-experience">
+                        <h4>{{WINE_EXPERIENCE_2_NAME}}</h4>
+                        <p>{{WINE_EXPERIENCE_2_DESCRIPTION}}</p>
+                        <div class="experience-details">
+                            <span>{{WINE_EXPERIENCE_2_DURATION}}</span>
+                            <span>{{WINE_EXPERIENCE_2_PRICE}} per person</span>
+                        </div>
+                    </div>
+                    <div class="wine-experience">
+                        <h4>{{WINE_EXPERIENCE_3_NAME}}</h4>
+                        <p>{{WINE_EXPERIENCE_3_DESCRIPTION}}</p>
+                        <div class="experience-details">
+                            <span>{{WINE_EXPERIENCE_3_DURATION}}</span>
+                            <span>{{WINE_EXPERIENCE_3_PRICE}} per person</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wine-club">
+                <h3>{{WINE_CLUB_NAME}}</h3>
+                <p>{{WINE_CLUB_DESCRIPTION}}</p>
+                <div class="club-benefits">
+                    <div class="benefit">
+                        <h4>{{WINE_CLUB_BENEFIT_1_TITLE}}</h4>
+                        <p>{{WINE_CLUB_BENEFIT_1_DESCRIPTION}}</p>
+                    </div>
+                    <div class="benefit">
+                        <h4>{{WINE_CLUB_BENEFIT_2_TITLE}}</h4>
+                        <p>{{WINE_CLUB_BENEFIT_2_DESCRIPTION}}</p>
+                    </div>
+                    <div class="benefit">
+                        <h4>{{WINE_CLUB_BENEFIT_3_TITLE}}</h4>
+                        <p>{{WINE_CLUB_BENEFIT_3_DESCRIPTION}}</p>
+                    </div>
+                    <div class="benefit">
+                        <h4>{{WINE_CLUB_BENEFIT_4_TITLE}}</h4>
+                        <p>{{WINE_CLUB_BENEFIT_4_DESCRIPTION}}</p>
+                    </div>
+                </div>
+                <div class="club-pricing">
+                    <span>{{WINE_CLUB_PRICE}} per month</span>
+                    <span>{{WINE_CLUB_BOTTLES}} bottles monthly</span>
+                </div>
+                <a href="#wine-club-signup" class="btn btn-primary">Join Wine Club</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="private-events" id="events">
+        <div class="container">
+            <h2>Private Events & Farm Dinners</h2>
+            <p class="events-subtitle">{{EVENTS_SUBTITLE}}</p>
+            
+            <div class="event-types">
+                <div class="event-type featured">
+                    <img src="{{FARM_DINNER_IMAGE}}" alt="Farm dinner event">
+                    <div class="event-content">
+                        <h3>{{FARM_DINNER_NAME}}</h3>
+                        <p>{{FARM_DINNER_DESCRIPTION}}</p>
+                        <div class="event-details">
+                            <div class="detail">
+                                <span class="detail-label">Season:</span>
+                                <span class="detail-value">{{FARM_DINNER_SEASON}}</span>
+                            </div>
+                            <div class="detail">
+                                <span class="detail-label">Guests:</span>
+                                <span class="detail-value">{{FARM_DINNER_CAPACITY}}</span>
+                            </div>
+                            <div class="detail">
+                                <span class="detail-label">Price:</span>
+                                <span class="detail-value">{{FARM_DINNER_PRICE}} per person</span>
+                            </div>
+                        </div>
+                        <div class="event-includes">
+                            <h4>Includes:</h4>
+                            <ul>
+                                <li>{{FARM_DINNER_INCLUDE_1}}</li>
+                                <li>{{FARM_DINNER_INCLUDE_2}}</li>
+                                <li>{{FARM_DINNER_INCLUDE_3}}</li>
+                                <li>{{FARM_DINNER_INCLUDE_4}}</li>
+                            </ul>
+                        </div>
+                        <a href="#book-farm-dinner" class="btn btn-primary">Book Farm Dinner</a>
+                    </div>
+                </div>
+
+                <div class="event-type">
+                    <img src="{{PRIVATE_DINING_IMAGE}}" alt="Private dining room">
+                    <div class="event-content">
+                        <h3>{{PRIVATE_DINING_NAME}}</h3>
+                        <p>{{PRIVATE_DINING_DESCRIPTION}}</p>
+                        <div class="event-details">
+                            <div class="detail">
+                                <span class="detail-label">Capacity:</span>
+                                <span class="detail-value">{{PRIVATE_DINING_CAPACITY}} guests</span>
+                            </div>
+                            <div class="detail">
+                                <span class="detail-label">Menu:</span>
+                                <span class="detail-value">{{PRIVATE_DINING_MENU_TYPE}}</span>
+                            </div>
+                            <div class="detail">
+                                <span class="detail-label">Price:</span>
+                                <span class="detail-value">{{PRIVATE_DINING_PRICE}} per person</span>
+                            </div>
+                        </div>
+                        <div class="event-includes">
+                            <h4>Includes:</h4>
+                            <ul>
+                                <li>{{PRIVATE_DINING_INCLUDE_1}}</li>
+                                <li>{{PRIVATE_DINING_INCLUDE_2}}</li>
+                                <li>{{PRIVATE_DINING_INCLUDE_3}}</li>
+                                <li>{{PRIVATE_DINING_INCLUDE_4}}</li>
+                            </ul>
+                        </div>
+                        <a href="#book-private-event" class="btn btn-outline">Book Private Event</a>
+                    </div>
+                </div>
+
+                <div class="event-type">
+                    <img src="{{COOKING_CLASS_IMAGE}}" alt="Cooking class">
+                    <div class="event-content">
+                        <h3>{{COOKING_CLASS_NAME}}</h3>
+                        <p>{{COOKING_CLASS_DESCRIPTION}}</p>
+                        <div class="event-details">
+                            <div class="detail">
+                                <span class="detail-label">Duration:</span>
+                                <span class="detail-value">{{COOKING_CLASS_DURATION}}</span>
+                            </div>
+                            <div class="detail">
+                                <span class="detail-label">Class Size:</span>
+                                <span class="detail-value">{{COOKING_CLASS_CAPACITY}} students</span>
+                            </div>
+                            <div class="detail">
+                                <span class="detail-label">Price:</span>
+                                <span class="detail-value">{{COOKING_CLASS_PRICE}} per person</span>
+                            </div>
+                        </div>
+                        <div class="event-includes">
+                            <h4>Includes:</h4>
+                            <ul>
+                                <li>{{COOKING_CLASS_INCLUDE_1}}</li>
+                                <li>{{COOKING_CLASS_INCLUDE_2}}</li>
+                                <li>{{COOKING_CLASS_INCLUDE_3}}</li>
+                                <li>{{COOKING_CLASS_INCLUDE_4}}</li>
+                            </ul>
+                        </div>
+                        <a href="#book-cooking-class" class="btn btn-outline">Book Cooking Class</a>
+                    </div>
+                </div>
+
+                <div class="event-type">
+                    <img src="{{HARVEST_EVENT_IMAGE}}" alt="Harvest celebration">
+                    <div class="event-content">
+                        <h3>{{HARVEST_EVENT_NAME}}</h3>
+                        <p>{{HARVEST_EVENT_DESCRIPTION}}</p>
+                        <div class="event-details">
+                            <div class="detail">
+                                <span class="detail-label">Season:</span>
+                                <span class="detail-value">{{HARVEST_EVENT_SEASON}}</span>
+                            </div>
+                            <div class="detail">
+                                <span class="detail-label">Guests:</span>
+                                <span class="detail-value">{{HARVEST_EVENT_CAPACITY}}</span>
+                            </div>
+                            <div class="detail">
+                                <span class="detail-label">Price:</span>
+                                <span class="detail-value">{{HARVEST_EVENT_PRICE}} per person</span>
+                            </div>
+                        </div>
+                        <div class="event-includes">
+                            <h4>Includes:</h4>
+                            <ul>
+                                <li>{{HARVEST_EVENT_INCLUDE_1}}</li>
+                                <li>{{HARVEST_EVENT_INCLUDE_2}}</li>
+                                <li>{{HARVEST_EVENT_INCLUDE_3}}</li>
+                                <li>{{HARVEST_EVENT_INCLUDE_4}}</li>
+                            </ul>
+                        </div>
+                        <a href="#book-harvest-event" class="btn btn-outline">Book Harvest Event</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="upcoming-events">
+                <h3>Upcoming Special Events</h3>
+                <div class="events-calendar">
+                    <div class="event-item">
+                        <div class="event-date">
+                            <span class="month">{{EVENT_1_MONTH}}</span>
+                            <span class="day">{{EVENT_1_DAY}}</span>
+                        </div>
+                        <div class="event-details">
+                            <h4>{{EVENT_1_NAME}}</h4>
+                            <p>{{EVENT_1_DESCRIPTION}}</p>
+                            <div class="event-meta">
+                                <span>{{EVENT_1_TIME}}</span>
+                                <span>{{EVENT_1_PRICE}}</span>
+                            </div>
+                        </div>
+                        <a href="#book-event" class="btn btn-outline">Reserve</a>
+                    </div>
+
+                    <div class="event-item">
+                        <div class="event-date">
+                            <span class="month">{{EVENT_2_MONTH}}</span>
+                            <span class="day">{{EVENT_2_DAY}}</span>
+                        </div>
+                        <div class="event-details">
+                            <h4>{{EVENT_2_NAME}}</h4>
+                            <p>{{EVENT_2_DESCRIPTION}}</p>
+                            <div class="event-meta">
+                                <span>{{EVENT_2_TIME}}</span>
+                                <span>{{EVENT_2_PRICE}}</span>
+                            </div>
+                        </div>
+                        <a href="#book-event" class="btn btn-outline">Reserve</a>
+                    </div>
+
+                    <div class="event-item">
+                        <div class="event-date">
+                            <span class="month">{{EVENT_3_MONTH}}</span>
+                            <span class="day">{{EVENT_3_DAY}}</span>
+                        </div>
+                        <div class="event-details">
+                            <h4>{{EVENT_3_NAME}}</h4>
+                            <p>{{EVENT_3_DESCRIPTION}}</p>
+                            <div class="event-meta">
+                                <span>{{EVENT_3_TIME}}</span>
+                                <span>{{EVENT_3_PRICE}}</span>
+                            </div>
+                        </div>
+                        <a href="#book-event" class="btn btn-outline">Reserve</a>
+                    </div>
+
+                    <div class="event-item">
+                        <div class="event-date">
+                            <span class="month">{{EVENT_4_MONTH}}</span>
+                            <span class="day">{{EVENT_4_DAY}}</span>
+                        </div>
+                        <div class="event-details">
+                            <h4>{{EVENT_4_NAME}}</h4>
+                            <p>{{EVENT_4_DESCRIPTION}}</p>
+                            <div class="event-meta">
+                                <span>{{EVENT_4_TIME}}</span>
+                                <span>{{EVENT_4_PRICE}}</span>
+                            </div>
+                        </div>
+                        <a href="#book-event" class="btn btn-outline">Reserve</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="reservations" id="reservations">
+        <div class="container">
+            <div class="reservations-content">
+                <h2>Reservations</h2>
+                <p class="reservations-subtitle">{{RESERVATIONS_SUBTITLE}}</p>
+                
+                <div class="reservation-form-container">
+                    <form class="reservation-form">
+                        <div class="form-row">
+                            <input type="text" placeholder="First Name" required>
+                            <input type="text" placeholder="Last Name" required>
+                        </div>
+                        <div class="form-row">
+                            <input type="email" placeholder="Email Address" required>
+                            <input type="tel" placeholder="Phone Number" required>
+                        </div>
+                        <div class="form-row">
+                            <input type="date" required>
+                            <select required>
+                                <option value="">Preferred Time</option>
+                                <option value="17:30">5:30 PM</option>
+                                <option value="18:00">6:00 PM</option>
+                                <option value="18:30">6:30 PM</option>
+                                <option value="19:00">7:00 PM</option>
+                                <option value="19:30">7:30 PM</option>
+                                <option value="20:00">8:00 PM</option>
+                                <option value="20:30">8:30 PM</option>
+                                <option value="21:00">9:00 PM</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <select required>
+                                <option value="">Party Size</option>
+                                <option value="2">2 Guests</option>
+                                <option value="3">3 Guests</option>
+                                <option value="4">4 Guests</option>
+                                <option value="5">5 Guests</option>
+                                <option value="6">6 Guests</option>
+                                <option value="7">7 Guests</option>
+                                <option value="8">8 Guests</option>
+                                <option value="8+">8+ Guests</option>
+                            </select>
+                            <select>
+                                <option value="">Menu Preference</option>
+                                <option value="tasting">Tasting Menu</option>
+                                <option value="prix-fixe">Prix Fixe</option>
+                                <option value="a-la-carte">À La Carte</option>
+                                <option value="wine-pairing">Wine Pairing</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <select>
+                                <option value="">Special Occasion</option>
+                                <option value="anniversary">Anniversary</option>
+                                <option value="birthday">Birthday</option>
+                                <option value="date-night">Date Night</option>
+                                <option value="business">Business Dinner</option>
+                                <option value="celebration">Special Celebration</option>
+                            </select>
+                            <select>
+                                <option value="">Seating Preference</option>
+                                <option value="indoor">Indoor Dining</option>
+                                <option value="garden">Garden Terrace</option>
+                                <option value="chef-counter">Chef's Counter</option>
+                                <option value="no-preference">No Preference</option>
+                            </select>
+                        </div>
+                        <textarea placeholder="Dietary restrictions, allergies, or special requests" rows="3"></textarea>
+                        <button type="submit" class="btn btn-primary">Request Reservation</button>
+                    </form>
+
+                    <div class="reservation-info">
+                        <h3>Reservation Information</h3>
+                        <div class="info-item">
+                            <h4>Restaurant Hours</h4>
+                            <p>{{RESTAURANT_HOURS}}</p>
+                        </div>
+                        <div class="info-item">
+                            <h4>Advance Booking</h4>
+                            <p>{{ADVANCE_BOOKING_POLICY}}</p>
+                        </div>
+                        <div class="info-item">
+                            <h4>Cancellation Policy</h4>
+                            <p>{{CANCELLATION_POLICY}}</p>
+                        </div>
+                        <div class="info-item">
+                            <h4>Large Parties</h4>
+                            <p>{{LARGE_PARTY_POLICY}}</p>
+                        </div>
+                        <div class="info-item">
+                            <h4>Contact</h4>
+                            <p>Phone: {{RESTAURANT_PHONE}}</p>
+                            <p>Email: {{RESTAURANT_EMAIL}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section main">
+                    <h3>{{RESTAURANT_NAME}}</h3>
+                    <p>{{FOOTER_DESCRIPTION}}</p>
+                    <div class="restaurant-address">
+                        <p>{{RESTAURANT_ADDRESS}}</p>
+                        <p>{{RESTAURANT_PHONE}}</p>
+                        <p>{{RESTAURANT_EMAIL}}</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="{{INSTAGRAM_URL}}" aria-label="Instagram">📷</a>
+                        <a href="{{FACEBOOK_URL}}" aria-label="Facebook">📘</a>
+                        <a href="{{TWITTER_URL}}" aria-label="Twitter">🐦</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Dining</h4>
+                    <a href="#seasonal-menu">Seasonal Menu</a>
+                    <a href="#reservations">Reservations</a>
+                    <a href="#wine">Wine Program</a>
+                    <a href="#events">Private Events</a>
+                </div>
+                <div class="footer-section">
+                    <h4>About</h4>
+                    <a href="#chef">Chef {{CHEF_NAME}}</a>
+                    <a href="#farms">Our Farms</a>
+                    <a href="#philosophy">Philosophy</a>
+                    <a href="#sustainability">Sustainability</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Experiences</h4>
+                    <a href="#farm-dinners">Farm Dinners</a>
+                    <a href="#cooking-classes">Cooking Classes</a>
+                    <a href="#wine-club">Wine Club</a>
+                    <a href="#harvest-events">Harvest Events</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <a href="#newsletter">Newsletter</a>
+                    <a href="#press">Press</a>
+                    <a href="#careers">Careers</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <p>&copy; {{CURRENT_YEAR}} {{RESTAURANT_NAME}}. All rights reserved.</p>
+                    <div class="legal-links">
+                        <a href="#privacy">Privacy Policy</a>
+                        <a href="#terms">Terms of Service</a>
+                        <a href="#accessibility">Accessibility</a>
+                    </div>
+                </div>
+                <div class="footer-certifications">
+                    <span>{{CERTIFICATION_1}}</span>
+                    <span>{{CERTIFICATION_2}}</span>
+                    <span>{{CERTIFICATION_3}}</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - More Than Coffee</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="color-scheme-warm">
+    <header class="header">
+        <nav class="nav">
+            <div class="nav__logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}}" class="nav__logo-img">
+            </div>
+            <ul class="nav__menu">
+                <li><a href="#home" class="nav__link">Home</a></li>
+                <li><a href="#menu" class="nav__link">Menu</a></li>
+                <li><a href="#rewards" class="nav__link">Rewards</a></li>
+                <li><a href="#responsibility" class="nav__link">Our Impact</a></li>
+                <li><a href="#stores" class="nav__link">Store Locator</a></li>
+            </ul>
+            <div class="nav__actions">
+                <button class="btn btn--outline nav__signin-btn">Sign In</button>
+                <button class="btn btn--secondary nav__order-btn">Order Now</button>
+            </div>
+            <button class="nav__toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero__content">
+                <div class="hero__text">
+                    <h1 class="hero__title">{{HERO_TITLE}}</h1>
+                    <p class="hero__subtitle">{{HERO_SUBTITLE}}</p>
+                    <div class="hero__highlights">
+                        <span class="hero__highlight">☕ Ethically Sourced</span>
+                        <span class="hero__highlight">🌱 Sustainably Grown</span>
+                        <span class="hero__highlight">👥 Community Focused</span>
+                    </div>
+                    <div class="hero__actions">
+                        <button class="btn btn--primary hero__cta">Order Ahead</button>
+                        <button class="btn btn--outline hero__rewards-btn">Join Rewards</button>
+                    </div>
+                </div>
+                <div class="hero__image">
+                    <img src="{{HERO_IMAGE}}" alt="Fresh coffee and lifestyle" class="hero__main-img">
+                    <div class="hero__seasonal-badge">
+                        <span class="seasonal-badge__text">{{SEASONAL_OFFER}}</span>
+                        <span class="seasonal-badge__subtitle">Limited Time</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-products">
+            <div class="container">
+                <h2 class="section__title">What's New</h2>
+                <div class="products-grid">
+                    <div class="product-card product-card--featured">
+                        <div class="product-card__badge">New</div>
+                        <img src="{{FEATURED_PRODUCT_1_IMAGE}}" alt="{{FEATURED_PRODUCT_1_NAME}}" class="product-card__img">
+                        <div class="product-card__content">
+                            <h3 class="product-card__name">{{FEATURED_PRODUCT_1_NAME}}</h3>
+                            <p class="product-card__description">{{FEATURED_PRODUCT_1_DESCRIPTION}}</p>
+                            <div class="product-card__tags">
+                                <span class="tag tag--seasonal">🍂 Fall Favorite</span>
+                                <span class="tag tag--dairy-free">🥛 Dairy-Free Option</span>
+                            </div>
+                            <button class="btn btn--primary btn--small product-card__btn">Try It Now</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="{{FEATURED_PRODUCT_2_IMAGE}}" alt="{{FEATURED_PRODUCT_2_NAME}}" class="product-card__img">
+                        <div class="product-card__content">
+                            <h3 class="product-card__name">{{FEATURED_PRODUCT_2_NAME}}</h3>
+                            <p class="product-card__description">{{FEATURED_PRODUCT_2_DESCRIPTION}}</p>
+                            <div class="product-card__tags">
+                                <span class="tag tag--cold-brew">❄️ Cold Brew</span>
+                            </div>
+                            <button class="btn btn--outline btn--small product-card__btn">Order Now</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="{{FEATURED_PRODUCT_3_IMAGE}}" alt="{{FEATURED_PRODUCT_3_NAME}}" class="product-card__img">
+                        <div class="product-card__content">
+                            <h3 class="product-card__name">{{FEATURED_PRODUCT_3_NAME}}</h3>
+                            <p class="product-card__description">{{FEATURED_PRODUCT_3_DESCRIPTION}}</p>
+                            <div class="product-card__tags">
+                                <span class="tag tag--food">🥪 Food</span>
+                                <span class="tag tag--protein">💪 High Protein</span>
+                            </div>
+                            <button class="btn btn--outline btn--small product-card__btn">Order Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu" class="menu-categories">
+            <div class="container">
+                <h2 class="section__title">Our Menu</h2>
+                <div class="menu-nav">
+                    <button class="menu-nav__btn menu-nav__btn--active" data-category="drinks">Drinks</button>
+                    <button class="menu-nav__btn" data-category="food">Food</button>
+                    <button class="menu-nav__btn" data-category="at-home">At Home</button>
+                    <button class="menu-nav__btn" data-category="merchandise">Merchandise</button>
+                </div>
+
+                <div class="menu-content">
+                    <div class="menu-category menu-category--active" data-category="drinks">
+                        <div class="menu-subcategories">
+                            <div class="subcategory">
+                                <h3 class="subcategory__title">Hot Coffees</h3>
+                                <div class="menu-items">
+                                    <div class="menu-item">
+                                        <img src="{{HOT_COFFEE_1_IMAGE}}" alt="{{HOT_COFFEE_1_NAME}}" class="menu-item__img">
+                                        <div class="menu-item__content">
+                                            <h4 class="menu-item__name">{{HOT_COFFEE_1_NAME}}</h4>
+                                            <p class="menu-item__description">{{HOT_COFFEE_1_DESCRIPTION}}</p>
+                                            <div class="menu-item__sizes">
+                                                <span class="size-option">Short {{HOT_COFFEE_1_PRICE_SHORT}}</span>
+                                                <span class="size-option">Tall {{HOT_COFFEE_1_PRICE_TALL}}</span>
+                                                <span class="size-option">Grande {{HOT_COFFEE_1_PRICE_GRANDE}}</span>
+                                                <span class="size-option">Venti {{HOT_COFFEE_1_PRICE_VENTI}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="menu-item">
+                                        <img src="{{HOT_COFFEE_2_IMAGE}}" alt="{{HOT_COFFEE_2_NAME}}" class="menu-item__img">
+                                        <div class="menu-item__content">
+                                            <h4 class="menu-item__name">{{HOT_COFFEE_2_NAME}}</h4>
+                                            <p class="menu-item__description">{{HOT_COFFEE_2_DESCRIPTION}}</p>
+                                            <div class="menu-item__sizes">
+                                                <span class="size-option">Short {{HOT_COFFEE_2_PRICE_SHORT}}</span>
+                                                <span class="size-option">Tall {{HOT_COFFEE_2_PRICE_TALL}}</span>
+                                                <span class="size-option">Grande {{HOT_COFFEE_2_PRICE_GRANDE}}</span>
+                                                <span class="size-option">Venti {{HOT_COFFEE_2_PRICE_VENTI}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="subcategory">
+                                <h3 class="subcategory__title">Cold Coffees</h3>
+                                <div class="menu-items">
+                                    <div class="menu-item">
+                                        <img src="{{COLD_COFFEE_1_IMAGE}}" alt="{{COLD_COFFEE_1_NAME}}" class="menu-item__img">
+                                        <div class="menu-item__content">
+                                            <h4 class="menu-item__name">{{COLD_COFFEE_1_NAME}}</h4>
+                                            <p class="menu-item__description">{{COLD_COFFEE_1_DESCRIPTION}}</p>
+                                            <div class="menu-item__sizes">
+                                                <span class="size-option">Tall {{COLD_COFFEE_1_PRICE_TALL}}</span>
+                                                <span class="size-option">Grande {{COLD_COFFEE_1_PRICE_GRANDE}}</span>
+                                                <span class="size-option">Venti {{COLD_COFFEE_1_PRICE_VENTI}}</span>
+                                                <span class="size-option">Trenta {{COLD_COFFEE_1_PRICE_TRENTA}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="subcategory">
+                                <h3 class="subcategory__title">Frappuccino® Blended Beverages</h3>
+                                <div class="menu-items">
+                                    <div class="menu-item">
+                                        <img src="{{FRAPPUCCINO_1_IMAGE}}" alt="{{FRAPPUCCINO_1_NAME}}" class="menu-item__img">
+                                        <div class="menu-item__content">
+                                            <h4 class="menu-item__name">{{FRAPPUCCINO_1_NAME}}</h4>
+                                            <p class="menu-item__description">{{FRAPPUCCINO_1_DESCRIPTION}}</p>
+                                            <div class="menu-item__sizes">
+                                                <span class="size-option">Tall {{FRAPPUCCINO_1_PRICE_TALL}}</span>
+                                                <span class="size-option">Grande {{FRAPPUCCINO_1_PRICE_GRANDE}}</span>
+                                                <span class="size-option">Venti {{FRAPPUCCINO_1_PRICE_VENTI}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="rewards" class="rewards">
+            <div class="container">
+                <div class="rewards__content">
+                    <div class="rewards__text">
+                        <h2 class="section__title">{{RESTAURANT_NAME}} Rewards</h2>
+                        <p class="rewards__subtitle">{{REWARDS_SUBTITLE}}</p>
+                        <div class="rewards__benefits">
+                            <div class="benefit">
+                                <div class="benefit__icon">⭐</div>
+                                <div class="benefit__content">
+                                    <h3 class="benefit__title">Earn Stars</h3>
+                                    <p class="benefit__description">2 Stars per $1 spent when you pay with the app</p>
+                                </div>
+                            </div>
+                            <div class="benefit">
+                                <div class="benefit__icon">🎁</div>
+                                <div class="benefit__content">
+                                    <h3 class="benefit__title">Free Rewards</h3>
+                                    <p class="benefit__description">Redeem Stars for free drinks, food, and merchandise</p>
+                                </div>
+                            </div>
+                            <div class="benefit">
+                                <div class="benefit__icon">🎉</div>
+                                <div class="benefit__content">
+                                    <h3 class="benefit__title">Birthday Treat</h3>
+                                    <p class="benefit__description">Free drink or food item on your birthday</p>
+                                </div>
+                            </div>
+                            <div class="benefit">
+                                <div class="benefit__icon">⚡</div>
+                                <div class="benefit__content">
+                                    <h3 class="benefit__title">Order Ahead</h3>
+                                    <p class="benefit__description">Skip the line with mobile order & pay</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rewards__actions">
+                            <button class="btn btn--primary">Join Now</button>
+                            <button class="btn btn--outline">Learn More</button>
+                        </div>
+                    </div>
+                    <div class="rewards__visual">
+                        <div class="rewards-app">
+                            <img src="{{REWARDS_APP_IMAGE}}" alt="Rewards app interface" class="rewards-app__img">
+                            <div class="rewards-stars">
+                                <div class="star star--filled">⭐</div>
+                                <div class="star star--filled">⭐</div>
+                                <div class="star star--filled">⭐</div>
+                                <div class="star">⭐</div>
+                                <div class="star">⭐</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="responsibility" class="responsibility">
+            <div class="container">
+                <h2 class="section__title">Our Commitment</h2>
+                <p class="section__subtitle">Creating positive impact in everything we do</p>
+                
+                <div class="commitment-grid">
+                    <div class="commitment-card">
+                        <div class="commitment-card__icon">🌱</div>
+                        <div class="commitment-card__content">
+                            <h3 class="commitment-card__title">Ethical Sourcing</h3>
+                            <div class="commitment-card__stat">{{ETHICAL_SOURCING_PERCENT}}%</div>
+                            <div class="commitment-card__label">Ethically Sourced Coffee</div>
+                            <p class="commitment-card__description">{{ETHICAL_SOURCING_DESCRIPTION}}</p>
+                            <a href="#coffee-sourcing" class="commitment-card__link">Learn More →</a>
+                        </div>
+                    </div>
+
+                    <div class="commitment-card">
+                        <div class="commitment-card__icon">🌍</div>
+                        <div class="commitment-card__content">
+                            <h3 class="commitment-card__title">Environmental Impact</h3>
+                            <div class="commitment-card__stat">{{CARBON_NEUTRAL_YEAR}}</div>
+                            <div class="commitment-card__label">Carbon Neutral Goal</div>
+                            <p class="commitment-card__description">{{ENVIRONMENTAL_DESCRIPTION}}</p>
+                            <a href="#sustainability" class="commitment-card__link">Learn More →</a>
+                        </div>
+                    </div>
+
+                    <div class="commitment-card">
+                        <div class="commitment-card__icon">🤝</div>
+                        <div class="commitment-card__content">
+                            <h3 class="commitment-card__title">Community</h3>
+                            <div class="commitment-card__stat">{{COMMUNITY_STORES_COUNT}}K+</div>
+                            <div class="commitment-card__label">Community Stores</div>
+                            <p class="commitment-card__description">{{COMMUNITY_DESCRIPTION}}</p>
+                            <a href="#community-impact" class="commitment-card__link">Learn More →</a>
+                        </div>
+                    </div>
+
+                    <div class="commitment-card">
+                        <div class="commitment-card__icon">👥</div>
+                        <div class="commitment-card__content">
+                            <h3 class="commitment-card__title">Partner Benefits</h3>
+                            <div class="commitment-card__stat">{{PARTNER_BENEFITS_COVERAGE}}%</div>
+                            <div class="commitment-card__label">Healthcare Coverage</div>
+                            <p class="commitment-card__description">{{PARTNER_BENEFITS_DESCRIPTION}}</p>
+                            <a href="#partner-benefits" class="commitment-card__link">Learn More →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="stores" class="store-locator">
+            <div class="container">
+                <h2 class="section__title">Find a Store</h2>
+                <div class="store-finder">
+                    <div class="store-finder__search">
+                        <input type="text" placeholder="Enter your address or zip code" class="store-finder__input">
+                        <button class="btn btn--primary store-finder__btn">Find Stores</button>
+                    </div>
+                    <div class="store-finder__filters">
+                        <label class="filter-checkbox">
+                            <input type="checkbox" name="drive-thru">
+                            <span class="filter-checkbox__label">🚗 Drive-thru</span>
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" name="mobile-order">
+                            <span class="filter-checkbox__label">📱 Mobile Order & Pay</span>
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" name="wifi">
+                            <span class="filter-checkbox__label">📶 Free WiFi</span>
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox" name="open-24hrs">
+                            <span class="filter-checkbox__label">⏰ Open 24 Hours</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="featured-stores">
+                    <h3 class="featured-stores__title">Popular Locations</h3>
+                    <div class="stores-grid">
+                        <div class="store-card">
+                            <div class="store-card__header">
+                                <h4 class="store-card__name">{{STORE_1_NAME}}</h4>
+                                <span class="store-card__status store-card__status--open">🟢 Open</span>
+                            </div>
+                            <div class="store-card__details">
+                                <div class="store-detail">
+                                    <span class="store-detail__icon">📍</span>
+                                    <span class="store-detail__text">{{STORE_1_ADDRESS}}</span>
+                                </div>
+                                <div class="store-detail">
+                                    <span class="store-detail__icon">⏰</span>
+                                    <span class="store-detail__text">{{STORE_1_HOURS}}</span>
+                                </div>
+                                <div class="store-detail">
+                                    <span class="store-detail__icon">📞</span>
+                                    <span class="store-detail__text">{{STORE_1_PHONE}}</span>
+                                </div>
+                            </div>
+                            <div class="store-card__features">
+                                <span class="store-feature">🚗 Drive-thru</span>
+                                <span class="store-feature">📱 Mobile Order</span>
+                                <span class="store-feature">📶 WiFi</span>
+                            </div>
+                            <div class="store-card__actions">
+                                <button class="btn btn--primary btn--small">Order Here</button>
+                                <button class="btn btn--outline btn--small">Get Directions</button>
+                            </div>
+                        </div>
+
+                        <div class="store-card">
+                            <div class="store-card__header">
+                                <h4 class="store-card__name">{{STORE_2_NAME}}</h4>
+                                <span class="store-card__status store-card__status--open">🟢 Open</span>
+                            </div>
+                            <div class="store-card__details">
+                                <div class="store-detail">
+                                    <span class="store-detail__icon">📍</span>
+                                    <span class="store-detail__text">{{STORE_2_ADDRESS}}</span>
+                                </div>
+                                <div class="store-detail">
+                                    <span class="store-detail__icon">⏰</span>
+                                    <span class="store-detail__text">{{STORE_2_HOURS}}</span>
+                                </div>
+                                <div class="store-detail">
+                                    <span class="store-detail__icon">📞</span>
+                                    <span class="store-detail__text">{{STORE_2_PHONE}}</span>
+                                </div>
+                            </div>
+                            <div class="store-card__features">
+                                <span class="store-feature">📱 Mobile Order</span>
+                                <span class="store-feature">📶 WiFi</span>
+                                <span class="store-feature">🪑 Seating</span>
+                            </div>
+                            <div class="store-card__actions">
+                                <button class="btn btn--primary btn--small">Order Here</button>
+                                <button class="btn btn--outline btn--small">Get Directions</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}}" class="footer__logo">
+                    <p class="footer__description">{{FOOTER_DESCRIPTION}}</p>
+                    <div class="footer__app-links">
+                        <h4>Get the App</h4>
+                        <div class="app-links">
+                            <a href="{{APP_STORE_URL}}" class="app-link">
+                                <img src="{{APP_STORE_BADGE}}" alt="Download on App Store">
+                            </a>
+                            <a href="{{GOOGLE_PLAY_URL}}" class="app-link">
+                                <img src="{{GOOGLE_PLAY_BADGE}}" alt="Get it on Google Play">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer__section">
+                    <h3 class="footer__title">Menu</h3>
+                    <ul class="footer__links">
+                        <li><a href="#hot-coffees">Hot Coffees</a></li>
+                        <li><a href="#cold-coffees">Cold Coffees</a></li>
+                        <li><a href="#frappuccino">Frappuccino®</a></li>
+                        <li><a href="#tea">Tea & Refreshers</a></li>
+                        <li><a href="#food">Food</a></li>
+                        <li><a href="#at-home">At Home Coffee</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__section">
+                    <h3 class="footer__title">Company</h3>
+                    <ul class="footer__links">
+                        <li><a href="#about">Our Company</a></li>
+                        <li><a href="#heritage">Our Heritage</a></li>
+                        <li><a href="#coffee">Our Coffee</a></li>
+                        <li><a href="#responsibility">Social Impact</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#press">Press Center</a></li>
+                        <li><a href="#investors">Investor Relations</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__section">
+                    <h3 class="footer__title">Customer Service</h3>
+                    <ul class="footer__links">
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#support">Customer Service</a></li>
+                        <li><a href="#gift-cards">Gift Cards</a></li>
+                        <li><a href="#store-locator">Store Locator</a></li>
+                        <li><a href="#accessibility">Accessibility</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <div class="footer__legal">
+                    <p>&copy; 2024 {{RESTAURANT_NAME}} Corporation. All rights reserved.</p>
+                    <div class="footer__legal-links">
+                        <a href="#privacy">Privacy Policy</a>
+                        <a href="#terms">Terms of Use</a>
+                        <a href="#accessibility">Accessibility</a>
+                        <a href="#ca-supply-chains">CA Supply Chains Act</a>
+                        <a href="#cookie-preferences">Cookie Preferences</a>
+                    </div>
+                </div>
+                <div class="footer__social">
+                    <a href="{{SPOTIFY_URL}}" class="social-icon" title="Spotify">🎵</a>
+                    <a href="{{FACEBOOK_URL}}" class="social-icon" title="Facebook">📘</a>
+                    <a href="{{PINTEREST_URL}}" class="social-icon" title="Pinterest">📌</a>
+                    <a href="{{INSTAGRAM_URL}}" class="social-icon" title="Instagram">📷</a>
+                    <a href="{{YOUTUBE_URL}}" class="social-icon" title="YouTube">📺</a>
+                    <a href="{{TWITTER_URL}}" class="social-icon" title="Twitter">🐦</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="signin-modal" class="modal">
+        <div class="modal__content">
+            <button class="modal__close">&times;</button>
+            <h2 class="modal__title">Sign in to {{RESTAURANT_NAME}} Rewards</h2>
+            <p class="modal__subtitle">Join now and start earning Stars toward free drinks and food</p>
+            <form class="signin-form">
+                <div class="form__group">
+                    <label for="signin-email">Email address</label>
+                    <input type="email" id="signin-email" name="email" required>
+                </div>
+                <div class="form__group">
+                    <label for="signin-password">Password</label>
+                    <input type="password" id="signin-password" name="password" required>
+                </div>
+                <button type="submit" class="btn btn--primary btn--full">Sign In</button>
+                <div class="signin-form__links">
+                    <a href="#forgot-password">Forgot your password?</a>
+                    <a href="#create-account">Create an account</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="order-modal" class="modal">
+        <div class="modal__content">
+            <button class="modal__close">&times;</button>
+            <h2 class="modal__title">Order {{RESTAURANT_NAME}}</h2>
+            <div class="modal__options">
+                <a href="{{MOBILE_ORDER_URL}}" class="modal__option">
+                    <div class="modal__option-icon">📱</div>
+                    <div class="modal__option-content">
+                        <strong>Mobile Order & Pay</strong>
+                        <span>Order ahead, skip the line</span>
+                        <small>Available at participating stores</small>
+                    </div>
+                </a>
+                <a href="{{DELIVERY_URL}}" class="modal__option">
+                    <div class="modal__option-icon">🚚</div>
+                    <div class="modal__option-content">
+                        <strong>Delivery</strong>
+                        <span>Get it delivered with DoorDash</span>
+                        <small>Delivery fees may apply</small>
+                    </div>
+                </a>
+                <a href="{{DRIVE_THRU_URL}}" class="modal__option">
+                    <div class="modal__option-icon">🚗</div>
+                    <div class="modal__option-content">
+                        <strong>Drive-Thru</strong>
+                        <span>Quick pickup at the drive-thru</span>
+                        <small>Available at select locations</small>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

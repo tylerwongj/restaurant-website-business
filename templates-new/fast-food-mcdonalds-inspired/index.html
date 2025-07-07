@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Fast Food Favorites</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="fast-food-theme">
+    <!-- Top Banner -->
+    <div class="top-banner">
+        <div class="container">
+            <div class="banner-content">
+                <span class="banner-icon">🍟</span>
+                <span class="banner-text">{{TOP_BANNER_TEXT}}</span>
+                <button class="banner-cta">{{BANNER_CTA}}</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar-fast">
+        <div class="nav-container">
+            <div class="logo-fast">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+            </div>
+            <ul class="nav-menu-fast">
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#deals">Deals</a></li>
+                <li><a href="#locations">Locations</a></li>
+                <li><a href="#app">App</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn-order-now">Order Now</button>
+                <button class="btn-download-app">Get App</button>
+            </div>
+            <div class="mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-fast">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">{{HERO_TITLE}}</h1>
+                <p class="hero-subtitle">{{HERO_SUBTITLE}}</p>
+                <div class="hero-features">
+                    <div class="feature">
+                        <span class="feature-icon">⚡</span>
+                        <span>{{FEATURE_1}}</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">📱</span>
+                        <span>{{FEATURE_2}}</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">🚗</span>
+                        <span>{{FEATURE_3}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-cta">
+                <button class="btn-order-hero">Start Your Order</button>
+                <button class="btn-find-location">Find Location</button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="{{HERO_PRODUCT_IMAGE}}" alt="{{HERO_PRODUCT_NAME}}">
+        </div>
+    </section>
+
+    <!-- Limited Time Offers -->
+    <section id="deals" class="limited-offers">
+        <div class="container">
+            <div class="offers-header">
+                <h2>Limited Time Offers</h2>
+                <p>{{LTO_SUBTITLE}}</p>
+            </div>
+            <div class="offers-grid">
+                <div class="offer-card featured">
+                    <div class="offer-badge">New!</div>
+                    <div class="offer-image">
+                        <img src="{{LTO_1_IMAGE}}" alt="{{LTO_1_NAME}}">
+                    </div>
+                    <div class="offer-content">
+                        <h3>{{LTO_1_NAME}}</h3>
+                        <p class="offer-description">{{LTO_1_DESCRIPTION}}</p>
+                        <div class="offer-price">
+                            <span class="price-new">{{LTO_1_PRICE}}</span>
+                            <span class="price-old">{{LTO_1_ORIGINAL_PRICE}}</span>
+                        </div>
+                        <div class="offer-validity">
+                            <span>{{LTO_1_VALIDITY}}</span>
+                        </div>
+                        <button class="btn-order-item">Order Now</button>
+                    </div>
+                </div>
+                
+                <div class="offer-card">
+                    <div class="offer-image">
+                        <img src="{{LTO_2_IMAGE}}" alt="{{LTO_2_NAME}}">
+                    </div>
+                    <div class="offer-content">
+                        <h3>{{LTO_2_NAME}}</h3>
+                        <p class="offer-description">{{LTO_2_DESCRIPTION}}</p>
+                        <div class="offer-price">
+                            <span class="price-new">{{LTO_2_PRICE}}</span>
+                        </div>
+                        <div class="offer-validity">
+                            <span>{{LTO_2_VALIDITY}}</span>
+                        </div>
+                        <button class="btn-order-item">Order Now</button>
+                    </div>
+                </div>
+                
+                <div class="offer-card">
+                    <div class="offer-image">
+                        <img src="{{LTO_3_IMAGE}}" alt="{{LTO_3_NAME}}">
+                    </div>
+                    <div class="offer-content">
+                        <h3>{{LTO_3_NAME}}</h3>
+                        <p class="offer-description">{{LTO_3_DESCRIPTION}}</p>
+                        <div class="offer-price">
+                            <span class="price-new">{{LTO_3_PRICE}}</span>
+                        </div>
+                        <div class="offer-validity">
+                            <span>{{LTO_3_VALIDITY}}</span>
+                        </div>
+                        <button class="btn-order-item">Order Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu-section">
+        <div class="container">
+            <div class="menu-header">
+                <h2>Our Menu</h2>
+                <p>{{MENU_SUBTITLE}}</p>
+            </div>
+            <div class="menu-categories">
+                <button class="category-btn active" data-category="burgers">Burgers</button>
+                <button class="category-btn" data-category="chicken">Chicken</button>
+                <button class="category-btn" data-category="sides">Sides</button>
+                <button class="category-btn" data-category="drinks">Drinks</button>
+                <button class="category-btn" data-category="desserts">Desserts</button>
+            </div>
+            
+            <div class="menu-content">
+                <div class="menu-category active" id="burgers">
+                    <div class="menu-items">
+                        <div class="menu-item bestseller">
+                            <div class="item-badge">Bestseller</div>
+                            <div class="item-image">
+                                <img src="{{BURGER_1_IMAGE}}" alt="{{BURGER_1_NAME}}">
+                            </div>
+                            <div class="item-info">
+                                <h3>{{BURGER_1_NAME}}</h3>
+                                <p class="item-description">{{BURGER_1_DESCRIPTION}}</p>
+                                <div class="item-details">
+                                    <span class="calories">{{BURGER_1_CALORIES}} cal</span>
+                                    <span class="prep-time">{{BURGER_1_PREP_TIME}}</span>
+                                </div>
+                                <div class="item-price">{{BURGER_1_PRICE}}</div>
+                                <button class="btn-add-item">Add to Order</button>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="{{BURGER_2_IMAGE}}" alt="{{BURGER_2_NAME}}">
+                            </div>
+                            <div class="item-info">
+                                <h3>{{BURGER_2_NAME}}</h3>
+                                <p class="item-description">{{BURGER_2_DESCRIPTION}}</p>
+                                <div class="item-details">
+                                    <span class="calories">{{BURGER_2_CALORIES}} cal</span>
+                                    <span class="prep-time">{{BURGER_2_PREP_TIME}}</span>
+                                </div>
+                                <div class="item-price">{{BURGER_2_PRICE}}</div>
+                                <button class="btn-add-item">Add to Order</button>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="{{BURGER_3_IMAGE}}" alt="{{BURGER_3_NAME}}">
+                            </div>
+                            <div class="item-info">
+                                <h3>{{BURGER_3_NAME}}</h3>
+                                <p class="item-description">{{BURGER_3_DESCRIPTION}}</p>
+                                <div class="item-details">
+                                    <span class="calories">{{BURGER_3_CALORIES}} cal</span>
+                                    <span class="prep-time">{{BURGER_3_PREP_TIME}}</span>
+                                </div>
+                                <div class="item-price">{{BURGER_3_PRICE}}</div>
+                                <button class="btn-add-item">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-category" id="chicken">
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="{{CHICKEN_1_IMAGE}}" alt="{{CHICKEN_1_NAME}}">
+                            </div>
+                            <div class="item-info">
+                                <h3>{{CHICKEN_1_NAME}}</h3>
+                                <p class="item-description">{{CHICKEN_1_DESCRIPTION}}</p>
+                                <div class="item-details">
+                                    <span class="calories">{{CHICKEN_1_CALORIES}} cal</span>
+                                    <span class="spice-level">{{CHICKEN_1_SPICE}}</span>
+                                </div>
+                                <div class="item-price">{{CHICKEN_1_PRICE}}</div>
+                                <button class="btn-add-item">Add to Order</button>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="{{CHICKEN_2_IMAGE}}" alt="{{CHICKEN_2_NAME}}">
+                            </div>
+                            <div class="item-info">
+                                <h3>{{CHICKEN_2_NAME}}</h3>
+                                <p class="item-description">{{CHICKEN_2_DESCRIPTION}}</p>
+                                <div class="item-details">
+                                    <span class="calories">{{CHICKEN_2_CALORIES}} cal</span>
+                                </div>
+                                <div class="item-price">{{CHICKEN_2_PRICE}}</div>
+                                <button class="btn-add-item">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-category" id="sides">
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="{{SIDE_1_IMAGE}}" alt="{{SIDE_1_NAME}}">
+                            </div>
+                            <div class="item-info">
+                                <h3>{{SIDE_1_NAME}}</h3>
+                                <p class="item-description">{{SIDE_1_DESCRIPTION}}</p>
+                                <div class="item-details">
+                                    <span class="calories">{{SIDE_1_CALORIES}} cal</span>
+                                </div>
+                                <div class="item-price">{{SIDE_1_PRICE}}</div>
+                                <button class="btn-add-item">Add to Order</button>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="{{SIDE_2_IMAGE}}" alt="{{SIDE_2_NAME}}">
+                            </div>
+                            <div class="item-info">
+                                <h3>{{SIDE_2_NAME}}</h3>
+                                <p class="item-description">{{SIDE_2_DESCRIPTION}}</p>
+                                <div class="item-details">
+                                    <span class="calories">{{SIDE_2_CALORIES}} cal</span>
+                                </div>
+                                <div class="item-price">{{SIDE_2_PRICE}}</div>
+                                <button class="btn-add-item">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-category" id="drinks">
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="{{DRINK_1_IMAGE}}" alt="{{DRINK_1_NAME}}">
+                            </div>
+                            <div class="item-info">
+                                <h3>{{DRINK_1_NAME}}</h3>
+                                <p class="item-description">{{DRINK_1_DESCRIPTION}}</p>
+                                <div class="size-options">
+                                    <span class="size-option" data-size="small" data-price="{{DRINK_1_SMALL_PRICE}}">Small</span>
+                                    <span class="size-option" data-size="medium" data-price="{{DRINK_1_MEDIUM_PRICE}}">Medium</span>
+                                    <span class="size-option" data-size="large" data-price="{{DRINK_1_LARGE_PRICE}}">Large</span>
+                                </div>
+                                <div class="item-price">{{DRINK_1_MEDIUM_PRICE}}</div>
+                                <button class="btn-add-item">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-category" id="desserts">
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="{{DESSERT_1_IMAGE}}" alt="{{DESSERT_1_NAME}}">
+                            </div>
+                            <div class="item-info">
+                                <h3>{{DESSERT_1_NAME}}</h3>
+                                <p class="item-description">{{DESSERT_1_DESCRIPTION}}</p>
+                                <div class="item-details">
+                                    <span class="calories">{{DESSERT_1_CALORIES}} cal</span>
+                                </div>
+                                <div class="item-price">{{DESSERT_1_PRICE}}</div>
+                                <button class="btn-add-item">Add to Order</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile App Section -->
+    <section id="app" class="mobile-app">
+        <div class="container">
+            <div class="app-content">
+                <div class="app-text">
+                    <h2>{{APP_TITLE}}</h2>
+                    <p class="app-subtitle">{{APP_SUBTITLE}}</p>
+                    <div class="app-features">
+                        <div class="app-feature">
+                            <div class="feature-icon">🎯</div>
+                            <div class="feature-text">
+                                <h4>{{APP_FEATURE_1_TITLE}}</h4>
+                                <p>{{APP_FEATURE_1_DESC}}</p>
+                            </div>
+                        </div>
+                        <div class="app-feature">
+                            <div class="feature-icon">💳</div>
+                            <div class="feature-text">
+                                <h4>{{APP_FEATURE_2_TITLE}}</h4>
+                                <p>{{APP_FEATURE_2_DESC}}</p>
+                            </div>
+                        </div>
+                        <div class="app-feature">
+                            <div class="feature-icon">🏆</div>
+                            <div class="feature-text">
+                                <h4>{{APP_FEATURE_3_TITLE}}</h4>
+                                <p>{{APP_FEATURE_3_DESC}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="app-downloads">
+                        <a href="{{APP_STORE_URL}}" class="download-btn">
+                            <img src="{{APP_STORE_BADGE}}" alt="Download on App Store">
+                        </a>
+                        <a href="{{GOOGLE_PLAY_URL}}" class="download-btn">
+                            <img src="{{GOOGLE_PLAY_BADGE}}" alt="Get it on Google Play">
+                        </a>
+                    </div>
+                </div>
+                <div class="app-image">
+                    <img src="{{APP_MOCKUP_IMAGE}}" alt="{{RESTAURANT_NAME}} Mobile App">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Menu -->
+    <section class="value-menu">
+        <div class="container">
+            <div class="value-header">
+                <h2>{{VALUE_MENU_TITLE}}</h2>
+                <p>{{VALUE_MENU_SUBTITLE}}</p>
+            </div>
+            <div class="value-items">
+                <div class="value-item">
+                    <div class="value-image">
+                        <img src="{{VALUE_1_IMAGE}}" alt="{{VALUE_1_NAME}}">
+                    </div>
+                    <div class="value-info">
+                        <h3>{{VALUE_1_NAME}}</h3>
+                        <div class="value-price">{{VALUE_1_PRICE}}</div>
+                        <button class="btn-value-order">Order Now</button>
+                    </div>
+                </div>
+                
+                <div class="value-item">
+                    <div class="value-image">
+                        <img src="{{VALUE_2_IMAGE}}" alt="{{VALUE_2_NAME}}">
+                    </div>
+                    <div class="value-info">
+                        <h3>{{VALUE_2_NAME}}</h3>
+                        <div class="value-price">{{VALUE_2_PRICE}}</div>
+                        <button class="btn-value-order">Order Now</button>
+                    </div>
+                </div>
+                
+                <div class="value-item">
+                    <div class="value-image">
+                        <img src="{{VALUE_3_IMAGE}}" alt="{{VALUE_3_NAME}}">
+                    </div>
+                    <div class="value-info">
+                        <h3>{{VALUE_3_NAME}}</h3>
+                        <div class="value-price">{{VALUE_3_PRICE}}</div>
+                        <button class="btn-value-order">Order Now</button>
+                    </div>
+                </div>
+                
+                <div class="value-item">
+                    <div class="value-image">
+                        <img src="{{VALUE_4_IMAGE}}" alt="{{VALUE_4_NAME}}">
+                    </div>
+                    <div class="value-info">
+                        <h3>{{VALUE_4_NAME}}</h3>
+                        <div class="value-price">{{VALUE_4_PRICE}}</div>
+                        <button class="btn-value-order">Order Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Finder -->
+    <section id="locations" class="location-finder">
+        <div class="container">
+            <h2>Find a {{RESTAURANT_NAME}} Near You</h2>
+            <div class="location-search">
+                <div class="search-input">
+                    <input type="text" placeholder="Enter your address or zip code">
+                    <button class="btn-search">Find Locations</button>
+                </div>
+            </div>
+            <div class="location-services">
+                <div class="service-option">
+                    <div class="service-icon">🚗</div>
+                    <h3>Drive-Thru</h3>
+                    <p>{{DRIVE_THRU_DESCRIPTION}}</p>
+                </div>
+                <div class="service-option">
+                    <div class="service-icon">🚚</div>
+                    <h3>Delivery</h3>
+                    <p>{{DELIVERY_DESCRIPTION}}</p>
+                </div>
+                <div class="service-option">
+                    <div class="service-icon">🏃</div>
+                    <h3>Pickup</h3>
+                    <p>{{PICKUP_DESCRIPTION}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-fast">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <div class="footer-logo">
+                        <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}}">
+                    </div>
+                    <div class="footer-app">
+                        <p>Get our app:</p>
+                        <div class="app-badges">
+                            <a href="{{APP_STORE_URL}}">
+                                <img src="{{APP_STORE_BADGE}}" alt="App Store">
+                            </a>
+                            <a href="{{GOOGLE_PLAY_URL}}">
+                                <img src="{{GOOGLE_PLAY_BADGE}}" alt="Google Play">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-sections">
+                    <div class="footer-section">
+                        <h4>Menu</h4>
+                        <ul>
+                            <li><a href="#menu">Full Menu</a></li>
+                            <li><a href="#deals">Current Deals</a></li>
+                            <li><a href="#">Nutrition</a></li>
+                            <li><a href="#">Allergens</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="#">Mobile Ordering</a></li>
+                            <li><a href="#">Delivery</a></li>
+                            <li><a href="#">Drive-Thru</a></li>
+                            <li><a href="#">Catering</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#locations">Locations</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Franchise</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="#">Customer Service</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Feedback</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}" aria-label="Facebook">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}" aria-label="Instagram">Instagram</a>
+                        <a href="{{TWITTER_URL}}" aria-label="Twitter">Twitter</a>
+                        <a href="{{YOUTUBE_URL}}" aria-label="YouTube">YouTube</a>
+                        <a href="{{TIKTOK_URL}}" aria-label="TikTok">TikTok</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <p>&copy; {{CURRENT_YEAR}} {{RESTAURANT_NAME}}. All rights reserved.</p>
+                    <div class="legal-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Accessibility</a>
+                        <a href="#">California Privacy</a>
+                        <a href="#">Do Not Sell My Info</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Menu category switching
+        document.querySelectorAll('.category-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active from all buttons and categories
+                document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.menu-category').forEach(c => c.classList.remove('active'));
+                
+                // Add active to clicked button
+                this.classList.add('active');
+                
+                // Show corresponding category
+                const categoryId = this.getAttribute('data-category');
+                document.getElementById(categoryId).classList.add('active');
+            });
+        });
+        
+        // Size selection for drinks
+        document.querySelectorAll('.size-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const container = this.closest('.menu-item');
+                const priceElement = container.querySelector('.item-price');
+                const price = this.getAttribute('data-price');
+                
+                // Remove active from siblings
+                container.querySelectorAll('.size-option').forEach(opt => opt.classList.remove('active'));
+                
+                // Add active to clicked option
+                this.classList.add('active');
+                
+                // Update price
+                priceElement.textContent = price;
+            });
+        });
+    </script>
+</body>
+</html>

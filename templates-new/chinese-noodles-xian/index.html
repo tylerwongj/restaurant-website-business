@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Authentic Chinese Noodles</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="chinese-noodles-theme">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+                <div class="logo-text">
+                    <h1>{{RESTAURANT_NAME}}</h1>
+                    <span class="tagline">正宗西安面食 • Authentic Xi'an Noodles</span>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#noodles">Hand-Pulled Noodles</a></li>
+                <li><a href="#menu">Full Menu</a></li>
+                <li><a href="#spice">Spice Levels</a></li>
+                <li><a href="#locations">Locations</a></li>
+                <li><a href="#delivery">Delivery</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#order" class="btn btn-primary">Order Now</a>
+                <a href="tel:{{PHONE}}" class="phone-link">{{PHONE}}</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <img src="{{HERO_BACKGROUND_IMAGE}}" alt="Hand-Pulled Noodles">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h2>Hand-Pulled Noodles from Xi'an</h2>
+            <p class="hero-subtitle">{{HERO_DESCRIPTION}}</p>
+            <div class="hero-features">
+                <div class="feature">
+                    <span class="feature-icon">🍜</span>
+                    <span>{{NOODLE_VARIETIES}}+ Noodle Styles</span>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">🌶️</span>
+                    <span>5 Spice Levels</span>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">📍</span>
+                    <span>{{LOCATIONS_COUNT}} NYC Locations</span>
+                </div>
+            </div>
+            <div class="hero-buttons">
+                <a href="#noodles" class="btn btn-hero-primary">Explore Noodles</a>
+                <a href="#order" class="btn btn-hero-secondary">Order Online</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fresh Made Banner -->
+    <section class="fresh-made">
+        <div class="container">
+            <div class="fresh-content">
+                <div class="fresh-text">
+                    <h3>Hand-Pulled Fresh Daily</h3>
+                    <h4>{{TODAYS_SPECIAL_NOODLE}}</h4>
+                    <p>{{FRESH_NOODLE_DESCRIPTION}}</p>
+                </div>
+                <div class="fresh-details">
+                    <div class="fresh-stat">
+                        <span class="stat-number">{{NOODLES_MADE_DAILY}}</span>
+                        <span class="stat-label">Portions Made Daily</span>
+                    </div>
+                    <div class="fresh-stat">
+                        <span class="stat-number">{{HOURS_FRESH}}</span>
+                        <span class="stat-label">Hours Fresh</span>
+                    </div>
+                    <div class="fresh-stat">
+                        <span class="stat-number">{{INGREDIENTS_COUNT}}</span>
+                        <span class="stat-label">Simple Ingredients</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hand-Pulled Noodles -->
+    <section id="noodles" class="noodles-section">
+        <div class="container">
+            <div class="noodles-header">
+                <h2>Signature Hand-Pulled Noodles</h2>
+                <p>{{NOODLES_DESCRIPTION}}</p>
+            </div>
+            
+            <div class="noodles-showcase">
+                <!-- Signature Noodle -->
+                <div class="noodle-featured">
+                    <div class="noodle-image">
+                        <img src="{{SIGNATURE_NOODLE_IMAGE}}" alt="{{SIGNATURE_NOODLE_NAME}}">
+                    </div>
+                    <div class="noodle-content">
+                        <h3>{{SIGNATURE_NOODLE_NAME}}</h3>
+                        <h4>Our Most Famous Creation</h4>
+                        <p>{{SIGNATURE_NOODLE_DESCRIPTION}}</p>
+                        <div class="noodle-specs">
+                            <div class="spec">
+                                <span class="spec-label">Spice Level</span>
+                                <div class="spice-rating">
+                                    <span class="spice-dot active"></span>
+                                    <span class="spice-dot active"></span>
+                                    <span class="spice-dot active"></span>
+                                    <span class="spice-dot"></span>
+                                    <span class="spice-dot"></span>
+                                </div>
+                            </div>
+                            <div class="spec">
+                                <span class="spec-label">Noodle Type</span>
+                                <span class="spec-value">{{SIGNATURE_NOODLE_TYPE}}</span>
+                            </div>
+                        </div>
+                        <div class="noodle-pricing">
+                            <span class="price">{{SIGNATURE_NOODLE_PRICE}}</span>
+                            <span class="size-note">Regular size</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Noodle Grid -->
+                <div class="noodles-grid">
+                    <div class="noodle-item">
+                        <img src="{{BEEF_NOODLE_IMAGE}}" alt="{{BEEF_NOODLE_NAME}}">
+                        <div class="noodle-details">
+                            <h4>{{BEEF_NOODLE_NAME}}</h4>
+                            <p>{{BEEF_NOODLE_DESCRIPTION}}</p>
+                            <div class="item-specs">
+                                <div class="spice-level">
+                                    <span class="spice-label">Spice:</span>
+                                    <div class="spice-rating">
+                                        <span class="spice-dot active"></span>
+                                        <span class="spice-dot active"></span>
+                                        <span class="spice-dot"></span>
+                                        <span class="spice-dot"></span>
+                                        <span class="spice-dot"></span>
+                                    </div>
+                                </div>
+                                <span class="price">{{BEEF_NOODLE_PRICE}}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="noodle-item">
+                        <img src="{{PORK_NOODLE_IMAGE}}" alt="{{PORK_NOODLE_NAME}}">
+                        <div class="noodle-details">
+                            <h4>{{PORK_NOODLE_NAME}}</h4>
+                            <p>{{PORK_NOODLE_DESCRIPTION}}</p>
+                            <div class="item-specs">
+                                <div class="spice-level">
+                                    <span class="spice-label">Spice:</span>
+                                    <div class="spice-rating">
+                                        <span class="spice-dot active"></span>
+                                        <span class="spice-dot active"></span>
+                                        <span class="spice-dot active"></span>
+                                        <span class="spice-dot active"></span>
+                                        <span class="spice-dot"></span>
+                                    </div>
+                                </div>
+                                <span class="price">{{PORK_NOODLE_PRICE}}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="noodle-item">
+                        <img src="{{LAMB_NOODLE_IMAGE}}" alt="{{LAMB_NOODLE_NAME}}">
+                        <div class="noodle-details">
+                            <h4>{{LAMB_NOODLE_NAME}}</h4>
+                            <p>{{LAMB_NOODLE_DESCRIPTION}}</p>
+                            <div class="item-specs">
+                                <div class="spice-level">
+                                    <span class="spice-label">Spice:</span>
+                                    <div class="spice-rating">
+                                        <span class="spice-dot active"></span>
+                                        <span class="spice-dot active"></span>
+                                        <span class="spice-dot active"></span>
+                                        <span class="spice-dot"></span>
+                                        <span class="spice-dot"></span>
+                                    </div>
+                                </div>
+                                <span class="price">{{LAMB_NOODLE_PRICE}}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="noodle-item">
+                        <img src="{{VEGETABLE_NOODLE_IMAGE}}" alt="{{VEGETABLE_NOODLE_NAME}}">
+                        <div class="noodle-details">
+                            <h4>{{VEGETABLE_NOODLE_NAME}}</h4>
+                            <p>{{VEGETABLE_NOODLE_DESCRIPTION}}</p>
+                            <div class="item-specs">
+                                <div class="spice-level">
+                                    <span class="spice-label">Spice:</span>
+                                    <div class="spice-rating">
+                                        <span class="spice-dot active"></span>
+                                        <span class="spice-dot"></span>
+                                        <span class="spice-dot"></span>
+                                        <span class="spice-dot"></span>
+                                        <span class="spice-dot"></span>
+                                    </div>
+                                </div>
+                                <span class="price">{{VEGETABLE_NOODLE_PRICE}}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="noodle-item">
+                        <img src="{{SEAFOOD_NOODLE_IMAGE}}" alt="{{SEAFOOD_NOODLE_NAME}}">
+                        <div class="noodle-details">
+                            <h4>{{SEAFOOD_NOODLE_NAME}}</h4>
+                            <p>{{SEAFOOD_NOODLE_DESCRIPTION}}</p>
+                            <div class="item-specs">
+                                <div class="spice-level">
+                                    <span class="spice-label">Spice:</span>
+                                    <div class="spice-rating">
+                                        <span class="spice-dot active"></span>
+                                        <span class="spice-dot active"></span>
+                                        <span class="spice-dot"></span>
+                                        <span class="spice-dot"></span>
+                                        <span class="spice-dot"></span>
+                                    </div>
+                                </div>
+                                <span class="price">{{SEAFOOD_NOODLE_PRICE}}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="noodle-item">
+                        <img src="{{COLD_NOODLE_IMAGE}}" alt="{{COLD_NOODLE_NAME}}">
+                        <div class="noodle-details">
+                            <h4>{{COLD_NOODLE_NAME}}</h4>
+                            <p>{{COLD_NOODLE_DESCRIPTION}}</p>
+                            <div class="item-specs">
+                                <div class="spice-level">
+                                    <span class="spice-label">Spice:</span>
+                                    <div class="spice-rating">
+                                        <span class="spice-dot active"></span>
+                                        <span class="spice-dot active"></span>
+                                        <span class="spice-dot active"></span>
+                                        <span class="spice-dot"></span>
+                                        <span class="spice-dot"></span>
+                                    </div>
+                                </div>
+                                <span class="price">{{COLD_NOODLE_PRICE}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Complete Menu -->
+    <section id="menu" class="complete-menu">
+        <div class="container">
+            <div class="menu-header">
+                <h2>Complete Xi'an Menu</h2>
+                <p>{{COMPLETE_MENU_DESCRIPTION}}</p>
+            </div>
+            
+            <div class="menu-categories">
+                <!-- Appetizers -->
+                <div class="menu-category">
+                    <h3>Appetizers & Small Plates</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>{{DUMPLING_NAME}}</h4>
+                                <p>{{DUMPLING_DESCRIPTION}}</p>
+                            </div>
+                            <span class="item-price">{{DUMPLING_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>{{CUCUMBER_SALAD_NAME}}</h4>
+                                <p>{{CUCUMBER_SALAD_DESCRIPTION}}</p>
+                            </div>
+                            <span class="item-price">{{CUCUMBER_SALAD_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>{{WONTONS_NAME}}</h4>
+                                <p>{{WONTONS_DESCRIPTION}}</p>
+                            </div>
+                            <span class="item-price">{{WONTONS_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>{{SPICY_TOFU_NAME}}</h4>
+                                <p>{{SPICY_TOFU_DESCRIPTION}}</p>
+                            </div>
+                            <span class="item-price">{{SPICY_TOFU_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rice Bowls -->
+                <div class="menu-category">
+                    <h3>Rice Bowls</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>{{MAPO_TOFU_NAME}}</h4>
+                                <p>{{MAPO_TOFU_DESCRIPTION}}</p>
+                            </div>
+                            <span class="item-price">{{MAPO_TOFU_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>{{KUNG_PAO_NAME}}</h4>
+                                <p>{{KUNG_PAO_DESCRIPTION}}</p>
+                            </div>
+                            <span class="item-price">{{KUNG_PAO_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>{{SWEET_SOUR_NAME}}</h4>
+                                <p>{{SWEET_SOUR_DESCRIPTION}}</p>
+                            </div>
+                            <span class="item-price">{{SWEET_SOUR_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Beverages -->
+                <div class="menu-category">
+                    <h3>Beverages</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>{{SOUR_PLUM_DRINK_NAME}}</h4>
+                                <p>{{SOUR_PLUM_DRINK_DESCRIPTION}}</p>
+                            </div>
+                            <span class="item-price">{{SOUR_PLUM_DRINK_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>{{HOT_TEA_NAME}}</h4>
+                                <p>{{HOT_TEA_DESCRIPTION}}</p>
+                            </div>
+                            <span class="item-price">{{HOT_TEA_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>{{SOFT_DRINKS_NAME}}</h4>
+                                <p>{{SOFT_DRINKS_DESCRIPTION}}</p>
+                            </div>
+                            <span class="item-price">{{SOFT_DRINKS_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spice Levels Guide -->
+    <section id="spice" class="spice-guide">
+        <div class="container">
+            <div class="spice-header">
+                <h2>Understanding Our Spice Levels</h2>
+                <p>{{SPICE_GUIDE_DESCRIPTION}}</p>
+            </div>
+            
+            <div class="spice-levels">
+                <div class="spice-level">
+                    <div class="spice-rating">
+                        <span class="spice-dot active"></span>
+                        <span class="spice-dot"></span>
+                        <span class="spice-dot"></span>
+                        <span class="spice-dot"></span>
+                        <span class="spice-dot"></span>
+                    </div>
+                    <h3>Level 1 - Mild</h3>
+                    <p>{{SPICE_LEVEL_1_DESCRIPTION}}</p>
+                    <span class="spice-note">Perfect for beginners</span>
+                </div>
+
+                <div class="spice-level">
+                    <div class="spice-rating">
+                        <span class="spice-dot active"></span>
+                        <span class="spice-dot active"></span>
+                        <span class="spice-dot"></span>
+                        <span class="spice-dot"></span>
+                        <span class="spice-dot"></span>
+                    </div>
+                    <h3>Level 2 - Medium</h3>
+                    <p>{{SPICE_LEVEL_2_DESCRIPTION}}</p>
+                    <span class="spice-note">Most popular choice</span>
+                </div>
+
+                <div class="spice-level">
+                    <div class="spice-rating">
+                        <span class="spice-dot active"></span>
+                        <span class="spice-dot active"></span>
+                        <span class="spice-dot active"></span>
+                        <span class="spice-dot"></span>
+                        <span class="spice-dot"></span>
+                    </div>
+                    <h3>Level 3 - Spicy</h3>
+                    <p>{{SPICE_LEVEL_3_DESCRIPTION}}</p>
+                    <span class="spice-note">Traditional Xi'an heat</span>
+                </div>
+
+                <div class="spice-level">
+                    <div class="spice-rating">
+                        <span class="spice-dot active"></span>
+                        <span class="spice-dot active"></span>
+                        <span class="spice-dot active"></span>
+                        <span class="spice-dot active"></span>
+                        <span class="spice-dot"></span>
+                    </div>
+                    <h3>Level 4 - Very Spicy</h3>
+                    <p>{{SPICE_LEVEL_4_DESCRIPTION}}</p>
+                    <span class="spice-note">For spice enthusiasts</span>
+                </div>
+
+                <div class="spice-level">
+                    <div class="spice-rating">
+                        <span class="spice-dot active"></span>
+                        <span class="spice-dot active"></span>
+                        <span class="spice-dot active"></span>
+                        <span class="spice-dot active"></span>
+                        <span class="spice-dot active"></span>
+                    </div>
+                    <h3>Level 5 - Extreme</h3>
+                    <p>{{SPICE_LEVEL_5_DESCRIPTION}}</p>
+                    <span class="spice-note">Proceed with caution!</span>
+                </div>
+            </div>
+
+            <div class="spice-warning">
+                <h3>⚠️ Spice Level Notice</h3>
+                <p>{{SPICE_WARNING_MESSAGE}}</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations -->
+    <section id="locations" class="locations-section">
+        <div class="container">
+            <div class="locations-header">
+                <h2>NYC Locations</h2>
+                <p>{{LOCATIONS_DESCRIPTION}}</p>
+            </div>
+            
+            <div class="locations-grid">
+                <div class="location-card">
+                    <div class="location-info">
+                        <h3>{{LOCATION_1_NAME}}</h3>
+                        <div class="location-details">
+                            <p class="address">{{LOCATION_1_ADDRESS}}</p>
+                            <p class="neighborhood">{{LOCATION_1_NEIGHBORHOOD}}</p>
+                            <p class="phone"><a href="tel:{{LOCATION_1_PHONE}}">{{LOCATION_1_PHONE}}</a></p>
+                        </div>
+                        <div class="location-hours">
+                            <h4>Hours</h4>
+                            <p>{{LOCATION_1_WEEKDAY_HOURS}}</p>
+                            <p>{{LOCATION_1_WEEKEND_HOURS}}</p>
+                        </div>
+                        <div class="location-features">
+                            <span class="feature">{{LOCATION_1_FEATURE_1}}</span>
+                            <span class="feature">{{LOCATION_1_FEATURE_2}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="location-card">
+                    <div class="location-info">
+                        <h3>{{LOCATION_2_NAME}}</h3>
+                        <div class="location-details">
+                            <p class="address">{{LOCATION_2_ADDRESS}}</p>
+                            <p class="neighborhood">{{LOCATION_2_NEIGHBORHOOD}}</p>
+                            <p class="phone"><a href="tel:{{LOCATION_2_PHONE}}">{{LOCATION_2_PHONE}}</a></p>
+                        </div>
+                        <div class="location-hours">
+                            <h4>Hours</h4>
+                            <p>{{LOCATION_2_WEEKDAY_HOURS}}</p>
+                            <p>{{LOCATION_2_WEEKEND_HOURS}}</p>
+                        </div>
+                        <div class="location-features">
+                            <span class="feature">{{LOCATION_2_FEATURE_1}}</span>
+                            <span class="feature">{{LOCATION_2_FEATURE_2}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="location-card">
+                    <div class="location-info">
+                        <h3>{{LOCATION_3_NAME}}</h3>
+                        <div class="location-details">
+                            <p class="address">{{LOCATION_3_ADDRESS}}</p>
+                            <p class="neighborhood">{{LOCATION_3_NEIGHBORHOOD}}</p>
+                            <p class="phone"><a href="tel:{{LOCATION_3_PHONE}}">{{LOCATION_3_PHONE}}</a></p>
+                        </div>
+                        <div class="location-hours">
+                            <h4>Hours</h4>
+                            <p>{{LOCATION_3_WEEKDAY_HOURS}}</p>
+                            <p>{{LOCATION_3_WEEKEND_HOURS}}</p>
+                        </div>
+                        <div class="location-features">
+                            <span class="feature">{{LOCATION_3_FEATURE_1}}</span>
+                            <span class="feature">{{LOCATION_3_FEATURE_2}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Delivery -->
+    <section id="delivery" class="delivery-section">
+        <div class="container">
+            <div class="delivery-header">
+                <h2>Delivery & Pickup</h2>
+                <p>{{DELIVERY_DESCRIPTION}}</p>
+            </div>
+            
+            <div class="delivery-options">
+                <div class="delivery-method">
+                    <div class="method-icon">🚚</div>
+                    <h3>Free Delivery</h3>
+                    <p>{{FREE_DELIVERY_DESCRIPTION}}</p>
+                    <div class="method-details">
+                        <span class="minimum">{{FREE_DELIVERY_MINIMUM}} minimum</span>
+                        <span class="time">{{FREE_DELIVERY_TIME}}</span>
+                        <span class="area">{{FREE_DELIVERY_AREA}}</span>
+                    </div>
+                </div>
+
+                <div class="delivery-method">
+                    <div class="method-icon">📱</div>
+                    <h3>Quick Pickup</h3>
+                    <p>{{PICKUP_DESCRIPTION}}</p>
+                    <div class="method-details">
+                        <span class="time">{{PICKUP_TIME}}</span>
+                        <span class="discount">{{PICKUP_DISCOUNT}} off pickup orders</span>
+                    </div>
+                </div>
+
+                <div class="delivery-method">
+                    <div class="method-icon">🍜</div>
+                    <h3>Catering Orders</h3>
+                    <p>{{CATERING_DELIVERY_DESCRIPTION}}</p>
+                    <div class="method-details">
+                        <span class="notice">{{CATERING_NOTICE}}</span>
+                        <span class="minimum">{{CATERING_MINIMUM}} minimum</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="delivery-apps">
+                <h3>Order Through Your Favorite App</h3>
+                <div class="apps-grid">
+                    <a href="{{SEAMLESS_URL}}" class="app-link">
+                        <span class="app-name">Seamless</span>
+                    </a>
+                    <a href="{{GRUBHUB_URL}}" class="app-link">
+                        <span class="app-name">Grubhub</span>
+                    </a>
+                    <a href="{{DOORDASH_URL}}" class="app-link">
+                        <span class="app-name">DoorDash</span>
+                    </a>
+                    <a href="{{UBEREATS_URL}}" class="app-link">
+                        <span class="app-name">Uber Eats</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>{{ABOUT_TITLE}}</h2>
+                    <p>{{ABOUT_DESCRIPTION_1}}</p>
+                    <p>{{ABOUT_DESCRIPTION_2}}</p>
+                    <div class="founder-story">
+                        <h3>Our Founder's Story</h3>
+                        <blockquote>
+                            "{{FOUNDER_QUOTE}}"
+                        </blockquote>
+                        <div class="founder-signature">
+                            <img src="{{FOUNDER_IMAGE}}" alt="{{FOUNDER_NAME}}">
+                            <div class="signature-details">
+                                <h4>{{FOUNDER_NAME}}</h4>
+                                <p>Founder & Head Chef</p>
+                                <span class="origin">Originally from {{FOUNDER_ORIGIN}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="{{ABOUT_IMAGE}}" alt="Noodle Making Process">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Noodle Making Process -->
+    <section class="noodle-process">
+        <div class="container">
+            <h2>The Art of Hand-Pulled Noodles</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h4>{{PROCESS_STEP_1_TITLE}}</h4>
+                    <p>{{PROCESS_STEP_1_DESCRIPTION}}</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h4>{{PROCESS_STEP_2_TITLE}}</h4>
+                    <p>{{PROCESS_STEP_2_DESCRIPTION}}</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h4>{{PROCESS_STEP_3_TITLE}}</h4>
+                    <p>{{PROCESS_STEP_3_DESCRIPTION}}</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h4>{{PROCESS_STEP_4_TITLE}}</h4>
+                    <p>{{PROCESS_STEP_4_DESCRIPTION}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Order -->
+    <section id="order" class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Order Your Noodles</h2>
+                    <div class="quick-order">
+                        <h4>Quick Order Options</h4>
+                        <div class="order-buttons">
+                            <a href="{{ONLINE_ORDER_URL}}" class="btn btn-order">Order Online</a>
+                            <a href="tel:{{MAIN_PHONE}}" class="btn btn-secondary">Call to Order</a>
+                        </div>
+                    </div>
+                    <div class="main-location">
+                        <h4>Main Location</h4>
+                        <p>{{MAIN_ADDRESS}}</p>
+                        <p><a href="tel:{{MAIN_PHONE}}">{{MAIN_PHONE}}</a></p>
+                    </div>
+                    <div class="hours-info">
+                        <h4>Hours</h4>
+                        <p>{{MAIN_WEEKDAY_HOURS}}</p>
+                        <p>{{MAIN_WEEKEND_HOURS}}</p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Questions or Catering?</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Phone Number">
+                        </div>
+                        <div class="form-group">
+                            <select>
+                                <option value="">Select Inquiry Type</option>
+                                <option value="catering">Catering Order</option>
+                                <option value="large-order">Large Order</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="general">General Question</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your message (order details, spice preferences, etc.)" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>{{RESTAURANT_NAME}}</h3>
+                    <p>{{FOOTER_DESCRIPTION}}</p>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}" aria-label="Facebook">📘</a>
+                        <a href="{{INSTAGRAM_URL}}" aria-label="Instagram">📷</a>
+                        <a href="{{TWITTER_URL}}" aria-label="Twitter">🐦</a>
+                        <a href="{{YELP_URL}}" aria-label="Yelp">⭐</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Order</h4>
+                    <ul>
+                        <li><a href="#noodles">Hand-Pulled Noodles</a></li>
+                        <li><a href="#delivery">Delivery</a></li>
+                        <li><a href="{{ONLINE_ORDER_URL}}">Order Online</a></li>
+                        <li><a href="tel:{{MAIN_PHONE}}">Call to Order</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Locations</h4>
+                    <ul>
+                        <li><a href="#locations">{{LOCATION_1_NAME}}</a></li>
+                        <li><a href="#locations">{{LOCATION_2_NAME}}</a></li>
+                        <li><a href="#locations">{{LOCATION_3_NAME}}</a></li>
+                        <li><a href="#about">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Main Location</h4>
+                    <p>{{MAIN_ADDRESS}}</p>
+                    <p>{{MAIN_PHONE}}</p>
+                    <p>{{MAIN_WEEKDAY_HOURS}}</p>
+                    <p>{{MAIN_WEEKEND_HOURS}}</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; {{CURRENT_YEAR}} {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Fast Food, Drive-Thru & Delivery</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - Quick service restaurant with drive-thru, mobile ordering, and fast delivery">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600;700;800&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="fast-food-scheme">
+    <header class="header">
+        <div class="promo-banner">
+            <div class="banner-scroll">
+                <span>🍟 {{CURRENT_DEAL}} • 🚗 Drive-Thru Open {{DRIVE_THRU_HOURS}} • 📱 Order on App for {{APP_DISCOUNT}} off • 🎉 {{LIMITED_TIME_OFFER}}</span>
+            </div>
+        </div>
+        <div class="container">
+            <div class="logo">
+                <h1>{{RESTAURANT_NAME}}</h1>
+                <span class="tagline">{{RESTAURANT_TAGLINE}}</span>
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#deals">Deals</a></li>
+                    <li><a href="#nutrition">Nutrition</a></li>
+                    <li><a href="#locations">Locations</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#app" class="btn btn-app">Download App</a>
+                <a href="#order" class="btn btn-order">Order Now</a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h2>Fast, Fresh, {{SIGNATURE_ITEM}}</h2>
+                <p>Delicious food made fast. Drive-thru, pickup, delivery, or dine-in - we've got you covered with quality ingredients and unbeatable speed.</p>
+                <div class="hero-features">
+                    <div class="feature">
+                        <div class="feature-icon">🚗</div>
+                        <h4>Drive-Thru</h4>
+                        <p>{{AVERAGE_DRIVE_THRU_TIME}} avg wait</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">📱</div>
+                        <h4>Mobile Order</h4>
+                        <p>Skip the line, order ahead</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🚚</div>
+                        <h4>Fast Delivery</h4>
+                        <p>{{DELIVERY_TIME}} or less</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">⏰</div>
+                        <h4>Open Late</h4>
+                        <p>Until {{CLOSING_TIME}}</p>
+                    </div>
+                </div>
+                <div class="hero-cta">
+                    <a href="#order" class="btn btn-primary">Order Now</a>
+                    <a href="#deals" class="btn btn-secondary">View Deals</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-product">
+                    <img src="{{HERO_PRODUCT_IMAGE}}" alt="{{SIGNATURE_ITEM}}">
+                    <div class="product-badge">{{PRODUCT_BADGE}}</div>
+                </div>
+                <div class="value-callout">
+                    <span class="price">{{HERO_COMBO_PRICE}}</span>
+                    <span class="combo-name">{{HERO_COMBO_NAME}}</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ordering-options">
+        <div class="container">
+            <h2>Order Your Way</h2>
+            <div class="ordering-grid">
+                <div class="ordering-option drive-thru">
+                    <div class="option-icon">🚗</div>
+                    <h3>Drive-Thru</h3>
+                    <p>Quick and convenient without leaving your car</p>
+                    <div class="option-features">
+                        <span>• {{AVERAGE_DRIVE_THRU_TIME}} average wait</span>
+                        <span>• Mobile order pickup available</span>
+                        <span>• Open {{DRIVE_THRU_HOURS}}</span>
+                        <span>• {{DRIVE_THRU_LOCATIONS}} locations</span>
+                    </div>
+                    <a href="#locations" class="btn btn-outline">Find Drive-Thru</a>
+                </div>
+
+                <div class="ordering-option mobile">
+                    <div class="option-icon">📱</div>
+                    <h3>Mobile App</h3>
+                    <p>Order ahead, skip the line, earn rewards</p>
+                    <div class="option-features">
+                        <span>• Skip the line with mobile pickup</span>
+                        <span>• Exclusive app-only deals</span>
+                        <span>• {{REWARDS_PROGRAM}} rewards points</span>
+                        <span>• Customize your favorites</span>
+                    </div>
+                    <a href="#app" class="btn btn-primary">Download App</a>
+                </div>
+
+                <div class="ordering-option delivery">
+                    <div class="option-icon">🚚</div>
+                    <h3>Delivery</h3>
+                    <p>Fresh food delivered to your door</p>
+                    <div class="option-features">
+                        <span>• {{DELIVERY_TIME}} delivery time</span>
+                        <span>• {{DELIVERY_FEE}} delivery fee</span>
+                        <span>• Order minimum {{DELIVERY_MINIMUM}}</span>
+                        <span>• Available on {{DELIVERY_PLATFORMS}}</span>
+                    </div>
+                    <a href="#delivery" class="btn btn-outline">Order Delivery</a>
+                </div>
+
+                <div class="ordering-option dine-in">
+                    <div class="option-icon">🏪</div>
+                    <h3>Dine-In</h3>
+                    <p>Fresh food in a clean, comfortable environment</p>
+                    <div class="option-features">
+                        <span>• Fast counter service</span>
+                        <span>• Free WiFi at all locations</span>
+                        <span>• Kids play areas at select locations</span>
+                        <span>• Fresh food made to order</span>
+                    </div>
+                    <a href="#locations" class="btn btn-outline">Find Location</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-deals" id="deals">
+        <div class="container">
+            <h2>Limited Time Deals</h2>
+            <div class="deals-grid">
+                <div class="deal-item featured">
+                    <img src="{{DEAL_1_IMAGE}}" alt="{{DEAL_1_NAME}}">
+                    <div class="deal-content">
+                        <div class="deal-badge">Limited Time</div>
+                        <h3>{{DEAL_1_NAME}}</h3>
+                        <p>{{DEAL_1_DESCRIPTION}}</p>
+                        <div class="deal-pricing">
+                            <span class="original-price">{{DEAL_1_ORIGINAL_PRICE}}</span>
+                            <span class="deal-price">{{DEAL_1_DEAL_PRICE}}</span>
+                        </div>
+                        <div class="deal-expires">Expires {{DEAL_1_EXPIRY}}</div>
+                        <a href="#order" class="btn btn-primary">Order Now</a>
+                    </div>
+                </div>
+
+                <div class="deal-item">
+                    <img src="{{DEAL_2_IMAGE}}" alt="{{DEAL_2_NAME}}">
+                    <div class="deal-content">
+                        <div class="deal-badge">App Exclusive</div>
+                        <h3>{{DEAL_2_NAME}}</h3>
+                        <p>{{DEAL_2_DESCRIPTION}}</p>
+                        <div class="deal-pricing">
+                            <span class="deal-price">{{DEAL_2_PRICE}}</span>
+                        </div>
+                        <div class="deal-expires">App required</div>
+                        <a href="#app" class="btn btn-outline">Get App</a>
+                    </div>
+                </div>
+
+                <div class="deal-item">
+                    <img src="{{DEAL_3_IMAGE}}" alt="{{DEAL_3_NAME}}">
+                    <div class="deal-content">
+                        <div class="deal-badge">Family Deal</div>
+                        <h3>{{DEAL_3_NAME}}</h3>
+                        <p>{{DEAL_3_DESCRIPTION}}</p>
+                        <div class="deal-pricing">
+                            <span class="deal-price">{{DEAL_3_PRICE}}</span>
+                        </div>
+                        <div class="deal-expires">Feeds {{DEAL_3_SERVES}}</div>
+                        <a href="#order" class="btn btn-outline">Order Now</a>
+                    </div>
+                </div>
+
+                <div class="deal-item">
+                    <img src="{{DEAL_4_IMAGE}}" alt="{{DEAL_4_NAME}}">
+                    <div class="deal-content">
+                        <div class="deal-badge">Breakfast Special</div>
+                        <h3>{{DEAL_4_NAME}}</h3>
+                        <p>{{DEAL_4_DESCRIPTION}}</p>
+                        <div class="deal-pricing">
+                            <span class="deal-price">{{DEAL_4_PRICE}}</span>
+                        </div>
+                        <div class="deal-expires">Until {{BREAKFAST_CUTOFF}}</div>
+                        <a href="#order" class="btn btn-outline">Order Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="menu-categories" id="menu">
+        <div class="container">
+            <h2>Our Menu</h2>
+            <div class="menu-nav">
+                <button class="menu-tab active" data-category="featured">Featured</button>
+                <button class="menu-tab" data-category="burgers">{{CATEGORY_1}}</button>
+                <button class="menu-tab" data-category="chicken">{{CATEGORY_2}}</button>
+                <button class="menu-tab" data-category="sides">{{CATEGORY_3}}</button>
+                <button class="menu-tab" data-category="breakfast">{{CATEGORY_4}}</button>
+                <button class="menu-tab" data-category="drinks">{{CATEGORY_5}}</button>
+                <button class="menu-tab" data-category="desserts">{{CATEGORY_6}}</button>
+            </div>
+
+            <div class="menu-content">
+                <div class="menu-category active" id="featured">
+                    <h3>Fan Favorites</h3>
+                    <div class="menu-items">
+                        <div class="menu-item bestseller">
+                            <img src="{{FEATURED_ITEM_1_IMAGE}}" alt="{{FEATURED_ITEM_1_NAME}}">
+                            <div class="item-info">
+                                <h4>{{FEATURED_ITEM_1_NAME}}</h4>
+                                <p>{{FEATURED_ITEM_1_DESCRIPTION}}</p>
+                                <div class="item-badges">
+                                    <span class="badge bestseller-badge">Bestseller</span>
+                                    <span class="badge">{{FEATURED_ITEM_1_BADGE}}</span>
+                                </div>
+                                <div class="item-nutrition">
+                                    <span>{{FEATURED_ITEM_1_CALORIES}} cal</span>
+                                </div>
+                            </div>
+                            <div class="item-price">{{FEATURED_ITEM_1_PRICE}}</div>
+                        </div>
+
+                        <div class="menu-item new">
+                            <img src="{{FEATURED_ITEM_2_IMAGE}}" alt="{{FEATURED_ITEM_2_NAME}}">
+                            <div class="item-info">
+                                <h4>{{FEATURED_ITEM_2_NAME}}</h4>
+                                <p>{{FEATURED_ITEM_2_DESCRIPTION}}</p>
+                                <div class="item-badges">
+                                    <span class="badge new-badge">New</span>
+                                    <span class="badge">{{FEATURED_ITEM_2_BADGE}}</span>
+                                </div>
+                                <div class="item-nutrition">
+                                    <span>{{FEATURED_ITEM_2_CALORIES}} cal</span>
+                                </div>
+                            </div>
+                            <div class="item-price">{{FEATURED_ITEM_2_PRICE}}</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <img src="{{FEATURED_ITEM_3_IMAGE}}" alt="{{FEATURED_ITEM_3_NAME}}">
+                            <div class="item-info">
+                                <h4>{{FEATURED_ITEM_3_NAME}}</h4>
+                                <p>{{FEATURED_ITEM_3_DESCRIPTION}}</p>
+                                <div class="item-badges">
+                                    <span class="badge">{{FEATURED_ITEM_3_BADGE}}</span>
+                                </div>
+                                <div class="item-nutrition">
+                                    <span>{{FEATURED_ITEM_3_CALORIES}} cal</span>
+                                </div>
+                            </div>
+                            <div class="item-price">{{FEATURED_ITEM_3_PRICE}}</div>
+                        </div>
+
+                        <div class="menu-item combo">
+                            <img src="{{COMBO_1_IMAGE}}" alt="{{COMBO_1_NAME}}">
+                            <div class="item-info">
+                                <h4>{{COMBO_1_NAME}}</h4>
+                                <p>{{COMBO_1_DESCRIPTION}}</p>
+                                <div class="item-badges">
+                                    <span class="badge combo-badge">Combo Meal</span>
+                                </div>
+                                <div class="combo-includes">
+                                    <span>Includes: {{COMBO_1_INCLUDES}}</span>
+                                </div>
+                            </div>
+                            <div class="item-price">{{COMBO_1_PRICE}}</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-category" id="burgers">
+                    <h3>{{CATEGORY_1}}</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <img src="{{BURGER_1_IMAGE}}" alt="{{BURGER_1_NAME}}">
+                            <div class="item-info">
+                                <h4>{{BURGER_1_NAME}}</h4>
+                                <p>{{BURGER_1_DESCRIPTION}}</p>
+                                <div class="item-nutrition">
+                                    <span>{{BURGER_1_CALORIES}} cal</span>
+                                </div>
+                            </div>
+                            <div class="item-price">{{BURGER_1_PRICE}}</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <img src="{{BURGER_2_IMAGE}}" alt="{{BURGER_2_NAME}}">
+                            <div class="item-info">
+                                <h4>{{BURGER_2_NAME}}</h4>
+                                <p>{{BURGER_2_DESCRIPTION}}</p>
+                                <div class="item-nutrition">
+                                    <span>{{BURGER_2_CALORIES}} cal</span>
+                                </div>
+                            </div>
+                            <div class="item-price">{{BURGER_2_PRICE}}</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <img src="{{BURGER_3_IMAGE}}" alt="{{BURGER_3_NAME}}">
+                            <div class="item-info">
+                                <h4>{{BURGER_3_NAME}}</h4>
+                                <p>{{BURGER_3_DESCRIPTION}}</p>
+                                <div class="item-nutrition">
+                                    <span>{{BURGER_3_CALORIES}} cal</span>
+                                </div>
+                            </div>
+                            <div class="item-price">{{BURGER_3_PRICE}}</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <img src="{{BURGER_4_IMAGE}}" alt="{{BURGER_4_NAME}}">
+                            <div class="item-info">
+                                <h4>{{BURGER_4_NAME}}</h4>
+                                <p>{{BURGER_4_DESCRIPTION}}</p>
+                                <div class="item-nutrition">
+                                    <span>{{BURGER_4_CALORIES}} cal</span>
+                                </div>
+                            </div>
+                            <div class="item-price">{{BURGER_4_PRICE}}</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-category" id="chicken">
+                    <h3>{{CATEGORY_2}}</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <img src="{{CHICKEN_1_IMAGE}}" alt="{{CHICKEN_1_NAME}}">
+                            <div class="item-info">
+                                <h4>{{CHICKEN_1_NAME}}</h4>
+                                <p>{{CHICKEN_1_DESCRIPTION}}</p>
+                                <div class="item-nutrition">
+                                    <span>{{CHICKEN_1_CALORIES}} cal</span>
+                                </div>
+                            </div>
+                            <div class="item-price">{{CHICKEN_1_PRICE}}</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <img src="{{CHICKEN_2_IMAGE}}" alt="{{CHICKEN_2_NAME}}">
+                            <div class="item-info">
+                                <h4>{{CHICKEN_2_NAME}}</h4>
+                                <p>{{CHICKEN_2_DESCRIPTION}}</p>
+                                <div class="item-nutrition">
+                                    <span>{{CHICKEN_2_CALORIES}} cal</span>
+                                </div>
+                            </div>
+                            <div class="item-price">{{CHICKEN_2_PRICE}}</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <img src="{{CHICKEN_3_IMAGE}}" alt="{{CHICKEN_3_NAME}}">
+                            <div class="item-info">
+                                <h4>{{CHICKEN_3_NAME}}</h4>
+                                <p>{{CHICKEN_3_DESCRIPTION}}</p>
+                                <div class="item-nutrition">
+                                    <span>{{CHICKEN_3_CALORIES}} cal</span>
+                                </div>
+                            </div>
+                            <div class="item-price">{{CHICKEN_3_PRICE}}</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-category" id="sides">
+                    <h3>{{CATEGORY_3}}</h3>
+                    <div class="menu-items sides-grid">
+                        <div class="menu-item">
+                            <img src="{{SIDE_1_IMAGE}}" alt="{{SIDE_1_NAME}}">
+                            <div class="item-info">
+                                <h4>{{SIDE_1_NAME}}</h4>
+                                <div class="item-sizes">
+                                    <span>{{SIDE_1_SIZE_1}} {{SIDE_1_PRICE_1}}</span>
+                                    <span>{{SIDE_1_SIZE_2}} {{SIDE_1_PRICE_2}}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <img src="{{SIDE_2_IMAGE}}" alt="{{SIDE_2_NAME}}">
+                            <div class="item-info">
+                                <h4>{{SIDE_2_NAME}}</h4>
+                                <div class="item-sizes">
+                                    <span>{{SIDE_2_SIZE_1}} {{SIDE_2_PRICE_1}}</span>
+                                    <span>{{SIDE_2_SIZE_2}} {{SIDE_2_PRICE_2}}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <img src="{{SIDE_3_IMAGE}}" alt="{{SIDE_3_NAME}}">
+                            <div class="item-info">
+                                <h4>{{SIDE_3_NAME}}</h4>
+                                <div class="item-sizes">
+                                    <span>{{SIDE_3_SIZE_1}} {{SIDE_3_PRICE_1}}</span>
+                                    <span>{{SIDE_3_SIZE_2}} {{SIDE_3_PRICE_2}}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <img src="{{SIDE_4_IMAGE}}" alt="{{SIDE_4_NAME}}">
+                            <div class="item-info">
+                                <h4>{{SIDE_4_NAME}}</h4>
+                                <div class="item-sizes">
+                                    <span>{{SIDE_4_SIZE_1}} {{SIDE_4_PRICE_1}}</span>
+                                    <span>{{SIDE_4_SIZE_2}} {{SIDE_4_PRICE_2}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-category" id="breakfast">
+                    <h3>{{CATEGORY_4}} (Until {{BREAKFAST_CUTOFF}})</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <img src="{{BREAKFAST_1_IMAGE}}" alt="{{BREAKFAST_1_NAME}}">
+                            <div class="item-info">
+                                <h4>{{BREAKFAST_1_NAME}}</h4>
+                                <p>{{BREAKFAST_1_DESCRIPTION}}</p>
+                                <div class="item-nutrition">
+                                    <span>{{BREAKFAST_1_CALORIES}} cal</span>
+                                </div>
+                            </div>
+                            <div class="item-price">{{BREAKFAST_1_PRICE}}</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <img src="{{BREAKFAST_2_IMAGE}}" alt="{{BREAKFAST_2_NAME}}">
+                            <div class="item-info">
+                                <h4>{{BREAKFAST_2_NAME}}</h4>
+                                <p>{{BREAKFAST_2_DESCRIPTION}}</p>
+                                <div class="item-nutrition">
+                                    <span>{{BREAKFAST_2_CALORIES}} cal</span>
+                                </div>
+                            </div>
+                            <div class="item-price">{{BREAKFAST_2_PRICE}}</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <img src="{{BREAKFAST_3_IMAGE}}" alt="{{BREAKFAST_3_NAME}}">
+                            <div class="item-info">
+                                <h4>{{BREAKFAST_3_NAME}}</h4>
+                                <p>{{BREAKFAST_3_DESCRIPTION}}</p>
+                                <div class="item-nutrition">
+                                    <span>{{BREAKFAST_3_CALORIES}} cal</span>
+                                </div>
+                            </div>
+                            <div class="item-price">{{BREAKFAST_3_PRICE}}</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-category" id="drinks">
+                    <h3>{{CATEGORY_5}}</h3>
+                    <div class="menu-items drinks-grid">
+                        <div class="menu-item">
+                            <img src="{{DRINK_1_IMAGE}}" alt="{{DRINK_1_NAME}}">
+                            <div class="item-info">
+                                <h4>{{DRINK_1_NAME}}</h4>
+                                <div class="drink-sizes">
+                                    <span>Small {{DRINK_1_SMALL_PRICE}}</span>
+                                    <span>Medium {{DRINK_1_MEDIUM_PRICE}}</span>
+                                    <span>Large {{DRINK_1_LARGE_PRICE}}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <img src="{{DRINK_2_IMAGE}}" alt="{{DRINK_2_NAME}}">
+                            <div class="item-info">
+                                <h4>{{DRINK_2_NAME}}</h4>
+                                <div class="drink-sizes">
+                                    <span>Small {{DRINK_2_SMALL_PRICE}}</span>
+                                    <span>Medium {{DRINK_2_MEDIUM_PRICE}}</span>
+                                    <span>Large {{DRINK_2_LARGE_PRICE}}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <img src="{{DRINK_3_IMAGE}}" alt="{{DRINK_3_NAME}}">
+                            <div class="item-info">
+                                <h4>{{DRINK_3_NAME}}</h4>
+                                <div class="drink-sizes">
+                                    <span>Small {{DRINK_3_SMALL_PRICE}}</span>
+                                    <span>Medium {{DRINK_3_MEDIUM_PRICE}}</span>
+                                    <span>Large {{DRINK_3_LARGE_PRICE}}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <img src="{{DRINK_4_IMAGE}}" alt="{{DRINK_4_NAME}}">
+                            <div class="item-info">
+                                <h4>{{DRINK_4_NAME}}</h4>
+                                <div class="drink-sizes">
+                                    <span>{{DRINK_4_PRICE}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-category" id="desserts">
+                    <h3>{{CATEGORY_6}}</h3>
+                    <div class="menu-items desserts-grid">
+                        <div class="menu-item">
+                            <img src="{{DESSERT_1_IMAGE}}" alt="{{DESSERT_1_NAME}}">
+                            <div class="item-info">
+                                <h4>{{DESSERT_1_NAME}}</h4>
+                                <p>{{DESSERT_1_DESCRIPTION}}</p>
+                            </div>
+                            <div class="item-price">{{DESSERT_1_PRICE}}</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <img src="{{DESSERT_2_IMAGE}}" alt="{{DESSERT_2_NAME}}">
+                            <div class="item-info">
+                                <h4>{{DESSERT_2_NAME}}</h4>
+                                <p>{{DESSERT_2_DESCRIPTION}}</p>
+                            </div>
+                            <div class="item-price">{{DESSERT_2_PRICE}}</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <img src="{{DESSERT_3_IMAGE}}" alt="{{DESSERT_3_NAME}}">
+                            <div class="item-info">
+                                <h4>{{DESSERT_3_NAME}}</h4>
+                                <p>{{DESSERT_3_DESCRIPTION}}</p>
+                            </div>
+                            <div class="item-price">{{DESSERT_3_PRICE}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="app-download" id="app">
+        <div class="container">
+            <div class="app-content">
+                <div class="app-info">
+                    <h2>Download Our App</h2>
+                    <p>Skip the line, earn rewards, and get exclusive deals with our mobile app</p>
+                    <div class="app-features">
+                        <div class="feature">
+                            <div class="feature-icon">⚡</div>
+                            <h4>Skip the Line</h4>
+                            <p>Order ahead and pick up without waiting</p>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">🎁</div>
+                            <h4>Exclusive Deals</h4>
+                            <p>App-only offers and limited-time promotions</p>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">⭐</div>
+                            <h4>Earn Rewards</h4>
+                            <p>{{POINTS_PER_DOLLAR}} points per $1 spent</p>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">❤️</div>
+                            <h4>Save Favorites</h4>
+                            <p>Quick reorder your go-to meals</p>
+                        </div>
+                    </div>
+                    <div class="app-downloads">
+                        <a href="{{APP_STORE_URL}}" class="download-btn">
+                            <img src="{{APP_STORE_BADGE}}" alt="Download on App Store">
+                        </a>
+                        <a href="{{GOOGLE_PLAY_URL}}" class="download-btn">
+                            <img src="{{GOOGLE_PLAY_BADGE}}" alt="Get it on Google Play">
+                        </a>
+                    </div>
+                </div>
+                <div class="app-visual">
+                    <img src="{{APP_SCREENSHOT}}" alt="Mobile app screenshot">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="nutrition-allergens" id="nutrition">
+        <div class="container">
+            <h2>Nutrition & Allergen Information</h2>
+            <div class="nutrition-content">
+                <div class="nutrition-section">
+                    <h3>Nutritional Information</h3>
+                    <p>We provide complete nutritional information for all menu items. Calorie counts are available on our menu and detailed nutrition facts are available in our app.</p>
+                    <div class="nutrition-highlights">
+                        <div class="highlight">
+                            <span class="highlight-number">{{UNDER_500_CAL_ITEMS}}</span>
+                            <span class="highlight-label">Items under 500 calories</span>
+                        </div>
+                        <div class="highlight">
+                            <span class="highlight-number">{{PROTEIN_ITEMS}}</span>
+                            <span class="highlight-label">High-protein options</span>
+                        </div>
+                        <div class="highlight">
+                            <span class="highlight-number">{{VEGETARIAN_ITEMS}}</span>
+                            <span class="highlight-label">Vegetarian items</span>
+                        </div>
+                    </div>
+                    <a href="{{NUTRITION_PDF}}" class="btn btn-outline">Download Nutrition Guide</a>
+                </div>
+
+                <div class="allergen-section">
+                    <h3>Allergen Information</h3>
+                    <p>We take allergies seriously. Please inform our staff of any allergies before ordering.</p>
+                    <div class="allergen-warning">
+                        <strong>Important:</strong> Our food is prepared in kitchens that handle wheat, eggs, fish, peanuts, shellfish, soy, tree nuts, and milk. Cross-contamination may occur.
+                    </div>
+                    <div class="allergen-icons">
+                        <div class="allergen">
+                            <span class="allergen-icon">🥜</span>
+                            <span>Nuts</span>
+                        </div>
+                        <div class="allergen">
+                            <span class="allergen-icon">🥛</span>
+                            <span>Dairy</span>
+                        </div>
+                        <div class="allergen">
+                            <span class="allergen-icon">🥚</span>
+                            <span>Eggs</span>
+                        </div>
+                        <div class="allergen">
+                            <span class="allergen-icon">🌾</span>
+                            <span>Gluten</span>
+                        </div>
+                        <div class="allergen">
+                            <span class="allergen-icon">🦐</span>
+                            <span>Shellfish</span>
+                        </div>
+                        <div class="allergen">
+                            <span class="allergen-icon">🐟</span>
+                            <span>Fish</span>
+                        </div>
+                    </div>
+                    <a href="{{ALLERGEN_GUIDE}}" class="btn btn-outline">Allergen Guide</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="locations-finder" id="locations">
+        <div class="container">
+            <h2>Find a Location</h2>
+            <div class="location-finder">
+                <div class="finder-form">
+                    <input type="text" placeholder="Enter ZIP code or city" id="location-search">
+                    <button class="btn btn-primary">Find Locations</button>
+                </div>
+                <div class="location-features">
+                    <label><input type="checkbox" checked> Drive-Thru</label>
+                    <label><input type="checkbox" checked> 24 Hours</label>
+                    <label><input type="checkbox"> Delivery</label>
+                    <label><input type="checkbox"> PlayPlace</label>
+                </div>
+            </div>
+
+            <div class="sample-locations">
+                <div class="location-card">
+                    <h3>{{LOCATION_1_NAME}}</h3>
+                    <p>{{LOCATION_1_ADDRESS}}</p>
+                    <div class="location-features">
+                        <span class="feature-tag">Drive-Thru</span>
+                        <span class="feature-tag">24 Hours</span>
+                        <span class="feature-tag">PlayPlace</span>
+                    </div>
+                    <div class="location-hours">
+                        <strong>Hours:</strong> {{LOCATION_1_HOURS}}
+                    </div>
+                    <div class="location-contact">
+                        <strong>Phone:</strong> {{LOCATION_1_PHONE}}
+                    </div>
+                    <div class="location-actions">
+                        <a href="#directions" class="btn btn-outline">Get Directions</a>
+                        <a href="#order" class="btn btn-primary">Order Now</a>
+                    </div>
+                </div>
+
+                <div class="location-card">
+                    <h3>{{LOCATION_2_NAME}}</h3>
+                    <p>{{LOCATION_2_ADDRESS}}</p>
+                    <div class="location-features">
+                        <span class="feature-tag">Drive-Thru</span>
+                        <span class="feature-tag">Delivery</span>
+                        <span class="feature-tag">WiFi</span>
+                    </div>
+                    <div class="location-hours">
+                        <strong>Hours:</strong> {{LOCATION_2_HOURS}}
+                    </div>
+                    <div class="location-contact">
+                        <strong>Phone:</strong> {{LOCATION_2_PHONE}}
+                    </div>
+                    <div class="location-actions">
+                        <a href="#directions" class="btn btn-outline">Get Directions</a>
+                        <a href="#order" class="btn btn-primary">Order Now</a>
+                    </div>
+                </div>
+
+                <div class="location-card">
+                    <h3>{{LOCATION_3_NAME}}</h3>
+                    <p>{{LOCATION_3_ADDRESS}}</p>
+                    <div class="location-features">
+                        <span class="feature-tag">Drive-Thru</span>
+                        <span class="feature-tag">Breakfast</span>
+                        <span class="feature-tag">Delivery</span>
+                    </div>
+                    <div class="location-hours">
+                        <strong>Hours:</strong> {{LOCATION_3_HOURS}}
+                    </div>
+                    <div class="location-contact">
+                        <strong>Phone:</strong> {{LOCATION_3_PHONE}}
+                    </div>
+                    <div class="location-actions">
+                        <a href="#directions" class="btn btn-outline">Get Directions</a>
+                        <a href="#order" class="btn btn-primary">Order Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="careers" id="careers">
+        <div class="container">
+            <div class="careers-content">
+                <h2>Join Our Team</h2>
+                <p>We're always looking for friendly, reliable team members to join our crew</p>
+                <div class="career-benefits">
+                    <div class="benefit">
+                        <div class="benefit-icon">💰</div>
+                        <h4>Competitive Pay</h4>
+                        <p>Starting at ${{STARTING_WAGE}}/hour with regular raises</p>
+                    </div>
+                    <div class="benefit">
+                        <div class="benefit-icon">📅</div>
+                        <h4>Flexible Scheduling</h4>
+                        <p>Part-time and full-time positions available</p>
+                    </div>
+                    <div class="benefit">
+                        <div class="benefit-icon">🎓</div>
+                        <h4>Tuition Assistance</h4>
+                        <p>Up to ${{TUITION_ASSISTANCE}} per year for college</p>
+                    </div>
+                    <div class="benefit">
+                        <div class="benefit-icon">⬆️</div>
+                        <h4>Career Growth</h4>
+                        <p>{{PROMOTION_PERCENTAGE}}% of managers promoted from within</p>
+                    </div>
+                </div>
+                <div class="career-positions">
+                    <h3>Open Positions</h3>
+                    <div class="positions-list">
+                        <div class="position">
+                            <h4>Crew Member</h4>
+                            <p>Customer service, food preparation, cash handling</p>
+                            <span class="position-pay">Starting at ${{CREW_WAGE}}/hr</span>
+                        </div>
+                        <div class="position">
+                            <h4>Shift Manager</h4>
+                            <p>Team leadership, operations management, training</p>
+                            <span class="position-pay">Starting at ${{MANAGER_WAGE}}/hr</span>
+                        </div>
+                        <div class="position">
+                            <h4>Assistant Manager</h4>
+                            <p>Restaurant operations, staff management, P&L responsibility</p>
+                            <span class="position-pay">Salary + bonuses</span>
+                        </div>
+                    </div>
+                </div>
+                <a href="{{CAREERS_URL}}" class="btn btn-primary">Apply Now</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section main">
+                    <h3>{{RESTAURANT_NAME}}</h3>
+                    <p>{{FOOTER_DESCRIPTION}}</p>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}" aria-label="Facebook">📘</a>
+                        <a href="{{INSTAGRAM_URL}}" aria-label="Instagram">📷</a>
+                        <a href="{{TWITTER_URL}}" aria-label="Twitter">🐦</a>
+                        <a href="{{YOUTUBE_URL}}" aria-label="YouTube">📺</a>
+                        <a href="{{TIKTOK_URL}}" aria-label="TikTok">🎵</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Order</h4>
+                    <a href="#order">Order Online</a>
+                    <a href="#app">Mobile App</a>
+                    <a href="#delivery">Delivery</a>
+                    <a href="#catering">Catering</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <a href="#about">About Us</a>
+                    <a href="#careers">Careers</a>
+                    <a href="#franchise">Franchise</a>
+                    <a href="#investors">Investors</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <a href="#contact">Contact Us</a>
+                    <a href="#faq">FAQ</a>
+                    <a href="#feedback">Feedback</a>
+                    <a href="#accessibility">Accessibility</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Information</h4>
+                    <a href="#nutrition">Nutrition</a>
+                    <a href="#allergens">Allergen Info</a>
+                    <a href="#sustainability">Sustainability</a>
+                    <a href="#news">News</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-legal">
+                    <p>&copy; {{CURRENT_YEAR}} {{RESTAURANT_NAME}}. All rights reserved.</p>
+                    <div class="legal-links">
+                        <a href="#privacy">Privacy Policy</a>
+                        <a href="#terms">Terms of Service</a>
+                        <a href="#california-privacy">CA Privacy</a>
+                        <a href="#ccpa">CCPA</a>
+                    </div>
+                </div>
+                <div class="footer-certifications">
+                    <span>{{CERTIFICATION_1}}</span>
+                    <span>{{CERTIFICATION_2}}</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

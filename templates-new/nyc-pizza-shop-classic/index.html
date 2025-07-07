@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Classic New York Pizza</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="nyc-pizza-theme">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+                <div class="logo-text">
+                    <h1>{{RESTAURANT_NAME}}</h1>
+                    <span class="tagline">Authentic NY Pizza • Since {{ESTABLISHED_YEAR}}</span>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#pizza">Pizza</a></li>
+                <li><a href="#menu">Full Menu</a></li>
+                <li><a href="#locations">Locations</a></li>
+                <li><a href="#delivery">Delivery</a></li>
+                <li><a href="#catering">Catering</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#order" class="btn btn-primary">Order Now</a>
+                <a href="tel:{{PHONE}}" class="phone-link">{{PHONE}}</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <img src="{{HERO_BACKGROUND_IMAGE}}" alt="Classic NY Pizza">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h2>Real New York Pizza</h2>
+            <p class="hero-subtitle">{{HERO_DESCRIPTION}}</p>
+            <div class="hero-features">
+                <div class="feature">
+                    <span class="feature-icon">🍕</span>
+                    <span>{{SLICES_DAILY}}+ Slices Daily</span>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">🔥</span>
+                    <span>{{OVEN_TEMPERATURE}}°F Coal Oven</span>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">📍</span>
+                    <span>{{LOCATIONS_COUNT}} NYC Locations</span>
+                </div>
+            </div>
+            <div class="hero-buttons">
+                <a href="#pizza" class="btn btn-hero-primary">Order Pizza</a>
+                <a href="#delivery" class="btn btn-hero-secondary">Delivery</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Today's Special -->
+    <section class="daily-special">
+        <div class="container">
+            <div class="special-content">
+                <div class="special-text">
+                    <h3>Today's Special</h3>
+                    <h4>{{SPECIAL_PIZZA_NAME}}</h4>
+                    <p>{{SPECIAL_PIZZA_DESCRIPTION}}</p>
+                </div>
+                <div class="special-pricing">
+                    <div class="special-price">
+                        <span class="price">{{SPECIAL_SLICE_PRICE}}</span>
+                        <span class="unit">per slice</span>
+                    </div>
+                    <div class="special-price">
+                        <span class="price">{{SPECIAL_PIE_PRICE}}</span>
+                        <span class="unit">whole pie</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pizza Menu -->
+    <section id="pizza" class="pizza-menu">
+        <div class="container">
+            <div class="pizza-header">
+                <h2>Classic New York Pizza</h2>
+                <p>{{PIZZA_DESCRIPTION}}</p>
+            </div>
+            
+            <div class="pizza-sections">
+                <!-- Classic Pies -->
+                <div class="pizza-section">
+                    <h3>Classic Pies</h3>
+                    <div class="pizza-items">
+                        <div class="pizza-item featured">
+                            <div class="pizza-image">
+                                <img src="{{CHEESE_PIZZA_IMAGE}}" alt="{{CHEESE_PIZZA_NAME}}">
+                            </div>
+                            <div class="pizza-details">
+                                <h4>{{CHEESE_PIZZA_NAME}}</h4>
+                                <p>{{CHEESE_PIZZA_DESCRIPTION}}</p>
+                                <div class="pizza-pricing">
+                                    <div class="price-option">
+                                        <span class="size">Slice</span>
+                                        <span class="price">{{CHEESE_SLICE_PRICE}}</span>
+                                    </div>
+                                    <div class="price-option">
+                                        <span class="size">Small (12")</span>
+                                        <span class="price">{{CHEESE_SMALL_PRICE}}</span>
+                                    </div>
+                                    <div class="price-option">
+                                        <span class="size">Large (18")</span>
+                                        <span class="price">{{CHEESE_LARGE_PRICE}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pizza-item">
+                            <div class="pizza-image">
+                                <img src="{{PEPPERONI_PIZZA_IMAGE}}" alt="{{PEPPERONI_PIZZA_NAME}}">
+                            </div>
+                            <div class="pizza-details">
+                                <h4>{{PEPPERONI_PIZZA_NAME}}</h4>
+                                <p>{{PEPPERONI_PIZZA_DESCRIPTION}}</p>
+                                <div class="pizza-pricing">
+                                    <div class="price-option">
+                                        <span class="size">Slice</span>
+                                        <span class="price">{{PEPPERONI_SLICE_PRICE}}</span>
+                                    </div>
+                                    <div class="price-option">
+                                        <span class="size">Small (12")</span>
+                                        <span class="price">{{PEPPERONI_SMALL_PRICE}}</span>
+                                    </div>
+                                    <div class="price-option">
+                                        <span class="size">Large (18")</span>
+                                        <span class="price">{{PEPPERONI_LARGE_PRICE}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pizza-item">
+                            <div class="pizza-image">
+                                <img src="{{MARGHERITA_PIZZA_IMAGE}}" alt="{{MARGHERITA_PIZZA_NAME}}">
+                            </div>
+                            <div class="pizza-details">
+                                <h4>{{MARGHERITA_PIZZA_NAME}}</h4>
+                                <p>{{MARGHERITA_PIZZA_DESCRIPTION}}</p>
+                                <div class="pizza-pricing">
+                                    <div class="price-option">
+                                        <span class="size">Slice</span>
+                                        <span class="price">{{MARGHERITA_SLICE_PRICE}}</span>
+                                    </div>
+                                    <div class="price-option">
+                                        <span class="size">Small (12")</span>
+                                        <span class="price">{{MARGHERITA_SMALL_PRICE}}</span>
+                                    </div>
+                                    <div class="price-option">
+                                        <span class="size">Large (18")</span>
+                                        <span class="price">{{MARGHERITA_LARGE_PRICE}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pizza-item">
+                            <div class="pizza-image">
+                                <img src="{{SAUSAGE_PIZZA_IMAGE}}" alt="{{SAUSAGE_PIZZA_NAME}}">
+                            </div>
+                            <div class="pizza-details">
+                                <h4>{{SAUSAGE_PIZZA_NAME}}</h4>
+                                <p>{{SAUSAGE_PIZZA_DESCRIPTION}}</p>
+                                <div class="pizza-pricing">
+                                    <div class="price-option">
+                                        <span class="size">Slice</span>
+                                        <span class="price">{{SAUSAGE_SLICE_PRICE}}</span>
+                                    </div>
+                                    <div class="price-option">
+                                        <span class="size">Small (12")</span>
+                                        <span class="price">{{SAUSAGE_SMALL_PRICE}}</span>
+                                    </div>
+                                    <div class="price-option">
+                                        <span class="size">Large (18")</span>
+                                        <span class="price">{{SAUSAGE_LARGE_PRICE}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Specialty Pies -->
+                <div class="pizza-section">
+                    <h3>Specialty Pies</h3>
+                    <div class="pizza-items">
+                        <div class="pizza-item">
+                            <div class="pizza-image">
+                                <img src="{{WHITE_PIZZA_IMAGE}}" alt="{{WHITE_PIZZA_NAME}}">
+                            </div>
+                            <div class="pizza-details">
+                                <h4>{{WHITE_PIZZA_NAME}}</h4>
+                                <p>{{WHITE_PIZZA_DESCRIPTION}}</p>
+                                <div class="pizza-pricing">
+                                    <div class="price-option">
+                                        <span class="size">Slice</span>
+                                        <span class="price">{{WHITE_SLICE_PRICE}}</span>
+                                    </div>
+                                    <div class="price-option">
+                                        <span class="size">Large (18")</span>
+                                        <span class="price">{{WHITE_LARGE_PRICE}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pizza-item">
+                            <div class="pizza-image">
+                                <img src="{{SICILIAN_PIZZA_IMAGE}}" alt="{{SICILIAN_PIZZA_NAME}}">
+                            </div>
+                            <div class="pizza-details">
+                                <h4>{{SICILIAN_PIZZA_NAME}}</h4>
+                                <p>{{SICILIAN_PIZZA_DESCRIPTION}}</p>
+                                <div class="pizza-pricing">
+                                    <div class="price-option">
+                                        <span class="size">Square Slice</span>
+                                        <span class="price">{{SICILIAN_SLICE_PRICE}}</span>
+                                    </div>
+                                    <div class="price-option">
+                                        <span class="size">Full Tray</span>
+                                        <span class="price">{{SICILIAN_TRAY_PRICE}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pizza-item">
+                            <div class="pizza-image">
+                                <img src="{{SUPREME_PIZZA_IMAGE}}" alt="{{SUPREME_PIZZA_NAME}}">
+                            </div>
+                            <div class="pizza-details">
+                                <h4>{{SUPREME_PIZZA_NAME}}</h4>
+                                <p>{{SUPREME_PIZZA_DESCRIPTION}}</p>
+                                <div class="pizza-pricing">
+                                    <div class="price-option">
+                                        <span class="size">Slice</span>
+                                        <span class="price">{{SUPREME_SLICE_PRICE}}</span>
+                                    </div>
+                                    <div class="price-option">
+                                        <span class="size">Large (18")</span>
+                                        <span class="price">{{SUPREME_LARGE_PRICE}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Build Your Own -->
+                <div class="pizza-section">
+                    <h3>Build Your Own</h3>
+                    <div class="build-your-own">
+                        <div class="base-pricing">
+                            <h4>Plain Cheese Pizza</h4>
+                            <div class="base-prices">
+                                <div class="size-price">
+                                    <span class="size">Small (12")</span>
+                                    <span class="price">{{PLAIN_SMALL_PRICE}}</span>
+                                </div>
+                                <div class="size-price">
+                                    <span class="size">Large (18")</span>
+                                    <span class="price">{{PLAIN_LARGE_PRICE}}</span>
+                                </div>
+                                <div class="size-price">
+                                    <span class="size">Sicilian</span>
+                                    <span class="price">{{PLAIN_SICILIAN_PRICE}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="toppings-section">
+                            <h4>Toppings</h4>
+                            <div class="toppings-grid">
+                                <div class="topping-category">
+                                    <h5>Meats ({{MEAT_TOPPING_PRICE}} each)</h5>
+                                    <div class="toppings">
+                                        <span class="topping">{{MEAT_TOPPING_1}}</span>
+                                        <span class="topping">{{MEAT_TOPPING_2}}</span>
+                                        <span class="topping">{{MEAT_TOPPING_3}}</span>
+                                        <span class="topping">{{MEAT_TOPPING_4}}</span>
+                                        <span class="topping">{{MEAT_TOPPING_5}}</span>
+                                    </div>
+                                </div>
+                                <div class="topping-category">
+                                    <h5>Vegetables ({{VEGGIE_TOPPING_PRICE}} each)</h5>
+                                    <div class="toppings">
+                                        <span class="topping">{{VEGGIE_TOPPING_1}}</span>
+                                        <span class="topping">{{VEGGIE_TOPPING_2}}</span>
+                                        <span class="topping">{{VEGGIE_TOPPING_3}}</span>
+                                        <span class="topping">{{VEGGIE_TOPPING_4}}</span>
+                                        <span class="topping">{{VEGGIE_TOPPING_5}}</span>
+                                        <span class="topping">{{VEGGIE_TOPPING_6}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Full Menu -->
+    <section id="menu" class="full-menu">
+        <div class="container">
+            <div class="menu-header">
+                <h2>Complete Menu</h2>
+                <p>{{FULL_MENU_DESCRIPTION}}</p>
+            </div>
+            
+            <div class="menu-sections">
+                <!-- Appetizers -->
+                <div class="menu-section">
+                    <h3>Appetizers</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>{{GARLIC_KNOTS_NAME}}</h4>
+                                <p>{{GARLIC_KNOTS_DESCRIPTION}}</p>
+                            </div>
+                            <span class="item-price">{{GARLIC_KNOTS_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>{{MOZZARELLA_STICKS_NAME}}</h4>
+                                <p>{{MOZZARELLA_STICKS_DESCRIPTION}}</p>
+                            </div>
+                            <span class="item-price">{{MOZZARELLA_STICKS_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>{{BUFFALO_WINGS_NAME}}</h4>
+                                <p>{{BUFFALO_WINGS_DESCRIPTION}}</p>
+                            </div>
+                            <span class="item-price">{{BUFFALO_WINGS_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Heroes & Sandwiches -->
+                <div class="menu-section">
+                    <h3>Heroes & Sandwiches</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>{{CHICKEN_PARM_NAME}}</h4>
+                                <p>{{CHICKEN_PARM_DESCRIPTION}}</p>
+                            </div>
+                            <span class="item-price">{{CHICKEN_PARM_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>{{MEATBALL_PARM_NAME}}</h4>
+                                <p>{{MEATBALL_PARM_DESCRIPTION}}</p>
+                            </div>
+                            <span class="item-price">{{MEATBALL_PARM_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>{{ITALIAN_HERO_NAME}}</h4>
+                                <p>{{ITALIAN_HERO_DESCRIPTION}}</p>
+                            </div>
+                            <span class="item-price">{{ITALIAN_HERO_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pasta -->
+                <div class="menu-section">
+                    <h3>Pasta</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>{{SPAGHETTI_MARINARA_NAME}}</h4>
+                                <p>{{SPAGHETTI_MARINARA_DESCRIPTION}}</p>
+                            </div>
+                            <span class="item-price">{{SPAGHETTI_MARINARA_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>{{PENNE_VODKA_NAME}}</h4>
+                                <p>{{PENNE_VODKA_DESCRIPTION}}</p>
+                            </div>
+                            <span class="item-price">{{PENNE_VODKA_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Beverages -->
+                <div class="menu-section">
+                    <h3>Beverages</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>{{SOFT_DRINKS_NAME}}</h4>
+                                <p>{{SOFT_DRINKS_DESCRIPTION}}</p>
+                            </div>
+                            <span class="item-price">{{SOFT_DRINKS_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>{{BOTTLED_WATER_NAME}}</h4>
+                                <p>{{BOTTLED_WATER_DESCRIPTION}}</p>
+                            </div>
+                            <span class="item-price">{{BOTTLED_WATER_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations -->
+    <section id="locations" class="locations-section">
+        <div class="container">
+            <div class="locations-header">
+                <h2>Our NYC Locations</h2>
+                <p>{{LOCATIONS_DESCRIPTION}}</p>
+            </div>
+            
+            <div class="locations-grid">
+                <div class="location-card">
+                    <div class="location-info">
+                        <h3>{{LOCATION_1_NAME}}</h3>
+                        <div class="location-details">
+                            <p class="address">{{LOCATION_1_ADDRESS}}</p>
+                            <p class="neighborhood">{{LOCATION_1_NEIGHBORHOOD}}</p>
+                            <p class="phone"><a href="tel:{{LOCATION_1_PHONE}}">{{LOCATION_1_PHONE}}</a></p>
+                        </div>
+                        <div class="location-hours">
+                            <h4>Hours</h4>
+                            <p>{{LOCATION_1_WEEKDAY_HOURS}}</p>
+                            <p>{{LOCATION_1_WEEKEND_HOURS}}</p>
+                        </div>
+                        <div class="location-features">
+                            <span class="feature">{{LOCATION_1_FEATURE_1}}</span>
+                            <span class="feature">{{LOCATION_1_FEATURE_2}}</span>
+                            <span class="feature">{{LOCATION_1_FEATURE_3}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="location-card">
+                    <div class="location-info">
+                        <h3>{{LOCATION_2_NAME}}</h3>
+                        <div class="location-details">
+                            <p class="address">{{LOCATION_2_ADDRESS}}</p>
+                            <p class="neighborhood">{{LOCATION_2_NEIGHBORHOOD}}</p>
+                            <p class="phone"><a href="tel:{{LOCATION_2_PHONE}}">{{LOCATION_2_PHONE}}</a></p>
+                        </div>
+                        <div class="location-hours">
+                            <h4>Hours</h4>
+                            <p>{{LOCATION_2_WEEKDAY_HOURS}}</p>
+                            <p>{{LOCATION_2_WEEKEND_HOURS}}</p>
+                        </div>
+                        <div class="location-features">
+                            <span class="feature">{{LOCATION_2_FEATURE_1}}</span>
+                            <span class="feature">{{LOCATION_2_FEATURE_2}}</span>
+                            <span class="feature">{{LOCATION_2_FEATURE_3}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="location-card">
+                    <div class="location-info">
+                        <h3>{{LOCATION_3_NAME}}</h3>
+                        <div class="location-details">
+                            <p class="address">{{LOCATION_3_ADDRESS}}</p>
+                            <p class="neighborhood">{{LOCATION_3_NEIGHBORHOOD}}</p>
+                            <p class="phone"><a href="tel:{{LOCATION_3_PHONE}}">{{LOCATION_3_PHONE}}</a></p>
+                        </div>
+                        <div class="location-hours">
+                            <h4>Hours</h4>
+                            <p>{{LOCATION_3_WEEKDAY_HOURS}}</p>
+                            <p>{{LOCATION_3_WEEKEND_HOURS}}</p>
+                        </div>
+                        <div class="location-features">
+                            <span class="feature">{{LOCATION_3_FEATURE_1}}</span>
+                            <span class="feature">{{LOCATION_3_FEATURE_2}}</span>
+                            <span class="feature">{{LOCATION_3_FEATURE_3}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Delivery & Ordering -->
+    <section id="delivery" class="delivery-section">
+        <div class="container">
+            <div class="delivery-header">
+                <h2>Delivery & Pickup</h2>
+                <p>{{DELIVERY_DESCRIPTION}}</p>
+            </div>
+            
+            <div class="delivery-options">
+                <div class="delivery-method">
+                    <div class="method-icon">🚗</div>
+                    <h3>Free Delivery</h3>
+                    <p>{{FREE_DELIVERY_DESCRIPTION}}</p>
+                    <div class="method-details">
+                        <span class="minimum">{{FREE_DELIVERY_MINIMUM}} minimum</span>
+                        <span class="time">{{FREE_DELIVERY_TIME}}</span>
+                        <span class="area">{{FREE_DELIVERY_AREA}}</span>
+                    </div>
+                </div>
+
+                <div class="delivery-method">
+                    <div class="method-icon">📱</div>
+                    <h3>Online Ordering</h3>
+                    <p>{{ONLINE_ORDERING_DESCRIPTION}}</p>
+                    <div class="method-details">
+                        <span class="apps">{{DELIVERY_APPS}}</span>
+                        <span class="pickup">{{PICKUP_TIME}}</span>
+                    </div>
+                </div>
+
+                <div class="delivery-method">
+                    <div class="method-icon">📞</div>
+                    <h3>Phone Orders</h3>
+                    <p>{{PHONE_ORDER_DESCRIPTION}}</p>
+                    <div class="method-details">
+                        <span class="phone-number">{{MAIN_PHONE}}</span>
+                        <span class="hours">{{PHONE_ORDER_HOURS}}</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ordering-buttons">
+                <a href="{{ONLINE_ORDER_URL}}" class="btn btn-order">Order Online</a>
+                <a href="tel:{{MAIN_PHONE}}" class="btn btn-secondary">Call to Order</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catering -->
+    <section id="catering" class="catering-section">
+        <div class="container">
+            <div class="catering-header">
+                <h2>Pizza Catering</h2>
+                <p>{{CATERING_DESCRIPTION}}</p>
+            </div>
+            
+            <div class="catering-packages">
+                <div class="package">
+                    <h3>{{OFFICE_PACKAGE_NAME}}</h3>
+                    <p>{{OFFICE_PACKAGE_DESCRIPTION}}</p>
+                    <div class="package-includes">
+                        <ul>
+                            <li>{{OFFICE_PACKAGE_ITEM_1}}</li>
+                            <li>{{OFFICE_PACKAGE_ITEM_2}}</li>
+                            <li>{{OFFICE_PACKAGE_ITEM_3}}</li>
+                            <li>{{OFFICE_PACKAGE_ITEM_4}}</li>
+                        </ul>
+                    </div>
+                    <div class="package-pricing">
+                        <span class="price">{{OFFICE_PACKAGE_PRICE}}</span>
+                        <span class="serves">Serves {{OFFICE_PACKAGE_SERVES}} people</span>
+                    </div>
+                </div>
+
+                <div class="package">
+                    <h3>{{PARTY_PACKAGE_NAME}}</h3>
+                    <p>{{PARTY_PACKAGE_DESCRIPTION}}</p>
+                    <div class="package-includes">
+                        <ul>
+                            <li>{{PARTY_PACKAGE_ITEM_1}}</li>
+                            <li>{{PARTY_PACKAGE_ITEM_2}}</li>
+                            <li>{{PARTY_PACKAGE_ITEM_3}}</li>
+                            <li>{{PARTY_PACKAGE_ITEM_4}}</li>
+                        </ul>
+                    </div>
+                    <div class="package-pricing">
+                        <span class="price">{{PARTY_PACKAGE_PRICE}}</span>
+                        <span class="serves">Serves {{PARTY_PACKAGE_SERVES}} people</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="catering-info">
+                <h3>Catering Information</h3>
+                <div class="catering-details">
+                    <div class="detail">
+                        <h4>Advance Notice</h4>
+                        <p>{{CATERING_ADVANCE_NOTICE}}</p>
+                    </div>
+                    <div class="detail">
+                        <h4>Delivery</h4>
+                        <p>{{CATERING_DELIVERY_INFO}}</p>
+                    </div>
+                    <div class="detail">
+                        <h4>Setup</h4>
+                        <p>{{CATERING_SETUP_INFO}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>{{ABOUT_TITLE}}</h2>
+                    <p>{{ABOUT_DESCRIPTION_1}}</p>
+                    <p>{{ABOUT_DESCRIPTION_2}}</p>
+                    <div class="pizza-tradition">
+                        <h3>The New York Way</h3>
+                        <div class="tradition-points">
+                            <div class="tradition-point">
+                                <h4>{{TRADITION_1_TITLE}}</h4>
+                                <p>{{TRADITION_1_DESCRIPTION}}</p>
+                            </div>
+                            <div class="tradition-point">
+                                <h4>{{TRADITION_2_TITLE}}</h4>
+                                <p>{{TRADITION_2_DESCRIPTION}}</p>
+                            </div>
+                            <div class="tradition-point">
+                                <h4>{{TRADITION_3_TITLE}}</h4>
+                                <p>{{TRADITION_3_DESCRIPTION}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="{{ABOUT_IMAGE}}" alt="Pizza Making">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Order -->
+    <section id="order" class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Order Your Pizza</h2>
+                    <div class="main-location">
+                        <h4>Main Location</h4>
+                        <p>{{MAIN_ADDRESS}}</p>
+                        <p><a href="tel:{{MAIN_PHONE}}">{{MAIN_PHONE}}</a></p>
+                    </div>
+                    <div class="quick-order">
+                        <h4>Quick Order</h4>
+                        <div class="order-options">
+                            <a href="{{ONLINE_ORDER_URL}}" class="btn btn-order">Order Online</a>
+                            <a href="tel:{{MAIN_PHONE}}" class="btn btn-secondary">Call Now</a>
+                        </div>
+                    </div>
+                    <div class="hours-info">
+                        <h4>Hours</h4>
+                        <p>{{MAIN_WEEKDAY_HOURS}}</p>
+                        <p>{{MAIN_WEEKEND_HOURS}}</p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Questions?</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Phone Number">
+                        </div>
+                        <div class="form-group">
+                            <select>
+                                <option value="">Select Location</option>
+                                <option value="location1">{{LOCATION_1_NAME}}</option>
+                                <option value="location2">{{LOCATION_2_NAME}}</option>
+                                <option value="location3">{{LOCATION_3_NAME}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your message or catering inquiry" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>{{RESTAURANT_NAME}}</h3>
+                    <p>{{FOOTER_DESCRIPTION}}</p>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}" aria-label="Facebook">📘</a>
+                        <a href="{{INSTAGRAM_URL}}" aria-label="Instagram">📷</a>
+                        <a href="{{TWITTER_URL}}" aria-label="Twitter">🐦</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Order</h4>
+                    <ul>
+                        <li><a href="#pizza">Pizza Menu</a></li>
+                        <li><a href="#delivery">Delivery</a></li>
+                        <li><a href="#catering">Catering</a></li>
+                        <li><a href="{{ONLINE_ORDER_URL}}">Order Online</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Locations</h4>
+                    <ul>
+                        <li><a href="#locations">{{LOCATION_1_NAME}}</a></li>
+                        <li><a href="#locations">{{LOCATION_2_NAME}}</a></li>
+                        <li><a href="#locations">{{LOCATION_3_NAME}}</a></li>
+                        <li><a href="#about">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Main Location</h4>
+                    <p>{{MAIN_ADDRESS}}</p>
+                    <p>{{MAIN_PHONE}}</p>
+                    <p>{{MAIN_WEEKDAY_HOURS}}</p>
+                    <p>{{MAIN_WEEKEND_HOURS}}</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; {{CURRENT_YEAR}} {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -3,484 +3,768 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{RESTAURANT_NAME}} - Eat, Play, Party!</title>
+    <title>{{SPORTS_BAR_NAME}} - Ultimate Sports Entertainment</title>
+    <meta name="description" content="{{SPORTS_BAR_NAME}} - Ultimate sports entertainment with {{SCREEN_COUNT}} big screens, live games, craft beer, and game day specials">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&family=Anton:wght@400&display=swap" rel="stylesheet">
 </head>
-<body class="color-scheme-vibrant">
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <h2>{{RESTAURANT_NAME}}</h2>
+<body class="color-vibrant-sports">
+    <header class="sports-header">
+        <div class="container">
+            <div class="logo-section">
+                <div class="logo">
+                    <h1>{{SPORTS_BAR_NAME}}</h1>
+                    <span class="tagline">{{SPORTS_TAGLINE}}</span>
+                </div>
+                <div class="live-indicator">
+                    <span class="live-dot"></span>
+                    <span>LIVE GAMES NOW</span>
+                </div>
             </div>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#play" class="nav-link">Play</a></li>
-                <li><a href="#eat" class="nav-link">Eat & Drink</a></li>
-                <li><a href="#parties" class="nav-link">Parties</a></li>
-                <li><a href="#events" class="nav-link">Events</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-                <li><a href="#" class="nav-link cta-button" onclick="openBookingModal()">Book Now</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <nav class="main-nav">
+                <ul class="nav-menu">
+                    <li><a href="#games">Live Games</a></li>
+                    <li><a href="#menu">Game Day Menu</a></li>
+                    <li><a href="#specials">Daily Specials</a></li>
+                    <li><a href="#entertainment">Entertainment</a></li>
+                    <li><a href="#events">Private Events</a></li>
+                    <li><a href="#contact">Visit Us</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="reserve-table-btn">Reserve Table</button>
+                <button class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
-    </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
+    <section class="hero-sports">
         <div class="hero-background">
-            <video autoplay muted loop>
-                <source src="{{HERO_VIDEO}}" type="video/mp4">
-            </video>
+            <img src="{{HERO_BACKGROUND_IMAGE}}" alt="Sports bar atmosphere with big screens">
             <div class="hero-overlay"></div>
         </div>
         <div class="hero-content">
-            <h1 class="hero-title">EAT. PLAY. PARTY.</h1>
-            <p class="hero-subtitle">The ultimate entertainment destination with games, food, and fun!</p>
-            <div class="hero-buttons">
-                <button class="btn btn-primary" onclick="openBookingModal()">Book Your Fun</button>
-                <button class="btn btn-secondary" onclick="scrollToSection('play')">Explore Games</button>
-            </div>
-        </div>
-        <div class="hero-features">
-            <div class="feature-badge">
-                <i class="fas fa-gamepad"></i>
-                <span>100+ Games</span>
-            </div>
-            <div class="feature-badge">
-                <i class="fas fa-utensils"></i>
-                <span>Full Menu</span>
-            </div>
-            <div class="feature-badge">
-                <i class="fas fa-birthday-cake"></i>
-                <span>Private Parties</span>
+            <div class="hero-text">
+                <h2>{{HERO_TITLE}}</h2>
+                <p>{{HERO_SUBTITLE}}</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">{{SCREEN_COUNT}}</span>
+                        <span class="stat-label">Big Screens</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">{{BEER_TAP_COUNT}}</span>
+                        <span class="stat-label">Craft Beers</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">{{SEATING_CAPACITY}}</span>
+                        <span class="stat-label">Seats</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">{{ARCADE_GAME_COUNT}}</span>
+                        <span class="stat-label">Arcade Games</span>
+                    </div>
+                </div>
+                <div class="hero-cta">
+                    <button class="btn btn-primary">View Live Games</button>
+                    <button class="btn btn-secondary">Check Game Schedule</button>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Promotional Banners -->
-    <section class="promo-banners">
-        <div class="banner-slider">
-            <div class="banner-slide active">
-                <div class="banner-content">
-                    <h3>Game Card Special</h3>
-                    <p>Buy $20 Game Card, Get $5 FREE!</p>
-                    <button class="btn btn-accent">Claim Offer</button>
-                </div>
-            </div>
-            <div class="banner-slide">
-                <div class="banner-content">
-                    <h3>Happy Hour</h3>
-                    <p>Half Price Apps & Drinks Mon-Fri 3-6pm</p>
-                    <button class="btn btn-accent">View Menu</button>
-                </div>
-            </div>
-            <div class="banner-slide">
-                <div class="banner-content">
-                    <h3>Birthday Parties</h3>
-                    <p>Free Birthday Game Card with Party Package</p>
-                    <button class="btn btn-accent">Learn More</button>
-                </div>
-            </div>
-        </div>
-        <div class="banner-indicators">
-            <span class="indicator active" onclick="showBanner(0)"></span>
-            <span class="indicator" onclick="showBanner(1)"></span>
-            <span class="indicator" onclick="showBanner(2)"></span>
-        </div>
-    </section>
-
-    <!-- Games Section -->
-    <section id="play" class="games-section">
+    <section class="live-games-ticker">
         <div class="container">
-            <h2 class="section-title">Play All Day</h2>
-            <p class="section-subtitle">Over 100 games for all ages and skill levels</p>
-            
-            <div class="games-categories">
-                <div class="game-category">
-                    <div class="category-image">
-                        <img src="{{ARCADE_IMAGE}}" alt="Arcade Games">
-                        <div class="category-overlay">
-                            <h3>Arcade Games</h3>
-                            <p>Classic and modern arcade favorites</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="game-category">
-                    <div class="category-image">
-                        <img src="{{SPORTS_IMAGE}}" alt="Sports Games">
-                        <div class="category-overlay">
-                            <h3>Sports Games</h3>
-                            <p>Basketball, football, air hockey & more</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="game-category">
-                    <div class="category-image">
-                        <img src="{{RACING_IMAGE}}" alt="Racing Games">
-                        <div class="category-overlay">
-                            <h3>Racing Games</h3>
-                            <p>High-speed thrills and competition</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="game-category">
-                    <div class="category-image">
-                        <img src="{{VR_IMAGE}}" alt="VR Experience">
-                        <div class="category-overlay">
-                            <h3>VR Experience</h3>
-                            <p>Immersive virtual reality adventures</p>
-                        </div>
-                    </div>
-                </div>
+            <div class="ticker-label">LIVE NOW:</div>
+            <div class="ticker-content">
+                <span>{{LIVE_GAME_1}} • {{LIVE_GAME_2}} • {{LIVE_GAME_3}} • {{LIVE_GAME_4}} • {{LIVE_GAME_5}}</span>
             </div>
+        </div>
+    </section>
 
-            <div class="game-cards">
+    <section id="games" class="game-schedule-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Today's Game Schedule</h2>
+                <p>Catch all the action on our {{SCREEN_COUNT}} HD big screens</p>
+            </div>
+            <div class="games-grid">
+                <div class="game-card featured">
+                    <div class="game-status live">LIVE</div>
+                    <div class="game-info">
+                        <div class="teams">
+                            <div class="team">
+                                <img src="{{TEAM_1_LOGO}}" alt="{{TEAM_1_NAME}}">
+                                <span class="team-name">{{TEAM_1_NAME}}</span>
+                                <span class="score">{{TEAM_1_SCORE}}</span>
+                            </div>
+                            <div class="vs">VS</div>
+                            <div class="team">
+                                <img src="{{TEAM_2_LOGO}}" alt="{{TEAM_2_NAME}}">
+                                <span class="team-name">{{TEAM_2_NAME}}</span>
+                                <span class="score">{{TEAM_2_SCORE}}</span>
+                            </div>
+                        </div>
+                        <div class="game-details">
+                            <span class="time">{{GAME_TIME}}</span>
+                            <span class="network">{{GAME_NETWORK}}</span>
+                        </div>
+                        <div class="game-special">{{GAME_SPECIAL_OFFER}}</div>
+                    </div>
+                </div>
                 <div class="game-card">
-                    <h4>Power Cards</h4>
-                    <p>Load up and play your favorites</p>
-                    <div class="card-options">
-                        <div class="card-option">
-                            <span class="amount">$10</span>
-                            <span class="bonus">+$2 Bonus</span>
+                    <div class="game-status upcoming">UPCOMING</div>
+                    <div class="game-info">
+                        <div class="teams">
+                            <div class="team">
+                                <img src="{{TEAM_3_LOGO}}" alt="{{TEAM_3_NAME}}">
+                                <span class="team-name">{{TEAM_3_NAME}}</span>
+                            </div>
+                            <div class="vs">VS</div>
+                            <div class="team">
+                                <img src="{{TEAM_4_LOGO}}" alt="{{TEAM_4_NAME}}">
+                                <span class="team-name">{{TEAM_4_NAME}}</span>
+                            </div>
                         </div>
-                        <div class="card-option featured">
-                            <span class="amount">$20</span>
-                            <span class="bonus">+$5 Bonus</span>
-                        </div>
-                        <div class="card-option">
-                            <span class="amount">$50</span>
-                            <span class="bonus">+$15 Bonus</span>
+                        <div class="game-details">
+                            <span class="time">{{GAME_2_TIME}}</span>
+                            <span class="network">{{GAME_2_NETWORK}}</span>
                         </div>
                     </div>
                 </div>
                 <div class="game-card">
-                    <h4>All-You-Can-Play</h4>
-                    <p>Unlimited games for 2 hours</p>
-                    <div class="pricing">
-                        <span class="price">$25</span>
-                        <span class="weekday">Weekdays</span>
+                    <div class="game-status upcoming">UPCOMING</div>
+                    <div class="game-info">
+                        <div class="teams">
+                            <div class="team">
+                                <img src="{{TEAM_5_LOGO}}" alt="{{TEAM_5_NAME}}">
+                                <span class="team-name">{{TEAM_5_NAME}}</span>
+                            </div>
+                            <div class="vs">VS</div>
+                            <div class="team">
+                                <img src="{{TEAM_6_LOGO}}" alt="{{TEAM_6_NAME}}">
+                                <span class="team-name">{{TEAM_6_NAME}}</span>
+                            </div>
+                        </div>
+                        <div class="game-details">
+                            <span class="time">{{GAME_3_TIME}}</span>
+                            <span class="network">{{GAME_3_NETWORK}}</span>
+                        </div>
                     </div>
-                    <div class="pricing">
-                        <span class="price">$35</span>
-                        <span class="weekend">Weekends</span>
+                </div>
+            </div>
+            <div class="weekly-schedule">
+                <h3>This Week's Big Games</h3>
+                <div class="schedule-list">
+                    <div class="schedule-item">
+                        <div class="schedule-date">{{SCHEDULE_DATE_1}}</div>
+                        <div class="schedule-game">{{SCHEDULE_GAME_1}}</div>
+                        <div class="schedule-time">{{SCHEDULE_TIME_1}}</div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-date">{{SCHEDULE_DATE_2}}</div>
+                        <div class="schedule-game">{{SCHEDULE_GAME_2}}</div>
+                        <div class="schedule-time">{{SCHEDULE_TIME_2}}</div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-date">{{SCHEDULE_DATE_3}}</div>
+                        <div class="schedule-game">{{SCHEDULE_GAME_3}}</div>
+                        <div class="schedule-time">{{SCHEDULE_TIME_3}}</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Food & Drinks Section -->
-    <section id="eat" class="food-section">
+    <section id="menu" class="game-day-menu">
         <div class="container">
-            <h2 class="section-title">Eat & Drink</h2>
-            <p class="section-subtitle">Delicious food and refreshing drinks to fuel your fun</p>
-            
-            <div class="menu-highlights">
-                <div class="menu-category-card">
-                    <img src="{{APPETIZERS_IMAGE}}" alt="Appetizers">
-                    <div class="menu-card-content">
-                        <h3>Shareables</h3>
-                        <p>Perfect for groups and game breaks</p>
-                        <ul>
-                            <li>Loaded Nachos - $12</li>
-                            <li>Buffalo Wings - $14</li>
-                            <li>Mozzarella Sticks - $10</li>
-                            <li>Spinach Artichoke Dip - $11</li>
-                        </ul>
-                    </div>
+            <div class="section-header">
+                <h2>Game Day Menu</h2>
+                <p>Fuel your team spirit with championship-winning food</p>
+            </div>
+            <div class="menu-categories">
+                <div class="menu-nav">
+                    <button class="menu-tab active" data-category="appetizers">Game Starters</button>
+                    <button class="menu-tab" data-category="wings">Wings & Sauces</button>
+                    <button class="menu-tab" data-category="burgers">Power Burgers</button>
+                    <button class="menu-tab" data-category="entrees">Main Events</button>
+                    <button class="menu-tab" data-category="drinks">Drinks & Beers</button>
                 </div>
-                <div class="menu-category-card">
-                    <img src="{{BURGERS_IMAGE}}" alt="Burgers">
-                    <div class="menu-card-content">
-                        <h3>Burgers & Sandwiches</h3>
-                        <p>Hearty meals for big appetites</p>
-                        <ul>
-                            <li>Gamer Burger - $15</li>
-                            <li>BBQ Bacon Burger - $16</li>
-                            <li>Buffalo Chicken Sandwich - $14</li>
-                            <li>Fish & Chips - $16</li>
-                        </ul>
+                <div class="menu-content">
+                    <div class="menu-category active" id="appetizers">
+                        <div class="menu-items">
+                            <div class="menu-item championship">
+                                <div class="item-badge">Fan Favorite</div>
+                                <div class="item-content">
+                                    <h4>{{APPETIZER_1_NAME}}</h4>
+                                    <p>{{APPETIZER_1_DESCRIPTION}}</p>
+                                    <div class="item-extras">
+                                        <span class="serving-size">{{APPETIZER_1_SIZE}}</span>
+                                        <span class="shareability">Perfect for sharing</span>
+                                    </div>
+                                </div>
+                                <div class="item-price">{{APPETIZER_1_PRICE}}</div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-content">
+                                    <h4>{{APPETIZER_2_NAME}}</h4>
+                                    <p>{{APPETIZER_2_DESCRIPTION}}</p>
+                                    <div class="item-extras">
+                                        <span class="serving-size">{{APPETIZER_2_SIZE}}</span>
+                                    </div>
+                                </div>
+                                <div class="item-price">{{APPETIZER_2_PRICE}}</div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-content">
+                                    <h4>{{APPETIZER_3_NAME}}</h4>
+                                    <p>{{APPETIZER_3_DESCRIPTION}}</p>
+                                    <div class="item-extras">
+                                        <span class="serving-size">{{APPETIZER_3_SIZE}}</span>
+                                    </div>
+                                </div>
+                                <div class="item-price">{{APPETIZER_3_PRICE}}</div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-content">
+                                    <h4>{{APPETIZER_4_NAME}}</h4>
+                                    <p>{{APPETIZER_4_DESCRIPTION}}</p>
+                                    <div class="item-extras">
+                                        <span class="serving-size">{{APPETIZER_4_SIZE}}</span>
+                                    </div>
+                                </div>
+                                <div class="item-price">{{APPETIZER_4_PRICE}}</div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="menu-category-card">
-                    <img src="{{DRINKS_IMAGE}}" alt="Drinks">
-                    <div class="menu-card-content">
-                        <h3>Drinks & Cocktails</h3>
-                        <p>Refreshing beverages and specialty cocktails</p>
-                        <ul>
-                            <li>Power-Up Punch - $9</li>
-                            <li>Game Over IPA - $6</li>
-                            <li>Victory Smoothie - $7</li>
-                            <li>Arcade Lemonade - $5</li>
-                        </ul>
+                    <div class="menu-category" id="wings">
+                        <div class="wings-special">
+                            <h3>{{WINGS_SPECIAL_TITLE}}</h3>
+                            <p>{{WINGS_SPECIAL_DESCRIPTION}}</p>
+                        </div>
+                        <div class="wings-grid">
+                            <div class="wing-option">
+                                <h4>{{WING_SIZE_1}}</h4>
+                                <p>{{WING_SIZE_1_COUNT}} wings</p>
+                                <span class="price">{{WING_SIZE_1_PRICE}}</span>
+                            </div>
+                            <div class="wing-option popular">
+                                <div class="popular-badge">Most Popular</div>
+                                <h4>{{WING_SIZE_2}}</h4>
+                                <p>{{WING_SIZE_2_COUNT}} wings</p>
+                                <span class="price">{{WING_SIZE_2_PRICE}}</span>
+                            </div>
+                            <div class="wing-option">
+                                <h4>{{WING_SIZE_3}}</h4>
+                                <p>{{WING_SIZE_3_COUNT}} wings</p>
+                                <span class="price">{{WING_SIZE_3_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="sauces-section">
+                            <h4>Choose Your Heat Level</h4>
+                            <div class="sauce-grid">
+                                <div class="sauce mild">
+                                    <span class="heat-level">🌶️</span>
+                                    <h5>{{SAUCE_MILD}}</h5>
+                                </div>
+                                <div class="sauce medium">
+                                    <span class="heat-level">🌶️🌶️</span>
+                                    <h5>{{SAUCE_MEDIUM}}</h5>
+                                </div>
+                                <div class="sauce hot">
+                                    <span class="heat-level">🌶️🌶️🌶️</span>
+                                    <h5>{{SAUCE_HOT}}</h5>
+                                </div>
+                                <div class="sauce insane">
+                                    <span class="heat-level">🌶️🌶️🌶️🌶️</span>
+                                    <h5>{{SAUCE_INSANE}}</h5>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="menu-category-card">
-                    <img src="{{DESSERTS_IMAGE}}" alt="Desserts">
-                    <div class="menu-card-content">
-                        <h3>Sweet Treats</h3>
-                        <p>Perfect endings to your adventure</p>
-                        <ul>
-                            <li>Funnel Cake - $8</li>
-                            <li>Cookie Monster Shake - $7</li>
-                            <li>Victory Sundae - $6</li>
-                            <li>Birthday Cake Slice - $5</li>
-                        </ul>
+                    <div class="menu-category" id="burgers">
+                        <div class="menu-items">
+                            <div class="menu-item championship">
+                                <div class="item-badge">Signature</div>
+                                <div class="item-content">
+                                    <h4>{{BURGER_1_NAME}}</h4>
+                                    <p>{{BURGER_1_DESCRIPTION}}</p>
+                                    <div class="item-extras">
+                                        <span class="burger-weight">{{BURGER_1_WEIGHT}}</span>
+                                        <span class="includes">{{BURGER_1_INCLUDES}}</span>
+                                    </div>
+                                </div>
+                                <div class="item-price">{{BURGER_1_PRICE}}</div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-content">
+                                    <h4>{{BURGER_2_NAME}}</h4>
+                                    <p>{{BURGER_2_DESCRIPTION}}</p>
+                                    <div class="item-extras">
+                                        <span class="burger-weight">{{BURGER_2_WEIGHT}}</span>
+                                        <span class="includes">{{BURGER_2_INCLUDES}}</span>
+                                    </div>
+                                </div>
+                                <div class="item-price">{{BURGER_2_PRICE}}</div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-content">
+                                    <h4>{{BURGER_3_NAME}}</h4>
+                                    <p>{{BURGER_3_DESCRIPTION}}</p>
+                                    <div class="item-extras">
+                                        <span class="burger-weight">{{BURGER_3_WEIGHT}}</span>
+                                        <span class="includes">{{BURGER_3_INCLUDES}}</span>
+                                    </div>
+                                </div>
+                                <div class="item-price">{{BURGER_3_PRICE}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-category" id="entrees">
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="item-content">
+                                    <h4>{{ENTREE_1_NAME}}</h4>
+                                    <p>{{ENTREE_1_DESCRIPTION}}</p>
+                                    <div class="item-extras">
+                                        <span class="serving-info">{{ENTREE_1_SERVING}}</span>
+                                    </div>
+                                </div>
+                                <div class="item-price">{{ENTREE_1_PRICE}}</div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-content">
+                                    <h4>{{ENTREE_2_NAME}}</h4>
+                                    <p>{{ENTREE_2_DESCRIPTION}}</p>
+                                    <div class="item-extras">
+                                        <span class="serving-info">{{ENTREE_2_SERVING}}</span>
+                                    </div>
+                                </div>
+                                <div class="item-price">{{ENTREE_2_PRICE}}</div>
+                            </div>
+                            <div class="menu-item">
+                                <div class="item-content">
+                                    <h4>{{ENTREE_3_NAME}}</h4>
+                                    <p>{{ENTREE_3_DESCRIPTION}}</p>
+                                    <div class="item-extras">
+                                        <span class="serving-info">{{ENTREE_3_SERVING}}</span>
+                                    </div>
+                                </div>
+                                <div class="item-price">{{ENTREE_3_PRICE}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-category" id="drinks">
+                        <div class="drinks-sections">
+                            <div class="beer-section">
+                                <h3>Craft Beer on Tap</h3>
+                                <div class="beer-list">
+                                    <div class="beer-item">
+                                        <h4>{{BEER_1_NAME}}</h4>
+                                        <p>{{BEER_1_DESCRIPTION}}</p>
+                                        <div class="beer-details">
+                                            <span class="abv">{{BEER_1_ABV}} ABV</span>
+                                            <span class="price">{{BEER_1_PRICE}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="beer-item">
+                                        <h4>{{BEER_2_NAME}}</h4>
+                                        <p>{{BEER_2_DESCRIPTION}}</p>
+                                        <div class="beer-details">
+                                            <span class="abv">{{BEER_2_ABV}} ABV</span>
+                                            <span class="price">{{BEER_2_PRICE}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="beer-item">
+                                        <h4>{{BEER_3_NAME}}</h4>
+                                        <p>{{BEER_3_DESCRIPTION}}</p>
+                                        <div class="beer-details">
+                                            <span class="abv">{{BEER_3_ABV}} ABV</span>
+                                            <span class="price">{{BEER_3_PRICE}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cocktails-section">
+                                <h3>Signature Cocktails</h3>
+                                <div class="cocktail-list">
+                                    <div class="cocktail-item">
+                                        <h4>{{COCKTAIL_1_NAME}}</h4>
+                                        <p>{{COCKTAIL_1_INGREDIENTS}}</p>
+                                        <span class="price">{{COCKTAIL_1_PRICE}}</span>
+                                    </div>
+                                    <div class="cocktail-item">
+                                        <h4>{{COCKTAIL_2_NAME}}</h4>
+                                        <p>{{COCKTAIL_2_INGREDIENTS}}</p>
+                                        <span class="price">{{COCKTAIL_2_PRICE}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Parties Section -->
-    <section id="parties" class="parties-section">
+    <section id="specials" class="daily-specials-section">
         <div class="container">
-            <h2 class="section-title">Epic Parties</h2>
-            <p class="section-subtitle">Celebrate in style with our party packages</p>
-            
-            <div class="party-packages">
-                <div class="party-package">
-                    <div class="package-header">
-                        <h3>Birthday Bash</h3>
-                        <span class="package-price">Starting at $199</span>
-                    </div>
-                    <div class="package-content">
-                        <ul>
-                            <li>2-hour private party room</li>
-                            <li>$20 game card per child</li>
-                            <li>Pizza & drinks for 8</li>
-                            <li>Birthday cake</li>
-                            <li>Dedicated party host</li>
-                            <li>Free birthday game card</li>
-                        </ul>
-                        <button class="btn btn-primary">Book Party</button>
-                    </div>
+            <h2>Game Day Specials</h2>
+            <div class="specials-grid">
+                <div class="special-day">
+                    <div class="day-header">Monday</div>
+                    <h3>{{MONDAY_SPECIAL_TITLE}}</h3>
+                    <p>{{MONDAY_SPECIAL_DESCRIPTION}}</p>
+                    <div class="special-price">{{MONDAY_SPECIAL_PRICE}}</div>
+                    <div class="special-time">{{MONDAY_SPECIAL_TIME}}</div>
                 </div>
-                <div class="party-package featured">
-                    <div class="package-ribbon">Most Popular</div>
-                    <div class="package-header">
-                        <h3>Ultimate Celebration</h3>
-                        <span class="package-price">Starting at $349</span>
-                    </div>
-                    <div class="package-content">
-                        <ul>
-                            <li>3-hour private party room</li>
-                            <li>$30 game card per person</li>
-                            <li>Full buffet for 12</li>
-                            <li>Custom cake & decorations</li>
-                            <li>VIP party coordinator</li>
-                            <li>Photo package included</li>
-                        </ul>
-                        <button class="btn btn-accent">Book Ultimate</button>
-                    </div>
+                <div class="special-day">
+                    <div class="day-header">Tuesday</div>
+                    <h3>{{TUESDAY_SPECIAL_TITLE}}</h3>
+                    <p>{{TUESDAY_SPECIAL_DESCRIPTION}}</p>
+                    <div class="special-price">{{TUESDAY_SPECIAL_PRICE}}</div>
+                    <div class="special-time">{{TUESDAY_SPECIAL_TIME}}</div>
                 </div>
-                <div class="party-package">
-                    <div class="package-header">
-                        <h3>Corporate Event</h3>
-                        <span class="package-price">Starting at $499</span>
-                    </div>
-                    <div class="package-content">
-                        <ul>
-                            <li>4-hour venue rental</li>
-                            <li>Unlimited games access</li>
-                            <li>Catered meal options</li>
-                            <li>Audio/visual equipment</li>
-                            <li>Event coordinator</li>
-                            <li>Team building activities</li>
-                        </ul>
-                        <button class="btn btn-primary">Plan Event</button>
-                    </div>
+                <div class="special-day featured">
+                    <div class="day-header">Wednesday</div>
+                    <h3>{{WEDNESDAY_SPECIAL_TITLE}}</h3>
+                    <p>{{WEDNESDAY_SPECIAL_DESCRIPTION}}</p>
+                    <div class="special-price">{{WEDNESDAY_SPECIAL_PRICE}}</div>
+                    <div class="special-time">{{WEDNESDAY_SPECIAL_TIME}}</div>
+                </div>
+                <div class="special-day">
+                    <div class="day-header">Thursday</div>
+                    <h3>{{THURSDAY_SPECIAL_TITLE}}</h3>
+                    <p>{{THURSDAY_SPECIAL_DESCRIPTION}}</p>
+                    <div class="special-price">{{THURSDAY_SPECIAL_PRICE}}</div>
+                    <div class="special-time">{{THURSDAY_SPECIAL_TIME}}</div>
+                </div>
+                <div class="special-day">
+                    <div class="day-header">Friday</div>
+                    <h3>{{FRIDAY_SPECIAL_TITLE}}</h3>
+                    <p>{{FRIDAY_SPECIAL_DESCRIPTION}}</p>
+                    <div class="special-price">{{FRIDAY_SPECIAL_PRICE}}</div>
+                    <div class="special-time">{{FRIDAY_SPECIAL_TIME}}</div>
+                </div>
+                <div class="special-day weekend">
+                    <div class="day-header">Weekend</div>
+                    <h3>{{WEEKEND_SPECIAL_TITLE}}</h3>
+                    <p>{{WEEKEND_SPECIAL_DESCRIPTION}}</p>
+                    <div class="special-price">{{WEEKEND_SPECIAL_PRICE}}</div>
+                    <div class="special-time">{{WEEKEND_SPECIAL_TIME}}</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Events Section -->
-    <section id="events" class="events-section">
+    <section id="entertainment" class="entertainment-section">
         <div class="container">
-            <h2 class="section-title">Upcoming Events</h2>
-            <div class="events-grid">
-                <div class="event-card">
-                    <div class="event-date">
-                        <span class="month">MAR</span>
-                        <span class="day">15</span>
-                    </div>
-                    <div class="event-info">
-                        <h4>Game Tournament Night</h4>
-                        <p>Compete for prizes in our monthly gaming tournament</p>
-                        <span class="event-time">7:00 PM - 10:00 PM</span>
+            <div class="entertainment-content">
+                <div class="entertainment-info">
+                    <h2>Beyond the Game</h2>
+                    <p>{{ENTERTAINMENT_DESCRIPTION}}</p>
+                    <div class="entertainment-features">
+                        <div class="feature">
+                            <div class="feature-icon">🎮</div>
+                            <h4>{{ARCADE_TITLE}}</h4>
+                            <p>{{ARCADE_DESCRIPTION}}</p>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">🎯</div>
+                            <h4>{{DARTS_TITLE}}</h4>
+                            <p>{{DARTS_DESCRIPTION}}</p>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">🎱</div>
+                            <h4>{{POOL_TITLE}}</h4>
+                            <p>{{POOL_DESCRIPTION}}</p>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">🎤</div>
+                            <h4>{{KARAOKE_TITLE}}</h4>
+                            <p>{{KARAOKE_DESCRIPTION}}</p>
+                        </div>
                     </div>
                 </div>
-                <div class="event-card">
-                    <div class="event-date">
-                        <span class="month">MAR</span>
-                        <span class="day">22</span>
-                    </div>
-                    <div class="event-info">
-                        <h4>Trivia Night</h4>
-                        <p>Test your knowledge and win game cards</p>
-                        <span class="event-time">8:00 PM - 10:00 PM</span>
-                    </div>
-                </div>
-                <div class="event-card">
-                    <div class="event-date">
-                        <span class="month">MAR</span>
-                        <span class="day">29</span>
-                    </div>
-                    <div class="event-info">
-                        <h4>Family Fun Day</h4>
-                        <p>Special family packages and activities</p>
-                        <span class="event-time">12:00 PM - 6:00 PM</span>
+                <div class="entertainment-schedule">
+                    <h3>Weekly Entertainment</h3>
+                    <div class="schedule-items">
+                        <div class="schedule-item">
+                            <div class="schedule-day">{{ENTERTAINMENT_DAY_1}}</div>
+                            <div class="schedule-event">{{ENTERTAINMENT_EVENT_1}}</div>
+                            <div class="schedule-time">{{ENTERTAINMENT_TIME_1}}</div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="schedule-day">{{ENTERTAINMENT_DAY_2}}</div>
+                            <div class="schedule-event">{{ENTERTAINMENT_EVENT_2}}</div>
+                            <div class="schedule-time">{{ENTERTAINMENT_TIME_2}}</div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="schedule-day">{{ENTERTAINMENT_DAY_3}}</div>
+                            <div class="schedule-event">{{ENTERTAINMENT_EVENT_3}}</div>
+                            <div class="schedule-time">{{ENTERTAINMENT_TIME_3}}</div>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="schedule-day">{{ENTERTAINMENT_DAY_4}}</div>
+                            <div class="schedule-event">{{ENTERTAINMENT_EVENT_4}}</div>
+                            <div class="schedule-time">{{ENTERTAINMENT_TIME_4}}</div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="events" class="private-events-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Private Events & Parties</h2>
+                <p>Host your next celebration with championship-level service</p>
+            </div>
+            <div class="events-options">
+                <div class="event-package">
+                    <h3>{{PACKAGE_1_NAME}}</h3>
+                    <p>{{PACKAGE_1_DESCRIPTION}}</p>
+                    <div class="package-features">
+                        <ul>
+                            <li>{{PACKAGE_1_FEATURE_1}}</li>
+                            <li>{{PACKAGE_1_FEATURE_2}}</li>
+                            <li>{{PACKAGE_1_FEATURE_3}}</li>
+                            <li>{{PACKAGE_1_FEATURE_4}}</li>
+                        </ul>
+                    </div>
+                    <div class="package-pricing">
+                        <span class="capacity">{{PACKAGE_1_CAPACITY}} people</span>
+                        <span class="price">{{PACKAGE_1_PRICE}}</span>
+                    </div>
+                    <button class="btn btn-outline">Get Quote</button>
+                </div>
+                <div class="event-package featured">
+                    <div class="package-badge">Most Popular</div>
+                    <h3>{{PACKAGE_2_NAME}}</h3>
+                    <p>{{PACKAGE_2_DESCRIPTION}}</p>
+                    <div class="package-features">
+                        <ul>
+                            <li>{{PACKAGE_2_FEATURE_1}}</li>
+                            <li>{{PACKAGE_2_FEATURE_2}}</li>
+                            <li>{{PACKAGE_2_FEATURE_3}}</li>
+                            <li>{{PACKAGE_2_FEATURE_4}}</li>
+                            <li>{{PACKAGE_2_FEATURE_5}}</li>
+                        </ul>
+                    </div>
+                    <div class="package-pricing">
+                        <span class="capacity">{{PACKAGE_2_CAPACITY}} people</span>
+                        <span class="price">{{PACKAGE_2_PRICE}}</span>
+                    </div>
+                    <button class="btn btn-primary">Book Now</button>
+                </div>
+                <div class="event-package">
+                    <h3>{{PACKAGE_3_NAME}}</h3>
+                    <p>{{PACKAGE_3_DESCRIPTION}}</p>
+                    <div class="package-features">
+                        <ul>
+                            <li>{{PACKAGE_3_FEATURE_1}}</li>
+                            <li>{{PACKAGE_3_FEATURE_2}}</li>
+                            <li>{{PACKAGE_3_FEATURE_3}}</li>
+                            <li>{{PACKAGE_3_FEATURE_4}}</li>
+                            <li>{{PACKAGE_3_FEATURE_5}}</li>
+                            <li>{{PACKAGE_3_FEATURE_6}}</li>
+                        </ul>
+                    </div>
+                    <div class="package-pricing">
+                        <span class="capacity">{{PACKAGE_3_CAPACITY}} people</span>
+                        <span class="price">{{PACKAGE_3_PRICE}}</span>
+                    </div>
+                    <button class="btn btn-outline">Plan Event</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="atmosphere-section">
+        <div class="container">
+            <div class="atmosphere-content">
+                <h2>The Ultimate Sports Experience</h2>
+                <p>{{ATMOSPHERE_DESCRIPTION}}</p>
+                <div class="experience-grid">
+                    <div class="experience-card">
+                        <div class="experience-icon">📺</div>
+                        <h4>{{SCREEN_EXPERIENCE_TITLE}}</h4>
+                        <p>{{SCREEN_EXPERIENCE_DESCRIPTION}}</p>
+                    </div>
+                    <div class="experience-card">
+                        <div class="experience-icon">🍺</div>
+                        <h4>{{BAR_EXPERIENCE_TITLE}}</h4>
+                        <p>{{BAR_EXPERIENCE_DESCRIPTION}}</p>
+                    </div>
+                    <div class="experience-card">
+                        <div class="experience-icon">🎵</div>
+                        <h4>{{SOUND_EXPERIENCE_TITLE}}</h4>
+                        <p>{{SOUND_EXPERIENCE_DESCRIPTION}}</p>
+                    </div>
+                    <div class="experience-card">
+                        <div class="experience-icon">👥</div>
+                        <h4>{{SOCIAL_EXPERIENCE_TITLE}}</h4>
+                        <p>{{SOCIAL_EXPERIENCE_DESCRIPTION}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay in the Game</h2>
+                <p>Get updates on game schedules, special events, and exclusive offers</p>
+                <form class="newsletter-form">
+                    <div class="form-row">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn btn-primary">Join Team</button>
+                    </div>
+                    <div class="form-checkbox">
+                        <input type="checkbox" id="game-alerts" name="game-alerts">
+                        <label for="game-alerts">Send me game day alerts and special offers</label>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
         <div class="container">
             <div class="contact-content">
                 <div class="contact-info">
-                    <h2>Visit Us Today</h2>
+                    <h2>Visit Our Sports Bar</h2>
                     <div class="contact-details">
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <h4>Location</h4>
-                                <p>{{RESTAURANT_ADDRESS}}</p>
-                            </div>
+                        <div class="detail">
+                            <h4>Address</h4>
+                            <p>{{SPORTS_BAR_ADDRESS}}</p>
                         </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <h4>Phone</h4>
-                                <p>{{PHONE_NUMBER}}</p>
-                            </div>
+                        <div class="detail">
+                            <h4>Phone</h4>
+                            <p>{{SPORTS_BAR_PHONE}}</p>
                         </div>
-                        <div class="contact-item">
-                            <i class="fas fa-clock"></i>
-                            <div>
-                                <h4>Hours</h4>
-                                <p>{{HOURS_OF_OPERATION}}</p>
-                            </div>
+                        <div class="detail">
+                            <h4>Hours</h4>
+                            <p>{{SPORTS_BAR_HOURS}}</p>
                         </div>
-                    </div>
-                    <div class="special-hours">
-                        <h4>Special Hours</h4>
-                        <p>Extended hours on weekends and holidays</p>
+                        <div class="detail">
+                            <h4>Private Events</h4>
+                            <p>{{EVENTS_PHONE}}</p>
+                        </div>
                     </div>
                 </div>
-                <div class="contact-form">
-                    <h3>Plan Your Visit</h3>
+                <div class="reservation-form">
+                    <h3>Reserve Your Table</h3>
                     <form>
-                        <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
+                        <div class="form-row">
+                            <input type="text" name="name" placeholder="Name" required>
+                            <input type="email" name="email" placeholder="Email" required>
                         </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" placeholder="Phone Number" required>
-                        </div>
-                        <div class="form-group">
-                            <select required>
-                                <option value="">Type of Visit</option>
-                                <option value="casual">Casual Visit</option>
-                                <option value="birthday">Birthday Party</option>
-                                <option value="corporate">Corporate Event</option>
-                                <option value="group">Group Outing</option>
+                        <div class="form-row">
+                            <input type="tel" name="phone" placeholder="Phone" required>
+                            <select name="party-size" required>
+                                <option value="">Party Size</option>
+                                <option value="2">2 guests</option>
+                                <option value="3">3 guests</option>
+                                <option value="4">4 guests</option>
+                                <option value="5">5 guests</option>
+                                <option value="6">6 guests</option>
+                                <option value="8">8 guests</option>
+                                <option value="10">10+ guests</option>
                             </select>
                         </div>
-                        <div class="form-group">
-                            <input type="date" required>
+                        <div class="form-row">
+                            <input type="date" name="date" required>
+                            <select name="time" required>
+                                <option value="">Preferred Time</option>
+                                <option value="17:00">5:00 PM</option>
+                                <option value="17:30">5:30 PM</option>
+                                <option value="18:00">6:00 PM</option>
+                                <option value="18:30">6:30 PM</option>
+                                <option value="19:00">7:00 PM</option>
+                                <option value="19:30">7:30 PM</option>
+                                <option value="20:00">8:00 PM</option>
+                                <option value="20:30">8:30 PM</option>
+                                <option value="21:00">9:00 PM</option>
+                            </select>
                         </div>
-                        <div class="form-group">
-                            <textarea placeholder="Special Requests or Questions" rows="4"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <select name="seating-preference">
+                            <option value="">Seating Preference</option>
+                            <option value="bar">Sports Bar</option>
+                            <option value="booth">Booth</option>
+                            <option value="table">Table</option>
+                            <option value="big-screen">Near Big Screen</option>
+                            <option value="arcade">Near Arcade</option>
+                        </select>
+                        <textarea name="special-requests" placeholder="Special requests, game preferences, or dietary restrictions" rows="3"></textarea>
+                        <button type="submit" class="btn btn-primary">Reserve Table</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <h3>{{RESTAURANT_NAME}}</h3>
-                    <p>Where fun meets food!</p>
-                    <div class="social-links">
-                        <a href="{{FACEBOOK_URL}}"><i class="fab fa-facebook"></i></a>
-                        <a href="{{INSTAGRAM_URL}}"><i class="fab fa-instagram"></i></a>
-                        <a href="{{TWITTER_URL}}"><i class="fab fa-twitter"></i></a>
-                        <a href="{{TIKTOK_URL}}"><i class="fab fa-tiktok"></i></a>
+                <div class="footer-brand">
+                    <h3>{{SPORTS_BAR_NAME}}</h3>
+                    <p>{{FOOTER_DESCRIPTION}}</p>
+                    <div class="footer-social">
+                        <a href="{{INSTAGRAM_URL}}" aria-label="Instagram">📷</a>
+                        <a href="{{FACEBOOK_URL}}" aria-label="Facebook">📘</a>
+                        <a href="{{TWITTER_URL}}" aria-label="Twitter">🐦</a>
+                        <a href="{{YELP_URL}}" aria-label="Yelp">⭐</a>
                     </div>
                 </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#play">Games</a></li>
-                        <li><a href="#eat">Food & Drinks</a></li>
-                        <li><a href="#parties">Parties</a></li>
-                        <li><a href="#events">Events</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Party Planning</h4>
-                    <ul>
-                        <li><a href="#">Birthday Parties</a></li>
-                        <li><a href="#">Corporate Events</a></li>
-                        <li><a href="#">Group Bookings</a></li>
-                        <li><a href="#">Party Packages</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact Info</h4>
-                    <p>{{RESTAURANT_ADDRESS}}</p>
-                    <p>{{PHONE_NUMBER}}</p>
-                    <p>{{EMAIL_ADDRESS}}</p>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Sports</h4>
+                        <a href="#games">Live Games</a>
+                        <a href="#schedule">Game Schedule</a>
+                        <a href="#specials">Game Day Specials</a>
+                        <a href="#tournaments">Tournaments</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Entertainment</h4>
+                        <a href="#arcade">Arcade Games</a>
+                        <a href="#pool">Pool Tables</a>
+                        <a href="#darts">Darts</a>
+                        <a href="#karaoke">Karaoke</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Events</h4>
+                        <a href="#private">Private Parties</a>
+                        <a href="#corporate">Corporate Events</a>
+                        <a href="#birthday">Birthday Parties</a>
+                        <a href="#watch-parties">Watch Parties</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Connect</h4>
+                        <a href="#contact">Contact</a>
+                        <a href="#reservations">Reservations</a>
+                        <a href="#careers">Careers</a>
+                        <a href="#press">Press</a>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+                <div class="footer-legal">
+                    <p>&copy; 2024 {{SPORTS_BAR_NAME}}. All rights reserved.</p>
+                    <div class="legal-links">
+                        <a href="#privacy">Privacy Policy</a>
+                        <a href="#terms">Terms of Service</a>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
-
-    <!-- Booking Modal -->
-    <div id="bookingModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeBookingModal()">&times;</span>
-            <h2>Book Your Experience</h2>
-            <div class="booking-options">
-                <div class="booking-option">
-                    <h3>Walk-In Gaming</h3>
-                    <p>No reservation needed for gaming</p>
-                    <button class="btn btn-primary" onclick="showGameCards()">Buy Game Cards</button>
-                </div>
-                <div class="booking-option">
-                    <h3>Table Reservation</h3>
-                    <p>Reserve a table for dining</p>
-                    <button class="btn btn-primary" onclick="showTableBooking()">Reserve Table</button>
-                </div>
-                <div class="booking-option">
-                    <h3>Private Party</h3>
-                    <p>Book a party package</p>
-                    <button class="btn btn-accent" onclick="showPartyBooking()">Plan Party</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <script src="script.js"></script>
 </body>

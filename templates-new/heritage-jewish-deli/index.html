@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Traditional Jewish Appetizing</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Source+Sans+Pro:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="color-scheme-heritage">
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}}">
+            </div>
+            <nav class="nav">
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#appetizing">Appetizing</a></li>
+                    <li><a href="#heritage">Our Heritage</a></li>
+                    <li><a href="#catering">Catering</a></li>
+                    <li><a href="#shipping">Shipping</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="header-order">
+                    <a href="#order" class="btn btn-primary">Order Online</a>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">{{RESTAURANT_NAME}}</h1>
+                    <p class="hero-subtitle">Traditional Jewish Appetizing Since {{ESTABLISHED_YEAR}}</p>
+                    <p class="hero-description">Four generations of serving the finest smoked fish, bagels, and traditional Jewish specialties. From our family to yours, taste the authentic flavors of old-world craftsmanship.</p>
+                    <div class="hero-buttons">
+                        <a href="#order" class="btn btn-primary btn-large">Order Online</a>
+                        <a href="#appetizing" class="btn btn-secondary btn-large">Browse Menu</a>
+                    </div>
+                    <div class="heritage-badges">
+                        <div class="badge">
+                            <span class="badge-icon">🏆</span>
+                            <span>{{GENERATIONS}} Generations</span>
+                        </div>
+                        <div class="badge">
+                            <span class="badge-icon">🐟</span>
+                            <span>House-Cured Fish</span>
+                        </div>
+                        <div class="badge">
+                            <span class="badge-icon">🥯</span>
+                            <span>Fresh Bagels Daily</span>
+                        </div>
+                        <div class="badge">
+                            <span class="badge-icon">📦</span>
+                            <span>Ships Nationwide</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="deli-counter-scene">
+                        <img src="{{HERO_COUNTER_IMAGE}}" alt="Traditional deli counter" class="hero-counter">
+                        <div class="floating-specialties">
+                            <img src="{{LOX_IMAGE}}" alt="House-cured lox" class="specialty-1">
+                            <img src="{{BAGEL_IMAGE}}" alt="Fresh bagels" class="specialty-2">
+                            <img src="{{WHITEFISH_IMAGE}}" alt="Smoked whitefish" class="specialty-3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tradition-banner">
+            <div class="container">
+                <div class="tradition-content">
+                    <h2>🕍 Preserving Tradition Since {{ESTABLISHED_YEAR}}</h2>
+                    <p>{{YEARS_IN_BUSINESS}} years of time-honored recipes and old-world craftsmanship</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="appetizing" class="appetizing-menu">
+            <div class="container">
+                <h2 class="section-title">Traditional Appetizing</h2>
+                <p class="section-subtitle">House-cured fish, fresh bagels, and classic Jewish specialties</p>
+
+                <div class="appetizing-categories">
+                    <button class="category-btn active" data-category="fish">Smoked Fish</button>
+                    <button class="category-btn" data-category="bagels">Bagels & Spreads</button>
+                    <button class="category-btn" data-category="platters">Platters</button>
+                    <button class="category-btn" data-category="specialties">House Specialties</button>
+                </div>
+
+                <div class="appetizing-grid" data-category="fish">
+                    <div class="appetizing-item featured">
+                        <div class="item-image">
+                            <img src="{{NOVA_LOX_IMAGE}}" alt="Nova Scotia Lox">
+                            <div class="quality-badge">🏆 House Cured</div>
+                        </div>
+                        <div class="item-content">
+                            <h3>Nova Scotia Lox</h3>
+                            <p class="item-description">Premium Atlantic salmon, salt-cured and cold-smoked using our family recipe</p>
+                            <div class="item-details">
+                                <p class="sourcing">Wild-caught Atlantic salmon</p>
+                                <p class="process">{{CURING_DAYS}} day cure, {{SMOKING_HOURS}} hour smoke</p>
+                            </div>
+                            <div class="item-sizes">
+                                <div class="size-option">
+                                    <span class="size">1/4 lb</span>
+                                    <span class="price">${{NOVA_QUARTER_PRICE}}</span>
+                                </div>
+                                <div class="size-option">
+                                    <span class="size">1/2 lb</span>
+                                    <span class="price">${{NOVA_HALF_PRICE}}</span>
+                                </div>
+                                <div class="size-option">
+                                    <span class="size">1 lb</span>
+                                    <span class="price">${{NOVA_POUND_PRICE}}</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-small btn-primary">Add to Order</button>
+                        </div>
+                    </div>
+
+                    <div class="appetizing-item">
+                        <div class="item-image">
+                            <img src="{{WHITEFISH_IMAGE}}" alt="Smoked Whitefish">
+                        </div>
+                        <div class="item-content">
+                            <h3>Smoked Whitefish</h3>
+                            <p class="item-description">Delicate Great Lakes whitefish, traditionally smoked to perfection</p>
+                            <div class="item-details">
+                                <p class="sourcing">Great Lakes whitefish</p>
+                                <p class="process">Traditional smoking method</p>
+                            </div>
+                            <div class="item-sizes">
+                                <div class="size-option">
+                                    <span class="size">Whole Fish</span>
+                                    <span class="price">${{WHITEFISH_WHOLE_PRICE}}</span>
+                                </div>
+                                <div class="size-option">
+                                    <span class="size">Salad (1/2 lb)</span>
+                                    <span class="price">${{WHITEFISH_SALAD_PRICE}}</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-small btn-primary">Add to Order</button>
+                        </div>
+                    </div>
+
+                    <div class="appetizing-item">
+                        <div class="item-image">
+                            <img src="{{SABLE_IMAGE}}" alt="Smoked Sable">
+                        </div>
+                        <div class="item-content">
+                            <h3>Smoked Sable</h3>
+                            <p class="item-description">Rich, buttery sablefish with our signature smoke</p>
+                            <div class="item-details">
+                                <p class="sourcing">Pacific sablefish</p>
+                                <p class="process">{{SABLE_SMOKING_TIME}} hour cold smoke</p>
+                            </div>
+                            <div class="item-sizes">
+                                <div class="size-option">
+                                    <span class="size">1/4 lb</span>
+                                    <span class="price">${{SABLE_QUARTER_PRICE}}</span>
+                                </div>
+                                <div class="size-option">
+                                    <span class="size">1/2 lb</span>
+                                    <span class="price">${{SABLE_HALF_PRICE}}</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-small btn-primary">Add to Order</button>
+                        </div>
+                    </div>
+
+                    <div class="appetizing-item">
+                        <div class="item-image">
+                            <img src="{{PICKLED_HERRING_IMAGE}}" alt="Pickled Herring">
+                        </div>
+                        <div class="item-content">
+                            <h3>Pickled Herring</h3>
+                            <p class="item-description">Traditional herring in wine sauce or cream sauce</p>
+                            <div class="item-details">
+                                <p class="sourcing">North Atlantic herring</p>
+                                <p class="process">House-pickled daily</p>
+                            </div>
+                            <div class="item-sizes">
+                                <div class="size-option">
+                                    <span class="size">1/2 lb</span>
+                                    <span class="price">${{HERRING_PRICE}}</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-small btn-primary">Add to Order</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="appetizing-grid" data-category="bagels" style="display: none;">
+                    <div class="appetizing-item">
+                        <div class="item-image">
+                            <img src="{{BAGELS_IMAGE}}" alt="Fresh Bagels">
+                        </div>
+                        <div class="item-content">
+                            <h3>Fresh Bagels</h3>
+                            <p class="item-description">Hand-rolled and kettle-boiled daily using traditional methods</p>
+                            <div class="bagel-varieties">
+                                <span class="variety">Plain</span>
+                                <span class="variety">Everything</span>
+                                <span class="variety">Sesame</span>
+                                <span class="variety">Poppy</span>
+                                <span class="variety">Onion</span>
+                                <span class="variety">Pumpernickel</span>
+                            </div>
+                            <div class="item-sizes">
+                                <div class="size-option">
+                                    <span class="size">6 Bagels</span>
+                                    <span class="price">${{BAGELS_HALF_DOZEN_PRICE}}</span>
+                                </div>
+                                <div class="size-option">
+                                    <span class="size">12 Bagels</span>
+                                    <span class="price">${{BAGELS_DOZEN_PRICE}}</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-small btn-primary">Add to Order</button>
+                        </div>
+                    </div>
+
+                    <div class="appetizing-item">
+                        <div class="item-image">
+                            <img src="{{CREAM_CHEESE_IMAGE}}" alt="House Cream Cheese">
+                        </div>
+                        <div class="item-content">
+                            <h3>House Cream Cheese</h3>
+                            <p class="item-description">Fresh, creamy, and available in multiple flavors</p>
+                            <div class="cream-cheese-flavors">
+                                <span class="flavor">Plain</span>
+                                <span class="flavor">Scallion</span>
+                                <span class="flavor">Lox Spread</span>
+                                <span class="flavor">Vegetable</span>
+                            </div>
+                            <div class="item-sizes">
+                                <div class="size-option">
+                                    <span class="size">8 oz</span>
+                                    <span class="price">${{CREAM_CHEESE_PRICE}}</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-small btn-primary">Add to Order</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="appetizing-grid" data-category="platters" style="display: none;">
+                    <div class="appetizing-item featured">
+                        <div class="item-image">
+                            <img src="{{CLASSIC_PLATTER_IMAGE}}" alt="Classic Appetizing Platter">
+                            <div class="quality-badge">👑 Most Popular</div>
+                        </div>
+                        <div class="item-content">
+                            <h3>The Classic Platter</h3>
+                            <p class="item-description">Nova lox, whitefish salad, cream cheese, tomatoes, onions, capers, and fresh bagels</p>
+                            <div class="platter-serves">
+                                <span class="serves">Serves {{CLASSIC_PLATTER_SERVES}} people</span>
+                            </div>
+                            <div class="platter-contents">
+                                <ul>
+                                    <li>1/2 lb Nova Scotia lox</li>
+                                    <li>1/2 lb whitefish salad</li>
+                                    <li>8 oz cream cheese</li>
+                                    <li>6 fresh bagels</li>
+                                    <li>Tomatoes, onions, capers</li>
+                                </ul>
+                            </div>
+                            <div class="item-price">
+                                <span class="price">${{CLASSIC_PLATTER_PRICE}}</span>
+                            </div>
+                            <button class="btn btn-small btn-primary">Add to Order</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="heritage" class="family-heritage">
+            <div class="container">
+                <div class="heritage-content">
+                    <div class="heritage-text">
+                        <h2>{{GENERATIONS}} Generations of Tradition</h2>
+                        <p class="heritage-intro">{{FOUNDER_STORY}}</p>
+                        
+                        <div class="family-timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-year">{{ESTABLISHED_YEAR}}</div>
+                                <div class="timeline-content">
+                                    <h3>The Beginning</h3>
+                                    <p>{{FOUNDER_NAME}} opened our first shop on the Lower East Side</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-year">{{SECOND_GENERATION_YEAR}}</div>
+                                <div class="timeline-content">
+                                    <h3>Second Generation</h3>
+                                    <p>{{SECOND_GENERATION_STORY}}</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-year">{{THIRD_GENERATION_YEAR}}</div>
+                                <div class="timeline-content">
+                                    <h3>Third Generation</h3>
+                                    <p>{{THIRD_GENERATION_STORY}}</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-year">Today</div>
+                                <div class="timeline-content">
+                                    <h3>Continuing the Legacy</h3>
+                                    <p>{{CURRENT_GENERATION_STORY}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="heritage-images">
+                        <img src="{{HISTORICAL_PHOTO_1}}" alt="Historical shop photo">
+                        <img src="{{FAMILY_PHOTO}}" alt="Family photo">
+                        <img src="{{VINTAGE_COUNTER_IMAGE}}" alt="Vintage counter">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="craftsmanship">
+            <div class="container">
+                <h2 class="section-title">Old-World Craftsmanship</h2>
+                <div class="craft-process">
+                    <div class="process-step">
+                        <div class="step-icon">🐟</div>
+                        <h3>Selecting the Fish</h3>
+                        <p>Only the finest wild-caught fish from trusted suppliers who share our commitment to quality</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-icon">🧂</div>
+                        <h3>Salt Curing</h3>
+                        <p>Our traditional {{CURING_DAYS}}-day salt cure draws out moisture and concentrates flavors</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-icon">🔥</div>
+                        <h3>Cold Smoking</h3>
+                        <p>{{SMOKING_HOURS}} hours of cold smoking with applewood for that signature flavor</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-icon">✂️</div>
+                        <h3>Hand Slicing</h3>
+                        <p>Every order hand-sliced to perfection by our experienced counter staff</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="shipping" class="nationwide-shipping">
+            <div class="container">
+                <div class="shipping-content">
+                    <div class="shipping-text">
+                        <h2>Nationwide Shipping</h2>
+                        <p>Bring the authentic taste of traditional Jewish appetizing to your table, no matter where you are. Our carefully packaged products arrive fresh and ready to enjoy.</p>
+                        
+                        <div class="shipping-features">
+                            <div class="feature">
+                                <h3>🚚 Express Shipping</h3>
+                                <p>Overnight delivery available to most locations</p>
+                            </div>
+                            <div class="feature">
+                                <h3>❄️ Temperature Controlled</h3>
+                                <p>Insulated packaging with ice packs for freshness</p>
+                            </div>
+                            <div class="feature">
+                                <h3>📦 Gift Packages</h3>
+                                <p>Beautifully packaged for special occasions</p>
+                            </div>
+                        </div>
+
+                        <div class="popular-packages">
+                            <h3>Popular Shipping Packages</h3>
+                            <div class="packages">
+                                <div class="package">
+                                    <h4>The Appetizing Sampler</h4>
+                                    <p>Nova lox, whitefish salad, cream cheese, and bagels</p>
+                                    <span class="package-price">${{SAMPLER_PACKAGE_PRICE}}</span>
+                                </div>
+                                <div class="package">
+                                    <h4>The Grand Platter</h4>
+                                    <p>Complete selection for special occasions</p>
+                                    <span class="package-price">${{GRAND_PACKAGE_PRICE}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="shipping-visual">
+                        <img src="{{SHIPPING_PACKAGE_IMAGE}}" alt="Shipping package">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="catering" class="catering">
+            <div class="container">
+                <div class="catering-content">
+                    <div class="catering-text">
+                        <h2>Catering & Events</h2>
+                        <p>Make your next event memorable with our traditional appetizing platters and full-service catering.</p>
+                        
+                        <div class="catering-options">
+                            <div class="catering-option">
+                                <h3>Office Catering</h3>
+                                <p>Business meetings and corporate events</p>
+                                <div class="option-features">
+                                    <span class="feature">• Appetizing platters</span>
+                                    <span class="feature">• Fresh bagel service</span>
+                                    <span class="feature">• Coffee service available</span>
+                                </div>
+                            </div>
+                            
+                            <div class="catering-option">
+                                <h3>Celebrations</h3>
+                                <p>Bar/Bat Mitzvahs, weddings, and family gatherings</p>
+                                <div class="option-features">
+                                    <span class="feature">• Custom menu planning</span>
+                                    <span class="feature">• Traditional and modern options</span>
+                                    <span class="feature">• Kosher supervision available</span>
+                                </div>
+                            </div>
+                            
+                            <div class="catering-option">
+                                <h3>Holiday Orders</h3>
+                                <p>Special holiday platters and gift packages</p>
+                                <div class="option-features">
+                                    <span class="feature">• Rosh Hashanah specials</span>
+                                    <span class="feature">• Yom Kippur break-fast</span>
+                                    <span class="feature">• Passover selections</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catering-minimums">
+                            <h3>Catering Information</h3>
+                            <p><strong>Minimum Order:</strong> ${{CATERING_MINIMUM}} for local delivery</p>
+                            <p><strong>Notice Required:</strong> {{CATERING_NOTICE_DAYS}} days advance notice</p>
+                            <p><strong>Delivery:</strong> Available within {{DELIVERY_RADIUS}} miles</p>
+                        </div>
+                    </div>
+                    <div class="catering-image">
+                        <img src="{{CATERING_SPREAD_IMAGE}}" alt="Catering spread">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="order" class="order-section">
+            <div class="container">
+                <h2 class="section-title">Order Your Favorites</h2>
+                <div class="order-options">
+                    <div class="order-option">
+                        <div class="option-icon">🏪</div>
+                        <h3>In-Store Pickup</h3>
+                        <p>Order ahead and pickup at our counter</p>
+                        <a href="{{PICKUP_URL}}" class="btn btn-primary">Order for Pickup</a>
+                        <div class="pickup-info">
+                            <span>Ready in {{PICKUP_TIME}} minutes</span>
+                            <span>See our full selection at the counter</span>
+                        </div>
+                    </div>
+                    
+                    <div class="order-option">
+                        <div class="option-icon">🚚</div>
+                        <h3>Local Delivery</h3>
+                        <p>Fresh appetizing delivered to your door</p>
+                        <a href="{{DELIVERY_URL}}" class="btn btn-primary">Order Delivery</a>
+                        <div class="delivery-info">
+                            <span>Within {{DELIVERY_RADIUS}} miles</span>
+                            <span>Minimum order: ${{DELIVERY_MINIMUM}}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="order-option">
+                        <div class="option-icon">📦</div>
+                        <h3>Nationwide Shipping</h3>
+                        <p>Ship anywhere in the United States</p>
+                        <a href="{{SHIPPING_URL}}" class="btn btn-secondary">Ship Nationwide</a>
+                        <div class="shipping-info">
+                            <span>Overnight shipping available</span>
+                            <span>Gift packaging included</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="store-hours">
+                    <h3>Store Hours</h3>
+                    <div class="hours-grid">
+                        <div class="hours-day">
+                            <span class="day">Monday - Friday</span>
+                            <span class="time">{{WEEKDAY_HOURS}}</span>
+                        </div>
+                        <div class="hours-day">
+                            <span class="day">Saturday</span>
+                            <span class="time">{{SATURDAY_HOURS}}</span>
+                        </div>
+                        <div class="hours-day">
+                            <span class="day">Sunday</span>
+                            <span class="time">{{SUNDAY_HOURS}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h2>Visit Our Shop</h2>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <h3>Location</h3>
+                                <p>{{FULL_ADDRESS}}</p>
+                                <p>{{PHONE}}</p>
+                                <p>{{EMAIL}}</p>
+                            </div>
+                            <div class="contact-item">
+                                <h3>Catering</h3>
+                                <p>{{CATERING_PHONE}}</p>
+                                <p>{{CATERING_EMAIL}}</p>
+                            </div>
+                            <div class="contact-item">
+                                <h3>Shipping</h3>
+                                <p>{{SHIPPING_PHONE}}</p>
+                                <p>{{SHIPPING_EMAIL}}</p>
+                            </div>
+                        </div>
+                        
+                        <div class="social-section">
+                            <h3>Follow Our Journey</h3>
+                            <div class="social-links">
+                                <a href="{{INSTAGRAM_URL}}">Instagram</a>
+                                <a href="{{FACEBOOK_URL}}">Facebook</a>
+                                <a href="{{YELP_URL}}">Yelp</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <h3>Send us a Message</h3>
+                        <form>
+                            <input type="text" placeholder="Your Name" required>
+                            <input type="email" placeholder="Email Address" required>
+                            <select required>
+                                <option value="">What can we help with?</option>
+                                <option value="catering">Catering Inquiry</option>
+                                <option value="shipping">Shipping Question</option>
+                                <option value="wholesale">Wholesale</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <textarea placeholder="Your Message" rows="4" required></textarea>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>{{RESTAURANT_NAME}}</h3>
+                    <p>Traditional Jewish Appetizing Since {{ESTABLISHED_YEAR}}</p>
+                    <div class="heritage-summary">
+                        <h4>{{GENERATIONS}} Generations of Quality</h4>
+                        <p>{{LOCATION_YEARS}} years at this location</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="#appetizing">Appetizing Menu</a></li>
+                        <li><a href="#order">Order Online</a></li>
+                        <li><a href="#shipping">Nationwide Shipping</a></li>
+                        <li><a href="#catering">Catering</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Our Story</h4>
+                    <ul>
+                        <li><a href="#heritage">Family Heritage</a></li>
+                        <li><a href="#">Craftsmanship</a></li>
+                        <li><a href="#">Traditional Methods</a></li>
+                        <li><a href="#">Press & Awards</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="{{INSTAGRAM_URL}}">Instagram</a>
+                        <a href="{{FACEBOOK_URL}}">Facebook</a>
+                        <a href="{{YELP_URL}}">Yelp</a>
+                    </div>
+                    <div class="newsletter">
+                        <h4>Stay Updated</h4>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your email">
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

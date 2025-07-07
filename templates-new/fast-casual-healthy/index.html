@@ -4,154 +4,228 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{RESTAURANT_NAME}} - Fresh & Healthy Fast Casual</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - Fresh, healthy fast-casual dining with customizable bowls, salads, and wraps made from clean ingredients">
     <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
-<body class="cool-scheme">
-    <header class="header">
+<body class="color-healthy-fresh">
+    <header class="healthy-header">
         <div class="container">
-            <div class="logo">
-                <h1>{{RESTAURANT_NAME}}</h1>
-                <span class="tagline">Fresh • Healthy • Fast</span>
+            <div class="logo-section">
+                <div class="logo">
+                    <h1>{{RESTAURANT_NAME}}</h1>
+                    <span class="health-tagline">{{HEALTH_TAGLINE}}</span>
+                </div>
+                <div class="freshness-indicator">
+                    <span class="fresh-dot"></span>
+                    <span>MADE FRESH DAILY</span>
+                </div>
             </div>
-            <nav class="nav">
-                <ul class="nav-list">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#menu">Menu</a></li>
+            <nav class="main-nav">
+                <ul class="nav-menu">
+                    <li><a href="#menu">Build Your Bowl</a></li>
                     <li><a href="#nutrition">Nutrition</a></li>
                     <li><a href="#catering">Catering</a></li>
                     <li><a href="#rewards">Rewards</a></li>
                     <li><a href="#locations">Locations</a></li>
                 </ul>
             </nav>
-            <div class="order-actions">
-                <a href="#order" class="btn btn-order">Order Online</a>
-                <a href="#rewards" class="btn btn-rewards">Join Rewards</a>
-            </div>
-            <div class="mobile-menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="header-actions">
+                <button class="order-online-btn">Order Online</button>
+                <button class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
     </header>
 
-    <section class="hero" id="home">
+    <section class="hero-healthy">
+        <div class="hero-background">
+            <img src="{{HERO_BACKGROUND_IMAGE}}" alt="Fresh healthy bowl with colorful ingredients">
+            <div class="hero-overlay"></div>
+        </div>
         <div class="hero-content">
             <div class="hero-text">
-                <h2>Nourish Your Day</h2>
-                <p>Fresh ingredients, bold flavors, and wholesome choices made fast. Build your perfect bowl, wrap, or salad.</p>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <span class="stat-number">{{LOCATIONS_COUNT}}</span>
-                        <span class="stat-label">Locations</span>
+                <h2>{{HERO_TITLE}}</h2>
+                <p>{{HERO_SUBTITLE}}</p>
+                <div class="health-benefits">
+                    <div class="benefit">
+                        <span class="benefit-icon">🌱</span>
+                        <span class="benefit-text">{{BENEFIT_1}}</span>
                     </div>
-                    <div class="stat">
-                        <span class="stat-number">{{INGREDIENTS_COUNT}}+</span>
-                        <span class="stat-label">Fresh Ingredients</span>
+                    <div class="benefit">
+                        <span class="benefit-icon">⚡</span>
+                        <span class="benefit-text">{{BENEFIT_2}}</span>
                     </div>
-                    <div class="stat">
-                        <span class="stat-number">{{CALORIES_FROM}}</span>
-                        <span class="stat-label">Calories From</span>
+                    <div class="benefit">
+                        <span class="benefit-icon">🎯</span>
+                        <span class="benefit-text">{{BENEFIT_3}}</span>
                     </div>
                 </div>
-                <div class="hero-buttons">
-                    <a href="#order" class="btn btn-primary">Order Now</a>
-                    <a href="#menu" class="btn btn-secondary">Explore Menu</a>
+                <div class="hero-cta">
+                    <button class="btn btn-primary">Start Building</button>
+                    <button class="btn btn-secondary">View Nutrition</button>
                 </div>
             </div>
-            <div class="hero-image">
-                <img src="{{HEALTHY_BOWL_IMAGE}}" alt="Fresh healthy bowl">
-            </div>
-        </div>
-    </section>
-
-    <section class="value-props">
-        <div class="container">
-            <div class="props-grid">
-                <div class="prop-item">
-                    <div class="prop-icon">🥗</div>
-                    <h3>Made Fresh Daily</h3>
-                    <p>All ingredients prepped fresh every morning in each location</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">{{LOCATIONS_COUNT}}</span>
+                    <span class="stat-label">Locations</span>
                 </div>
-                <div class="prop-item">
-                    <div class="prop-icon">🌱</div>
-                    <h3>Clean Ingredients</h3>
-                    <p>No artificial flavors, preservatives, or trans fats</p>
+                <div class="stat-item">
+                    <span class="stat-number">{{INGREDIENTS_COUNT}}+</span>
+                    <span class="stat-label">Fresh Ingredients</span>
                 </div>
-                <div class="prop-item">
-                    <div class="prop-icon">⚡</div>
-                    <h3>Quick & Convenient</h3>
-                    <p>Order ahead and skip the line with our mobile app</p>
-                </div>
-                <div class="prop-item">
-                    <div class="prop-icon">🎯</div>
-                    <h3>Your Way</h3>
-                    <p>Customize every order to match your dietary preferences</p>
+                <div class="stat-item">
+                    <span class="stat-number">{{CALORIE_RANGE}}</span>
+                    <span class="stat-label">Calorie Range</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="menu-builder" id="menu">
+    <section class="value-propositions">
         <div class="container">
-            <h2>Build Your Perfect Meal</h2>
+            <div class="value-props-grid">
+                <div class="value-prop">
+                    <div class="prop-visual">
+                        <img src="{{FRESH_PREP_IMAGE}}" alt="Fresh ingredient preparation">
+                    </div>
+                    <div class="prop-content">
+                        <h3>{{PROP_1_TITLE}}</h3>
+                        <p>{{PROP_1_DESCRIPTION}}</p>
+                    </div>
+                </div>
+                <div class="value-prop">
+                    <div class="prop-visual">
+                        <img src="{{CUSTOMIZATION_IMAGE}}" alt="Menu customization options">
+                    </div>
+                    <div class="prop-content">
+                        <h3>{{PROP_2_TITLE}}</h3>
+                        <p>{{PROP_2_DESCRIPTION}}</p>
+                    </div>
+                </div>
+                <div class="value-prop">
+                    <div class="prop-visual">
+                        <img src="{{SPEED_SERVICE_IMAGE}}" alt="Fast service preparation">
+                    </div>
+                    <div class="prop-content">
+                        <h3>{{PROP_3_TITLE}}</h3>
+                        <p>{{PROP_3_DESCRIPTION}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="menu-builder-section">
+        <div class="container">
+            <div class="menu-header">
+                <h2>Build Your Perfect Meal</h2>
+                <p>Start with a base, add proteins, choose toppings, and finish with your favorite dressing</p>
+            </div>
+            
             <div class="menu-categories">
                 <div class="category-tabs">
-                    <button class="tab-btn active" data-category="bowls">Bowls</button>
-                    <button class="tab-btn" data-category="salads">Salads</button>
-                    <button class="tab-btn" data-category="wraps">Wraps</button>
-                    <button class="tab-btn" data-category="soups">Soups</button>
+                    <button class="tab-btn active" data-category="bowls">
+                        <span class="tab-icon">🍜</span>
+                        <span>Bowls</span>
+                    </button>
+                    <button class="tab-btn" data-category="salads">
+                        <span class="tab-icon">🥗</span>
+                        <span>Salads</span>
+                    </button>
+                    <button class="tab-btn" data-category="wraps">
+                        <span class="tab-icon">🌯</span>
+                        <span>Wraps</span>
+                    </button>
+                    <button class="tab-btn" data-category="soups">
+                        <span class="tab-icon">🍲</span>
+                        <span>Soups</span>
+                    </button>
                 </div>
-                
+
                 <div class="category-content active" id="bowls">
-                    <h3>Build Your Bowl</h3>
-                    <p class="category-description">Start with a base and build your perfect combination</p>
-                    <div class="menu-grid">
-                        <div class="menu-item">
-                            <img src="{{QUINOA_BOWL_IMAGE}}" alt="Quinoa Power Bowl">
-                            <div class="item-info">
-                                <h4>Quinoa Power Bowl</h4>
-                                <p>Quinoa, roasted vegetables, avocado, tahini dressing</p>
-                                <div class="nutrition-info">
-                                    <span class="calories">{{QUINOA_BOWL_CALORIES}} cal</span>
-                                    <span class="protein">{{QUINOA_BOWL_PROTEIN}}g protein</span>
+                    <div class="category-intro">
+                        <h3>Power Bowls</h3>
+                        <p>Nutrient-dense combinations designed by our nutritionists</p>
+                    </div>
+                    <div class="menu-items-grid">
+                        <div class="menu-item featured">
+                            <div class="item-badge">Most Popular</div>
+                            <div class="item-image">
+                                <img src="{{QUINOA_POWER_BOWL_IMAGE}}" alt="{{QUINOA_POWER_BOWL_NAME}}">
+                            </div>
+                            <div class="item-content">
+                                <h4>{{QUINOA_POWER_BOWL_NAME}}</h4>
+                                <p>{{QUINOA_POWER_BOWL_DESCRIPTION}}</p>
+                                <div class="nutrition-highlights">
+                                    <span class="calorie-count">{{QUINOA_BOWL_CALORIES}} cal</span>
+                                    <span class="protein-count">{{QUINOA_BOWL_PROTEIN}}g protein</span>
+                                    <span class="dietary-badge vegan">Vegan</span>
                                 </div>
                                 <div class="item-footer">
                                     <span class="price">{{QUINOA_BOWL_PRICE}}</span>
-                                    <button class="btn btn-small">Customize</button>
+                                    <button class="btn btn-customize">Customize</button>
                                 </div>
                             </div>
                         </div>
+
                         <div class="menu-item">
-                            <img src="{{MEDITERRANEAN_BOWL_IMAGE}}" alt="Mediterranean Bowl">
-                            <div class="item-info">
-                                <h4>Mediterranean Bowl</h4>
-                                <p>Brown rice, falafel, hummus, cucumber, olives</p>
-                                <div class="nutrition-info">
-                                    <span class="calories">{{MED_BOWL_CALORIES}} cal</span>
-                                    <span class="protein">{{MED_BOWL_PROTEIN}}g protein</span>
+                            <div class="item-image">
+                                <img src="{{MEDITERRANEAN_BOWL_IMAGE}}" alt="{{MEDITERRANEAN_BOWL_NAME}}">
+                            </div>
+                            <div class="item-content">
+                                <h4>{{MEDITERRANEAN_BOWL_NAME}}</h4>
+                                <p>{{MEDITERRANEAN_BOWL_DESCRIPTION}}</p>
+                                <div class="nutrition-highlights">
+                                    <span class="calorie-count">{{MED_BOWL_CALORIES}} cal</span>
+                                    <span class="protein-count">{{MED_BOWL_PROTEIN}}g protein</span>
+                                    <span class="dietary-badge vegetarian">Vegetarian</span>
                                 </div>
                                 <div class="item-footer">
                                     <span class="price">{{MED_BOWL_PRICE}}</span>
-                                    <button class="btn btn-small">Customize</button>
+                                    <button class="btn btn-customize">Customize</button>
                                 </div>
                             </div>
                         </div>
+
                         <div class="menu-item">
-                            <img src="{{HARVEST_BOWL_IMAGE}}" alt="Harvest Bowl">
-                            <div class="item-info">
-                                <h4>Harvest Bowl</h4>
-                                <p>Wild rice, roasted sweet potato, kale, cranberries</p>
-                                <div class="nutrition-info">
-                                    <span class="calories">{{HARVEST_BOWL_CALORIES}} cal</span>
-                                    <span class="protein">{{HARVEST_BOWL_PROTEIN}}g protein</span>
+                            <div class="item-image">
+                                <img src="{{HARVEST_BOWL_IMAGE}}" alt="{{HARVEST_BOWL_NAME}}">
+                            </div>
+                            <div class="item-content">
+                                <h4>{{HARVEST_BOWL_NAME}}</h4>
+                                <p>{{HARVEST_BOWL_DESCRIPTION}}</p>
+                                <div class="nutrition-highlights">
+                                    <span class="calorie-count">{{HARVEST_BOWL_CALORIES}} cal</span>
+                                    <span class="protein-count">{{HARVEST_BOWL_PROTEIN}}g protein</span>
+                                    <span class="dietary-badge gluten-free">Gluten-Free</span>
                                 </div>
                                 <div class="item-footer">
                                     <span class="price">{{HARVEST_BOWL_PRICE}}</span>
-                                    <button class="btn btn-small">Customize</button>
+                                    <button class="btn btn-customize">Customize</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="{{PROTEIN_BOWL_IMAGE}}" alt="{{PROTEIN_BOWL_NAME}}">
+                            </div>
+                            <div class="item-content">
+                                <h4>{{PROTEIN_BOWL_NAME}}</h4>
+                                <p>{{PROTEIN_BOWL_DESCRIPTION}}</p>
+                                <div class="nutrition-highlights">
+                                    <span class="calorie-count">{{PROTEIN_BOWL_CALORIES}} cal</span>
+                                    <span class="protein-count">{{PROTEIN_BOWL_PROTEIN}}g protein</span>
+                                    <span class="dietary-badge keto">Keto-Friendly</span>
+                                </div>
+                                <div class="item-footer">
+                                    <span class="price">{{PROTEIN_BOWL_PRICE}}</span>
+                                    <button class="btn btn-customize">Customize</button>
                                 </div>
                             </div>
                         </div>
@@ -159,36 +233,64 @@
                 </div>
 
                 <div class="category-content" id="salads">
-                    <h3>Fresh Salads</h3>
-                    <p class="category-description">Crisp greens and vibrant toppings</p>
-                    <div class="menu-grid">
+                    <div class="category-intro">
+                        <h3>Fresh Salads</h3>
+                        <p>Crisp greens and vibrant vegetables with house-made dressings</p>
+                    </div>
+                    <div class="menu-items-grid">
                         <div class="menu-item">
-                            <img src="{{KALE_CAESAR_IMAGE}}" alt="Kale Caesar">
-                            <div class="item-info">
-                                <h4>Kale Caesar</h4>
-                                <p>Massaged kale, parmesan, croutons, lemon dressing</p>
-                                <div class="nutrition-info">
-                                    <span class="calories">{{KALE_CAESAR_CALORIES}} cal</span>
-                                    <span class="protein">{{KALE_CAESAR_PROTEIN}}g protein</span>
+                            <div class="item-image">
+                                <img src="{{KALE_CAESAR_IMAGE}}" alt="{{KALE_CAESAR_NAME}}">
+                            </div>
+                            <div class="item-content">
+                                <h4>{{KALE_CAESAR_NAME}}</h4>
+                                <p>{{KALE_CAESAR_DESCRIPTION}}</p>
+                                <div class="nutrition-highlights">
+                                    <span class="calorie-count">{{KALE_CAESAR_CALORIES}} cal</span>
+                                    <span class="protein-count">{{KALE_CAESAR_PROTEIN}}g protein</span>
+                                    <span class="dietary-badge vegetarian">Vegetarian</span>
                                 </div>
                                 <div class="item-footer">
                                     <span class="price">{{KALE_CAESAR_PRICE}}</span>
-                                    <button class="btn btn-small">Customize</button>
+                                    <button class="btn btn-customize">Customize</button>
                                 </div>
                             </div>
                         </div>
+
                         <div class="menu-item">
-                            <img src="{{MARKET_SALAD_IMAGE}}" alt="Market Salad">
-                            <div class="item-info">
-                                <h4>Market Salad</h4>
-                                <p>Mixed greens, seasonal vegetables, balsamic vinaigrette</p>
-                                <div class="nutrition-info">
-                                    <span class="calories">{{MARKET_SALAD_CALORIES}} cal</span>
-                                    <span class="protein">{{MARKET_SALAD_PROTEIN}}g protein</span>
+                            <div class="item-image">
+                                <img src="{{MARKET_SALAD_IMAGE}}" alt="{{MARKET_SALAD_NAME}}">
+                            </div>
+                            <div class="item-content">
+                                <h4>{{MARKET_SALAD_NAME}}</h4>
+                                <p>{{MARKET_SALAD_DESCRIPTION}}</p>
+                                <div class="nutrition-highlights">
+                                    <span class="calorie-count">{{MARKET_SALAD_CALORIES}} cal</span>
+                                    <span class="protein-count">{{MARKET_SALAD_PROTEIN}}g protein</span>
+                                    <span class="dietary-badge vegan">Vegan</span>
                                 </div>
                                 <div class="item-footer">
                                     <span class="price">{{MARKET_SALAD_PRICE}}</span>
-                                    <button class="btn btn-small">Customize</button>
+                                    <button class="btn btn-customize">Customize</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="{{SUPERFOOD_SALAD_IMAGE}}" alt="{{SUPERFOOD_SALAD_NAME}}">
+                            </div>
+                            <div class="item-content">
+                                <h4>{{SUPERFOOD_SALAD_NAME}}</h4>
+                                <p>{{SUPERFOOD_SALAD_DESCRIPTION}}</p>
+                                <div class="nutrition-highlights">
+                                    <span class="calorie-count">{{SUPERFOOD_SALAD_CALORIES}} cal</span>
+                                    <span class="protein-count">{{SUPERFOOD_SALAD_PROTEIN}}g protein</span>
+                                    <span class="dietary-badge gluten-free">Gluten-Free</span>
+                                </div>
+                                <div class="item-footer">
+                                    <span class="price">{{SUPERFOOD_SALAD_PRICE}}</span>
+                                    <button class="btn btn-customize">Customize</button>
                                 </div>
                             </div>
                         </div>
@@ -196,21 +298,45 @@
                 </div>
 
                 <div class="category-content" id="wraps">
-                    <h3>Wholesome Wraps</h3>
-                    <p class="category-description">Packed with flavor and nutrition</p>
-                    <div class="menu-grid">
+                    <div class="category-intro">
+                        <h3>Wholesome Wraps</h3>
+                        <p>Nutrient-packed wraps in whole grain and alternative tortillas</p>
+                    </div>
+                    <div class="menu-items-grid">
                         <div class="menu-item">
-                            <img src="{{CHICKEN_WRAP_IMAGE}}" alt="Grilled Chicken Wrap">
-                            <div class="item-info">
-                                <h4>Grilled Chicken Wrap</h4>
-                                <p>Whole wheat tortilla, grilled chicken, vegetables</p>
-                                <div class="nutrition-info">
-                                    <span class="calories">{{CHICKEN_WRAP_CALORIES}} cal</span>
-                                    <span class="protein">{{CHICKEN_WRAP_PROTEIN}}g protein</span>
+                            <div class="item-image">
+                                <img src="{{CHICKEN_WRAP_IMAGE}}" alt="{{CHICKEN_WRAP_NAME}}">
+                            </div>
+                            <div class="item-content">
+                                <h4>{{CHICKEN_WRAP_NAME}}</h4>
+                                <p>{{CHICKEN_WRAP_DESCRIPTION}}</p>
+                                <div class="nutrition-highlights">
+                                    <span class="calorie-count">{{CHICKEN_WRAP_CALORIES}} cal</span>
+                                    <span class="protein-count">{{CHICKEN_WRAP_PROTEIN}}g protein</span>
+                                    <span class="dietary-badge high-protein">High Protein</span>
                                 </div>
                                 <div class="item-footer">
                                     <span class="price">{{CHICKEN_WRAP_PRICE}}</span>
-                                    <button class="btn btn-small">Customize</button>
+                                    <button class="btn btn-customize">Customize</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="{{VEGGIE_WRAP_IMAGE}}" alt="{{VEGGIE_WRAP_NAME}}">
+                            </div>
+                            <div class="item-content">
+                                <h4>{{VEGGIE_WRAP_NAME}}</h4>
+                                <p>{{VEGGIE_WRAP_DESCRIPTION}}</p>
+                                <div class="nutrition-highlights">
+                                    <span class="calorie-count">{{VEGGIE_WRAP_CALORIES}} cal</span>
+                                    <span class="protein-count">{{VEGGIE_WRAP_PROTEIN}}g protein</span>
+                                    <span class="dietary-badge vegan">Vegan</span>
+                                </div>
+                                <div class="item-footer">
+                                    <span class="price">{{VEGGIE_WRAP_PRICE}}</span>
+                                    <button class="btn btn-customize">Customize</button>
                                 </div>
                             </div>
                         </div>
@@ -218,21 +344,45 @@
                 </div>
 
                 <div class="category-content" id="soups">
-                    <h3>Nourishing Soups</h3>
-                    <p class="category-description">Made fresh daily with organic ingredients</p>
-                    <div class="menu-grid">
+                    <div class="category-intro">
+                        <h3>Nourishing Soups</h3>
+                        <p>Made fresh daily with organic vegetables and lean proteins</p>
+                    </div>
+                    <div class="menu-items-grid">
                         <div class="menu-item">
-                            <img src="{{LENTIL_SOUP_IMAGE}}" alt="Lentil Soup">
-                            <div class="item-info">
-                                <h4>Red Lentil Soup</h4>
-                                <p>Organic red lentils, vegetables, coconut milk</p>
-                                <div class="nutrition-info">
-                                    <span class="calories">{{LENTIL_SOUP_CALORIES}} cal</span>
-                                    <span class="protein">{{LENTIL_SOUP_PROTEIN}}g protein</span>
+                            <div class="item-image">
+                                <img src="{{LENTIL_SOUP_IMAGE}}" alt="{{LENTIL_SOUP_NAME}}">
+                            </div>
+                            <div class="item-content">
+                                <h4>{{LENTIL_SOUP_NAME}}</h4>
+                                <p>{{LENTIL_SOUP_DESCRIPTION}}</p>
+                                <div class="nutrition-highlights">
+                                    <span class="calorie-count">{{LENTIL_SOUP_CALORIES}} cal</span>
+                                    <span class="protein-count">{{LENTIL_SOUP_PROTEIN}}g protein</span>
+                                    <span class="dietary-badge vegan">Vegan</span>
                                 </div>
                                 <div class="item-footer">
                                     <span class="price">{{LENTIL_SOUP_PRICE}}</span>
-                                    <button class="btn btn-small">Add to Order</button>
+                                    <button class="btn btn-add">Add to Order</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-image">
+                                <img src="{{CHICKEN_SOUP_IMAGE}}" alt="{{CHICKEN_SOUP_NAME}}">
+                            </div>
+                            <div class="item-content">
+                                <h4>{{CHICKEN_SOUP_NAME}}</h4>
+                                <p>{{CHICKEN_SOUP_DESCRIPTION}}</p>
+                                <div class="nutrition-highlights">
+                                    <span class="calorie-count">{{CHICKEN_SOUP_CALORIES}} cal</span>
+                                    <span class="protein-count">{{CHICKEN_SOUP_PROTEIN}}g protein</span>
+                                    <span class="dietary-badge gluten-free">Gluten-Free</span>
+                                </div>
+                                <div class="item-footer">
+                                    <span class="price">{{CHICKEN_SOUP_PRICE}}</span>
+                                    <button class="btn btn-add">Add to Order</button>
                                 </div>
                             </div>
                         </div>
@@ -242,194 +392,381 @@
         </div>
     </section>
 
-    <section class="nutrition-promise" id="nutrition">
+    <section id="nutrition" class="nutrition-transparency">
         <div class="container">
             <div class="nutrition-content">
                 <div class="nutrition-text">
-                    <h2>Our Nutrition Promise</h2>
-                    <p>We believe eating well should be simple, delicious, and accessible to everyone.</p>
-                    <div class="nutrition-features">
-                        <div class="feature">
-                            <h4>🌿 Plant-Forward</h4>
-                            <p>{{PLANT_PERCENTAGE}}% of our menu features plants as the star</p>
+                    <h2>Nutrition Transparency</h2>
+                    <p>{{NUTRITION_PHILOSOPHY}}</p>
+                    <div class="nutrition-commitments">
+                        <div class="commitment">
+                            <div class="commitment-icon">📊</div>
+                            <h4>{{COMMITMENT_1_TITLE}}</h4>
+                            <p>{{COMMITMENT_1_DESCRIPTION}}</p>
                         </div>
-                        <div class="feature">
-                            <h4>📊 Full Transparency</h4>
-                            <p>Complete nutrition info for every ingredient</p>
+                        <div class="commitment">
+                            <div class="commitment-icon">🌿</div>
+                            <h4>{{COMMITMENT_2_TITLE}}</h4>
+                            <p>{{COMMITMENT_2_DESCRIPTION}}</p>
                         </div>
-                        <div class="feature">
-                            <h4>🥬 Fresh Daily</h4>
-                            <p>Produce delivered fresh and prepped daily</p>
+                        <div class="commitment">
+                            <div class="commitment-icon">🏷️</div>
+                            <h4>{{COMMITMENT_3_TITLE}}</h4>
+                            <p>{{COMMITMENT_3_DESCRIPTION}}</p>
                         </div>
-                        <div class="feature">
-                            <h4>🏷️ Clear Labeling</h4>
-                            <p>Vegan, gluten-free, keto options clearly marked</p>
+                        <div class="commitment">
+                            <div class="commitment-icon">⚖️</div>
+                            <h4>{{COMMITMENT_4_TITLE}}</h4>
+                            <p>{{COMMITMENT_4_DESCRIPTION}}</p>
                         </div>
                     </div>
-                    <a href="#menu" class="btn btn-primary">View Nutrition Guide</a>
+                    <div class="nutrition-stats">
+                        <div class="stat">
+                            <span class="stat-number">{{PLANT_PERCENTAGE}}%</span>
+                            <span class="stat-description">Plant-based menu options</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">{{CALORIE_RANGE_LOW}}-{{CALORIE_RANGE_HIGH}}</span>
+                            <span class="stat-description">Calorie range for most items</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">{{SODIUM_LIMIT}}mg</span>
+                            <span class="stat-description">Maximum sodium per serving</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary">View Full Nutrition Guide</button>
                 </div>
                 <div class="nutrition-visual">
-                    <img src="{{FRESH_INGREDIENTS_IMAGE}}" alt="Fresh ingredients">
+                    <img src="{{NUTRITION_INFOGRAPHIC_IMAGE}}" alt="Nutrition information display">
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="order-experience" id="order">
+    <section class="ordering-experience">
         <div class="container">
             <h2>Order Your Way</h2>
-            <div class="order-options">
-                <div class="order-option">
-                    <div class="option-icon">📱</div>
-                    <h3>Mobile App</h3>
-                    <p>Skip the line, earn rewards, get exclusive offers</p>
-                    <div class="app-benefits">
-                        <span class="benefit">✓ Faster ordering</span>
-                        <span class="benefit">✓ Loyalty rewards</span>
-                        <span class="benefit">✓ Exclusive deals</span>
+            <div class="ordering-options">
+                <div class="ordering-option">
+                    <div class="option-header">
+                        <div class="option-icon">📱</div>
+                        <h3>Mobile App</h3>
                     </div>
-                    <div class="app-buttons">
-                        <a href="{{APP_STORE_URL}}" class="app-btn">
-                            <img src="{{APP_STORE_BADGE}}" alt="Download on App Store">
-                        </a>
-                        <a href="{{GOOGLE_PLAY_URL}}" class="app-btn">
-                            <img src="{{GOOGLE_PLAY_BADGE}}" alt="Get it on Google Play">
-                        </a>
+                    <div class="option-content">
+                        <p>Skip the line and customize every detail of your order</p>
+                        <div class="app-features">
+                            <div class="feature">
+                                <span class="feature-icon">⚡</span>
+                                <span>{{APP_FEATURE_1}}</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">🎁</span>
+                                <span>{{APP_FEATURE_2}}</span>
+                            </div>
+                            <div class="feature">
+                                <span class="feature-icon">💰</span>
+                                <span>{{APP_FEATURE_3}}</span>
+                            </div>
+                        </div>
+                        <div class="app-download">
+                            <a href="{{APP_STORE_URL}}" class="download-btn">
+                                <img src="{{APP_STORE_BADGE}}" alt="Download on App Store">
+                            </a>
+                            <a href="{{GOOGLE_PLAY_URL}}" class="download-btn">
+                                <img src="{{GOOGLE_PLAY_BADGE}}" alt="Get it on Google Play">
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="order-option">
-                    <div class="option-icon">🚗</div>
-                    <h3>Pickup & Delivery</h3>
-                    <p>Ready when you are, delivered fresh to your door</p>
-                    <div class="delivery-info">
-                        <div class="info-item">
-                            <strong>Pickup:</strong> Ready in {{PICKUP_TIME}} min
-                        </div>
-                        <div class="info-item">
-                            <strong>Delivery:</strong> {{DELIVERY_TIME}} min average
-                        </div>
-                        <div class="info-item">
-                            <strong>Fee:</strong> {{DELIVERY_FEE}} delivery
-                        </div>
+
+                <div class="ordering-option">
+                    <div class="option-header">
+                        <div class="option-icon">🚗</div>
+                        <h3>Pickup & Delivery</h3>
                     </div>
-                    <a href="#" class="btn btn-primary">Order Now</a>
+                    <div class="option-content">
+                        <p>Fresh meals ready when you need them, delivered with care</p>
+                        <div class="delivery-details">
+                            <div class="detail-item">
+                                <strong>Pickup Ready:</strong> {{PICKUP_TIME}} minutes
+                            </div>
+                            <div class="detail-item">
+                                <strong>Delivery Time:</strong> {{DELIVERY_TIME}} minutes
+                            </div>
+                            <div class="detail-item">
+                                <strong>Delivery Fee:</strong> {{DELIVERY_FEE}}
+                            </div>
+                            <div class="detail-item">
+                                <strong>Free Delivery:</strong> Orders over {{FREE_DELIVERY_MINIMUM}}
+                            </div>
+                        </div>
+                        <button class="btn btn-primary">Start Order</button>
+                    </div>
                 </div>
-                <div class="order-option">
-                    <div class="option-icon">🏢</div>
-                    <h3>Catering</h3>
-                    <p>Fresh, healthy options for your next meeting or event</p>
-                    <div class="catering-features">
-                        <span class="feature">🥗 Individual meals</span>
-                        <span class="feature">🍽️ Group platters</span>
-                        <span class="feature">📅 Advanced ordering</span>
+
+                <div class="ordering-option">
+                    <div class="option-header">
+                        <div class="option-icon">🏢</div>
+                        <h3>Corporate Catering</h3>
                     </div>
-                    <a href="#catering" class="btn btn-secondary">Learn More</a>
+                    <div class="option-content">
+                        <p>Healthy options for your team meetings and corporate events</p>
+                        <div class="catering-types">
+                            <div class="catering-type">
+                                <h5>Individual Meals</h5>
+                                <p>{{INDIVIDUAL_CATERING_MIN}} person minimum</p>
+                            </div>
+                            <div class="catering-type">
+                                <h5>Group Platters</h5>
+                                <p>{{GROUP_CATERING_MIN}} person minimum</p>
+                            </div>
+                            <div class="catering-type">
+                                <h5>Build Your Own Bar</h5>
+                                <p>{{CUSTOM_CATERING_MIN}} person minimum</p>
+                            </div>
+                        </div>
+                        <p class="catering-notice"><strong>Note:</strong> {{CATERING_ADVANCE_NOTICE}} advance notice required</p>
+                        <button class="btn btn-secondary">Request Catering Quote</button>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="rewards-program" id="rewards">
-        <div class="rewards-hero">
+    <section id="rewards" class="rewards-program">
+        <div class="rewards-background">
             <div class="container">
                 <div class="rewards-content">
-                    <h2>{{REWARDS_PROGRAM_NAME}}</h2>
-                    <p>Earn points on every order and unlock delicious rewards</p>
-                    <div class="rewards-benefits">
-                        <div class="benefit">
-                            <span class="points">{{SIGNUP_POINTS}}</span>
-                            <span class="label">Points for joining</span>
+                    <div class="rewards-text">
+                        <h2>{{REWARDS_PROGRAM_NAME}}</h2>
+                        <p>{{REWARDS_PROGRAM_DESCRIPTION}}</p>
+                        <div class="rewards-tiers">
+                            <div class="tier">
+                                <h4>{{TIER_1_NAME}}</h4>
+                                <div class="tier-benefits">
+                                    <p>{{TIER_1_BENEFIT_1}}</p>
+                                    <p>{{TIER_1_BENEFIT_2}}</p>
+                                    <p>{{TIER_1_BENEFIT_3}}</p>
+                                </div>
+                            </div>
+                            <div class="tier premium">
+                                <h4>{{TIER_2_NAME}}</h4>
+                                <div class="tier-benefits">
+                                    <p>{{TIER_2_BENEFIT_1}}</p>
+                                    <p>{{TIER_2_BENEFIT_2}}</p>
+                                    <p>{{TIER_2_BENEFIT_3}}</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="benefit">
-                            <span class="points">{{PURCHASE_POINTS}}</span>
-                            <span class="label">Points per $1 spent</span>
-                        </div>
-                        <div class="benefit">
-                            <span class="points">{{REWARD_THRESHOLD}}</span>
-                            <span class="label">Points = ${{REWARD_VALUE}} reward</span>
+                        <div class="signup-incentive">
+                            <p><strong>Join now and get {{SIGNUP_BONUS}} points!</strong> (Worth {{SIGNUP_BONUS_VALUE}})</p>
                         </div>
                     </div>
-                    <form class="rewards-signup">
-                        <input type="email" placeholder="Enter your email" required>
-                        <button type="submit" class="btn btn-primary">Join Free</button>
-                    </form>
+                    <div class="rewards-signup">
+                        <h3>Join {{REWARDS_PROGRAM_NAME}}</h3>
+                        <form class="signup-form">
+                            <div class="form-row">
+                                <input type="text" name="name" placeholder="Full Name" required>
+                                <input type="email" name="email" placeholder="Email Address" required>
+                            </div>
+                            <div class="form-row">
+                                <input type="tel" name="phone" placeholder="Phone Number" required>
+                                <input type="date" name="birthday" placeholder="Birthday (optional)">
+                            </div>
+                            <div class="form-checkbox">
+                                <input type="checkbox" id="marketing" name="marketing">
+                                <label for="marketing">Send me exclusive offers and nutrition tips</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full">Join Free & Get {{SIGNUP_BONUS}} Points</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="catering-section" id="catering">
+    <section id="catering" class="catering-section">
         <div class="container">
-            <div class="catering-grid">
+            <div class="catering-content">
                 <div class="catering-text">
-                    <h2>Catering That Cares</h2>
-                    <p>Bring fresh, healthy options to your next office meeting, event, or gathering.</p>
-                    <div class="catering-options">
-                        <div class="catering-option">
-                            <h4>Individual Meals</h4>
-                            <p>Perfect for meetings and lunch orders</p>
-                            <span class="min-order">{{INDIVIDUAL_MIN}} person minimum</span>
+                    <h2>Corporate Catering</h2>
+                    <p>{{CATERING_DESCRIPTION}}</p>
+                    <div class="catering-benefits">
+                        <div class="benefit-item">
+                            <h4>{{CATERING_BENEFIT_1_TITLE}}</h4>
+                            <p>{{CATERING_BENEFIT_1_DESCRIPTION}}</p>
                         </div>
-                        <div class="catering-option">
-                            <h4>Group Platters</h4>
-                            <p>Share-style salads, bowls, and sides</p>
-                            <span class="min-order">{{PLATTER_MIN}} person minimum</span>
+                        <div class="benefit-item">
+                            <h4>{{CATERING_BENEFIT_2_TITLE}}</h4>
+                            <p>{{CATERING_BENEFIT_2_DESCRIPTION}}</p>
                         </div>
-                        <div class="catering-option">
-                            <h4>Build Your Own</h4>
-                            <p>Let guests customize their perfect meal</p>
-                            <span class="min-order">{{CUSTOM_MIN}} person minimum</span>
+                        <div class="benefit-item">
+                            <h4>{{CATERING_BENEFIT_3_TITLE}}</h4>
+                            <p>{{CATERING_BENEFIT_3_DESCRIPTION}}</p>
                         </div>
                     </div>
-                    <div class="catering-notice">
-                        <p><strong>Advance Notice:</strong> {{CATERING_NOTICE}} for all catering orders</p>
+                    <div class="catering-packages">
+                        <div class="package">
+                            <h4>{{PACKAGE_1_NAME}}</h4>
+                            <p>{{PACKAGE_1_DESCRIPTION}}</p>
+                            <ul class="package-includes">
+                                <li>{{PACKAGE_1_ITEM_1}}</li>
+                                <li>{{PACKAGE_1_ITEM_2}}</li>
+                                <li>{{PACKAGE_1_ITEM_3}}</li>
+                            </ul>
+                            <p class="package-price">{{PACKAGE_1_PRICE_RANGE}}</p>
+                        </div>
+                        <div class="package">
+                            <h4>{{PACKAGE_2_NAME}}</h4>
+                            <p>{{PACKAGE_2_DESCRIPTION}}</p>
+                            <ul class="package-includes">
+                                <li>{{PACKAGE_2_ITEM_1}}</li>
+                                <li>{{PACKAGE_2_ITEM_2}}</li>
+                                <li>{{PACKAGE_2_ITEM_3}}</li>
+                            </ul>
+                            <p class="package-price">{{PACKAGE_2_PRICE_RANGE}}</p>
+                        </div>
                     </div>
-                    <a href="#" class="btn btn-primary">Order Catering</a>
+                    <p class="catering-notice">{{CATERING_ADVANCE_NOTICE}} advance notice required for all catering orders</p>
+                    <div class="catering-cta">
+                        <button class="btn btn-primary">Request Catering Quote</button>
+                        <button class="btn btn-secondary">Download Catering Menu</button>
+                    </div>
                 </div>
-                <div class="catering-image">
-                    <img src="{{CATERING_SPREAD_IMAGE}}" alt="Catering spread">
+                <div class="catering-visual">
+                    <img src="{{CATERING_SPREAD_IMAGE}}" alt="Corporate catering spread">
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="locations" id="locations">
+    <section id="locations" class="locations-section">
         <div class="container">
-            <h2>Find Your Location</h2>
-            <div class="location-finder">
-                <div class="search-bar">
-                    <input type="text" placeholder="Enter city, state, or zip code">
+            <div class="locations-header">
+                <h2>Find Your {{RESTAURANT_NAME}}</h2>
+                <div class="location-search">
+                    <input type="text" placeholder="Enter city, state, or zip code" class="location-input">
                     <button class="btn btn-primary">Find Locations</button>
                 </div>
             </div>
+            
             <div class="locations-grid">
-                <div class="location">
-                    <h3>{{LOCATION_1_NAME}}</h3>
-                    <p>{{LOCATION_1_ADDRESS}}</p>
-                    <p>{{LOCATION_1_PHONE}}</p>
-                    <div class="location-features">
-                        <span class="feature-tag">Pickup</span>
-                        <span class="feature-tag">Delivery</span>
-                        <span class="feature-tag">Catering</span>
+                <div class="location-card">
+                    <div class="location-info">
+                        <h3>{{LOCATION_1_NAME}}</h3>
+                        <p class="location-address">{{LOCATION_1_ADDRESS}}</p>
+                        <p class="location-phone">{{LOCATION_1_PHONE}}</p>
+                        <div class="location-features">
+                            <span class="feature-tag">Pickup</span>
+                            <span class="feature-tag">Delivery</span>
+                            <span class="feature-tag">Catering</span>
+                            <span class="feature-tag">{{LOCATION_1_SPECIAL_FEATURE}}</span>
+                        </div>
+                        <div class="location-hours">
+                            <h5>Hours</h5>
+                            <p>{{LOCATION_1_HOURS}}</p>
+                        </div>
+                        <div class="location-actions">
+                            <button class="btn btn-primary">Order from Here</button>
+                            <button class="btn btn-outline">Get Directions</button>
+                        </div>
                     </div>
-                    <div class="location-hours">
-                        <p><strong>Hours:</strong> {{LOCATION_1_HOURS}}</p>
-                    </div>
-                    <a href="#" class="btn btn-outline">Order from Here</a>
                 </div>
-                <div class="location">
-                    <h3>{{LOCATION_2_NAME}}</h3>
-                    <p>{{LOCATION_2_ADDRESS}}</p>
-                    <p>{{LOCATION_2_PHONE}}</p>
-                    <div class="location-features">
-                        <span class="feature-tag">Pickup</span>
-                        <span class="feature-tag">Delivery</span>
-                        <span class="feature-tag">Catering</span>
+
+                <div class="location-card">
+                    <div class="location-info">
+                        <h3>{{LOCATION_2_NAME}}</h3>
+                        <p class="location-address">{{LOCATION_2_ADDRESS}}</p>
+                        <p class="location-phone">{{LOCATION_2_PHONE}}</p>
+                        <div class="location-features">
+                            <span class="feature-tag">Pickup</span>
+                            <span class="feature-tag">Delivery</span>
+                            <span class="feature-tag">Catering</span>
+                            <span class="feature-tag">{{LOCATION_2_SPECIAL_FEATURE}}</span>
+                        </div>
+                        <div class="location-hours">
+                            <h5>Hours</h5>
+                            <p>{{LOCATION_2_HOURS}}</p>
+                        </div>
+                        <div class="location-actions">
+                            <button class="btn btn-primary">Order from Here</button>
+                            <button class="btn btn-outline">Get Directions</button>
+                        </div>
                     </div>
-                    <div class="location-hours">
-                        <p><strong>Hours:</strong> {{LOCATION_2_HOURS}}</p>
+                </div>
+
+                <div class="location-card">
+                    <div class="location-info">
+                        <h3>{{LOCATION_3_NAME}}</h3>
+                        <p class="location-address">{{LOCATION_3_ADDRESS}}</p>
+                        <p class="location-phone">{{LOCATION_3_PHONE}}</p>
+                        <div class="location-features">
+                            <span class="feature-tag">Pickup</span>
+                            <span class="feature-tag">Delivery</span>
+                            <span class="feature-tag">Catering</span>
+                            <span class="feature-tag">{{LOCATION_3_SPECIAL_FEATURE}}</span>
+                        </div>
+                        <div class="location-hours">
+                            <h5>Hours</h5>
+                            <p>{{LOCATION_3_HOURS}}</p>
+                        </div>
+                        <div class="location-actions">
+                            <button class="btn btn-primary">Order from Here</button>
+                            <button class="btn btn-outline">Get Directions</button>
+                        </div>
                     </div>
-                    <a href="#" class="btn btn-outline">Order from Here</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <h4>Customer Service</h4>
+                            <p>{{CUSTOMER_SERVICE_PHONE}}</p>
+                            <p>{{CUSTOMER_SERVICE_EMAIL}}</p>
+                            <p>Available {{CUSTOMER_SERVICE_HOURS}}</p>
+                        </div>
+                        <div class="contact-method">
+                            <h4>Catering Inquiries</h4>
+                            <p>{{CATERING_PHONE}}</p>
+                            <p>{{CATERING_EMAIL}}</p>
+                            <p>{{CATERING_ADVANCE_NOTICE}} advance notice required</p>
+                        </div>
+                        <div class="contact-method">
+                            <h4>Corporate Partnerships</h4>
+                            <p>{{CORPORATE_PHONE}}</p>
+                            <p>{{CORPORATE_EMAIL}}</p>
+                            <p>Franchise and partnership opportunities</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Send us a Message</h3>
+                    <form class="inquiry-form">
+                        <div class="form-row">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                            <input type="email" name="email" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-row">
+                            <input type="tel" name="phone" placeholder="Phone Number">
+                            <select name="inquiry-type" required>
+                                <option value="">Inquiry Type</option>
+                                <option value="general">General Question</option>
+                                <option value="catering">Catering Inquiry</option>
+                                <option value="nutrition">Nutrition Question</option>
+                                <option value="franchise">Franchise Interest</option>
+                                <option value="feedback">Feedback</option>
+                            </select>
+                        </div>
+                        <textarea name="message" placeholder="Your message..." rows="4" required></textarea>
+                        <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -438,42 +775,56 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
+                <div class="footer-section brand">
                     <h3>{{RESTAURANT_NAME}}</h3>
-                    <p>Nourishing communities with fresh, healthy food since {{YEAR_ESTABLISHED}}</p>
+                    <p>{{FOOTER_TAGLINE}}</p>
                     <div class="social-links">
-                        <a href="{{FACEBOOK_URL}}">Facebook</a>
-                        <a href="{{INSTAGRAM_URL}}">Instagram</a>
-                        <a href="{{TWITTER_URL}}">Twitter</a>
-                        <a href="{{TIKTOK_URL}}">TikTok</a>
+                        <a href="{{FACEBOOK_URL}}" aria-label="Facebook">📘</a>
+                        <a href="{{INSTAGRAM_URL}}" aria-label="Instagram">📷</a>
+                        <a href="{{TWITTER_URL}}" aria-label="Twitter">🐦</a>
+                        <a href="{{TIKTOK_URL}}" aria-label="TikTok">🎵</a>
+                        <a href="{{LINKEDIN_URL}}" aria-label="LinkedIn">💼</a>
                     </div>
                 </div>
                 <div class="footer-section">
                     <h4>Order</h4>
-                    <p>{{PHONE}}</p>
-                    <p>{{EMAIL}}</p>
-                    <p>Download our app for fastest ordering</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Catering</h4>
-                    <p>{{CATERING_PHONE}}</p>
-                    <p>{{CATERING_EMAIL}}</p>
-                    <p>{{CATERING_NOTICE}} advance notice required</p>
+                    <ul>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#nutrition">Nutrition Info</a></li>
+                        <li><a href="#locations">Locations</a></li>
+                        <li><a href="#catering">Catering</a></li>
+                        <li><a href="{{APP_STORE_URL}}">Mobile App</a></li>
+                    </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Company</h4>
-                    <p><a href="#">About Us</a></p>
-                    <p><a href="#">Nutrition</a></p>
-                    <p><a href="#">Careers</a></p>
-                    <p><a href="#">Press</a></p>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#press">Press</a></li>
+                        <li><a href="#investors">Investors</a></li>
+                        <li><a href="#franchise">Franchise</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#accessibility">Accessibility</a></li>
+                        <li><a href="#allergens">Allergen Info</a></li>
+                        <li><a href="{{REWARDS_PROGRAM_URL}}">{{REWARDS_PROGRAM_NAME}}</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; {{CURRENT_YEAR}} {{RESTAURANT_NAME}}. All rights reserved.</p>
-                <div class="footer-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                    <a href="#">Accessibility</a>
+                <div class="footer-legal">
+                    <p>&copy; {{CURRENT_YEAR}} {{RESTAURANT_NAME}}. All rights reserved.</p>
+                    <div class="legal-links">
+                        <a href="#privacy">Privacy Policy</a>
+                        <a href="#terms">Terms of Service</a>
+                        <a href="#california-privacy">CA Privacy Rights</a>
+                    </div>
                 </div>
             </div>
         </div>

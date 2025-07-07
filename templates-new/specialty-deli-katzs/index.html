@@ -3,362 +3,540 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{RESTAURANT_NAME}} - {{ESTABLISHMENT_TYPE}}</title>
+    <title>{{DELI_NAME}} - Authentic New York Style Deli</title>
+    <meta name="description" content="{{DELI_NAME}} - Traditional Jewish deli serving authentic pastrami, corned beef, and NY classics since {{ESTABLISHED_YEAR}}">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
-<body class="theme-classic">
-    <!-- Top Banner -->
-    <div class="heritage-banner">
-        <div class="banner-content">
-            <span class="heritage-text">{{HERITAGE_TEXT}}</span>
-        </div>
-    </div>
-
-    <!-- Navigation -->
-    <nav class="nav-deli">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <div class="logo-classic">
-                    <span class="logo-main">{{RESTAURANT_NAME}}</span>
-                    <span class="logo-sub">{{ESTABLISHMENT_TYPE}}</span>
-                </div>
+<body class="color-deli">
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>{{DELI_NAME}}</h1>
+                <span class="established">Est. {{ESTABLISHED_YEAR}}</span>
+                <span class="tagline">{{DELI_TAGLINE}}</span>
             </div>
-            <div class="nav-menu">
-                <a href="#menu" class="nav-link">Menu</a>
-                <a href="#catering" class="nav-link">Catering</a>
-                <a href="#story" class="nav-link">Our Story</a>
-                <a href="#hours" class="nav-link">Hours & Location</a>
-                <a href="#" class="nav-cta">Order Online</a>
-            </div>
-            <div class="mobile-menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
+            <nav class="nav">
+                <ul class="nav-menu">
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#specialties">Specialties</a></li>
+                    <li><a href="#catering">Catering</a></li>
+                    <li><a href="#history">Our Story</a></li>
+                    <li><a href="#contact">Visit</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="order-btn">Order Online</button>
+                <button class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
-    </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section class="hero-deli">
+    <section class="hero">
+        <div class="hero-background">
+            <img src="{{HERO_BACKGROUND_IMAGE}}" alt="Classic deli interior with hanging salami">
+        </div>
         <div class="hero-content">
-            <div class="hero-text">
-                <h1>{{HERO_TITLE}}</h1>
-                <p class="hero-subtitle">{{HERO_SUBTITLE}}</p>
-                <div class="hero-badges">
-                    <span class="badge-heritage">{{HERITAGE_BADGE}}</span>
-                    <span class="badge-specialty">{{SPECIALTY_BADGE}}</span>
+            <div class="hero-badge">Since {{ESTABLISHED_YEAR}}</div>
+            <h2>{{HERO_TITLE}}</h2>
+            <p>{{HERO_SUBTITLE}}</p>
+            <div class="hero-features">
+                <div class="feature">
+                    <span class="icon">🥩</span>
+                    <span>Hand-Cut Pastrami</span>
                 </div>
-                <div class="hero-cta">
-                    <button class="btn-order">Order Now</button>
-                    <a href="#menu" class="btn-menu">View Menu</a>
+                <div class="feature">
+                    <span class="icon">🥯</span>
+                    <span>Fresh Bagels Daily</span>
+                </div>
+                <div class="feature">
+                    <span class="icon">🏪</span>
+                    <span>{{YEARS_IN_BUSINESS}} Years Tradition</span>
                 </div>
             </div>
-            <div class="hero-image">
-                <img src="{{HERO_SANDWICH_IMAGE}}" alt="{{SIGNATURE_SANDWICH}}" class="signature-sandwich">
+            <div class="hero-cta">
+                <button class="btn btn-primary">View Menu</button>
+                <button class="btn btn-secondary">Our Famous Pastrami</button>
             </div>
         </div>
     </section>
 
-    <!-- Famous Items -->
-    <section class="famous-items">
+    <section class="daily-specials">
         <div class="container">
-            <h2 class="section-title">Famous Favorites</h2>
-            <div class="items-grid">
-                <div class="deli-item featured">
-                    <div class="item-ribbon">SIGNATURE</div>
-                    <img src="{{SIGNATURE_ITEM_IMAGE}}" alt="{{SIGNATURE_ITEM_NAME}}" class="item-image">
-                    <div class="item-content">
-                        <h3>{{SIGNATURE_ITEM_NAME}}</h3>
-                        <p class="item-description">{{SIGNATURE_ITEM_DESCRIPTION}}</p>
-                        <div class="item-details">
-                            <span class="serving-info">{{SIGNATURE_SERVING_SIZE}}</span>
-                        </div>
-                        <div class="item-price">${{SIGNATURE_ITEM_PRICE}}</div>
-                        <button class="btn-add-item">Add to Order</button>
-                    </div>
+            <h2>Today's Fresh Selections</h2>
+            <div class="specials-ticker">
+                <div class="ticker-content">
+                    <span>Fresh Pastrami • Hand-Cut Corned Beef • Homemade Matzo Ball Soup • {{DAILY_SPECIAL_1}} • {{DAILY_SPECIAL_2}} • Fresh Bagels • Hand-Sliced Lox</span>
                 </div>
-
-                <div class="deli-item">
-                    <img src="{{POPULAR_1_IMAGE}}" alt="{{POPULAR_1_NAME}}" class="item-image">
-                    <div class="item-content">
-                        <h3>{{POPULAR_1_NAME}}</h3>
-                        <p class="item-description">{{POPULAR_1_DESCRIPTION}}</p>
-                        <div class="item-details">
-                            <span class="serving-info">{{POPULAR_1_SERVING_SIZE}}</span>
-                        </div>
-                        <div class="item-price">${{POPULAR_1_PRICE}}</div>
-                        <button class="btn-add-item">Add to Order</button>
-                    </div>
+            </div>
+            <div class="fresh-board">
+                <div class="fresh-item">
+                    <h3>{{TODAYS_SOUP}}</h3>
+                    <p>Made fresh this morning</p>
+                    <span class="price">{{SOUP_PRICE}}</span>
                 </div>
-
-                <div class="deli-item">
-                    <img src="{{POPULAR_2_IMAGE}}" alt="{{POPULAR_2_NAME}}" class="item-image">
-                    <div class="item-content">
-                        <h3>{{POPULAR_2_NAME}}</h3>
-                        <p class="item-description">{{POPULAR_2_DESCRIPTION}}</p>
-                        <div class="item-details">
-                            <span class="serving-info">{{POPULAR_2_SERVING_SIZE}}</span>
-                        </div>
-                        <div class="item-price">${{POPULAR_2_PRICE}}</div>
-                        <button class="btn-add-item">Add to Order</button>
-                    </div>
+                <div class="fresh-item">
+                    <h3>{{FEATURED_SANDWICH}}</h3>
+                    <p>{{FEATURED_SANDWICH_DESC}}</p>
+                    <span class="price">{{FEATURED_PRICE}}</span>
                 </div>
-
-                <div class="deli-item">
-                    <img src="{{POPULAR_3_IMAGE}}" alt="{{POPULAR_3_NAME}}" class="item-image">
-                    <div class="item-content">
-                        <h3>{{POPULAR_3_NAME}}</h3>
-                        <p class="item-description">{{POPULAR_3_DESCRIPTION}}</p>
-                        <div class="item-details">
-                            <span class="serving-info">{{POPULAR_3_SERVING_SIZE}}</span>
-                        </div>
-                        <div class="item-price">${{POPULAR_3_PRICE}}</div>
-                        <button class="btn-add-item">Add to Order</button>
-                    </div>
+                <div class="fresh-item">
+                    <h3>Bagel Special</h3>
+                    <p>{{BAGEL_SPECIAL_DESC}}</p>
+                    <span class="price">{{BAGEL_SPECIAL_PRICE}}</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Menu Categories -->
-    <section class="menu-categories">
+    <section id="menu" class="menu-section">
         <div class="container">
-            <h2 class="section-title">Our Menu</h2>
-            <div class="categories-grid">
-                <div class="category-card">
-                    <img src="{{SANDWICHES_IMAGE}}" alt="Sandwiches" class="category-image">
-                    <div class="category-content">
-                        <h3>Hot Sandwiches</h3>
-                        <p>{{SANDWICHES_DESCRIPTION}}</p>
-                        <ul class="category-highlights">
-                            <li>{{SANDWICH_HIGHLIGHT_1}}</li>
-                            <li>{{SANDWICH_HIGHLIGHT_2}}</li>
-                            <li>{{SANDWICH_HIGHLIGHT_3}}</li>
-                        </ul>
-                        <button class="btn-category">View Sandwiches</button>
+            <div class="section-header">
+                <h2>Authentic Deli Menu</h2>
+                <p>Traditional recipes passed down through generations</p>
+            </div>
+            <div class="menu-tabs">
+                <button class="tab-btn active" data-category="sandwiches">Hot Sandwiches</button>
+                <button class="tab-btn" data-category="cold-cuts">Cold Sandwiches</button>
+                <button class="tab-btn" data-category="specialties">House Specialties</button>
+                <button class="tab-btn" data-category="sides">Sides & Soups</button>
+            </div>
+            <div class="menu-content">
+                <div class="menu-category active" id="sandwiches">
+                    <div class="menu-grid">
+                        <div class="menu-item featured">
+                            <div class="item-header">
+                                <h3>{{SIGNATURE_PASTRAMI_NAME}}</h3>
+                                <div class="item-badge">Signature</div>
+                            </div>
+                            <p>{{PASTRAMI_DESCRIPTION}}</p>
+                            <div class="item-details">
+                                <span class="prep-note">{{PASTRAMI_PREP_NOTE}}</span>
+                                <div class="price-options">
+                                    <span class="price-option">Regular: {{PASTRAMI_REGULAR_PRICE}}</span>
+                                    <span class="price-option">Large: {{PASTRAMI_LARGE_PRICE}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h3>{{CORNED_BEEF_NAME}}</h3>
+                            </div>
+                            <p>{{CORNED_BEEF_DESCRIPTION}}</p>
+                            <div class="item-details">
+                                <span class="prep-note">{{CORNED_BEEF_PREP_NOTE}}</span>
+                                <div class="price-options">
+                                    <span class="price-option">Regular: {{CORNED_BEEF_REGULAR_PRICE}}</span>
+                                    <span class="price-option">Large: {{CORNED_BEEF_LARGE_PRICE}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h3>{{REUBEN_NAME}}</h3>
+                            </div>
+                            <p>{{REUBEN_DESCRIPTION}}</p>
+                            <div class="item-details">
+                                <span class="prep-note">{{REUBEN_PREP_NOTE}}</span>
+                                <span class="price">{{REUBEN_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h3>{{HOT_BRISKET_NAME}}</h3>
+                            </div>
+                            <p>{{HOT_BRISKET_DESCRIPTION}}</p>
+                            <div class="item-details">
+                                <span class="prep-note">{{HOT_BRISKET_PREP_NOTE}}</span>
+                                <span class="price">{{HOT_BRISKET_PRICE}}</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <div class="category-card">
-                    <img src="{{PLATTERS_IMAGE}}" alt="Platters" class="category-image">
-                    <div class="category-content">
-                        <h3>Platters</h3>
-                        <p>{{PLATTERS_DESCRIPTION}}</p>
-                        <ul class="category-highlights">
-                            <li>{{PLATTER_HIGHLIGHT_1}}</li>
-                            <li>{{PLATTER_HIGHLIGHT_2}}</li>
-                            <li>{{PLATTER_HIGHLIGHT_3}}</li>
-                        </ul>
-                        <button class="btn-category">View Platters</button>
+                <div class="menu-category" id="cold-cuts">
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h3>{{LOX_BAGEL_NAME}}</h3>
+                            </div>
+                            <p>{{LOX_BAGEL_DESCRIPTION}}</p>
+                            <div class="item-details">
+                                <span class="prep-note">{{LOX_BAGEL_PREP_NOTE}}</span>
+                                <span class="price">{{LOX_BAGEL_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h3>{{WHITEFISH_SALAD_NAME}}</h3>
+                            </div>
+                            <p>{{WHITEFISH_SALAD_DESCRIPTION}}</p>
+                            <div class="item-details">
+                                <span class="prep-note">{{WHITEFISH_SALAD_PREP_NOTE}}</span>
+                                <span class="price">{{WHITEFISH_SALAD_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h3>{{TURKEY_CLUB_NAME}}</h3>
+                            </div>
+                            <p>{{TURKEY_CLUB_DESCRIPTION}}</p>
+                            <div class="item-details">
+                                <span class="prep-note">{{TURKEY_CLUB_PREP_NOTE}}</span>
+                                <span class="price">{{TURKEY_CLUB_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h3>{{LIVERWURST_NAME}}</h3>
+                            </div>
+                            <p>{{LIVERWURST_DESCRIPTION}}</p>
+                            <div class="item-details">
+                                <span class="prep-note">{{LIVERWURST_PREP_NOTE}}</span>
+                                <span class="price">{{LIVERWURST_PRICE}}</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <div class="category-card">
-                    <img src="{{SIDES_IMAGE}}" alt="Sides" class="category-image">
-                    <div class="category-content">
-                        <h3>Sides & Appetizers</h3>
-                        <p>{{SIDES_DESCRIPTION}}</p>
-                        <ul class="category-highlights">
-                            <li>{{SIDE_HIGHLIGHT_1}}</li>
-                            <li>{{SIDE_HIGHLIGHT_2}}</li>
-                            <li>{{SIDE_HIGHLIGHT_3}}</li>
-                        </ul>
-                        <button class="btn-category">View Sides</button>
+                <div class="menu-category" id="specialties">
+                    <div class="menu-grid">
+                        <div class="menu-item featured">
+                            <div class="item-header">
+                                <h3>{{MATZO_BALL_SOUP_NAME}}</h3>
+                                <div class="item-badge">Famous</div>
+                            </div>
+                            <p>{{MATZO_BALL_SOUP_DESCRIPTION}}</p>
+                            <div class="item-details">
+                                <span class="prep-note">{{MATZO_BALL_SOUP_PREP_NOTE}}</span>
+                                <div class="price-options">
+                                    <span class="price-option">Cup: {{MATZO_BALL_CUP_PRICE}}</span>
+                                    <span class="price-option">Bowl: {{MATZO_BALL_BOWL_PRICE}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h3>{{KNISH_NAME}}</h3>
+                            </div>
+                            <p>{{KNISH_DESCRIPTION}}</p>
+                            <div class="item-details">
+                                <span class="prep-note">{{KNISH_PREP_NOTE}}</span>
+                                <span class="price">{{KNISH_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h3>{{STUFFED_CABBAGE_NAME}}</h3>
+                            </div>
+                            <p>{{STUFFED_CABBAGE_DESCRIPTION}}</p>
+                            <div class="item-details">
+                                <span class="prep-note">{{STUFFED_CABBAGE_PREP_NOTE}}</span>
+                                <span class="price">{{STUFFED_CABBAGE_PRICE}}</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h3>{{BRISKET_PLATTER_NAME}}</h3>
+                            </div>
+                            <p>{{BRISKET_PLATTER_DESCRIPTION}}</p>
+                            <div class="item-details">
+                                <span class="prep-note">{{BRISKET_PLATTER_PREP_NOTE}}</span>
+                                <span class="price">{{BRISKET_PLATTER_PRICE}}</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <div class="category-card">
-                    <img src="{{BEVERAGES_IMAGE}}" alt="Beverages" class="category-image">
-                    <div class="category-content">
-                        <h3>Beverages</h3>
-                        <p>{{BEVERAGES_DESCRIPTION}}</p>
-                        <ul class="category-highlights">
-                            <li>{{BEVERAGE_HIGHLIGHT_1}}</li>
-                            <li>{{BEVERAGE_HIGHLIGHT_2}}</li>
-                            <li>{{BEVERAGE_HIGHLIGHT_3}}</li>
-                        </ul>
-                        <button class="btn-category">View Beverages</button>
+                <div class="menu-category" id="sides">
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h3>{{POTATO_SALAD_NAME}}</h3>
+                            </div>
+                            <p>{{POTATO_SALAD_DESCRIPTION}}</p>
+                            <span class="price">{{POTATO_SALAD_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h3>{{COLESLAW_NAME}}</h3>
+                            </div>
+                            <p>{{COLESLAW_DESCRIPTION}}</p>
+                            <span class="price">{{COLESLAW_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h3>{{PICKLES_NAME}}</h3>
+                            </div>
+                            <p>{{PICKLES_DESCRIPTION}}</p>
+                            <span class="price">{{PICKLES_PRICE}}</span>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h3>{{CHICKEN_SOUP_NAME}}</h3>
+                            </div>
+                            <p>{{CHICKEN_SOUP_DESCRIPTION}}</p>
+                            <div class="price-options">
+                                <span class="price-option">Cup: {{CHICKEN_SOUP_CUP_PRICE}}</span>
+                                <span class="price-option">Bowl: {{CHICKEN_SOUP_BOWL_PRICE}}</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Our Story -->
-    <section class="our-story">
+    <section id="specialties" class="signature-section">
         <div class="container">
-            <div class="story-content">
-                <div class="story-text">
-                    <h2>{{STORY_TITLE}}</h2>
-                    <p class="story-intro">{{STORY_INTRO}}</p>
-                    <div class="story-timeline">
+            <div class="signature-content">
+                <div class="signature-text">
+                    <h2>Our Famous Pastrami</h2>
+                    <p>{{PASTRAMI_STORY_DESCRIPTION}}</p>
+                    <div class="process-steps">
+                        <div class="step">
+                            <h4>{{PASTRAMI_STEP_1_TITLE}}</h4>
+                            <p>{{PASTRAMI_STEP_1_DESC}}</p>
+                        </div>
+                        <div class="step">
+                            <h4>{{PASTRAMI_STEP_2_TITLE}}</h4>
+                            <p>{{PASTRAMI_STEP_2_DESC}}</p>
+                        </div>
+                        <div class="step">
+                            <h4>{{PASTRAMI_STEP_3_TITLE}}</h4>
+                            <p>{{PASTRAMI_STEP_3_DESC}}</p>
+                        </div>
+                        <div class="step">
+                            <h4>{{PASTRAMI_STEP_4_TITLE}}</h4>
+                            <p>{{PASTRAMI_STEP_4_DESC}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="signature-image">
+                    <img src="{{PASTRAMI_PROCESS_IMAGE}}" alt="Hand-cutting pastrami">
+                    <div class="image-caption">{{PASTRAMI_IMAGE_CAPTION}}</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="history" class="history-section">
+        <div class="container">
+            <div class="history-content">
+                <div class="history-timeline">
+                    <h2>{{DELI_NAME}} Legacy</h2>
+                    <div class="timeline">
                         <div class="timeline-item">
-                            <div class="timeline-year">{{TIMELINE_1_YEAR}}</div>
-                            <div class="timeline-content">
-                                <h4>{{TIMELINE_1_TITLE}}</h4>
-                                <p>{{TIMELINE_1_DESCRIPTION}}</p>
-                            </div>
+                            <div class="year">{{ESTABLISHED_YEAR}}</div>
+                            <h4>{{FOUNDING_TITLE}}</h4>
+                            <p>{{FOUNDING_STORY}}</p>
                         </div>
                         <div class="timeline-item">
-                            <div class="timeline-year">{{TIMELINE_2_YEAR}}</div>
-                            <div class="timeline-content">
-                                <h4>{{TIMELINE_2_TITLE}}</h4>
-                                <p>{{TIMELINE_2_DESCRIPTION}}</p>
-                            </div>
+                            <div class="year">{{MILESTONE_YEAR_1}}</div>
+                            <h4>{{MILESTONE_1_TITLE}}</h4>
+                            <p>{{MILESTONE_1_STORY}}</p>
                         </div>
                         <div class="timeline-item">
-                            <div class="timeline-year">{{TIMELINE_3_YEAR}}</div>
-                            <div class="timeline-content">
-                                <h4>{{TIMELINE_3_TITLE}}</h4>
-                                <p>{{TIMELINE_3_DESCRIPTION}}</p>
-                            </div>
+                            <div class="year">{{MILESTONE_YEAR_2}}</div>
+                            <h4>{{MILESTONE_2_TITLE}}</h4>
+                            <p>{{MILESTONE_2_STORY}}</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="year">{{CURRENT_YEAR}}</div>
+                            <h4>{{CURRENT_GENERATION_TITLE}}</h4>
+                            <p>{{CURRENT_GENERATION_STORY}}</p>
                         </div>
                     </div>
                 </div>
-                <div class="story-image">
-                    <img src="{{HISTORICAL_IMAGE}}" alt="{{RESTAURANT_NAME}} History">
+                <div class="history-photos">
+                    <div class="photo-gallery">
+                        <img src="{{VINTAGE_PHOTO_1}}" alt="{{VINTAGE_PHOTO_1_CAPTION}}">
+                        <img src="{{VINTAGE_PHOTO_2}}" alt="{{VINTAGE_PHOTO_2_CAPTION}}">
+                        <img src="{{VINTAGE_PHOTO_3}}" alt="{{VINTAGE_PHOTO_3_CAPTION}}">
+                        <img src="{{VINTAGE_PHOTO_4}}" alt="{{VINTAGE_PHOTO_4_CAPTION}}">
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Catering -->
-    <section class="catering-section">
+    <section id="catering" class="catering-section">
         <div class="container">
-            <h2 class="section-title">Catering Services</h2>
-            <div class="catering-content">
-                <div class="catering-info">
-                    <h3>{{CATERING_TITLE}}</h3>
-                    <p>{{CATERING_DESCRIPTION}}</p>
-                    <div class="catering-features">
-                        <div class="feature-item">
-                            <h4>Party Platters</h4>
-                            <p>{{PARTY_PLATTERS_DESCRIPTION}}</p>
-                        </div>
-                        <div class="feature-item">
-                            <h4>Corporate Events</h4>
-                            <p>{{CORPORATE_EVENTS_DESCRIPTION}}</p>
-                        </div>
-                        <div class="feature-item">
-                            <h4>Special Occasions</h4>
-                            <p>{{SPECIAL_OCCASIONS_DESCRIPTION}}</p>
-                        </div>
+            <div class="section-header">
+                <h2>Catering & Events</h2>
+                <p>Bring authentic deli tradition to your next gathering</p>
+            </div>
+            <div class="catering-options">
+                <div class="catering-card">
+                    <h3>{{CORPORATE_CATERING_TITLE}}</h3>
+                    <p>{{CORPORATE_CATERING_DESCRIPTION}}</p>
+                    <ul>
+                        <li>{{CORPORATE_FEATURE_1}}</li>
+                        <li>{{CORPORATE_FEATURE_2}}</li>
+                        <li>{{CORPORATE_FEATURE_3}}</li>
+                    </ul>
+                    <div class="pricing-info">
+                        <span>{{CORPORATE_MIN_ORDER}} minimum</span>
+                        <span>{{CORPORATE_ADVANCE_NOTICE}} advance notice</span>
                     </div>
-                    <div class="catering-cta">
-                        <button class="btn-catering">Request Catering Quote</button>
-                        <p class="catering-note">{{CATERING_MINIMUM_ORDER}}</p>
-                    </div>
+                    <button class="btn btn-outline">Get Quote</button>
                 </div>
-                <div class="catering-visual">
-                    <img src="{{CATERING_IMAGE}}" alt="Catering Spread">
+                <div class="catering-card">
+                    <h3>{{FAMILY_CATERING_TITLE}}</h3>
+                    <p>{{FAMILY_CATERING_DESCRIPTION}}</p>
+                    <ul>
+                        <li>{{FAMILY_FEATURE_1}}</li>
+                        <li>{{FAMILY_FEATURE_2}}</li>
+                        <li>{{FAMILY_FEATURE_3}}</li>
+                    </ul>
+                    <div class="pricing-info">
+                        <span>{{FAMILY_MIN_ORDER}} minimum</span>
+                        <span>{{FAMILY_ADVANCE_NOTICE}} advance notice</span>
+                    </div>
+                    <button class="btn btn-outline">Order Now</button>
+                </div>
+                <div class="catering-card featured">
+                    <h3>{{HOLIDAY_CATERING_TITLE}}</h3>
+                    <p>{{HOLIDAY_CATERING_DESCRIPTION}}</p>
+                    <ul>
+                        <li>{{HOLIDAY_FEATURE_1}}</li>
+                        <li>{{HOLIDAY_FEATURE_2}}</li>
+                        <li>{{HOLIDAY_FEATURE_3}}</li>
+                    </ul>
+                    <div class="pricing-info">
+                        <span>{{HOLIDAY_MIN_ORDER}} minimum</span>
+                        <span>{{HOLIDAY_ADVANCE_NOTICE}} advance notice</span>
+                    </div>
+                    <button class="btn btn-primary">Reserve Now</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Location & Hours -->
-    <section class="location-hours">
+    <section class="newsletter-section">
         <div class="container">
-            <h2 class="section-title">Visit Us</h2>
-            <div class="location-content">
-                <div class="location-info">
-                    <div class="address-section">
-                        <h3>Location</h3>
-                        <p class="address">{{RESTAURANT_ADDRESS}}</p>
-                        <p class="neighborhood">{{NEIGHBORHOOD_DESCRIPTION}}</p>
-                        <button class="btn-directions">Get Directions</button>
+            <div class="newsletter-content">
+                <h2>Stay Connected</h2>
+                <p>Get updates on daily specials, new menu items, and exclusive offers</p>
+                <form class="newsletter-form">
+                    <div class="form-row">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
                     </div>
-                    
-                    <div class="hours-section">
-                        <h3>Hours</h3>
-                        <div class="hours-grid">
-                            <div class="hours-day">
-                                <span class="day">Monday - Friday</span>
-                                <span class="time">{{WEEKDAY_HOURS}}</span>
-                            </div>
-                            <div class="hours-day">
-                                <span class="day">Saturday</span>
-                                <span class="time">{{SATURDAY_HOURS}}</span>
-                            </div>
-                            <div class="hours-day">
-                                <span class="day">Sunday</span>
-                                <span class="time">{{SUNDAY_HOURS}}</span>
-                            </div>
-                        </div>
+                    <div class="form-checkbox">
+                        <input type="checkbox" id="specials" name="specials">
+                        <label for="specials">Send me daily specials and exclusive deli offers</label>
                     </div>
+                </form>
+            </div>
+        </div>
+    </section>
 
-                    <div class="contact-section">
-                        <h3>Contact</h3>
-                        <p class="phone">{{RESTAURANT_PHONE}}</p>
-                        <p class="email">{{RESTAURANT_EMAIL}}</p>
-                        <div class="social-links">
-                            <a href="{{FACEBOOK_URL}}" class="social-link">Facebook</a>
-                            <a href="{{INSTAGRAM_URL}}" class="social-link">Instagram</a>
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Visit Our Deli</h2>
+                    <div class="contact-details">
+                        <div class="detail">
+                            <h4>Address</h4>
+                            <p>{{DELI_ADDRESS}}</p>
+                        </div>
+                        <div class="detail">
+                            <h4>Phone</h4>
+                            <p>{{DELI_PHONE}}</p>
+                        </div>
+                        <div class="detail">
+                            <h4>Hours</h4>
+                            <p>{{DELI_HOURS}}</p>
+                        </div>
+                        <div class="detail">
+                            <h4>Catering</h4>
+                            <p>{{CATERING_PHONE}}</p>
                         </div>
                     </div>
                 </div>
-                <div class="location-map">
-                    <div class="map-placeholder">
-                        <p>Interactive Map</p>
-                        <button class="btn-map">View Full Map</button>
+                <div class="location-features">
+                    <h3>What to Expect</h3>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <span class="icon">🎫</span>
+                            <div>
+                                <h4>Take a Number</h4>
+                                <p>Traditional deli counter service - just like the old days</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="icon">🥩</span>
+                            <div>
+                                <h4>Hand-Cut Fresh</h4>
+                                <p>All meats sliced to order for maximum freshness</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="icon">👨‍🍳</span>
+                            <div>
+                                <h4>Expert Sandwich Artists</h4>
+                                <p>Our experienced team knows how to build the perfect sandwich</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <span class="icon">📦</span>
+                            <div>
+                                <h4>Takeout & Delivery</h4>
+                                <p>Order ahead for pickup or delivery within {{DELIVERY_RADIUS}} miles</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer-deli">
+    <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Menu</h4>
-                    <ul>
-                        <li><a href="#sandwiches">Sandwiches</a></li>
-                        <li><a href="#platters">Platters</a></li>
-                        <li><a href="#sides">Sides</a></li>
-                        <li><a href="#beverages">Beverages</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="#catering">Catering</a></li>
-                        <li><a href="#delivery">Delivery</a></li>
-                        <li><a href="#pickup">Pickup</a></li>
-                        <li><a href="#wholesale">Wholesale</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>About</h4>
-                    <ul>
-                        <li><a href="#story">Our Story</a></li>
-                        <li><a href="#press">Press</a></li>
-                        <li><a href="#jobs">Jobs</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Connect</h4>
-                    <div class="social-links-footer">
-                        <a href="{{FACEBOOK_URL}}" class="social-link">Facebook</a>
-                        <a href="{{INSTAGRAM_URL}}" class="social-link">Instagram</a>
-                        <a href="{{TWITTER_URL}}" class="social-link">Twitter</a>
+                <div class="footer-brand">
+                    <h3>{{DELI_NAME}}</h3>
+                    <p>{{FOOTER_DESCRIPTION}}</p>
+                    <div class="footer-social">
+                        <a href="{{INSTAGRAM_URL}}" aria-label="Instagram">📷</a>
+                        <a href="{{FACEBOOK_URL}}" aria-label="Facebook">📘</a>
+                        <a href="{{YELP_URL}}" aria-label="Yelp">⭐</a>
                     </div>
-                    <div class="newsletter-signup">
-                        <p>Get updates on specials</p>
-                        <form class="newsletter-form">
-                            <input type="email" placeholder="Your email" class="email-input">
-                            <button type="submit" class="btn-newsletter">Subscribe</button>
-                        </form>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Menu</h4>
+                        <a href="#sandwiches">Hot Sandwiches</a>
+                        <a href="#cold-cuts">Cold Cuts</a>
+                        <a href="#specialties">House Specialties</a>
+                        <a href="#sides">Sides & Soups</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Services</h4>
+                        <a href="#catering">Catering</a>
+                        <a href="#takeout">Takeout</a>
+                        <a href="#delivery">Delivery</a>
+                        <a href="#wholesale">Wholesale</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>About</h4>
+                        <a href="#history">Our History</a>
+                        <a href="#family">The Family</a>
+                        <a href="#photos">Vintage Photos</a>
+                        <a href="#press">Press</a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
                 <div class="footer-legal">
-                    <a href="#privacy">Privacy Policy</a>
-                    <a href="#terms">Terms of Service</a>
+                    <p>&copy; 2024 {{DELI_NAME}}. All rights reserved.</p>
+                    <div class="legal-links">
+                        <a href="#privacy">Privacy Policy</a>
+                        <a href="#terms">Terms of Service</a>
+                    </div>
                 </div>
             </div>
         </div>
