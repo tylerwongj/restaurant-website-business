@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Template Gallery - 534 Templates</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1><i class="fas fa-utensils"></i> Restaurant Template Gallery</h1>
+            <p class="subtitle">Browse 534+ Professional Restaurant Website Templates</p>
+            
+            <!-- Statistics Bar -->
+            <div class="stats-bar">
+                <div class="stat">
+                    <span class="stat-number" id="total-templates">534</span>
+                    <span class="stat-label">Total Templates</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" id="complete-templates">346</span>
+                    <span class="stat-label">Complete</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" id="rated-templates">0</span>
+                    <span class="stat-label">Rated</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" id="upwork-ready">0</span>
+                    <span class="stat-label">Upwork Ready</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <!-- Search and Filter Controls -->
+            <div class="controls-section">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="search-input" placeholder="Search templates by name, category, or features...">
+                    <button id="clear-search" class="clear-btn" title="Clear search">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <div class="filters">
+                    <div class="filter-group">
+                        <label for="category-filter">Category:</label>
+                        <select id="category-filter">
+                            <option value="">All Categories</option>
+                            <option value="casual-dining">Casual Dining (41)</option>
+                            <option value="fine-dining">Fine Dining (62)</option>
+                            <option value="fast-casual">Fast Casual (36)</option>
+                            <option value="cafe-bistro">Cafe & Bistro (48)</option>
+                            <option value="pizza-italian">Pizza & Italian (19)</option>
+                            <option value="asian-cuisine">Asian Cuisine (24)</option>
+                            <option value="mexican">Mexican (17)</option>
+                            <option value="seafood">Seafood (19)</option>
+                            <option value="steakhouse-bbq">Steakhouse & BBQ (33)</option>
+                            <option value="sports-bar">Sports Bar (32)</option>
+                            <option value="bakery-dessert">Bakery & Dessert (9)</option>
+                            <option value="farm-to-table">Farm to Table (12)</option>
+                            <option value="other">Other (149)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="status-filter">Status:</label>
+                        <select id="status-filter">
+                            <option value="">All Status</option>
+                            <option value="complete">Complete Templates</option>
+                            <option value="incomplete">Incomplete</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="rating-filter">Min Rating:</label>
+                        <select id="rating-filter">
+                            <option value="">Any Rating</option>
+                            <option value="1">1+ Stars</option>
+                            <option value="2">2+ Stars</option>
+                            <option value="3">3+ Stars</option>
+                            <option value="4">4+ Stars</option>
+                            <option value="5">5 Stars Only</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label for="feature-filter">Features:</label>
+                        <select id="feature-filter">
+                            <option value="">All Features</option>
+                            <option value="mobile-responsive">Mobile Responsive</option>
+                            <option value="has-menu">Has Menu Section</option>
+                            <option value="has-contact-form">Contact Form</option>
+                            <option value="css-variables">CSS Variables</option>
+                            <option value="upwork-ready">Upwork Ready</option>
+                        </select>
+                    </div>
+                    
+                    <button id="reset-filters" class="reset-btn">
+                        <i class="fas fa-undo"></i> Reset Filters
+                    </button>
+                </div>
+            </div>
+
+            <!-- Sort Options -->
+            <div class="sort-section">
+                <div class="sort-controls">
+                    <label for="sort-by">Sort by:</label>
+                    <select id="sort-by">
+                        <option value="name">Name (A-Z)</option>
+                        <option value="category">Category</option>
+                        <option value="rating">Rating (High to Low)</option>
+                        <option value="status">Status (Complete First)</option>
+                        <option value="date">Last Modified</option>
+                        <option value="size">File Size</option>
+                    </select>
+                </div>
+                
+                <div class="view-controls">
+                    <label>View:</label>
+                    <button id="grid-view" class="view-btn active" title="Grid View">
+                        <i class="fas fa-th"></i>
+                    </button>
+                    <button id="list-view" class="view-btn" title="List View">
+                        <i class="fas fa-list"></i>
+                    </button>
+                </div>
+                
+                <div class="results-info">
+                    <span id="results-count">Loading templates...</span>
+                </div>
+            </div>
+
+            <!-- Template Gallery -->
+            <div class="gallery-section">
+                <div id="templates-grid" class="templates-grid">
+                    <!-- Templates will be loaded here dynamically -->
+                </div>
+                
+                <!-- Loading State -->
+                <div id="loading" class="loading">
+                    <div class="loading-spinner">
+                        <i class="fas fa-spinner fa-spin"></i>
+                    </div>
+                    <p>Loading templates...</p>
+                </div>
+                
+                <!-- Empty State -->
+                <div id="empty-state" class="empty-state" style="display: none;">
+                    <div class="empty-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>No templates found</h3>
+                    <p>Try adjusting your search criteria or filters</p>
+                    <button id="clear-all-filters" class="btn btn-primary">Clear All Filters</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Template Preview Modal -->
+    <div id="preview-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">Template Preview</h2>
+                <div class="modal-controls">
+                    <button id="open-template" class="btn btn-primary" title="Open in New Tab">
+                        <i class="fas fa-external-link-alt"></i> Open
+                    </button>
+                    <button id="close-modal" class="btn btn-secondary" title="Close">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="template-info">
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <label>Category:</label>
+                            <span id="modal-category"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Status:</label>
+                            <span id="modal-status"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Rating:</label>
+                            <span id="modal-rating"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Files:</label>
+                            <span id="modal-files"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Features:</label>
+                            <div id="modal-features"></div>
+                        </div>
+                        <div class="info-item">
+                            <label>Path:</label>
+                            <code id="modal-path"></code>
+                        </div>
+                    </div>
+                </div>
+                <div class="preview-frame">
+                    <iframe id="template-iframe" src="about:blank"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Template Stats</h3>
+                    <p>This gallery showcases 534+ professional restaurant website templates across 13 categories.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Actions</h3>
+                    <ul>
+                        <li><a href="../scripts/template-analysis/" target="_blank">Rate Templates</a></li>
+                        <li><a href="../templates/" target="_blank">Browse Templates</a></li>
+                        <li><a href="../documentation/" target="_blank">Documentation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <div class="category-tags" id="footer-categories">
+                        <!-- Categories will be loaded here -->
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Restaurant Website Business - Professional Template Collection</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
