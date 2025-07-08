@@ -322,7 +322,7 @@ class TemplateGallery {
                 </div>
                 
                 <div class="template-actions">
-                    <button class="btn btn-primary" onclick="event.stopPropagation(); window.open('../${template.path}/index.html', '_blank')">
+                    <button class="btn btn-primary" onclick="event.stopPropagation(); window.open('/${template.path}/index.html', '_blank')">
                         <i class="fas fa-external-link-alt"></i> Open
                     </button>
                     <button class="btn btn-secondary" onclick="event.stopPropagation(); templateGallery.previewTemplate('${template.name}')">
@@ -406,7 +406,7 @@ class TemplateGallery {
         ).join(' ');
         
         // Load template in iframe
-        iframe.src = `../${template.path}/index.html`;
+        iframe.src = `/${template.path}/index.html`;
         
         // Store current template for "Open" button
         this.currentPreviewTemplate = template;
@@ -418,7 +418,7 @@ class TemplateGallery {
     
     openCurrentTemplate() {
         if (this.currentPreviewTemplate) {
-            window.open(`../${this.currentPreviewTemplate.path}/index.html`, '_blank');
+            window.open(`/${this.currentPreviewTemplate.path}/index.html`, '_blank');
         }
     }
     
