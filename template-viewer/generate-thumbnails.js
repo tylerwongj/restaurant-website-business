@@ -63,7 +63,7 @@ class ThumbnailGenerator {
             try {
                 await fs.access(databasePath);
             } catch {
-                databasePath = path.join(__dirname, '..', 'scripts', 'template-analysis', 'data', 'template-database.json');
+                databasePath = path.join(__dirname, 'data', 'template-database.json');
             }
             
             const data = await fs.readFile(databasePath, 'utf8');
@@ -74,7 +74,7 @@ class ThumbnailGenerator {
             
         } catch (error) {
             console.error('❌ Failed to load template database:', error);
-            console.log('💡 Make sure to run the template scanner first: node ../scripts/template-analysis/scan-templates.js');
+            console.log('💡 Make sure the template database exists at: data/template-database.json');
             process.exit(1);
         }
     }

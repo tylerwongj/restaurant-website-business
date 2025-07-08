@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Template Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="gallery-header">
+            <h1><i class="fas fa-th-large"></i> Restaurant Template Gallery</h1>
+            <p class="subtitle">Browse 500+ professional restaurant website templates with auto-quality scoring</p>
+            
+            <div class="quick-stats" id="quick-stats">
+                <div class="stat-item">
+                    <span class="stat-number" id="total-templates">-</span>
+                    <span class="stat-label">Total Templates</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="complete-templates">-</span>
+                    <span class="stat-label">Complete</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="high-quality">-</span>
+                    <span class="stat-label">High Quality</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="controls-panel">
+            <div class="search-section">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="search-input" placeholder="Search templates...">
+                    <button id="clear-search" class="clear-btn"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <select id="category-filter">
+                    <option value="">All Categories</option>
+                    <option value="casual-dining">Casual Dining</option>
+                    <option value="fine-dining">Fine Dining</option>
+                    <option value="fast-casual">Fast Casual</option>
+                    <option value="cafe-bistro">Cafe & Bistro</option>
+                    <option value="pizza-italian">Pizza & Italian</option>
+                    <option value="asian-cuisine">Asian Cuisine</option>
+                    <option value="mexican">Mexican</option>
+                    <option value="seafood">Seafood</option>
+                    <option value="steakhouse-bbq">Steakhouse & BBQ</option>
+                    <option value="sports-bar">Sports Bar</option>
+                    <option value="bakery-dessert">Bakery & Dessert</option>
+                    <option value="farm-to-table">Farm to Table</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <select id="quality-filter">
+                    <option value="">All Quality</option>
+                    <option value="high">High Quality (8+)</option>
+                    <option value="good">Good Quality (6+)</option>
+                    <option value="decent">Decent Quality (4+)</option>
+                </select>
+
+                <select id="status-filter">
+                    <option value="">All Status</option>
+                    <option value="complete">Complete Only</option>
+                    <option value="incomplete">Incomplete</option>
+                </select>
+
+                <select id="sort-filter">
+                    <option value="quality">Sort by Quality</option>
+                    <option value="name">Sort by Name</option>
+                    <option value="category">Sort by Category</option>
+                </select>
+            </div>
+
+            <div class="view-controls">
+                <button id="grid-view" class="view-btn active"><i class="fas fa-th"></i> Grid</button>
+                <button id="list-view" class="view-btn"><i class="fas fa-list"></i> List</button>
+                <button id="portfolio-mode" class="portfolio-btn"><i class="fas fa-star"></i> Portfolio Mode</button>
+            </div>
+        </div>
+
+        <div class="loading-state" id="loading-state">
+            <div class="spinner"></div>
+            <p>Scanning and analyzing templates...</p>
+        </div>
+
+        <div class="templates-container" id="templates-container">
+            <!-- Templates will be loaded here -->
+        </div>
+
+        <div class="no-results" id="no-results" style="display: none;">
+            <i class="fas fa-search"></i>
+            <h3>No templates found</h3>
+            <p>Try adjusting your search criteria</p>
+        </div>
+    </div>
+
+    <!-- Template Preview Modal -->
+    <div class="modal" id="preview-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Template Preview</h3>
+                <button class="close-btn" onclick="closeModal()"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="template-info">
+                    <div class="info-section">
+                        <h4>Template Details</h4>
+                        <div id="modal-details"></div>
+                    </div>
+                    <div class="quality-section">
+                        <h4>Quality Score</h4>
+                        <div id="modal-quality"></div>
+                    </div>
+                    <div class="actions-section">
+                        <button class="btn btn-primary" onclick="openCurrentTemplate()">
+                            <i class="fas fa-external-link-alt"></i> Open Template
+                        </button>
+                        <button class="btn btn-secondary" onclick="addToPortfolio()">
+                            <i class="fas fa-star"></i> Add to Portfolio
+                        </button>
+                    </div>
+                </div>
+                <div class="preview-section">
+                    <iframe id="template-iframe" src="about:blank"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Panel -->
+    <div class="portfolio-panel" id="portfolio-panel">
+        <div class="portfolio-header">
+            <h3><i class="fas fa-star"></i> Portfolio Selection</h3>
+            <span class="portfolio-count">0 selected</span>
+            <button class="close-portfolio" onclick="togglePortfolioMode()"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="portfolio-list" id="portfolio-list">
+            <!-- Selected templates -->
+        </div>
+        <div class="portfolio-actions">
+            <button class="btn btn-success" onclick="exportPortfolio()">
+                <i class="fas fa-download"></i> Export Portfolio
+            </button>
+            <button class="btn btn-warning" onclick="clearPortfolio()">
+                <i class="fas fa-trash"></i> Clear All
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

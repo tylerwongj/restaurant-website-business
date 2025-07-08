@@ -37,14 +37,8 @@ class TemplateGallery {
     
     async loadTemplateDatabase() {
         try {
-            // Try to load from the template analysis directory first
-            let response = await fetch('../scripts/template-analysis/data/template-database.json');
-            
-            // If that fails, try the local data directory
-            if (!response.ok) {
-                console.log('Primary database location failed, trying local copy...');
-                response = await fetch('data/template-database.json');
-            }
+            // Try to load from local data directory
+            let response = await fetch('data/template-database.json');
             
             if (!response.ok) {
                 throw new Error(`HTTP ${response.status}: ${response.statusText}`);
@@ -518,7 +512,7 @@ class TemplateGallery {
                 <h3>Error Loading Templates</h3>
                 <p>${message}</p>
                 <p style="margin-top: 1rem; font-size: 0.9rem;">
-                    Make sure the template database exists at: <code>../scripts/template-analysis/data/template-database.json</code>
+                    Make sure the template database exists at: <code>data/template-database.json</code>
                 </p>
             </div>
         `;
@@ -542,8 +536,8 @@ class TemplateGallery {
                 </ul>
                 <div style="background: var(--bg-primary); padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem;">
                     <h4 style="margin-bottom: 0.5rem;">To fix this:</h4>
-                    <code style="display: block; margin-bottom: 0.5rem;">cd ../scripts/template-analysis/</code>
-                    <code style="display: block;">node scan-templates.js</code>
+                    <code style="display: block; margin-bottom: 0.5rem;">cd template-viewer/</code>
+                    <code style="display: block;">node generate-thumbnails.js</code>
                 </div>
                 <p style="font-size: 0.9rem; color: var(--text-secondary);">
                     This will scan all your templates and create the database file needed for the gallery.

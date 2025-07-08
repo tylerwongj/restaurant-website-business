@@ -16,11 +16,11 @@ A comprehensive visual browser for all 534+ restaurant website templates in your
 
 ### 1. Ensure Template Database Exists
 
-The gallery requires the template analysis database. If it doesn't exist:
+The gallery requires the template database. If it doesn't exist:
 
 ```bash
-cd ../scripts/template-analysis/
-node scan-templates.js
+cd template-viewer/
+node generate-thumbnails.js
 ```
 
 ### 2. Start Test Server
@@ -92,11 +92,11 @@ The gallery shows real-time statistics:
 - **Farm to Table** (12 templates)
 - **Other** (149 templates)
 
-## Integration with Template Analysis System
+## Integration with Template Management System
 
-The gallery integrates seamlessly with your existing template analysis tools:
+The gallery integrates seamlessly with your template management system:
 
-- **Database**: Reads from `../scripts/template-analysis/data/template-database.json`
+- **Database**: Reads from `data/template-database.json`
 - **Ratings**: Displays ratings from the rating system
 - **Categories**: Uses auto-detected categories
 - **Features**: Shows analyzed template features
@@ -130,7 +130,7 @@ If you update templates or run the rating system:
 
 1. The gallery will automatically read the latest database
 2. Refresh the page to see updates
-3. Or copy the updated database: `cp ../scripts/template-analysis/data/template-database.json data/`
+3. The database is maintained locally in the `data/` directory
 
 ### Adding Features
 
@@ -147,8 +147,8 @@ The JavaScript is modular and easy to extend:
 
 If templates don't appear:
 
-1. Check that `template-database.json` exists in `../scripts/template-analysis/data/`
-2. Run `node scan-templates.js` from the template analysis directory
+1. Check that `template-database.json` exists in `data/`
+2. Run `node generate-thumbnails.js` from the template-viewer directory
 3. Check browser console for error messages
 4. Ensure the test server is running
 
