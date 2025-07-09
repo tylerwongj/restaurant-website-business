@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Menu</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} Menu - Browse our full selection of appetizers, entrees, desserts, and beverages">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Menu-specific styles */
+        .menu-hero {
+            background: linear-gradient(135deg, var(--primary-color), #b71c1c);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .menu-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .menu-hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .menu-categories {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            background: white;
+            color: var(--primary-color);
+            padding: 10px 20px;
+            border: 2px solid white;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .category-btn:hover,
+        .category-btn.active {
+            background: var(--secondary-color);
+            color: white;
+            border-color: var(--secondary-color);
+        }
+
+        .menu-section {
+            padding: 60px 0;
+        }
+
+        .menu-section:nth-child(even) {
+            background: var(--bg-light);
+        }
+
+        .menu-section h2 {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+        }
+
+        .menu-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .menu-item-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .menu-item-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .menu-item-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .menu-item-info {
+            padding: 1.5rem;
+        }
+
+        .menu-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+
+        .menu-item-name {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .menu-item-price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        .menu-item-description {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .menu-item-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .menu-tag {
+            background: var(--bg-light);
+            color: var(--text-color);
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .menu-tag.spicy {
+            background: #ffebee;
+            color: #c62828;
+        }
+
+        .menu-tag.vegetarian {
+            background: #e8f5e8;
+            color: #388e3c;
+        }
+
+        .menu-tag.gluten-free {
+            background: #fff3e0;
+            color: #f57c00;
+        }
+
+        .menu-tag.popular {
+            background: var(--secondary-color);
+            color: white;
+        }
+
+        .daily-specials {
+            background: var(--primary-color);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .daily-specials h2 {
+            color: white;
+            margin-bottom: 2rem;
+        }
+
+        .specials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .special-item {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .special-day {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        .special-offer {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .special-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        .menu-cta {
+            background: var(--bg-light);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .menu-cta h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .menu-cta p {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .menu-hero h1 {
+                font-size: 2rem;
+            }
+
+            .menu-categories {
+                margin: 1rem 0;
+            }
+
+            .category-btn {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+
+            .menu-items {
+                grid-template-columns: 1fr;
+            }
+
+            .specials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="theme-warm">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <img src="images/logo.png" alt="{{RESTAURANT_NAME}} Logo">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#menu" class="active">Menu</a></li>
+                <li><a href="index.html#specials">Specials</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu Hero -->
+    <section class="menu-hero">
+        <div class="container">
+            <h1>Our Complete Menu</h1>
+            <p>Discover our full selection of neighborhood favorites</p>
+            <div class="menu-categories">
+                <a href="#appetizers" class="category-btn">Appetizers</a>
+                <a href="#entrees" class="category-btn">Entrees</a>
+                <a href="#burgers" class="category-btn">Burgers</a>
+                <a href="#salads" class="category-btn">Salads</a>
+                <a href="#desserts" class="category-btn">Desserts</a>
+                <a href="#beverages" class="category-btn">Beverages</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Daily Specials -->
+    <section class="daily-specials">
+        <div class="container">
+            <h2>Daily Specials</h2>
+            <div class="specials-grid">
+                <div class="special-item">
+                    <div class="special-day">Monday</div>
+                    <div class="special-offer">{{MONDAY_SPECIAL}}</div>
+                    <div class="special-price">{{MONDAY_PRICE}}</div>
+                </div>
+                <div class="special-item">
+                    <div class="special-day">Tuesday</div>
+                    <div class="special-offer">{{TUESDAY_SPECIAL}}</div>
+                    <div class="special-price">{{TUESDAY_PRICE}}</div>
+                </div>
+                <div class="special-item">
+                    <div class="special-day">Wednesday</div>
+                    <div class="special-offer">{{WEDNESDAY_SPECIAL}}</div>
+                    <div class="special-price">{{WEDNESDAY_PRICE}}</div>
+                </div>
+                <div class="special-item">
+                    <div class="special-day">Thursday</div>
+                    <div class="special-offer">{{THURSDAY_SPECIAL}}</div>
+                    <div class="special-price">{{THURSDAY_PRICE}}</div>
+                </div>
+                <div class="special-item">
+                    <div class="special-day">Friday</div>
+                    <div class="special-offer">{{FRIDAY_SPECIAL}}</div>
+                    <div class="special-price">{{FRIDAY_PRICE}}</div>
+                </div>
+                <div class="special-item">
+                    <div class="special-day">Weekend</div>
+                    <div class="special-offer">{{WEEKEND_SPECIAL}}</div>
+                    <div class="special-price">{{WEEKEND_PRICE}}</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appetizers -->
+    <section id="appetizers" class="menu-section">
+        <div class="container">
+            <h2>Appetizers</h2>
+            <div class="menu-items">
+                <div class="menu-item-card">
+                    <img src="images/appetizer-1.jpg" alt="{{APPETIZER_1_NAME}}">
+                    <div class="menu-item-info">
+                        <div class="menu-item-header">
+                            <div class="menu-item-name">{{APPETIZER_1_NAME}}</div>
+                            <div class="menu-item-price">{{APPETIZER_1_PRICE}}</div>
+                        </div>
+                        <div class="menu-item-description">{{APPETIZER_1_DESC}}</div>
+                        <div class="menu-item-tags">
+                            <span class="menu-tag popular">Popular</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item-card">
+                    <img src="images/appetizer-2.jpg" alt="{{APPETIZER_2_NAME}}">
+                    <div class="menu-item-info">
+                        <div class="menu-item-header">
+                            <div class="menu-item-name">{{APPETIZER_2_NAME}}</div>
+                            <div class="menu-item-price">{{APPETIZER_2_PRICE}}</div>
+                        </div>
+                        <div class="menu-item-description">{{APPETIZER_2_DESC}}</div>
+                        <div class="menu-item-tags">
+                            <span class="menu-tag spicy">Spicy</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item-card">
+                    <img src="images/appetizer-3.jpg" alt="{{APPETIZER_3_NAME}}">
+                    <div class="menu-item-info">
+                        <div class="menu-item-header">
+                            <div class="menu-item-name">{{APPETIZER_3_NAME}}</div>
+                            <div class="menu-item-price">{{APPETIZER_3_PRICE}}</div>
+                        </div>
+                        <div class="menu-item-description">{{APPETIZER_3_DESC}}</div>
+                        <div class="menu-item-tags">
+                            <span class="menu-tag vegetarian">Vegetarian</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Entrees -->
+    <section id="entrees" class="menu-section">
+        <div class="container">
+            <h2>Entrees</h2>
+            <div class="menu-items">
+                <div class="menu-item-card">
+                    <img src="images/entree-1.jpg" alt="{{ENTREE_1_NAME}}">
+                    <div class="menu-item-info">
+                        <div class="menu-item-header">
+                            <div class="menu-item-name">{{ENTREE_1_NAME}}</div>
+                            <div class="menu-item-price">{{ENTREE_1_PRICE}}</div>
+                        </div>
+                        <div class="menu-item-description">{{ENTREE_1_DESC}}</div>
+                        <div class="menu-item-tags">
+                            <span class="menu-tag popular">Popular</span>
+                            <span class="menu-tag gluten-free">Gluten Free</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item-card">
+                    <img src="images/entree-2.jpg" alt="{{ENTREE_2_NAME}}">
+                    <div class="menu-item-info">
+                        <div class="menu-item-header">
+                            <div class="menu-item-name">{{ENTREE_2_NAME}}</div>
+                            <div class="menu-item-price">{{ENTREE_2_PRICE}}</div>
+                        </div>
+                        <div class="menu-item-description">{{ENTREE_2_DESC}}</div>
+                    </div>
+                </div>
+                <div class="menu-item-card">
+                    <img src="images/entree-3.jpg" alt="{{ENTREE_3_NAME}}">
+                    <div class="menu-item-info">
+                        <div class="menu-item-header">
+                            <div class="menu-item-name">{{ENTREE_3_NAME}}</div>
+                            <div class="menu-item-price">{{ENTREE_3_PRICE}}</div>
+                        </div>
+                        <div class="menu-item-description">{{ENTREE_3_DESC}}</div>
+                        <div class="menu-item-tags">
+                            <span class="menu-tag spicy">Spicy</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Burgers -->
+    <section id="burgers" class="menu-section">
+        <div class="container">
+            <h2>Burgers & Sandwiches</h2>
+            <div class="menu-items">
+                <div class="menu-item-card">
+                    <img src="images/burger-1.jpg" alt="{{BURGER_1_NAME}}">
+                    <div class="menu-item-info">
+                        <div class="menu-item-header">
+                            <div class="menu-item-name">{{BURGER_1_NAME}}</div>
+                            <div class="menu-item-price">{{BURGER_1_PRICE}}</div>
+                        </div>
+                        <div class="menu-item-description">{{BURGER_1_DESC}}</div>
+                        <div class="menu-item-tags">
+                            <span class="menu-tag popular">Popular</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item-card">
+                    <img src="images/burger-2.jpg" alt="{{BURGER_2_NAME}}">
+                    <div class="menu-item-info">
+                        <div class="menu-item-header">
+                            <div class="menu-item-name">{{BURGER_2_NAME}}</div>
+                            <div class="menu-item-price">{{BURGER_2_PRICE}}</div>
+                        </div>
+                        <div class="menu-item-description">{{BURGER_2_DESC}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Salads -->
+    <section id="salads" class="menu-section">
+        <div class="container">
+            <h2>Salads</h2>
+            <div class="menu-items">
+                <div class="menu-item-card">
+                    <img src="images/salad-1.jpg" alt="{{SALAD_1_NAME}}">
+                    <div class="menu-item-info">
+                        <div class="menu-item-header">
+                            <div class="menu-item-name">{{SALAD_1_NAME}}</div>
+                            <div class="menu-item-price">{{SALAD_1_PRICE}}</div>
+                        </div>
+                        <div class="menu-item-description">{{SALAD_1_DESC}}</div>
+                        <div class="menu-item-tags">
+                            <span class="menu-tag vegetarian">Vegetarian</span>
+                            <span class="menu-tag gluten-free">Gluten Free</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item-card">
+                    <img src="images/salad-2.jpg" alt="{{SALAD_2_NAME}}">
+                    <div class="menu-item-info">
+                        <div class="menu-item-header">
+                            <div class="menu-item-name">{{SALAD_2_NAME}}</div>
+                            <div class="menu-item-price">{{SALAD_2_PRICE}}</div>
+                        </div>
+                        <div class="menu-item-description">{{SALAD_2_DESC}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Desserts -->
+    <section id="desserts" class="menu-section">
+        <div class="container">
+            <h2>Desserts</h2>
+            <div class="menu-items">
+                <div class="menu-item-card">
+                    <img src="images/dessert-1.jpg" alt="{{DESSERT_1_NAME}}">
+                    <div class="menu-item-info">
+                        <div class="menu-item-header">
+                            <div class="menu-item-name">{{DESSERT_1_NAME}}</div>
+                            <div class="menu-item-price">{{DESSERT_1_PRICE}}</div>
+                        </div>
+                        <div class="menu-item-description">{{DESSERT_1_DESC}}</div>
+                        <div class="menu-item-tags">
+                            <span class="menu-tag popular">Popular</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item-card">
+                    <img src="images/dessert-2.jpg" alt="{{DESSERT_2_NAME}}">
+                    <div class="menu-item-info">
+                        <div class="menu-item-header">
+                            <div class="menu-item-name">{{DESSERT_2_NAME}}</div>
+                            <div class="menu-item-price">{{DESSERT_2_PRICE}}</div>
+                        </div>
+                        <div class="menu-item-description">{{DESSERT_2_DESC}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beverages -->
+    <section id="beverages" class="menu-section">
+        <div class="container">
+            <h2>Beverages</h2>
+            <div class="menu-items">
+                <div class="menu-item-card">
+                    <img src="images/drink-1.jpg" alt="{{DRINK_1_NAME}}">
+                    <div class="menu-item-info">
+                        <div class="menu-item-header">
+                            <div class="menu-item-name">{{DRINK_1_NAME}}</div>
+                            <div class="menu-item-price">{{DRINK_1_PRICE}}</div>
+                        </div>
+                        <div class="menu-item-description">{{DRINK_1_DESC}}</div>
+                    </div>
+                </div>
+                <div class="menu-item-card">
+                    <img src="images/drink-2.jpg" alt="{{DRINK_2_NAME}}">
+                    <div class="menu-item-info">
+                        <div class="menu-item-header">
+                            <div class="menu-item-name">{{DRINK_2_NAME}}</div>
+                            <div class="menu-item-price">{{DRINK_2_PRICE}}</div>
+                        </div>
+                        <div class="menu-item-description">{{DRINK_2_DESC}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu CTA -->
+    <section class="menu-cta">
+        <div class="container">
+            <h2>Ready to Order?</h2>
+            <p>Visit us today or call ahead for takeout</p>
+            <div class="promo-buttons">
+                <a href="index.html#contact" class="btn btn-primary">Make Reservation</a>
+                <a href="tel:{{PHONE}}" class="btn btn-secondary">Call Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>{{RESTAURANT_NAME}}</h3>
+                    <p>{{FOOTER_DESCRIPTION}}</p>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}" target="_blank">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}" target="_blank">Instagram</a>
+                        <a href="{{TWITTER_URL}}" target="_blank">Twitter</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>{{ADDRESS}}</p>
+                    <p>{{PHONE}}</p>
+                    <p>{{EMAIL}}</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - {{RESTAURANT_TAGLINE}}</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - {{RESTAURANT_DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="theme-classic">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="#home" class="logo-link">
+                    <img src="images/logo.png" alt="{{RESTAURANT_NAME}}">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#locations">Locations</a></li>
+                <li><a href="#rewards">Rewards</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#order" class="btn btn-primary">Order Online</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">{{RESTAURANT_NAME}}</h1>
+                <p class="hero-subtitle">{{RESTAURANT_TAGLINE}}</p>
+                <div class="hero-buttons">
+                    <a href="#menu" class="btn btn-primary">Order Now</a>
+                    <a href="#locations" class="btn btn-secondary">Find Location</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/hero.jpg" alt="{{RESTAURANT_NAME}}">
+            </div>
+        </div>
+        <div class="hero-features">
+            <div class="feature-pill">
+                <span class="feature-icon">🚚</span>
+                <span>Fast Delivery</span>
+            </div>
+            <div class="feature-pill">
+                <span class="feature-icon">🥗</span>
+                <span>Fresh Ingredients</span>
+            </div>
+            <div class="feature-pill">
+                <span class="feature-icon">⭐</span>
+                <span>Rewards Program</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <div class="menu-header">
+                <h2>Our Menu</h2>
+                <p class="menu-subtitle">{{MENU_SUBTITLE}}</p>
+            </div>
+            <div class="menu-categories">
+                <div class="category-tabs">
+                    <button class="tab-button active" data-category="popular">Popular</button>
+                    <button class="tab-button" data-category="entrees">Entrees</button>
+                    <button class="tab-button" data-category="bowls">Bowls</button>
+                    <button class="tab-button" data-category="drinks">Drinks</button>
+                </div>
+                <div class="menu-grid" id="menu-grid">
+                    <div class="menu-item" data-category="popular">
+                        <div class="item-image">
+                            <img src="images/food-1.jpg" alt="{{MENU_ITEM_1_NAME}}">
+                        </div>
+                        <div class="item-content">
+                            <h3>{{MENU_ITEM_1_NAME}}</h3>
+                            <p>{{MENU_ITEM_1_DESCRIPTION}}</p>
+                            <div class="item-footer">
+                                <span class="item-price">{{MENU_ITEM_1_PRICE}}</span>
+                                <button class="btn btn-small">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-category="popular">
+                        <div class="item-image">
+                            <img src="images/food-2.jpg" alt="{{MENU_ITEM_2_NAME}}">
+                        </div>
+                        <div class="item-content">
+                            <h3>{{MENU_ITEM_2_NAME}}</h3>
+                            <p>{{MENU_ITEM_2_DESCRIPTION}}</p>
+                            <div class="item-footer">
+                                <span class="item-price">{{MENU_ITEM_2_PRICE}}</span>
+                                <button class="btn btn-small">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-category="entrees">
+                        <div class="item-image">
+                            <img src="images/food-3.jpg" alt="{{MENU_ITEM_3_NAME}}">
+                        </div>
+                        <div class="item-content">
+                            <h3>{{MENU_ITEM_3_NAME}}</h3>
+                            <p>{{MENU_ITEM_3_DESCRIPTION}}</p>
+                            <div class="item-footer">
+                                <span class="item-price">{{MENU_ITEM_3_PRICE}}</span>
+                                <button class="btn btn-small">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-category="bowls">
+                        <div class="item-image">
+                            <img src="images/food-4.jpg" alt="{{MENU_ITEM_4_NAME}}">
+                        </div>
+                        <div class="item-content">
+                            <h3>{{MENU_ITEM_4_NAME}}</h3>
+                            <p>{{MENU_ITEM_4_DESCRIPTION}}</p>
+                            <div class="item-footer">
+                                <span class="item-price">{{MENU_ITEM_4_PRICE}}</span>
+                                <button class="btn btn-small">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rewards Section -->
+    <section id="rewards" class="rewards">
+        <div class="container">
+            <div class="rewards-content">
+                <div class="rewards-text">
+                    <h2>{{REWARDS_TITLE}}</h2>
+                    <p class="rewards-subtitle">{{REWARDS_SUBTITLE}}</p>
+                    <div class="rewards-benefits">
+                        <div class="benefit">
+                            <div class="benefit-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2Z"/>
+                                </svg>
+                            </div>
+                            <div class="benefit-text">
+                                <h3>{{BENEFIT_1_TITLE}}</h3>
+                                <p>{{BENEFIT_1_DESCRIPTION}}</p>
+                            </div>
+                        </div>
+                        <div class="benefit">
+                            <div class="benefit-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2Z"/>
+                                </svg>
+                            </div>
+                            <div class="benefit-text">
+                                <h3>{{BENEFIT_2_TITLE}}</h3>
+                                <p>{{BENEFIT_2_DESCRIPTION}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rewards-actions">
+                        <a href="#signup" class="btn btn-primary">Join Now</a>
+                        <a href="#learn-more" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+                <div class="rewards-image">
+                    <img src="images/rewards.jpg" alt="Rewards Program">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations Section -->
+    <section id="locations" class="locations">
+        <div class="container">
+            <div class="locations-header">
+                <h2>Find Us</h2>
+                <p class="locations-subtitle">{{LOCATIONS_SUBTITLE}}</p>
+            </div>
+            <div class="locations-grid">
+                <div class="location-card">
+                    <div class="location-image">
+                        <img src="images/location-1.jpg" alt="{{LOCATION_1_NAME}}">
+                    </div>
+                    <div class="location-info">
+                        <h3>{{LOCATION_1_NAME}}</h3>
+                        <p class="location-address">{{LOCATION_1_ADDRESS}}</p>
+                        <div class="location-details">
+                            <p><strong>Hours:</strong> {{LOCATION_1_HOURS}}</p>
+                            <p><strong>Phone:</strong> <a href="tel:{{LOCATION_1_PHONE}}">{{LOCATION_1_PHONE}}</a></p>
+                        </div>
+                        <div class="location-actions">
+                            <a href="#directions" class="btn btn-small">Get Directions</a>
+                            <a href="#order" class="btn btn-primary btn-small">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="location-card">
+                    <div class="location-image">
+                        <img src="images/location-2.jpg" alt="{{LOCATION_2_NAME}}">
+                    </div>
+                    <div class="location-info">
+                        <h3>{{LOCATION_2_NAME}}</h3>
+                        <p class="location-address">{{LOCATION_2_ADDRESS}}</p>
+                        <div class="location-details">
+                            <p><strong>Hours:</strong> {{LOCATION_2_HOURS}}</p>
+                            <p><strong>Phone:</strong> <a href="tel:{{LOCATION_2_PHONE}}">{{LOCATION_2_PHONE}}</a></p>
+                        </div>
+                        <div class="location-actions">
+                            <a href="#directions" class="btn btn-small">Get Directions</a>
+                            <a href="#order" class="btn btn-primary btn-small">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Contact Us</h2>
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/>
+                                </svg>
+                            </div>
+                            <div class="method-info">
+                                <h3>Phone</h3>
+                                <p><a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"/>
+                                </svg>
+                            </div>
+                            <div class="method-info">
+                                <h3>Email</h3>
+                                <p><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12,6A6,6 0 0,1 18,12C18,18 12,23 12,23S6,18 6,12A6,6 0 0,1 12,6M12,8A4,4 0 0,0 8,12C8,16.5 12,20.5 12,20.5S16,16.5 16,12A4,4 0 0,0 12,8Z"/>
+                                </svg>
+                            </div>
+                            <div class="method-info">
+                                <h3>Address</h3>
+                                <p>{{ADDRESS}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Send us a message</h3>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <img src="images/logo.png" alt="{{RESTAURANT_NAME}}" class="footer-logo">
+                    <p class="footer-description">{{RESTAURANT_NAME}} - {{FOOTER_DESCRIPTION}}</p>
+                    <div class="footer-social">
+                        <a href="{{FACEBOOK_URL}}" target="_blank" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="{{INSTAGRAM_URL}}" target="_blank" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.62 5.367 11.987 11.988 11.987 6.62 0 11.987-5.367 11.987-11.987C24.014 5.367 18.637.001 12.017.001z"/>
+                            </svg>
+                        </a>
+                        <a href="{{TWITTER_URL}}" target="_blank" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#about">About Us</a></li>
+                            <li><a href="#careers">Careers</a></li>
+                            <li><a href="#press">Press</a></li>
+                            <li><a href="#blog">Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="#help">Help Center</a></li>
+                            <li><a href="#contact">Contact Us</a></li>
+                            <li><a href="#privacy">Privacy Policy</a></li>
+                            <li><a href="#terms">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <ul>
+                            <li><a href="#rewards">Rewards Program</a></li>
+                            <li><a href="#app">Mobile App</a></li>
+                            <li><a href="#gift-cards">Gift Cards</a></li>
+                            <li><a href="#catering">Catering</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

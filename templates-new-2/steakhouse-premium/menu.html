@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - {{RESTAURANT_NAME}}</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - Full Menu">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .menu-page {
+            padding-top: 100px;
+            min-height: 100vh;
+            background-color: var(--bg-color);
+        }
+        
+        .menu-header {
+            text-align: center;
+            padding: 3rem 0;
+            background-color: var(--bg-light);
+        }
+        
+        .menu-header h1 {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .menu-header p {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            opacity: 0.9;
+        }
+        
+        .menu-section {
+            padding: 3rem 0;
+        }
+        
+        .menu-section:nth-child(even) {
+            background-color: var(--bg-light);
+        }
+        
+        .menu-category {
+            margin-bottom: 3rem;
+        }
+        
+        .menu-category h2 {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .menu-category h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 2px;
+            background-color: var(--secondary-color);
+        }
+        
+        .menu-items {
+            display: grid;
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .menu-item-full {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 1.5rem;
+            background-color: var(--bg-color);
+            border-radius: 10px;
+            box-shadow: 0 2px 10px var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        
+        .menu-item-full:hover {
+            transform: translateY(-2px);
+        }
+        
+        .menu-item-info {
+            flex: 1;
+        }
+        
+        .menu-item-name {
+            font-size: 1.3rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .menu-item-description {
+            color: var(--text-color);
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+        
+        .menu-item-price {
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            font-weight: 700;
+            margin-left: 1rem;
+        }
+        
+        .back-to-home {
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .wine-section {
+            background-color: var(--bg-light);
+            padding: 3rem 0;
+        }
+        
+        .wine-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .wine-category {
+            background-color: var(--bg-color);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px var(--shadow);
+        }
+        
+        .wine-category h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .wine-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .wine-item:last-child {
+            border-bottom: none;
+        }
+        
+        .wine-info h4 {
+            color: var(--text-color);
+            margin-bottom: 0.3rem;
+        }
+        
+        .wine-info p {
+            color: var(--text-color);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        
+        .wine-price {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+        
+        @media (max-width: 768px) {
+            .menu-item-full {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .menu-item-price {
+                margin-left: 0;
+                margin-top: 1rem;
+            }
+            
+            .menu-header h1 {
+                font-size: 2rem;
+            }
+            
+            .wine-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="warm-theme">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="index.html#reservations" class="btn-nav">Reservations</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="menu-page">
+        <!-- Menu Header -->
+        <div class="menu-header">
+            <div class="container">
+                <h1>Our Menu</h1>
+                <p>Premium cuts and exceptional flavors await you</p>
+            </div>
+        </div>
+
+        <!-- Appetizers -->
+        <div class="menu-section">
+            <div class="container">
+                <div class="menu-category">
+                    <h2>Appetizers</h2>
+                    <div class="menu-items">
+                        <div class="menu-item-full">
+                            <div class="menu-item-info">
+                                <div class="menu-item-name">{{APPETIZER_1_NAME}}</div>
+                                <div class="menu-item-description">{{APPETIZER_1_DESCRIPTION}}</div>
+                            </div>
+                            <div class="menu-item-price">${{APPETIZER_1_PRICE}}</div>
+                        </div>
+                        <div class="menu-item-full">
+                            <div class="menu-item-info">
+                                <div class="menu-item-name">{{APPETIZER_2_NAME}}</div>
+                                <div class="menu-item-description">{{APPETIZER_2_DESCRIPTION}}</div>
+                            </div>
+                            <div class="menu-item-price">${{APPETIZER_2_PRICE}}</div>
+                        </div>
+                        <div class="menu-item-full">
+                            <div class="menu-item-info">
+                                <div class="menu-item-name">{{APPETIZER_3_NAME}}</div>
+                                <div class="menu-item-description">{{APPETIZER_3_DESCRIPTION}}</div>
+                            </div>
+                            <div class="menu-item-price">${{APPETIZER_3_PRICE}}</div>
+                        </div>
+                        <div class="menu-item-full">
+                            <div class="menu-item-info">
+                                <div class="menu-item-name">{{APPETIZER_4_NAME}}</div>
+                                <div class="menu-item-description">{{APPETIZER_4_DESCRIPTION}}</div>
+                            </div>
+                            <div class="menu-item-price">${{APPETIZER_4_PRICE}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Soups & Salads -->
+        <div class="menu-section">
+            <div class="container">
+                <div class="menu-category">
+                    <h2>Soups & Salads</h2>
+                    <div class="menu-items">
+                        <div class="menu-item-full">
+                            <div class="menu-item-info">
+                                <div class="menu-item-name">{{SOUP_1_NAME}}</div>
+                                <div class="menu-item-description">{{SOUP_1_DESCRIPTION}}</div>
+                            </div>
+                            <div class="menu-item-price">${{SOUP_1_PRICE}}</div>
+                        </div>
+                        <div class="menu-item-full">
+                            <div class="menu-item-info">
+                                <div class="menu-item-name">{{SOUP_2_NAME}}</div>
+                                <div class="menu-item-description">{{SOUP_2_DESCRIPTION}}</div>
+                            </div>
+                            <div class="menu-item-price">${{SOUP_2_PRICE}}</div>
+                        </div>
+                        <div class="menu-item-full">
+                            <div class="menu-item-info">
+                                <div class="menu-item-name">{{SALAD_1_NAME}}</div>
+                                <div class="menu-item-description">{{SALAD_1_DESCRIPTION}}</div>
+                            </div>
+                            <div class="menu-item-price">${{SALAD_1_PRICE}}</div>
+                        </div>
+                        <div class="menu-item-full">
+                            <div class="menu-item-info">
+                                <div class="menu-item-name">{{SALAD_2_NAME}}</div>
+                                <div class="menu-item-description">{{SALAD_2_DESCRIPTION}}</div>
+                            </div>
+                            <div class="menu-item-price">${{SALAD_2_PRICE}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Signature Steaks -->
+        <div class="menu-section">
+            <div class="container">
+                <div class="menu-category">
+                    <h2>Signature Steaks</h2>
+                    <div class="menu-items">
+                        <div class="menu-item-full">
+                            <div class="menu-item-info">
+                                <div class="menu-item-name">{{MAIN_1_NAME}}</div>
+                                <div class="menu-item-description">{{MAIN_1_DESCRIPTION}}</div>
+                            </div>
+                            <div class="menu-item-price">${{MAIN_1_PRICE}}</div>
+                        </div>
+                        <div class="menu-item-full">
+                            <div class="menu-item-info">
+                                <div class="menu-item-name">{{MAIN_2_NAME}}</div>
+                                <div class="menu-item-description">{{MAIN_2_DESCRIPTION}}</div>
+                            </div>
+                            <div class="menu-item-price">${{MAIN_2_PRICE}}</div>
+                        </div>
+                        <div class="menu-item-full">
+                            <div class="menu-item-info">
+                                <div class="menu-item-name">{{MAIN_3_NAME}}</div>
+                                <div class="menu-item-description">{{MAIN_3_DESCRIPTION}}</div>
+                            </div>
+                            <div class="menu-item-price">${{MAIN_3_PRICE}}</div>
+                        </div>
+                        <div class="menu-item-full">
+                            <div class="menu-item-info">
+                                <div class="menu-item-name">{{MAIN_4_NAME}}</div>
+                                <div class="menu-item-description">{{MAIN_4_DESCRIPTION}}</div>
+                            </div>
+                            <div class="menu-item-price">${{MAIN_4_PRICE}}</div>
+                        </div>
+                        <div class="menu-item-full">
+                            <div class="menu-item-info">
+                                <div class="menu-item-name">{{MAIN_5_NAME}}</div>
+                                <div class="menu-item-description">{{MAIN_5_DESCRIPTION}}</div>
+                            </div>
+                            <div class="menu-item-price">${{MAIN_5_PRICE}}</div>
+                        </div>
+                        <div class="menu-item-full">
+                            <div class="menu-item-info">
+                                <div class="menu-item-name">{{MAIN_6_NAME}}</div>
+                                <div class="menu-item-description">{{MAIN_6_DESCRIPTION}}</div>
+                            </div>
+                            <div class="menu-item-price">${{MAIN_6_PRICE}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Desserts -->
+        <div class="menu-section">
+            <div class="container">
+                <div class="menu-category">
+                    <h2>Desserts</h2>
+                    <div class="menu-items">
+                        <div class="menu-item-full">
+                            <div class="menu-item-info">
+                                <div class="menu-item-name">{{DESSERT_1_NAME}}</div>
+                                <div class="menu-item-description">{{DESSERT_1_DESCRIPTION}}</div>
+                            </div>
+                            <div class="menu-item-price">${{DESSERT_1_PRICE}}</div>
+                        </div>
+                        <div class="menu-item-full">
+                            <div class="menu-item-info">
+                                <div class="menu-item-name">{{DESSERT_2_NAME}}</div>
+                                <div class="menu-item-description">{{DESSERT_2_DESCRIPTION}}</div>
+                            </div>
+                            <div class="menu-item-price">${{DESSERT_2_PRICE}}</div>
+                        </div>
+                        <div class="menu-item-full">
+                            <div class="menu-item-info">
+                                <div class="menu-item-name">{{DESSERT_3_NAME}}</div>
+                                <div class="menu-item-description">{{DESSERT_3_DESCRIPTION}}</div>
+                            </div>
+                            <div class="menu-item-price">${{DESSERT_3_PRICE}}</div>
+                        </div>
+                        <div class="menu-item-full">
+                            <div class="menu-item-info">
+                                <div class="menu-item-name">{{DESSERT_4_NAME}}</div>
+                                <div class="menu-item-description">{{DESSERT_4_DESCRIPTION}}</div>
+                            </div>
+                            <div class="menu-item-price">${{DESSERT_4_PRICE}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wine Selection -->
+        <div class="wine-section">
+            <div class="container">
+                <div class="menu-category">
+                    <h2>Wine Selection</h2>
+                    <div class="wine-grid">
+                        <div class="wine-category">
+                            <h3>Red Wines</h3>
+                            <div class="wine-item">
+                                <div class="wine-info">
+                                    <h4>{{WINE_1_NAME}}</h4>
+                                    <p>{{WINE_1_DESCRIPTION}}</p>
+                                </div>
+                                <div class="wine-price">${{WINE_1_PRICE}}</div>
+                            </div>
+                            <div class="wine-item">
+                                <div class="wine-info">
+                                    <h4>{{WINE_3_NAME}}</h4>
+                                    <p>{{WINE_3_DESCRIPTION}}</p>
+                                </div>
+                                <div class="wine-price">${{WINE_3_PRICE}}</div>
+                            </div>
+                        </div>
+                        <div class="wine-category">
+                            <h3>White Wines</h3>
+                            <div class="wine-item">
+                                <div class="wine-info">
+                                    <h4>{{WINE_2_NAME}}</h4>
+                                    <p>{{WINE_2_DESCRIPTION}}</p>
+                                </div>
+                                <div class="wine-price">${{WINE_2_PRICE}}</div>
+                            </div>
+                        </div>
+                        <div class="wine-category">
+                            <h3>Premium Cocktails</h3>
+                            <div class="wine-item">
+                                <div class="wine-info">
+                                    <h4>{{COCKTAIL_1_NAME}}</h4>
+                                    <p>{{COCKTAIL_1_DESCRIPTION}}</p>
+                                </div>
+                                <div class="wine-price">${{COCKTAIL_1_PRICE}}</div>
+                            </div>
+                            <div class="wine-item">
+                                <div class="wine-info">
+                                    <h4>{{COCKTAIL_2_NAME}}</h4>
+                                    <p>{{COCKTAIL_2_DESCRIPTION}}</p>
+                                </div>
+                                <div class="wine-price">${{COCKTAIL_2_PRICE}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back to Home -->
+        <div class="back-to-home">
+            <div class="container">
+                <a href="index.html" class="btn btn-primary">Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+                </div>
+                <div class="footer-info">
+                    <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+                    <p>{{FULL_ADDRESS}} | {{PHONE}}</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

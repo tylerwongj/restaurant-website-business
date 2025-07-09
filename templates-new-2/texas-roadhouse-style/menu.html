@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - {{RESTAURANT_NAME}}</title>
+    <meta name="description" content="View our full menu at {{RESTAURANT_NAME}} - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html" class="active">Menu</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#order" class="order-btn">Order Now</a>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu Hero -->
+    <section class="menu-hero">
+        <div class="container">
+            <h1>Our Full Menu</h1>
+            <p>Hand-cut steaks, fresh sides, and ice-cold beverages</p>
+        </div>
+    </section>
+
+    <!-- Menu Categories -->
+    <section class="menu-categories">
+        <div class="container">
+            <div class="category-tabs">
+                <button class="tab-btn active" data-category="steaks">Steaks</button>
+                <button class="tab-btn" data-category="appetizers">Appetizers</button>
+                <button class="tab-btn" data-category="sides">Sides</button>
+                <button class="tab-btn" data-category="beverages">Beverages</button>
+                <button class="tab-btn" data-category="desserts">Desserts</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Steaks Menu -->
+    <section class="menu-category active" id="steaks">
+        <div class="container">
+            <h2>Premium Steaks</h2>
+            <div class="menu-items">
+                <div class="menu-item-detailed">
+                    <div class="item-image">
+                        <img src="{{FOOD_IMAGE_1}}" alt="{{MAIN_1_NAME}}">
+                    </div>
+                    <div class="item-details">
+                        <div class="item-header">
+                            <h3>{{MAIN_1_NAME}}</h3>
+                            <span class="price">${{MAIN_1_PRICE}}</span>
+                        </div>
+                        <p class="item-description">{{MAIN_1_DESCRIPTION}}</p>
+                        <div class="item-options">
+                            <label>Size:</label>
+                            <select class="size-select">
+                                <option>10 oz</option>
+                                <option>12 oz</option>
+                                <option>16 oz</option>
+                            </select>
+                        </div>
+                        <button class="add-to-order">Add to Order</button>
+                    </div>
+                </div>
+
+                <div class="menu-item-detailed">
+                    <div class="item-image">
+                        <img src="{{FOOD_IMAGE_2}}" alt="{{MAIN_2_NAME}}">
+                    </div>
+                    <div class="item-details">
+                        <div class="item-header">
+                            <h3>{{MAIN_2_NAME}}</h3>
+                            <span class="price">${{MAIN_2_PRICE}}</span>
+                        </div>
+                        <p class="item-description">{{MAIN_2_DESCRIPTION}}</p>
+                        <div class="item-options">
+                            <label>Size:</label>
+                            <select class="size-select">
+                                <option>8 oz</option>
+                                <option>12 oz</option>
+                                <option>16 oz</option>
+                            </select>
+                        </div>
+                        <button class="add-to-order">Add to Order</button>
+                    </div>
+                </div>
+
+                <div class="menu-item-detailed">
+                    <div class="item-image">
+                        <img src="{{FOOD_IMAGE_3}}" alt="{{MAIN_3_NAME}}">
+                    </div>
+                    <div class="item-details">
+                        <div class="item-header">
+                            <h3>{{MAIN_3_NAME}}</h3>
+                            <span class="price">${{MAIN_3_PRICE}}</span>
+                        </div>
+                        <p class="item-description">{{MAIN_3_DESCRIPTION}}</p>
+                        <div class="item-options">
+                            <label>Size:</label>
+                            <select class="size-select">
+                                <option>14 oz</option>
+                                <option>18 oz</option>
+                                <option>22 oz</option>
+                            </select>
+                        </div>
+                        <button class="add-to-order">Add to Order</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appetizers Menu -->
+    <section class="menu-category" id="appetizers">
+        <div class="container">
+            <h2>Appetizers</h2>
+            <div class="menu-items">
+                <div class="menu-item-detailed">
+                    <div class="item-image">
+                        <img src="{{FOOD_IMAGE_4}}" alt="{{APPETIZER_1_NAME}}">
+                    </div>
+                    <div class="item-details">
+                        <div class="item-header">
+                            <h3>{{APPETIZER_1_NAME}}</h3>
+                            <span class="price">${{APPETIZER_1_PRICE}}</span>
+                        </div>
+                        <p class="item-description">{{APPETIZER_1_DESCRIPTION}}</p>
+                        <button class="add-to-order">Add to Order</button>
+                    </div>
+                </div>
+
+                <div class="menu-item-detailed">
+                    <div class="item-image">
+                        <img src="{{FOOD_IMAGE_5}}" alt="{{APPETIZER_2_NAME}}">
+                    </div>
+                    <div class="item-details">
+                        <div class="item-header">
+                            <h3>{{APPETIZER_2_NAME}}</h3>
+                            <span class="price">${{APPETIZER_2_PRICE}}</span>
+                        </div>
+                        <p class="item-description">{{APPETIZER_2_DESCRIPTION}}</p>
+                        <button class="add-to-order">Add to Order</button>
+                    </div>
+                </div>
+
+                <div class="menu-item-detailed">
+                    <div class="item-image">
+                        <img src="{{FOOD_IMAGE_6}}" alt="{{APPETIZER_3_NAME}}">
+                    </div>
+                    <div class="item-details">
+                        <div class="item-header">
+                            <h3>{{APPETIZER_3_NAME}}</h3>
+                            <span class="price">${{APPETIZER_3_PRICE}}</span>
+                        </div>
+                        <p class="item-description">{{APPETIZER_3_DESCRIPTION}}</p>
+                        <button class="add-to-order">Add to Order</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sides Menu -->
+    <section class="menu-category" id="sides">
+        <div class="container">
+            <h2>Sides</h2>
+            <div class="menu-items">
+                <div class="menu-item-simple">
+                    <div class="item-header">
+                        <h3>Loaded Baked Potato</h3>
+                        <span class="price">$4.99</span>
+                    </div>
+                    <p>Fresh baked potato loaded with butter, sour cream, cheese, and chives</p>
+                    <button class="add-to-order">Add to Order</button>
+                </div>
+
+                <div class="menu-item-simple">
+                    <div class="item-header">
+                        <h3>Seasoned Steak Fries</h3>
+                        <span class="price">$3.99</span>
+                    </div>
+                    <p>Crispy seasoned fries with our signature steak seasoning</p>
+                    <button class="add-to-order">Add to Order</button>
+                </div>
+
+                <div class="menu-item-simple">
+                    <div class="item-header">
+                        <h3>Grilled Corn on the Cob</h3>
+                        <span class="price">$3.49</span>
+                    </div>
+                    <p>Fresh corn grilled to perfection with butter and seasonings</p>
+                    <button class="add-to-order">Add to Order</button>
+                </div>
+
+                <div class="menu-item-simple">
+                    <div class="item-header">
+                        <h3>House Salad</h3>
+                        <span class="price">$5.99</span>
+                    </div>
+                    <p>Fresh mixed greens with tomatoes, cucumbers, and your choice of dressing</p>
+                    <button class="add-to-order">Add to Order</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beverages Menu -->
+    <section class="menu-category" id="beverages">
+        <div class="container">
+            <h2>Beverages</h2>
+            <div class="menu-items">
+                <div class="menu-item-simple">
+                    <div class="item-header">
+                        <h3>Draft Beer</h3>
+                        <span class="price">$4.99</span>
+                    </div>
+                    <p>Ice-cold draft beer selection</p>
+                    <button class="add-to-order">Add to Order</button>
+                </div>
+
+                <div class="menu-item-simple">
+                    <div class="item-header">
+                        <h3>Soft Drinks</h3>
+                        <span class="price">$2.99</span>
+                    </div>
+                    <p>Coca-Cola, Sprite, Dr Pepper, and more</p>
+                    <button class="add-to-order">Add to Order</button>
+                </div>
+
+                <div class="menu-item-simple">
+                    <div class="item-header">
+                        <h3>Fresh Iced Tea</h3>
+                        <span class="price">$2.49</span>
+                    </div>
+                    <p>Sweet or unsweetened, brewed fresh daily</p>
+                    <button class="add-to-order">Add to Order</button>
+                </div>
+
+                <div class="menu-item-simple">
+                    <div class="item-header">
+                        <h3>Coffee</h3>
+                        <span class="price">$2.99</span>
+                    </div>
+                    <p>Freshly brewed coffee, regular or decaf</p>
+                    <button class="add-to-order">Add to Order</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Desserts Menu -->
+    <section class="menu-category" id="desserts">
+        <div class="container">
+            <h2>Desserts</h2>
+            <div class="menu-items">
+                <div class="menu-item-detailed">
+                    <div class="item-image">
+                        <img src="{{FOOD_IMAGE_7}}" alt="{{DESSERT_1_NAME}}">
+                    </div>
+                    <div class="item-details">
+                        <div class="item-header">
+                            <h3>{{DESSERT_1_NAME}}</h3>
+                            <span class="price">${{DESSERT_1_PRICE}}</span>
+                        </div>
+                        <p class="item-description">{{DESSERT_1_DESCRIPTION}}</p>
+                        <button class="add-to-order">Add to Order</button>
+                    </div>
+                </div>
+
+                <div class="menu-item-detailed">
+                    <div class="item-image">
+                        <img src="{{FOOD_IMAGE_8}}" alt="{{DESSERT_2_NAME}}">
+                    </div>
+                    <div class="item-details">
+                        <div class="item-header">
+                            <h3>{{DESSERT_2_NAME}}</h3>
+                            <span class="price">${{DESSERT_2_PRICE}}</span>
+                        </div>
+                        <p class="item-description">{{DESSERT_2_DESCRIPTION}}</p>
+                        <button class="add-to-order">Add to Order</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Summary -->
+    <div class="order-summary" id="order-summary">
+        <h3>Your Order</h3>
+        <div class="order-items"></div>
+        <div class="order-total">
+            <span>Total: $<span id="total-amount">0.00</span></span>
+        </div>
+        <button class="checkout-btn">Proceed to Checkout</button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>{{RESTAURANT_NAME}}</h3>
+                    <p>{{DESCRIPTION}}</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}">Instagram</a>
+                        <a href="{{YELP_URL}}">Yelp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Menu Category Navigation
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const category = this.dataset.category;
+                
+                // Update active tab
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Show/hide menu categories
+                document.querySelectorAll('.menu-category').forEach(cat => {
+                    cat.classList.remove('active');
+                });
+                document.getElementById(category).classList.add('active');
+            });
+        });
+
+        // Order Management
+        let orderItems = [];
+        let orderTotal = 0;
+
+        document.querySelectorAll('.add-to-order').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const menuItem = this.closest('.menu-item-detailed, .menu-item-simple');
+                const name = menuItem.querySelector('h3').textContent;
+                const price = parseFloat(menuItem.querySelector('.price').textContent.replace('$', ''));
+                
+                // Add to order
+                orderItems.push({ name, price });
+                orderTotal += price;
+                
+                // Update order summary
+                updateOrderSummary();
+                
+                // Show feedback
+                this.textContent = 'Added!';
+                this.style.backgroundColor = '#5cb85c';
+                setTimeout(() => {
+                    this.textContent = 'Add to Order';
+                    this.style.backgroundColor = '';
+                }, 1000);
+            });
+        });
+
+        function updateOrderSummary() {
+            const orderItemsContainer = document.querySelector('.order-items');
+            const totalElement = document.getElementById('total-amount');
+            
+            orderItemsContainer.innerHTML = '';
+            orderItems.forEach((item, index) => {
+                const itemElement = document.createElement('div');
+                itemElement.className = 'order-item';
+                itemElement.innerHTML = `
+                    <span>${item.name}</span>
+                    <span>$${item.price.toFixed(2)}</span>
+                    <button onclick="removeFromOrder(${index})">×</button>
+                `;
+                orderItemsContainer.appendChild(itemElement);
+            });
+            
+            totalElement.textContent = orderTotal.toFixed(2);
+            
+            // Show/hide order summary
+            const orderSummary = document.getElementById('order-summary');
+            if (orderItems.length > 0) {
+                orderSummary.style.display = 'block';
+            } else {
+                orderSummary.style.display = 'none';
+            }
+        }
+
+        function removeFromOrder(index) {
+            orderTotal -= orderItems[index].price;
+            orderItems.splice(index, 1);
+            updateOrderSummary();
+        }
+
+        // Checkout
+        document.querySelector('.checkout-btn').addEventListener('click', function() {
+            if (orderItems.length === 0) {
+                alert('Please add items to your order first.');
+                return;
+            }
+            
+            alert(`Order total: $${orderTotal.toFixed(2)}\nThank you for your order! We'll have it ready in 20-30 minutes.`);
+            
+            // Reset order
+            orderItems = [];
+            orderTotal = 0;
+            updateOrderSummary();
+        });
+    </script>
+</body>
+</html>

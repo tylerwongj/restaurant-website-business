@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - {{RESTAURANT_NAME}}</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} menu - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .menu-page {
+            padding: 100px 0 60px;
+            background: var(--bg-light);
+            min-height: 100vh;
+        }
+        
+        .menu-hero {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .menu-hero h1 {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .menu-hero p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .menu-section {
+            background: white;
+            margin-bottom: 3rem;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .menu-section-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .menu-section-header h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .menu-section-content {
+            padding: 2rem;
+        }
+        
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+        
+        .menu-item-detailed {
+            display: flex;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: var(--bg-light);
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        
+        .menu-item-detailed:hover {
+            transform: translateY(-3px);
+        }
+        
+        .menu-item-detailed img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
+        
+        .menu-item-info {
+            flex: 1;
+        }
+        
+        .menu-item-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .menu-item-info p {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+        
+        .menu-item-price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .dietary-info {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .dietary-tag {
+            background: var(--accent-color);
+            color: var(--text-dark);
+            padding: 0.2rem 0.5rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .back-to-home {
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .menu-item-detailed {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .menu-item-detailed img {
+                width: 100%;
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="#order" class="order-btn">Order Now</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Menu Page -->
+    <div class="menu-page">
+        <div class="container">
+            <!-- Menu Hero -->
+            <div class="menu-hero">
+                <h1>Our Menu</h1>
+                <p>Discover our delicious selection of fresh, quality dishes made with the finest ingredients</p>
+            </div>
+
+            <!-- Appetizers Section -->
+            <div class="menu-section">
+                <div class="menu-section-header">
+                    <h2>Appetizers</h2>
+                    <p>Start your meal with our delicious appetizers</p>
+                </div>
+                <div class="menu-section-content">
+                    <div class="menu-grid">
+                        <div class="menu-item-detailed">
+                            <img src="{{FOOD_IMAGE_1}}" alt="{{APPETIZER_1_NAME}}">
+                            <div class="menu-item-info">
+                                <h3>{{APPETIZER_1_NAME}}</h3>
+                                <p>{{APPETIZER_1_DESCRIPTION}}</p>
+                                <div class="menu-item-price">${{APPETIZER_1_PRICE}}</div>
+                                <div class="dietary-info">
+                                    <span class="dietary-tag">Fresh</span>
+                                    <span class="dietary-tag">Popular</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item-detailed">
+                            <img src="{{FOOD_IMAGE_2}}" alt="{{APPETIZER_2_NAME}}">
+                            <div class="menu-item-info">
+                                <h3>{{APPETIZER_2_NAME}}</h3>
+                                <p>{{APPETIZER_2_DESCRIPTION}}</p>
+                                <div class="menu-item-price">${{APPETIZER_2_PRICE}}</div>
+                                <div class="dietary-info">
+                                    <span class="dietary-tag">Crispy</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item-detailed">
+                            <img src="{{FOOD_IMAGE_3}}" alt="{{APPETIZER_3_NAME}}">
+                            <div class="menu-item-info">
+                                <h3>{{APPETIZER_3_NAME}}</h3>
+                                <p>{{APPETIZER_3_DESCRIPTION}}</p>
+                                <div class="menu-item-price">${{APPETIZER_3_PRICE}}</div>
+                                <div class="dietary-info">
+                                    <span class="dietary-tag">Spicy</span>
+                                    <span class="dietary-tag">Signature</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item-detailed">
+                            <img src="{{FOOD_IMAGE_4}}" alt="{{APPETIZER_4_NAME}}">
+                            <div class="menu-item-info">
+                                <h3>{{APPETIZER_4_NAME}}</h3>
+                                <p>{{APPETIZER_4_DESCRIPTION}}</p>
+                                <div class="menu-item-price">${{APPETIZER_4_PRICE}}</div>
+                                <div class="dietary-info">
+                                    <span class="dietary-tag">Vegetarian</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Soups & Salads Section -->
+            <div class="menu-section">
+                <div class="menu-section-header">
+                    <h2>Soups & Salads</h2>
+                    <p>Fresh and healthy options to complement your meal</p>
+                </div>
+                <div class="menu-section-content">
+                    <div class="menu-grid">
+                        <div class="menu-item-detailed">
+                            <img src="{{FOOD_IMAGE_5}}" alt="{{SOUP_1_NAME}}">
+                            <div class="menu-item-info">
+                                <h3>{{SOUP_1_NAME}}</h3>
+                                <p>{{SOUP_1_DESCRIPTION}}</p>
+                                <div class="menu-item-price">${{SOUP_1_PRICE}}</div>
+                                <div class="dietary-info">
+                                    <span class="dietary-tag">Comfort</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item-detailed">
+                            <img src="{{FOOD_IMAGE_6}}" alt="{{SOUP_2_NAME}}">
+                            <div class="menu-item-info">
+                                <h3>{{SOUP_2_NAME}}</h3>
+                                <p>{{SOUP_2_DESCRIPTION}}</p>
+                                <div class="menu-item-price">${{SOUP_2_PRICE}}</div>
+                                <div class="dietary-info">
+                                    <span class="dietary-tag">Seasonal</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item-detailed">
+                            <img src="{{FOOD_IMAGE_7}}" alt="{{SALAD_1_NAME}}">
+                            <div class="menu-item-info">
+                                <h3>{{SALAD_1_NAME}}</h3>
+                                <p>{{SALAD_1_DESCRIPTION}}</p>
+                                <div class="menu-item-price">${{SALAD_1_PRICE}}</div>
+                                <div class="dietary-info">
+                                    <span class="dietary-tag">Healthy</span>
+                                    <span class="dietary-tag">Fresh</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item-detailed">
+                            <img src="{{FOOD_IMAGE_8}}" alt="{{SALAD_2_NAME}}">
+                            <div class="menu-item-info">
+                                <h3>{{SALAD_2_NAME}}</h3>
+                                <p>{{SALAD_2_DESCRIPTION}}</p>
+                                <div class="menu-item-price">${{SALAD_2_PRICE}}</div>
+                                <div class="dietary-info">
+                                    <span class="dietary-tag">Vegetarian</span>
+                                    <span class="dietary-tag">Protein</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Courses Section -->
+            <div class="menu-section">
+                <div class="menu-section-header">
+                    <h2>Main Courses</h2>
+                    <p>Hearty and satisfying dishes for every taste</p>
+                </div>
+                <div class="menu-section-content">
+                    <div class="menu-grid">
+                        <div class="menu-item-detailed">
+                            <img src="{{FOOD_IMAGE_9}}" alt="{{MAIN_1_NAME}}">
+                            <div class="menu-item-info">
+                                <h3>{{MAIN_1_NAME}}</h3>
+                                <p>{{MAIN_1_DESCRIPTION}}</p>
+                                <div class="menu-item-price">${{MAIN_1_PRICE}}</div>
+                                <div class="dietary-info">
+                                    <span class="dietary-tag">Signature</span>
+                                    <span class="dietary-tag">Popular</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item-detailed">
+                            <img src="{{FOOD_IMAGE_10}}" alt="{{MAIN_2_NAME}}">
+                            <div class="menu-item-info">
+                                <h3>{{MAIN_2_NAME}}</h3>
+                                <p>{{MAIN_2_DESCRIPTION}}</p>
+                                <div class="menu-item-price">${{MAIN_2_PRICE}}</div>
+                                <div class="dietary-info">
+                                    <span class="dietary-tag">Grilled</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item-detailed">
+                            <img src="{{FOOD_IMAGE_11}}" alt="{{MAIN_3_NAME}}">
+                            <div class="menu-item-info">
+                                <h3>{{MAIN_3_NAME}}</h3>
+                                <p>{{MAIN_3_DESCRIPTION}}</p>
+                                <div class="menu-item-price">${{MAIN_3_PRICE}}</div>
+                                <div class="dietary-info">
+                                    <span class="dietary-tag">Comfort</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item-detailed">
+                            <img src="{{FOOD_IMAGE_12}}" alt="{{MAIN_4_NAME}}">
+                            <div class="menu-item-info">
+                                <h3>{{MAIN_4_NAME}}</h3>
+                                <p>{{MAIN_4_DESCRIPTION}}</p>
+                                <div class="menu-item-price">${{MAIN_4_PRICE}}</div>
+                                <div class="dietary-info">
+                                    <span class="dietary-tag">Seafood</span>
+                                    <span class="dietary-tag">Fresh</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item-detailed">
+                            <img src="{{FOOD_IMAGE_1}}" alt="{{MAIN_5_NAME}}">
+                            <div class="menu-item-info">
+                                <h3>{{MAIN_5_NAME}}</h3>
+                                <p>{{MAIN_5_DESCRIPTION}}</p>
+                                <div class="menu-item-price">${{MAIN_5_PRICE}}</div>
+                                <div class="dietary-info">
+                                    <span class="dietary-tag">Pasta</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item-detailed">
+                            <img src="{{FOOD_IMAGE_2}}" alt="{{MAIN_6_NAME}}">
+                            <div class="menu-item-info">
+                                <h3>{{MAIN_6_NAME}}</h3>
+                                <p>{{MAIN_6_DESCRIPTION}}</p>
+                                <div class="menu-item-price">${{MAIN_6_PRICE}}</div>
+                                <div class="dietary-info">
+                                    <span class="dietary-tag">Vegetarian</span>
+                                    <span class="dietary-tag">Healthy</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desserts Section -->
+            <div class="menu-section">
+                <div class="menu-section-header">
+                    <h2>Desserts</h2>
+                    <p>Sweet endings to your perfect meal</p>
+                </div>
+                <div class="menu-section-content">
+                    <div class="menu-grid">
+                        <div class="menu-item-detailed">
+                            <img src="{{FOOD_IMAGE_3}}" alt="{{DESSERT_1_NAME}}">
+                            <div class="menu-item-info">
+                                <h3>{{DESSERT_1_NAME}}</h3>
+                                <p>{{DESSERT_1_DESCRIPTION}}</p>
+                                <div class="menu-item-price">${{DESSERT_1_PRICE}}</div>
+                                <div class="dietary-info">
+                                    <span class="dietary-tag">Signature</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item-detailed">
+                            <img src="{{FOOD_IMAGE_4}}" alt="{{DESSERT_2_NAME}}">
+                            <div class="menu-item-info">
+                                <h3>{{DESSERT_2_NAME}}</h3>
+                                <p>{{DESSERT_2_DESCRIPTION}}</p>
+                                <div class="menu-item-price">${{DESSERT_2_PRICE}}</div>
+                                <div class="dietary-info">
+                                    <span class="dietary-tag">Classic</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item-detailed">
+                            <img src="{{FOOD_IMAGE_5}}" alt="{{DESSERT_3_NAME}}">
+                            <div class="menu-item-info">
+                                <h3>{{DESSERT_3_NAME}}</h3>
+                                <p>{{DESSERT_3_DESCRIPTION}}</p>
+                                <div class="menu-item-price">${{DESSERT_3_PRICE}}</div>
+                                <div class="dietary-info">
+                                    <span class="dietary-tag">Seasonal</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item-detailed">
+                            <img src="{{FOOD_IMAGE_6}}" alt="{{DESSERT_4_NAME}}">
+                            <div class="menu-item-info">
+                                <h3>{{DESSERT_4_NAME}}</h3>
+                                <p>{{DESSERT_4_DESCRIPTION}}</p>
+                                <div class="menu-item-price">${{DESSERT_4_PRICE}}</div>
+                                <div class="dietary-info">
+                                    <span class="dietary-tag">Rich</span>
+                                    <span class="dietary-tag">Indulgent</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Beverages Section -->
+            <div class="menu-section">
+                <div class="menu-section-header">
+                    <h2>Beverages</h2>
+                    <p>Refreshing drinks to complement your meal</p>
+                </div>
+                <div class="menu-section-content">
+                    <div class="menu-grid">
+                        <div class="menu-item-detailed">
+                            <img src="{{FOOD_IMAGE_7}}" alt="{{COCKTAIL_1_NAME}}">
+                            <div class="menu-item-info">
+                                <h3>{{COCKTAIL_1_NAME}}</h3>
+                                <p>{{COCKTAIL_1_DESCRIPTION}}</p>
+                                <div class="menu-item-price">${{COCKTAIL_1_PRICE}}</div>
+                                <div class="dietary-info">
+                                    <span class="dietary-tag">Signature</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item-detailed">
+                            <img src="{{FOOD_IMAGE_8}}" alt="{{COCKTAIL_2_NAME}}">
+                            <div class="menu-item-info">
+                                <h3>{{COCKTAIL_2_NAME}}</h3>
+                                <p>{{COCKTAIL_2_DESCRIPTION}}</p>
+                                <div class="menu-item-price">${{COCKTAIL_2_PRICE}}</div>
+                                <div class="dietary-info">
+                                    <span class="dietary-tag">Refreshing</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item-detailed">
+                            <img src="{{FOOD_IMAGE_9}}" alt="{{WINE_1_NAME}}">
+                            <div class="menu-item-info">
+                                <h3>{{WINE_1_NAME}}</h3>
+                                <p>{{WINE_1_DESCRIPTION}}</p>
+                                <div class="menu-item-price">${{WINE_1_PRICE}}</div>
+                                <div class="dietary-info">
+                                    <span class="dietary-tag">Wine</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item-detailed">
+                            <img src="{{FOOD_IMAGE_10}}" alt="{{WINE_2_NAME}}">
+                            <div class="menu-item-info">
+                                <h3>{{WINE_2_NAME}}</h3>
+                                <p>{{WINE_2_DESCRIPTION}}</p>
+                                <div class="menu-item-price">${{WINE_2_PRICE}}</div>
+                                <div class="dietary-info">
+                                    <span class="dietary-tag">Wine</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Back to Home -->
+            <div class="back-to-home">
+                <a href="index.html" class="btn btn-primary">Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

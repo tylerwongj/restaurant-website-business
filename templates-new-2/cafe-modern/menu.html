@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - {{RESTAURANT_NAME}}</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - Full Menu">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .menu-page {
+            padding-top: 100px;
+            min-height: 100vh;
+            background-color: var(--bg-color);
+        }
+        
+        .menu-header {
+            text-align: center;
+            padding: 3rem 0;
+            background-color: var(--bg-light);
+        }
+        
+        .menu-header h1 {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .menu-header p {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            opacity: 0.9;
+        }
+        
+        .menu-section {
+            padding: 3rem 0;
+        }
+        
+        .menu-section:nth-child(even) {
+            background-color: var(--bg-light);
+        }
+        
+        .menu-category {
+            margin-bottom: 3rem;
+        }
+        
+        .menu-category h2 {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .menu-category h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 2px;
+            background-color: var(--secondary-color);
+        }
+        
+        .menu-grid-full {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .menu-item-card {
+            background-color: var(--bg-color);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        
+        .menu-item-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .menu-item-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .menu-card-content {
+            padding: 1.5rem;
+        }
+        
+        .menu-item-name {
+            font-size: 1.3rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .menu-item-description {
+            color: var(--text-color);
+            opacity: 0.9;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+        
+        .menu-item-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .menu-item-price {
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            font-weight: 700;
+        }
+        
+        .back-to-home {
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .specialty-section {
+            background: linear-gradient(135deg, var(--bg-light), var(--bg-color));
+            padding: 4rem 0;
+        }
+        
+        .specialty-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .specialty-card {
+            background-color: var(--bg-color);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px var(--shadow);
+            text-align: center;
+            border: 2px solid var(--border-color);
+        }
+        
+        .specialty-card h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .specialty-card p {
+            color: var(--text-color);
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+        
+        .specialty-price {
+            font-size: 1.3rem;
+            color: var(--secondary-color);
+            font-weight: 700;
+        }
+        
+        .size-options {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .size-btn {
+            background-color: var(--bg-light);
+            color: var(--text-color);
+            border: 2px solid var(--border-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .size-btn:hover,
+        .size-btn.active {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        @media (max-width: 768px) {
+            .menu-grid-full {
+                grid-template-columns: 1fr;
+            }
+            
+            .menu-header h1 {
+                font-size: 2rem;
+            }
+            
+            .specialty-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .size-options {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body class="cool-theme">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="index.html#order" class="btn-nav">Order Online</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="menu-page">
+        <!-- Menu Header -->
+        <div class="menu-header">
+            <div class="container">
+                <h1>Our Full Menu</h1>
+                <p>Fresh coffee, delicious food, and sweet treats</p>
+            </div>
+        </div>
+
+        <!-- Coffee Section -->
+        <div class="menu-section">
+            <div class="container">
+                <div class="menu-category">
+                    <h2>Coffee & Espresso</h2>
+                    <div class="menu-grid-full">
+                        <div class="menu-item-card">
+                            <img src="{{FOOD_IMAGE_1}}" alt="{{MENU_ITEM_1}}">
+                            <div class="menu-card-content">
+                                <div class="menu-item-name">{{MENU_ITEM_1}}</div>
+                                <div class="menu-item-description">{{MENU_DESCRIPTION_1}}</div>
+                                <div class="menu-item-footer">
+                                    <div class="menu-item-price">${{PRICE_1}}</div>
+                                    <button class="btn-add">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item-card">
+                            <img src="{{FOOD_IMAGE_2}}" alt="{{MENU_ITEM_2}}">
+                            <div class="menu-card-content">
+                                <div class="menu-item-name">{{MENU_ITEM_2}}</div>
+                                <div class="menu-item-description">{{MENU_DESCRIPTION_2}}</div>
+                                <div class="menu-item-footer">
+                                    <div class="menu-item-price">${{PRICE_2}}</div>
+                                    <button class="btn-add">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item-card">
+                            <img src="{{FOOD_IMAGE_3}}" alt="{{MENU_ITEM_3}}">
+                            <div class="menu-card-content">
+                                <div class="menu-item-name">{{MENU_ITEM_3}}</div>
+                                <div class="menu-item-description">{{MENU_DESCRIPTION_3}}</div>
+                                <div class="menu-item-footer">
+                                    <div class="menu-item-price">${{PRICE_3}}</div>
+                                    <button class="btn-add">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Food Section -->
+        <div class="menu-section">
+            <div class="container">
+                <div class="menu-category">
+                    <h2>Breakfast & Lunch</h2>
+                    <div class="menu-grid-full">
+                        <div class="menu-item-card">
+                            <img src="{{FOOD_IMAGE_4}}" alt="{{MENU_ITEM_4}}">
+                            <div class="menu-card-content">
+                                <div class="menu-item-name">{{MENU_ITEM_4}}</div>
+                                <div class="menu-item-description">{{MENU_DESCRIPTION_4}}</div>
+                                <div class="menu-item-footer">
+                                    <div class="menu-item-price">${{PRICE_4}}</div>
+                                    <button class="btn-add">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item-card">
+                            <img src="{{FOOD_IMAGE_5}}" alt="{{MENU_ITEM_5}}">
+                            <div class="menu-card-content">
+                                <div class="menu-item-name">{{MENU_ITEM_5}}</div>
+                                <div class="menu-item-description">{{MENU_DESCRIPTION_5}}</div>
+                                <div class="menu-item-footer">
+                                    <div class="menu-item-price">${{PRICE_5}}</div>
+                                    <button class="btn-add">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item-card">
+                            <img src="{{FOOD_IMAGE_6}}" alt="{{MENU_ITEM_6}}">
+                            <div class="menu-card-content">
+                                <div class="menu-item-name">{{MENU_ITEM_6}}</div>
+                                <div class="menu-item-description">{{MENU_DESCRIPTION_6}}</div>
+                                <div class="menu-item-footer">
+                                    <div class="menu-item-price">${{PRICE_6}}</div>
+                                    <button class="btn-add">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pastries Section -->
+        <div class="menu-section">
+            <div class="container">
+                <div class="menu-category">
+                    <h2>Fresh Pastries</h2>
+                    <div class="menu-grid-full">
+                        <div class="menu-item-card">
+                            <img src="{{FOOD_IMAGE_7}}" alt="{{MENU_ITEM_7}}">
+                            <div class="menu-card-content">
+                                <div class="menu-item-name">{{MENU_ITEM_7}}</div>
+                                <div class="menu-item-description">{{MENU_DESCRIPTION_7}}</div>
+                                <div class="menu-item-footer">
+                                    <div class="menu-item-price">${{PRICE_7}}</div>
+                                    <button class="btn-add">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item-card">
+                            <img src="{{FOOD_IMAGE_8}}" alt="{{MENU_ITEM_8}}">
+                            <div class="menu-card-content">
+                                <div class="menu-item-name">{{MENU_ITEM_8}}</div>
+                                <div class="menu-item-description">{{MENU_DESCRIPTION_8}}</div>
+                                <div class="menu-item-footer">
+                                    <div class="menu-item-price">${{PRICE_8}}</div>
+                                    <button class="btn-add">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item-card">
+                            <img src="{{FOOD_IMAGE_9}}" alt="{{MENU_ITEM_9}}">
+                            <div class="menu-card-content">
+                                <div class="menu-item-name">{{MENU_ITEM_9}}</div>
+                                <div class="menu-item-description">{{MENU_DESCRIPTION_9}}</div>
+                                <div class="menu-item-footer">
+                                    <div class="menu-item-price">${{PRICE_9}}</div>
+                                    <button class="btn-add">Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Specialty Drinks -->
+        <div class="specialty-section">
+            <div class="container">
+                <div class="menu-category">
+                    <h2>Specialty Drinks</h2>
+                    <div class="specialty-grid">
+                        <div class="specialty-card">
+                            <h3>Seasonal Latte</h3>
+                            <p>Featured seasonal flavors with premium espresso</p>
+                            <div class="specialty-price">$5.95</div>
+                            <div class="size-options">
+                                <button class="size-btn active">Small</button>
+                                <button class="size-btn">Medium</button>
+                                <button class="size-btn">Large</button>
+                            </div>
+                        </div>
+                        <div class="specialty-card">
+                            <h3>Cold Brew Special</h3>
+                            <p>Smooth cold brew with unique flavor combinations</p>
+                            <div class="specialty-price">$4.95</div>
+                            <div class="size-options">
+                                <button class="size-btn active">Small</button>
+                                <button class="size-btn">Medium</button>
+                                <button class="size-btn">Large</button>
+                            </div>
+                        </div>
+                        <div class="specialty-card">
+                            <h3>Signature Smoothie</h3>
+                            <p>Fresh fruit smoothies with organic ingredients</p>
+                            <div class="specialty-price">$6.95</div>
+                            <div class="size-options">
+                                <button class="size-btn active">Small</button>
+                                <button class="size-btn">Medium</button>
+                                <button class="size-btn">Large</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back to Home -->
+        <div class="back-to-home">
+            <div class="container">
+                <a href="index.html" class="btn btn-primary">Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+                </div>
+                <div class="footer-info">
+                    <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+                    <p>{{FULL_ADDRESS}} | {{PHONE}}</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Size button functionality
+        document.querySelectorAll('.size-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const parent = this.closest('.size-options');
+                parent.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

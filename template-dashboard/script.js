@@ -10,7 +10,7 @@ class TemplateDashboard {
         this.currentTemplateIndex = 0;
         this.favorites = new Map();
         this.isModalOpen = false;
-        this.isLargeGrid = false;
+        this.gridSize = 'normal'; // 'small', 'normal', 'large'
         this.showFavoritesOnly = false;
         
         // DOM elements
@@ -252,6 +252,28 @@ class TemplateDashboard {
         if (this.filteredTemplates.length === 0) {
             container.style.display = 'none';
             noResults.style.display = 'block';
+            
+            // Update no results message based on context
+            if (this.showFavoritesOnly && this.favorites.size === 0) {
+                noResults.innerHTML = `
+                    <div class="no-results-icon">⭐</div>
+                    <h3>No favorites yet</h3>
+                    <p>Click the stars on templates to add them to your favorites</p>
+                    <p><em>The "Show All Templates" button above will show all templates</em></p>
+                `;
+            } else if (this.showFavoritesOnly) {
+                noResults.innerHTML = `
+                    <div class="no-results-icon">⭐</div>
+                    <h3>No favorites match your filters</h3>
+                    <p>Try adjusting your search or category filters</p>
+                `;
+            } else {
+                noResults.innerHTML = `
+                    <div class="no-results-icon">🔍</div>
+                    <h3>No templates found</h3>
+                    <p>Try adjusting your search or filters</p>
+                `;
+            }
             return;
         }
         
@@ -483,13 +505,40 @@ class TemplateDashboard {
     toggleFavoritesOnly() {
         this.showFavoritesOnly = !this.showFavoritesOnly;
         this.elements.favoritesFilter.classList.toggle('active', this.showFavoritesOnly);
+        
+        // Update button text to show current state
+        const buttonText = this.showFavoritesOnly ? 'Show All Templates' : 'Favorites Only';
+        this.elements.favoritesFilter.innerHTML = `<span class="star">⭐</span> ${buttonText}`;
+        
+        console.log(`Favorites filter toggled: ${this.showFavoritesOnly ? 'ON' : 'OFF'}`);
+        console.log(`Total favorites: ${this.favorites.size}`);
+        
         this.filterTemplates();
     }
     
     toggleGridSize() {
-        this.isLargeGrid = !this.isLargeGrid;
-        this.elements.templatesContainer.classList.toggle('large-grid', this.isLargeGrid);
-        this.elements.templatesContainer.classList.toggle('small-grid', !this.isLargeGrid && window.innerWidth > 768);
+        // Cycle through: normal -> large -> small -> normal
+        const gridSizes = ['normal', 'large', 'small'];
+        const currentIndex = gridSizes.indexOf(this.gridSize);
+        const nextIndex = (currentIndex + 1) % gridSizes.length;
+        this.gridSize = gridSizes[nextIndex];
+        
+        // Remove all grid classes
+        this.elements.templatesContainer.classList.remove('large-grid', 'small-grid');
+        
+        // Add appropriate class
+        if (this.gridSize === 'large') {
+            this.elements.templatesContainer.classList.add('large-grid');
+        } else if (this.gridSize === 'small') {
+            this.elements.templatesContainer.classList.add('small-grid');
+        }
+        
+        // Update button text to show current state
+        const buttonText = this.gridSize === 'large' ? '⊞ Large' : 
+                          this.gridSize === 'small' ? '⊞ Small' : '⊞ Normal';
+        this.elements.gridSizeBtn.innerHTML = `<span class="grid-icon">${buttonText}</span>`;
+        
+        console.log(`Grid size changed to: ${this.gridSize}`);
     }
     
     updateStats() {
