@@ -145,7 +145,12 @@ class TemplateDashboard {
         this.elements.modalRating.addEventListener('click', (e) => {
             if (e.target.classList.contains('star')) {
                 const rating = parseInt(e.target.dataset.rating);
-                this.setTemplateRating(this.filteredTemplates[this.currentTemplateIndex], rating);
+                const template = this.filteredTemplates[this.currentTemplateIndex];
+                this.setTemplateRating(template, rating);
+                
+                // Update modal display
+                const newRating = this.favorites.get(template.id) || 0;
+                this.updateModalRating(newRating);
             }
         });
     }
@@ -154,19 +159,26 @@ class TemplateDashboard {
         this.showLoading(true);
         
         try {
-            // Discover templates from known directories
-            const templateDirs = ['templates', 'templates-new', 'templates-business'];
-            const allTemplates = [];
-            
-            for (const dir of templateDirs) {
-                const templates = await this.discoverTemplatesInDirectory(dir);
-                allTemplates.push(...templates);
+            // Fetch all templates in one API call
+            const response = await fetch('/api/templates');
+            if (!response.ok) {
+                throw new Error(`API request failed: ${response.status}`);
             }
             
-            this.templates = allTemplates;
+            const data = await response.json();
+            
+            // Process templates and add categories
+            this.templates = data.templates.map(template => ({
+                ...template,
+                category: this.categorizeTemplate(template.name)
+            }));
+            
             this.filteredTemplates = [...this.templates];
             
-            console.log(`📊 Loaded ${this.templates.length} templates`);
+            console.log(`📊 Loaded ${this.templates.length} templates from API`);
+            console.log(`✅ Complete: ${this.templates.filter(t => t.status === 'complete').length}`);
+            console.log(`⚠️ Partial: ${this.templates.filter(t => t.status === 'partial').length}`);
+            console.log(`❌ Empty: ${this.templates.filter(t => t.status === 'empty').length}`);
             
         } catch (error) {
             console.error('❌ Failed to load templates:', error);
@@ -176,60 +188,14 @@ class TemplateDashboard {
         }
     }
     
-    async discoverTemplatesInDirectory(directory) {
-        // Known template names based on our directory structure
-        const knownTemplates = this.getKnownTemplateNames(directory);
-        const templates = [];
-        
-        for (const name of knownTemplates) {
-            const template = {
-                id: `${directory}_${name}`,
-                name: name,
-                directory: directory,
-                path: `${directory}/${name}`,
-                category: this.categorizeTemplate(name),
-                url: `/${directory}/${name}/index.html`
-            };
-            
-            templates.push(template);
-        }
-        
-        return templates;
-    }
     
-    getKnownTemplateNames(directory) {
-        const templateMap = {
-            'templates': [
-                'casual-family', 'casual-family-modern', 'casual-family-grid',
-                'casual-family-minimalist', 'casual-family-rustic', 'casual-family-bright',
-                'casual-family-cozy', 'casual-family-vibrant', 'casual-family-vintage',
-                'cafe-bistro', 'cafe-cozy', 'cafe-modern',
-                'fine-dining-elegant', 'fine-dining-contemporary', 'fine-dining-classic',
-                'fine-dining-dark', 'fine-dining-luxe', 'fine-dining-modern',
-                'fast-casual-modern', 'fast-casual-clean', 'fast-casual-healthy',
-                'fast-casual-minimal', 'fast-casual-trendy', 'fast-casual-vibrant',
-                'artisan-bakery', 'artisan-coffee-roastery', 'artisan-pizza-modern',
-                'asian-fusion-modern', 'asian-fusion-v1', 'asian-fusion-v2',
-                'pizza-parlor-modern', 'pizza-parlor', 'pizzeria-authentic', 'pizzeria-modern',
-                'sports-bar-grill', 'sports-bar-modern', 'sports-bar-entertainment',
-                'steakhouse-premium', 'steakhouse-classic', 'steakhouse-rustic',
-                'seafood-coastal', 'seafood-maritime', 'coastal-seafood-fresh',
-                'mediterranean-coastal', 'mediterranean-modern', 'mediterranean-authentic',
-                'bistro-chic', 'bistro-french', 'bistro-intimate', 'bistro-upscale',
-                'breakfast-brunch-modern', 'breakfast-brunch-cozy', 'breakfast-family',
-                'craft-brewery-modern', 'craft-brewery-taproom', 'gastropub-craft-beer',
-                'farm-to-table-fresh', 'farm-to-table-rustic', 'farm-to-table-organic'
-            ],
-            'templates-new': [
-                'modern-minimalist-cafe', 'elegant-steakhouse', 'trendy-brunch-cafe',
-                'artisan-pizza-shop', 'craft-beer-pub', 'luxury-fine-dining'
-            ],
-            'templates-business': [
-                'business-dining', 'corporate-catering', 'event-venue'
-            ]
-        };
+    getFallbackTemplates(directory) {
+        // Minimal fallback - API should work, but just in case
+        console.warn(`Using fallback for ${directory} - API discovery failed`);
         
-        return templateMap[directory] || templateMap['templates'].slice(0, 20);
+        // Return empty array - we want the real discovery to work
+        // If this runs, it means there's a bigger problem to fix
+        return [];
     }
     
     categorizeTemplate(name) {
@@ -310,6 +276,9 @@ class TemplateDashboard {
         const rating = this.favorites.get(template.id) || 0;
         const stars = this.createStarsHTML(rating);
         
+        // Create completeness indicator
+        const completenessIndicator = this.createCompletenessIndicator(template);
+        
         card.innerHTML = `
             <div class="template-preview">
                 <iframe 
@@ -323,6 +292,7 @@ class TemplateDashboard {
                         Click to view full screen
                     </div>
                 </div>
+                ${completenessIndicator}
             </div>
             <div class="template-info">
                 <h3 class="template-name">${this.formatTemplateName(template.name)}</h3>
@@ -347,7 +317,10 @@ class TemplateDashboard {
             if (e.target.classList.contains('star')) {
                 const rating = parseInt(e.target.dataset.rating);
                 this.setTemplateRating(template, rating);
-                this.updateCardRating(ratingElement, rating);
+                
+                // Update card display with new rating
+                const newRating = this.favorites.get(template.id) || 0;
+                this.updateCardRating(ratingElement, newRating);
             }
         });
         
@@ -383,6 +356,38 @@ class TemplateDashboard {
             starsHTML += `<span class="star ${filled}" data-rating="${i}">★</span>`;
         }
         return starsHTML;
+    }
+    
+    createCompletenessIndicator(template) {
+        if (!template.status) {
+            return ''; // No completeness data available
+        }
+        
+        const statusConfig = {
+            'complete': {
+                icon: '✅',
+                text: 'Complete',
+                class: 'complete'
+            },
+            'partial': {
+                icon: '⚠️',
+                text: 'Partial',
+                class: 'partial'
+            },
+            'empty': {
+                icon: '❌',
+                text: 'Empty',
+                class: 'empty'
+            }
+        };
+        
+        const config = statusConfig[template.status] || statusConfig['empty'];
+        
+        return `
+            <div class="completeness-indicator ${config.class}" title="${config.text} (${template.completeness || 0}%)">
+                <span class="completeness-icon">${config.icon}</span>
+            </div>
+        `;
     }
     
     formatTemplateName(name) {
@@ -441,11 +446,24 @@ class TemplateDashboard {
     }
     
     setTemplateRating(template, rating) {
-        this.favorites.set(template.id, rating);
+        const currentRating = this.favorites.get(template.id) || 0;
+        
+        // If clicking the same star that's already selected, remove from favorites
+        if (currentRating === rating) {
+            this.favorites.delete(template.id);
+            console.log(`🗑️ Removed ${template.name} from favorites`);
+        } else {
+            this.favorites.set(template.id, rating);
+            console.log(`⭐ Rated ${template.name}: ${rating} stars`);
+        }
+        
         this.saveFavorites();
         this.updateStats();
         
-        console.log(`⭐ Rated ${template.name}: ${rating} stars`);
+        // Only re-filter if favorites-only mode is active and template was removed
+        if (this.showFavoritesOnly && !this.favorites.has(template.id)) {
+            this.filterTemplates();
+        }
     }
     
     updateCardRating(ratingElement, rating) {

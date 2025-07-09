@@ -314,6 +314,43 @@ body {
     flex-direction: column;
 }
 
+/* Completeness Indicator */
+.completeness-indicator {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    z-index: 10;
+    background: rgba(30, 30, 30, 0.9);
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem;
+    backdrop-filter: blur(4px);
+    border: 1px solid var(--border-color);
+}
+
+.completeness-indicator.complete {
+    background: rgba(92, 184, 92, 0.2);
+    border-color: var(--success-color);
+}
+
+.completeness-indicator.partial {
+    background: rgba(240, 173, 78, 0.2);
+    border-color: var(--warning-color);
+}
+
+.completeness-indicator.empty {
+    background: rgba(217, 83, 79, 0.2);
+    border-color: var(--danger-color);
+}
+
+.completeness-icon {
+    font-size: 0.75rem;
+}
+
 .template-card:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-xl);

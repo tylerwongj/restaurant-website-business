@@ -32,8 +32,13 @@ app.use((req, res, next) => {
 // Serve dashboard static files (CSS, JS, etc.) at root level
 app.use(express.static(DASHBOARD_DIR));
 
-// Serve template directories
-const templateDirs = ['templates', 'templates-new', 'templates-business', 'templates-incomplete'];
+// Serve template directories (only existing directories)
+const templateDirs = [
+    'templates', 
+    'templates-new', 
+    'templates-business',
+    'templates-incomplete'
+];
 
 templateDirs.forEach(dir => {
     const templatePath = path.join(BASE_DIR, dir);
@@ -61,13 +66,37 @@ app.get('/api/templates', (req, res) => {
                 const items = fs.readdirSync(dirPath, { withFileTypes: true });
                 const templates = items
                     .filter(item => item.isDirectory())
-                    .map(item => ({
-                        id: `${dir}_${item.name}`,
-                        name: item.name,
-                        directory: dir,
-                        path: `${dir}/${item.name}`,
-                        url: `/${dir}/${item.name}/index.html`
-                    }));
+                    .map(item => {
+                        const templatePath = path.join(dirPath, item.name);
+                        
+                        // Check for required files to determine completeness
+                        const files = {
+                            'index.html': fs.existsSync(path.join(templatePath, 'index.html')),
+                            'styles.css': fs.existsSync(path.join(templatePath, 'styles.css')),
+                            'script.js': fs.existsSync(path.join(templatePath, 'script.js')),
+                            'menu.html': fs.existsSync(path.join(templatePath, 'menu.html'))
+                        };
+                        
+                        // Calculate completeness percentage
+                        const completeness = Object.values(files).filter(Boolean).length / Object.keys(files).length;
+                        
+                        // Determine status
+                        let status = 'empty';
+                        if (files['index.html']) {
+                            status = completeness >= 0.75 ? 'complete' : 'partial';
+                        }
+                        
+                        return {
+                            id: `${dir}_${item.name}`,
+                            name: item.name,
+                            directory: dir,
+                            path: `${dir}/${item.name}`,
+                            url: `/${dir}/${item.name}/index.html`,
+                            files: files,
+                            completeness: Math.round(completeness * 100),
+                            status: status
+                        };
+                    });
                 
                 allTemplates.push(...templates);
             }
@@ -84,6 +113,62 @@ app.get('/api/templates', (req, res) => {
         res.status(500).json({
             success: false,
             error: 'Failed to list templates'
+        });
+    }
+});
+
+// API endpoint to list templates in a specific directory
+app.get('/api/templates/:dir', (req, res) => {
+    try {
+        const { dir } = req.params;
+        const dirPath = path.join(BASE_DIR, dir);
+        
+        if (!fs.existsSync(dirPath)) {
+            return res.status(404).json({
+                success: false,
+                error: `Directory ${dir} not found`
+            });
+        }
+        
+        const items = fs.readdirSync(dirPath, { withFileTypes: true });
+        const templates = items
+            .filter(item => item.isDirectory())
+            .map(item => {
+                const templatePath = path.join(dirPath, item.name);
+                
+                // Check for required files to determine completeness
+                const files = {
+                    'index.html': fs.existsSync(path.join(templatePath, 'index.html')),
+                    'styles.css': fs.existsSync(path.join(templatePath, 'styles.css')),
+                    'script.js': fs.existsSync(path.join(templatePath, 'script.js')),
+                    'menu.html': fs.existsSync(path.join(templatePath, 'menu.html'))
+                };
+                
+                // Calculate completeness percentage
+                const completeness = Object.values(files).filter(Boolean).length / Object.keys(files).length;
+                
+                // Determine status
+                let status = 'empty';
+                if (files['index.html']) {
+                    status = completeness >= 0.75 ? 'complete' : 'partial';
+                }
+                
+                return {
+                    name: item.name,
+                    files: files,
+                    completeness: Math.round(completeness * 100),
+                    status: status
+                };
+            });
+        
+        // Return just template names for compatibility, but with completeness data
+        res.json(templates.map(t => t.name));
+        
+    } catch (error) {
+        console.error(`Error listing templates in ${req.params.dir}:`, error);
+        res.status(500).json({
+            success: false,
+            error: 'Failed to list directory templates'
         });
     }
 });
