@@ -3,24 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{RESTAURANT_NAME}} - {{CUISINE_TYPE}} Restaurant</title>
+    <title>{{RESTAURANT_NAME}} - Modern Dining Experience</title>
     <meta name="description" content="{{RESTAURANT_NAME}} - {{DESCRIPTION}}">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="theme-minimal">
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
-                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+                <a href="#home" class="logo-link">
+                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+                </a>
             </div>
             <ul class="nav-menu">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#menu">Menu</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="hamburger">
@@ -33,72 +35,49 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1>{{RESTAURANT_NAME}}</h1>
-                <p class="tagline">{{TAGLINE}}</p>
+        <div class="hero-grid">
+            <div class="hero-content">
+                <div class="hero-badge">{{CUISINE_TYPE}}</div>
+                <h1 class="hero-title">{{RESTAURANT_NAME}}</h1>
+                <p class="hero-subtitle">{{TAGLINE}}</p>
                 <div class="hero-buttons">
                     <a href="#menu" class="btn btn-primary">Explore Menu</a>
-                    <a href="tel:{{PHONE}}" class="btn btn-outline">{{PHONE}}</a>
+                    <a href="tel:{{PHONE}}" class="btn btn-secondary">{{PHONE}}</a>
                 </div>
             </div>
-            <div class="hero-image">
-                <img src="{{HERO_IMAGE}}" alt="{{RESTAURANT_NAME}}">
+            <div class="hero-visual">
+                <div class="hero-image-container">
+                    <img src="{{HERO_IMAGE}}" alt="{{RESTAURANT_NAME}}" class="hero-image">
+                    <div class="floating-card">
+                        <div class="card-content">
+                            <span class="card-label">Hours</span>
+                            <span class="card-value">{{HOURS}}</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Menu Preview -->
-    <section id="menu" class="menu-preview">
+    <!-- Features Grid -->
+    <section class="features">
         <div class="container">
-            <div class="section-header">
-                <h2>Our Menu</h2>
-                <p>Carefully crafted dishes using the finest ingredients</p>
-            </div>
-            <div class="menu-grid">
-                <div class="menu-item">
-                    <div class="menu-image">
-                        <img src="{{FOOD_IMAGE_1}}" alt="{{MENU_ITEM_1}}">
-                    </div>
-                    <div class="menu-content">
-                        <h3>{{MENU_ITEM_1}}</h3>
-                        <p>{{MENU_DESCRIPTION_1}}</p>
-                        <span class="price">${{PRICE_1}}</span>
-                    </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🍽️</div>
+                    <h3>Fresh Ingredients</h3>
+                    <p>Locally sourced, seasonal ingredients</p>
                 </div>
-                <div class="menu-item">
-                    <div class="menu-image">
-                        <img src="{{FOOD_IMAGE_2}}" alt="{{MENU_ITEM_2}}">
-                    </div>
-                    <div class="menu-content">
-                        <h3>{{MENU_ITEM_2}}</h3>
-                        <p>{{MENU_DESCRIPTION_2}}</p>
-                        <span class="price">${{PRICE_2}}</span>
-                    </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👨‍🍳</div>
+                    <h3>Expert Chefs</h3>
+                    <p>Culinary artistry in every dish</p>
                 </div>
-                <div class="menu-item">
-                    <div class="menu-image">
-                        <img src="{{FOOD_IMAGE_3}}" alt="{{MENU_ITEM_3}}">
-                    </div>
-                    <div class="menu-content">
-                        <h3>{{MENU_ITEM_3}}</h3>
-                        <p>{{MENU_DESCRIPTION_3}}</p>
-                        <span class="price">${{PRICE_3}}</span>
-                    </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌟</div>
+                    <h3>Premium Experience</h3>
+                    <p>Exceptional service and ambiance</p>
                 </div>
-                <div class="menu-item">
-                    <div class="menu-image">
-                        <img src="{{FOOD_IMAGE_4}}" alt="{{MENU_ITEM_4}}">
-                    </div>
-                    <div class="menu-content">
-                        <h3>{{MENU_ITEM_4}}</h3>
-                        <p>{{MENU_DESCRIPTION_4}}</p>
-                        <span class="price">${{PRICE_4}}</span>
-                    </div>
-                </div>
-            </div>
-            <div class="menu-cta">
-                <a href="menu.html" class="btn btn-primary">View Full Menu</a>
             </div>
         </div>
     </section>
@@ -108,62 +87,63 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
-                    <h2>Our Story</h2>
-                    <p>{{ABOUT_DESCRIPTION}}</p>
-                    <div class="about-stats">
+                    <h2>{{ABOUT_TITLE}}</h2>
+                    <p class="about-description">{{ABOUT_DESCRIPTION}}</p>
+                    <div class="stats-grid">
                         <div class="stat">
-                            <h3>{{CUISINE_TYPE}}</h3>
-                            <p>Cuisine</p>
+                            <span class="stat-number">{{YEARS_EXPERIENCE}}</span>
+                            <span class="stat-label">Years Experience</span>
                         </div>
                         <div class="stat">
-                            <h3>Fresh</h3>
-                            <p>Daily</p>
-                        </div>
-                        <div class="stat">
-                            <h3>Local</h3>
-                            <p>Ingredients</p>
+                            <span class="stat-number">{{AWARDS}}</span>
+                            <span class="stat-label">Awards</span>
                         </div>
                     </div>
                 </div>
                 <div class="about-image">
-                    <img src="{{INTERIOR_IMAGE_1}}" alt="{{RESTAURANT_NAME}} Interior">
+                    <img src="{{ABOUT_IMAGE}}" alt="About {{RESTAURANT_NAME}}">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Hours Section -->
-    <section class="hours">
+    <!-- Menu Preview -->
+    <section id="menu" class="menu-preview">
         <div class="container">
-            <h2>Hours</h2>
-            <div class="hours-grid">
-                <div class="hours-item">
-                    <span class="day">Monday</span>
-                    <span class="time">{{HOURS_MON}}</span>
+            <div class="section-header">
+                <h2>Featured Dishes</h2>
+                <a href="menu.html" class="view-full-menu">View Full Menu</a>
+            </div>
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <div class="menu-image">
+                        <img src="{{FEATURED_DISH_1_IMAGE}}" alt="{{FEATURED_DISH_1_NAME}}">
+                    </div>
+                    <div class="menu-content">
+                        <h3>{{FEATURED_DISH_1_NAME}}</h3>
+                        <p>{{FEATURED_DISH_1_DESCRIPTION}}</p>
+                        <span class="price">{{FEATURED_DISH_1_PRICE}}</span>
+                    </div>
                 </div>
-                <div class="hours-item">
-                    <span class="day">Tuesday</span>
-                    <span class="time">{{HOURS_TUE}}</span>
+                <div class="menu-card">
+                    <div class="menu-image">
+                        <img src="{{FEATURED_DISH_2_IMAGE}}" alt="{{FEATURED_DISH_2_NAME}}">
+                    </div>
+                    <div class="menu-content">
+                        <h3>{{FEATURED_DISH_2_NAME}}</h3>
+                        <p>{{FEATURED_DISH_2_DESCRIPTION}}</p>
+                        <span class="price">{{FEATURED_DISH_2_PRICE}}</span>
+                    </div>
                 </div>
-                <div class="hours-item">
-                    <span class="day">Wednesday</span>
-                    <span class="time">{{HOURS_WED}}</span>
-                </div>
-                <div class="hours-item">
-                    <span class="day">Thursday</span>
-                    <span class="time">{{HOURS_THU}}</span>
-                </div>
-                <div class="hours-item">
-                    <span class="day">Friday</span>
-                    <span class="time">{{HOURS_FRI}}</span>
-                </div>
-                <div class="hours-item">
-                    <span class="day">Saturday</span>
-                    <span class="time">{{HOURS_SAT}}</span>
-                </div>
-                <div class="hours-item">
-                    <span class="day">Sunday</span>
-                    <span class="time">{{HOURS_SUN}}</span>
+                <div class="menu-card">
+                    <div class="menu-image">
+                        <img src="{{FEATURED_DISH_3_IMAGE}}" alt="{{FEATURED_DISH_3_NAME}}">
+                    </div>
+                    <div class="menu-content">
+                        <h3>{{FEATURED_DISH_3_NAME}}</h3>
+                        <p>{{FEATURED_DISH_3_DESCRIPTION}}</p>
+                        <span class="price">{{FEATURED_DISH_3_PRICE}}</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -174,33 +154,54 @@
         <div class="container">
             <div class="contact-content">
                 <div class="contact-info">
-                    <h2>Get In Touch</h2>
-                    <div class="contact-item">
-                        <h3>Address</h3>
-                        <p>{{FULL_ADDRESS}}</p>
-                    </div>
-                    <div class="contact-item">
-                        <h3>Phone</h3>
-                        <p><a href="tel:{{PHONE}}">{{PHONE}}</a></p>
-                    </div>
-                    <div class="contact-item">
-                        <h3>Email</h3>
-                        <p><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
-                    </div>
-                    <div class="social-links">
-                        <a href="{{FACEBOOK_URL}}" target="_blank" rel="noopener">Facebook</a>
-                        <a href="{{INSTAGRAM_URL}}" target="_blank" rel="noopener">Instagram</a>
-                        <a href="{{YELP_URL}}" target="_blank" rel="noopener">Yelp</a>
+                    <h2>Visit Us</h2>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <h4>Address</h4>
+                                <p>{{ADDRESS}}</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>{{PHONE}}</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">🕒</div>
+                            <div>
+                                <h4>Hours</h4>
+                                <p>{{HOURS}}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="contact-form">
-                    <h3>Send us a message</h3>
+                    <h3>Reserve a Table</h3>
                     <form>
-                        <input type="text" name="name" placeholder="Your Name" required>
-                        <input type="email" name="email" placeholder="Your Email" required>
-                        <input type="tel" name="phone" placeholder="Your Phone">
-                        <textarea name="message" placeholder="Your Message" required></textarea>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <div class="form-row">
+                            <input type="text" placeholder="Your Name" required>
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-row">
+                            <input type="tel" placeholder="Phone" required>
+                            <input type="date" required>
+                        </div>
+                        <div class="form-row">
+                            <select required>
+                                <option value="">Party Size</option>
+                                <option value="2">2 people</option>
+                                <option value="4">4 people</option>
+                                <option value="6">6 people</option>
+                                <option value="8+">8+ people</option>
+                            </select>
+                            <input type="time" required>
+                        </div>
+                        <textarea placeholder="Special requests..."></textarea>
+                        <button type="submit" class="btn btn-primary">Reserve Table</button>
                     </form>
                 </div>
             </div>
@@ -211,14 +212,34 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-info">
-                    <h3>{{RESTAURANT_NAME}}</h3>
+                <div class="footer-section">
+                    <div class="logo">
+                        <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+                    </div>
                     <p>{{TAGLINE}}</p>
                 </div>
-                <div class="footer-contact">
-                    <p>{{FULL_ADDRESS}}</p>
-                    <p>Phone: {{PHONE}}</p>
-                    <p>Email: {{EMAIL}}</p>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>{{ADDRESS}}</p>
+                    <p>{{PHONE}}</p>
+                    <p>{{EMAIL}}</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}">Instagram</a>
+                        <a href="{{TWITTER_URL}}">Twitter</a>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">

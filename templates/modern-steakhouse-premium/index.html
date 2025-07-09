@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Premium Steakhouse Experience</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="color-premium">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="#home" class="logo-link">
+                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#menu">Steaks & Menu</a></li>
+                <li><a href="#wine">Wine Selection</a></li>
+                <li><a href="#private">Private Dining</a></li>
+                <li><a href="#contact">Reservations</a></li>
+            </ul>
+            <div class="reserve-btn-nav">
+                <a href="#contact" class="btn btn-primary">Reserve Now</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge">Premium Since {{ESTABLISHED_YEAR}}</div>
+            <h1>{{RESTAURANT_NAME}}</h1>
+            <p class="hero-subtitle">{{TAGLINE}}</p>
+            <p class="hero-description">{{DESCRIPTION}}</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">Make Reservation</a>
+                <a href="#menu" class="btn btn-outline">Our Steaks</a>
+            </div>
+            <div class="hero-features">
+                <div class="feature">
+                    <span class="feature-icon">🥩</span>
+                    <span>Dry-Aged Steaks</span>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">🍷</span>
+                    <span>Premium Wine List</span>
+                </div>
+                <div class="feature">
+                    <span class="feature-icon">👨‍🍳</span>
+                    <span>Master Chef</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-background">
+            <img src="{{HERO_IMAGE}}" alt="{{RESTAURANT_NAME}}">
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="experience-grid">
+                <div class="experience-content">
+                    <div class="section-badge">Our Story</div>
+                    <h2>An Unparalleled Steakhouse Experience</h2>
+                    <p>{{ABOUT_DESCRIPTION}}</p>
+                    <div class="experience-highlights">
+                        <div class="highlight">
+                            <h4>Dry-Aged Excellence</h4>
+                            <p>Our steaks are dry-aged in-house for minimum 28 days, creating unmatched flavor and tenderness.</p>
+                        </div>
+                        <div class="highlight">
+                            <h4>Prime Cuts Only</h4>
+                            <p>We source only USDA Prime beef from the finest ranches, ensuring every bite is exceptional.</p>
+                        </div>
+                        <div class="highlight">
+                            <h4>Master Craftsmanship</h4>
+                            <p>Our chefs perfect each steak using time-honored techniques and precise temperature control.</p>
+                        </div>
+                    </div>
+                    <a href="#menu" class="btn btn-secondary">Explore Our Menu</a>
+                </div>
+                <div class="experience-image">
+                    <img src="{{INTERIOR_IMAGE_1}}" alt="Restaurant Interior">
+                    <div class="image-overlay">
+                        <div class="award-badge">
+                            <span>Award Winning</span>
+                            <span>Steakhouse 2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Preview Section -->
+    <section id="menu" class="menu-preview">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Menu</div>
+                <h2>Prime Steaks & Signature Dishes</h2>
+                <p>Each cut is carefully selected and expertly prepared to perfection</p>
+            </div>
+            <div class="menu-categories">
+                <div class="menu-category active" data-category="steaks">Steaks</div>
+                <div class="menu-category" data-category="appetizers">Appetizers</div>
+                <div class="menu-category" data-category="sides">Sides</div>
+                <div class="menu-category" data-category="desserts">Desserts</div>
+            </div>
+            <div class="menu-grid" id="steaks">
+                <div class="menu-item featured">
+                    <div class="menu-item-image">
+                        <img src="{{FOOD_IMAGE_1}}" alt="{{MAIN_1_NAME}}">
+                        <div class="menu-item-badge">Chef's Choice</div>
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>{{MAIN_1_NAME}}</h3>
+                        <p>{{MAIN_1_DESCRIPTION}}</p>
+                        <div class="menu-item-details">
+                            <span class="cut-info">28-day dry-aged • 16 oz</span>
+                            <span class="price">${{MAIN_1_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <img src="{{FOOD_IMAGE_2}}" alt="{{MAIN_2_NAME}}">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>{{MAIN_2_NAME}}</h3>
+                        <p>{{MAIN_2_DESCRIPTION}}</p>
+                        <div class="menu-item-details">
+                            <span class="cut-info">Prime grade • 12 oz</span>
+                            <span class="price">${{MAIN_2_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-image">
+                        <img src="{{FOOD_IMAGE_3}}" alt="{{MAIN_3_NAME}}">
+                    </div>
+                    <div class="menu-item-content">
+                        <h3>{{MAIN_3_NAME}}</h3>
+                        <p>{{MAIN_3_DESCRIPTION}}</p>
+                        <div class="menu-item-details">
+                            <span class="cut-info">Wagyu A5 • 8 oz</span>
+                            <span class="price">${{MAIN_3_PRICE}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-cta">
+                <a href="menu.html" class="btn btn-primary">View Full Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wine Section -->
+    <section id="wine" class="wine-section">
+        <div class="container">
+            <div class="wine-content">
+                <div class="wine-info">
+                    <div class="section-badge">Wine Collection</div>
+                    <h2>Curated Wine Selection</h2>
+                    <p>Our sommelier-selected wine list features over 300 bottles from renowned vineyards worldwide, perfectly paired with our premium steaks.</p>
+                    <div class="wine-highlights">
+                        <div class="wine-highlight">
+                            <span class="wine-number">300+</span>
+                            <span class="wine-label">Premium Bottles</span>
+                        </div>
+                        <div class="wine-highlight">
+                            <span class="wine-number">15</span>
+                            <span class="wine-label">By the Glass</span>
+                        </div>
+                        <div class="wine-highlight">
+                            <span class="wine-number">Master</span>
+                            <span class="wine-label">Sommelier</span>
+                        </div>
+                    </div>
+                    <a href="menu.html#wine" class="btn btn-outline">Explore Wine List</a>
+                </div>
+                <div class="wine-image">
+                    <img src="{{FOOD_IMAGE_4}}" alt="Wine Selection">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Private Dining Section -->
+    <section id="private" class="private-dining">
+        <div class="container">
+            <div class="private-grid">
+                <div class="private-image">
+                    <img src="images/private-dining.jpg" alt="Private Dining Room">
+                </div>
+                <div class="private-content">
+                    <div class="section-badge">Private Events</div>
+                    <h2>Exclusive Private Dining</h2>
+                    <p>Host your special occasions in our elegant private dining rooms, featuring personalized service and custom menus.</p>
+                    <div class="private-features">
+                        <div class="private-feature">
+                            <h4>Corporate Events</h4>
+                            <p>Impress clients with our boardroom-style private spaces</p>
+                        </div>
+                        <div class="private-feature">
+                            <h4>Special Celebrations</h4>
+                            <p>Anniversary dinners, birthdays, and milestone events</p>
+                        </div>
+                        <div class="private-feature">
+                            <h4>Wine Dinners</h4>
+                            <p>Exclusive tastings with our master sommelier</p>
+                        </div>
+                    </div>
+                    <a href="#contact" class="btn btn-primary">Inquire About Events</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Reservations Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="section-badge">Reservations</div>
+                    <h2>Reserve Your Table</h2>
+                    <p>Experience the finest steakhouse dining. Reservations recommended.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <h4>Phone</h4>
+                            <p><a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>Address</h4>
+                            <p>{{FULL_ADDRESS}}</p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>Hours</h4>
+                            <p>{{WEEKDAY_HOURS}}</p>
+                            <p>{{WEEKEND_HOURS}}</p>
+                            <p>{{SUNDAY_HOURS}}</p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>Email</h4>
+                            <p><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}" target="_blank" aria-label="Facebook">📘</a>
+                        <a href="{{INSTAGRAM_URL}}" target="_blank" aria-label="Instagram">📷</a>
+                        <a href="{{YELP_URL}}" target="_blank" aria-label="Yelp">⭐</a>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form id="reservationForm">
+                        <h3>Make a Reservation</h3>
+                        <div class="form-row">
+                            <input type="text" placeholder="Name" required>
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-row">
+                            <input type="tel" placeholder="Phone" required>
+                            <select required>
+                                <option value="">Party Size</option>
+                                <option value="1">1 Guest</option>
+                                <option value="2">2 Guests</option>
+                                <option value="3">3 Guests</option>
+                                <option value="4">4 Guests</option>
+                                <option value="5">5 Guests</option>
+                                <option value="6">6+ Guests</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <input type="date" required>
+                            <select required>
+                                <option value="">Time</option>
+                                <option value="17:00">5:00 PM</option>
+                                <option value="17:30">5:30 PM</option>
+                                <option value="18:00">6:00 PM</option>
+                                <option value="18:30">6:30 PM</option>
+                                <option value="19:00">7:00 PM</option>
+                                <option value="19:30">7:30 PM</option>
+                                <option value="20:00">8:00 PM</option>
+                                <option value="20:30">8:30 PM</option>
+                                <option value="21:00">9:00 PM</option>
+                            </select>
+                        </div>
+                        <textarea placeholder="Special requests or dietary restrictions"></textarea>
+                        <button type="submit" class="btn btn-primary">Request Reservation</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map">
+        <iframe src="{{GOOGLE_MAPS_EMBED}}" 
+                width="100%" 
+                height="300" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}}" class="footer-logo">
+                    <p>{{RESTAURANT_NAME}} - {{TAGLINE}}</p>
+                    <p>{{FULL_ADDRESS}}</p>
+                    <p>{{PHONE}} | {{EMAIL}}</p>
+                </div>
+                <div class="footer-hours">
+                    <h4>Hours</h4>
+                    <p>{{WEEKDAY_HOURS}}</p>
+                    <p>{{WEEKEND_HOURS}}</p>
+                    <p>{{SUNDAY_HOURS}}</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}" target="_blank">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}" target="_blank">Instagram</a>
+                        <a href="{{YELP_URL}}" target="_blank">Yelp</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

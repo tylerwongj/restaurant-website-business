@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - {{CUISINE_TYPE}}</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="tropical-theme">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+                <span class="logo-text">{{RESTAURANT_NAME}}</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="tel:{{PHONE}}" class="btn btn-reserve">Reserve Table</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <img src="{{HERO_IMAGE}}" alt="{{RESTAURANT_NAME}}">
+            <div class="hero-waves">
+                <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M0,0V7.23C0,65.52,268.63,112.77,600,112.77S1200,65.52,1200,7.23V0Z" class="wave-fill"></path>
+                </svg>
+            </div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="palm-icon">🌴</span>
+                Tropical Paradise
+            </div>
+            <h1>{{RESTAURANT_NAME}}</h1>
+            <p class="hero-subtitle">{{TAGLINE}}</p>
+            <p class="hero-description">{{DESCRIPTION}}</p>
+            <div class="hero-buttons">
+                <a href="#menu" class="btn btn-primary">Explore Menu</a>
+                <a href="tel:{{PHONE}}" class="btn btn-secondary">Book Now</a>
+            </div>
+        </div>
+        <div class="hero-floating-elements">
+            <div class="floating-element cocktail">🍹</div>
+            <div class="floating-element palm">🌺</div>
+            <div class="floating-element sun">☀️</div>
+        </div>
+    </section>
+
+    <!-- Features Bar -->
+    <section class="features-bar">
+        <div class="container">
+            <div class="features-list">
+                <div class="feature-item">
+                    <span class="feature-icon">🏖️</span>
+                    <span>Beachfront Dining</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🍹</span>
+                    <span>Tropical Cocktails</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🦞</span>
+                    <span>Fresh Seafood</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🎵</span>
+                    <span>Live Island Music</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Highlights -->
+    <section id="menu" class="menu-highlights">
+        <div class="container">
+            <div class="section-header">
+                <h2>Paradise Menu</h2>
+                <p>Fresh flavors inspired by the islands</p>
+            </div>
+            
+            <div class="menu-tabs">
+                <button class="tab-btn active" data-category="featured">Featured</button>
+                <button class="tab-btn" data-category="seafood">Fresh Catch</button>
+                <button class="tab-btn" data-category="tropical">Tropical Bowls</button>
+                <button class="tab-btn" data-category="cocktails">Island Drinks</button>
+            </div>
+            
+            <div class="menu-content">
+                <div class="category-content active" id="featured">
+                    <div class="menu-grid">
+                        <div class="menu-card featured-card">
+                            <div class="menu-image">
+                                <img src="{{FOOD_IMAGE_1}}" alt="{{MENU_ITEM_1}}">
+                                <div class="featured-badge">Chef's Special</div>
+                            </div>
+                            <div class="menu-card-content">
+                                <h3>{{MENU_ITEM_1}}</h3>
+                                <p>{{MENU_DESCRIPTION_1}}</p>
+                                <div class="menu-price">${{PRICE_1}}</div>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-card">
+                            <div class="menu-image">
+                                <img src="{{FOOD_IMAGE_2}}" alt="{{MENU_ITEM_2}}">
+                            </div>
+                            <div class="menu-card-content">
+                                <h3>{{MENU_ITEM_2}}</h3>
+                                <p>{{MENU_DESCRIPTION_2}}</p>
+                                <div class="menu-price">${{PRICE_2}}</div>
+                            </div>
+                        </div>
+                        
+                        <div class="menu-card">
+                            <div class="menu-image">
+                                <img src="{{FOOD_IMAGE_3}}" alt="{{MENU_ITEM_3}}">
+                            </div>
+                            <div class="menu-card-content">
+                                <h3>{{MENU_ITEM_3}}</h3>
+                                <p>{{MENU_DESCRIPTION_3}}</p>
+                                <div class="menu-price">${{PRICE_3}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category-content" id="seafood">
+                    <div class="menu-grid">
+                        <div class="menu-card">
+                            <div class="menu-card-content">
+                                <h3>Grilled Mahi-Mahi</h3>
+                                <p>Fresh catch with mango salsa and coconut rice</p>
+                                <div class="menu-price">$28</div>
+                            </div>
+                        </div>
+                        <div class="menu-card">
+                            <div class="menu-card-content">
+                                <h3>Coconut Shrimp</h3>
+                                <p>Jumbo shrimp with pineapple dipping sauce</p>
+                                <div class="menu-price">$24</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category-content" id="tropical">
+                    <div class="menu-grid">
+                        <div class="menu-card">
+                            <div class="menu-card-content">
+                                <h3>Açaí Paradise Bowl</h3>
+                                <p>Açaí base with tropical fruits and granola</p>
+                                <div class="menu-price">$16</div>
+                            </div>
+                        </div>
+                        <div class="menu-card">
+                            <div class="menu-card-content">
+                                <h3>Poke Bowl</h3>
+                                <p>Fresh ahi tuna with avocado and seasoned rice</p>
+                                <div class="menu-price">$22</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category-content" id="cocktails">
+                    <div class="menu-grid">
+                        <div class="menu-card">
+                            <div class="menu-card-content">
+                                <h3>Paradise Punch</h3>
+                                <p>Rum, passion fruit, mango, and coconut cream</p>
+                                <div class="menu-price">$14</div>
+                            </div>
+                        </div>
+                        <div class="menu-card">
+                            <div class="menu-card-content">
+                                <h3>Sunset Margarita</h3>
+                                <p>Premium tequila with fresh pineapple and lime</p>
+                                <div class="menu-price">$12</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="menu-cta">
+                <a href="menu.html" class="btn btn-primary">Full Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="experience-content">
+                <div class="experience-text">
+                    <h2>Island Experience</h2>
+                    <p>Escape to your own tropical paradise where every meal feels like a vacation. Our beachfront location offers stunning ocean views, gentle sea breezes, and the perfect backdrop for an unforgettable dining experience.</p>
+                    
+                    <div class="experience-highlights">
+                        <div class="highlight">
+                            <div class="highlight-icon">🌅</div>
+                            <div class="highlight-text">
+                                <h4>Sunset Dining</h4>
+                                <p>Watch breathtaking sunsets while enjoying your meal</p>
+                            </div>
+                        </div>
+                        <div class="highlight">
+                            <div class="highlight-icon">🎶</div>
+                            <div class="highlight-text">
+                                <h4>Live Music</h4>
+                                <p>Island musicians perform nightly from 7-9 PM</p>
+                            </div>
+                        </div>
+                        <div class="highlight">
+                            <div class="highlight-icon">🏖️</div>
+                            <div class="highlight-text">
+                                <h4>Beach Access</h4>
+                                <p>Take a stroll on our private beach before or after dining</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="experience-visual">
+                    <img src="{{INTERIOR_IMAGE_1}}" alt="Restaurant Interior">
+                    <div class="visual-overlay">
+                        <div class="play-button">
+                            <span>▶</span>
+                        </div>
+                        <p>Virtual Tour</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="events">
+        <div class="container">
+            <div class="section-header">
+                <h2>Island Events</h2>
+                <p>Celebrate special moments in paradise</p>
+            </div>
+            
+            <div class="events-grid">
+                <div class="event-card">
+                    <div class="event-icon">🎉</div>
+                    <h3>Private Parties</h3>
+                    <p>Host your celebration with ocean views and tropical ambiance</p>
+                    <a href="#contact" class="event-link">Learn More</a>
+                </div>
+                
+                <div class="event-card">
+                    <div class="event-icon">🌺</div>
+                    <h3>Luau Nights</h3>
+                    <p>Traditional Hawaiian feast every Friday with cultural performances</p>
+                    <a href="#contact" class="event-link">Reserve Now</a>
+                </div>
+                
+                <div class="event-card">
+                    <div class="event-icon">🍹</div>
+                    <h3>Happy Hour</h3>
+                    <p>Daily 4-6 PM with half-price tropical cocktails and appetizers</p>
+                    <a href="#menu" class="event-link">View Specials</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Visit Paradise</h2>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <h4>Location</h4>
+                                <p>{{FULL_ADDRESS}}</p>
+                                <a href="{{GOOGLE_MAPS_URL}}" class="link">Get Directions</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div>
+                                <h4>Reservations</h4>
+                                <p><a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+                                <p class="note">Call ahead for sunset seating</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">🕒</div>
+                            <div>
+                                <h4>Hours</h4>
+                                <div class="hours-list">
+                                    <div class="hours-item">
+                                        <span>Mon-Thu</span>
+                                        <span>{{WEEKDAY_HOURS}}</span>
+                                    </div>
+                                    <div class="hours-item">
+                                        <span>Fri-Sat</span>
+                                        <span>{{WEEKEND_HOURS}}</span>
+                                    </div>
+                                    <div class="hours-item">
+                                        <span>Sunday</span>
+                                        <span>{{SUNDAY_HOURS}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}" class="social-link">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}" class="social-link">Instagram</a>
+                        <a href="{{TRIPADVISOR_URL}}" class="social-link">TripAdvisor</a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Make a Reservation</h3>
+                    <form class="reservation-form">
+                        <div class="form-row">
+                            <input type="text" placeholder="Name" required>
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-row">
+                            <input type="tel" placeholder="Phone" required>
+                            <select required>
+                                <option value="">Party Size</option>
+                                <option value="2">2 People</option>
+                                <option value="4">4 People</option>
+                                <option value="6">6 People</option>
+                                <option value="8+">8+ People</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <input type="date" required>
+                            <input type="time" required>
+                        </div>
+                        <textarea placeholder="Special requests or dietary restrictions"></textarea>
+                        <button type="submit" class="btn btn-primary">Request Reservation</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}}">
+                    <h4>{{RESTAURANT_NAME}}</h4>
+                    <p>Your tropical dining paradise</p>
+                </div>
+                <div class="footer-nav">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#events">Events</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>{{FULL_ADDRESS}}</p>
+                    <p>{{PHONE}}</p>
+                    <p>{{EMAIL}}</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

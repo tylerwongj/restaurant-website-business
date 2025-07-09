@@ -3,23 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu - {{RESTAURANT_NAME}}</title>
-    <meta name="description" content="{{RESTAURANT_NAME}} Mediterranean Menu - Fresh seafood, authentic flavors">
+    <title>Menu - {{RESTAURANT_NAME}} Mediterranean Coastal Dining</title>
+    <meta name="description" content="Fresh Mediterranean cuisine and daily catch at {{RESTAURANT_NAME}}">
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
-<body class="mediterranean-theme">
+<body class="color-warm">
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
-                <img src="../../images/test/logo/{{LOGO_FILENAME}}" alt="{{RESTAURANT_NAME}} Logo">
+                <a href="index.html" class="logo-link">
+                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+                </a>
             </div>
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="#menu" class="active">Menu</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="index.html#about">Our Story</a></li>
+                <li><a href="menu.html">Fresh Catch</a></li>
+                <li><a href="#wine">Wine List</a></li>
+                <li><a href="index.html#contact">Visit Us</a></li>
             </ul>
+            <div class="cta-nav">
+                <a href="index.html#reservations" class="btn btn-primary">Reserve Table</a>
+            </div>
             <div class="hamburger">
                 <span></span>
                 <span></span>
@@ -28,219 +37,250 @@
         </div>
     </nav>
 
-    <!-- Menu Hero -->
-    <section class="menu-hero">
-        <div class="menu-hero-overlay">
-            <div class="container">
+    <!-- Menu Header -->
+    <section class="menu-header">
+        <div class="container">
+            <div class="menu-header-content">
                 <h1>Mediterranean Menu</h1>
-                <p>Fresh ingredients from land and sea, prepared with Mediterranean passion</p>
+                <p class="menu-subtitle">Fresh daily catches and traditional coastal cuisine</p>
+                <div class="menu-nav">
+                    <a href="#appetizers" class="menu-nav-link active">Appetizers</a>
+                    <a href="#mains" class="menu-nav-link">Main Courses</a>
+                    <a href="#desserts" class="menu-nav-link">Desserts</a>
+                    <a href="#wine" class="menu-nav-link">Wine & Cocktails</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Menu Content -->
-    <section class="menu-content">
+    <!-- Daily Specials -->
+    <section class="daily-specials">
         <div class="container">
-            <!-- Menu Categories Navigation -->
-            <div class="menu-nav">
-                <button class="menu-nav-btn active" data-category="appetizers">Appetizers</button>
-                <button class="menu-nav-btn" data-category="seafood">Fresh Seafood</button>
-                <button class="menu-nav-btn" data-category="mains">Main Courses</button>
-                <button class="menu-nav-btn" data-category="desserts">Desserts</button>
-                <button class="menu-nav-btn" data-category="drinks">Beverages</button>
+            <h2>Today's Fresh Catch</h2>
+            <div class="specials-grid">
+                <div class="special-item">
+                    <h3>{{MENU_ITEM_1}}</h3>
+                    <p>{{MENU_DESCRIPTION_1}}</p>
+                    <span class="price">Market Price</span>
+                </div>
+                <div class="special-item">
+                    <h3>{{MENU_ITEM_2}}</h3>
+                    <p>{{MENU_DESCRIPTION_2}}</p>
+                    <span class="price">Market Price</span>
+                </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Appetizers -->
-            <div class="menu-category active" id="appetizers">
-                <h2>Mediterranean Appetizers</h2>
-                <div class="menu-grid">
-                    <div class="menu-card">
-                        <div class="menu-card-image">
-                            <img src="../../images/test/appetizers/{{APPETIZER_IMAGE_1}}" alt="Mediterranean Mezze">
-                        </div>
-                        <div class="menu-card-content">
-                            <h3>Mediterranean Mezze Platter</h3>
-                            <p>Hummus, tapenade, feta cheese, olives, and fresh vegetables with warm pita bread</p>
-                            <span class="price">$16</span>
-                        </div>
+    <!-- Appetizers -->
+    <section id="appetizers" class="menu-section">
+        <div class="container">
+            <h2>Appetizers & Small Plates</h2>
+            <div class="menu-category">
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h3>{{APPETIZER_1_NAME}}</h3>
+                        <span class="price">${{APPETIZER_1_PRICE}}</span>
                     </div>
-                    
-                    <div class="menu-card">
-                        <div class="menu-card-image">
-                            <img src="../../images/test/appetizers/{{APPETIZER_IMAGE_2}}" alt="Calamari">
-                        </div>
-                        <div class="menu-card-content">
-                            <h3>Grilled Calamari</h3>
-                            <p>Fresh squid grilled with lemon, herbs, and extra virgin olive oil</p>
-                            <span class="price">$14</span>
-                        </div>
+                    <p>{{APPETIZER_1_DESCRIPTION}}</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h3>{{APPETIZER_2_NAME}}</h3>
+                        <span class="price">${{APPETIZER_2_PRICE}}</span>
                     </div>
-                    
-                    <div class="menu-card">
-                        <div class="menu-card-image">
-                            <img src="../../images/test/appetizers/{{APPETIZER_IMAGE_3}}" alt="Bruschetta">
+                    <p>{{APPETIZER_2_DESCRIPTION}}</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h3>{{APPETIZER_3_NAME}}</h3>
+                        <span class="price">${{APPETIZER_3_PRICE}}</span>
+                    </div>
+                    <p>{{APPETIZER_3_DESCRIPTION}}</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h3>{{APPETIZER_4_NAME}}</h3>
+                        <span class="price">${{APPETIZER_4_PRICE}}</span>
+                    </div>
+                    <p>{{APPETIZER_4_DESCRIPTION}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Soups & Salads -->
+    <section class="menu-section">
+        <div class="container">
+            <h2>Soups & Fresh Salads</h2>
+            <div class="menu-category">
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h3>{{SOUP_1_NAME}}</h3>
+                        <span class="price">${{SOUP_1_PRICE}}</span>
+                    </div>
+                    <p>{{SOUP_1_DESCRIPTION}}</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h3>{{SOUP_2_NAME}}</h3>
+                        <span class="price">${{SOUP_2_PRICE}}</span>
+                    </div>
+                    <p>{{SOUP_2_DESCRIPTION}}</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h3>{{SALAD_1_NAME}}</h3>
+                        <span class="price">${{SALAD_1_PRICE}}</span>
+                    </div>
+                    <p>{{SALAD_1_DESCRIPTION}}</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h3>{{SALAD_2_NAME}}</h3>
+                        <span class="price">${{SALAD_2_PRICE}}</span>
+                    </div>
+                    <p>{{SALAD_2_DESCRIPTION}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Courses -->
+    <section id="mains" class="menu-section">
+        <div class="container">
+            <h2>Main Courses</h2>
+            <div class="menu-category">
+                <div class="menu-item featured">
+                    <div class="featured-badge">Chef's Recommendation</div>
+                    <div class="menu-item-header">
+                        <h3>{{MAIN_1_NAME}}</h3>
+                        <span class="price">${{MAIN_1_PRICE}}</span>
+                    </div>
+                    <p>{{MAIN_1_DESCRIPTION}}</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h3>{{MAIN_2_NAME}}</h3>
+                        <span class="price">${{MAIN_2_PRICE}}</span>
+                    </div>
+                    <p>{{MAIN_2_DESCRIPTION}}</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h3>{{MAIN_3_NAME}}</h3>
+                        <span class="price">${{MAIN_3_PRICE}}</span>
+                    </div>
+                    <p>{{MAIN_3_DESCRIPTION}}</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h3>{{MAIN_4_NAME}}</h3>
+                        <span class="price">${{MAIN_4_PRICE}}</span>
+                    </div>
+                    <p>{{MAIN_4_DESCRIPTION}}</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h3>{{MAIN_5_NAME}}</h3>
+                        <span class="price">${{MAIN_5_PRICE}}</span>
+                    </div>
+                    <p>{{MAIN_5_DESCRIPTION}}</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h3>{{MAIN_6_NAME}}</h3>
+                        <span class="price">${{MAIN_6_PRICE}}</span>
+                    </div>
+                    <p>{{MAIN_6_DESCRIPTION}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Desserts -->
+    <section id="desserts" class="menu-section">
+        <div class="container">
+            <h2>Mediterranean Desserts</h2>
+            <div class="menu-category">
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h3>{{DESSERT_1_NAME}}</h3>
+                        <span class="price">${{DESSERT_1_PRICE}}</span>
+                    </div>
+                    <p>{{DESSERT_1_DESCRIPTION}}</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h3>{{DESSERT_2_NAME}}</h3>
+                        <span class="price">${{DESSERT_2_PRICE}}</span>
+                    </div>
+                    <p>{{DESSERT_2_DESCRIPTION}}</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h3>{{DESSERT_3_NAME}}</h3>
+                        <span class="price">${{DESSERT_3_PRICE}}</span>
+                    </div>
+                    <p>{{DESSERT_3_DESCRIPTION}}</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-item-header">
+                        <h3>{{DESSERT_4_NAME}}</h3>
+                        <span class="price">${{DESSERT_4_PRICE}}</span>
+                    </div>
+                    <p>{{DESSERT_4_DESCRIPTION}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wine & Cocktails -->
+    <section id="wine" class="menu-section wine-section">
+        <div class="container">
+            <div class="wine-menu">
+                <div class="wine-category">
+                    <h2>Mediterranean Wines</h2>
+                    <div class="menu-category">
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h3>{{WINE_1_NAME}}</h3>
+                                <span class="price">${{WINE_1_PRICE}}</span>
+                            </div>
+                            <p>{{WINE_1_DESCRIPTION}}</p>
                         </div>
-                        <div class="menu-card-content">
-                            <h3>Coastal Bruschetta</h3>
-                            <p>Toasted bread topped with fresh tomatoes, basil, and sea salt</p>
-                            <span class="price">$12</span>
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h3>{{WINE_2_NAME}}</h3>
+                                <span class="price">${{WINE_2_PRICE}}</span>
+                            </div>
+                            <p>{{WINE_2_DESCRIPTION}}</p>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h3>{{WINE_3_NAME}}</h3>
+                                <span class="price">${{WINE_3_PRICE}}</span>
+                            </div>
+                            <p>{{WINE_3_DESCRIPTION}}</p>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Fresh Seafood -->
-            <div class="menu-category" id="seafood">
-                <h2>Fresh from the Mediterranean</h2>
-                <div class="menu-grid">
-                    <div class="menu-card featured">
-                        <div class="menu-card-image">
-                            <img src="../../images/test/food/food-image-1.jpg" alt="Grilled Branzino">
+                <div class="cocktail-category">
+                    <h2>Coastal Cocktails</h2>
+                    <div class="menu-category">
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h3>{{COCKTAIL_1_NAME}}</h3>
+                                <span class="price">${{COCKTAIL_1_PRICE}}</span>
+                            </div>
+                            <p>{{COCKTAIL_1_DESCRIPTION}}</p>
                         </div>
-                        <div class="menu-card-content">
-                            <h3>Whole Grilled Branzino</h3>
-                            <p>Mediterranean sea bass grilled whole with herbs, lemon, and olive oil</p>
-                            <span class="price">$28</span>
-                            <span class="featured-badge">Chef's Special</span>
-                        </div>
-                    </div>
-                    
-                    <div class="menu-card">
-                        <div class="menu-card-image">
-                            <img src="../../images/test/food/{{SEAFOOD_IMAGE_1}}" alt="Seafood Paella">
-                        </div>
-                        <div class="menu-card-content">
-                            <h3>Seafood Paella</h3>
-                            <p>Traditional Spanish rice with mussels, clams, shrimp, and saffron</p>
-                            <span class="price">$32</span>
-                        </div>
-                    </div>
-                    
-                    <div class="menu-card">
-                        <div class="menu-card-image">
-                            <img src="../../images/test/food/{{SEAFOOD_IMAGE_2}}" alt="Grilled Octopus">
-                        </div>
-                        <div class="menu-card-content">
-                            <h3>Grilled Octopus</h3>
-                            <p>Tender octopus with roasted peppers, olives, and lemon vinaigrette</p>
-                            <span class="price">$24</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Main Courses -->
-            <div class="menu-category" id="mains">
-                <h2>Mediterranean Main Courses</h2>
-                <div class="menu-grid">
-                    <div class="menu-card">
-                        <div class="menu-card-image">
-                            <img src="../../images/test/food/{{MAIN_IMAGE_1}}" alt="Lamb Souvlaki">
-                        </div>
-                        <div class="menu-card-content">
-                            <h3>Lamb Souvlaki</h3>
-                            <p>Grilled lamb skewers with tzatziki, Greek salad, and warm pita</p>
-                            <span class="price">$26</span>
-                        </div>
-                    </div>
-                    
-                    <div class="menu-card">
-                        <div class="menu-card-image">
-                            <img src="../../images/test/food/{{MAIN_IMAGE_2}}" alt="Moussaka">
-                        </div>
-                        <div class="menu-card-content">
-                            <h3>Traditional Moussaka</h3>
-                            <p>Layered eggplant, meat sauce, and béchamel, baked to perfection</p>
-                            <span class="price">$22</span>
-                        </div>
-                    </div>
-                    
-                    <div class="menu-card">
-                        <div class="menu-card-image">
-                            <img src="../../images/test/food/{{MAIN_IMAGE_3}}" alt="Chicken Mediterranean">
-                        </div>
-                        <div class="menu-card-content">
-                            <h3>Mediterranean Chicken</h3>
-                            <p>Herb-crusted chicken breast with roasted vegetables and lemon sauce</p>
-                            <span class="price">$20</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Desserts -->
-            <div class="menu-category" id="desserts">
-                <h2>Sweet Mediterranean Endings</h2>
-                <div class="menu-grid">
-                    <div class="menu-card">
-                        <div class="menu-card-image">
-                            <img src="../../images/test/desserts/{{DESSERT_IMAGE_1}}" alt="Baklava">
-                        </div>
-                        <div class="menu-card-content">
-                            <h3>Traditional Baklava</h3>
-                            <p>Layers of phyllo pastry with nuts and honey syrup</p>
-                            <span class="price">$8</span>
-                        </div>
-                    </div>
-                    
-                    <div class="menu-card">
-                        <div class="menu-card-image">
-                            <img src="../../images/test/desserts/{{DESSERT_IMAGE_2}}" alt="Tiramisu">
-                        </div>
-                        <div class="menu-card-content">
-                            <h3>Mediterranean Tiramisu</h3>
-                            <p>Coffee-soaked ladyfingers with mascarpone and cocoa</p>
-                            <span class="price">$9</span>
-                        </div>
-                    </div>
-                    
-                    <div class="menu-card">
-                        <div class="menu-card-image">
-                            <img src="../../images/test/desserts/{{DESSERT_IMAGE_3}}" alt="Panna Cotta">
-                        </div>
-                        <div class="menu-card-content">
-                            <h3>Lemon Panna Cotta</h3>
-                            <p>Silky smooth cream dessert with fresh berry compote</p>
-                            <span class="price">$7</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Beverages -->
-            <div class="menu-category" id="drinks">
-                <h2>Mediterranean Beverages</h2>
-                <div class="menu-grid">
-                    <div class="menu-card">
-                        <div class="menu-card-image">
-                            <img src="../../images/test/drinks/{{WINE_IMAGE}}" alt="Wine Selection">
-                        </div>
-                        <div class="menu-card-content">
-                            <h3>Mediterranean Wine Selection</h3>
-                            <p>Curated wines from Greece, Italy, Spain, and Southern France</p>
-                            <span class="price">$8-15/glass</span>
-                        </div>
-                    </div>
-                    
-                    <div class="menu-card">
-                        <div class="menu-card-image">
-                            <img src="../../images/test/drinks/{{COCKTAIL_IMAGE}}" alt="Coastal Cocktails">
-                        </div>
-                        <div class="menu-card-content">
-                            <h3>Coastal Cocktails</h3>
-                            <p>Refreshing cocktails with Mediterranean herbs and citrus</p>
-                            <span class="price">$12-16</span>
-                        </div>
-                    </div>
-                    
-                    <div class="menu-card">
-                        <div class="menu-card-image">
-                            <img src="../../images/test/drinks/{{COFFEE_IMAGE}}" alt="Greek Coffee">
-                        </div>
-                        <div class="menu-card-content">
-                            <h3>Traditional Greek Coffee</h3>
-                            <p>Rich, aromatic coffee served in traditional style</p>
-                            <span class="price">$4</span>
+                        <div class="menu-item">
+                            <div class="menu-item-header">
+                                <h3>{{COCKTAIL_2_NAME}}</h3>
+                                <span class="price">${{COCKTAIL_2_PRICE}}</span>
+                            </div>
+                            <p>{{COCKTAIL_2_DESCRIPTION}}</p>
                         </div>
                     </div>
                 </div>
@@ -249,15 +289,12 @@
     </section>
 
     <!-- Call to Action -->
-    <section class="menu-cta-section">
+    <section class="menu-cta">
         <div class="container">
-            <div class="menu-cta-content">
+            <div class="cta-content">
                 <h2>Ready to Experience Mediterranean Flavors?</h2>
-                <p>Reserve your table today and embark on a culinary journey to the Mediterranean coast</p>
-                <div class="menu-cta-buttons">
-                    <a href="index.html#contact" class="btn btn-primary">Reserve Table</a>
-                    <a href="tel:{{PHONE}}" class="btn btn-secondary">Call {{PHONE}}</a>
-                </div>
+                <p>Reserve your table for an unforgettable coastal dining experience</p>
+                <a href="index.html#reservations" class="btn btn-primary">Make Reservation</a>
             </div>
         </div>
     </section>
@@ -266,25 +303,21 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-info">
-                    <img src="../../images/test/logo/{{LOGO_FILENAME}}" alt="{{RESTAURANT_NAME}}" class="footer-logo">
-                    <p>Experience authentic Mediterranean cuisine in a coastal-inspired atmosphere.</p>
+                <div class="footer-brand">
+                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+                    <p>Fresh Mediterranean cuisine with coastal charm</p>
                 </div>
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="#menu">Menu</a></li>
-                        <li><a href="index.html#about">About</a></li>
-                        <li><a href="index.html#contact">Contact</a></li>
-                    </ul>
+                <div class="footer-hours">
+                    <h4>Hours</h4>
+                    <div>{{WEEKDAY_HOURS}}</div>
+                    <div>{{WEEKEND_HOURS}}</div>
+                    <div>{{SUNDAY_HOURS}}</div>
                 </div>
-                <div class="footer-social">
-                    <h4>Follow Us</h4>
-                    <div class="social-links">
-                        <a href="{{FACEBOOK_URL}}">Facebook</a>
-                        <a href="{{INSTAGRAM_URL}}">Instagram</a>
-                    </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <div>{{PHONE}}</div>
+                    <div>{{EMAIL}}</div>
+                    <div>{{FULL_ADDRESS}}</div>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -294,233 +327,5 @@
     </footer>
 
     <script src="script.js"></script>
-    <script>
-        // Menu category switching
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuNavBtns = document.querySelectorAll('.menu-nav-btn');
-            const menuCategories = document.querySelectorAll('.menu-category');
-
-            menuNavBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const category = this.getAttribute('data-category');
-                    
-                    // Update active nav button
-                    menuNavBtns.forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
-                    
-                    // Show selected category
-                    menuCategories.forEach(cat => {
-                        cat.classList.remove('active');
-                        if (cat.id === category) {
-                            cat.classList.add('active');
-                        }
-                    });
-                });
-            });
-        });
-    </script>
-
-    <style>
-        /* Additional Menu Page Styles */
-        .menu-hero {
-            height: 50vh;
-            background: linear-gradient(135deg, var(--ocean-blue), var(--deep-teal));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 80px;
-            position: relative;
-        }
-
-        .menu-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('../../images/test/hero/hero-image.jpg') center/cover;
-            opacity: 0.3;
-            z-index: -1;
-        }
-
-        .menu-hero-overlay {
-            text-align: center;
-            color: white;
-            z-index: 1;
-        }
-
-        .menu-hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .menu-content {
-            padding: 80px 0;
-        }
-
-        .menu-nav {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 60px;
-            flex-wrap: wrap;
-        }
-
-        .menu-nav-btn {
-            padding: 12px 24px;
-            border: 2px solid var(--ocean-blue);
-            background: transparent;
-            color: var(--ocean-blue);
-            border-radius: 25px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .menu-nav-btn.active,
-        .menu-nav-btn:hover {
-            background: var(--ocean-blue);
-            color: white;
-        }
-
-        .menu-category {
-            display: none;
-        }
-
-        .menu-category.active {
-            display: block;
-        }
-
-        .menu-category h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 40px;
-        }
-
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
-        }
-
-        .menu-card {
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            overflow: hidden;
-            transition: transform 0.3s ease;
-            position: relative;
-        }
-
-        .menu-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .menu-card.featured {
-            border: 3px solid var(--sand-beige);
-        }
-
-        .menu-card-image {
-            height: 200px;
-            overflow: hidden;
-        }
-
-        .menu-card-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .menu-card:hover .menu-card-image img {
-            transform: scale(1.1);
-        }
-
-        .menu-card-content {
-            padding: 25px;
-        }
-
-        .menu-card-content h3 {
-            color: var(--text-dark);
-            margin-bottom: 10px;
-            font-size: 1.3rem;
-        }
-
-        .menu-card-content p {
-            color: var(--text-light);
-            margin-bottom: 15px;
-            line-height: 1.6;
-        }
-
-        .price {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--sand-beige);
-        }
-
-        .featured-badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: var(--sand-beige);
-            color: white;
-            padding: 5px 10px;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
-        .menu-cta-section {
-            background: linear-gradient(135deg, var(--ocean-blue), var(--deep-teal));
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-        }
-
-        .menu-cta-content h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .menu-cta-content p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
-
-        .menu-cta-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        @media (max-width: 768px) {
-            .menu-hero h1 {
-                font-size: 2rem;
-            }
-
-            .menu-nav {
-                gap: 10px;
-            }
-
-            .menu-nav-btn {
-                padding: 10px 16px;
-                font-size: 0.9rem;
-            }
-
-            .menu-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .menu-cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
 </body>
 </html>

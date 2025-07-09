@@ -3,26 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{RESTAURANT_NAME}} - {{CUISINE_TYPE}}</title>
-    <meta name="description" content="{{RESTAURANT_NAME}} - {{DESCRIPTION}}">
+    <title>{{RESTAURANT_NAME}} - Gourmet Burger Experience</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - {{RESTAURANT_DESCRIPTION}}">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="craft-theme">
+<body class="theme-bold">
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
-                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+                <img src="images/{{LOGO_IMAGE}}" alt="{{RESTAURANT_NAME}} Logo">
                 <span class="logo-text">{{RESTAURANT_NAME}}</span>
             </div>
             <ul class="nav-menu">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#burgers">Burgers</a></li>
-                <li><a href="#craft">Craft</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="#craft">Our Craft</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="nav-actions">
@@ -38,139 +38,346 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-bg">
-            <img src="{{HERO_IMAGE}}" alt="{{RESTAURANT_NAME}}">
+        <div class="hero-background">
+            <video autoplay muted loop class="hero-video">
+                <source src="images/{{HERO_VIDEO}}" type="video/mp4">
+            </video>
+            <img src="images/{{HERO_IMAGE}}" alt="{{RESTAURANT_NAME}}" class="hero-fallback">
+            <div class="hero-overlay"></div>
         </div>
-        <div class="hero-overlay"></div>
+        
         <div class="hero-content">
-            <h1 class="hero-title">{{RESTAURANT_NAME}}</h1>
-            <p class="hero-subtitle">{{TAGLINE}}</p>
-            <p class="hero-description">{{DESCRIPTION}}</p>
+            <div class="hero-badge">
+                <span class="badge-icon">🔥</span>
+                <span>Handcrafted Gourmet</span>
+            </div>
+            
+            <h1 class="hero-title">
+                <span class="title-main">{{RESTAURANT_NAME}}</span>
+                <span class="title-sub">{{TAGLINE}}</span>
+            </h1>
+            
+            <p class="hero-description">{{HERO_DESCRIPTION}}</p>
+            
+            <div class="hero-features">
+                <div class="feature-item">
+                    <div class="feature-icon">🥩</div>
+                    <span>{{FEATURE_1}}</span>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🧀</div>
+                    <span>{{FEATURE_2}}</span>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🍟</div>
+                    <span>{{FEATURE_3}}</span>
+                </div>
+            </div>
+            
             <div class="hero-buttons">
-                <a href="#burgers" class="btn btn-primary">View Menu</a>
-                <a href="tel:{{PHONE}}" class="btn btn-secondary">Order Now</a>
+                <a href="#menu" class="btn btn-primary">View Menu</a>
+                <a href="tel:{{PHONE}}" class="btn btn-secondary">Order: {{PHONE_DISPLAY}}</a>
             </div>
         </div>
-        <div class="hero-features">
-            <div class="feature">
-                <span class="feature-icon">🥩</span>
-                <span>Premium Beef</span>
-            </div>
-            <div class="feature">
-                <span class="feature-icon">🍺</span>
-                <span>Craft Beer</span>
-            </div>
-            <div class="feature">
-                <span class="feature-icon">🔥</span>
-                <span>Fresh Grilled</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Burgers Section -->
-    <section id="burgers" class="featured-burgers">
-        <div class="container">
-            <div class="section-header">
-                <h2>Signature Burgers</h2>
-                <p>Handcrafted with Premium Ingredients</p>
-            </div>
-            <div class="burger-grid">
-                <div class="burger-card">
-                    <div class="burger-image">
-                        <img src="{{FOOD_IMAGE_1}}" alt="{{MENU_ITEM_1}}">
-                    </div>
-                    <div class="burger-content">
-                        <h3>{{MENU_ITEM_1}}</h3>
-                        <p>{{MENU_DESCRIPTION_1}}</p>
-                        <div class="burger-price">${{PRICE_1}}</div>
-                    </div>
-                </div>
-                <div class="burger-card">
-                    <div class="burger-image">
-                        <img src="{{FOOD_IMAGE_2}}" alt="{{MENU_ITEM_2}}">
-                    </div>
-                    <div class="burger-content">
-                        <h3>{{MENU_ITEM_2}}</h3>
-                        <p>{{MENU_DESCRIPTION_2}}</p>
-                        <div class="burger-price">${{PRICE_2}}</div>
-                    </div>
-                </div>
-                <div class="burger-card">
-                    <div class="burger-image">
-                        <img src="{{FOOD_IMAGE_3}}" alt="{{MENU_ITEM_3}}">
-                    </div>
-                    <div class="burger-content">
-                        <h3>{{MENU_ITEM_3}}</h3>
-                        <p>{{MENU_DESCRIPTION_3}}</p>
-                        <div class="burger-price">${{PRICE_3}}</div>
-                    </div>
-                </div>
-                <div class="burger-card">
-                    <div class="burger-image">
-                        <img src="{{FOOD_IMAGE_4}}" alt="{{MENU_ITEM_4}}">
-                    </div>
-                    <div class="burger-content">
-                        <h3>{{MENU_ITEM_4}}</h3>
-                        <p>{{MENU_DESCRIPTION_4}}</p>
-                        <div class="burger-price">${{PRICE_4}}</div>
-                    </div>
-                </div>
-            </div>
-            <div class="menu-cta">
-                <a href="menu.html" class="btn btn-primary">Full Menu</a>
+        
+        <div class="hero-scroll">
+            <div class="scroll-indicator">
+                <span>Scroll to explore</span>
+                <div class="scroll-arrow"></div>
             </div>
         </div>
     </section>
 
     <!-- Craft Section -->
-    <section id="craft" class="craft-section">
+    <section id="craft" class="craft">
         <div class="container">
             <div class="craft-content">
                 <div class="craft-text">
-                    <h2>Crafted with Passion</h2>
-                    <p>Every burger is made with locally sourced, premium ingredients. Our beef is ground fresh daily, our buns are baked in-house, and our toppings are prepared with care.</p>
-                    <div class="craft-features">
-                        <div class="craft-feature">
-                            <h4>Fresh Ground Daily</h4>
-                            <p>Premium beef ground fresh every morning</p>
+                    <div class="section-badge">
+                        <span>Our Philosophy</span>
+                    </div>
+                    <h2>The Art of Burger Craft</h2>
+                    <p class="lead">{{CRAFT_DESCRIPTION}}</p>
+                    
+                    <div class="craft-process">
+                        <div class="process-step">
+                            <div class="step-number">01</div>
+                            <div class="step-content">
+                                <h4>{{PROCESS_1_TITLE}}</h4>
+                                <p>{{PROCESS_1_DESCRIPTION}}</p>
+                            </div>
                         </div>
-                        <div class="craft-feature">
-                            <h4>House-Made Buns</h4>
-                            <p>Artisan buns baked fresh in our kitchen</p>
+                        
+                        <div class="process-step">
+                            <div class="step-number">02</div>
+                            <div class="step-content">
+                                <h4>{{PROCESS_2_TITLE}}</h4>
+                                <p>{{PROCESS_2_DESCRIPTION}}</p>
+                            </div>
                         </div>
-                        <div class="craft-feature">
-                            <h4>Local Sourcing</h4>
-                            <p>Supporting local farmers and suppliers</p>
+                        
+                        <div class="process-step">
+                            <div class="step-number">03</div>
+                            <div class="step-content">
+                                <h4>{{PROCESS_3_TITLE}}</h4>
+                                <p>{{PROCESS_3_DESCRIPTION}}</p>
+                            </div>
+                        </div>
+                        
+                        <div class="process-step">
+                            <div class="step-number">04</div>
+                            <div class="step-content">
+                                <h4>{{PROCESS_4_TITLE}}</h4>
+                                <p>{{PROCESS_4_DESCRIPTION}}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="craft-image">
-                    <img src="{{INTERIOR_IMAGE_1}}" alt="Kitchen">
+                
+                <div class="craft-visual">
+                    <div class="craft-image-stack">
+                        <div class="craft-image main">
+                            <img src="images/{{CRAFT_IMAGE_1}}" alt="Burger preparation">
+                        </div>
+                        <div class="craft-image overlay">
+                            <img src="images/{{CRAFT_IMAGE_2}}" alt="Fresh ingredients">
+                        </div>
+                        <div class="quality-badges">
+                            <div class="quality-badge">
+                                <span class="badge-text">Premium</span>
+                                <span class="badge-subtext">Angus Beef</span>
+                            </div>
+                            <div class="quality-badge">
+                                <span class="badge-text">Fresh</span>
+                                <span class="badge-subtext">Daily Baked</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about-section">
+    <!-- Signature Menu Section -->
+    <section id="menu" class="signature-menu">
         <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>Our Story</h2>
-                    <p>{{ABOUT_DESCRIPTION}}</p>
-                    <div class="about-stats">
-                        <div class="stat">
-                            <span class="stat-number">15+</span>
-                            <span class="stat-label">Years Experience</span>
+            <div class="section-header">
+                <div class="section-badge">
+                    <span>Signature Collection</span>
+                </div>
+                <h2>Gourmet Burger Menu</h2>
+                <p>Each burger is a masterpiece, crafted with premium ingredients and bold flavors</p>
+            </div>
+            
+            <div class="menu-grid">
+                <!-- Featured Burger -->
+                <div class="menu-item featured">
+                    <div class="item-image">
+                        <img src="images/{{SIGNATURE_BURGER_IMAGE}}" alt="{{SIGNATURE_BURGER_NAME}}">
+                        <div class="item-badge">Chef's Special</div>
+                        <div class="spice-level">
+                            <span class="spice-label">Heat:</span>
+                            <div class="spice-dots">
+                                <span class="dot active"></span>
+                                <span class="dot active"></span>
+                                <span class="dot"></span>
+                            </div>
                         </div>
-                        <div class="stat">
-                            <span class="stat-number">20+</span>
-                            <span class="stat-label">Craft Beers</span>
+                    </div>
+                    <div class="item-content">
+                        <h3>{{SIGNATURE_BURGER_NAME}}</h3>
+                        <p class="item-description">{{SIGNATURE_BURGER_DESCRIPTION}}</p>
+                        <div class="item-ingredients">
+                            <span class="ingredient">{{INGREDIENT_1}}</span>
+                            <span class="ingredient">{{INGREDIENT_2}}</span>
+                            <span class="ingredient">{{INGREDIENT_3}}</span>
+                            <span class="ingredient">{{INGREDIENT_4}}</span>
                         </div>
-                        <div class="stat">
-                            <span class="stat-number">100%</span>
-                            <span class="stat-label">Fresh Daily</span>
+                        <div class="item-footer">
+                            <div class="price">${{SIGNATURE_BURGER_PRICE}}</div>
+                            <div class="item-actions">
+                                <button class="btn btn-small">Customize</button>
+                                <button class="btn btn-primary btn-small">Add to Order</button>
+                            </div>
                         </div>
+                    </div>
+                </div>
+                
+                <!-- Regular Menu Items -->
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="images/{{BURGER_2_IMAGE}}" alt="{{BURGER_2_NAME}}">
+                        <div class="spice-level">
+                            <span class="spice-label">Heat:</span>
+                            <div class="spice-dots">
+                                <span class="dot active"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-content">
+                        <h3>{{BURGER_2_NAME}}</h3>
+                        <p class="item-description">{{BURGER_2_DESCRIPTION}}</p>
+                        <div class="item-footer">
+                            <div class="price">${{BURGER_2_PRICE}}</div>
+                            <button class="btn btn-primary btn-small">Add to Order</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="images/{{BURGER_3_IMAGE}}" alt="{{BURGER_3_NAME}}">
+                        <div class="spice-level">
+                            <span class="spice-label">Heat:</span>
+                            <div class="spice-dots">
+                                <span class="dot active"></span>
+                                <span class="dot active"></span>
+                                <span class="dot active"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-content">
+                        <h3>{{BURGER_3_NAME}}</h3>
+                        <p class="item-description">{{BURGER_3_DESCRIPTION}}</p>
+                        <div class="item-footer">
+                            <div class="price">${{BURGER_3_PRICE}}</div>
+                            <button class="btn btn-primary btn-small">Add to Order</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="images/{{BURGER_4_IMAGE}}" alt="{{BURGER_4_NAME}}">
+                        <div class="spice-level">
+                            <span class="spice-label">Heat:</span>
+                            <div class="spice-dots">
+                                <span class="dot active"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-content">
+                        <h3>{{BURGER_4_NAME}}</h3>
+                        <p class="item-description">{{BURGER_4_DESCRIPTION}}</p>
+                        <div class="item-footer">
+                            <div class="price">${{BURGER_4_PRICE}}</div>
+                            <button class="btn btn-primary btn-small">Add to Order</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="images/{{BURGER_5_IMAGE}}" alt="{{BURGER_5_NAME}}">
+                        <div class="item-badge">Vegan</div>
+                        <div class="spice-level">
+                            <span class="spice-label">Heat:</span>
+                            <div class="spice-dots">
+                                <span class="dot active"></span>
+                                <span class="dot active"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-content">
+                        <h3>{{BURGER_5_NAME}}</h3>
+                        <p class="item-description">{{BURGER_5_DESCRIPTION}}</p>
+                        <div class="item-footer">
+                            <div class="price">${{BURGER_5_PRICE}}</div>
+                            <button class="btn btn-primary btn-small">Add to Order</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-item">
+                    <div class="item-image">
+                        <img src="images/{{BURGER_6_IMAGE}}" alt="{{BURGER_6_NAME}}">
+                        <div class="item-badge">Limited</div>
+                        <div class="spice-level">
+                            <span class="spice-label">Heat:</span>
+                            <div class="spice-dots">
+                                <span class="dot active"></span>
+                                <span class="dot active"></span>
+                                <span class="dot active"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-content">
+                        <h3>{{BURGER_6_NAME}}</h3>
+                        <p class="item-description">{{BURGER_6_DESCRIPTION}}</p>
+                        <div class="item-footer">
+                            <div class="price">${{BURGER_6_PRICE}}</div>
+                            <button class="btn btn-primary btn-small">Add to Order</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="menu-cta">
+                <a href="menu.html" class="btn btn-large">View Complete Menu</a>
+                <p class="menu-note">All burgers come with choice of fries or salad</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="experience-content">
+                <div class="experience-text">
+                    <div class="section-badge">
+                        <span>Dining Experience</span>
+                    </div>
+                    <h2>More Than Just a Burger</h2>
+                    <p class="lead">{{EXPERIENCE_DESCRIPTION}}</p>
+                    
+                    <div class="experience-features">
+                        <div class="exp-feature">
+                            <div class="exp-icon">🍺</div>
+                            <div class="exp-content">
+                                <h4>{{EXP_FEATURE_1_TITLE}}</h4>
+                                <p>{{EXP_FEATURE_1_DESCRIPTION}}</p>
+                            </div>
+                        </div>
+                        
+                        <div class="exp-feature">
+                            <div class="exp-icon">🎵</div>
+                            <div class="exp-content">
+                                <h4>{{EXP_FEATURE_2_TITLE}}</h4>
+                                <p>{{EXP_FEATURE_2_DESCRIPTION}}</p>
+                            </div>
+                        </div>
+                        
+                        <div class="exp-feature">
+                            <div class="exp-icon">🏆</div>
+                            <div class="exp-content">
+                                <h4>{{EXP_FEATURE_3_TITLE}}</h4>
+                                <p>{{EXP_FEATURE_3_DESCRIPTION}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="experience-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">{{STAT_1_NUMBER}}</div>
+                        <div class="stat-label">{{STAT_1_LABEL}}</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">{{STAT_2_NUMBER}}</div>
+                        <div class="stat-label">{{STAT_2_LABEL}}</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">{{STAT_3_NUMBER}}</div>
+                        <div class="stat-label">{{STAT_3_LABEL}}</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">{{STAT_4_NUMBER}}</div>
+                        <div class="stat-label">{{STAT_4_LABEL}}</div>
                     </div>
                 </div>
             </div>
@@ -178,37 +385,105 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact-section">
+    <section id="contact" class="contact">
         <div class="container">
-            <div class="contact-grid">
+            <div class="contact-content">
                 <div class="contact-info">
-                    <h2>Visit Us</h2>
-                    <div class="contact-item">
-                        <strong>Address</strong>
-                        <p>{{FULL_ADDRESS}}</p>
+                    <div class="section-badge">
+                        <span>Get In Touch</span>
                     </div>
-                    <div class="contact-item">
-                        <strong>Phone</strong>
-                        <p><a href="tel:{{PHONE}}">{{PHONE}}</a></p>
-                    </div>
-                    <div class="contact-item">
-                        <strong>Email</strong>
-                        <p><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
-                    </div>
-                    <div class="contact-item">
-                        <strong>Hours</strong>
-                        <p>{{WEEKDAY_HOURS}}</p>
-                        <p>{{WEEKEND_HOURS}}</p>
-                        <p>{{SUNDAY_HOURS}}</p>
-                    </div>
-                    <div class="social-links">
-                        <a href="{{FACEBOOK_URL}}" target="_blank">Facebook</a>
-                        <a href="{{INSTAGRAM_URL}}" target="_blank">Instagram</a>
-                        <a href="{{YELP_URL}}" target="_blank">Yelp</a>
+                    <h2>Visit Our Kitchen</h2>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div class="contact-text">
+                                <h4>Location</h4>
+                                <p>{{ADDRESS_LINE_1}}<br>{{ADDRESS_LINE_2}}</p>
+                                <a href="{{GOOGLE_MAPS_URL}}" class="contact-link">Get Directions</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div class="contact-text">
+                                <h4>Phone & Orders</h4>
+                                <p><a href="tel:{{PHONE}}">{{PHONE_DISPLAY}}</a></p>
+                                <p class="contact-note">Call ahead for pickup</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">🕒</div>
+                            <div class="contact-text">
+                                <h4>Hours</h4>
+                                <div class="hours-grid">
+                                    <div class="hours-row">
+                                        <span>Mon - Thu</span>
+                                        <span>{{WEEKDAY_HOURS}}</span>
+                                    </div>
+                                    <div class="hours-row">
+                                        <span>Fri - Sat</span>
+                                        <span>{{WEEKEND_HOURS}}</span>
+                                    </div>
+                                    <div class="hours-row">
+                                        <span>Sunday</span>
+                                        <span>{{SUNDAY_HOURS}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">🚚</div>
+                            <div class="contact-text">
+                                <h4>Delivery</h4>
+                                <p>{{DELIVERY_INFO}}</p>
+                                <div class="delivery-apps">
+                                    <a href="{{DOORDASH_URL}}" class="delivery-link">DoorDash</a>
+                                    <a href="{{UBEREATS_URL}}" class="delivery-link">Uber Eats</a>
+                                    <a href="{{GRUBHUB_URL}}" class="delivery-link">GrubHub</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="contact-map">
-                    <iframe src="{{GOOGLE_MAPS_EMBED}}" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                
+                <div class="contact-form-section">
+                    <h3>Quick Order Form</h3>
+                    <form class="quick-order-form">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <select required>
+                                <option value="">Select Your Burger</option>
+                                <option value="signature">{{SIGNATURE_BURGER_NAME}} - ${{SIGNATURE_BURGER_PRICE}}</option>
+                                <option value="burger2">{{BURGER_2_NAME}} - ${{BURGER_2_PRICE}}</option>
+                                <option value="burger3">{{BURGER_3_NAME}} - ${{BURGER_3_PRICE}}</option>
+                                <option value="burger4">{{BURGER_4_NAME}} - ${{BURGER_4_PRICE}}</option>
+                                <option value="burger5">{{BURGER_5_NAME}} - ${{BURGER_5_PRICE}}</option>
+                                <option value="burger6">{{BURGER_6_NAME}} - ${{BURGER_6_PRICE}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <select required>
+                                <option value="">Pickup Time</option>
+                                <option value="15min">15 minutes</option>
+                                <option value="30min">30 minutes</option>
+                                <option value="45min">45 minutes</option>
+                                <option value="1hour">1 hour</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Special Instructions (Optional)"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-large">Place Quick Order</button>
+                        <p class="form-note">We'll call to confirm your order and payment</p>
+                    </form>
                 </div>
             </div>
         </div>
@@ -218,12 +493,78 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}}">
-                    <span>{{RESTAURANT_NAME}}</span>
+                <div class="footer-main">
+                    <div class="footer-brand">
+                        <img src="images/{{LOGO_IMAGE}}" alt="{{RESTAURANT_NAME}}">
+                        <h4>{{RESTAURANT_NAME}}</h4>
+                        <p>{{FOOTER_DESCRIPTION}}</p>
+                        <div class="social-links">
+                            <a href="{{FACEBOOK_URL}}" class="social-link">
+                                <span>Facebook</span>
+                            </a>
+                            <a href="{{INSTAGRAM_URL}}" class="social-link">
+                                <span>Instagram</span>
+                            </a>
+                            <a href="{{TWITTER_URL}}" class="social-link">
+                                <span>Twitter</span>
+                            </a>
+                            <a href="{{YELP_URL}}" class="social-link">
+                                <span>Yelp</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-links">
+                        <div class="footer-section">
+                            <h4>Menu</h4>
+                            <ul>
+                                <li><a href="#menu">Signature Burgers</a></li>
+                                <li><a href="menu.html">Full Menu</a></li>
+                                <li><a href="#menu">Sides & Drinks</a></li>
+                                <li><a href="#menu">Daily Specials</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="footer-section">
+                            <h4>Order</h4>
+                            <ul>
+                                <li><a href="tel:{{PHONE}}">Call for Pickup</a></li>
+                                <li><a href="{{DOORDASH_URL}}">DoorDash</a></li>
+                                <li><a href="{{UBEREATS_URL}}">Uber Eats</a></li>
+                                <li><a href="{{GRUBHUB_URL}}">GrubHub</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="footer-section">
+                            <h4>Info</h4>
+                            <ul>
+                                <li><a href="#craft">Our Story</a></li>
+                                <li><a href="#contact">Location</a></li>
+                                <li><a href="#contact">Hours</a></li>
+                                <li><a href="#experience">Private Events</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="footer-text">
+                
+                <div class="footer-awards">
+                    <div class="award-item">
+                        <div class="award-icon">🏆</div>
+                        <span>{{AWARD_1}}</span>
+                    </div>
+                    <div class="award-item">
+                        <div class="award-icon">⭐</div>
+                        <span>{{AWARD_2}}</span>
+                    </div>
+                    <div class="award-item">
+                        <div class="award-icon">🥇</div>
+                        <span>{{AWARD_3}}</span>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
                     <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+                    <p>Crafting gourmet burgers with passion since {{ESTABLISHED_YEAR}}</p>
                 </div>
             </div>
         </div>

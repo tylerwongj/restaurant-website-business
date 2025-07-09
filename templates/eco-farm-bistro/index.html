@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - {{CUISINE_TYPE}} Restaurant</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&family=Lora:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="eco-theme">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#farm">Our Farm</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#sustainability">Sustainability</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="tel:{{PHONE}}" class="btn btn-eco">Reserve Table</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="eco-badge">🌱 Farm to Table</div>
+            <h1>{{RESTAURANT_NAME}}</h1>
+            <p class="hero-subtitle">{{TAGLINE}}</p>
+            <p class="hero-description">{{DESCRIPTION}}</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Organic</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">5mi</span>
+                    <span class="stat-label">Local Radius</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">Zero</span>
+                    <span class="stat-label">Waste</span>
+                </div>
+            </div>
+            <div class="hero-buttons">
+                <a href="#menu" class="btn btn-primary">Explore Menu</a>
+                <a href="#farm" class="btn btn-outline">Meet Our Farmers</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="{{HERO_IMAGE}}" alt="{{RESTAURANT_NAME}} - Fresh Farm Ingredients">
+            <div class="floating-elements">
+                <div class="float-item leaf-1">🍃</div>
+                <div class="float-item leaf-2">🌿</div>
+                <div class="float-item leaf-3">🍀</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Farm Story Section -->
+    <section id="farm" class="farm-story">
+        <div class="container">
+            <div class="farm-content">
+                <div class="farm-text">
+                    <div class="section-badge">🚜 Our Partners</div>
+                    <h2>From Local Farms to Your Table</h2>
+                    <p>We work directly with 12 local farms within a 5-mile radius, ensuring the freshest ingredients while supporting our community. Every dish tells the story of the soil it came from.</p>
+                    
+                    <div class="farm-features">
+                        <div class="feature">
+                            <div class="feature-icon">🌾</div>
+                            <div class="feature-text">
+                                <h4>Seasonal Harvest</h4>
+                                <p>Our menu changes with the seasons, featuring what's freshest from our partner farms</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">🚫</div>
+                            <div class="feature-text">
+                                <h4>No Pesticides</h4>
+                                <p>All our produce is grown without harmful chemicals or synthetic fertilizers</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">🤝</div>
+                            <div class="feature-text">
+                                <h4>Fair Trade</h4>
+                                <p>We pay fair prices to our farmers, supporting sustainable agriculture practices</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="farm-visual">
+                    <div class="farm-gallery">
+                        <div class="gallery-item main">
+                            <img src="{{INTERIOR_IMAGE_1}}" alt="Local Farm">
+                            <div class="gallery-caption">Sunrise Valley Farm</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="{{FOOD_IMAGE_1}}" alt="Fresh Vegetables">
+                            <div class="gallery-caption">Today's Harvest</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="{{FOOD_IMAGE_2}}" alt="Farm Fresh">
+                            <div class="gallery-caption">Garden to Plate</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Preview -->
+    <section id="menu" class="menu-preview">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">🍽️ Fresh Daily</div>
+                <h2>Today's Harvest Menu</h2>
+                <p>Our menu changes daily based on what's fresh from the farm</p>
+            </div>
+
+            <div class="menu-categories">
+                <div class="category-nav">
+                    <button class="category-btn active" data-category="starters">Garden Starters</button>
+                    <button class="category-btn" data-category="mains">Farm Mains</button>
+                    <button class="category-btn" data-category="desserts">Sweet Harvest</button>
+                </div>
+
+                <div class="menu-grid" id="starters">
+                    <div class="menu-card">
+                        <div class="menu-image">
+                            <img src="{{FOOD_IMAGE_1}}" alt="{{MENU_ITEM_1}}">
+                            <div class="origin-tag">🌱 Today's Pick</div>
+                        </div>
+                        <div class="menu-content">
+                            <h3>{{MENU_ITEM_1}}</h3>
+                            <p>{{MENU_DESCRIPTION_1}}</p>
+                            <div class="menu-footer">
+                                <span class="price">${{PRICE_1}}</span>
+                                <span class="source">From Meadow Brook Farm</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card">
+                        <div class="menu-image">
+                            <img src="{{FOOD_IMAGE_2}}" alt="{{MENU_ITEM_2}}">
+                        </div>
+                        <div class="menu-content">
+                            <h3>{{MENU_ITEM_2}}</h3>
+                            <p>{{MENU_DESCRIPTION_2}}</p>
+                            <div class="menu-footer">
+                                <span class="price">${{PRICE_2}}</span>
+                                <span class="source">Locally Sourced</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card">
+                        <div class="menu-image">
+                            <img src="{{FOOD_IMAGE_3}}" alt="{{MENU_ITEM_3}}">
+                        </div>
+                        <div class="menu-content">
+                            <h3>{{MENU_ITEM_3}}</h3>
+                            <p>{{MENU_DESCRIPTION_3}}</p>
+                            <div class="menu-footer">
+                                <span class="price">${{PRICE_3}}</span>
+                                <span class="source">Heritage Seeds</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card">
+                        <div class="menu-image">
+                            <img src="{{FOOD_IMAGE_4}}" alt="{{MENU_ITEM_4}}">
+                        </div>
+                        <div class="menu-content">
+                            <h3>{{MENU_ITEM_4}}</h3>
+                            <p>{{MENU_DESCRIPTION_4}}</p>
+                            <div class="menu-footer">
+                                <span class="price">${{PRICE_4}}</span>
+                                <span class="source">Organic Certified</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-cta">
+                <a href="menu.html" class="btn btn-primary">View Complete Menu</a>
+                <div class="menu-note">
+                    <p>🌱 Menu updated daily based on seasonal availability</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sustainability Section -->
+    <section id="sustainability" class="sustainability">
+        <div class="container">
+            <div class="sustainability-content">
+                <div class="sustainability-text">
+                    <div class="section-badge">🌍 Our Mission</div>
+                    <h2>Committed to Our Planet</h2>
+                    <p>{{ABOUT_DESCRIPTION}}</p>
+                    
+                    <div class="impact-stats">
+                        <div class="impact-item">
+                            <div class="impact-number">12</div>
+                            <div class="impact-label">Partner Farms</div>
+                        </div>
+                        <div class="impact-item">
+                            <div class="impact-number">95%</div>
+                            <div class="impact-label">Waste Reduction</div>
+                        </div>
+                        <div class="impact-item">
+                            <div class="impact-number">500lbs</div>
+                            <div class="impact-label">Composted Weekly</div>
+                        </div>
+                        <div class="impact-item">
+                            <div class="impact-number">0</div>
+                            <div class="impact-label">Plastic Use</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sustainability-initiatives">
+                    <h3>Our Green Initiatives</h3>
+                    <div class="initiatives-list">
+                        <div class="initiative">
+                            <div class="initiative-icon">♻️</div>
+                            <div class="initiative-text">
+                                <h4>Zero Waste Kitchen</h4>
+                                <p>Food scraps become compost for our partner farms</p>
+                            </div>
+                        </div>
+                        <div class="initiative">
+                            <div class="initiative-icon">🌿</div>
+                            <div class="initiative-text">
+                                <h4>Biodegradable Packaging</h4>
+                                <p>All takeout containers are compostable</p>
+                            </div>
+                        </div>
+                        <div class="initiative">
+                            <div class="initiative-icon">💡</div>
+                            <div class="initiative-text">
+                                <h4>Renewable Energy</h4>
+                                <p>Powered by 100% solar energy</p>
+                            </div>
+                        </div>
+                        <div class="initiative">
+                            <div class="initiative-icon">🚗</div>
+                            <div class="initiative-text">
+                                <h4>Carbon Neutral Delivery</h4>
+                                <p>Electric bikes for all local deliveries</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Visit Our Eco Bistro</h2>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div>
+                                <h4>Location</h4>
+                                <p>{{FULL_ADDRESS}}</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div>
+                                <h4>Reservations</h4>
+                                <p><a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">✉️</div>
+                            <div>
+                                <h4>Email</h4>
+                                <p><a href="mailto:{{EMAIL}}">{{EMAIL}}</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hours-section">
+                        <h4>Hours</h4>
+                        <div class="hours-list">
+                            <div class="hours-item">
+                                <span>Monday - Thursday</span>
+                                <span>{{WEEKDAY_HOURS}}</span>
+                            </div>
+                            <div class="hours-item">
+                                <span>Friday - Saturday</span>
+                                <span>{{WEEKEND_HOURS}}</span>
+                            </div>
+                            <div class="hours-item">
+                                <span>Sunday</span>
+                                <span>{{SUNDAY_HOURS}}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}" class="social-link">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}" class="social-link">Instagram</a>
+                        <a href="{{YELP_URL}}" class="social-link">Yelp</a>
+                    </div>
+                </div>
+
+                <div class="contact-map">
+                    <iframe src="{{GOOGLE_MAPS_EMBED}}" width="100%" height="400" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy"></iframe>
+                    <div class="map-overlay">
+                        <div class="eco-note">
+                            <p>🚲 Bike parking available • 🚌 Public transit friendly</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <div class="footer-brand">
+                        <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}}">
+                        <h4>{{RESTAURANT_NAME}}</h4>
+                        <p>Fresh, local, sustainable dining</p>
+                    </div>
+                    <div class="footer-nav">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#farm">Our Farm</a></li>
+                            <li><a href="#menu">Menu</a></li>
+                            <li><a href="#sustainability">Sustainability</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h4>Contact</h4>
+                        <p>{{FULL_ADDRESS}}</p>
+                        <p>{{PHONE}}</p>
+                        <p>{{EMAIL}}</p>
+                    </div>
+                    <div class="footer-certification">
+                        <h4>Certifications</h4>
+                        <div class="cert-badges">
+                            <div class="cert-badge">🌱 USDA Organic</div>
+                            <div class="cert-badge">♻️ Zero Waste</div>
+                            <div class="cert-badge">🌍 Carbon Neutral</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 {{RESTAURANT_NAME}}. All rights reserved. | Grown with love for our planet</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{RESTAURANT_NAME}} - Sustainable Farm-to-Table Bistro</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body class="eco-theme">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="images/logo.png" alt="{{RESTAURANT_NAME}} Logo">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#sustainable">Sustainability</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#farm">Our Farm</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero eco-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="eco-certification">
+                <span class="cert-badge">100% Organic</span>
+                <span class="cert-badge">Carbon Neutral</span>
+            </div>
+            <h1>{{RESTAURANT_NAME}}</h1>
+            <p class="hero-subtitle">{{TAGLINE}}</p>
+            <p class="eco-mission">Nourishing communities through sustainable, locally-sourced cuisine that honors both the earth and our palates.</p>
+            <div class="hero-buttons">
+                <a href="#menu" class="btn btn-primary">Today's Harvest Menu</a>
+                <a href="#sustainable" class="btn btn-secondary">Our Impact</a>
+            </div>
+        </div>
+        <div class="hero-background">
+            <img src="images/hero.jpg" alt="{{RESTAURANT_NAME}} Sustainable Farm">
+        </div>
+    </section>
+
+    <!-- Sustainability Impact Section -->
+    <section id="sustainable" class="sustainability-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Environmental Promise</h2>
+                <p class="section-subtitle">Every meal makes a difference for our planet</p>
+            </div>
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-icon">🌱</div>
+                    <h3>Zero Waste Kitchen</h3>
+                    <p>All food scraps become compost, packaging is biodegradable, and we've eliminated single-use plastics entirely.</p>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-icon">🚜</div>
+                    <h3>Local Partners</h3>
+                    <p>100% of our ingredients sourced within {{LOCAL_RADIUS}} miles, supporting 12 family farms and reducing transport emissions.</p>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-icon">💧</div>
+                    <h3>Water Conservation</h3>
+                    <p>Rainwater harvesting and greywater systems reduce our water usage by 60% compared to traditional restaurants.</p>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-icon">☀️</div>
+                    <h3>Renewable Energy</h3>
+                    <p>Solar panels and wind energy power 100% of our operations, making us a carbon-negative establishment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seasonal Menu Preview -->
+    <section id="menu" class="menu-preview">
+        <div class="container">
+            <div class="section-header">
+                <h2>Today's Harvest</h2>
+                <p class="section-subtitle">Fresh from our partner farms this {{CURRENT_SEASON}}</p>
+            </div>
+            <div class="menu-categories">
+                <div class="menu-category">
+                    <h3>Garden Starters</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>{{APPETIZER_1_NAME}}</h4>
+                                <span class="price">{{APPETIZER_1_PRICE}}</span>
+                            </div>
+                            <p class="item-description">{{APPETIZER_1_DESCRIPTION}}</p>
+                            <div class="item-source">Farm: {{APPETIZER_1_FARM}}</div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>{{APPETIZER_2_NAME}}</h4>
+                                <span class="price">{{APPETIZER_2_PRICE}}</span>
+                            </div>
+                            <p class="item-description">{{APPETIZER_2_DESCRIPTION}}</p>
+                            <div class="item-source">Farm: {{APPETIZER_2_FARM}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-category">
+                    <h3>Harvest Mains</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>{{MAIN_1_NAME}}</h4>
+                                <span class="price">{{MAIN_1_PRICE}}</span>
+                            </div>
+                            <p class="item-description">{{MAIN_1_DESCRIPTION}}</p>
+                            <div class="item-source">Farm: {{MAIN_1_FARM}}</div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="item-header">
+                                <h4>{{MAIN_2_NAME}}</h4>
+                                <span class="price">{{MAIN_2_PRICE}}</span>
+                            </div>
+                            <p class="item-description">{{MAIN_2_DESCRIPTION}}</p>
+                            <div class="item-source">Farm: {{MAIN_2_FARM}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-footer">
+                <a href="menu.html" class="btn btn-primary">View Complete Menu</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Farm Partners Section -->
+    <section id="farm" class="farm-partners">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Farm Family</h2>
+                <p class="section-subtitle">Meet the passionate growers who make our meals possible</p>
+            </div>
+            <div class="partners-grid">
+                <div class="partner-card">
+                    <div class="partner-image">
+                        <img src="images/farm-1.jpg" alt="{{FARM_1_NAME}}">
+                    </div>
+                    <div class="partner-info">
+                        <h4>{{FARM_1_NAME}}</h4>
+                        <p class="partner-location">{{FARM_1_LOCATION}}</p>
+                        <p class="partner-specialty">Specialty: {{FARM_1_SPECIALTY}}</p>
+                        <p>{{FARM_1_DESCRIPTION}}</p>
+                    </div>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-image">
+                        <img src="images/farm-2.jpg" alt="{{FARM_2_NAME}}">
+                    </div>
+                    <div class="partner-info">
+                        <h4>{{FARM_2_NAME}}</h4>
+                        <p class="partner-location">{{FARM_2_LOCATION}}</p>
+                        <p class="partner-specialty">Specialty: {{FARM_2_SPECIALTY}}</p>
+                        <p>{{FARM_2_DESCRIPTION}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Our Story</h2>
+                    <p class="lead">{{RESTAURANT_STORY}}</p>
+                    <p>Founded in {{FOUNDED_YEAR}}, {{RESTAURANT_NAME}} began as a dream to create dining experiences that celebrate both exceptional flavors and environmental stewardship. Chef {{CHEF_NAME}} brings {{CHEF_EXPERIENCE}} years of experience in sustainable cuisine.</p>
+                    <div class="certifications">
+                        <div class="cert-item">
+                            <h4>Certifications</h4>
+                            <ul>
+                                <li>USDA Organic Certified</li>
+                                <li>Green Restaurant Association</li>
+                                <li>B-Corp Certified</li>
+                                <li>Zero Waste Business</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="images/interior.jpg" alt="{{RESTAURANT_NAME}} Interior">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Visit Our Bistro</h2>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <h4>Address</h4>
+                            <p>{{ADDRESS}}<br>{{CITY}}, {{STATE}} {{ZIP}}</p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>Hours</h4>
+                            <p>{{HOURS_WEEKDAY}}<br>{{HOURS_WEEKEND}}</p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>Contact</h4>
+                            <p>Phone: {{PHONE}}<br>Email: {{EMAIL}}</p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>Reservations</h4>
+                            <p>{{RESERVATION_INFO}}</p>
+                            <a href="tel:{{PHONE}}" class="btn btn-primary">Make Reservation</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Get in Touch</h3>
+                    <form class="eco-form">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <select>
+                                <option value="">Inquiry Type</option>
+                                <option value="reservation">Reservation</option>
+                                <option value="catering">Catering</option>
+                                <option value="farm-visit">Farm Visit</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>{{RESTAURANT_NAME}}</h4>
+                    <p>Sustainable dining for a better tomorrow</p>
+                    <div class="social-links">
+                        <a href="{{FACEBOOK_URL}}" target="_blank">Facebook</a>
+                        <a href="{{INSTAGRAM_URL}}" target="_blank">Instagram</a>
+                        <a href="{{TWITTER_URL}}" target="_blank">Twitter</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#sustainable">Sustainability</a></li>
+                        <li><a href="#farm">Farm Partners</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Impact Report</h4>
+                    <p>Download our annual sustainability report</p>
+                    <a href="#" class="btn btn-secondary btn-small">Download PDF</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; {{CURRENT_YEAR}} {{RESTAURANT_NAME}}. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+    <title>{{RESTAURANT_NAME}} - {{CUISINE_TYPE}}</title>
+    <meta name="description" content="{{RESTAURANT_NAME}} - {{DESCRIPTION}}">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="eco-theme">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}} Logo">
+                <span class="logo-text">{{RESTAURANT_NAME}}</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#philosophy">Philosophy</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#farm">Our Farm</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="tel:{{PHONE}}" class="btn btn-reserve">Book Table</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="sustainability-badge">
+                    <span class="badge-icon">🌱</span>
+                    <span>100% Sustainable</span>
+                </div>
+                <h1>{{RESTAURANT_NAME}}</h1>
+                <p class="hero-subtitle">{{TAGLINE}}</p>
+                <p class="hero-description">{{DESCRIPTION}}</p>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-value">0</span>
+                        <span class="stat-label">Food Miles</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">100%</span>
+                        <span class="stat-label">Organic</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">Zero</span>
+                        <span class="stat-label">Waste</span>
+                    </div>
+                </div>
+                
+                <div class="hero-buttons">
+                    <a href="#menu" class="btn btn-primary">View Menu</a>
+                    <a href="#farm" class="btn btn-secondary">Our Story</a>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="hero-image-stack">
+                    <div class="hero-image main-image">
+                        <img src="{{HERO_IMAGE}}" alt="{{RESTAURANT_NAME}}">
+                    </div>
+                    <div class="hero-image overlay-image">
+                        <img src="{{FOOD_IMAGE_1}}" alt="Fresh ingredients">
+                    </div>
+                    <div class="sustainability-icons">
+                        <div class="sustain-icon">♻️</div>
+                        <div class="sustain-icon">🌿</div>
+                        <div class="sustain-icon">🚜</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section id="philosophy" class="philosophy">
+        <div class="container">
+            <div class="philosophy-content">
+                <div class="philosophy-text">
+                    <h2>Farm to Table Philosophy</h2>
+                    <p class="lead">Every ingredient tells a story of sustainability, from our own organic farm to your plate.</p>
+                    
+                    <div class="principles">
+                        <div class="principle">
+                            <div class="principle-icon">🌾</div>
+                            <div class="principle-content">
+                                <h4>Regenerative Agriculture</h4>
+                                <p>We practice farming methods that restore soil health and biodiversity while producing nutrient-dense food.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="principle">
+                            <div class="principle-icon">🔄</div>
+                            <div class="principle-content">
+                                <h4>Circular Economy</h4>
+                                <p>Our zero-waste kitchen composts scraps back to the farm, creating a closed-loop system of sustainability.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="principle">
+                            <div class="principle-icon">🤝</div>
+                            <div class="principle-content">
+                                <h4>Community Partnership</h4>
+                                <p>We collaborate with local farmers and artisans to support our regional food ecosystem.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="philosophy-visual">
+                    <div class="impact-metrics">
+                        <div class="metric-card">
+                            <div class="metric-number">2,400</div>
+                            <div class="metric-label">lbs of food waste diverted</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-number">15</div>
+                            <div class="metric-label">local farms supported</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-number">98%</div>
+                            <div class="metric-label">ingredients sourced locally</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <div class="section-header">
+                <h2>Seasonal Menu</h2>
+                <p>Our menu changes with the seasons, featuring the freshest ingredients from our farm</p>
+                <div class="season-indicator">
+                    <span class="season-badge">Current Season: Winter</span>
+                </div>
+            </div>
+            
+            <div class="menu-layout">
+                <!-- Featured Dishes -->
+                <div class="featured-dishes">
+                    <h3>Chef's Harvest Selection</h3>
+                    <div class="dish-grid">
+                        <div class="dish-card featured">
+                            <div class="dish-image">
+                                <img src="{{FOOD_IMAGE_1}}" alt="{{MENU_ITEM_1}}">
+                                <div class="source-badge">From our farm</div>
+                            </div>
+                            <div class="dish-content">
+                                <h4>{{MENU_ITEM_1}}</h4>
+                                <p class="dish-description">{{MENU_DESCRIPTION_1}}</p>
+                                <div class="dish-footer">
+                                    <div class="price">${{PRICE_1}}</div>
+                                    <div class="sustainability-tags">
+                                        <span class="tag organic">Organic</span>
+                                        <span class="tag local">Local</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="dish-card">
+                            <div class="dish-image">
+                                <img src="{{FOOD_IMAGE_2}}" alt="{{MENU_ITEM_2}}">
+                            </div>
+                            <div class="dish-content">
+                                <h4>{{MENU_ITEM_2}}</h4>
+                                <p class="dish-description">{{MENU_DESCRIPTION_2}}</p>
+                                <div class="dish-footer">
+                                    <div class="price">${{PRICE_2}}</div>
+                                    <div class="sustainability-tags">
+                                        <span class="tag seasonal">Seasonal</span>
+                                        <span class="tag vegan">Vegan</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="dish-card">
+                            <div class="dish-image">
+                                <img src="{{FOOD_IMAGE_3}}" alt="{{MENU_ITEM_3}}">
+                            </div>
+                            <div class="dish-content">
+                                <h4>{{MENU_ITEM_3}}</h4>
+                                <p class="dish-description">{{MENU_DESCRIPTION_3}}</p>
+                                <div class="dish-footer">
+                                    <div class="price">${{PRICE_3}}</div>
+                                    <div class="sustainability-tags">
+                                        <span class="tag heritage">Heritage</span>
+                                        <span class="tag gf">Gluten Free</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="dish-card">
+                            <div class="dish-image">
+                                <img src="{{FOOD_IMAGE_4}}" alt="{{MENU_ITEM_4}}">
+                            </div>
+                            <div class="dish-content">
+                                <h4>{{MENU_ITEM_4}}</h4>
+                                <p class="dish-description">{{MENU_DESCRIPTION_4}}</p>
+                                <div class="dish-footer">
+                                    <div class="price">${{PRICE_4}}</div>
+                                    <div class="sustainability-tags">
+                                        <span class="tag sustainable">Sustainable</span>
+                                        <span class="tag local">Local</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="menu-cta">
+                <a href="menu.html" class="btn btn-primary">View Full Menu</a>
+                <p class="menu-note">Menu changes weekly based on harvest availability</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Farm Section -->
+    <section id="farm" class="farm">
+        <div class="container">
+            <div class="farm-content">
+                <div class="farm-text">
+                    <h2>Our Farm</h2>
+                    <p class="farm-intro">{{ABOUT_DESCRIPTION}}</p>
+                    
+                    <div class="farm-features">
+                        <div class="farm-feature">
+                            <h4>30-Acre Organic Farm</h4>
+                            <p>Certified organic since 2018, our farm uses permaculture principles to grow over 200 varieties of vegetables, herbs, and fruits.</p>
+                        </div>
+                        <div class="farm-feature">
+                            <h4>Heritage Breeds</h4>
+                            <p>We raise heritage chickens, goats, and maintain heirloom seed varieties to preserve biodiversity.</p>
+                        </div>
+                        <div class="farm-feature">
+                            <h4>Renewable Energy</h4>
+                            <p>Solar panels and wind power ensure our operations are carbon neutral.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="farm-visit">
+                        <a href="#contact" class="btn btn-outline">Schedule Farm Tour</a>
+                    </div>
+                </div>
+                
+                <div class="farm-gallery">
+                    <div class="gallery-main">
+                        <img src="{{INTERIOR_IMAGE_1}}" alt="Farm view">
+                    </div>
+                    <div class="gallery-thumbnails">
+                        <div class="thumb-item">
+                            <div class="thumb-icon">🌱</div>
+                            <span>Greenhouse</span>
+                        </div>
+                        <div class="thumb-item">
+                            <div class="thumb-icon">🐔</div>
+                            <span>Chickens</span>
+                        </div>
+                        <div class="thumb-item">
+                            <div class="thumb-icon">🚜</div>
+                            <span>Equipment</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sustainability Impact -->
+    <section class="impact">
+        <div class="container">
+            <div class="impact-header">
+                <h2>Our Environmental Impact</h2>
+                <p>Transparency in our sustainability efforts</p>
+            </div>
+            
+            <div class="impact-grid">
+                <div class="impact-item">
+                    <div class="impact-icon">💧</div>
+                    <div class="impact-metric">50%</div>
+                    <div class="impact-label">Water Usage Reduction</div>
+                    <div class="impact-detail">Through drip irrigation and rainwater harvesting</div>
+                </div>
+                
+                <div class="impact-item">
+                    <div class="impact-icon">🌍</div>
+                    <div class="impact-metric">-85%</div>
+                    <div class="impact-label">Carbon Footprint</div>
+                    <div class="impact-detail">Compared to conventional restaurant operations</div>
+                </div>
+                
+                <div class="impact-item">
+                    <div class="impact-icon">♻️</div>
+                    <div class="impact-metric">Zero</div>
+                    <div class="impact-label">Landfill Waste</div>
+                    <div class="impact-detail">All organic waste returns to compost</div>
+                </div>
+                
+                <div class="impact-item">
+                    <div class="impact-icon">🐝</div>
+                    <div class="impact-metric">25+</div>
+                    <div class="impact-label">Pollinator Species</div>
+                    <div class="impact-detail">Supported by our wildflower meadows</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Visit Our Farm Bistro</h2>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div class="contact-text">
+                                <h4>Farm Location</h4>
+                                <p>{{FULL_ADDRESS}}</p>
+                                <a href="{{GOOGLE_MAPS_URL}}" class="link">Get Directions</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div class="contact-text">
+                                <h4>Reservations</h4>
+                                <p><a href="tel:{{PHONE}}">{{PHONE}}</a></p>
+                                <p class="note">Farm tours available by appointment</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">🕒</div>
+                            <div class="contact-text">
+                                <h4>Hours</h4>
+                                <div class="hours-list">
+                                    <div class="hours-item">
+                                        <span>Tuesday - Friday</span>
+                                        <span>{{WEEKDAY_HOURS}}</span>
+                                    </div>
+                                    <div class="hours-item">
+                                        <span>Saturday - Sunday</span>
+                                        <span>{{WEEKEND_HOURS}}</span>
+                                    </div>
+                                    <div class="hours-item closed">
+                                        <span>Monday</span>
+                                        <span>Closed</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">✉️</div>
+                            <div class="contact-text">
+                                <h4>Farm Updates</h4>
+                                <p>Subscribe to our weekly harvest newsletter</p>
+                                <form class="newsletter-form">
+                                    <input type="email" placeholder="Your email" required>
+                                    <button type="submit" class="btn btn-small">Subscribe</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-map">
+                    <iframe src="{{GOOGLE_MAPS_EMBED}}" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <div class="footer-brand">
+                        <img src="{{LOGO_URL}}" alt="{{RESTAURANT_NAME}}">
+                        <h4>{{RESTAURANT_NAME}}</h4>
+                        <p>Sustainable dining from farm to table</p>
+                    </div>
+                    
+                    <div class="footer-links">
+                        <div class="footer-section">
+                            <h4>Visit</h4>
+                            <ul>
+                                <li><a href="#menu">Menu</a></li>
+                                <li><a href="#farm">Farm Tour</a></li>
+                                <li><a href="tel:{{PHONE}}">Reservations</a></li>
+                                <li><a href="#contact">Directions</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="footer-section">
+                            <h4>Learn</h4>
+                            <ul>
+                                <li><a href="#philosophy">Our Philosophy</a></li>
+                                <li><a href="#farm">Sustainability</a></li>
+                                <li><a href="#">Farm Blog</a></li>
+                                <li><a href="#">Events</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="footer-section">
+                            <h4>Connect</h4>
+                            <div class="social-links">
+                                <a href="{{FACEBOOK_URL}}" class="social-link">Facebook</a>
+                                <a href="{{INSTAGRAM_URL}}" class="social-link">Instagram</a>
+                                <a href="{{YELP_URL}}" class="social-link">Yelp</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-certifications">
+                    <div class="cert-item">
+                        <div class="cert-icon">🌿</div>
+                        <span>USDA Organic Certified</span>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-icon">⚡</div>
+                        <span>100% Renewable Energy</span>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-icon">♻️</div>
+                        <span>Zero Waste Certified</span>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p>&copy; 2024 {{RESTAURANT_NAME}}. All rights reserved.</p>
+                    <p>Committed to environmental stewardship and community wellness</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
