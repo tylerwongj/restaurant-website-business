@@ -218,7 +218,16 @@ class ScreenshotGenerator {
         console.log('📊 Screenshot Generation Summary:');
         console.log(`✅ Successful: ${successful}`);
         console.log(`❌ Failed: ${failed}`);
-        console.log(`📸 Total screenshots: ${templates.length}`);
+        console.log(`📸 Total templates: ${templates.length}`);
+        console.log(`🔄 Attempted: ${needsUpdate.length}`);
+        
+        if (failed > 0) {
+            console.log('');
+            console.log('⚠️  Some screenshots failed to generate. You can:');
+            console.log('   1. Restart the server to retry failed screenshots');
+            console.log('   2. Run: npm run generate-screenshots');
+            console.log('   3. Check if templates load properly in browser');
+        }
     }
     
     async cleanup() {
