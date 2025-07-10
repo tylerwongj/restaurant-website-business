@@ -8,6 +8,7 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
+const ScreenshotGenerator = require('./scripts/generate-screenshots');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -31,6 +32,14 @@ app.use((req, res, next) => {
 
 // Serve dashboard static files (CSS, JS, etc.) at root level
 app.use(express.static(DASHBOARD_DIR));
+
+// Serve screenshots directory
+const screenshotsPath = path.join(DASHBOARD_DIR, 'screenshots');
+if (!fs.existsSync(screenshotsPath)) {
+    fs.mkdirSync(screenshotsPath, { recursive: true });
+}
+app.use('/screenshots', express.static(screenshotsPath));
+console.log(`📸 Serving /screenshots from ${screenshotsPath}`);
 
 // Serve template directories (only existing directories)
 const templateDirs = [
@@ -258,14 +267,47 @@ app.use((req, res) => {
     `);
 });
 
+// Initialize screenshot generation on server start
+async function initializeScreenshots() {
+    try {
+        console.log('📸 Checking screenshots...');
+        const generator = new ScreenshotGenerator();
+        await generator.init();
+        
+        // Get all templates and check for updates
+        const templates = await generator.getAllTemplates();
+        const needsUpdate = await generator.checkTemplateUpdates(templates);
+        
+        if (needsUpdate.length > 0) {
+            console.log(`🔄 Found ${needsUpdate.length} templates needing screenshots`);
+            console.log('Generating screenshots in background...');
+            
+            // Generate screenshots in background without blocking server
+            generator.generateAll(needsUpdate).then(() => {
+                console.log('✅ Background screenshot generation completed');
+                generator.cleanup();
+            }).catch(error => {
+                console.error('❌ Background screenshot generation failed:', error);
+                generator.cleanup();
+            });
+        } else {
+            console.log('✅ All screenshots are up to date');
+            await generator.cleanup();
+        }
+    } catch (error) {
+        console.error('❌ Screenshot initialization failed:', error);
+    }
+}
+
 // Start server
-const server = app.listen(PORT, () => {
+const server = app.listen(PORT, async () => {
     console.log('');
     console.log('✅ Template Dashboard Server is running!');
     console.log('');
     console.log(`🌐 Dashboard: http://localhost:${PORT}/`);
     console.log(`📊 Templates: http://localhost:${PORT}/templates/`);
     console.log(`🔗 API: http://localhost:${PORT}/api/templates`);
+    console.log(`📸 Screenshots: http://localhost:${PORT}/screenshots/`);
     console.log('');
     console.log('📝 Available routes:');
     console.log('   / → Dashboard');
@@ -274,6 +316,9 @@ const server = app.listen(PORT, () => {
     console.log('   /api/templates → Template list API');
     console.log('');
     console.log('Press Ctrl+C to stop the server');
+    
+    // Initialize screenshots after server starts
+    await initializeScreenshots();
 });
 
 // Graceful shutdown

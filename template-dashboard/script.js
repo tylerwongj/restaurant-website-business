@@ -303,12 +303,11 @@ class TemplateDashboard {
         
         card.innerHTML = `
             <div class="template-preview">
-                <iframe 
-                    class="template-iframe" 
-                    data-src="${template.url}"
-                    loading="lazy"
-                    sandbox="allow-scripts allow-same-origin">
-                </iframe>
+                <img 
+                    class="template-screenshot" 
+                    data-src="/screenshots/${template.id}.png"
+                    alt="${this.formatTemplateName(template.name)} preview"
+                    loading="lazy">
                 <div class="preview-overlay">
                     <div class="overlay-content">
                         Click to view full screen
@@ -346,29 +345,53 @@ class TemplateDashboard {
             }
         });
         
-        // Lazy load iframe
+        // Lazy load screenshot
         this.setupLazyLoading(card);
         
         return card;
     }
     
     setupLazyLoading(card) {
-        const iframe = card.querySelector('.template-iframe');
+        const screenshot = card.querySelector('.template-screenshot');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    const src = iframe.dataset.src;
-                    if (src && !iframe.src) {
-                        iframe.src = src;
-                        observer.unobserve(iframe);
+                    const src = screenshot.dataset.src;
+                    if (src && !screenshot.src) {
+                        screenshot.src = src;
+                        
+                        // Handle screenshot loading states
+                        screenshot.onload = () => {
+                            screenshot.classList.add('loaded');
+                        };
+                        
+                        screenshot.onerror = () => {
+                            // Show placeholder if screenshot doesn't exist
+                            screenshot.parentElement.innerHTML = `
+                                <div class="screenshot-placeholder">
+                                    <div class="placeholder-content">
+                                        <div class="placeholder-icon">🍽️</div>
+                                        <div class="placeholder-name">${this.formatTemplateName(card.querySelector('.template-name').textContent)}</div>
+                                        <div class="placeholder-status">Screenshot pending...</div>
+                                    </div>
+                                </div>
+                                <div class="preview-overlay">
+                                    <div class="overlay-content">
+                                        Click to view full screen
+                                    </div>
+                                </div>
+                            `;
+                        };
+                        
+                        observer.unobserve(screenshot);
                     }
                 }
             });
         }, {
-            rootMargin: '50px'
+            rootMargin: '100px'
         });
         
-        observer.observe(iframe);
+        observer.observe(screenshot);
     }
     
     createStarsHTML(rating) {
