@@ -48,6 +48,7 @@ class TemplateDashboard {
             searchInput: document.getElementById('search-input'),
             clearSearch: document.getElementById('clear-search'),
             categoryFilter: document.getElementById('category-filter'),
+            completenessFilter: document.getElementById('completeness-filter'),
             favoritesFilter: document.getElementById('favorites-filter'),
             gridSizeBtn: document.getElementById('grid-size-btn'),
             exportFavorites: document.getElementById('export-favorites'),
@@ -80,6 +81,10 @@ class TemplateDashboard {
         
         // Filter controls
         this.elements.categoryFilter.addEventListener('change', () => {
+            this.filterTemplates();
+        });
+        
+        this.elements.completenessFilter.addEventListener('change', () => {
             this.filterTemplates();
         });
         
@@ -225,6 +230,7 @@ class TemplateDashboard {
     filterTemplates() {
         const searchTerm = this.elements.searchInput.value.toLowerCase();
         const selectedCategory = this.elements.categoryFilter.value;
+        const selectedCompleteness = this.elements.completenessFilter.value;
         
         this.filteredTemplates = this.templates.filter(template => {
             // Search filter
@@ -235,10 +241,13 @@ class TemplateDashboard {
             // Category filter
             const matchesCategory = !selectedCategory || template.category === selectedCategory;
             
+            // Completeness filter
+            const matchesCompleteness = !selectedCompleteness || template.status === selectedCompleteness;
+            
             // Favorites filter
             const matchesFavorites = !this.showFavoritesOnly || this.favorites.has(template.id);
             
-            return matchesSearch && matchesCategory && matchesFavorites;
+            return matchesSearch && matchesCategory && matchesCompleteness && matchesFavorites;
         });
         
         this.renderTemplates();
